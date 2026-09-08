@@ -68,10 +68,10 @@ function initHeroNetworkCanvas() {
   let mouse = { x: null, y: null, maxDistance: 160 };
 
   const assetNodes = [
-    { label: 'Ideas & IP', category: 'Catalog & Scripts', color: '#00FF66', status: 'Dormant to Active' },
+    { label: 'Ideas & IP', category: 'Catalog & Scripts', color: '#FF5200', status: 'Dormant to Active' },
     { label: 'People & Talent', category: 'Cast & Guild Artisans', color: '#ec4899', status: 'Availability Synced' },
     { label: 'Places & Assets', category: 'Soundstages & Kits', color: '#10b981', status: 'Capacity Activated' },
-    { label: 'Production', category: 'Cinema & Daily Shows', color: '#00FF66', status: 'In Execution' },
+    { label: 'Production', category: 'Cinema & Daily Shows', color: '#FF5200', status: 'In Execution' },
     { label: 'Post & Tech', category: 'VFX, Edit & Sound', color: '#8b5cf6', status: 'Workflow Synced' },
     { label: 'Distribution', category: 'Theatrical & OTT', color: '#6366f1', status: 'Audience Reach' },
     { label: 'Audience & Commerce', category: 'Brands & Community', color: '#f43f5e', status: 'Value Creation' },
@@ -133,7 +133,7 @@ function initHeroNetworkCanvas() {
       vx: 0,
       vy: 0,
       radius: 9,
-      color: '#00FF66',
+      color: '#FF5200',
       isCore: true,
       label: 'DigiSynq Coordination Hub',
       pulse: 0
@@ -204,7 +204,7 @@ function initHeroNetworkCanvas() {
         ctx.beginPath();
         ctx.arc(coreNode.x, coreNode.y, radarRadius, 0, Math.PI * 2);
         const ringAlpha = Math.max(0, 1 - radarRadius / (Math.min(width, height) * 0.45)) * 0.25;
-        ctx.strokeStyle = `rgba(0, 255, 102, ${ringAlpha})`;
+        ctx.strokeStyle = `rgba(255, 82, 0, ${ringAlpha})`;
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
@@ -260,7 +260,7 @@ function initHeroNetworkCanvas() {
             ctx.beginPath();
             ctx.moveTo(mouse.x, mouse.y);
             ctx.lineTo(n1.x, n1.y);
-            ctx.strokeStyle = `rgba(0, 255, 102, ${(1 - mdist / 130) * 0.4})`;
+            ctx.strokeStyle = `rgba(255, 82, 0, ${(1 - mdist / 130) * 0.4})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -283,7 +283,7 @@ function initHeroNetworkCanvas() {
             ctx.beginPath();
             ctx.moveTo(n1.x, n1.y);
             ctx.lineTo(n2.x, n2.y);
-            ctx.strokeStyle = (n1.isCore || n2.isCore) ? `rgba(0, 255, 102, ${alpha * 1.8})` : `rgba(255, 255, 255, ${alpha * 0.35})`;
+            ctx.strokeStyle = (n1.isCore || n2.isCore) ? `rgba(255, 82, 0, ${alpha * 1.8})` : `rgba(255, 255, 255, ${alpha * 0.35})`;
             ctx.lineWidth = (n1.isCore || n2.isCore) ? 1.8 : 0.75;
             ctx.stroke();
           }
@@ -346,7 +346,7 @@ function initHeroNetworkCanvas() {
 
       // Draw Glass Pill Background
       ctx.fillStyle = n1.isCore ? 'rgba(6, 24, 40, 0.92)' : 'rgba(10, 14, 22, 0.9)';
-      ctx.strokeStyle = n1.isCore ? 'rgba(0, 255, 102, 0.8)' : (isFragmented ? 'rgba(239, 68, 68, 0.5)' : 'rgba(255, 255, 255, 0.16)');
+      ctx.strokeStyle = n1.isCore ? 'rgba(255, 82, 0, 0.8)' : (isFragmented ? 'rgba(239, 68, 68, 0.5)' : 'rgba(255, 255, 255, 0.16)');
       ctx.lineWidth = 1;
 
       ctx.beginPath();
@@ -355,7 +355,7 @@ function initHeroNetworkCanvas() {
       ctx.stroke();
 
       // Text
-      ctx.fillStyle = n1.isCore ? '#00FF66' : (isFragmented ? '#fca5a5' : '#f8fafc');
+      ctx.fillStyle = n1.isCore ? '#FF5200' : (isFragmented ? '#fca5a5' : '#f8fafc');
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
       ctx.fillText(text, badgeX + padX, badgeY + badgeH / 2);
@@ -1319,7 +1319,7 @@ function initPipelineTabs() {
 
       display.innerHTML = `
         <div style="margin-bottom:1.5rem;">
-          <div class="mono" style="font-size:0.75rem;font-weight:800;color:#00FF66;letter-spacing:0.18em;margin-bottom:0.35rem;">
+          <div class="mono" style="font-size:0.75rem;font-weight:800;color:#FF5200;letter-spacing:0.18em;margin-bottom:0.35rem;">
             ${data.code} &bull; ${data.subtitle}
           </div>
           <h3 style="font-size:clamp(1.5rem, 3vw, 2.2rem);font-weight:800;color:#ffffff;margin:0 0 0.75rem;text-transform:uppercase;">
@@ -1336,7 +1336,7 @@ function initPipelineTabs() {
           </div>
           <div class="pipeline-spec-box">
             <div class="pipeline-spec-box-title">VERIFICATION STANDARD:</div>
-            <p style="color:#00FF66;font-size:0.92rem;line-height:1.6;margin:0;">${data.verification}</p>
+            <p style="color:#FF5200;font-size:0.92rem;line-height:1.6;margin:0;">${data.verification}</p>
           </div>
           <div class="pipeline-spec-box">
             <div class="pipeline-spec-box-title">DEPLOYED SYSTEM OUTPUT:</div>
@@ -1430,15 +1430,15 @@ function initIntakeWizard() {
 
       let listHtml = p.checklist.map(item => `
         <li style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
-          <span style="color:#00FF66;font-weight:900;">&bull;</span>
+          <span style="color:#FF5200;font-weight:900;">&bull;</span>
           <span>${item}</span>
         </li>
       `).join('');
 
       detailsBox.innerHTML = `
-        <div style="border:1px solid rgba(0,255,102,0.3);background:rgba(0,255,102,0.03);padding:1.5rem;border-radius:6px;">
+        <div style="border:1px solid rgba(255, 82, 0,0.3);background:rgba(255, 82, 0,0.03);padding:1.5rem;border-radius:6px;">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
-            <div class="mono" style="font-size:0.75rem;color:#00FF66;font-weight:800;letter-spacing:0.15em;">
+            <div class="mono" style="font-size:0.75rem;color:#FF5200;font-weight:800;letter-spacing:0.15em;">
               ${p.badge} &bull; ${p.title}
             </div>
             <span class="mono" style="font-size:0.7rem;color:#94a3b8;background:rgba(255,255,255,0.06);padding:0.25rem 0.6rem;border-radius:4px;">
@@ -1453,7 +1453,7 @@ function initIntakeWizard() {
           </ul>
           <div style="padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
             <div style="font-size:0.9rem;color:#94a3b8;max-width:550px;">
-              <strong style="color:#00FF66;">System Outcome:</strong> ${p.outcome}
+              <strong style="color:#FF5200;">System Outcome:</strong> ${p.outcome}
             </div>
             <a href="node-10.html" class="btn btn-primary" style="font-size:0.88rem;padding:0.65rem 1.4rem;">
               SUBMIT INTAKE IN NODE 10 &rarr;
