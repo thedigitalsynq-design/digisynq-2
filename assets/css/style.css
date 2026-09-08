@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
 /* ==========================================================================
    DIGISYNQ — THE ENTERTAINMENT ECOSYSTEM OPERATING SYSTEM
@@ -139,10 +139,10 @@
   --accent-rose: #FF5200;
 
   /* Typography Scale & Families — Google Fonts Knowledge Typographic System */
-  --font-family-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-family-syne: 'Syne', 'Space Grotesk', sans-serif;
+  --font-family-grotesk: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-syne: 'Syne', 'DM Sans', sans-serif;
   --font-family-jakarta: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-family-mono: 'JetBrains Mono', 'Space Grotesk', monospace;
+  --font-family-mono: 'JetBrains Mono', 'DM Sans', monospace;
 
   /* Default Active System (Option A: Precision Monolith) */
   --font-sans: var(--font-family-grotesk);
@@ -3747,7 +3747,7 @@ body::before {
   
   /* 9870089044 Chamfered Geometric Typography */
   --font-chamfer: 'Chakra Petch', 'Denton-ExtraBold', monospace, sans-serif;
-  --font-modern: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-modern: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display-geo: 'Chakra Petch', 'Syne', sans-serif;
 }
 
@@ -4122,7 +4122,7 @@ body::before {
 }
 
 .colossal-digit {
-  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: clamp(4.8rem, 10vw, 8rem);
   font-weight: 800;
   line-height: 0.85;
@@ -4339,11 +4339,11 @@ body::before {
 
 
 /* ==========================================================================
-   SPACE GROTESK BOLD UNIFIED TYPOGRAPHY SYSTEM
+   DM SANS BLACK 900 UNIFIED TYPOGRAPHY SYSTEM
    ========================================================================== */
 html, body, button, input, select, textarea {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-weight: 500;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 700;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -4353,57 +4353,60 @@ h1, h2, h3, h4, h5, h6,
 .pastel-card-title, .pastel-card-num,
 .mono, .tag-badge, .logo-text, .edge-badge-vertical,
 .brand-logo, .btn, .form-label,
-.dialpad-drawer-title, .dialpad-drawer-sub {
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-weight: 700 !important;
+.dialpad-drawer-title, .dialpad-drawer-sub,
+.site-brand-link, .btn-primary, .btn-secondary,
+.metric-stat-val, .pipeline-spec-box-title,
+.site-nav-pill-link, strong, b {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 900 !important;
 }
 
 .colossal-digit {
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 900 !important;
   letter-spacing: -0.04em !important;
 }
 
 .colossal-title {
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 900 !important;
   letter-spacing: -0.02em !important;
 }
 
 .colossal-caption {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-weight: 500 !important;
 }
 
 .node-key-digit {
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 900 !important;
 }
 
 .node-key-label {
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 900 !important;
 }
 
 .pastel-card-title {
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 900 !important;
 }
 
 .pastel-card-desc {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-weight: 400 !important;
 }
 
 .mono {
-  font-family: 'Space Grotesk', monospace, sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DM Sans', monospace, sans-serif !important;
+  font-weight: 900 !important;
   letter-spacing: 0.08em !important;
 }
 
 .btn {
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 900 !important;
 }
 
 
@@ -4443,9 +4446,9 @@ p, .colossal-caption {
 }
 
 .colossal-digit {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-size: clamp(6.5rem, 14vw, 11rem) !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   line-height: 0.82 !important;
   letter-spacing: -0.05em !important;
   color: #ffffff !important;
@@ -4461,7 +4464,7 @@ p, .colossal-caption {
 
 .colossal-title {
   font-size: clamp(2.2rem, 5vw, 4.2rem) !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   line-height: 1.08 !important;
   letter-spacing: -0.03em !important;
   margin: 0 0 1rem 0 !important;
@@ -4503,7 +4506,7 @@ p, .colossal-caption {
 }
 
 .pastel-card-num {
-  font-family: 'Space Grotesk', monospace !important;
+  font-family: 'DM Sans', monospace !important;
   font-size: 0.85rem !important;
   font-weight: 700 !important;
   color: var(--accent-cyan) !important;
@@ -4514,7 +4517,7 @@ p, .colossal-caption {
 
 .pastel-card-title {
   font-size: 1.28rem !important;
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   line-height: 1.3 !important;
   color: #ffffff !important;
   margin: 0 0 0.65rem 0 !important;
@@ -4567,7 +4570,7 @@ p, .colossal-caption {
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.22) !important;
   padding: 0.85rem 1.1rem !important;
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-size: 1rem !important;
   border-radius: 6px !important;
   transition: all 0.2s ease !important;
@@ -4624,7 +4627,7 @@ p, .colossal-caption {
 }
 
 .node-route-prev {
-  font-family: 'Space Grotesk', monospace !important;
+  font-family: 'DM Sans', monospace !important;
   font-size: 0.92rem !important;
   font-weight: 700 !important;
   color: #cbd5e1 !important;
@@ -4676,9 +4679,9 @@ p, .colossal-caption, .copy-body,
 
 /* Colossal Numbers */
 .colossal-digit {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-size: clamp(6.5rem, 14vw, 11rem) !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   line-height: 0.82 !important;
   letter-spacing: -0.05em !important;
   color: #ffffff !important;
@@ -4689,7 +4692,7 @@ p, .colossal-caption, .copy-body,
 
 /* Monospace Badges & Subtitles */
 .mono {
-  font-family: 'Space Grotesk', monospace !important;
+  font-family: 'DM Sans', monospace !important;
   color: #ffffff !important;
   opacity: 0.9 !important;
 }
@@ -4721,7 +4724,7 @@ p, .colossal-caption, .copy-body,
 }
 
 .pastel-card-num {
-  font-family: 'Space Grotesk', monospace !important;
+  font-family: 'DM Sans', monospace !important;
   font-size: 0.85rem !important;
   font-weight: 700 !important;
   color: #ffffff !important;
@@ -4733,7 +4736,7 @@ p, .colossal-caption, .copy-body,
 
 .pastel-card-title {
   font-size: 1.28rem !important;
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   line-height: 1.3 !important;
   color: #ffffff !important;
   margin: 0 0 0.65rem 0 !important;
@@ -4786,7 +4789,7 @@ p, .colossal-caption, .copy-body,
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.22) !important;
   padding: 0.85rem 1.1rem !important;
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-size: 1rem !important;
   border-radius: 6px !important;
   transition: all 0.2s ease !important;
@@ -4843,7 +4846,7 @@ p, .colossal-caption, .copy-body,
 }
 
 .node-route-prev {
-  font-family: 'Space Grotesk', monospace !important;
+  font-family: 'DM Sans', monospace !important;
   font-size: 0.92rem !important;
   font-weight: 700 !important;
   color: #cbd5e1 !important;
@@ -5145,7 +5148,7 @@ main {
 }
 
 .pastel-card-num {
-  font-family: 'Space Grotesk', monospace;
+  font-family: 'DM Sans', monospace;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -5236,7 +5239,7 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.16);
   color: #ffffff;
   padding: 0.75rem 1rem;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.92rem;
   border-radius: 3px;
   outline: none;
@@ -5280,9 +5283,9 @@ main {
 }
 
 .colossal-digit {
-  font-family: 'Space Grotesk', -apple-system, sans-serif !important;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-size: clamp(4.8rem, 10vw, 8rem) !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   line-height: 0.85 !important;
   color: #ffffff !important;
   letter-spacing: -0.05em !important;
@@ -5311,9 +5314,9 @@ main {
 }
 
 .colossal-title {
-  font-family: 'Space Grotesk', -apple-system, sans-serif !important;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-size: clamp(2.2rem, 5.5vw, 4.2rem) !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   margin: 0 0 0.4rem !important;
   line-height: 1.02 !important;
   letter-spacing: -0.03em !important;
@@ -5322,7 +5325,7 @@ main {
 }
 
 .colossal-caption {
-  font-family: 'Space Grotesk', -apple-system, sans-serif !important;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-size: clamp(1.05rem, 1.8vw, 1.35rem) !important;
   color: #cbd5e1 !important;
   margin: 0 !important;
@@ -5402,7 +5405,7 @@ main {
   position: absolute;
   top: -4px;
   right: -4px;
-  font-family: 'Space Grotesk', monospace;
+  font-family: 'DM Sans', monospace;
   font-size: 0.6rem;
   font-weight: 800;
   background: #060709;
@@ -5417,7 +5420,7 @@ main {
 }
 
 .node-key-digit {
-  font-family: 'Space Grotesk', monospace;
+  font-family: 'DM Sans', monospace;
   font-size: clamp(1rem, 1.8vw, 1.35rem);
   font-weight: 800;
   color: #ffffff;
@@ -5425,7 +5428,7 @@ main {
 }
 
 .node-key-label {
-  font-family: 'Space Grotesk', monospace;
+  font-family: 'DM Sans', monospace;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -5494,7 +5497,7 @@ main {
 }
 
 .node-route-prev {
-  font-family: 'Space Grotesk', monospace;
+  font-family: 'DM Sans', monospace;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -5532,7 +5535,7 @@ main {
   padding: 0.8rem 1.5rem;
   background: rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-family: 'DM Sans', monospace, sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   color: #94a3b8;
@@ -5577,7 +5580,7 @@ main {
 }
 
 .node-hero-digit-val {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: clamp(3.4rem, 6.5vw, 4.8rem);
   font-weight: 800;
   line-height: 0.9;
@@ -5590,7 +5593,7 @@ main {
 }
 
 .node-hero-title-monument {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-size: clamp(2.4rem, 5.5vw, 4.2rem) !important;
   font-weight: 800 !important;
   line-height: 1.0 !important;
@@ -5603,7 +5606,7 @@ main {
 }
 
 .node-hero-caption-monument {
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-size: clamp(1.1rem, 2vw, 1.35rem) !important;
   color: #cbd5e1 !important;
   font-weight: 500 !important;
@@ -5640,7 +5643,7 @@ main {
   padding: 0.3rem 0.65rem;
   border-radius: 3px;
   font-size: 0.72rem;
-  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-family: 'DM Sans', monospace, sans-serif;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: #94a3b8;
@@ -5876,7 +5879,7 @@ h1 em, h2 em, h1 [style*="accent-cyan"], h2 [style*="accent-cyan"] {
   gap: 0.75rem;
   text-decoration: none;
   color: #ffffff;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: -0.02em;
@@ -5930,7 +5933,7 @@ h1 em, h2 em, h1 [style*="accent-cyan"], h2 [style*="accent-cyan"] {
   white-space: nowrap;
   text-decoration: none;
   color: #cbd5e1;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -6052,7 +6055,7 @@ h1 em, h2 em, h1 [style*="accent-cyan"], h2 [style*="accent-cyan"] {
 }
 
 .metric-stat-val {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 800;
   color: #ffffff;
@@ -6083,7 +6086,7 @@ h1 em, h2 em, h1 [style*="accent-cyan"], h2 [style*="accent-cyan"] {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #94a3b8;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
   padding: 0.65rem 1.25rem;

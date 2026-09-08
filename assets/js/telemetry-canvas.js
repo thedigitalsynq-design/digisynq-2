@@ -94,7 +94,7 @@
 
       // Draw node telemetry tag if active
       if (a.active && a.label) {
-        ctx.font = '9px "Space Grotesk", monospace';
+        ctx.font = '9px "DM Sans", monospace';
         ctx.fillStyle = 'rgba(255, 82, 0, 0.9)';
         ctx.fillText(`[ ${a.label} ]`, a.x + 8, a.y - 4);
       }
