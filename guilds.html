@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digisynq Guilds — Peer Craft Syndicates</title>
+  <meta name="description" content="Exclusive, peer-led syndicates protecting craft rates, sharing market intelligence, and co-creating larger cinematic initiatives with mutual trust support.">
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <style>
+    .guilds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin: 50px 0 100px;
+    }
+    .guild-card {
+      background: radial-gradient(circle at 80% 10%, rgba(245, 184, 64, 0.06) 0%, #12121A 70%);
+      border: 1px solid rgba(245, 184, 64, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-smooth);
+      position: relative;
+    }
+    .guild-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-gold);
+      box-shadow: 0 16px 40px var(--color-gold-glow);
+    }
+    .guild-master-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      padding: 12px 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .guild-master-photo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--color-gold);
+      object-fit: cover;
+    }
+    .guild-stats-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .featured-guild-banner {
+      background: linear-gradient(135deg, rgba(245, 184, 64, 0.12) 0%, rgba(108, 59, 244, 0.12) 100%);
+      border: 1px solid rgba(245, 184, 64, 0.3);
+      border-radius: var(--radius-xl);
+      padding: 50px;
+      margin-bottom: 70px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 1024px) {
+      .guilds-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-guild-banner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .guilds-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Atmospheric Ambient Glow Orbs -->
+  <div class="ambient-glow-orb ambient-orb-purple"></div>
+  <div class="ambient-glow-orb ambient-orb-teal"></div>
+  <div class="ambient-glow-orb ambient-orb-gold"></div>
+
+    <!-- Master Fixed Top Navbar -->
+  <header class="site-navbar" role="banner">
+    <div class="site-navbar-inner">
+      <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+        <div class="site-brand-glyph" aria-hidden="true">DS</div>
+        <span>DIGISYNQ</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        
+        <ul class="site-nav-pills">
+          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
+          <li><a href="node-01.html" class="site-nav-pill-link">10 Nodes</a></li>
+          <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
+          <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
+          <li><a href="guilds.html" class="site-nav-pill-link active">Guilds</a></li>
+          <li><a href="workshops.html" class="site-nav-pill-link">Workshops</a></li>
+          <li><a href="pricing.html" class="site-nav-pill-link">Pricing</a></li>
+          <li><a href="about.html" class="site-nav-pill-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-nav-actions">
+        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory haptic audio">
+          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
+          <span>AUDIO: ON</span>
+        </button>
+        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node dialpad">
+          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
+          <span>KEYPAD [K]</span>
+        </button>
+        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          START A SYNQ &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Vertical Edge Badge -->
+  <div class="edge-badge-vertical" aria-hidden="true">
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> THE COORDINATION LAYER BEHIND ENTERTAINMENT &bull; 10 NODES</span>
+  </div>
+
+  <!-- ================= GUILDS HERO ================= -->
+  <section style="padding: 160px 0 40px; position: relative; background: radial-gradient(circle at 50% 20%, #1c1505 0%, #0A0A0F 80%);">
+    <div class="container" style="text-align: center; max-width: 900px;">
+      <div class="mono-tag gold" style="margin-bottom: 20px;">PEER SOLIDARITY // PROOF OVER NEPOTISM</div>
+      <h1 style="margin-bottom: 24px;">CRAFT GUILDS: PROOF OVER NEPOTISM</h1>
+      <p class="lead" style="max-width: 760px; margin: 0 auto 20px;">
+        Entertainment power in India has lived in isolated cliques for a century. Digisynq Guilds unite verified technicians and creators into peer-governed syndicates that defend rate floors, provide 24/7 mutual emergency aid, and open cross-language doors.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED GUILD SPOTLIGHT ================= -->
+  <section class="container">
+    <div class="featured-guild-banner">
+      <div>
+        <div class="mono-tag gold" style="margin-bottom: 16px;">FLAGSHIP GUILD ALLIANCE // OPTICAL MASTERY</div>
+        <h2 style="font-size: 2.2rem; margin-bottom: 14px; color: #fff;">The Indian Cinematographers Syndicate (ICS)</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+          Uniting veteran and rising Directors of Photography across Mumbai, Chennai, Hyderabad, and Kochi. Setting transparent camera package day-rates, enforcing reasonable 12-hour turnaround times, and maintaining emergency replacement rosters.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
+          <span class="mono-tag teal">340+ Verified DOPs</span>
+          <span class="mono-tag gold">98.6 Guild Score</span>
+          <span class="mono-tag purple">₹1.2 Cr Mutual Reserve</span>
+        </div>
+        <button class="btn btn-gold btn-lg apply-guild-btn" data-guild="Indian Cinematographers Syndicate">
+          Apply to Join ICS &rarr;
+        </button>
+      </div>
+      <div style="background: rgba(10,10,15,0.7); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 28px;">
+        <h4 style="color: var(--color-gold); font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 12px;">
+          GUILD PILLARS &amp; GUARANTEES
+        </h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.85);">
+          <li>• <strong>Standard Rate Floors:</strong> Verified minimum call-sheet rates for feature, commercial, and OTT setups.</li>
+          <li>• <strong>Sub-3-Hour Lens &amp; Body Dispatch:</strong> Emergency replacement lenses, sensors, and camera packages deployed instantly.</li>
+          <li>• <strong>Escrow Legal Enforcement:</strong> On-call legal counsel ensuring producers release final wrap payments without delay.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GUILDS DIRECTORY GRID ================= -->
+  <section class="container">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px;">
+      <div>
+        <div class="mono-tag purple" style="margin-bottom: 8px;">ACTIVE ALLIANCES</div>
+        <h2>Peer Guild Roster</h2>
+      </div>
+      <span class="mono-tag teal">6 GUILDS ACTIVE</span>
+    </div>
+
+    <div class="guilds-grid">
+
+      <!-- Guild 1 -->
+      <div class="guild-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="mono-tag purple">CRAFT / DIRECTION</span>
+            <span class="mono-tag gold">SCORE: 96</span>
+          </div>
+          <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">Showrunners &amp; Directors Guild</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            <strong>Protect original IP:</strong> Writers, showrunners, and episodic creators enforcing clear story credit attribution, writer-room pay floors, and creative veto rights against arbitrary studio interference.
+          </p>
+        </div>
+        <div>
+          <div class="guild-master-meta">
+            <img src="assets/img/avatar-3d.jpg" alt="Master" class="guild-master-photo">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Vikramaditya S.</div>
+              <div style="font-size: 0.75rem; color: var(--text-tertiary);">Guild Master • Mumbai</div>
+            </div>
+          </div>
+          <div class="guild-stats-row">
+            <span style="font-size: 0.82rem; color: var(--text-tertiary);">MEMBERS: <strong>180 Nodes</strong></span>
+            <span style="font-size: 0.82rem; color: var(--color-teal);">VERIFIED VETTING</span>
+          </div>
+          <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Showrunners & Directors Guild">Apply for Membership</button>
+        </div>
+      </div>
+
+      <!-- Guild 2 -->
+      <div class="guild-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="mono-tag teal">VIRTUAL TECH</span>
+            <span class="mono-tag gold">SCORE: 94</span>
+          </div>
+          <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">VFX &amp; Virtual Production Circle</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            <strong>Pool technical compute:</strong> Unreal Engine artists, LED volume engineers, and compositors pooling high-performance render clusters, sharing bespoke shaders, and training camera crews.
+          </p>
+        </div>
+        <div>
+          <div class="guild-master-meta">
+            <img src="assets/img/avatar-user.jpg" alt="Master" class="guild-master-photo">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Dr. Anand Chandran</div>
+              <div style="font-size: 0.75rem; color: var(--text-tertiary);">Guild Master • Bengaluru</div>
+            </div>
+          </div>
+          <div class="guild-stats-row">
+            <span style="font-size: 0.82rem; color: var(--text-tertiary);">MEMBERS: <strong>210 Nodes</strong></span>
+            <span style="font-size: 0.82rem; color: var(--color-teal);">VERIFIED VETTING</span>
+          </div>
+          <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="VFX & Virtual Production Circle">Apply for Membership</button>
+        </div>
+      </div>
+
+      <!-- Guild 3 -->
+      <div class="guild-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="mono-tag gold">PRODUCING</span>
+            <span class="mono-tag gold">SCORE: 98</span>
+          </div>
+          <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">Independent Producers Exchange</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            <strong>Level the distribution field:</strong> Indie producers pooling international sales agents, festival packaging leverage, and collective legal defense against predatory streamer contracts.
+          </p>
+        </div>
+        <div>
+          <div class="guild-master-meta">
+            <img src="assets/img/editorial/claude-stage-motif.jpg" alt="Master" class="guild-master-photo">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Guneet Monga Circle</div>
+              <div style="font-size: 0.75rem; color: var(--text-tertiary);">Guild Masters Council</div>
+            </div>
+          </div>
+          <div class="guild-stats-row">
+            <span style="font-size: 0.82rem; color: var(--text-tertiary);">MEMBERS: <strong>95 Studios</strong></span>
+            <span style="font-size: 0.82rem; color: var(--color-teal);">VERIFIED VETTING</span>
+          </div>
+          <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Independent Producers Exchange">Apply for Membership</button>
+        </div>
+      </div>
+
+      <!-- Guild 4 -->
+      <div class="guild-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="mono-tag purple">POST CRAFT</span>
+            <span class="mono-tag gold">SCORE: 92</span>
+          </div>
+          <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">The Indian Editors Society (TIES)</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            <strong>Defend post-production integrity:</strong> Feature, OTT, and commercial editors enforcing strict versioning protocols, reasonable turnarounds, and fair overtime compensation.
+          </p>
+        </div>
+        <div>
+          <div class="guild-master-meta">
+            <img src="assets/img/avatar-3d.jpg" alt="Master" class="guild-master-photo">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">A. Sreekar Prasad</div>
+              <div style="font-size: 0.75rem; color: var(--text-tertiary);">Honorary Guild Patron</div>
+            </div>
+          </div>
+          <div class="guild-stats-row">
+            <span style="font-size: 0.82rem; color: var(--text-tertiary);">MEMBERS: <strong>160 Editors</strong></span>
+            <span style="font-size: 0.82rem; color: var(--color-teal);">VERIFIED VETTING</span>
+          </div>
+          <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="The Indian Editors Society">Apply for Membership</button>
+        </div>
+      </div>
+
+      <!-- Guild 5 -->
+      <div class="guild-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="mono-tag teal">AUDIO CRAFT</span>
+            <span class="mono-tag gold">SCORE: 95</span>
+          </div>
+          <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">Sound Engineers &amp; Foley Collective</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            <strong>Uphold sonic standards:</strong> Sync sound recordists, sound designers, and Atmos mixing supervisors upholding acoustic integrity, gear insurance, and set quiet-hours enforcement.
+          </p>
+        </div>
+        <div>
+          <div class="guild-master-meta">
+            <img src="assets/img/avatar-user.jpg" alt="Master" class="guild-master-photo">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">T. Radhakrishnan</div>
+              <div style="font-size: 0.75rem; color: var(--text-tertiary);">Guild Master • Chennai</div>
+            </div>
+          </div>
+          <div class="guild-stats-row">
+            <span style="font-size: 0.82rem; color: var(--text-tertiary);">MEMBERS: <strong>140 Nodes</strong></span>
+            <span style="font-size: 0.82rem; color: var(--color-teal);">VERIFIED VETTING</span>
+          </div>
+          <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Sound Engineers Collective">Apply for Membership</button>
+        </div>
+      </div>
+
+      <!-- Guild 6 -->
+      <div class="guild-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="mono-tag red">CROSS-REGION</span>
+            <span class="mono-tag gold">SCORE: 97</span>
+          </div>
+          <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">Pan-Indian Writers Syndicate</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            <strong>Bridge regional tongues:</strong> Screenwriters, dialog punch-up masters, and lyricists bridging Tamil, Telugu, Malayalam, Hindi, and Kannada without losing cultural soul.
+          </p>
+        </div>
+        <div>
+          <div class="guild-master-meta">
+            <img src="assets/img/editorial/claude-workshop-motif.jpg" alt="Master" class="guild-master-photo">
+            <div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Manoj Muntashir Board</div>
+              <div style="font-size: 0.75rem; color: var(--text-tertiary);">Regional Advisory</div>
+            </div>
+          </div>
+          <div class="guild-stats-row">
+            <span style="font-size: 0.82rem; color: var(--text-tertiary);">MEMBERS: <strong>230 Writers</strong></span>
+            <span style="font-size: 0.82rem; color: var(--color-teal);">VERIFIED VETTING</span>
+          </div>
+          <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Pan-Indian Writers Syndicate">Apply for Membership</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="logo-icon"></div>
+            <span>DIGISYNQ</span>
+          </div>
+          <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem;">
+            The nervous system of Indian entertainment. We own nothing. We enable everything. Don't waste anything. Everything has potential.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="platform.html">ABCDEF Pipeline</a></li>
+            <li><a href="nodes.html">Node Directory</a></li>
+            <li><a href="products.html">15 Modules</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ecosystem</h4>
+          <ul>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="guilds.html">Guilds</a></li>
+            <li><a href="about.html#values">Core Manifesto</a></li>
+            <li><a href="platform.html#escrow">Escrow Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Join the Network</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+            Activate your node ID and begin syncing.
+          </p>
+          <a href="index.html#join" class="btn btn-primary btn-sm">Join the Pipeline</a>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 DIGISYNQ NETWORKS. Waste less. Sync more.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: GUILD APPLICATION ================= -->
+  <div class="modal-overlay" id="guild-modal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn">&times;</button>
+      <div class="mono-tag gold" style="margin-bottom: 12px;">GUILD ADMISSION PROTOCOL</div>
+      <h2 id="modal-guild-name" style="font-size: 1.8rem; margin-bottom: 8px; color: #fff;">Guild Title</h2>
+      <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px;">
+        Guild members receive rate floor protection, mutual emergency relief access, and priority cross-language match routing.
+      </p>
+
+      <div class="form-group">
+        <label class="form-label" for="guild-applicant-name">Applicant Name</label>
+        <input type="text" id="guild-applicant-name" class="form-input" placeholder="Your Name" value="Siddharth Rao">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="guild-imdb">IMDb / Verified Portfolio Link</label>
+        <input type="url" id="guild-imdb" class="form-input" placeholder="https://imdb.com/name/..." value="https://imdb.com/name/nm849201">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="guild-sponsor">Vouching Peer / Sponsor Node ID (Optional)</label>
+        <input type="text" id="guild-sponsor" class="form-input" placeholder="e.g. NODE-MUM-8492">
+      </div>
+
+      <button class="btn btn-gold btn-lg" id="guild-submit-btn" style="width: 100%; margin-top: 10px;">
+        Submit Application for Peer Review &rarr;
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/sound-engine.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js?v=2.1"></script>
+  <script>
+    const gModal = document.getElementById('guild-modal');
+    const gTitle = document.getElementById('modal-guild-name');
+    const gClose = gModal.querySelector('.modal-close-btn');
+
+    document.querySelectorAll('.apply-guild-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        gTitle.textContent = btn.getAttribute('data-guild');
+        gModal.classList.add('active');
+        if (window.DigisynqAudio) window.DigisynqAudio.playChime();
+      });
+    });
+
+    gClose.addEventListener('click', () => gModal.classList.remove('active'));
+    gModal.addEventListener('click', (e) => {
+      if (e.target === gModal) gModal.classList.remove('active');
+    });
+
+    document.getElementById('guild-submit-btn').addEventListener('click', () => {
+      alert("Application received! The Guild Masters Council will review your credits and peer recommendations within 48 hours.");
+      gModal.classList.remove('active');
+    });
+  </script>
+  <!-- Fullscreen 10-Node Dial Pad Overlay Drawer -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
+    <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
+    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;">
+      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>
+      THE COORDINATION LAYER FOR ENTERTAINMENT
+    </div>
+    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
+    <div class="node-dialpad-container" style="max-width:980px;">
+      <div class="node-dialpad-grid">
+        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Home (HotKey: 1)"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
+        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem (HotKey: 2)"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
+        <a href="node-03.html" class="node-key-item" aria-label="Node 03: How It Works (HotKey: 3)"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
+        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Solutions (HotKey: 4)"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
+        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
+        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
+        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
+        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
+        <a href="node-09.html" class="node-key-item" aria-label="Node 09: About (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
+        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/telemetry-canvas.js"></script>
+</body>
+</html>

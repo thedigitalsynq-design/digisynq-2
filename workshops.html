@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masterclass Workshops — DIGISYNQ</title>
+  <meta name="description" content="Master craft, survival, and modern cinema technology with industry veterans. Interactive workshops in Virtual Production, Showrunning, and Film Escrow Law.">
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <style>
+    .workshop-filters-bar {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-select-group {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .workshop-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-smooth);
+    }
+    .workshop-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-primary-light);
+      box-shadow: 0 12px 36px var(--color-primary-glow);
+    }
+    .workshop-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .workshop-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .instructor-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 0;
+    }
+    .instructor-photo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--color-teal);
+    }
+    @media (max-width: 1024px) {
+      .workshop-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .workshop-grid { grid-template-columns: 1fr; }
+      .workshop-filters-bar { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Atmospheric Ambient Glow Orbs -->
+  <div class="ambient-glow-orb ambient-orb-purple"></div>
+  <div class="ambient-glow-orb ambient-orb-teal"></div>
+  <div class="ambient-glow-orb ambient-orb-gold"></div>
+
+    <!-- Master Fixed Top Navbar -->
+  <header class="site-navbar" role="banner">
+    <div class="site-navbar-inner">
+      <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+        <div class="site-brand-glyph" aria-hidden="true">DS</div>
+        <span>DIGISYNQ</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        
+        <ul class="site-nav-pills">
+          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
+          <li><a href="node-01.html" class="site-nav-pill-link">10 Nodes</a></li>
+          <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
+          <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
+          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
+          <li><a href="workshops.html" class="site-nav-pill-link active">Workshops</a></li>
+          <li><a href="pricing.html" class="site-nav-pill-link">Pricing</a></li>
+          <li><a href="about.html" class="site-nav-pill-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-nav-actions">
+        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory haptic audio">
+          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
+          <span>AUDIO: ON</span>
+        </button>
+        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node dialpad">
+          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
+          <span>KEYPAD [K]</span>
+        </button>
+        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          START A SYNQ &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Vertical Edge Badge -->
+  <div class="edge-badge-vertical" aria-hidden="true">
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> THE COORDINATION LAYER BEHIND ENTERTAINMENT &bull; 10 NODES</span>
+  </div>
+
+  <!-- ================= WORKSHOPS HERO ================= -->
+  <section style="padding: 160px 0 40px; position: relative; background: radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.08) 0%, #090A0C 80%);">
+    <div class="container" style="text-align: center; max-width: 900px;">
+      <div class="mono-tag purple" style="margin-bottom: 20px;">KNOWLEDGE SYNCHRONIZATION // CINEMA WAR ROOMS</div>
+      <h1 style="margin-bottom: 24px;">WAR ROOMS, NOT LECTURES</h1>
+      <p class="lead" style="max-width: 760px; margin: 0 auto 20px;">
+        Film schools teach theory from 1995. Digisynq Workshops are high-intensity production simulations run by working masters. Learn Unreal volumes, episodic showrunner bibles, and dispute-proof film escrow — then step directly onto greenlit call sheets.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= WORKSHOPS DIRECTORY WITH LIVE FILTERS ================= -->
+  <section class="container">
+    <div class="workshop-filters-bar">
+      <div class="filter-select-group">
+        <label style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-tertiary);">CATEGORY:</label>
+        <select id="filter-category" class="form-select" style="width: auto; padding: 6px 12px; font-size: 0.88rem;">
+          <option value="all">All Categories</option>
+          <option value="Skill">Skill &amp; Craft</option>
+          <option value="Business">Business &amp; Law</option>
+          <option value="Platform">Platform &amp; Escrow</option>
+          <option value="Trend">Trends &amp; Virtual Prod</option>
+        </select>
+
+        <label style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-tertiary); margin-left: 10px;">FORMAT:</label>
+        <select id="filter-format" class="form-select" style="width: auto; padding: 6px 12px; font-size: 0.88rem;">
+          <option value="all">All Formats</option>
+          <option value="Virtual">Virtual Live</option>
+          <option value="In-person">In-Person (Studio)</option>
+          <option value="Hybrid">Hybrid</option>
+        </select>
+
+        <label style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-tertiary); margin-left: 10px;">LEVEL:</label>
+        <select id="filter-level" class="form-select" style="width: auto; padding: 6px 12px; font-size: 0.88rem;">
+          <option value="all">All Levels</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced / Master</option>
+        </select>
+      </div>
+
+      <div style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--color-teal);" id="results-count">
+        6 MASTERCLASSES SCHEDULED
+      </div>
+    </div>
+
+    <!-- Workshop Cards Grid -->
+    <div class="workshop-grid" id="workshop-cards">
+
+      <!-- 1 -->
+      <div class="workshop-card" data-category="Trend" data-format="In-person" data-level="Advanced">
+        <img src="assets/img/editorial/claude-stage-motif.jpg" alt="Virtual Production Masterclass" class="workshop-img">
+        <div class="workshop-body">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+              <span class="mono-tag teal">TREND &amp; TECH</span>
+              <span class="mono-tag" style="color: #fff;">In-Person • Mumbai</span>
+            </div>
+            <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Unreal Engine &amp; Virtual Production for DOPs</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+              <strong>Master in-camera VFX:</strong> Real-time camera tracking, parallax calibration, and dynamic environment lighting on active LED soundstages.
+            </p>
+          </div>
+          <div>
+            <div class="instructor-row">
+              <img src="assets/img/avatar-3d.jpg" alt="Rohan Verma" class="instructor-photo">
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 600; color: #fff;">Rohan Verma</div>
+                <div style="font-size: 0.78rem; color: var(--text-tertiary);">Virtual Production Supervisor (Red Chillies VFX)</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-tertiary);">DURATION: 2 DAYS</div>
+                <div style="font-family: var(--font-headline); font-weight: 700; color: var(--color-gold); font-size: 1.15rem;">₹4,999 <span style="font-size: 0.75rem; color: var(--text-tertiary); font-weight: normal;">(Free for Premium)</span></div>
+              </div>
+              <button class="btn btn-primary btn-sm register-btn" data-workshop="Unreal Engine &amp; Virtual Production for DOPs">Reserve Seat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="workshop-card" data-category="Business" data-format="Virtual" data-level="Intermediate">
+        <img src="assets/img/editorial/escrow-contract-motif.jpg" alt="Entertainment Law" class="workshop-img">
+        <div class="workshop-body">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+              <span class="mono-tag gold">BUSINESS &amp; LAW</span>
+              <span class="mono-tag" style="color: #fff;">Virtual Live</span>
+            </div>
+            <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Entertainment Escrow &amp; IP Ownership Law</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+              <strong>Lock the terms before action:</strong> Structure airtight milestone contracts, protect script treatments from theft, and enforce rapid dispute recovery under Indian law.
+            </p>
+          </div>
+          <div>
+            <div class="instructor-row">
+              <img src="assets/img/avatar-user.jpg" alt="Adv. Priya Nambiar" class="instructor-photo">
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 600; color: #fff;">Adv. Priya Nambiar</div>
+                <div style="font-size: 0.78rem; color: var(--text-tertiary);">Senior Entertainment Counsel (High Court of Bombay)</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-tertiary);">DURATION: 4 HOURS</div>
+                <div style="font-family: var(--font-headline); font-weight: 700; color: var(--color-gold); font-size: 1.15rem;">₹1,999</div>
+              </div>
+              <button class="btn btn-primary btn-sm register-btn" data-workshop="Entertainment Escrow &amp; IP Ownership Law">Reserve Seat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="workshop-card" data-category="Skill" data-format="Virtual" data-level="Advanced">
+        <img src="assets/img/editorial/claude-screenplay-motif.jpg" alt="Showrunning Masterclass" class="workshop-img">
+        <div class="workshop-body">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+              <span class="mono-tag purple">SKILL &amp; CRAFT</span>
+              <span class="mono-tag" style="color: #fff;">Virtual Live</span>
+            </div>
+            <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 8px;">The Multi-Season Writers Room &amp; Showrunning</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+              <strong>Deliver streaming-ready bibles:</strong> Design pilot bibles, character arcs, episode beat sheets, and pitch packages demanded by OTT buyers.
+            </p>
+          </div>
+          <div>
+            <div class="instructor-row">
+              <img src="assets/img/editorial/claude-workshop-motif.jpg" alt="Sumit Arora" class="instructor-photo">
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 600; color: #fff;">Sumit Arora</div>
+                <div style="font-size: 0.78rem; color: var(--text-tertiary);">Screenwriter &amp; Showrunner (The Family Man series)</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-tertiary);">DURATION: 3 SESSIONS</div>
+                <div style="font-family: var(--font-headline); font-weight: 700; color: var(--color-gold); font-size: 1.15rem;">₹3,499</div>
+              </div>
+              <button class="btn btn-primary btn-sm register-btn" data-workshop="The Multi-Season Writers Room &amp; Showrunning">Reserve Seat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="workshop-card" data-category="Platform" data-format="Hybrid" data-level="Intermediate">
+        <img src="assets/img/editorial/radar-defense-motif.jpg" alt="Cinema Damage Control Intensive" class="workshop-img">
+        <div class="workshop-body">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+              <span class="mono-tag red">CRISIS PROTOCOL</span>
+              <span class="mono-tag" style="color: #fff;">Hybrid • Hyderabad</span>
+            </div>
+            <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Cinema Damage Control: Emergency Shoot Rescue</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+              <strong>Rescue shoots in crisis:</strong> Fast-track triage simulation covering sudden HOD replacement, gear failure mitigations, and union strike arbitration.
+            </p>
+          </div>
+          <div>
+            <div class="instructor-row">
+              <img src="assets/img/avatar-3d.jpg" alt="K. R. Venkat" class="instructor-photo">
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 600; color: #fff;">K. R. Venkat</div>
+                <div style="font-size: 0.78rem; color: var(--text-tertiary);">Veteran Line Producer (50+ South Feature Films)</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-tertiary);">DURATION: 1 DAY</div>
+                <div style="font-family: var(--font-headline); font-weight: 700; color: var(--color-gold); font-size: 1.15rem;">₹2,499</div>
+              </div>
+              <button class="btn btn-primary btn-sm register-btn" data-workshop="Cinema Damage Control: Emergency Shoot Rescue">Reserve Seat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="workshop-card" data-category="Business" data-format="Virtual" data-level="Advanced">
+        <img src="assets/img/editorial/claude-distribution-motif.jpg" alt="Pan-Indian Co-Production" class="workshop-img">
+        <div class="workshop-body">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+              <span class="mono-tag gold">PAN-INDIAN CO-PROD</span>
+              <span class="mono-tag" style="color: #fff;">Virtual Live</span>
+            </div>
+            <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Pan-Indian Co-Productions &amp; Dubbing Economics</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+              <strong>Bridge regional territories:</strong> Package South-North co-productions with syndicated theatrical rights, satellite pre-sales, and OTT minimum guarantees.
+            </p>
+          </div>
+          <div>
+            <div class="instructor-row">
+              <img src="assets/img/avatar-user.jpg" alt="Balaji Mohan" class="instructor-photo">
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 600; color: #fff;">Balaji Mohan</div>
+                <div style="font-size: 0.78rem; color: var(--text-tertiary);">International Film Distributor &amp; Executive Producer</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-tertiary);">DURATION: 4 HOURS</div>
+                <div style="font-family: var(--font-headline); font-weight: 700; color: var(--color-gold); font-size: 1.15rem;">₹2,999</div>
+              </div>
+              <button class="btn btn-primary btn-sm register-btn" data-workshop="Pan-Indian Co-Productions &amp; Dubbing Economics">Reserve Seat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="workshop-card" data-category="Skill" data-format="In-person" data-level="Advanced">
+        <img src="assets/img/editorial/claude-lab-motif.jpg" alt="Dolby Atmos Mastery" class="workshop-img">
+        <div class="workshop-body">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+              <span class="mono-tag purple">AUDIO CRAFT</span>
+              <span class="mono-tag" style="color: #fff;">In-Person • Chennai</span>
+            </div>
+            <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 8px;">Dolby Atmos 7.1.4 Theatrical Sound Design</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+              <strong>Sculpt spatial soundscapes:</strong> Spatial object panning, dynamic stem delivery for streaming specs, and theatrical sub-bass calibration.
+            </p>
+          </div>
+          <div>
+            <div class="instructor-row">
+              <img src="assets/img/avatar-3d.jpg" alt="Resul Pookutty Studio Head" class="instructor-photo">
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 600; color: #fff;">S. Saravanan (CAS)</div>
+                <div style="font-size: 0.78rem; color: var(--text-tertiary);">Chief Re-Recording Sound Engineer</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-tertiary);">DURATION: 2 DAYS</div>
+                <div style="font-family: var(--font-headline); font-weight: 700; color: var(--color-gold); font-size: 1.15rem;">₹5,499</div>
+              </div>
+              <button class="btn btn-primary btn-sm register-btn" data-workshop="Dolby Atmos 7.1.4 Theatrical Sound Design">Reserve Seat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="logo-icon"></div>
+            <span>DIGISYNQ</span>
+          </div>
+          <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem;">
+            The nervous system of Indian entertainment. We own nothing. We enable everything. Don't waste anything. Everything has potential.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="platform.html">ABCDEF Pipeline</a></li>
+            <li><a href="nodes.html">Node Directory</a></li>
+            <li><a href="products.html">15 Modules</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ecosystem</h4>
+          <ul>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="guilds.html">Guilds</a></li>
+            <li><a href="about.html#values">Core Manifesto</a></li>
+            <li><a href="platform.html#escrow">Escrow Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Join the Network</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+            Activate your node ID and begin syncing.
+          </p>
+          <a href="index.html#join" class="btn btn-primary btn-sm">Join the Pipeline</a>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 DIGISYNQ NETWORKS. Waste less. Sync more.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: WORKSHOP REGISTRATION ================= -->
+  <div class="modal-overlay" id="workshop-modal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn">&times;</button>
+      <div class="mono-tag purple" style="margin-bottom: 12px;">SEAT RESERVATION</div>
+      <h2 id="modal-ws-title" style="font-size: 1.8rem; margin-bottom: 8px; color: #fff;">Workshop Title</h2>
+      <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px;">
+        Confirmed attendees receive direct recruitment access to verified production heads and Guild credit points.
+      </p>
+
+      <div class="form-group">
+        <label class="form-label" for="ws-name">Full Name</label>
+        <input type="text" id="ws-name" class="form-input" placeholder="Your Name" value="Ritu Sen">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ws-email">Email Address</label>
+        <input type="email" id="ws-email" class="form-input" placeholder="you@production.com" value="ritu@cinema.in">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ws-node-id">Existing Digisynq Node ID (Optional)</label>
+        <input type="text" id="ws-node-id" class="form-input" placeholder="e.g. NODE-MUM-4819">
+      </div>
+
+      <button class="btn btn-gold btn-lg" id="ws-confirm-btn" style="width: 100%; margin-top: 10px;">
+        Confirm Seat & Unlock Syllabus &rarr;
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/sound-engine.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js?v=2.1"></script>
+  <script>
+    // Live Multi-Facet Filtering
+    const catSelect = document.getElementById('filter-category');
+    const formatSelect = document.getElementById('filter-format');
+    const levelSelect = document.getElementById('filter-level');
+    const cards = document.querySelectorAll('.workshop-card');
+    const countDisplay = document.getElementById('results-count');
+
+    function applyFilters() {
+      const cat = catSelect.value;
+      const fmt = formatSelect.value;
+      const lvl = levelSelect.value;
+      let visible = 0;
+
+      cards.forEach(card => {
+        const matchesCat = (cat === 'all' || card.getAttribute('data-category') === cat);
+        const matchesFmt = (fmt === 'all' || card.getAttribute('data-format') === fmt);
+        const matchesLvl = (lvl === 'all' || card.getAttribute('data-level') === lvl);
+
+        if (matchesCat && matchesFmt && matchesLvl) {
+          card.style.display = 'flex';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      countDisplay.textContent = `${visible} MASTERCLASSES AVAILABLE`;
+    }
+
+    [catSelect, formatSelect, levelSelect].forEach(s => s.addEventListener('change', applyFilters));
+
+    // Registration Modal
+    const wsModal = document.getElementById('workshop-modal');
+    const wsTitle = document.getElementById('modal-ws-title');
+    const wsClose = wsModal.querySelector('.modal-close-btn');
+
+    document.querySelectorAll('.register-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        wsTitle.textContent = btn.getAttribute('data-workshop');
+        wsModal.classList.add('active');
+        if (window.DigisynqAudio) window.DigisynqAudio.playChime();
+      });
+    });
+
+    wsClose.addEventListener('click', () => wsModal.classList.remove('active'));
+    wsModal.addEventListener('click', (e) => {
+      if (e.target === wsModal) wsModal.classList.remove('active');
+    });
+
+    document.getElementById('ws-confirm-btn').addEventListener('click', () => {
+      alert("Seat reserved! Course materials and video access links have been routed to your email.");
+      wsModal.classList.remove('active');
+    });
+  </script>
+  <!-- Fullscreen 10-Node Dial Pad Overlay Drawer -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
+    <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
+    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;">
+      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>
+      THE COORDINATION LAYER FOR ENTERTAINMENT
+    </div>
+    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
+    <div class="node-dialpad-container" style="max-width:980px;">
+      <div class="node-dialpad-grid">
+        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Home (HotKey: 1)"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
+        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem (HotKey: 2)"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
+        <a href="node-03.html" class="node-key-item" aria-label="Node 03: How It Works (HotKey: 3)"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
+        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Solutions (HotKey: 4)"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
+        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
+        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
+        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
+        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
+        <a href="node-09.html" class="node-key-item" aria-label="Node 09: About (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
+        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/telemetry-canvas.js"></script>
+</body>
+</html>

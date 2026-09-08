@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <rect width="300" height="300" fill="#0a0a0a"/>
+  <!-- Cream card/poster shape -->
+  <rect x="90" y="30" width="120" height="155" rx="12" fill="#f0e8d4"/>
+  <!-- Monkey head (simplified) -->
+  <ellipse cx="150" cy="95" rx="38" ry="36" fill="#1a1a1a"/>
+  <!-- Ears -->
+  <ellipse cx="113" cy="95" rx="13" ry="11" fill="#1a1a1a"/>
+  <ellipse cx="113" cy="95" rx="8" ry="7" fill="#3a2a2a"/>
+  <ellipse cx="187" cy="95" rx="13" ry="11" fill="#1a1a1a"/>
+  <ellipse cx="187" cy="95" rx="8" ry="7" fill="#3a2a2a"/>
+  <!-- Hair spikes -->
+  <path d="M132 62 L136 48 L142 62" fill="#1a1a1a"/>
+  <path d="M148 58 L152 44 L158 58" fill="#1a1a1a"/>
+  <path d="M162 62 L168 50 L172 64" fill="#1a1a1a"/>
+  <!-- Sunglasses -->
+  <rect x="127" y="87" width="22" height="13" rx="4" fill="#111"/>
+  <rect x="152" y="87" width="22" height="13" rx="4" fill="#111"/>
+  <line x1="149" y1="93" x2="152" y2="93" stroke="#555" stroke-width="2"/>
+  <!-- Snout / smile -->
+  <ellipse cx="150" cy="111" rx="16" ry="11" fill="#8B6355"/>
+  <path d="M140 112 Q150 122 160 112" fill="#cc4444" stroke="none"/>
+  <!-- Body -->
+  <rect x="120" y="130" width="60" height="55" rx="8" fill="#1a1a1a"/>
+  <!-- Megaphone -->
+  <path d="M175 105 L195 92 L195 132 L175 120 Z" fill="#f0e8d4"/>
+  <rect x="165" y="108" width="14" height="10" rx="2" fill="#f0e8d4"/>
+  <!-- Sound lines -->
+  <path d="M200 100 Q206 112 200 124" stroke="#f0e8d4" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M204 96 Q212 112 204 128" stroke="#f0e8d4" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <!-- Text -->
+  <text x="150" y="212" font-family="'Arial Black', sans-serif" font-size="22" font-weight="900" text-anchor="middle" fill="#1a1a1a" letter-spacing="1">CINEMA</text>
+  <text x="150" y="240" font-family="'Arial Black', sans-serif" font-size="22" font-weight="900" text-anchor="middle" fill="#1a1a1a" letter-spacing="1">COMMONS</text>
+</svg>

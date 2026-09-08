@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platform Architecture — DIGISYNQ | The ABCDEF Pipeline</title>
+  <meta name="description" content="Discover the ABCDEF Pipeline, 9 Node Archetypes, Trust Score Ranking, and Milestone Escrow Infrastructure powering Indian entertainment.">
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <style>
+    /* Zigzag Alternating Pipeline Stages */
+    .zigzag-stage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 70px 0;
+      position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .zigzag-stage:last-child {
+      border-bottom: none;
+    }
+    .zigzag-stage.reverse {
+      direction: rtl;
+    }
+    .zigzag-stage.reverse > * {
+      direction: ltr;
+    }
+    .watermark-letter {
+      position: absolute;
+      top: 10px;
+      font-family: var(--font-headline);
+      font-size: 14rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.025);
+      line-height: 0.8;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .zigzag-stage:not(.reverse) .watermark-letter { left: -20px; }
+    .zigzag-stage.reverse .watermark-letter { right: -20px; }
+
+    .stage-content-box {
+      position: relative;
+      z-index: 2;
+    }
+    .stage-visual-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      position: relative;
+      z-index: 2;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .stage-visual-box img {
+      border-radius: var(--radius-md);
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    /* Node Types Bento Grid */
+    .node-types-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+    .node-types-grid .card {
+      grid-column: span 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .node-types-grid .bento-span-8 {
+      grid-column: span 8;
+      background: radial-gradient(circle at 85% 20%, rgba(0, 255, 102, 0.08) 0%, #121316 65%);
+      border-color: rgba(0, 255, 102, 0.35);
+    }
+    .node-types-grid .bento-span-6 {
+      grid-column: span 6;
+    }
+    .node-types-grid .bento-span-4 {
+      grid-column: span 4;
+    }
+    @media (max-width: 1024px) {
+      .node-types-grid .card,
+      .node-types-grid .bento-span-8,
+      .node-types-grid .bento-span-6,
+      .node-types-grid .bento-span-4 {
+        grid-column: span 12 !important;
+      }
+    }
+
+    /* Trust & Ranking Gauge */
+    .trust-split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+      margin-top: 60px;
+    }
+    .gauge-wrapper {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gauge-svg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+    }
+    .gauge-bg {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.08);
+      stroke-width: 14;
+    }
+    .gauge-progress {
+      fill: none;
+      stroke: url(#gauge-grad);
+      stroke-width: 14;
+      stroke-dasharray: 565;
+      stroke-dashoffset: 85; /* 85% */
+      stroke-linecap: round;
+      transition: stroke-dashoffset 2s ease;
+    }
+    .gauge-text {
+      position: absolute;
+      text-align: center;
+    }
+
+    /* Escrow 4-step flow */
+    .escrow-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+      position: relative;
+    }
+    .escrow-flow-grid::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, #00FF66 0%, #00D4AA 100%);
+      opacity: 0.4;
+      z-index: 1;
+    }
+    .escrow-step-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      transition: transform var(--transition-smooth);
+    }
+    .escrow-step-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--color-teal);
+    }
+    .escrow-step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-base);
+      border: 2px solid var(--color-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--color-teal);
+      box-shadow: 0 0 16px var(--color-teal-glow);
+    }
+
+    @media (max-width: 1024px) {
+      .node-types-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-split-grid { grid-template-columns: 1fr; }
+      .escrow-flow-grid { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+      .escrow-flow-grid::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .zigzag-stage, .zigzag-stage.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        padding: 40px 0;
+      }
+      .node-types-grid { grid-template-columns: 1fr; }
+      .escrow-flow-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Atmospheric Ambient Glow Orbs -->
+  <div class="ambient-glow-orb ambient-orb-purple"></div>
+  <div class="ambient-glow-orb ambient-orb-teal"></div>
+  <div class="ambient-glow-orb ambient-orb-gold"></div>
+
+    <!-- Master Fixed Top Navbar -->
+  <header class="site-navbar" role="banner">
+    <div class="site-navbar-inner">
+      <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+        <div class="site-brand-glyph" aria-hidden="true">DS</div>
+        <span>DIGISYNQ</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        
+        <ul class="site-nav-pills">
+          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
+          <li><a href="node-01.html" class="site-nav-pill-link">10 Nodes</a></li>
+          <li><a href="platform.html" class="site-nav-pill-link active">Platform</a></li>
+          <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
+          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
+          <li><a href="workshops.html" class="site-nav-pill-link">Workshops</a></li>
+          <li><a href="pricing.html" class="site-nav-pill-link">Pricing</a></li>
+          <li><a href="about.html" class="site-nav-pill-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-nav-actions">
+        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory haptic audio">
+          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
+          <span>AUDIO: ON</span>
+        </button>
+        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node dialpad">
+          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
+          <span>KEYPAD [K]</span>
+        </button>
+        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          START A SYNQ &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Vertical Edge Badge -->
+  <div class="edge-badge-vertical" aria-hidden="true">
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> THE COORDINATION LAYER BEHIND ENTERTAINMENT &bull; 10 NODES</span>
+  </div>
+
+  <!-- ================= PLATFORM HERO ================= -->
+  <section style="padding: 160px 0 80px; position: relative; background: radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.08) 0%, #090A0C 80%);">
+    <div class="container" style="text-align: center; max-width: 900px;">
+      <div class="mono-tag teal" style="margin-bottom: 20px;">TECHNICAL ARCHITECTURE // OPERATING OS</div>
+      <h1 style="margin-bottom: 24px;">THE CINEMA NERVOUS SYSTEM</h1>
+      <p class="lead" style="max-width: 760px; margin: 0 auto 30px;">
+        Stop flying blind on gut feel. Digisynq connects creative intelligence, locks production cash flow in escrow, and cuts idle waste across the entire Indian entertainment pipeline.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 1: ABCDEF PIPELINE DETAIL (ZIGZAG) ================= -->
+  <section class="container" style="padding: 40px 0 100px;" id="pipeline">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 60px;">
+      <div class="mono-tag purple" style="margin-bottom: 12px;">SYSTEMIC FLOW</div>
+      <h2>The ABCDEF Pipeline Deep Dive</h2>
+      <p style="color: var(--text-secondary);">Six sequential, automated layers turning industry friction into high-velocity output.</p>
+    </div>
+
+    <!-- STAGE A -->
+    <div class="zigzag-stage">
+      <div class="watermark-letter">A</div>
+      <div class="stage-content-box">
+        <span class="mono-tag purple" style="margin-bottom: 16px;">STAGE A — INGESTION &amp; DISCOVERY</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px; color: #fff;">Attract &bull; Pull Talent Off the Bench</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+          Every idle camera body, unproduced screenplay, and unbooked technician is dead weight. Stage A catalogs, verifies, and activates dormant cinema assets with tamper-proof proof-of-work badges.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-primary-light);">✓</span> <strong>Verify identity &amp; credentials:</strong> Guild-backed checks weed out inflated filmographies.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-primary-light);">✓</span> <strong>Index micro-specialties:</strong> Precise tagging across anamorphic glass, Steadicam rigs, Unreal volumes, and Atmos mixing.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-primary-light);">✓</span> <strong>Issue starting Trust Badges:</strong> Algorithmic reputation baselines calibrated before the first call sheet.
+          </li>
+        </ul>
+      </div>
+      <div class="stage-visual-box">
+        <img src="assets/img/editorial/claude-hands-motif.jpg" alt="Attract Motif">
+      </div>
+    </div>
+
+    <!-- STAGE B -->
+    <div class="zigzag-stage reverse">
+      <div class="watermark-letter">B</div>
+      <div class="stage-content-box">
+        <span class="mono-tag teal" style="margin-bottom: 16px;">STAGE B — MATCH ENGINE</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px; color: #fff;">Bridge &bull; Cut Middlemen &amp; Red Tape</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+          Language borders and regional silos kill momentum. Stage B directly pairs Tamil cinematographers with Hindi shows, matches idle ARRI rigs with indie shoots, and dispatches emergency HOD crews in under 3 hours.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-teal);">✓</span> <strong>Break regional silos:</strong> Connect Southern technical mastery directly with Northern production slates.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-teal);">✓</span> <strong>Activate idle gear radar:</strong> Sub-lease dormant anamorphic lenses and camera packages at insider day-rates.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-teal);">✓</span> <strong>Dispatch strike teams:</strong> 24-hr emergency replacement for missing DOPs, sound recordists, or gaffers.
+          </li>
+        </ul>
+      </div>
+      <div class="stage-visual-box">
+        <img src="assets/img/editorial/claude-radar-motif.jpg" alt="Bridge Match Radar">
+      </div>
+    </div>
+
+    <!-- STAGE C -->
+    <div class="zigzag-stage">
+      <div class="watermark-letter">C</div>
+      <div class="stage-content-box">
+        <span class="mono-tag gold" style="margin-bottom: 16px;">STAGE C — COMMITMENT &amp; LAW</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px; color: #fff;">Contract &bull; Lock the Terms Before Action</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+          Verbal handshakes lead to courtroom battles. Stage C issues plain-English, legally binding smart contracts with explicit delivery milestones, clear IP ownership, and zero room for creative disputes.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-gold);">✓</span> <strong>Issue plain-English contracts:</strong> Multilingual agreements with zero predatory fine print.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-gold);">✓</span> <strong>Tie payouts to milestones:</strong> Unambiguous deliverables defined before the camera rolls.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-gold);">✓</span> <strong>Timestamp digital sign-offs:</strong> Cryptographic audit trails protect creators against stolen treatments.
+          </li>
+        </ul>
+      </div>
+      <div class="stage-visual-box">
+        <img src="assets/img/editorial/escrow-contract-motif.jpg" alt="Contract Smart Legal">
+      </div>
+    </div>
+
+    <!-- STAGE D -->
+    <div class="zigzag-stage reverse">
+      <div class="watermark-letter">D</div>
+      <div class="stage-content-box">
+        <span class="mono-tag purple" style="margin-bottom: 16px;">STAGE D — PRODUCTION SYNCHRONIZATION</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px; color: #fff;">Deliver &bull; Stop Dark-Day Budget Bleed</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+          A single delayed call sheet burns lakhs in overtime. Stage D delivers live production telemetry — tracking call sheet muster, camera roll progress, and daily rushes turnover with automated sign-offs.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-primary-light);">✓</span> <strong>Sync live call sheets:</strong> Real-time attendance and wrap tracking prevents bogus overtime claims.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-primary-light);">✓</span> <strong>Kill shoot bottlenecks fast:</strong> Automated warning alerts before schedule slippages eat contingency funds.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-primary-light);">✓</span> <strong>Verify daily rushes:</strong> Cloud turnover portals confirm raw footage and audio sync before wrap.
+          </li>
+        </ul>
+      </div>
+      <div class="stage-visual-box">
+        <img src="assets/img/editorial/claude-camera-motif.jpg" alt="Production Deliver">
+      </div>
+    </div>
+
+    <!-- STAGE E -->
+    <div class="zigzag-stage">
+      <div class="watermark-letter">E</div>
+      <div class="stage-content-box">
+        <span class="mono-tag teal" style="margin-bottom: 16px;">STAGE E — ESCROW SETTLEMENT</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px; color: #fff;">Exchange &bull; Cash Follows Wrap, Not Promises</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+          Technicians should never have to chase production accountants for their paycheck. Advance capital locked in multi-signature escrow releases automatically to technicians upon verified milestone sign-off.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-teal);">✓</span> <strong>Lock budgets in advance:</strong> Multi-signature escrow holds production funds safe before gear leaves the truck.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-teal);">✓</span> <strong>Automate UPI &amp; NEFT payouts:</strong> Instant bank disbursements fire the instant milestone turnover is signed.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-teal);">✓</span> <strong>Fast-track neutral arbitration:</strong> Industry guild tribunals settle disputes within 48 hours, not years.
+          </li>
+        </ul>
+      </div>
+      <div class="stage-visual-box">
+        <img src="assets/img/editorial/claude-lock-motif.jpg" alt="Exchange Escrow">
+      </div>
+    </div>
+
+    <!-- STAGE F -->
+    <div class="zigzag-stage reverse">
+      <div class="watermark-letter">F</div>
+      <div class="stage-content-box">
+        <span class="mono-tag gold" style="margin-bottom: 16px;">STAGE F — REPUTATION &amp; GUILD RANK</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px; color: #fff;">Feedback &bull; Proof Over Nepotism</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+          No industry gossip. No favoritism. Every wrap generates two-way peer evaluations that feed the public Trust Score — elevating disciplined craftspeople from Bronze to Elite Platinum.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-gold);">✓</span> <strong>Grade real performance:</strong> Objective ratings on punctuality, craft precision, and set temperament.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-gold);">✓</span> <strong>Climb the rank ladder:</strong> Advance from Bronze to Platinum to unlock high-budget commercial priority.
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85);">
+            <span style="color: var(--color-gold);">✓</span> <strong>Earn guild master endorsements:</strong> Masterclass invitations and cross-language studio recommendations.
+          </li>
+        </ul>
+      </div>
+      <div class="stage-visual-box">
+        <img src="assets/img/editorial/claude-post-motif.jpg" alt="Feedback Reputation">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 2: 9 NODE ARCHETYPES ================= -->
+  <section class="container" style="padding: 60px 0 100px;" id="nodes">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+      <div class="mono-tag gold" style="margin-bottom: 12px;">ECOSYSTEM PERSONAS</div>
+      <h2>The 9 Core Node Archetypes</h2>
+      <p style="color: var(--text-secondary);">How every role in the Indian entertainment supply chain monetizes and syncs through Digisynq.</p>
+    </div>
+
+    <div class="node-types-grid">
+      <!-- 1. Creators (Bento Span 8 Flagship Node) -->
+      <div class="card card-glow-purple bento-span-8">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="card-icon purple">🎬</div>
+              <div>
+                <span class="mono-tag purple" style="margin-bottom:2px;">CREATIVE ARCHETYPE</span>
+                <h3 style="font-size: 1.45rem; margin: 0; color: #fff;">Creators &amp; Directors</h3>
+              </div>
+            </div>
+            <span class="mono-tag" style="color:#00FF66;border-color:rgba(0,255,102,0.3);"><span style="color:#00FF66;">●</span> 98% ON-TIME WRAP</span>
+          </div>
+          <p style="font-size: 0.95rem; line-height:1.65; color: var(--text-secondary); margin-bottom: 14px;">
+            <strong>Lead the set &bull; Deliver the vision:</strong> High-caliber storytellers and directors gain instant access to pre-cleared guild craft pods, 24/7 emergency replacement crew, and verified budget packaging with zero broker markups.
+          </p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;background:rgba(0,0,0,0.35);padding:12px 16px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);margin-bottom:14px;">
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.68rem;color:var(--text-tertiary);">COMMISSION SPEED</div>
+              <div style="font-size:1.15rem;font-weight:700;color:var(--accent-cyan);font-family:var(--font-mono);">3 WEEKS TO GREENLIGHT</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.68rem;color:var(--text-tertiary);">CREW RETENTION</div>
+              <div style="font-size:1.15rem;font-weight:700;color:#00FF66;font-family:var(--font-mono);">100% ESCROW BACKED</div>
+            </div>
+          </div>
+        </div>
+        <span class="mono-tag purple" style="align-self:flex-start;">Ecosystem Node 01 &bull; Creative Core</span>
+      </div>
+
+      <!-- 2. Financiers (Bento Span 4 Escrow Node) -->
+      <div class="card card-glow-purple bento-span-4">
+        <div>
+          <div class="card-icon purple">💰</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Financiers &amp; Family Offices</h3>
+          <p style="font-size: 0.88rem; color: var(--text-tertiary); margin-bottom: 8px;"><strong>Deploys:</strong> Bridge capital, minimum guarantee debt, equity co-production.</p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><strong>Receives:</strong> Milestone-locked escrow releases, live audited expenditure, and first-dollar recovery.</p>
+        </div>
+        <span class="mono-tag purple" style="align-self:flex-start;">Metric: 100% Escrow Guard</span>
+      </div>
+
+      <!-- 3. Technicians (Bento Span 4) -->
+      <div class="card card-glow-teal bento-span-4">
+        <div>
+          <div class="card-icon teal">🎥</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Technicians (DOP / Sound / Edit)</h3>
+          <p style="font-size: 0.88rem; color: var(--text-tertiary); margin-bottom: 8px;"><strong>Deploys:</strong> Specialized visual and auditory craft, optical rigging, acoustic tuning.</p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><strong>Receives:</strong> Zero dark-day downtime, idle gear monetization, and instant wrap escrow clearance.</p>
+        </div>
+        <span class="mono-tag teal" style="align-self:flex-start;">Metric: 0 Payment Delays</span>
+      </div>
+
+      <!-- 4. Producers (Bento Span 4) -->
+      <div class="card card-glow-red bento-span-4">
+        <div>
+          <div class="card-icon red">💼</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Producers &amp; Line Producers</h3>
+          <p style="font-size: 0.88rem; color: var(--text-tertiary); margin-bottom: 8px;"><strong>Deploys:</strong> Slate capital, budget management, production schedules, logistics.</p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><strong>Receives:</strong> 24-hr emergency crew dispatch, transparent rate cards, and 30%+ budget leak prevention.</p>
+        </div>
+        <span class="mono-tag red" style="align-self:flex-start;">Metric: 32% Waste Cut</span>
+      </div>
+
+      <!-- 5. Writers (Bento Span 4) -->
+      <div class="card card-glow-gold bento-span-4">
+        <div>
+          <div class="card-icon gold">✍️</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Writers &amp; Playwrights</h3>
+          <p style="font-size: 0.88rem; color: var(--text-tertiary); margin-bottom: 8px;"><strong>Deploys:</strong> High-concept screenplays, show bibles, dialog drafts, registered IP.</p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><strong>Receives:</strong> Script resurrection packaging, director attachments, and direct OTT commissioner meetings.</p>
+        </div>
+        <span class="mono-tag gold" style="align-self:flex-start;">Metric: 3-Week Option Rate</span>
+      </div>
+
+      <!-- 6. Venues & Soundstages (Bento Span 6) -->
+      <div class="card card-glow-red bento-span-6">
+        <div>
+          <div class="card-icon red">🏛️</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Venues &amp; Soundstages</h3>
+          <p style="font-size: 0.88rem; color: var(--text-tertiary); margin-bottom: 8px;"><strong>Deploys:</strong> Acoustically treated stages, heritage estates, corporate office floors, backlots.</p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><strong>Receives:</strong> Continuous weekday occupancy, ₹1Cr verified damage indemnity, and zero payment delays.</p>
+        </div>
+        <span class="mono-tag red" style="align-self:flex-start;">Metric: 85% Floor Utilization</span>
+      </div>
+
+      <!-- 7. Distributors & OTT (Bento Span 6) -->
+      <div class="card card-glow-gold bento-span-6">
+        <div>
+          <div class="card-icon gold">📡</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Distributors &amp; OTT Buyers</h3>
+          <p style="font-size: 0.88rem; color: var(--text-tertiary); margin-bottom: 8px;"><strong>Deploys:</strong> Theatrical screen networks, international territory distribution, streaming pipelines.</p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><strong>Receives:</strong> Clean chain-of-title films, pre-tested audience sentiment data, and turnkey localization.</p>
+        </div>
+        <span class="mono-tag gold" style="align-self:flex-start;">Metric: 99.4% Delivery Match</span>
+      </div>
+
+      <!-- 8. Brands & Advertisers (Bento Span 6) -->
+      <div class="card card-glow-teal bento-span-6">
+        <div>
+          <div class="card-icon teal">🏷️</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Brands &amp; Advertisers</h3>
+          <p style="font-size: 0.88rem; color: var(--text-tertiary); margin-bottom: 8px;"><strong>Deploys:</strong> Marketing sponsorships, product placement budgets, nationwide retail reach.</p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><strong>Receives:</strong> Direct screenplay integration without agent markups, multi-lingual creator strike teams.</p>
+        </div>
+        <span class="mono-tag teal" style="align-self:flex-start;">Metric: 4.8x ROI Over Ads</span>
+      </div>
+
+      <!-- 9. Digital Creators (Bento Span 6) -->
+      <div class="card card-glow-purple bento-span-6">
+        <div>
+          <div class="card-icon purple">📱</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Digital Creators &amp; Influencers</h3>
+          <p style="font-size: 0.88rem; color: var(--text-tertiary); margin-bottom: 8px;"><strong>Deploys:</strong> Grassroots cultural resonance, high organic engagement, regional fan loyalty.</p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><strong>Receives:</strong> Direct transition to feature casting and OST promos, 100% brand fee retention, escrow safety.</p>
+        </div>
+        <span class="mono-tag purple" style="align-self:flex-start;">Metric: 3.2M Reach Sync</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 3: TRUST & RANKING SYSTEM ================= -->
+  <section class="container" style="padding: 60px 0 100px;" id="ranking">
+    <div class="trust-split-grid">
+      <div>
+        <div class="mono-tag gold" style="margin-bottom: 16px;">REPUTATION PROTOCOL</div>
+        <h2 style="margin-bottom: 20px;">The Trust Score Engine: Proof Over Gossip</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
+          Entertainment has operated on rumors, favoritism, and broken promises for decades. Digisynq replaces gossip with algorithmic, peer-verified proof of performance. Your Trust Score is calculated from verified call-sheet punctuality, clean milestone wraps, and escrow fulfillment.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.85);">
+            <span class="mono-tag" style="color: #CD7F32; border-color: rgba(205,127,50,0.4);">BRONZE (0-50)</span>
+            <span><strong>Verified Identity:</strong> New nodes, verified government ID, initial guild check.</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.85);">
+            <span class="mono-tag" style="color: #C0C0C0; border-color: rgba(192,192,192,0.4);">SILVER (51-70)</span>
+            <span><strong>Proven Reliability:</strong> 3+ successfully closed escrow projects, zero default strikes.</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.85);">
+            <span class="mono-tag" style="color: #FFD700; border-color: rgba(255,215,0,0.4);">GOLD (71-89)</span>
+            <span><strong>Senior Craftsperson:</strong> Consistent high ratings, verified Cinema Damage Control dispatch status.</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.85);">
+            <span class="mono-tag" style="color: #E5E4E2; border-color: rgba(229,228,226,0.5);">PLATINUM (90-100)</span>
+            <span><strong>Elite Guild Master:</strong> Top 2% industry benchmark, automatic routing on marquee projects.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Ranking System Mockup -->
+      <div class="card-glass" style="padding: 40px; text-align: center;">
+        <div class="gauge-wrapper">
+          <svg class="gauge-svg" viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="gauge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00FF66" />
+                <stop offset="50%" stop-color="#00D4AA" />
+                <stop offset="100%" stop-color="#F5B840" />
+              </linearGradient>
+            </defs>
+            <circle class="gauge-bg" cx="100" cy="100" r="90"></circle>
+            <circle class="gauge-progress" cx="100" cy="100" r="90"></circle>
+          </svg>
+          <div class="gauge-text">
+            <div style="font-family: var(--font-headline); font-size: 3rem; font-weight: 800; color: #fff; line-height: 1;">85</div>
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-teal); text-transform: uppercase;">TRUST SCORE</div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+          <span class="mono-tag teal">✓ 24 ESCROWS COMPLETED</span>
+          <span class="mono-tag gold">★ GOLD RANK</span>
+          <span class="mono-tag purple">TAG: ARRI MASTER</span>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-tertiary); margin: 0;">
+          Node ID: <code style="color: #fff;">NODE-CHENNAI-4190</code> • Verified SICA Guild Member
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 4: ESCROW SECURITY FLOW ================= -->
+  <section class="container" style="padding: 60px 0 120px;" id="escrow">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 30px;">
+      <div class="mono-tag teal" style="margin-bottom: 12px;">SETTLEMENT GUARANTEE</div>
+      <h2>Milestone Escrow: 4-Step Settlement Flow</h2>
+      <p style="color: var(--text-secondary);">How Digisynq guarantees that technicians get paid instantly and producers receive verified delivery.</p>
+    </div>
+
+    <div class="escrow-flow-grid">
+      <!-- Step 1 -->
+      <div class="escrow-step-card">
+        <div class="escrow-step-num">01</div>
+        <h4 style="color: #fff; margin-bottom: 8px;">Lock the Vault</h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+          Producer deposits the verified budget tranche into an encrypted escrow vault before the first camera truck rolls.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="escrow-step-card">
+        <div class="escrow-step-num">02</div>
+        <h4 style="color: #fff; margin-bottom: 8px;">Roll Cameras</h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+          Crew, technicians, and gear houses deploy with complete confidence that capital is already locked in their name.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="escrow-step-card">
+        <div class="escrow-step-num">03</div>
+        <h4 style="color: #fff; margin-bottom: 8px;">Verify Delivery</h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+          1st AD and department heads sign off on completed call sheets, wrapped days, and verified rushes turnover.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="escrow-step-card">
+        <div class="escrow-step-num">04</div>
+        <h4 style="color: #fff; margin-bottom: 8px;">Instant Release</h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+          Funds clear automatically into technician bank accounts via UPI / NEFT with zero invoicing delays or corporate excuses.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="logo-icon"></div>
+            <span>DIGISYNQ</span>
+          </div>
+          <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem;">
+            The nervous system of Indian entertainment. We own nothing. We enable everything. Don't waste anything. Everything has potential.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="platform.html">ABCDEF Pipeline</a></li>
+            <li><a href="nodes.html">Node Directory</a></li>
+            <li><a href="products.html">15 Modules</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ecosystem</h4>
+          <ul>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="guilds.html">Guilds</a></li>
+            <li><a href="about.html#values">Core Manifesto</a></li>
+            <li><a href="#escrow">Escrow Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Join the Network</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+            Activate your node ID and begin syncing.
+          </p>
+          <a href="index.html#join" class="btn btn-primary btn-sm">Join the Pipeline</a>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 DIGISYNQ NETWORKS. Waste less. Sync more.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/sound-engine.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js?v=2.1"></script>
+  <!-- Fullscreen 10-Node Dial Pad Overlay Drawer -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
+    <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
+    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;">
+      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>
+      THE COORDINATION LAYER FOR ENTERTAINMENT
+    </div>
+    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
+    <div class="node-dialpad-container" style="max-width:980px;">
+      <div class="node-dialpad-grid">
+        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Home (HotKey: 1)"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
+        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem (HotKey: 2)"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
+        <a href="node-03.html" class="node-key-item" aria-label="Node 03: How It Works (HotKey: 3)"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
+        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Solutions (HotKey: 4)"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
+        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
+        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
+        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
+        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
+        <a href="node-09.html" class="node-key-item" aria-label="Node 09: About (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
+        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/telemetry-canvas.js"></script>
+</body>
+</html>

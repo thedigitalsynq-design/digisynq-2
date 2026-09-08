@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node Directory & Selector — DIGISYNQ</title>
+  <meta name="description" content="Discover how Directors, Cinematographers, Producers, Screenwriters, Financiers, and Venues connect and unlock value through the Digisynq ecosystem.">
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <style>
+    .node-selector-bar {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 20px 0;
+      scrollbar-width: thin;
+      margin-bottom: 40px;
+    }
+    .node-tab {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      font-family: var(--font-headline);
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      flex-shrink: 0;
+    }
+    .node-tab:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .node-tab.active {
+      background: var(--grad-primary);
+      color: #fff;
+      border-color: #00D4AA;
+      box-shadow: 0 0 20px rgba(0, 212, 170, 0.4);
+    }
+    .node-dynamic-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 50px;
+      margin-bottom: 60px;
+    }
+    .node-detail-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .node-detail-grid {
+        grid-template-columns: 1fr;
+      }
+      .node-dynamic-panel {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Atmospheric Ambient Glow Orbs -->
+  <div class="ambient-glow-orb ambient-orb-purple"></div>
+  <div class="ambient-glow-orb ambient-orb-teal"></div>
+  <div class="ambient-glow-orb ambient-orb-gold"></div>
+
+    <!-- Master Fixed Top Navbar -->
+  <header class="site-navbar" role="banner">
+    <div class="site-navbar-inner">
+      <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+        <div class="site-brand-glyph" aria-hidden="true">DS</div>
+        <span>DIGISYNQ</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        
+        <ul class="site-nav-pills">
+          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
+          <li><a href="node-01.html" class="site-nav-pill-link active">10 Nodes</a></li>
+          <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
+          <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
+          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
+          <li><a href="workshops.html" class="site-nav-pill-link">Workshops</a></li>
+          <li><a href="pricing.html" class="site-nav-pill-link">Pricing</a></li>
+          <li><a href="about.html" class="site-nav-pill-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-nav-actions">
+        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory haptic audio">
+          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
+          <span>AUDIO: ON</span>
+        </button>
+        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node dialpad">
+          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
+          <span>KEYPAD [K]</span>
+        </button>
+        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          START A SYNQ &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Vertical Edge Badge -->
+  <div class="edge-badge-vertical" aria-hidden="true">
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> THE COORDINATION LAYER BEHIND ENTERTAINMENT &bull; 10 NODES</span>
+  </div>
+
+  <!-- ================= NODES HERO ================= -->
+  <section style="padding: 160px 0 40px; position: relative; background: radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.08) 0%, #090A0C 80%);">
+    <div class="container" style="text-align: center; max-width: 900px;">
+      <div class="mono-tag teal" style="margin-bottom: 20px;">PERSONA MATCHER // ENTERTAINMENT SWITCHBOARD</div>
+      <h1 style="margin-bottom: 24px;">PLUG IN YOUR SIGNAL. PICK YOUR NODE.</h1>
+      <p class="lead" style="max-width: 760px; margin: 0 auto 20px;">
+        Every cinema discipline has its own fatal bottlenecks — unreturned calls, dark-day budget bleed, or locked script vaults. Find your role below to see how Digisynq bridges the gap, protects your capital, and accelerates your pipeline.
+      </p>
+
+      <!-- Horizontal Scrollable Selector Tabs -->
+      <div class="node-selector-bar">
+        <button class="node-tab active" data-node="directors">🎬 Directors & Creators</button>
+        <button class="node-tab" data-node="cinematographers">🎥 Cinematographers & DOPs</button>
+        <button class="node-tab" data-node="producers">💼 Producers & Line Producers</button>
+        <button class="node-tab" data-node="writers">✍️ Screenwriters & Authors</button>
+        <button class="node-tab" data-node="financiers">💰 Financiers & Family Offices</button>
+        <button class="node-tab" data-node="brands">🏷️ Consumer Brands</button>
+        <button class="node-tab" data-node="venues">🏛️ Venues & Studios</button>
+        <button class="node-tab" data-node="distributors">📡 Distributors & OTT</button>
+        <button class="node-tab" data-node="influencers">📱 Digital Influencers</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DYNAMIC SELECTED NODE DISPLAY ================= -->
+  <section class="container">
+    <div class="node-dynamic-panel" id="node-dynamic-view">
+      <!-- Injected by JavaScript -->
+    </div>
+  </section>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="logo-icon"></div>
+            <span>DIGISYNQ</span>
+          </div>
+          <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem;">
+            The nervous system of Indian entertainment. We own nothing. We enable everything. Don't waste anything. Everything has potential.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="platform.html">ABCDEF Pipeline</a></li>
+            <li><a href="nodes.html">Node Directory</a></li>
+            <li><a href="products.html">15 Modules</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ecosystem</h4>
+          <ul>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="guilds.html">Guilds</a></li>
+            <li><a href="about.html#values">Core Manifesto</a></li>
+            <li><a href="platform.html#escrow">Escrow Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Join the Network</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+            Activate your node ID and begin syncing.
+          </p>
+          <a href="index.html#join" class="btn btn-primary btn-sm">Join the Pipeline</a>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 DIGISYNQ NETWORKS. Waste less. Sync more.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/sound-engine.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js?v=2.1"></script>
+  <script>
+    const nodeProfiles = {
+      directors: {
+        title: 'Directors & Showrunners',
+        icon: '🎬',
+        tag: 'VISIONARY LEADERSHIP NODE',
+        accent: '#00FF66',
+        offer: 'Visual storytelling, narrative pacing, talent direction, and episodic worldbuilding.',
+        gets: [
+          'Call up strike crews in under 3 hours: Replace missing HODs instantly through Cinema Damage Control.',
+          'Unlock premier shooting stages: Lock in pre-cleared exotic locations and virtual LED volumes at insider day-rates.',
+          'Cut agent friction: Discover and audition pan-Indian breakout talent with verified credentials.',
+          'Automate script telemetry: Instant digital scene breakdown, day-out-of-days, and coverage analytics.'
+        ],
+        modules: ['Cinema Damage Control', 'Venue Sync', 'Crew Sync', 'Digisynq Guilds'],
+        caseStudy: '"When our key DOP tested positive for malaria 36 hours before our Mumbai ad shoot, Digisynq dispatched a Gold-ranked DP with matching camera gear in under 3 hours." — Sanjay L., Commercial Director',
+        cta: 'Join as Director Node'
+      },
+      cinematographers: {
+        title: 'Cinematographers & Camera Operators (DOP)',
+        icon: '🎥',
+        tag: 'VISUAL CRAFT NODE',
+        accent: '#00D4AA',
+        offer: 'Lighting design, anamorphic framing, camera mechanics, and color continuity.',
+        gets: [
+          'Rent idle glass & bodies: Turn downtime into high-margin revenue via the Asset Utilization Exchange.',
+          'Zero payment chasing: Milestone escrow releases your full fee automatically upon wrap verification.',
+          'Upgrade your craft: Free war room masterclasses in Virtual Production and Unreal Engine LED pipelines.',
+          'Instant shoot dispatch: First-priority alerts for premium commercial and feature pickup days.'
+        ],
+        modules: ['Asset Utilization Exchange', 'Sync Legal Shield', 'Skill Stack Sync', 'Talent Revival Engine'],
+        caseStudy: '"Earned ₹3.8 lakhs in passive rental income during my 2-month off-season by sub-leasing my ARRI Alexa Mini LF to verified productions." — Rahul K., Chennai',
+        cta: 'Join as Cinematographer Node'
+      },
+      producers: {
+        title: 'Producers & Line Producers',
+        icon: '💼',
+        tag: 'PRODUCTION STEWARD NODE',
+        accent: '#FF4757',
+        offer: 'Packaging, line budgets, schedule logistics, and talent orchestration.',
+        gets: [
+          'Stop dark-day cash bleed: Cut 30%+ waste caused by idle gear rentals, standbys, and phantom crew.',
+          'Deploy emergency backup: 24/7 crisis safety net guaranteeing replacement HODs within hours.',
+          'Bridge production financing: Syndicated co-funding with vetted family offices and credit lines.',
+          'Track real-time burn: Automated call sheet telemetry, live crew muster, and overtime audits.'
+        ],
+        modules: ['Cinema Damage Control', 'Financier Sync', 'Crew Sync', 'Sync Legal Shield'],
+        caseStudy: '"Saved over ₹45 lakhs on our multilingual feature shoot by sourcing verified local camera packages instead of flying gear from Mumbai." — Ananya M., Producer',
+        cta: 'Join as Producer Node'
+      },
+      writers: {
+        title: 'Screenwriters & Authors',
+        icon: '✍️',
+        tag: 'INTELLECTUAL PROPERTY NODE',
+        accent: '#F5B840',
+        offer: 'Original screenplays, episodic show bibles, dialog punch-ups, and IP adaptations.',
+        gets: [
+          'Wake up sleeping scripts: Algorithmically package dormant drafts with greenlight-ready directors.',
+          'Direct line to OTT commissioning: Bypass gatekeeper agencies and pitch verified buyers directly.',
+          'Lock down IP ownership: Automated blockchain timestamping and irrevocable non-circumvention contracts.',
+          'Guaranteed draft paydays: Milestone escrow guarantees payment when beat sheets and revisions land.'
+        ],
+        modules: ['Script Resurrection Program', 'Sync Legal Shield', 'Digisynq Guilds'],
+        caseStudy: '"My locked script was packaged with a National Award-winning director through Digisynq and greenlit by a major streamer in 21 days." — Meera P., Screenwriter',
+        cta: 'Join as Screenwriter Node'
+      },
+      financiers: {
+        title: 'Financiers & Family Offices',
+        icon: '💰',
+        tag: 'CAPITAL ALLOCATION NODE',
+        accent: '#F5B840',
+        offer: 'Bridge capital, pre-sale minimum guarantees, equity co-production, and debt facilities.',
+        gets: [
+          'Milestone-locked escrow: Capital leaves the vault only when physical delivery milestones are verified.',
+          'Audience-tested packages: Back projects pre-validated by sentiment radar, cast affinity, and genre demand.',
+          'Zero creative embezzlement: Live audited expenditure telemetry and transparent vendor receipts.',
+          'First-dollar recoupment: Legally binding waterfall priority enforced across theatrical and digital sales.'
+        ],
+        modules: ['Financier Sync', 'Hype Pulse', 'Sync Legal Shield'],
+        caseStudy: '"We deployed ₹6 crores across 3 indie features with zero payment defaults and strict milestone sign-offs." — Singhania Family Office, Mumbai',
+        cta: 'Join as Financier Node'
+      },
+      brands: {
+        title: 'Consumer Brands & Advertisers',
+        icon: '🏷️',
+        tag: 'COMMERCIAL CAPITAL NODE',
+        accent: '#00D4AA',
+        offer: 'Commercial sponsorship capital, co-marketing muscle, and nationwide consumer reach.',
+        gets: [
+          'Weave into storylines: Direct in-script product integration without paying 50% middlemen markups.',
+          'Predict viral momentum: Pre-screen box office affinity and cultural buzz via Hype Pulse before committing.',
+          'Command multi-regional scale: Coordinated creator strike campaigns across Tamil, Telugu, Hindi, and Malayalam.',
+          'Proof-backed impressions: Escrow payouts tied strictly to audited reach and verified screen time.'
+        ],
+        modules: ['Brand-Node Bridge', 'Hype Pulse', 'Organic PR'],
+        caseStudy: '"Achieved 4.2x higher viral recall for our beverage launch through organic screenplay placement across two southern blockbuster hits." — D2C Brand CMO',
+        cta: 'Join as Brand Node'
+      },
+      venues: {
+        title: 'Venues, Soundstages & Locations',
+        icon: '🏛️',
+        tag: 'SPATIAL LOGISTICS NODE',
+        accent: '#00FF66',
+        offer: 'Acoustic soundstages, heritage estates, corporate office floors, and controlled outdoor lots.',
+        gets: [
+          'Fill empty calendar dates: Monetize dead studio space with on-demand booking from vetted productions.',
+          'Bulletproof property protection: Pre-screened crew background checks backed by ₹1Cr damage indemnity.',
+          'Fast-track shooting permits: Streamlined liaison templates for police, municipal, and heritage clearances.',
+          'Automatic payment release: 100% advance escrow funding with instant clearance upon shoot wrap.'
+        ],
+        modules: ['Venue Sync', 'Sync Legal Shield', 'Crew Sync'],
+        caseStudy: '"Increased our heritage estate shooting occupancy from 18% to 64% with zero property damage disputes." — Estate Manager, Ooty',
+        cta: 'Join as Venue Node'
+      },
+      distributors: {
+        title: 'Distributors & OTT Buyers',
+        icon: '📡',
+        tag: 'AUDIENCE DISTRIBUTION NODE',
+        accent: '#FF4757',
+        offer: 'Theatrical screen networks, international territory rights, and OTT platform slates.',
+        gets: [
+          'De-risk acquisitions: Test regional audience appetite with real-time buzz telemetry before buying.',
+          'Acquire clean, finished IP: Source fully packaged indie titles with audited chain-of-title provenance.',
+          'Turnkey pan-India localization: Direct access to verified dubbing, subtitling, and regional sound suites.',
+          'Ironclad legal provenance: Verified title ownership, actor clearances, and music rights in one docket.'
+        ],
+        modules: ['Hype Pulse', 'Sync Legal Shield', 'Script Resurrection Program'],
+        caseStudy: '"Acquired two regional breakout hits early at 40% below typical auction hype by monitoring Digisynq production telemetry." — OTT Acquisition Lead',
+        cta: 'Join as Distribution Node'
+      },
+      influencers: {
+        title: 'Digital Influencers & Micro-Creators',
+        icon: '📱',
+        tag: 'CULTURAL MOMENTUM NODE',
+        accent: '#00D4AA',
+        offer: 'Regional cultural loyalty, high-velocity engagement, and hyper-engaged grassroots fandoms.',
+        gets: [
+          'Step onto the silver screen: Transition into verified mainstream cinema cameos, casting, and official OST launches.',
+          'Pocket 100% of brand fees: Deal directly with national consumer brands with zero agent cuts.',
+          'Master cinema craft: Access invite-only lighting, color grading, and lens masterclasses.',
+          'Bank payouts without delay: Escrow disbursement hits your account the moment content goes live.'
+        ],
+        modules: ['Brand-Node Bridge', 'Digisynq Workshops', 'Organic PR'],
+        caseStudy: '"Transitioned from Instagram comedy sketches into a key supporting role in a Telugu feature film packaged through the network." — Digital Creator, Hyderabad',
+        cta: 'Join as Creator Node'
+      }
+    };
+
+    const container = document.getElementById('node-dynamic-view');
+    const tabs = document.querySelectorAll('.node-tab');
+
+    function renderNode(key) {
+      const p = nodeProfiles[key];
+      if (!p || !container) return;
+
+      container.innerHTML = `
+        <div class="node-detail-grid">
+          <div>
+            <div class="mono-tag" style="color: ${p.accent}; border-color: ${p.accent}40; background: ${p.accent}15; margin-bottom: 16px;">
+              ${p.tag}
+            </div>
+            <h2 style="font-size: 2.4rem; color: #fff; margin-bottom: 12px;">
+              <span style="margin-right: 10px;">${p.icon}</span> ${p.title}
+            </h2>
+            <p style="font-size: 1.05rem; color: rgba(255,255,255,0.7); margin-bottom: 24px;">
+              <strong>What You Offer:</strong> ${p.offer}
+            </p>
+
+            <h4 style="font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; color: var(--color-teal); letter-spacing: 0.1em; margin-bottom: 14px;">
+              WHAT YOU RECEIVE FROM DIGISYNQ:
+            </h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
+              ${p.gets.map(g => `
+                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.85);">
+                  <span style="color: ${p.accent}; font-weight: bold;">✓</span> ${g}
+                </li>
+              `).join('')}
+            </ul>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+              <a href="index.html#join" class="btn btn-primary btn-lg">
+                ${p.cta} &rarr;
+              </a>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                ${p.modules.map(m => `<span class="mono-tag" style="background: rgba(255,255,255,0.04); font-size: 0.72rem;">${m}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 32px; box-shadow: var(--shadow-md);">
+            <div class="mono-tag gold" style="margin-bottom: 14px;">VERIFIED SUCCESS EVIDENCE</div>
+            <p style="font-style: italic; color: #fff; font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+              ${p.caseStudy}
+            </p>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.82rem; font-family: var(--font-mono); color: var(--text-tertiary);">STATUS: ACTIVE IN PIPELINE</span>
+              <span class="mono-tag teal">0% ARBITRATION DISPUTES</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const key = tab.getAttribute('data-node');
+        renderNode(key);
+        if (window.DigisynqAudio) window.DigisynqAudio.playSoftClick();
+      });
+    });
+
+    renderNode('directors');
+  </script>
+  <!-- Fullscreen 10-Node Dial Pad Overlay Drawer -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
+    <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
+    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;">
+      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>
+      THE COORDINATION LAYER FOR ENTERTAINMENT
+    </div>
+    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
+    <div class="node-dialpad-container" style="max-width:980px;">
+      <div class="node-dialpad-grid">
+        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Home (HotKey: 1)"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
+        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem (HotKey: 2)"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
+        <a href="node-03.html" class="node-key-item" aria-label="Node 03: How It Works (HotKey: 3)"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
+        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Solutions (HotKey: 4)"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
+        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
+        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
+        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
+        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
+        <a href="node-09.html" class="node-key-item" aria-label="Node 09: About (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
+        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/telemetry-canvas.js"></script>
+</body>
+</html>
