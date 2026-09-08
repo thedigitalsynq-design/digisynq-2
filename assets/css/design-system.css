@@ -1916,3 +1916,248 @@ img {
   font-family: var(--font-headline);
   color: var(--text-primary);
 }
+
+/* ==========================================================================
+   ULTRA-MODERN BENTO SHOWCASE ARCHITECTURE (Sample-Matched)
+   ========================================================================== */
+.bento-master-chassis {
+  background: #080A0E;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 36px;
+  padding: 24px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  margin: 3.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-master-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.85fr 1.15fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Common Tile Styles */
+.bento-tile {
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.bento-tile:hover {
+  transform: translateY(-4px);
+}
+
+/* Columns */
+.bento-col-left, .bento-col-center, .bento-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bento-subgrid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Vibrant Orange Card (Signature Sample Color) */
+.bento-tile-orange {
+  background: linear-gradient(145deg, #FF5B22 0%, #E0410B 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 40px -10px rgba(255, 91, 34, 0.35);
+}
+.bento-tile-orange:hover {
+  box-shadow: 0 24px 50px -10px rgba(255, 91, 34, 0.55);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Soft Blue Card (Sample Secondary Accent) */
+.bento-tile-blue {
+  background: linear-gradient(155deg, #85A5FF 0%, #688BF8 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 40px -10px rgba(104, 139, 248, 0.3);
+}
+.bento-tile-blue:hover {
+  box-shadow: 0 20px 45px -10px rgba(104, 139, 248, 0.45);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Dark Slate / Obsidian Card */
+.bento-tile-dark {
+  background: #11141B;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+.bento-tile-dark:hover {
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 16px 40px -10px rgba(0, 240, 255, 0.18);
+}
+
+/* Bar Chart Component inside Bento Analytics Card */
+.bento-barchart-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  height: 150px;
+  margin-top: 1.5rem;
+  padding-bottom: 24px;
+  position: relative;
+}
+.bento-barchart-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+}
+.bento-barchart-bar {
+  width: 100%;
+  max-width: 44px;
+  border-radius: 12px 12px 0 0;
+  background: rgba(255, 255, 255, 0.95);
+  transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.bento-barchart-bar.highlight {
+  background: #85A5FF;
+}
+.bento-barchart-label {
+  font-family: var(--font-headline);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  bottom: 0;
+}
+
+/* Floating Action Chips */
+.bento-floating-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #0E131F;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 0.76rem;
+  padding: 8px 14px;
+  border-radius: 100px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.bento-floating-chip:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Nested Mini List Items */
+.bento-nested-item {
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #0E131F;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease;
+}
+.bento-nested-item:hover {
+  transform: translateY(-2px);
+}
+.bento-nested-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Floating Status Pills */
+.bento-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #0E131F;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 0.76rem;
+  padding: 8px 14px;
+  border-radius: 100px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  white-space: nowrap;
+}
+.bento-pill-count {
+  background: #FF5B22;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Radar & Map Component */
+.bento-radar-map {
+  height: 140px;
+  background: radial-gradient(circle at 65% 55%, rgba(0, 240, 255, 0.15) 0%, #0F1420 70%),
+              repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 21px),
+              repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 21px);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.bento-map-ping {
+  position: absolute;
+  top: 48%;
+  left: 62%;
+  width: 12px;
+  height: 12px;
+  background: #FF5B22;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #FF5B22;
+}
+.bento-map-ping::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #FF5B22;
+  border-radius: 50%;
+  animation: bentoPulse 2s infinite ease-out;
+}
+
+@keyframes bentoPulse {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@media (max-width: 1100px) {
+  .bento-master-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-subgrid-2 {
+    grid-template-columns: 1fr;
+  }
+}
