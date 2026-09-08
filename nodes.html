@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node Directory & Selector — DIGISYNQ</title>
-  <meta name="description" content="Discover how Directors, Cinematographers, Producers, Screenwriters, Financiers, and Venues connect and unlock value through the Digisynq ecosystem.">
+  <title>Ecosystem Stakeholder Directory — DIGISYNQ</title>
+  <meta name="description" content="Discover how Directors, Cinematographers, Producers, Screenwriters, Financiers, and Venues connect into executable production pathways through the DigiSynq coordination layer.">
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
   <link rel="stylesheet" href="assets/css/design-system.css">
   <style>
@@ -14,7 +14,7 @@
       overflow-x: auto;
       padding: 20px 0;
       scrollbar-width: thin;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
     .node-tab {
       background: var(--bg-surface);
@@ -55,7 +55,19 @@
       display: grid;
       grid-template-columns: 1.2fr 1fr;
       gap: 40px;
+      align-items: start;
+    }
+    .taxonomy-banner {
+      background: rgba(0, 240, 255, 0.04);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 16px 24px;
+      margin-bottom: 36px;
+      display: flex;
       align-items: center;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
     }
     @media (max-width: 900px) {
       .node-detail-grid {
@@ -74,7 +86,7 @@
   <div class="ambient-glow-orb ambient-orb-teal"></div>
   <div class="ambient-glow-orb ambient-orb-gold"></div>
 
-    <!-- Master Fixed Top Navbar -->
+  <!-- Master Fixed Top Navbar (Unified 7-Pill System) -->
   <header class="site-navbar" role="banner">
     <div class="site-navbar-inner">
       <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
@@ -83,17 +95,14 @@
       </a>
 
       <nav aria-label="Primary Navigation">
-        
         <ul class="site-nav-pills">
-          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
-          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
-          <li><a href="node-01.html" class="site-nav-pill-link active">10 Nodes</a></li>
+          <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="node-03.html" class="site-nav-pill-link">How It Works</a></li>
+          <li><a href="node-04.html" class="site-nav-pill-link active">Solutions</a></li>
           <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
           <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
-          <li><a href="workshops.html" class="site-nav-pill-link">Workshops</a></li>
-          <li><a href="pricing.html" class="site-nav-pill-link">Pricing</a></li>
-          <li><a href="about.html" class="site-nav-pill-link">About</a></li>
+          <li><a href="node-06.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="about.html" class="site-nav-pill-link">Company</a></li>
         </ul>
       </nav>
 
@@ -104,7 +113,7 @@
         </button>
         <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node dialpad">
           <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
-          <span>KEYPAD [K]</span>
+          <span>10 NODES [K]</span>
         </button>
         <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
           START A SYNQ &rarr;
@@ -118,26 +127,33 @@
     <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> THE COORDINATION LAYER BEHIND ENTERTAINMENT &bull; 10 NODES</span>
   </div>
 
-  <!-- ================= NODES HERO ================= -->
-  <section style="padding: 160px 0 40px; position: relative; background: radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.08) 0%, #090A0C 80%);">
+  <!-- ================= HERO ================= -->
+  <section style="padding: 160px 0 30px; position: relative; background: radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.08) 0%, #090A0C 80%);">
     <div class="container" style="text-align: center; max-width: 900px;">
-      <div class="mono-tag teal" style="margin-bottom: 20px;">PERSONA MATCHER // ENTERTAINMENT SWITCHBOARD</div>
-      <h1 style="margin-bottom: 24px;">PLUG IN YOUR SIGNAL. PICK YOUR NODE.</h1>
-      <p class="lead" style="max-width: 760px; margin: 0 auto 20px;">
-        Every cinema discipline has its own fatal bottlenecks — unreturned calls, dark-day budget bleed, or locked script vaults. Find your role below to see how Digisynq bridges the gap, protects your capital, and accelerates your pipeline.
+      <div class="mono-tag teal" style="margin-bottom: 20px;">ECOSYSTEM STAKEHOLDER DIRECTORY // 8 RESOURCE CATEGORIES</div>
+      <h1 style="margin-bottom: 24px;">CONNECT YOUR DISCIPLINE</h1>
+      <p class="lead" style="max-width: 760px; margin: 0 auto 24px;">
+        Every cinema discipline suffers from structural friction: unverified credentials, dark-day idle gear, unproduced scripts, or payment uncertainty. Select your role to see how DigiSynq coordinates verified assets into executable production pathways.
       </p>
+
+      <div class="taxonomy-banner" style="text-align:left;">
+        <span class="material-symbols-outlined" style="color:var(--accent-cyan);font-size:1.5rem;flex-shrink:0;">info</span>
+        <div>
+          <strong style="color:#fff;">Taxonomy Clarification:</strong> This page details participant archetypes across our <strong>8 Resource Categories</strong>. To study the 10 foundational system knowledge layers, visit the <a href="node-01.html" style="color:var(--accent-cyan);text-decoration:underline;">10 Knowledge Nodes</a>.
+        </div>
+      </div>
 
       <!-- Horizontal Scrollable Selector Tabs -->
       <div class="node-selector-bar">
-        <button class="node-tab active" data-node="directors">🎬 Directors & Creators</button>
-        <button class="node-tab" data-node="cinematographers">🎥 Cinematographers & DOPs</button>
-        <button class="node-tab" data-node="producers">💼 Producers & Line Producers</button>
-        <button class="node-tab" data-node="writers">✍️ Screenwriters & Authors</button>
-        <button class="node-tab" data-node="financiers">💰 Financiers & Family Offices</button>
-        <button class="node-tab" data-node="brands">🏷️ Consumer Brands</button>
-        <button class="node-tab" data-node="venues">🏛️ Venues & Studios</button>
-        <button class="node-tab" data-node="distributors">📡 Distributors & OTT</button>
-        <button class="node-tab" data-node="influencers">📱 Digital Influencers</button>
+        <button class="node-tab active" data-node="directors">🎬 Directors &amp; Showrunners</button>
+        <button class="node-tab" data-node="cinematographers">🎥 Cinematographers &amp; DOPs</button>
+        <button class="node-tab" data-node="producers">💼 Producers &amp; Line Producers</button>
+        <button class="node-tab" data-node="writers">✍️ Screenwriters &amp; Authors</button>
+        <button class="node-tab" data-node="financiers">💰 Financiers &amp; Capital Partners</button>
+        <button class="node-tab" data-node="venues">🏛️ Soundstages &amp; Locations</button>
+        <button class="node-tab" data-node="post">🎧 Post-Production &amp; VFX</button>
+        <button class="node-tab" data-node="distributors">📡 Distributors &amp; OTT Slates</button>
+        <button class="node-tab" data-node="brands">🏷️ Consumer Brands &amp; Sponsors</button>
       </div>
     </div>
   </section>
@@ -149,7 +165,7 @@
     </div>
   </section>
 
-  <!-- ================= SITE FOOTER ================= -->
+  <!-- ================= SITE FOOTER (Canonical DigiSynq 4-Column Footer) ================= -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -158,38 +174,52 @@
             <div class="logo-icon"></div>
             <span>DIGISYNQ</span>
           </div>
-          <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem;">
-            The nervous system of Indian entertainment. We own nothing. We enable everything. Don't waste anything. Everything has potential.
+          <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem; line-height: 1.6;">
+            The coordination layer behind entertainment. We don't own the assets. We make them move. Waste less. Sync more.
           </p>
+          <div style="margin-top: 1rem;">
+            <span class="status-indicator status-pilot" style="font-size:0.75rem;">CURRENT STAGE: PILOT / PRIVATE INVITE</span>
+          </div>
         </div>
         <div class="footer-col">
-          <h4>Platform</h4>
+          <h4>System Architecture</h4>
           <ul>
-            <li><a href="platform.html">ABCDEF Pipeline</a></li>
-            <li><a href="nodes.html">Node Directory</a></li>
-            <li><a href="products.html">15 Modules</a></li>
-            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="index.html">Overview &amp; Axiom</a></li>
+            <li><a href="node-03.html">6-Stage Pipeline</a></li>
+            <li><a href="platform.html">Coordination Platform</a></li>
+            <li><a href="products.html">15 Operational Modules</a></li>
+            <li><a href="pricing.html">Aligned Value Pricing</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Ecosystem</h4>
+          <h4>10 Knowledge Nodes</h4>
           <ul>
-            <li><a href="workshops.html">Workshops</a></li>
-            <li><a href="guilds.html">Guilds</a></li>
-            <li><a href="about.html#values">Core Manifesto</a></li>
-            <li><a href="platform.html#escrow">Escrow Security</a></li>
+            <li><a href="node-01.html">01 Problem: Disconnection</a></li>
+            <li><a href="node-02.html">02 Ecosystem: 8 Categories</a></li>
+            <li><a href="node-03.html">03 Engine: 6 Stages</a></li>
+            <li><a href="node-04.html">04 Entry: 5 Situations</a></li>
+            <li><a href="node-05.html">05 Application: 5 Missions</a></li>
+            <li><a href="node-06.html">06 Telemetry: Measurement</a></li>
+            <li><a href="node-07.html">07 Compounding Intelligence</a></li>
+            <li><a href="node-08.html">08 Commercial Value Model</a></li>
+            <li><a href="node-09.html">09 Principles &amp; Runbook</a></li>
+            <li><a href="node-10.html">10 Intake Coordination Desk</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Join the Network</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
-            Activate your node ID and begin syncing.
-          </p>
-          <a href="index.html#join" class="btn btn-primary btn-sm">Join the Pipeline</a>
+          <h4>Trust &amp; Governance</h4>
+          <ul>
+            <li><a href="about.html">About DigiSynq</a></li>
+            <li><a href="guilds.html">Peer Craft Syndicates</a></li>
+            <li><a href="workshops.html">Practitioner Workshops</a></li>
+            <li><a href="node-08.html#escrow">Escrow &amp; Bank Custody</a></li>
+            <li><a href="node-10.html">Start a Synq &rarr;</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom-bar">
-        <div>&copy; 2026 DIGISYNQ NETWORKS. Waste less. Sync more.</div>
+        <div>&copy; 2026 DIGISYNQ NETWORKS. All rights reserved. Regulated banking partners hold all settlement escrow accounts.</div>
+        <div class="mono" style="font-size:0.75rem;color:var(--text-tertiary);">SYSTEM STATUS: ONLINE // PILOT DEPLOYMENT</div>
       </div>
     </div>
   </footer>
@@ -202,146 +232,155 @@
       directors: {
         title: 'Directors & Showrunners',
         icon: '🎬',
-        tag: 'VISIONARY LEADERSHIP NODE',
+        tag: 'CATEGORY: TALENT & IP // CREATIVE LEADERSHIP',
         accent: '#00FF66',
-        offer: 'Visual storytelling, narrative pacing, talent direction, and episodic worldbuilding.',
+        offer: 'Visual storytelling, episodic worldbuilding, actor staging, and cinematic tone.',
         gets: [
-          'Call up strike crews in under 3 hours: Replace missing HODs instantly through Cinema Damage Control.',
-          'Unlock premier shooting stages: Lock in pre-cleared exotic locations and virtual LED volumes at insider day-rates.',
-          'Cut agent friction: Discover and audition pan-Indian breakout talent with verified credentials.',
-          'Automate script telemetry: Instant digital scene breakdown, day-out-of-days, and coverage analytics.'
+          'Verified Crew Dispatch: Route verified department heads with audited production track records.',
+          'Soundstage & Location Discovery: Instant discovery of available shooting stages and verified locations with transparent rate cards.',
+          'Agency Friction Reduction: Discover emerging talent with audited scene performance credentials.',
+          'Production Telemetry Sync: Live script breakdowns, day-out-of-days tracking, and daily call sheet muster.'
         ],
-        modules: ['Cinema Damage Control', 'Venue Sync', 'Crew Sync', 'Digisynq Guilds'],
-        caseStudy: '"When our key DOP tested positive for malaria 36 hours before our Mumbai ad shoot, Digisynq dispatched a Gold-ranked DP with matching camera gear in under 3 hours." — Sanjay L., Commercial Director',
-        cta: 'Join as Director Node'
+        modules: ['Contingency Dispatch', 'Venue Sync', 'Crew Sync', 'Craft Syndicates'],
+        caseStudy: 'A Mumbai commercial production experienced a key department disruption 24 hours before roll. DigiSynq routed a peer-verified replacement DOP with compatible camera package specifications through verified availability telemetry.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Director'
       },
       cinematographers: {
         title: 'Cinematographers & Camera Operators (DOP)',
         icon: '🎥',
-        tag: 'VISUAL CRAFT NODE',
+        tag: 'CATEGORY: TALENT & GEAR // VISUAL CRAFT',
         accent: '#00D4AA',
-        offer: 'Lighting design, anamorphic framing, camera mechanics, and color continuity.',
+        offer: 'Lighting architecture, camera movement, sensor selection, and visual mood continuity.',
         gets: [
-          'Rent idle glass & bodies: Turn downtime into high-margin revenue via the Asset Utilization Exchange.',
-          'Zero payment chasing: Milestone escrow releases your full fee automatically upon wrap verification.',
-          'Upgrade your craft: Free war room masterclasses in Virtual Production and Unreal Engine LED pipelines.',
-          'Instant shoot dispatch: First-priority alerts for premium commercial and feature pickup days.'
+          'Idle Gear Activation: Monetize downtime by routing camera and lens packages to verified productions via standardized exchange protocols.',
+          'Milestone Escrow Protection: Funds held in regulated bank escrow accounts released upon verified wrap sign-off.',
+          'Craft Masterclasses: Access peer-led clinics in Virtual Production, color pipelines, and LED volume mechanics.',
+          'Priority Dispatch Notifications: Receive immediate notifications for matched commercial and feature pickup schedules.'
         ],
-        modules: ['Asset Utilization Exchange', 'Sync Legal Shield', 'Skill Stack Sync', 'Talent Revival Engine'],
-        caseStudy: '"Earned ₹3.8 lakhs in passive rental income during my 2-month off-season by sub-leasing my ARRI Alexa Mini LF to verified productions." — Rahul K., Chennai',
-        cta: 'Join as Cinematographer Node'
+        modules: ['Asset Utilization Exchange', 'Sync Legal Shield', 'Craft Masterclasses', 'Crew Sync'],
+        caseStudy: 'An independent cinematographer utilized off-schedule months to deploy an idle cine camera package to a verified web series shoot with standardized third-party equipment damage protocols and bank escrow clearance.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Cinematographer'
       },
       producers: {
         title: 'Producers & Line Producers',
         icon: '💼',
-        tag: 'PRODUCTION STEWARD NODE',
+        tag: 'CATEGORY: EXECUTION & CAPITAL // STEWARDSHIP',
         accent: '#FF4757',
-        offer: 'Packaging, line budgets, schedule logistics, and talent orchestration.',
+        offer: 'Packaging, financial oversight, schedule optimization, and production execution.',
         gets: [
-          'Stop dark-day cash bleed: Cut 30%+ waste caused by idle gear rentals, standbys, and phantom crew.',
-          'Deploy emergency backup: 24/7 crisis safety net guaranteeing replacement HODs within hours.',
-          'Bridge production financing: Syndicated co-funding with vetted family offices and credit lines.',
-          'Track real-time burn: Automated call sheet telemetry, live crew muster, and overtime audits.'
+          'Idle Capacity Optimization: Reduce dark-day overhead through dynamic rental and local vendor matching.',
+          'Contingency Dispatch Network: Rapid replacement routing for equipment breakdowns and personnel unavailability.',
+          'Structured Co-Production Capital: Bridge financing pathways coordinated with verified private credit and family offices.',
+          'Real-Time Telemetry: Monitor daily call sheet muster, overtime alerts, and milestone completion status.'
         ],
-        modules: ['Cinema Damage Control', 'Financier Sync', 'Crew Sync', 'Sync Legal Shield'],
-        caseStudy: '"Saved over ₹45 lakhs on our multilingual feature shoot by sourcing verified local camera packages instead of flying gear from Mumbai." — Ananya M., Producer',
-        cta: 'Join as Producer Node'
+        modules: ['Contingency Dispatch', 'Financier Sync', 'Crew Sync', 'Sync Legal Shield'],
+        caseStudy: 'A regional multilingual feature reduced logistical overhead by sourcing verified local camera and lighting packages rather than transporting idle packages across interstate transit corridors.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Producer'
       },
       writers: {
         title: 'Screenwriters & Authors',
         icon: '✍️',
-        tag: 'INTELLECTUAL PROPERTY NODE',
+        tag: 'CATEGORY: INTELLECTUAL PROPERTY (IP) // NARRATIVE',
         accent: '#F5B840',
-        offer: 'Original screenplays, episodic show bibles, dialog punch-ups, and IP adaptations.',
+        offer: 'Original screenplays, episodic bibles, adaptation rights, and dialogue polish.',
         gets: [
-          'Wake up sleeping scripts: Algorithmically package dormant drafts with greenlight-ready directors.',
-          'Direct line to OTT commissioning: Bypass gatekeeper agencies and pitch verified buyers directly.',
-          'Lock down IP ownership: Automated blockchain timestamping and irrevocable non-circumvention contracts.',
-          'Guaranteed draft paydays: Milestone escrow guarantees payment when beat sheets and revisions land.'
+          'IP Catalog Packaging: Match completed screenplays with verified directors and line producer slates.',
+          'Direct Commissioning Pathways: Present loglines and treatments directly to verified streaming and studio buyers.',
+          'Chain-of-Title Provenance: Structured non-circumvention covenants and verifiable digital submission timestamping.',
+          'Milestone Escrow Draft Releases: Draft payments held in escrow and released upon milestone delivery verification.'
         ],
-        modules: ['Script Resurrection Program', 'Sync Legal Shield', 'Digisynq Guilds'],
-        caseStudy: '"My locked script was packaged with a National Award-winning director through Digisynq and greenlit by a major streamer in 21 days." — Meera P., Screenwriter',
-        cta: 'Join as Screenwriter Node'
+        modules: ['IP Activation Engine', 'Sync Legal Shield', 'Craft Syndicates'],
+        caseStudy: 'A registered original episodic drama bible was matched with an accredited director and packaged into an executable deck submitted directly to an OTT acquisitions desk.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Screenwriter'
       },
       financiers: {
-        title: 'Financiers & Family Offices',
+        title: 'Financiers & Capital Partners',
         icon: '💰',
-        tag: 'CAPITAL ALLOCATION NODE',
+        tag: 'CATEGORY: CAPITAL ALLOCATION // DE-RISKED SYNDICATION',
         accent: '#F5B840',
-        offer: 'Bridge capital, pre-sale minimum guarantees, equity co-production, and debt facilities.',
+        offer: 'Bridge facilities, minimum guarantee advances, equity co-investment, and slate capital.',
         gets: [
-          'Milestone-locked escrow: Capital leaves the vault only when physical delivery milestones are verified.',
-          'Audience-tested packages: Back projects pre-validated by sentiment radar, cast affinity, and genre demand.',
-          'Zero creative embezzlement: Live audited expenditure telemetry and transparent vendor receipts.',
-          'First-dollar recoupment: Legally binding waterfall priority enforced across theatrical and digital sales.'
+          'Bank-Escrow Tranche Custody: Production capital disbursed exclusively against audited milestone deliverables.',
+          'Data-Grounded Slate Packaging: Evaluate projects backed by historical genre performance and verifiable crew track records.',
+          'Audited Expenditure Visibility: Access real-time production telemetry and vendor wrap sign-offs.',
+          'Enforceable Recoupment Waterfalls: Contractually binding settlement flows executed through regulated banking partners.'
         ],
-        modules: ['Financier Sync', 'Hype Pulse', 'Sync Legal Shield'],
-        caseStudy: '"We deployed ₹6 crores across 3 indie features with zero payment defaults and strict milestone sign-offs." — Singhania Family Office, Mumbai',
-        cta: 'Join as Financier Node'
-      },
-      brands: {
-        title: 'Consumer Brands & Advertisers',
-        icon: '🏷️',
-        tag: 'COMMERCIAL CAPITAL NODE',
-        accent: '#00D4AA',
-        offer: 'Commercial sponsorship capital, co-marketing muscle, and nationwide consumer reach.',
-        gets: [
-          'Weave into storylines: Direct in-script product integration without paying 50% middlemen markups.',
-          'Predict viral momentum: Pre-screen box office affinity and cultural buzz via Hype Pulse before committing.',
-          'Command multi-regional scale: Coordinated creator strike campaigns across Tamil, Telugu, Hindi, and Malayalam.',
-          'Proof-backed impressions: Escrow payouts tied strictly to audited reach and verified screen time.'
-        ],
-        modules: ['Brand-Node Bridge', 'Hype Pulse', 'Organic PR'],
-        caseStudy: '"Achieved 4.2x higher viral recall for our beverage launch through organic screenplay placement across two southern blockbuster hits." — D2C Brand CMO',
-        cta: 'Join as Brand Node'
+        modules: ['Financier Sync', 'Production Telemetry', 'Sync Legal Shield'],
+        caseStudy: 'A media-focused family office deployed tranche-based co-financing into a slate of 3 indie features, with capital released only upon verified completion of pre-production, principal photography, and picture lock.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Capital Partner'
       },
       venues: {
-        title: 'Venues, Soundstages & Locations',
+        title: 'Soundstages, Studios & Locations',
         icon: '🏛️',
-        tag: 'SPATIAL LOGISTICS NODE',
+        tag: 'CATEGORY: STAGES & LOCATIONS // SPATIAL ASSETS',
         accent: '#00FF66',
-        offer: 'Acoustic soundstages, heritage estates, corporate office floors, and controlled outdoor lots.',
+        offer: 'Acoustic soundstages, backlots, standing sets, and controlled shooting properties.',
         gets: [
-          'Fill empty calendar dates: Monetize dead studio space with on-demand booking from vetted productions.',
-          'Bulletproof property protection: Pre-screened crew background checks backed by ₹1Cr damage indemnity.',
-          'Fast-track shooting permits: Streamlined liaison templates for police, municipal, and heritage clearances.',
-          'Automatic payment release: 100% advance escrow funding with instant clearance upon shoot wrap.'
+          'Dark-Calendar Occupancy: Monetize unbooked studio days with verified production bookings.',
+          'Standardized Property Protection: Verified production insurance covenants and pre-screened crew access protocols.',
+          'Streamlined Permitting Covenants: Standardized municipal and heritage location clearance documentation.',
+          'Escrow Deposit Security: Advance deposit verification with prompt wrap clearance upon facility handover.'
         ],
-        modules: ['Venue Sync', 'Sync Legal Shield', 'Crew Sync'],
-        caseStudy: '"Increased our heritage estate shooting occupancy from 18% to 64% with zero property damage disputes." — Estate Manager, Ooty',
-        cta: 'Join as Venue Node'
+        modules: ['Venue Sync', 'Sync Legal Shield', 'Asset Utilization Exchange'],
+        caseStudy: 'A private acoustic studio facility filled 42 days of dark calendar space by matching with commercial and episodic pickups seeking verified soundproof floor space.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Studio Venue'
+      },
+      post: {
+        title: 'Post-Production, Sound & VFX Suites',
+        icon: '🎧',
+        tag: 'CATEGORY: POST-PRODUCTION // FINISHING & TECH',
+        accent: '#8b5cf6',
+        offer: 'Color grading, Dolby Atmos mixing, VFX asset generation, and subtitle localization.',
+        gets: [
+          'Pipeline Capacity Routing: Connect available grading suites and render farms to active post schedules.',
+          'Standardized Milestone Deliverables: Clear proxy, conform, and final deliverable sign-off protocols.',
+          'Escrow-Protected Finishing: Payouts held in third-party bank escrow released upon client QC approval.',
+          'Pan-Indian Localization Sync: Connect with regional language sound engineers and subtitle specialists.'
+        ],
+        modules: ['Asset Utilization Exchange', 'Sync Legal Shield', 'Craft Syndicates'],
+        caseStudy: 'A boutique sound design studio balanced downtime by taking on overflow Foley and Dolby Atmos mastering for a regional indie feature through milestone-verified delivery channels.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Post Studio'
       },
       distributors: {
         title: 'Distributors & OTT Buyers',
         icon: '📡',
-        tag: 'AUDIENCE DISTRIBUTION NODE',
+        tag: 'CATEGORY: DISTRIBUTION // MARKET CHANNELS',
         accent: '#FF4757',
-        offer: 'Theatrical screen networks, international territory rights, and OTT platform slates.',
+        offer: 'Theatrical distribution networks, overseas rights, digital release windows, and broadcast slates.',
         gets: [
-          'De-risk acquisitions: Test regional audience appetite with real-time buzz telemetry before buying.',
-          'Acquire clean, finished IP: Source fully packaged indie titles with audited chain-of-title provenance.',
-          'Turnkey pan-India localization: Direct access to verified dubbing, subtitling, and regional sound suites.',
-          'Ironclad legal provenance: Verified title ownership, actor clearances, and music rights in one docket.'
+          'Pre-Cleared IP Acquisitions: Access finished films and packaged slates with audited chain-of-title documentation.',
+          'Regional Sentiment Telemetry: Evaluate regional audience affinity and genre resonance prior to territory acquisition.',
+          'Turnkey Localization Pathways: Direct access to vetted dubbing, subtitling, and regional promotional partners.',
+          'Audited Music & Talent Clearances: Complete legal compliance dossiers compiled prior to deliverable handoff.'
         ],
-        modules: ['Hype Pulse', 'Sync Legal Shield', 'Script Resurrection Program'],
-        caseStudy: '"Acquired two regional breakout hits early at 40% below typical auction hype by monitoring Digisynq production telemetry." — OTT Acquisition Lead',
-        cta: 'Join as Distribution Node'
+        modules: ['IP Activation Engine', 'Sync Legal Shield', 'Production Telemetry'],
+        caseStudy: 'A digital streaming acquisitions team acquired domestic territory rights to a completed festival title with fully audited music, talent, and footage chain-of-title documentation.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Distributor'
       },
-      influencers: {
-        title: 'Digital Influencers & Micro-Creators',
-        icon: '📱',
-        tag: 'CULTURAL MOMENTUM NODE',
+      brands: {
+        title: 'Consumer Brands & Commercial Sponsors',
+        icon: '🏷️',
+        tag: 'CATEGORY: DEMAND & COMMERCIAL CAPITAL',
         accent: '#00D4AA',
-        offer: 'Regional cultural loyalty, high-velocity engagement, and hyper-engaged grassroots fandoms.',
+        offer: 'Co-marketing budgets, product placement capital, and nationwide promotional reach.',
         gets: [
-          'Step onto the silver screen: Transition into verified mainstream cinema cameos, casting, and official OST launches.',
-          'Pocket 100% of brand fees: Deal directly with national consumer brands with zero agent cuts.',
-          'Master cinema craft: Access invite-only lighting, color grading, and lens masterclasses.',
-          'Bank payouts without delay: Escrow disbursement hits your account the moment content goes live.'
+          'Organic Storyline Integration: Direct placement in scripts and sets without excessive agency intermediary markups.',
+          'Cultural Resonance Telemetry: Evaluate narrative fit and regional consumer audience alignment before committing.',
+          'Multi-Market Coordinated Campaigns: Align placement campaigns across regional theatrical and streaming releases.',
+          'Verified Appearance Audits: Escrow milestones tied to audited screen time and final cut delivery.'
         ],
-        modules: ['Brand-Node Bridge', 'Digisynq Workshops', 'Organic PR'],
-        caseStudy: '"Transitioned from Instagram comedy sketches into a key supporting role in a Telugu feature film packaged through the network." — Digital Creator, Hyderabad',
-        cta: 'Join as Creator Node'
+        modules: ['Brand-Node Bridge', 'Production Telemetry', 'Sync Legal Shield'],
+        caseStudy: 'A consumer D2C brand secured contextual product placement across two regional narrative films with contractually verified screen appearances and milestone-released escrow.',
+        scenarioTag: 'ILLUSTRATIVE OPERATIONAL PATTERN',
+        cta: 'Connect as Brand Partner'
       }
     };
 
@@ -358,26 +397,27 @@
             <div class="mono-tag" style="color: ${p.accent}; border-color: ${p.accent}40; background: ${p.accent}15; margin-bottom: 16px;">
               ${p.tag}
             </div>
-            <h2 style="font-size: 2.4rem; color: #fff; margin-bottom: 12px;">
+            <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 12px;">
               <span style="margin-right: 10px;">${p.icon}</span> ${p.title}
             </h2>
-            <p style="font-size: 1.05rem; color: rgba(255,255,255,0.7); margin-bottom: 24px;">
-              <strong>What You Offer:</strong> ${p.offer}
+            <p style="font-size: 1.05rem; color: rgba(255,255,255,0.75); margin-bottom: 24px; line-height: 1.6;">
+              <strong>Core Capability:</strong> ${p.offer}
             </p>
 
-            <h4 style="font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; color: var(--color-teal); letter-spacing: 0.1em; margin-bottom: 14px;">
-              WHAT YOU RECEIVE FROM DIGISYNQ:
+            <h4 style="font-family: var(--font-mono); font-size: 0.82rem; text-transform: uppercase; color: var(--accent-cyan); letter-spacing: 0.1em; margin-bottom: 14px;">
+              WHAT DIGISYNQ COORDINATES FOR YOUR DISCIPLINE:
             </h4>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; padding: 0;">
               ${p.gets.map(g => `
-                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.85);">
-                  <span style="color: ${p.accent}; font-weight: bold;">✓</span> ${g}
+                <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.5;">
+                  <span style="color: ${p.accent}; font-weight: bold; flex-shrink: 0;">✓</span>
+                  <div>${g}</div>
                 </li>
               `).join('')}
             </ul>
 
             <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-              <a href="index.html#join" class="btn btn-primary btn-lg">
+              <a href="node-10.html?role=${encodeURIComponent(key)}" class="btn btn-primary btn-lg">
                 ${p.cta} &rarr;
               </a>
               <div style="display: flex; gap: 8px; flex-wrap: wrap;">
@@ -387,13 +427,13 @@
           </div>
 
           <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 32px; box-shadow: var(--shadow-md);">
-            <div class="mono-tag gold" style="margin-bottom: 14px;">VERIFIED SUCCESS EVIDENCE</div>
-            <p style="font-style: italic; color: #fff; font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
-              ${p.caseStudy}
+            <div class="mono-tag gold" style="margin-bottom: 14px;">${p.scenarioTag}</div>
+            <p style="font-style: italic; color: #fff; font-size: 0.98rem; line-height: 1.7; margin-bottom: 20px;">
+              "${p.caseStudy}"
             </p>
-            <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 0.82rem; font-family: var(--font-mono); color: var(--text-tertiary);">STATUS: ACTIVE IN PIPELINE</span>
-              <span class="mono-tag teal">0% ARBITRATION DISPUTES</span>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-tertiary);">STAGE: PILOT COORDINATION</span>
+              <span class="mono-tag teal" style="font-size:0.75rem;">REGULATED BANK ESCROW</span>
             </div>
           </div>
         </div>
@@ -412,6 +452,7 @@
 
     renderNode('directors');
   </script>
+
   <!-- Fullscreen 10-Node Dial Pad Overlay Drawer -->
   <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
     <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
@@ -422,16 +463,16 @@
     <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
     <div class="node-dialpad-container" style="max-width:980px;">
       <div class="node-dialpad-grid">
-        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Home (HotKey: 1)"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
-        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem (HotKey: 2)"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
-        <a href="node-03.html" class="node-key-item" aria-label="Node 03: How It Works (HotKey: 3)"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
-        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Solutions (HotKey: 4)"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
-        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
-        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
-        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-        <a href="node-09.html" class="node-key-item" aria-label="Node 09: About (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
-        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Problem (HotKey: 1)"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">01 Disconnection</span></a>
+        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem (HotKey: 2)"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">02 Ecosystem</span></a>
+        <a href="node-03.html" class="node-key-item" aria-label="Node 03: Engine (HotKey: 3)"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">03 6-Stage Pipeline</span></a>
+        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Situations (HotKey: 4)"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">04 5 Situations</span></a>
+        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">05 5 Missions</span></a>
+        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">06 Telemetry</span></a>
+        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Learning (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">07 Learning Loop</span></a>
+        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">08 Value Model</span></a>
+        <a href="node-09.html" class="node-key-item" aria-label="Node 09: Runbook (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">09 Runbook</span></a>
+        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">10 Start a Synq</span></a>
       </div>
     </div>
   </div>

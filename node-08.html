@@ -3,160 +3,268 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node 08: Value Model — How does DigiSynq capture value? — DigiSynq</title>
-  <meta name="description" content="Asset-light coordination. We earn when coordination creates value — through participation fees, escrow, and intelligence subscriptions.">
+  <title>Node 08: Value Model — Sustainable Coordination Economics — DigiSynq</title>
+  <meta name="description" content="Discover DigiSynq's value model: Coordination fees, settlement & escrow administration, and enterprise intelligence services — aligned with production success.">
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
 </head>
 <body style="overflow-x:hidden;background:#090A0C;color:#FFFFFF;">
 
+  <!-- Master Fixed Top Navbar -->
   <header class="site-navbar" role="banner">
     <div class="site-navbar-inner">
       <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
         <div class="site-brand-glyph" aria-hidden="true">DS</div>
         <span>DIGISYNQ</span>
       </a>
+
       <nav aria-label="Primary Navigation">
-        
         <ul class="site-nav-pills">
-          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
-          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
-          <li><a href="node-01.html" class="site-nav-pill-link active">10 Nodes</a></li>
+          <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="node-03.html" class="site-nav-pill-link">How It Works</a></li>
+          <li><a href="node-04.html" class="site-nav-pill-link">Solutions</a></li>
           <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
           <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
-          <li><a href="workshops.html" class="site-nav-pill-link">Workshops</a></li>
-          <li><a href="pricing.html" class="site-nav-pill-link">Pricing</a></li>
-          <li><a href="about.html" class="site-nav-pill-link">About</a></li>
+          <li><a href="node-06.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="about.html" class="site-nav-pill-link">Company</a></li>
         </ul>
       </nav>
+
       <div class="site-nav-actions">
-        <button id="audioHudToggle" class="btn-hud-audio"><span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span><span>AUDIO: ON</span></button>
-        <button class="btn-keypad-trigger" data-open-dialpad><span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span><span>KEYPAD [K]</span></button>
+        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
+          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
+          <span>AUDIO: ON</span>
+        </button>
+        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
+          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
+          <span>10 NODES [K]</span>
+        </button>
         <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">START A SYNQ &rarr;</a>
       </div>
     </div>
   </header>
 
   <div class="edge-badge-vertical" aria-hidden="true">
-    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> REVENUE ARCHITECTURE &bull; NODE 08: VALUE MODEL</span>
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> ECONOMIC ARCHITECTURE &bull; NODE 08: VALUE MODEL</span>
   </div>
 
   <main>
     <section style="padding-top:clamp(7rem, 11vw, 9.5rem);padding-bottom:clamp(4rem, 8vw, 6rem);">
       <div class="container" style="max-width:1180px;">
 
+        <!-- Colossal Numeral Layout -->
         <div class="colossal-numeral-layout">
-          <div class="colossal-digit">08</div>
+          <div class="colossal-digit" aria-label="Node 08: VALUE MODEL">08</div>
           <div class="colossal-title-stack">
             <div class="mono" style="font-size:0.8rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-cyan);margin-bottom:0.45rem;display:flex;align-items:center;gap:0.45rem;">
               <span class="material-symbols-outlined" style="font-size:1.1rem;">monetization_on</span> REVENUE ARCHITECTURE
             </div>
             <h1 class="colossal-title">VALUE MODEL</h1>
-            <p class="colossal-caption">How does DigiSynq capture value?</p>
+            <p class="colossal-caption">How DigiSynq Captures Value</p>
           </div>
         </div>
 
-        <div class="schematic-frame-box" style="margin-bottom:3rem;">
+        <!-- Master Headline -->
+        <div class="schematic-frame-box" style="margin-bottom:3.5rem;">
           <div class="schematic-crosshair-tl"></div><div class="schematic-crosshair-tr"></div>
           <div class="schematic-crosshair-bl"></div><div class="schematic-crosshair-br"></div>
-          <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;color:#ffffff;margin:0 0 0.75rem;text-transform:uppercase;">
-            WE EARN WHEN <span style="color:var(--accent-cyan);">COORDINATION CREATES VALUE.</span>
+          <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:0.6rem;">
+            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">account_balance</span>
+            ALIGNMENT-BASED REVENUE MODEL
+          </span>
+          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
+            WE EARN WHEN COORDINATION CREATES VALUE.
           </h2>
-          <p style="font-size:1.05rem;line-height:1.75;color:#cbd5e1;margin:0;max-width:820px;">
-            Asset-light by design. We own nothing. Our revenue is structurally aligned with participant success — we only win when you win.
+          <p style="font-size:1.1rem;line-height:1.75;color:#cbd5e1;margin:0 0 1.25rem;max-width:860px;">
+            DigiSynq is asset-light by design. We do not own stages, cameras, or intellectual property. Our revenue is generated through transparent coordination fees, milestone escrow administration in partnership with licensed financial institutions, and specialized enterprise intelligence subscriptions.
+          </p>
+          <div class="mono" style="font-size:0.88rem;color:#00FF66;font-weight:700;">
+            &bull; RECONCILED WITH DIGISYNQ PUBLIC PRICING ARCHITECTURE
+          </div>
+        </div>
+
+        <!-- 3 Core Revenue Streams -->
+        <div style="margin-bottom:3.5rem;">
+          <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:1.5rem;">
+            3 PRIMARY REVENUE STREAMS
+          </span>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
+            
+            <!-- Stream 1 -->
+            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
+              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">REVENUE STREAM 01</div>
+              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">Coordination &amp; Transaction Fees</h3>
+              <p style="font-size:0.9rem;line-height:1.65;color:#cbd5e1;margin-bottom:1rem;">
+                A percentage fee charged on successfully completed matches: stage sub-leases, camera fleet rentals, or crew attachments mobilized through the network.
+              </p>
+              <div class="mono" style="font-size:0.8rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.75rem;border-radius:4px;">
+                STATUS: <span style="color:#00FF66;">LIVE PILOTS</span> &bull; 1.5% to 4.5% of transaction volume based on project tier.
+              </div>
+            </div>
+
+            <!-- Stream 2 -->
+            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
+              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">REVENUE STREAM 02</div>
+              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">Settlement &amp; Escrow Administration</h3>
+              <p style="font-size:0.9rem;line-height:1.65;color:#cbd5e1;margin-bottom:1rem;">
+                An administrative verification fee for structuring milestone draw schedules, auditing delivery handoffs, and managing payout authorizations with licensed banking partners.
+              </p>
+              <div class="mono" style="font-size:0.8rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.75rem;border-radius:4px;">
+                STATUS: <span style="color:#00FF66;">PILOT WITH BANKING PARTNERS</span> &bull; Flat milestone fee or basis point schedule.
+              </div>
+            </div>
+
+            <!-- Stream 3 -->
+            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
+              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">REVENUE STREAM 03</div>
+              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">Enterprise Intelligence Subscriptions</h3>
+              <p style="font-size:0.9rem;line-height:1.65;color:#cbd5e1;margin-bottom:1rem;">
+                Subscription-based access to the 7 telemetry pillars: regional capacity maps, content demand mandates, crew reliability benchmarks, and territory release insights.
+              </p>
+              <div class="mono" style="font-size:0.8rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.75rem;border-radius:4px;">
+                STATUS: <span style="color:var(--accent-cyan);">ENTERPRISE TIERS (PILOT)</span> &bull; Custom monthly/annual license.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Service Categorization Matrix -->
+        <div class="schematic-frame-box" style="margin-bottom:3.5rem;">
+          <div class="schematic-crosshair-tl"></div><div class="schematic-crosshair-tr"></div>
+          <div class="schematic-crosshair-bl"></div><div class="schematic-crosshair-br"></div>
+          <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:1rem;">
+            PRICING &amp; SERVICE CATEGORIZATION
+          </span>
+          <h3 style="font-size:1.4rem;font-weight:800;color:#ffffff;margin:0 0 1.5rem;text-transform:uppercase;">
+            WHAT IS FREE, PAID, CUSTOM, AND PILOT
+          </h3>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.5rem;">
+            <div class="pastel-card" style="padding:1.25rem;">
+              <span class="status-badge status-live" style="margin-bottom:0.5rem;">FREE BASIC ACCESS</span>
+              <h4 style="font-size:1.05rem;font-weight:700;color:#fff;margin:0 0 0.5rem;">Creative &amp; Technician Discovery</h4>
+              <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.6;margin:0;">
+                Creating a profile, logging verified credits, listing available packages, and basic directory discovery are completely free for individual craftspeople.
+              </p>
+            </div>
+
+            <div class="pastel-card" style="padding:1.25rem;">
+              <span class="status-badge status-live" style="margin-bottom:0.5rem;">PAID COORDINATION</span>
+              <h4 style="font-size:1.05rem;font-weight:700;color:#fff;margin:0 0 0.5rem;">Active Synqs &amp; Dispatch</h4>
+              <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.6;margin:0;">
+                Fees are applied strictly when an active coordination agreement is executed: matching gear, locking soundstages, or securing production attachments.
+              </p>
+            </div>
+
+            <div class="pastel-card" style="padding:1.25rem;">
+              <span class="status-badge status-pilot" style="margin-bottom:0.5rem;">CUSTOM ENTERPRISE</span>
+              <h4 style="font-size:1.05rem;font-weight:700;color:#fff;margin:0 0 0.5rem;">Studio &amp; Slate Management</h4>
+              <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.6;margin:0;">
+                Studios and large production houses managing annual slates across multiple regional hubs receive dedicated coordination desks and custom billing agreements.
+              </p>
+            </div>
+
+            <div class="pastel-card" style="padding:1.25rem;">
+              <span class="status-badge status-illustrative" style="margin-bottom:0.5rem;">WORKSHOPS &amp; GUILDS</span>
+              <h4 style="font-size:1.05rem;font-weight:700;color:#fff;margin:0 0 0.5rem;">Ecosystem Programs</h4>
+              <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.6;margin:0;">
+                Hands-on production masterclasses and peer craft guild alliances operate as specialized ecosystem learning initiatives with program-specific pricing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Legal & Banking Custody Disclosure -->
+        <div class="schematic-frame-box" style="margin-bottom:3.5rem;background:rgba(0,0,0,0.6);border-left:4px solid #f59e0b;">
+          <div class="schematic-crosshair-tl"></div><div class="schematic-crosshair-tr"></div>
+          <div class="schematic-crosshair-bl"></div><div class="schematic-crosshair-br"></div>
+          <span class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#f59e0b;display:block;margin-bottom:0.6rem;">
+            REGULATORY &amp; FINANCIAL CUSTODY DISCLOSURE
+          </span>
+          <h4 style="font-size:1.15rem;font-weight:700;color:#ffffff;margin:0 0 0.6rem;">
+            Third-Party Banking &amp; Escrow Infrastructure
+          </h4>
+          <p style="font-size:0.92rem;line-height:1.7;color:#cbd5e1;margin:0;">
+            DigiSynq provides coordination technology, milestone verification protocols, and workflow tools. <strong>DigiSynq does not operate as a bank, NBFC, or direct escrow custodian.</strong> All client funds and production milestone deposits are held by regulated, licensed banking and escrow institutions under mutual tripartite agreements. Payouts are authorized only upon verified milestone completion handoffs.
           </p>
         </div>
 
-        <!-- 3 Revenue Streams -->
-        <div style="margin-bottom:3rem;">
-          <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:1rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">account_balance</span>3 REVENUE STREAMS
-          </span>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.85rem;">
-            <div class="pastel-card" style="padding:1.1rem 1.2rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.68rem;color:var(--accent-cyan);margin-bottom:0.4rem;">STREAM 01 — COORDINATION</div>
-              <div style="font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.3rem;">Participation Fees</div>
-              <div style="font-size:0.85rem;color:#94a3b8;">A percentage of value unlocked when a synq completes successfully.</div>
-            </div>
-            <div class="pastel-card" style="padding:1.1rem 1.2rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.68rem;color:var(--accent-cyan);margin-bottom:0.4rem;">STREAM 02 — ESCROW</div>
-              <div style="font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.3rem;">Milestone Management</div>
-              <div style="font-size:0.85rem;color:#94a3b8;">Fee for holding, verifying, and releasing milestone-gated escrow.</div>
-            </div>
-            <div class="pastel-card" style="padding:1.1rem 1.2rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.68rem;color:var(--accent-cyan);margin-bottom:0.4rem;">STREAM 03 — INTELLIGENCE</div>
-              <div style="font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.3rem;">Data Subscriptions</div>
-              <div style="font-size:0.85rem;color:#94a3b8;">Industry telemetry and capacity intelligence sold to studios and investors.</div>
-            </div>
-          </div>
+        <!-- Master CTA Card -->
+        <div style="text-align:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:2.5rem;margin-bottom:3rem;">
+          <h3 style="font-size:1.5rem;font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
+            COMPARE COMPLETE TIERS ON THE PRICING PAGE
+          </h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#cbd5e1;max-width:680px;margin:0 auto 1.75rem;">
+            Detailed plan features, fee tables, and subscriber entitlements are available on our centralized pricing page.
+          </p>
+          <a href="pricing.html" class="btn btn-primary" style="padding:0.9rem 2.2rem;font-size:1rem;font-weight:700;">
+            VIEW COMPLETE PRICING PLANS &rarr;
+          </a>
         </div>
 
-        <!-- Asset-light principle -->
-        <div style="margin-bottom:3rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.65rem;">
-          <div class="pastel-card" style="padding:0.9rem 1rem;text-align:center;">
-            <div style="font-size:1.5rem;font-weight:900;color:var(--accent-cyan);">0</div>
-            <div style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem;">Assets owned</div>
-          </div>
-          <div class="pastel-card" style="padding:0.9rem 1rem;text-align:center;">
-            <div style="font-size:1.5rem;font-weight:900;color:var(--accent-cyan);">100%</div>
-            <div style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem;">Value-aligned revenue</div>
-          </div>
-          <div class="pastel-card" style="padding:0.9rem 1rem;text-align:center;">
-            <div style="font-size:1.5rem;font-weight:900;color:var(--accent-cyan);">₹0</div>
-            <div style="font-size:0.8rem;color:#94a3b8;margin-top:0.2rem;">Upfront unless synq delivers</div>
-          </div>
-        </div>
-
-        <div style="text-align:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;margin-bottom:2rem;">
-          <span class="mono" style="font-size:0.75rem;color:#94a3b8;letter-spacing:0.12em;display:block;margin-bottom:0.75rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">menu_book</span>FULL FEE SCHEDULES · REVENUE SHARE BREAKDOWNS · ALIGNMENT MODEL
-          </span>
-          <a href="node-09.html#runbook" class="btn btn-secondary" style="font-size:0.85rem;padding:0.65rem 1.4rem;">VIEW VALUE MODEL RUNBOOK IN NODE 09 &rarr;</a>
-        </div>
-
+        <!-- Route Bar -->
         <div class="node-route-bar">
           <a href="node-07.html" class="node-route-prev">&larr; Node 07: Insights</a>
-          <a href="node-09.html" class="btn btn-secondary">Node 09: About &rarr;</a>
+          <a href="node-09.html" class="btn btn-secondary">Node 09: Runbook &rarr;</a>
         </div>
+
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" style="border-top:1px solid rgba(255,255,255,0.12);padding:4rem 1.5rem 3rem;background:#090A0C;margin-top:5rem;">
+  <!-- Master Canonical Footer -->
+  <footer class="site-footer" style="border-top:1px solid rgba(255,255,255,0.1);padding:4rem 1.5rem 2.5rem;background:#060709;">
     <div class="container" style="max-width:1180px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;">
-      <div><div style="font-weight:800;font-size:1.25rem;color:#fff;letter-spacing:-0.02em;margin-bottom:0.4rem;">DIGISYNQ</div><div class="mono" style="font-size:0.75rem;color:#94a3b8;letter-spacing:0.12em;">THE ENTERTAINMENT ECOSYSTEM, SYNCHRONIZED.</div></div>
+      <div>
+        <div style="font-weight:800;font-size:1.2rem;color:#ffffff;margin-bottom:0.3rem;">DIGISYNQ</div>
+        <div class="mono" style="font-size:0.75rem;color:#94a3b8;">THE COORDINATION LAYER FOR ENTERTAINMENT</div>
+      </div>
       <div style="display:flex;gap:1.25rem;flex-wrap:wrap;">
-        <a href="node-01.html" class="node-route-prev" style="font-size:0.82rem;">HOME</a><a href="nodes.html" class="node-route-prev" style="font-size:0.82rem;">NODE DIR</a><a href="node-02.html" class="node-route-prev" style="font-size:0.82rem;">ECOSYSTEM</a><a href="node-03.html" class="node-route-prev" style="font-size:0.82rem;">HOW IT WORKS</a><a href="node-04.html" class="node-route-prev" style="font-size:0.82rem;">SOLUTIONS</a><a href="node-05.html" class="node-route-prev" style="font-size:0.82rem;">MISSIONS</a><a href="node-06.html" class="node-route-prev" style="font-size:0.82rem;">INTELLIGENCE</a><a href="node-07.html" class="node-route-prev" style="font-size:0.82rem;">INSIGHTS</a><a href="node-08.html" class="node-route-prev" style="font-size:0.82rem;">VALUE MODEL</a><a href="node-09.html" class="node-route-prev" style="font-size:0.82rem;">ABOUT</a><a href="node-10.html" class="node-route-prev" style="font-size:0.82rem;">START A SYNQ</a>
+        <a href="node-01.html" class="node-route-prev" style="font-size:0.82rem;">01 HOME</a>
+        <a href="node-02.html" class="node-route-prev" style="font-size:0.82rem;">02 ECOSYSTEM</a>
+        <a href="node-03.html" class="node-route-prev" style="font-size:0.82rem;">03 HOW IT WORKS</a>
+        <a href="node-04.html" class="node-route-prev" style="font-size:0.82rem;">04 SOLUTIONS</a>
+        <a href="node-05.html" class="node-route-prev" style="font-size:0.82rem;">05 MISSIONS</a>
+        <a href="node-06.html" class="node-route-prev" style="font-size:0.82rem;">06 INTELLIGENCE</a>
+        <a href="node-07.html" class="node-route-prev" style="font-size:0.82rem;">07 INSIGHTS</a>
+        <a href="node-08.html" class="node-route-prev" style="font-size:0.82rem;color:var(--accent-cyan);">08 VALUE MODEL</a>
+        <a href="node-09.html" class="node-route-prev" style="font-size:0.82rem;">09 RUNBOOK</a>
+        <a href="node-10.html" class="node-route-prev" style="font-size:0.82rem;">10 START A SYNQ</a>
       </div>
       <div class="mono" style="font-size:0.75rem;color:#64748b;">&copy; 2026 DIGISYNQ. ALL RIGHTS RESERVED.</div>
     </div>
   </footer>
 
+  <!-- Fullscreen 10-Node Dialpad Drawer -->
   <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
     <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
-    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;"><span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>THE COORDINATION LAYER FOR ENTERTAINMENT</div>
-    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
-    <div class="node-dialpad-container" style="max-width:980px;"><div class="node-dialpad-grid">
-      <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
-      <a href="node-02.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
-      <a href="node-03.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
-      <a href="node-04.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
-      <a href="node-05.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
-      <a href="node-06.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
-      <a href="node-07.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-      <a href="node-08.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-      <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
-      <a href="node-10.html" class="node-key-item"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
-    </div></div>
+    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;"><span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>DIGISYNQ KNOWLEDGE NODES</div>
+    <div class="dialpad-drawer-title">10-NODE DIRECTORY</div>
+    <div class="node-dialpad-container" style="max-width:980px;">
+      <div class="node-dialpad-grid">
+        <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
+        <a href="node-02.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
+        <a href="node-03.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
+        <a href="node-04.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
+        <a href="node-05.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
+        <a href="node-06.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
+        <a href="node-07.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
+        <a href="node-08.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
+        <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">Runbook</span></a>
+        <a href="node-10.html" class="node-key-item"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+      </div>
+    </div>
   </div>
 
   <script src="assets/js/telemetry-canvas.js"></script>
   <script src="assets/js/sound-engine.js"></script>
-  <script src="assets/js/main.js?v=2.1"></script>
+  <script src="assets/js/main.js?v=2.2"></script>
 </body>
 </html>

@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — DIGISYNQ | Waste Less. Sync More.</title>
-  <meta name="description" content="Digisynq is the living nervous system of Indian entertainment. We own nothing. We enable everything. Waste less. Sync more.">
-  <link rel="icon" type="image/svg+xml" href="assets/img/icons/ecosystem.svg">
+  <title>Company &amp; Governance — DigiSynq</title>
+  <meta name="description" content="DigiSynq is the coordination layer that connects verified talent, IP, stages, gear, capital and distribution into executable production pathways. We don't own the assets. We make them move.">
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/design-system.css">
 </head>
-<body>
-
-  <div class="ambient-glow-orb ambient-orb-purple"></div>
-  <div class="ambient-glow-orb ambient-orb-teal"></div>
-  <div class="ambient-glow-orb ambient-orb-gold"></div>
+<body style="overflow-x:hidden;background:#090A0C;color:#FFFFFF;">
 
   <!-- Master Fixed Top Navbar -->
   <header class="site-navbar" role="banner">
@@ -21,190 +22,442 @@
         <div class="site-brand-glyph" aria-hidden="true">DS</div>
         <span>DIGISYNQ</span>
       </a>
+
       <nav aria-label="Primary Navigation">
-        
         <ul class="site-nav-pills">
-          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
-          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
-          <li><a href="node-01.html" class="site-nav-pill-link">10 Nodes</a></li>
+          <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="node-03.html" class="site-nav-pill-link">How It Works</a></li>
+          <li><a href="node-04.html" class="site-nav-pill-link">Solutions</a></li>
           <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
           <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
-          <li><a href="workshops.html" class="site-nav-pill-link">Workshops</a></li>
-          <li><a href="pricing.html" class="site-nav-pill-link">Pricing</a></li>
-          <li><a href="about.html" class="site-nav-pill-link active">About</a></li>
+          <li><a href="node-06.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="about.html" class="site-nav-pill-link active">Company</a></li>
         </ul>
       </nav>
+
       <div class="site-nav-actions">
-        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory haptic audio">
+        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
           <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
           <span>AUDIO: ON</span>
         </button>
-        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node dialpad">
+        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
           <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
-          <span>KEYPAD [K]</span>
+          <span>10 NODES [K]</span>
         </button>
-        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">START A SYNQ &rarr;</a>
+        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          START A SYNQ &rarr;
+        </a>
       </div>
     </div>
   </header>
 
+  <!-- Vertical Edge Badge -->
   <div class="edge-badge-vertical" aria-hidden="true">
-    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> THE COORDINATION LAYER BEHIND ENTERTAINMENT &bull; ABOUT</span>
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> COMPANY &amp; GOVERNANCE &bull; WHY WE EXIST</span>
   </div>
 
-  <!-- HERO -->
-  <section style="padding: 160px 0 80px; position: relative; background: radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.08) 0%, #090A0C 80%);">
-    <div class="container" style="text-align: center; max-width: 820px;">
-      <div class="mono-tag purple" style="margin-bottom: 20px;">CORE BRAND BELIEF</div>
-      <h1 style="margin-bottom: 24px;">WE BELIEVE EVERYTHING HAS POTENTIAL</h1>
-      <p class="lead" style="max-width: 680px; margin: 0 auto;">
-        The nervous system of Indian entertainment. We own nothing. We enable everything.
-      </p>
-    </div>
-  </section>
+  <main>
+    <!-- HERO SECTION -->
+    <section style="padding-top:clamp(7rem, 11vw, 9.5rem);padding-bottom:clamp(3.5rem, 6vw, 5rem);background:radial-gradient(circle at 50% 20%, rgba(0, 212, 170, 0.08) 0%, #090A0C 80%);">
+      <div class="container" style="max-width:1180px;">
 
-  <!-- OPERATING PRINCIPLE -->
-  <section class="container" style="padding: 40px 0 80px;">
-    <div class="card-glass" style="padding: 48px; text-align: center; max-width: 900px; margin: 0 auto; border: 1px solid rgba(108,59,244,0.3); background: radial-gradient(circle at 50% 50%, rgba(108,59,244,0.1) 0%, rgba(18,18,26,0.85) 100%);">
-      <div class="mono-tag gold" style="margin-bottom: 20px;">THE OPERATING PRINCIPLE</div>
-      <h2 style="font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.35; margin-bottom: 20px; color: #FFFFFF;">
-        "Waste less. <span class="text-gradient-gold">Sync more.</span>"
-      </h2>
-      <p style="font-size: 1.05rem; color: rgba(255,255,255,0.7); max-width: 640px; margin: 0 auto;">
-        We reduce friction in Indian entertainment. Idle stages fill. Benched talent ships. Frozen capital moves. Scripts roll cameras.
-      </p>
-    </div>
-  </section>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <span class="status-badge live" style="font-size:0.72rem;padding:0.25rem 0.65rem;">
+            <span class="status-dot"></span> COMPANY PROFILE &amp; OPERATING CHARTER
+          </span>
+          <span class="status-badge pilot" style="font-size:0.72rem;padding:0.25rem 0.65rem;">
+            STAGE: ACTIVE PILOT NETWORK
+          </span>
+        </div>
 
-  <!-- 4 CORE VALUES — compact pills -->
-  <section class="container" id="values" style="padding: 20px 0 80px;">
-    <div style="text-align: center; max-width: 560px; margin: 0 auto 40px;">
-      <div class="mono-tag teal" style="margin-bottom: 12px;">UNCOMPROMISING PILLARS</div>
-      <h2>Our Core Values</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:960px;margin:0 auto;">
-      <div class="card card-glow-purple" style="padding:1.25rem;">
-        <div class="card-icon purple" style="font-size:1.5rem;margin-bottom:0.5rem;">👤</div>
-        <div class="mono-tag purple" style="margin-bottom: 8px;">VALUE 01</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: #fff;">NODE FIRST</h3>
-        <p style="color: var(--text-secondary); font-size:0.88rem;">We build for the workers on set, not the middlemen in between.</p>
-      </div>
-      <div class="card card-glow-red" style="padding:1.25rem;">
-        <div class="card-icon red" style="font-size:1.5rem;margin-bottom:0.5rem;">🛑</div>
-        <div class="mono-tag red" style="margin-bottom: 8px;">VALUE 02</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: #fff;">LESS WASTE</h3>
-        <p style="color: var(--text-secondary); font-size:0.88rem;">Cut the fat. Stop the bleed. We measure success by hours saved.</p>
-      </div>
-      <div class="card card-glow-teal" style="padding:1.25rem;">
-        <div class="card-icon teal" style="font-size:1.5rem;margin-bottom:0.5rem;">⚡</div>
-        <div class="mono-tag teal" style="margin-bottom: 8px;">VALUE 03</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: #fff;">ASSET-LIGHT</h3>
-        <p style="color: var(--text-secondary); font-size:0.88rem;">We are the pipe, not the water. Build the track, not the train.</p>
-      </div>
-      <div class="card card-glow-gold" style="padding:1.25rem;">
-        <div class="card-icon gold" style="font-size:1.5rem;margin-bottom:0.5rem;">🌐</div>
-        <div class="mono-tag gold" style="margin-bottom: 8px;">VALUE 04</div>
-        <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: #fff;">SYNC OVER SILOS</h3>
-        <p style="color: var(--text-secondary); font-size:0.88rem;">Tear down the walls. Link the signals across every language and region.</p>
-      </div>
-    </div>
-  </section>
+        <h1 style="font-size:clamp(2.2rem, 4.5vw, 3.8rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:1.5rem;max-width:960px;">
+          Entertainment doesn't have a resource problem.<br>
+          <span class="text-gradient-cyan">It has a coordination problem.</span>
+        </h1>
 
-  <!-- ORIGIN — compact timeline pills -->
-  <section class="container" id="story" style="padding: 20px 0 100px;">
-    <div style="text-align:center;max-width:560px;margin:0 auto 40px;">
-      <div class="mono-tag gold" style="margin-bottom: 12px;">THE ORIGIN MANIFESTO</div>
-      <h2>The Genesis of DigiSynq</h2>
-      <p style="color:var(--text-secondary);font-size:0.95rem;margin-top:12px;">
-        Indian entertainment didn't need another middleman. It needed an operating network — a biological nervous system for discovery, contracting, and synchronization.
-      </p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:960px;margin:0 auto 40px;">
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.1rem;">
-        <span class="mono-tag purple" style="margin-bottom:8px;display:block;">PHASE 1 — 2024</span>
-        <h4 style="color:#fff;font-size:1rem;margin-bottom:6px;">The Silo Realization</h4>
-        <p style="color:var(--text-secondary);font-size:0.82rem;">35%+ of production budgets lost to idle standby across 150+ field shoots.</p>
-      </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.1rem;">
-        <span class="mono-tag red" style="margin-bottom:8px;display:block;">PHASE 2 — 2025</span>
-        <h4 style="color:#fff;font-size:1rem;margin-bottom:6px;">The Damage Control Roster</h4>
-        <p style="color:var(--text-secondary);font-size:0.82rem;">18 stalled shoots rescued. ₹12 crores in catastrophic losses prevented.</p>
-      </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.1rem;">
-        <span class="mono-tag teal" style="margin-bottom:8px;display:block;">PHASE 3 — 2026</span>
-        <h4 style="color:#fff;font-size:1rem;margin-bottom:6px;">The ABCDEF Pipeline</h4>
-        <p style="color:var(--text-secondary);font-size:0.82rem;">End-to-end pipeline codified. 15 modules. Smart contracts. Regional guilds.</p>
-      </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.1rem;">
-        <span class="mono-tag gold" style="margin-bottom:8px;display:block;">PHASE 4 — BEYOND</span>
-        <h4 style="color:#fff;font-size:1rem;margin-bottom:6px;">Pan-Indian Synthesis</h4>
-        <p style="color:var(--text-secondary);font-size:0.82rem;">50,000 verified nodes. 20+ languages. Zero idle gear. Zero wasted scripts.</p>
-      </div>
-    </div>
+        <p style="font-size:clamp(1.05rem, 1.8vw, 1.25rem);line-height:1.75;color:#cbd5e1;max-width:880px;margin-bottom:2rem;">
+          DigiSynq is the coordination layer that connects verified talent, IP, stages, gear, capital and distribution into executable production pathways. We don't own the assets. We make them move.
+        </p>
 
-    <!-- Runbook CTA -->
-    <div style="text-align:center;border-top:1px solid rgba(255,255,255,0.08);padding-top:2rem;">
-      <p style="color:var(--text-secondary);font-size:0.88rem;margin-bottom:1rem;">Full philosophy, operating axiom, and system documentation live in Node 09.</p>
-      <a href="node-09.html#runbook" class="btn btn-primary btn-sm">VIEW FULL RUNBOOK IN NODE 09 &rarr;</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="brand-logo" style="margin-bottom: 16px;">
-            <div class="logo-icon"></div>
-            <span>DIGISYNQ</span>
+        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="flex:1;min-width:220px;">
+            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.35rem;">Brand Principle</div>
+            <div style="font-size:1.05rem;font-weight:700;color:#fff;">We don't own the assets. We make them move.</div>
           </div>
-          <p style="color: var(--text-secondary); max-width: 280px; font-size: 0.9rem;">
-            The nervous system of Indian entertainment. Waste less. Sync more.
-          </p>
+          <div style="flex:1;min-width:220px;">
+            <div class="mono" style="font-size:0.75rem;color:var(--accent-emerald);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.35rem;">Supporting Axiom</div>
+            <div style="font-size:1.05rem;font-weight:700;color:#fff;">Waste less. Sync more.</div>
+          </div>
+          <div style="flex:1;min-width:220px;">
+            <div class="mono" style="font-size:0.75rem;color:#f59e0b;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.35rem;">Operational Status</div>
+            <div style="font-size:1.05rem;font-weight:700;color:#fff;">Active Pilots in Mumbai, Hyderabad, Chennai, Bengaluru</div>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Platform</h4>
-          <ul>
-            <li><a href="platform.html">ABCDEF Pipeline</a></li>
-            <li><a href="nodes.html">Node Directory</a></li>
-            <li><a href="products.html">15 Modules</a></li>
-            <li><a href="pricing.html">Pricing Plans</a></li>
+
+      </div>
+    </section>
+
+    <!-- SECTION 1: WHY DIGISYNQ EXISTS -->
+    <section style="padding:clamp(3rem, 6vw, 5rem) 0;border-top:1px solid rgba(255,255,255,0.08);">
+      <div class="container" style="max-width:1180px;">
+
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">
+          01 // ROOT CAUSE ANALYSIS
+        </div>
+        <h2 style="font-size:clamp(1.6rem, 3vw, 2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem;">
+          Why We Built DigiSynq
+        </h2>
+        <p style="font-size:1.05rem;line-height:1.75;color:#94a3b8;max-width:820px;margin-bottom:2.5rem;">
+          The global and regional media economy is overflowing with extraordinary scripts, certified technicians, world-class soundstages, high-end cinema packages, and institutional capital. Yet projects stall, budgets bleed, and assets sit idle for months at a time.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+          <div class="schematic-frame-box">
+            <div class="schematic-crosshair-tl"></div>
+            <div class="schematic-crosshair-tr"></div>
+            <div class="schematic-crosshair-bl"></div>
+            <div class="schematic-crosshair-br"></div>
+            <div class="mono" style="font-size:0.72rem;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">The Structural Disconnect</div>
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;">Information Asymmetry</h3>
+            <p style="font-size:0.92rem;line-height:1.65;color:#94a3b8;">
+              Producers rely on informal phone trees and opaque middleman networks to book crews and facilities. Real-time availability, verified credentials, and market-clearing rates are completely invisible.
+            </p>
+          </div>
+
+          <div class="schematic-frame-box">
+            <div class="schematic-crosshair-tl"></div>
+            <div class="schematic-crosshair-tr"></div>
+            <div class="schematic-crosshair-bl"></div>
+            <div class="schematic-crosshair-br"></div>
+            <div class="mono" style="font-size:0.72rem;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">The Capital Risk</div>
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;">Financial Distrust</h3>
+            <p style="font-size:0.92rem;line-height:1.65;color:#94a3b8;">
+              Vendors and talent fear delayed or forfeited payments; financiers fear untracked expenditure and budget leakage. Projects stall because nobody wants to be the first to risk capital without verification.
+            </p>
+          </div>
+
+          <div class="schematic-frame-box">
+            <div class="schematic-crosshair-tl"></div>
+            <div class="schematic-crosshair-tr"></div>
+            <div class="schematic-crosshair-bl"></div>
+            <div class="schematic-crosshair-br"></div>
+            <div class="mono" style="font-size:0.72rem;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">The Operational Leakage</div>
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;">Idle Capacity Waste</h3>
+            <p style="font-size:0.92rem;line-height:1.65;color:#94a3b8;">
+              Stages sit dark between dates; certified rental equipment sits in flight cases; vetted DOPs sit on the bench. Each idle day is economic capacity that can never be recovered.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: CORE BELIEFS -->
+    <section style="padding:clamp(3rem, 6vw, 5rem) 0;border-top:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.01);">
+      <div class="container" style="max-width:1180px;">
+
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-emerald);text-transform:uppercase;margin-bottom:0.5rem;">
+          02 // FIRST PRINCIPLES
+        </div>
+        <h2 style="font-size:clamp(1.6rem, 3vw, 2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem;">
+          Our Core Operating Beliefs
+        </h2>
+        <p style="font-size:1.05rem;line-height:1.75;color:#94a3b8;max-width:820px;margin-bottom:2.5rem;">
+          We operate according to four invariant principles designed to create liquidity without creating bloat.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;">
+          <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.5rem;">BELIEF 01</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Everything Has Potential</h3>
+            <p style="font-size:0.9rem;line-height:1.65;color:#94a3b8;">
+              No script is permanently dead; no studio day is worthless. When packaged with the right complementary pieces, latent assets unlock immediate production value.
+            </p>
+          </div>
+
+          <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-emerald);margin-bottom:0.5rem;">BELIEF 02</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Coordination Over Ownership</h3>
+            <p style="font-size:0.9rem;line-height:1.65;color:#94a3b8;">
+              Asset ownership brings fixed overhead and misaligned incentives. By remaining completely asset-light, DigiSynq remains an objective, neutral routing switchboard.
+            </p>
+          </div>
+
+          <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
+            <div class="mono" style="font-size:0.72rem;color:#f59e0b;margin-bottom:0.5rem;">BELIEF 03</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Trust Through Verification</h3>
+            <p style="font-size:0.9rem;line-height:1.65;color:#94a3b8;">
+              Reputations cannot rest on hearsay. Every crew credit, gear serial condition, and studio technical spec must be verified before deployment.
+            </p>
+          </div>
+
+          <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
+            <div class="mono" style="font-size:0.72rem;color:#a855f7;margin-bottom:0.5rem;">BELIEF 04</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Structured Milestone Settlement</h3>
+            <p style="font-size:0.9rem;line-height:1.65;color:#94a3b8;">
+              Parties collaborate best when compensation is mathematically bound to objective, verified deliverables held in regulated third-party escrow.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHAT WE DO VS WHAT WE DO NOT DO -->
+    <section style="padding:clamp(3rem, 6vw, 5rem) 0;border-top:1px solid rgba(255,255,255,0.08);">
+      <div class="container" style="max-width:1180px;">
+
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">
+          03 // BOUNDARIES &amp; SCOPE
+        </div>
+        <h2 style="font-size:clamp(1.6rem, 3vw, 2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem;">
+          Clear Operational Boundaries
+        </h2>
+        <p style="font-size:1.05rem;line-height:1.75;color:#94a3b8;max-width:820px;margin-bottom:2.5rem;">
+          To preserve network trust and eliminate conflicts of interest, we maintain strict clarity on what DigiSynq does and what we never do.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+          <!-- What We Do -->
+          <div style="background:rgba(0,212,170,0.03);border:1px solid rgba(0,212,170,0.25);border-radius:12px;padding:2rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.25rem;">
+              <span class="material-symbols-outlined" style="color:var(--accent-emerald);font-size:1.4rem;">check_circle</span>
+              <h3 style="font-size:1.25rem;font-weight:700;color:#fff;margin:0;">What DigiSynq DOES</h3>
+            </div>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;color:#cbd5e1;font-size:0.92rem;line-height:1.6;">
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-emerald);margin-top:3px;">arrow_forward</span>
+                <span><strong>Coordinates Ecosystem Resources:</strong> Matches verified talent, IP, stages, gear, capital and distribution pathways.</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-emerald);margin-top:3px;">arrow_forward</span>
+                <span><strong>Verifies Credentials &amp; Equipment:</strong> Confirms active technical specifications, credits, and insurance before matching.</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-emerald);margin-top:3px;">arrow_forward</span>
+                <span><strong>Structures Standard Contracts:</strong> Provides modular SLA templates with clear milestones, deliverables, and inspection windows.</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-emerald);margin-top:3px;">arrow_forward</span>
+                <span><strong>Facilitates Milestone Escrow:</strong> Routes transactions through regulated banking partners so funds release only upon verified delivery.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- What We Do NOT Do -->
+          <div style="background:rgba(239,68,68,0.03);border:1px solid rgba(239,68,68,0.25);border-radius:12px;padding:2rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.25rem;">
+              <span class="material-symbols-outlined" style="color:#ef4444;font-size:1.4rem;">cancel</span>
+              <h3 style="font-size:1.25rem;font-weight:700;color:#fff;margin:0;">What DigiSynq DOES NOT Do</h3>
+            </div>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;color:#cbd5e1;font-size:0.92rem;line-height:1.6;">
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span class="material-symbols-outlined" style="font-size:1rem;color:#ef4444;margin-top:3px;">close</span>
+                <span><strong>We Do Not Produce Films:</strong> We have no production slate, executive producer mandates, or creative interference.</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span class="material-symbols-outlined" style="font-size:1rem;color:#ef4444;margin-top:3px;">close</span>
+                <span><strong>We Do Not Own Studio Real Estate or Gear:</strong> We own zero cameras, grip trucks, or physical stage complexes.</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span class="material-symbols-outlined" style="font-size:1rem;color:#ef4444;margin-top:3px;">close</span>
+                <span><strong>We Do Not Manage Talent Exclusively:</strong> We are not a talent agency. Guild members maintain full autonomy over their careers.</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <span class="material-symbols-outlined" style="font-size:1rem;color:#ef4444;margin-top:3px;">close</span>
+                <span><strong>We Do Not Hold Custody of Client Funds:</strong> All financial escrow is held by regulated third-party scheduled banks, never on our balance sheet.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHO WE SERVE -->
+    <section style="padding:clamp(3rem, 6vw, 5rem) 0;border-top:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.01);">
+      <div class="container" style="max-width:1180px;">
+
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">
+          04 // NETWORK PARTICIPANTS
+        </div>
+        <h2 style="font-size:clamp(1.6rem, 3vw, 2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem;">
+          Who We Serve Across the Value Chain
+        </h2>
+        <p style="font-size:1.05rem;line-height:1.75;color:#94a3b8;max-width:820px;margin-bottom:2.5rem;">
+          DigiSynq connects stakeholders across the eight fundamental resource categories.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
+          <div class="pastel-card" style="padding:1.25rem;">
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.25rem;">CREATORS &amp; WRITERS</div>
+            <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.5rem;color:#fff;">Protected IP &amp; Packaging</div>
+            <p style="font-size:0.84rem;line-height:1.6;color:#94a3b8;margin:0;">Timestamped registry, verified attachment pathways to qualified producers, and zero unauthorized exposure.</p>
+          </div>
+
+          <div class="pastel-card" style="padding:1.25rem;">
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.25rem;">PRODUCERS &amp; LINE PRODUCERS</div>
+            <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.5rem;color:#fff;">Executable Turnkey Bundles</div>
+            <p style="font-size:0.84rem;line-height:1.6;color:#94a3b8;margin:0;">Instant access to verified crew rosters, schedule-matched stages, and standardized milestone escrow.</p>
+          </div>
+
+          <div class="pastel-card" style="padding:1.25rem;">
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.25rem;">TECHNICIANS &amp; CREW</div>
+            <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.5rem;color:#fff;">Secured Pay &amp; Transparency</div>
+            <p style="font-size:0.84rem;line-height:1.6;color:#94a3b8;margin:0;">Verified credit history, clear call sheets, and escrow-backed milestone payouts without payment chasing.</p>
+          </div>
+
+          <div class="pastel-card" style="padding:1.25rem;">
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.25rem;">STUDIOS &amp; GEAR HOUSES</div>
+            <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.5rem;color:#fff;">Dark-Day Occupancy Yield</div>
+            <p style="font-size:0.84rem;line-height:1.6;color:#94a3b8;margin:0;">Monetize schedule gaps, deploy idle camera packages, and eliminate dead inventory days.</p>
+          </div>
+
+          <div class="pastel-card" style="padding:1.25rem;">
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.25rem;">POST HOUSES &amp; VFX</div>
+            <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.5rem;color:#fff;">Clean Delivery Pipelines</div>
+            <p style="font-size:0.84rem;line-height:1.6;color:#94a3b8;margin:0;">Locked specifications, QA inspection criteria, and escrow release tied to objective conform approval.</p>
+          </div>
+
+          <div class="pastel-card" style="padding:1.25rem;">
+            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.25rem;">INVESTORS &amp; FINANCIERS</div>
+            <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.5rem;color:#fff;">Auditable Deployment Controls</div>
+            <p style="font-size:0.84rem;line-height:1.6;color:#94a3b8;margin:0;">Direct escrow tranches, real-time burn-rate visibility, and verified delivery proofs before capital releases.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: CURRENT STAGE & GOVERNANCE -->
+    <section style="padding:clamp(3rem, 6vw, 5rem) 0;border-top:1px solid rgba(255,255,255,0.08);">
+      <div class="container" style="max-width:1180px;">
+
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">
+          05 // STATUS &amp; TRUST
+        </div>
+        <h2 style="font-size:clamp(1.6rem, 3vw, 2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem;">
+          Current Stage &amp; Trust Governance
+        </h2>
+        <p style="font-size:1.05rem;line-height:1.75;color:#94a3b8;max-width:820px;margin-bottom:2.5rem;">
+          DigiSynq is currently operating in an active pilot deployment phase across key media hubs in India. We believe in complete transparency about where we are today and where we are going.
+        </p>
+
+        <div class="schematic-frame-box" style="margin-bottom:2rem;">
+          <div class="schematic-crosshair-tl"></div>
+          <div class="schematic-crosshair-tr"></div>
+          <div class="schematic-crosshair-bl"></div>
+          <div class="schematic-crosshair-br"></div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
+            <div>
+              <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Active Pilot Deployment</div>
+              <h3 style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.75rem;">Regional Hub Operations</h3>
+              <p style="font-size:0.92rem;line-height:1.65;color:#cbd5e1;margin-bottom:1rem;">
+                DigiSynq coordination desks are live in a controlled pilot capacity across Mumbai, Hyderabad, Chennai, and Bengaluru. We are onboarding curated cohorts of production managers, camera rental houses, and soundstages.
+              </p>
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                <span class="status-badge pilot">MUMBAI [PILOT]</span>
+                <span class="status-badge pilot">HYDERABAD [PILOT]</span>
+                <span class="status-badge pilot">CHENNAI [PILOT]</span>
+                <span class="status-badge pilot">BENGALURU [PILOT]</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="mono" style="font-size:0.75rem;color:var(--accent-emerald);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Third-Party Banking Trust</div>
+              <h3 style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.75rem;">Regulated Escrow Custody</h3>
+              <p style="font-size:0.92rem;line-height:1.65;color:#cbd5e1;margin-bottom:1rem;">
+                DigiSynq does not operate as a financial depository, non-banking financial company (NBFC), or money service business. All transactional escrow accounts are maintained by regulated scheduled commercial banks and licensed escrow trustees. DigiSynq provides the verification and coordination logic that informs milestone release instructions.
+              </p>
+              <span class="status-badge verified">BANK-PARTNER CUSTODY &bull; VERIFIED ESCROW</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align:center;padding:3rem 1rem;background:radial-gradient(circle at 50% 50%, rgba(0,212,170,0.06) 0%, rgba(9,10,12,0.95) 100%);border-radius:16px;border:1px solid rgba(255,255,255,0.08);">
+          <div class="mono" style="font-size:0.78rem;color:var(--accent-cyan);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.75rem;">INITIATE COORDINATION</div>
+          <h3 style="font-size:clamp(1.5rem, 2.5vw, 2rem);font-weight:800;color:#fff;margin-bottom:1rem;">Ready to plug your project or resources into the network?</h3>
+          <p style="font-size:1rem;color:#94a3b8;max-width:600px;margin:0 auto 1.5rem;">Submit your project signal or asset availability through our system intake desk.</p>
+          <a href="node-10.html" class="btn btn-primary" style="padding:0.75rem 2rem;font-size:0.95rem;">START A SYNQ &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Canonical Architectural Footer -->
+  <footer class="site-footer" style="background:#090A0C;border-top:1px solid rgba(255,255,255,0.08);padding:4rem 0 2rem;">
+    <div class="container" style="max-width:1180px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;margin-bottom:3rem;">
+        <div>
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+            <div class="site-brand-glyph" aria-hidden="true" style="width:28px;height:28px;font-size:0.75rem;">DS</div>
+            <span style="font-weight:800;letter-spacing:0.05em;color:#fff;">DIGISYNQ</span>
+          </div>
+          <p style="font-size:0.88rem;line-height:1.65;color:#94a3b8;margin-bottom:1rem;">
+            The coordination layer for entertainment. Connecting verified talent, IP, stages, gear, capital and distribution.
+          </p>
+          <div class="mono" style="font-size:0.8rem;color:var(--accent-cyan);">
+            We don't own the assets. We make them move.
+          </div>
+        </div>
+
+        <div>
+          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">System Architecture</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
+            <li><a href="index.html" style="color:#94a3b8;text-decoration:none;">Overview</a></li>
+            <li><a href="node-03.html" style="color:#94a3b8;text-decoration:none;">How It Works (6-Stage Pipeline)</a></li>
+            <li><a href="platform.html" style="color:#94a3b8;text-decoration:none;">Platform Architecture</a></li>
+            <li><a href="products.html" style="color:#94a3b8;text-decoration:none;">15 Coordination Modules</a></li>
+            <li><a href="node-06.html" style="color:#94a3b8;text-decoration:none;">Intelligence Telemetry</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Ecosystem</h4>
-          <ul>
-            <li><a href="workshops.html">Workshops</a></li>
-            <li><a href="guilds.html">Guilds</a></li>
-            <li><a href="about.html#values">Core Values</a></li>
-            <li><a href="node-09.html#runbook">Central Runbook</a></li>
+
+        <div>
+          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">10 Knowledge Nodes</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
+            <li><a href="node-01.html" style="color:#94a3b8;text-decoration:none;">Node 01: Problem / Switchboard</a></li>
+            <li><a href="node-02.html" style="color:#94a3b8;text-decoration:none;">Node 02: 8 Ecosystem Categories</a></li>
+            <li><a href="node-04.html" style="color:#94a3b8;text-decoration:none;">Node 04: 5 Entry Situations</a></li>
+            <li><a href="node-05.html" style="color:#94a3b8;text-decoration:none;">Node 05: 5 Mission Modes</a></li>
+            <li><a href="node-07.html" style="color:#94a3b8;text-decoration:none;">Node 07: Compounding Insights</a></li>
+            <li><a href="node-08.html" style="color:#94a3b8;text-decoration:none;">Node 08: Commercial Value Model</a></li>
+            <li><a href="node-09.html" style="color:#94a3b8;text-decoration:none;">Node 09: System Runbook</a></li>
+            <li><a href="node-10.html" style="color:#94a3b8;text-decoration:none;">Node 10: System Intake</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Sync Center</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
-            Join the movement to end entertainment waste.
-          </p>
-          <a href="index.html#join" class="btn btn-primary btn-sm">Join the Pipeline</a>
+
+        <div>
+          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">Trust &amp; Governance</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
+            <li><a href="about.html" style="color:var(--accent-cyan);text-decoration:none;font-weight:600;">Company Charter</a></li>
+            <li><a href="guilds.html" style="color:#94a3b8;text-decoration:none;">Peer Craft Syndicates</a></li>
+            <li><a href="workshops.html" style="color:#94a3b8;text-decoration:none;">Learning Workshops</a></li>
+            <li><a href="pricing.html" style="color:#94a3b8;text-decoration:none;">Commercial Tiers</a></li>
+            <li><span style="color:#64748b;font-size:0.82rem;">Escrow held by partner banks</span></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom-bar">
-        <div>&copy; 2026 DIGISYNQ NETWORKS. Waste less. Sync more.</div>
+
+      <div style="padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.82rem;color:#64748b;">
+        <div>&copy; 2026 DIGISYNQ NETWORKS. All rights reserved. Operating as an independent coordination network.</div>
+        <div class="mono" style="font-size:0.78rem;color:var(--accent-cyan);">WASTE LESS. SYNC MORE.</div>
       </div>
     </div>
   </footer>
 
-  <!-- Dialpad -->
-  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
-    <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
+  <!-- 10 Nodes Dialpad Drawer -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true" aria-label="10 Nodes Knowledge Map">
+    <button class="dialpad-drawer-close" id="closeDialpadDrawer" aria-label="Close Dialpad">&times;</button>
     <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;">
       <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>THE COORDINATION LAYER FOR ENTERTAINMENT
     </div>
-    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
+    <div class="dialpad-drawer-title">10 NODES KNOWLEDGE ARCHITECTURE</div>
     <div class="node-dialpad-container" style="max-width:980px;">
       <div class="node-dialpad-grid">
-        <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
+        <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home / Problem</span></a>
         <a href="node-02.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
         <a href="node-03.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
         <a href="node-04.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
@@ -212,7 +465,7 @@
         <a href="node-06.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
         <a href="node-07.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
         <a href="node-08.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-        <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
+        <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">System Runbook</span></a>
         <a href="node-10.html" class="node-key-item"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
       </div>
     </div>
@@ -221,6 +474,6 @@
   <script src="assets/js/telemetry-canvas.js"></script>
   <script src="assets/js/sound-engine.js"></script>
   <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/main.js?v=2.1"></script>
+  <script src="assets/js/main.js?v=2.2"></script>
 </body>
 </html>

@@ -3,154 +3,322 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node 04: Solutions — Where do you enter the pipeline? — DigiSynq</title>
-  <meta name="description" content="5 entry situations: Have something, Need something, Something is underused, Something is blocked, Something failed. One pipeline fixes all.">
+  <title>Node 04: Solutions — What Needs to Move? — DigiSynq</title>
+  <meta name="description" content="What needs to move? Explore DigiSynq's 5 entry situations: I Have Something, I Need Something, Something Is Underused, Something Is Blocked, and Something Needs to Move.">
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
 </head>
 <body style="overflow-x:hidden;background:#090A0C;color:#FFFFFF;">
 
+  <!-- Master Fixed Top Navbar -->
   <header class="site-navbar" role="banner">
     <div class="site-navbar-inner">
       <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
         <div class="site-brand-glyph" aria-hidden="true">DS</div>
         <span>DIGISYNQ</span>
       </a>
+
       <nav aria-label="Primary Navigation">
-        
         <ul class="site-nav-pills">
-          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
-          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
-          <li><a href="node-01.html" class="site-nav-pill-link active">10 Nodes</a></li>
+          <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="node-03.html" class="site-nav-pill-link">How It Works</a></li>
+          <li><a href="node-04.html" class="site-nav-pill-link active">Solutions</a></li>
           <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
           <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
-          <li><a href="workshops.html" class="site-nav-pill-link">Workshops</a></li>
-          <li><a href="pricing.html" class="site-nav-pill-link">Pricing</a></li>
-          <li><a href="about.html" class="site-nav-pill-link">About</a></li>
+          <li><a href="node-06.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="about.html" class="site-nav-pill-link">Company</a></li>
         </ul>
       </nav>
+
       <div class="site-nav-actions">
-        <button id="audioHudToggle" class="btn-hud-audio"><span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span><span>AUDIO: ON</span></button>
-        <button class="btn-keypad-trigger" data-open-dialpad><span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span><span>KEYPAD [K]</span></button>
+        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
+          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
+          <span>AUDIO: ON</span>
+        </button>
+        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
+          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
+          <span>10 NODES [K]</span>
+        </button>
         <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">START A SYNQ &rarr;</a>
       </div>
     </div>
   </header>
 
   <div class="edge-badge-vertical" aria-hidden="true">
-    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> STAKEHOLDER GATEWAYS &bull; NODE 04: SOLUTIONS</span>
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> USER ENTRY MODEL &bull; NODE 04: SOLUTIONS</span>
   </div>
 
   <main>
     <section style="padding-top:clamp(7rem, 11vw, 9.5rem);padding-bottom:clamp(4rem, 8vw, 6rem);">
       <div class="container" style="max-width:1180px;">
 
+        <!-- Colossal Numeral Layout -->
         <div class="colossal-numeral-layout">
-          <div class="colossal-digit">04</div>
+          <div class="colossal-digit" aria-label="Node 04: SOLUTIONS">04</div>
           <div class="colossal-title-stack">
             <div class="mono" style="font-size:0.8rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-cyan);margin-bottom:0.45rem;display:flex;align-items:center;gap:0.45rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;">widgets</span> STAKEHOLDER GATEWAYS
+              <span class="material-symbols-outlined" style="font-size:1.1rem;">widgets</span> USER ENTRY SITUATIONS
             </div>
             <h1 class="colossal-title">SOLUTIONS</h1>
-            <p class="colossal-caption">Where do you enter?</p>
+            <p class="colossal-caption">The 5 Operational Entry Pathways</p>
           </div>
         </div>
 
-        <div class="schematic-frame-box" style="margin-bottom:3rem;">
+        <!-- Master Headline -->
+        <div class="schematic-frame-box" style="margin-bottom:3.5rem;">
           <div class="schematic-crosshair-tl"></div><div class="schematic-crosshair-tr"></div>
           <div class="schematic-crosshair-bl"></div><div class="schematic-crosshair-br"></div>
-          <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;color:#ffffff;margin:0 0 0.75rem;text-transform:uppercase;">
-            SITUATION &rarr; ACTION &rarr; BRIDGE &rarr; OUTCOME
-          </h2>
-          <p style="font-size:1.05rem;line-height:1.75;color:#cbd5e1;margin:0;max-width:820px;">
-            We diagnose where friction chokes the pipeline, apply surgical coordination, and link the right pieces until the work delivers.
-          </p>
-        </div>
-
-        <!-- 5 Situations — compact pills -->
-        <div style="margin-bottom:3rem;">
-          <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:1rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">assignment</span>5 ENTRY SITUATIONS
+          <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:0.6rem;">
+            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">login</span>
+            THE USER ENTRY MODEL
           </span>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;">
-            <div class="pastel-card" style="padding:1rem 1.1rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.68rem;color:var(--accent-cyan);margin-bottom:0.3rem;">SITUATION 01 · UNLOCK THE VAULT</div>
-              <div style="font-size:1rem;font-weight:700;color:#fff;">"I Have Something."</div>
-              <div style="font-size:0.82rem;color:#94a3b8;margin-top:0.3rem;">Dormant asset → active revenue under escrow.</div>
-            </div>
-            <div class="pastel-card" style="padding:1rem 1.1rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.68rem;color:var(--accent-cyan);margin-bottom:0.3rem;">SITUATION 02 · STOP ASKING IN CIRCLES</div>
-              <div style="font-size:1rem;font-weight:700;color:#fff;">"I Need Something."</div>
-              <div style="font-size:0.82rem;color:#94a3b8;margin-top:0.3rem;">Gap filled in hours. Zero middlemen.</div>
-            </div>
-            <div class="pastel-card" style="padding:1rem 1.1rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.68rem;color:var(--accent-cyan);margin-bottom:0.3rem;">SITUATION 03 · PLUG THE CASH LEAKS</div>
-              <div style="font-size:1rem;font-weight:700;color:#fff;">"Something Is Underused."</div>
-              <div style="font-size:0.82rem;color:#94a3b8;margin-top:0.3rem;">Dark days → booked production calendar.</div>
-            </div>
-            <div class="pastel-card" style="padding:1rem 1.1rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.68rem;color:var(--accent-cyan);margin-bottom:0.3rem;">SITUATION 04 · CLEAR THE JAM</div>
-              <div style="font-size:1rem;font-weight:700;color:#fff;">"Something Is Blocked."</div>
-              <div style="font-size:0.82rem;color:#94a3b8;margin-top:0.3rem;">Bottleneck cleared with locked escrow in 24 hours.</div>
-            </div>
-            <div class="pastel-card" style="padding:1rem 1.1rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.68rem;color:var(--accent-cyan);margin-bottom:0.3rem;">SITUATION 05 · RESCUE THE PRODUCTION</div>
-              <div style="font-size:1rem;font-weight:700;color:#fff;">"Something Is Failing."</div>
-              <div style="font-size:0.82rem;color:#94a3b8;margin-top:0.3rem;">24-hour emergency response. Stalled shoot rescued.</div>
-            </div>
+          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
+            WHAT NEEDS TO MOVE?
+          </h2>
+          <p style="font-size:1.1rem;line-height:1.75;color:#cbd5e1;margin:0 0 1.25rem;max-width:860px;">
+            You do not need to navigate complex software architectures. You enter DigiSynq through your practical operational bottleneck. Choose your situation below to start a structured coordination pathway:
+          </p>
+          <div class="mono" style="font-size:0.88rem;color:#00FF66;font-weight:700;">
+            &bull; PRACTICAL &bull; VERIFIED &bull; MILESTONE-ESCROW BACKED
           </div>
         </div>
 
-        <div style="text-align:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;margin-bottom:2rem;">
-          <span class="mono" style="font-size:0.75rem;color:#94a3b8;letter-spacing:0.12em;display:block;margin-bottom:0.75rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">menu_book</span>FULL SITUATION BRIEFS · 9 STAKEHOLDER GATEWAYS · ENTRY PROTOCOLS
-          </span>
-          <a href="node-09.html#runbook" class="btn btn-secondary" style="font-size:0.85rem;padding:0.65rem 1.4rem;">VIEW SOLUTIONS RUNBOOK IN NODE 09 &rarr;</a>
+        <!-- 5 Practical Solution Cards -->
+        <div style="display:flex;flex-direction:column;gap:2rem;margin-bottom:3.5rem;">
+
+          <!-- Situation 1 -->
+          <div class="pastel-card" id="have" style="padding:2rem;border-left:4px solid var(--accent-cyan);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+              <div>
+                <span class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;">PATHWAY 01 // ASSET ACTIVATION</span>
+                <h3 style="font-size:1.5rem;font-weight:800;color:#fff;margin:0.25rem 0 0;">&ldquo;I Have Something.&rdquo;</h3>
+              </div>
+              <a href="node-10.html?situation=have" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.4rem;">
+                ACTIVATE AN ASSET &rarr;
+              </a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;font-size:0.9rem;line-height:1.65;color:#cbd5e1;">
+              <div>
+                <strong style="color:#ef4444;display:block;font-size:0.75rem;" class="mono">THE PROBLEM</strong>
+                You hold an under-monetized script, dark soundstage calendar, idle camera inventory, or an investment fund without clean deal flow.
+              </div>
+              <div>
+                <strong style="color:var(--accent-cyan);display:block;font-size:0.75rem;" class="mono">WHO IT IS FOR</strong>
+                Asset owners, screenwriters with vetted IP, studio lot managers, equipment rental companies, private financiers.
+              </div>
+              <div>
+                <strong style="color:#00FF66;display:block;font-size:0.75rem;" class="mono">WHAT DIGISYNQ DOES</strong>
+                Indexes your asset parameters, conducts technical/rights verification, and matches you to capitalized production teams.
+              </div>
+              <div>
+                <strong style="color:#fff;display:block;font-size:0.75rem;" class="mono">EXPECTED OUTCOME</strong>
+                Dormant assets transition into active bookings with escrow-protected payment terms.
+              </div>
+            </div>
+          </div>
+
+          <!-- Situation 2 -->
+          <div class="pastel-card" id="need" style="padding:2rem;border-left:4px solid var(--accent-cyan);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+              <div>
+                <span class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;">PATHWAY 02 // PRODUCTION ASSEMBLY</span>
+                <h3 style="font-size:1.5rem;font-weight:800;color:#fff;margin:0.25rem 0 0;">&ldquo;I Need Something.&rdquo;</h3>
+              </div>
+              <a href="node-10.html?situation=need" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.4rem;">
+                FIND WHAT YOU NEED &rarr;
+              </a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;font-size:0.9rem;line-height:1.65;color:#cbd5e1;">
+              <div>
+                <strong style="color:#ef4444;display:block;font-size:0.75rem;" class="mono">THE PROBLEM</strong>
+                You are mounting a shoot and cannot locate the right Director of Photography, specialized anamorphic glass, or acoustic lot within budget.
+              </div>
+              <div>
+                <strong style="color:var(--accent-cyan);display:block;font-size:0.75rem;" class="mono">WHO IT IS FOR</strong>
+                Executive producers, line producers, directors, showrunners, ad agency production heads.
+              </div>
+              <div>
+                <strong style="color:#00FF66;display:block;font-size:0.75rem;" class="mono">WHAT DIGISYNQ DOES</strong>
+                Searches across regional silos to match available talent, stages, and kits with verified rate baselines and confirmed dates.
+              </div>
+              <div>
+                <strong style="color:#fff;display:block;font-size:0.75rem;" class="mono">EXPECTED OUTCOME</strong>
+                Gaps filled rapidly with peer-verified technicians and inspected hardware under standardized terms.
+              </div>
+            </div>
+          </div>
+
+          <!-- Situation 3 -->
+          <div class="pastel-card" id="underused" style="padding:2rem;border-left:4px solid var(--accent-cyan);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+              <div>
+                <span class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;">PATHWAY 03 // CAPACITY RECOVERY</span>
+                <h3 style="font-size:1.5rem;font-weight:800;color:#fff;margin:0.25rem 0 0;">&ldquo;Something Is Underused.&rdquo;</h3>
+              </div>
+              <a href="node-10.html?situation=underused" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.4rem;">
+                RECOVER CAPACITY &rarr;
+              </a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;font-size:0.9rem;line-height:1.65;color:#cbd5e1;">
+              <div>
+                <strong style="color:#ef4444;display:block;font-size:0.75rem;" class="mono">THE PROBLEM</strong>
+                Soundstages sit dark for 4-to-10 day spans between major shoots, or camera packages remain in transit cases accumulating overhead.
+              </div>
+              <div>
+                <strong style="color:var(--accent-cyan);display:block;font-size:0.75rem;" class="mono">WHO IT IS FOR</strong>
+                Studio operators, rental house fleet managers, post-production DI and audio mixing suites.
+              </div>
+              <div>
+                <strong style="color:#00FF66;display:block;font-size:0.75rem;" class="mono">WHAT DIGISYNQ DOES</strong>
+                Dynamically routes short-window commercial shoots, music videos, and VFX pickups into dark calendar dates.
+              </div>
+              <div>
+                <strong style="color:#fff;display:block;font-size:0.75rem;" class="mono">EXPECTED OUTCOME</strong>
+                Increased annual facility utilization and cash recovery on previously unmonetized dark days.
+              </div>
+            </div>
+          </div>
+
+          <!-- Situation 4 -->
+          <div class="pastel-card" id="blocked" style="padding:2rem;border-left:4px solid var(--accent-cyan);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+              <div>
+                <span class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;">PATHWAY 04 // BOTTLENECK TRIAGE</span>
+                <h3 style="font-size:1.5rem;font-weight:800;color:#fff;margin:0.25rem 0 0;">&ldquo;Something Is Blocked.&rdquo;</h3>
+              </div>
+              <a href="node-10.html?situation=blocked" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.4rem;">
+                CLEAR A BOTTLENECK &rarr;
+              </a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;font-size:0.9rem;line-height:1.65;color:#cbd5e1;">
+              <div>
+                <strong style="color:#ef4444;display:block;font-size:0.75rem;" class="mono">THE PROBLEM</strong>
+                An active production is at risk due to sudden key crew dropped out, delayed milestone approvals, or equipment malfunctions on location.
+              </div>
+              <div>
+                <strong style="color:var(--accent-cyan);display:block;font-size:0.75rem;" class="mono">WHO IT IS FOR</strong>
+                Line producers, production managers, project completion guarantors, lead producers.
+              </div>
+              <div>
+                <strong style="color:#00FF66;display:block;font-size:0.75rem;" class="mono">WHAT DIGISYNQ DOES</strong>
+                Initiates rapid coordination triage: checks live guild rosters for available stand-ins, dispatches replacement gear, structures mediation terms.
+              </div>
+              <div>
+                <strong style="color:#fff;display:block;font-size:0.75rem;" class="mono">EXPECTED OUTCOME</strong>
+                Stalled call sheets rescued; production momentum restored with minimal schedule slippage.
+              </div>
+            </div>
+          </div>
+
+          <!-- Situation 5 -->
+          <div class="pastel-card" id="move" style="padding:2rem;border-left:4px solid var(--accent-cyan);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+              <div>
+                <span class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;">PATHWAY 05 // MARKET MOBILIZATION</span>
+                <h3 style="font-size:1.5rem;font-weight:800;color:#fff;margin:0.25rem 0 0;">&ldquo;Something Needs to Move.&rdquo;</h3>
+              </div>
+              <a href="node-10.html?situation=move" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.4rem;">
+                MOBILIZE A PROJECT &rarr;
+              </a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;font-size:0.9rem;line-height:1.65;color:#cbd5e1;">
+              <div>
+                <strong style="color:#ef4444;display:block;font-size:0.75rem;" class="mono">THE PROBLEM</strong>
+                A completed feature film is awaiting distribution deals, or an episodic concept needs co-production finance to launch.
+              </div>
+              <div>
+                <strong style="color:var(--accent-cyan);display:block;font-size:0.75rem;" class="mono">WHO IT IS FOR</strong>
+                Independent filmmakers, content catalog holders, regional studios expanding to national audiences.
+              </div>
+              <div>
+                <strong style="color:#00FF66;display:block;font-size:0.75rem;" class="mono">WHAT DIGISYNQ DOES</strong>
+                Connects content directly to verified theatrical distributors, streaming acquisition desks, and overseas release partners using audience intent data.
+              </div>
+              <div>
+                <strong style="color:#fff;display:block;font-size:0.75rem;" class="mono">EXPECTED OUTCOME</strong>
+                Clear release windows, transparent revenue share terms, and rapid market deployment.
+              </div>
+            </div>
+          </div>
+
         </div>
 
+        <!-- Master CTA Card -->
+        <div class="schematic-frame-box" style="text-align:center;padding:3rem 2rem;margin-bottom:3rem;">
+          <div class="schematic-crosshair-tl"></div><div class="schematic-crosshair-tr"></div>
+          <div class="schematic-crosshair-bl"></div><div class="schematic-crosshair-br"></div>
+          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.5rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
+            WHAT HAPPENS AFTER YOU ENTER?
+          </h2>
+          <p style="font-size:1.05rem;line-height:1.75;color:#cbd5e1;max-width:760px;margin:0 auto 2rem;">
+            Once your situation is submitted, DigiSynq activates one of five specialized mission modes to execute your outcome.
+          </p>
+          <a href="node-05.html" class="btn btn-primary" style="padding:0.9rem 2.2rem;font-size:1rem;font-weight:700;">
+            EXPLORE 5 MISSION MODES (NODE 05) &rarr;
+          </a>
+        </div>
+
+        <!-- Route Bar -->
         <div class="node-route-bar">
           <a href="node-03.html" class="node-route-prev">&larr; Node 03: How It Works</a>
           <a href="node-05.html" class="btn btn-secondary">Node 05: Missions &rarr;</a>
         </div>
+
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" style="border-top:1px solid rgba(255,255,255,0.12);padding:4rem 1.5rem 3rem;background:#090A0C;margin-top:5rem;">
+  <!-- Master Canonical Footer -->
+  <footer class="site-footer" style="border-top:1px solid rgba(255,255,255,0.1);padding:4rem 1.5rem 2.5rem;background:#060709;">
     <div class="container" style="max-width:1180px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;">
-      <div><div style="font-weight:800;font-size:1.25rem;color:#fff;letter-spacing:-0.02em;margin-bottom:0.4rem;">DIGISYNQ</div><div class="mono" style="font-size:0.75rem;color:#94a3b8;letter-spacing:0.12em;">THE ENTERTAINMENT ECOSYSTEM, SYNCHRONIZED.</div></div>
+      <div>
+        <div style="font-weight:800;font-size:1.2rem;color:#ffffff;margin-bottom:0.3rem;">DIGISYNQ</div>
+        <div class="mono" style="font-size:0.75rem;color:#94a3b8;">THE COORDINATION LAYER FOR ENTERTAINMENT</div>
+      </div>
       <div style="display:flex;gap:1.25rem;flex-wrap:wrap;">
-        <a href="node-01.html" class="node-route-prev" style="font-size:0.82rem;">HOME</a><a href="nodes.html" class="node-route-prev" style="font-size:0.82rem;">NODE DIR</a><a href="node-02.html" class="node-route-prev" style="font-size:0.82rem;">ECOSYSTEM</a><a href="node-03.html" class="node-route-prev" style="font-size:0.82rem;">HOW IT WORKS</a><a href="node-04.html" class="node-route-prev" style="font-size:0.82rem;">SOLUTIONS</a><a href="node-05.html" class="node-route-prev" style="font-size:0.82rem;">MISSIONS</a><a href="node-06.html" class="node-route-prev" style="font-size:0.82rem;">INTELLIGENCE</a><a href="node-07.html" class="node-route-prev" style="font-size:0.82rem;">INSIGHTS</a><a href="node-08.html" class="node-route-prev" style="font-size:0.82rem;">VALUE MODEL</a><a href="node-09.html" class="node-route-prev" style="font-size:0.82rem;">ABOUT</a><a href="node-10.html" class="node-route-prev" style="font-size:0.82rem;">START A SYNQ</a>
+        <a href="node-01.html" class="node-route-prev" style="font-size:0.82rem;">01 HOME</a>
+        <a href="node-02.html" class="node-route-prev" style="font-size:0.82rem;">02 ECOSYSTEM</a>
+        <a href="node-03.html" class="node-route-prev" style="font-size:0.82rem;">03 HOW IT WORKS</a>
+        <a href="node-04.html" class="node-route-prev" style="font-size:0.82rem;color:var(--accent-cyan);">04 SOLUTIONS</a>
+        <a href="node-05.html" class="node-route-prev" style="font-size:0.82rem;">05 MISSIONS</a>
+        <a href="node-06.html" class="node-route-prev" style="font-size:0.82rem;">06 INTELLIGENCE</a>
+        <a href="node-07.html" class="node-route-prev" style="font-size:0.82rem;">07 INSIGHTS</a>
+        <a href="node-08.html" class="node-route-prev" style="font-size:0.82rem;">08 VALUE MODEL</a>
+        <a href="node-09.html" class="node-route-prev" style="font-size:0.82rem;">09 RUNBOOK</a>
+        <a href="node-10.html" class="node-route-prev" style="font-size:0.82rem;">10 START A SYNQ</a>
       </div>
       <div class="mono" style="font-size:0.75rem;color:#64748b;">&copy; 2026 DIGISYNQ. ALL RIGHTS RESERVED.</div>
     </div>
   </footer>
 
+  <!-- Fullscreen 10-Node Dialpad Drawer -->
   <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
     <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
-    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;"><span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>THE COORDINATION LAYER FOR ENTERTAINMENT</div>
-    <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
-    <div class="node-dialpad-container" style="max-width:980px;"><div class="node-dialpad-grid">
-      <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
-      <a href="node-02.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
-      <a href="node-03.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
-      <a href="node-04.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
-      <a href="node-05.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
-      <a href="node-06.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
-      <a href="node-07.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-      <a href="node-08.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-      <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
-      <a href="node-10.html" class="node-key-item"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
-    </div></div>
+    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;"><span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>DIGISYNQ KNOWLEDGE NODES</div>
+    <div class="dialpad-drawer-title">10-NODE DIRECTORY</div>
+    <div class="node-dialpad-container" style="max-width:980px;">
+      <div class="node-dialpad-grid">
+        <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
+        <a href="node-02.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
+        <a href="node-03.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
+        <a href="node-04.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
+        <a href="node-05.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
+        <a href="node-06.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
+        <a href="node-07.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
+        <a href="node-08.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
+        <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
+        <a href="node-10.html" class="node-key-item"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+      </div>
+    </div>
   </div>
 
   <script src="assets/js/telemetry-canvas.js"></script>
   <script src="assets/js/sound-engine.js"></script>
-  <script src="assets/js/main.js?v=2.1"></script>
+  <script src="assets/js/main.js?v=2.2"></script>
 </body>
 </html>

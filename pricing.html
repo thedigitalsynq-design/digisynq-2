@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing & Membership Plans — DIGISYNQ</title>
-  <meta name="description" content="Transparent, asset-light pricing for creative professionals, production houses, and studios. Free basic access, ₹999/mo Premium, and Enterprise plans.">
+  <meta name="description" content="Transparent, asset-light pricing for creative professionals, production houses, and studios. Free basic access, ₹999/mo Pro Operator, and custom Studio Enterprise plans.">
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
   <link rel="stylesheet" href="assets/css/design-system.css">
   <style>
@@ -37,7 +37,7 @@
     }
     .pricing-toggle-wrap.annual .toggle-switch-handle {
       transform: translateX(28px);
-      background: var(--color-teal);
+      background: var(--accent-emerald);
     }
     .pricing-grid {
       display: grid;
@@ -106,13 +106,15 @@
       flex-direction: column;
       gap: 14px;
       margin: 24px 0 36px;
+      padding: 0;
     }
     .features-list li {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
       font-size: 0.92rem;
       color: rgba(255, 255, 255, 0.85);
+      line-height: 1.45;
     }
 
     /* Comparison Table */
@@ -121,12 +123,12 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
       overflow-x: auto;
-      margin-bottom: 80px;
+      margin-bottom: 60px;
     }
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 700px;
+      min-width: 760px;
       text-align: left;
     }
     .comparison-table th, .comparison-table td {
@@ -138,6 +140,17 @@
       font-size: 1.05rem;
       color: #FFFFFF;
       background: rgba(255, 255, 255, 0.02);
+    }
+
+    .disclosure-box {
+      background: rgba(0, 240, 255, 0.03);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 24px 32px;
+      margin-bottom: 80px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
     }
 
     @media (max-width: 1024px) {
@@ -154,7 +167,7 @@
   <div class="ambient-glow-orb ambient-orb-teal"></div>
   <div class="ambient-glow-orb ambient-orb-gold"></div>
 
-    <!-- Master Fixed Top Navbar -->
+  <!-- Master Fixed Top Navbar (Unified 7-Pill System) -->
   <header class="site-navbar" role="banner">
     <div class="site-navbar-inner">
       <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
@@ -163,17 +176,14 @@
       </a>
 
       <nav aria-label="Primary Navigation">
-        
         <ul class="site-nav-pills">
-          <li><a href="index.html#overview" class="site-nav-pill-link">Overview</a></li>
-          <li><a href="index.html#pipeline" class="site-nav-pill-link">A&rarr;F Pipeline</a></li>
-          <li><a href="node-01.html" class="site-nav-pill-link">10 Nodes</a></li>
+          <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="node-03.html" class="site-nav-pill-link">How It Works</a></li>
+          <li><a href="node-04.html" class="site-nav-pill-link active">Solutions</a></li>
           <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
           <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
-          <li><a href="workshops.html" class="site-nav-pill-link">Workshops</a></li>
-          <li><a href="pricing.html" class="site-nav-pill-link active">Pricing</a></li>
-          <li><a href="about.html" class="site-nav-pill-link">About</a></li>
+          <li><a href="node-06.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="about.html" class="site-nav-pill-link">Company</a></li>
         </ul>
       </nav>
 
@@ -184,7 +194,7 @@
         </button>
         <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node dialpad">
           <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
-          <span>KEYPAD [K]</span>
+          <span>10 NODES [K]</span>
         </button>
         <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
           START A SYNQ &rarr;
@@ -201,10 +211,10 @@
   <!-- ================= PRICING HERO ================= -->
   <section style="padding: 160px 0 20px; position: relative; background: radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.08) 0%, #090A0C 80%);">
     <div class="container" style="text-align: center; max-width: 900px;">
-      <div class="mono-tag gold" style="margin-bottom: 20px;">TRANSPARENT VALUE ARCHITECTURE // VALUE-ALIGNED PRICING</div>
+      <div class="mono-tag gold" style="margin-bottom: 20px;">NODE 08 &bull; COMMERCIAL VALUE ARCHITECTURE // ALIGNED PRICING</div>
       <h1 style="margin-bottom: 24px;">INVEST IN ZERO WASTE</h1>
       <p class="lead" style="max-width: 760px; margin: 0 auto 20px;">
-        Free to plug in. Zero risk to test. We win only when your idle capacity is activated and your productions wrapped on schedule.
+        Free to plug in. Zero risk to test. We generate commercial value only when idle capacity is activated and productions execute on schedule.
       </p>
 
       <!-- Monthly / Annual Toggle -->
@@ -226,92 +236,92 @@
       <!-- TIER 1: FREE (Basic Node) -->
       <div class="pricing-card">
         <div>
-          <span class="mono-tag" style="margin-bottom: 8px;">BASIC TIER</span>
-          <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 4px;">Basic Node &bull; Observer</h3>
+          <span class="mono-tag" style="margin-bottom: 8px;">BASIC TIER &bull; OBSERVER</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 4px;">Basic Node</h3>
           <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
-            For freelance technicians and indie screenwriters building their initial verified track record.
+            For freelance technicians, junior artisans, and independent screenwriters establishing a verified track record.
           </p>
           <div class="price-number">₹0</div>
           <div class="price-period">ALWAYS FREE FOREVER</div>
 
           <ul class="features-list">
-            <li><span style="color: var(--color-teal);">✓</span> <strong>Verified UCNI ID:</strong> Digital identity and verified craft credentials.</li>
-            <li><span style="color: var(--color-teal);">✓</span> <strong>5 Matches / Month:</strong> Access open production dispatch calls and equipment requests.</li>
-            <li><span style="color: var(--color-teal);">✓</span> <strong>Milestone Escrow:</strong> 100% advance deposit protection on wrapped deliverables.</li>
-            <li><span style="color: var(--color-teal);">✓</span> <strong>Community Workshops:</strong> Access public masterclass video streams.</li>
-            <li style="color: var(--text-tertiary);">✕ Standard Transaction Fee (7-10%)</li>
-            <li style="color: var(--text-tertiary);">✕ No Damage Control Priority Dispatch</li>
+            <li><span style="color: var(--accent-emerald);">✓</span> <div><strong>Verified UCNI ID:</strong> Digital identity and verified craft credentials ledger.</div></li>
+            <li><span style="color: var(--accent-emerald);">✓</span> <div><strong>5 Matches / Month:</strong> Access open production dispatch calls and equipment requests.</div></li>
+            <li><span style="color: var(--accent-emerald);">✓</span> <div><strong>Milestone Escrow:</strong> 100% advance deposit protection on verified deliverables.</div></li>
+            <li><span style="color: var(--accent-emerald);">✓</span> <div><strong>Community Workshops:</strong> Access public masterclass streams and guild curriculum.</div></li>
+            <li style="color: var(--text-tertiary);">✕ Standard Coordination Fee (7-10% on settled escrow)</li>
+            <li style="color: var(--text-tertiary);">✕ Priority contingency dispatch routing unavailable</li>
           </ul>
         </div>
-        <a href="index.html#join" class="btn btn-secondary btn-lg" style="width: 100%;">
+        <a href="node-10.html?tier=basic" class="btn btn-secondary btn-lg" style="width: 100%;">
           Get Free Node ID
         </a>
       </div>
 
-      <!-- TIER 2: PREMIUM (₹999/mo) -->
+      <!-- TIER 2: PREMIUM / PRO (₹999/mo) -->
       <div class="pricing-card popular conic-glow-border architectural-frame">
         <div class="corner-crosshair crosshair-tl"></div>
         <div class="corner-crosshair crosshair-tr"></div>
         <div class="corner-crosshair crosshair-bl"></div>
         <div class="corner-crosshair crosshair-br"></div>
-        <div class="popular-badge">★ MOST POPULAR</div>
+        <div class="popular-badge">★ RECOMMENDED OPERATOR TIER</div>
         <div>
-          <span class="mono-tag gold" style="margin-bottom: 8px;">HIGH-VELOCITY STRIKE TIER</span>
-          <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 4px;">Premium Node &bull; Pro</h3>
+          <span class="mono-tag gold" style="margin-bottom: 8px;">ACTIVE OPERATOR TIER</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 4px;">Pro Node &bull; Operator</h3>
           <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
-            For active DOPs, line producers, working directors, and gear owners running continuous productions.
+            For active cinematographers, line producers, working directors, and equipment owners executing continuous slates.
           </p>
           <div class="price-number" id="premium-price">₹999</div>
           <div class="price-period" id="premium-period">PER MONTH (BILLED MONTHLY)</div>
 
           <ul class="features-list">
-            <li><span style="color: var(--color-gold);">✓</span> <strong>Unlimited Pipeline Matches:</strong> Instant alerts for high-rate shoot calls.</li>
-            <li><span style="color: var(--color-gold);">✓</span> <strong>Reduced Fee (3-5%):</strong> Save substantially on settled escrow releases.</li>
-            <li><span style="color: var(--color-gold);">✓</span> <strong>Sub-3-Hour Dispatch:</strong> Priority emergency backup via Cinema Damage Control.</li>
-            <li><span style="color: var(--color-gold);">✓</span> <strong>Insured Gear Sharing:</strong> ₹1Cr transit & damage protection on asset sub-leases.</li>
-            <li><span style="color: var(--color-gold);">✓</span> <strong>Free Masterclass Passes:</strong> Monthly war rooms with working National Award masters.</li>
-            <li><span style="color: var(--color-gold);">✓</span> <strong>Guild Voting Rights:</strong> Full member status in regional craft syndicates.</li>
+            <li><span style="color: var(--color-gold);">✓</span> <div><strong>Unlimited Pipeline Matches:</strong> Instant telemetry notifications for qualified production calls.</div></li>
+            <li><span style="color: var(--color-gold);">✓</span> <div><strong>Reduced Coordination Fee (3-5%):</strong> Preferred rates on completed escrow disbursements.</div></li>
+            <li><span style="color: var(--color-gold);">✓</span> <div><strong>Contingency Dispatch Routing [PILOT]:</strong> Priority rapid replacement matching for emergency shoot disruptions.</div></li>
+            <li><span style="color: var(--color-gold);">✓</span> <div><strong>Insured Asset Exchange [PILOT]:</strong> Standardized transit and damage indemnification protocols for sub-leasing.</div></li>
+            <li><span style="color: var(--color-gold);">✓</span> <div><strong>Monthly Masterclass Access:</strong> Direct admission to craft clinics with veteran practitioners.</div></li>
+            <li><span style="color: var(--color-gold);">✓</span> <div><strong>Craft Guild Status [PILOT]:</strong> Voting member status in regional peer review syndicates.</div></li>
           </ul>
         </div>
-        <a href="index.html#join" class="btn btn-gold btn-lg" style="width: 100%;">
-          Start Premium Sync
+        <a href="node-10.html?tier=pro" class="btn btn-gold btn-lg" style="width: 100%;">
+          Start Pro Sync &rarr;
         </a>
       </div>
 
       <!-- TIER 3: ENTERPRISE -->
       <div class="pricing-card">
         <div>
-          <span class="mono-tag purple" style="margin-bottom: 8px;">STUDIO &amp; OTT</span>
+          <span class="mono-tag purple" style="margin-bottom: 8px;">STUDIO &amp; OTT SLATES</span>
           <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 4px;">Studio Enterprise &bull; OS</h3>
           <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
-            For production houses, OTT streamers, and advertising agencies managing multi-city film slates.
+            For production houses, OTT streamers, and advertising agencies managing multi-city film slates and complex budgets.
           </p>
           <div class="price-number" style="font-size: 2.6rem;">Custom</div>
           <div class="price-period">ANNUAL SLATE ENGAGEMENT</div>
 
           <ul class="features-list">
-            <li><span style="color: var(--color-primary-light);">✓</span> <strong>Dedicated Crisis Marshall:</strong> 24/7 incident commander for set disruptions.</li>
-            <li><span style="color: var(--color-primary-light);">✓</span> <strong>Live Production Telemetry:</strong> Real-time call sheet muster and budget burn tracking.</li>
-            <li><span style="color: var(--color-primary-light);">✓</span> <strong>Script Packaging:</strong> Direct director and lead talent attachments for greenlights.</li>
-            <li><span style="color: var(--color-primary-light);">✓</span> <strong>Bespoke Escrow Vault:</strong> Institutional custody and multi-currency recovery waterfalls.</li>
-            <li><span style="color: var(--color-primary-light);">✓</span> <strong>ERP &amp; API Integration:</strong> Direct sync into studio payroll and accounting workflows.</li>
-            <li><span style="color: var(--color-primary-light);">✓</span> <strong>Unlimited Studio Seats:</strong> Multi-department access across 1st ADs and accountants.</li>
+            <li><span style="color: var(--accent-cyan);">✓</span> <div><strong>Dedicated Coordination Desk:</strong> Named operational coordinator for production logistics and contingency support.</div></li>
+            <li><span style="color: var(--accent-cyan);">✓</span> <div><strong>Live Production Telemetry:</strong> Real-time call sheet tracking, muster compliance, and daily budget burn analytics.</div></li>
+            <li><span style="color: var(--accent-cyan);">✓</span> <div><strong>Curated Talent Packaging:</strong> Structured director, HOD, and lead cast packaging for greenlight readiness.</div></li>
+            <li><span style="color: var(--accent-cyan);">✓</span> <div><strong>Custom Bank Escrow Workflows:</strong> Multi-party waterfall accounts managed via regulated commercial banking partners.</div></li>
+            <li><span style="color: var(--accent-cyan);">✓</span> <div><strong>ERP &amp; API Integration:</strong> Direct sync into studio payroll, asset ledgers, and accounting software.</div></li>
+            <li><span style="color: var(--accent-cyan);">✓</span> <div><strong>Unlimited Studio Seats:</strong> Multi-department access across line producers, 1st ADs, and financial controllers.</div></li>
           </ul>
         </div>
-        <button class="btn btn-secondary btn-lg open-enterprise-btn" style="width: 100%;">
-          Contact Studio Sales
-        </button>
+        <a href="node-10.html?tier=enterprise" class="btn btn-secondary btn-lg" style="width: 100%;">
+          Contact Studio Sales &rarr;
+        </a>
       </div>
 
     </div>
   </section>
 
   <!-- ================= DETAILED FEATURE COMPARISON TABLE ================= -->
-  <section class="container" style="padding-bottom: 80px;">
+  <section class="container" style="padding-bottom: 40px;">
     <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
       <div class="mono-tag teal" style="margin-bottom: 12px;">CAPABILITY MATRIX</div>
       <h2>Full Feature Comparison</h2>
-      <p style="color: var(--text-secondary);">Every plan is backed by verifiable performance guarantees and zero hidden fees.</p>
+      <p style="color: var(--text-secondary);">Every plan is backed by verifiable performance covenants and transparent operational terms.</p>
     </div>
 
     <div class="comparison-table-wrap">
@@ -320,8 +330,8 @@
           <tr>
             <th>Platform Capabilities</th>
             <th>Basic (Free)</th>
-            <th style="color: var(--color-gold);">Premium (₹999/mo)</th>
-            <th style="color: var(--color-primary-light);">Enterprise</th>
+            <th style="color: var(--color-gold);">Pro (₹999/mo)</th>
+            <th style="color: var(--accent-cyan);">Studio Enterprise</th>
           </tr>
         </thead>
         <tbody>
@@ -332,47 +342,66 @@
             <td>Dedicated Concierge Dispatch</td>
           </tr>
           <tr>
-            <td>Escrow Transaction Fee</td>
+            <td>Escrow Coordination Fee</td>
             <td>7 - 10%</td>
-            <td><strong>3 - 5% Reduced Fee</strong></td>
+            <td><strong>3 - 5% Preferred Rate</strong></td>
             <td>Volume Negotiated (&lt; 2.5%)</td>
           </tr>
           <tr>
-            <td>Cinema Damage Control Rescue</td>
-            <td>Community Queue</td>
-            <td><strong>Sub-3-Hour Priority Dispatch</strong></td>
-            <td>Guaranteed 24-hr Replacement SLA</td>
+            <td>Contingency Replacement Dispatch</td>
+            <td>Standard Queue</td>
+            <td><strong>Priority Replacement Routing [PILOT]</strong></td>
+            <td>Contractual Replacement SLA</td>
           </tr>
           <tr>
             <td>Sync Legal Shield Templates</td>
-            <td>Basic Agreements</td>
+            <td>Standard Non-Circumvention</td>
             <td><strong>Full IP Library &amp; E-Signatures</strong></td>
-            <td>Custom Studio Legal Sync</td>
+            <td>Custom Multi-Jurisdiction Contracts</td>
           </tr>
           <tr>
             <td>Asset Exchange Sub-Leasing</td>
-            <td>Standard Listing</td>
-            <td><strong>₹1Cr Insured Transit &amp; Damage</strong></td>
-            <td>Fleet &amp; Soundstage Management</td>
+            <td>Standard Verified Listing</td>
+            <td><strong>Insured Transit &amp; Damage Protocols [PILOT]</strong></td>
+            <td>Multi-Stage &amp; Fleet Asset Routing</td>
           </tr>
           <tr>
-            <td>Masterclass Workshops</td>
+            <td>Masterclasses &amp; Workshops</td>
             <td>Pay-per-session</td>
-            <td><strong>Free Monthly War Room Pass</strong></td>
+            <td><strong>Included Monthly Masterclass Pass</strong></td>
             <td>All-Access Studio Team Passes</td>
           </tr>
           <tr>
-            <td>Guild Membership Access</td>
+            <td>Craft Guild Membership</td>
             <td>Observer Tier</td>
-            <td><strong>Full Voting Member</strong></td>
+            <td><strong>Full Voting Member [PILOT]</strong></td>
             <td>Sponsoring Studio Partner</td>
+          </tr>
+          <tr>
+            <td>Escrow Account Custody</td>
+            <td>Regulated Bank Partner</td>
+            <td>Regulated Bank Partner</td>
+            <td>Dedicated Tri-Party Escrow Facility</td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <!-- Escrow & Governance Disclosure -->
+    <div class="disclosure-box">
+      <span class="material-symbols-outlined" style="color:var(--accent-cyan);font-size:2rem;flex-shrink:0;">account_balance</span>
+      <div>
+        <div class="mono" style="font-size:0.78rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">
+          ESCROW &amp; SETTLEMENT REGULATORY DISCLOSURE
+        </div>
+        <p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.6;margin:0;">
+          DigiSynq does not operate as a non-banking financial company (NBFC), bank, depository, or escrow agent. All transaction escrow funds are held directly in segregated accounts managed by RBI-regulated Scheduled Commercial Banks and licensed independent escrow trustees. DigiSynq provides the coordination, credential verification, and milestone inspection software layer that triggers verified release instructions.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <!-- ================= SITE FOOTER ================= -->
+  <!-- ================= SITE FOOTER (Canonical DigiSynq 4-Column Footer) ================= -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -381,38 +410,52 @@
             <div class="logo-icon"></div>
             <span>DIGISYNQ</span>
           </div>
-          <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem;">
-            The nervous system of Indian entertainment. We own nothing. We enable everything. Don't waste anything. Everything has potential.
+          <p style="color: var(--text-secondary); max-width: 320px; font-size: 0.95rem; line-height: 1.6;">
+            The coordination layer behind entertainment. We don't own the assets. We make them move. Waste less. Sync more.
           </p>
+          <div style="margin-top: 1rem;">
+            <span class="status-indicator status-pilot" style="font-size:0.75rem;">CURRENT STAGE: PILOT / PRIVATE INVITE</span>
+          </div>
         </div>
         <div class="footer-col">
-          <h4>Platform</h4>
+          <h4>System Architecture</h4>
           <ul>
-            <li><a href="platform.html">ABCDEF Pipeline</a></li>
-            <li><a href="nodes.html">Node Directory</a></li>
-            <li><a href="products.html">15 Modules</a></li>
-            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="index.html">Overview &amp; Axiom</a></li>
+            <li><a href="node-03.html">6-Stage Pipeline</a></li>
+            <li><a href="platform.html">Coordination Platform</a></li>
+            <li><a href="products.html">15 Operational Modules</a></li>
+            <li><a href="pricing.html">Aligned Value Pricing</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Ecosystem</h4>
+          <h4>10 Knowledge Nodes</h4>
           <ul>
-            <li><a href="workshops.html">Workshops</a></li>
-            <li><a href="guilds.html">Guilds</a></li>
-            <li><a href="about.html#values">Core Manifesto</a></li>
-            <li><a href="platform.html#escrow">Escrow Security</a></li>
+            <li><a href="node-01.html">01 Problem: Disconnection</a></li>
+            <li><a href="node-02.html">02 Ecosystem: 8 Categories</a></li>
+            <li><a href="node-03.html">03 Engine: 6 Stages</a></li>
+            <li><a href="node-04.html">04 Entry: 5 Situations</a></li>
+            <li><a href="node-05.html">05 Application: 5 Missions</a></li>
+            <li><a href="node-06.html">06 Telemetry: Measurement</a></li>
+            <li><a href="node-07.html">07 Compounding Intelligence</a></li>
+            <li><a href="node-08.html">08 Commercial Value Model</a></li>
+            <li><a href="node-09.html">09 Principles &amp; Runbook</a></li>
+            <li><a href="node-10.html">10 Intake Coordination Desk</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Join the Network</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
-            Activate your node ID and begin syncing.
-          </p>
-          <a href="index.html#join" class="btn btn-primary btn-sm">Join the Pipeline</a>
+          <h4>Trust &amp; Governance</h4>
+          <ul>
+            <li><a href="about.html">About DigiSynq</a></li>
+            <li><a href="guilds.html">Peer Craft Syndicates</a></li>
+            <li><a href="workshops.html">Practitioner Workshops</a></li>
+            <li><a href="node-08.html#escrow">Escrow &amp; Bank Custody</a></li>
+            <li><a href="node-10.html">Start a Synq &rarr;</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom-bar">
-        <div>&copy; 2026 DIGISYNQ NETWORKS. Waste less. Sync more.</div>
+        <div>&copy; 2026 DIGISYNQ NETWORKS. All rights reserved. Regulated banking partners hold all settlement escrow accounts.</div>
+        <div class="mono" style="font-size:0.75rem;color:var(--text-tertiary);">SYSTEM STATUS: ONLINE // PILOT DEPLOYMENT</div>
       </div>
     </div>
   </footer>
@@ -448,18 +491,15 @@
       }
     }
 
-    toggleBtn.addEventListener('click', () => {
-      isAnnual = !isAnnual;
-      updatePricing();
-      if (window.DigisynqAudio) window.DigisynqAudio.playSoftClick();
-    });
-
-    document.querySelectorAll('.open-enterprise-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        alert("Enterprise Inquiries: Please email enterprise@digisynq.in or message us on WhatsApp for custom studio deployment.");
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        isAnnual = !isAnnual;
+        updatePricing();
+        if (window.DigisynqAudio) window.DigisynqAudio.playSoftClick();
       });
-    });
+    }
   </script>
+
   <!-- Fullscreen 10-Node Dial Pad Overlay Drawer -->
   <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
     <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
@@ -470,16 +510,16 @@
     <div class="dialpad-drawer-title">DIGISYNQ ECOSYSTEM KEYPAD</div>
     <div class="node-dialpad-container" style="max-width:980px;">
       <div class="node-dialpad-grid">
-        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Home (HotKey: 1)"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
-        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem (HotKey: 2)"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
-        <a href="node-03.html" class="node-key-item" aria-label="Node 03: How It Works (HotKey: 3)"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
-        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Solutions (HotKey: 4)"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
-        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
-        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
-        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-        <a href="node-09.html" class="node-key-item" aria-label="Node 09: About (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">About</span></a>
-        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Problem (HotKey: 1)"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">01 Disconnection</span></a>
+        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem (HotKey: 2)"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">02 Ecosystem</span></a>
+        <a href="node-03.html" class="node-key-item" aria-label="Node 03: Engine (HotKey: 3)"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">03 6-Stage Pipeline</span></a>
+        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Situations (HotKey: 4)"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">04 5 Situations</span></a>
+        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions (HotKey: 5)"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">05 5 Missions</span></a>
+        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence (HotKey: 6)"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">06 Telemetry</span></a>
+        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Learning (HotKey: 7)"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">07 Learning Loop</span></a>
+        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model (HotKey: 8)"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">08 Value Model</span></a>
+        <a href="node-09.html" class="node-key-item" aria-label="Node 09: Runbook (HotKey: 9)"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">09 Runbook</span></a>
+        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq (HotKey: 0)"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">10 Start a Synq</span></a>
       </div>
     </div>
   </div>
