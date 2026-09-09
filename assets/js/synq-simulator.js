@@ -93,46 +93,46 @@
       stageOutput.style.display = 'none';
       manifestBox.style.display = 'block';
       manifestBox.innerHTML = `
-        <div style="border-top:1px solid rgba(56,189,248,0.3);padding-top:1.25rem;">
+        <div style="border-top:1px solid #353839;padding-top:1.25rem;">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
-            <span class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:800;letter-spacing:0.15em;">
-              <span class="material-symbols-outlined" style="font-size:0.95rem;vertical-align:-2px;margin-right:0.25rem;color:var(--accent-cyan);">verified</span>SYNQ EXECUTION MANIFEST [VERIFIED]
+            <span class="mono" style="font-size:0.75rem;color:#FFFFFF;font-weight:800;letter-spacing:0.15em;">
+              <span class="material-symbols-outlined" style="font-size:0.95rem;vertical-align:-2px;margin-right:0.25rem;color:#FFFFFF;">verified</span>SYNQ EXECUTION MANIFEST [VERIFIED]
             </span>
-            <span class="mono" style="font-size:0.7rem;color:#94a3b8;background:rgba(255,255,255,0.06);padding:0.2rem 0.5rem;">
+            <span class="mono" style="font-size:0.7rem;color:#666362;background:#212122;padding:0.2rem 0.5rem;border:1px solid #353839;border-radius:3px;">
               REF: SYNQ-${Math.floor(Math.random() * 89999 + 10000)}
             </span>
           </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin-bottom:1.25rem;font-size:0.9rem;">
             <div>
-              <strong class="mono" style="font-size:0.72rem;color:#64748b;display:block;">INPUT ASSET:</strong>
+              <strong class="mono" style="font-size:0.72rem;color:#666362;display:block;">INPUT ASSET:</strong>
               <span style="color:#ffffff;font-weight:600;">${data.label}</span>
             </div>
             <div>
-              <strong class="mono" style="font-size:0.72rem;color:#64748b;display:block;">MATCHED COUNTERPARTY:</strong>
-              <span style="color:var(--accent-cyan);font-weight:600;">${data.matchedNode}</span>
+              <strong class="mono" style="font-size:0.72rem;color:#666362;display:block;">MATCHED COUNTERPARTY:</strong>
+              <span style="color:#FFFFFF;font-weight:600;">${data.matchedNode}</span>
             </div>
             <div>
-              <strong class="mono" style="font-size:0.72rem;color:#64748b;display:block;">ASSIGNED PLAYBOOK:</strong>
+              <strong class="mono" style="font-size:0.72rem;color:#666362;display:block;">ASSIGNED PLAYBOOK:</strong>
               <span style="color:#ffffff;">${data.playbook}</span>
             </div>
             <div>
-              <strong class="mono" style="font-size:0.72rem;color:#64748b;display:block;">GOVERNANCE STANDARD:</strong>
+              <strong class="mono" style="font-size:0.72rem;color:#666362;display:block;">GOVERNANCE STANDARD:</strong>
               <span style="color:#ffffff;">${data.governance}</span>
             </div>
           </div>
-          <div style="background:rgba(56,189,248,0.04);border:1px solid rgba(56,189,248,0.2);padding:1rem;border-radius:3px;margin-bottom:1.25rem;">
-            <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.25rem;">SURPLUS IMPACT (ESTIMATED):</div>
+          <div style="background:#212122;border:1px solid #353839;padding:1rem;border-radius:4px;margin-bottom:1.25rem;">
+            <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.25rem;">SURPLUS IMPACT (ESTIMATED):</div>
             <div style="font-size:1.05rem;color:#ffffff;font-weight:700;margin-bottom:0.25rem;">${data.surplusYield}</div>
-            <div style="font-size:0.85rem;color:#94a3b8;margin-bottom:0.5rem;">${data.cycleTime}</div>
-            <div class="mono" style="font-size:0.7rem;color:#64748b;line-height:1.4;">
+            <div style="font-size:0.85rem;color:#FFFFFF;margin-bottom:0.5rem;">${data.cycleTime}</div>
+            <div class="mono" style="font-size:0.7rem;color:#666362;line-height:1.4;">
               *Illustrative scenario modeled on representative operational parameters. Actual outcomes depend on verified asset audit, counterparty constraints, and negotiated legal terms.
             </div>
           </div>
           <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
-            <a href="node-10.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.25rem;">
+            <a href="synq.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.25rem;">
               EXECUTE THIS SYNQ IN NODE 10 &rarr;
             </a>
-            <span class="mono" style="font-size:0.75rem;color:#64748b;"><span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin-right:0.2rem;color:var(--accent-cyan);">lock</span>CONFIDENTIAL INTAKE &bull; NO OBLIGATION</span>
+            <span class="mono" style="font-size:0.75rem;color:#666362;"><span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin-right:0.2rem;color:#FFFFFF;">lock</span>CONFIDENTIAL INTAKE &bull; NO OBLIGATION</span>
           </div>
         </div>
       `;

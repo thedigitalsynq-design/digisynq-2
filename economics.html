@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aligned Pricing & Coordination Economics — DigiSynq</title>
+  <meta name="description" content="Asset-light pricing for creative professionals and studios. Free basic access for verified technicians, ₹999/mo Pro Operator, and tiered milestone escrow settlement fees.">
+  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-sans@1.0.1/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <style>
+    .pricing-hero {
+      padding: clamp(7.5rem, 12vw, 10rem) 1.5rem 3rem;
+      position: relative;
+      background: radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.04) 0%, #000000 75%);
+      text-align: center;
+    }
+    .pricing-toggle-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 32px auto 48px;
+      background: #212122;
+      border: 1px solid #353839;
+      padding: 8px 20px;
+      border-radius: var(--radius-pill);
+    }
+    .toggle-switch-btn {
+      position: relative;
+      width: 52px;
+      height: 28px;
+      background: #353839;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      border: 1px solid #353839;
+      transition: background var(--transition-fast);
+    }
+    .toggle-switch-handle {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 22px;
+      height: 22px;
+      background: #FFFFFF;
+      border-radius: 50%;
+      transition: transform var(--transition-fast);
+    }
+    .pricing-toggle-wrap.annual .toggle-switch-btn {
+      background: #FFFFFF;
+    }
+    .pricing-toggle-wrap.annual .toggle-switch-handle {
+      transform: translateX(24px);
+      background: #000000;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 72px;
+      align-items: stretch;
+    }
+    .pricing-card {
+      background: #212122;
+      border: 1px solid #353839;
+      border-radius: var(--radius-xl);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all var(--transition-smooth);
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      border-color: #666362;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+    .pricing-card.featured {
+      background: #212122;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 16px 48px rgba(255, 255, 255, 0.1);
+      transform: scale(1.02);
+    }
+    .pricing-card.featured:hover {
+      transform: scale(1.02) translateY(-6px);
+      box-shadow: 0 20px 56px rgba(255, 255, 255, 0.18);
+    }
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FFFFFF;
+      color: #000000;
+      font-family: var(--font-headline, 'Momo Trust Display', sans-serif);
+      font-weight: 700;
+      font-size: 0.76rem;
+      padding: 4px 16px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.04em;
+    }
+    .price-number {
+      font-family: var(--font-headline, 'Momo Trust Display', sans-serif);
+      font-size: 3rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1;
+      margin: 20px 0 6px;
+    }
+    .price-period {
+      font-size: 0.82rem;
+      color: #666362;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      margin-bottom: 24px;
+    }
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 24px 0 32px;
+      padding: 0;
+    }
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.45;
+    }
+    .features-list li .check-icon {
+      color: #FFFFFF;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .features-list li.disabled {
+      color: #666362;
+    }
+    .features-list li.disabled .cross-icon {
+      color: #666362;
+      flex-shrink: 0;
+    }
+
+    /* Comparison Table */
+    .comparison-table-wrap {
+      background: #212122;
+      border: 1px solid #353839;
+      border-radius: var(--radius-xl);
+      overflow-x: auto;
+      margin-bottom: 60px;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      text-align: left;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 16px 22px;
+      border-bottom: 1px solid #353839;
+      font-size: 0.9rem;
+    }
+    .comparison-table th {
+      font-family: var(--font-headline, 'Momo Trust Display', sans-serif);
+      font-size: 0.98rem;
+      color: #FFFFFF;
+      background: #000000;
+    }
+
+    .disclosure-box {
+      background: #212122;
+      border: 1px solid #353839;
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 64px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 1024px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+      .pricing-card.featured:hover { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body style="overflow-x:hidden;background:#000000;color:#FFFFFF;">
+
+  <!-- Master Fixed Top Navbar -->
+  <header class="site-navbar" role="banner">
+    <div class="site-navbar-inner">
+      <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+        <div class="site-brand-glyph" aria-hidden="true">DS</div>
+        <span class="site-brand-name">DigiSynq</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="site-nav-pills">
+          <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
+          <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
+          <li><a href="solutions.html" class="site-nav-pill-link">Solutions</a></li>
+          <li><a href="ecosystem.html" class="site-nav-pill-link">Ecosystem</a></li>
+          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
+          <li><a href="modules.html" class="site-nav-pill-link">Modules</a></li>
+          <li><a href="intelligence.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="economics.html" class="site-nav-pill-link active">Economics</a></li>
+          <li><a href="company.html" class="site-nav-pill-link">Company</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-nav-actions">
+        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
+          <span class="material-symbols-outlined" style="font-size:1rem;color:#FFFFFF;">volume_up</span>
+          <span>Audio: on</span>
+        </button>
+        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
+          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
+          <span>10 nodes [K]</span>
+        </button>
+        <a href="synq.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          Start a synq &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Vertical Edge Badge -->
+  <div class="edge-badge-vertical" aria-hidden="true">
+    <span>DigiSynq <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:#FFFFFF;">radio_button_checked</span> The coordination layer for entertainment</span>
+  </div>
+
+  <main>
+    <!-- ================= PRICING HERO ================= -->
+    <section class="pricing-hero">
+      <div class="container" style="max-width: 920px; margin: 0 auto;">
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.18em;color:#FFFFFF;margin-bottom:1.25rem;display:inline-flex;align-items:center;gap:0.5rem;background:#212122;padding:0.35rem 0.85rem;border-radius:9999px;border:1px solid #353839;">
+          <span class="material-symbols-outlined" style="font-size:1rem;color:#FFFFFF;">payments</span>
+          Node 08 &bull; Commercial value architecture // Aligned pricing
+        </div>
+        <h1 style="font-size:clamp(2.4rem, 5.2vw, 4.2rem);font-weight:800;line-height:1.08;letter-spacing:-0.03em;color:#FFFFFF;margin:0 0 1.25rem;">
+          Invest in zero waste
+        </h1>
+        <p class="lead" style="max-width: 760px; margin: 0 auto 1.5rem; color:#666362; font-size: 1.15rem; line-height: 1.7;">
+          Free to plug in. Zero risk to test. We generate commercial value only when idle capacity is activated and productions execute on schedule.
+        </p>
+
+        <!-- Monthly / Annual Toggle -->
+        <div class="pricing-toggle-wrap" id="billing-toggle-wrap">
+          <span id="label-monthly" style="font-weight: 600; color: #FFFFFF; font-size: 0.9rem;">Monthly billing</span>
+          <div class="toggle-switch-btn" id="billing-switch" role="button" aria-label="Toggle annual billing" tabindex="0">
+            <div class="toggle-switch-handle"></div>
+          </div>
+          <span id="label-annual" style="color: #666362; font-size: 0.9rem;">Annual billing (save 20%)</span>
+          <span class="mono" style="font-size: 0.72rem; background: #000000; border: 1px solid #353839; padding: 2px 8px; border-radius: 9999px; color: #FFFFFF;">Save 20%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3-TIER PRICING CARDS ================= -->
+    <section class="container" style="max-width: 1180px; margin: 0 auto; padding: 0 1.5rem 3rem;">
+      <div class="pricing-grid">
+
+        <!-- TIER 1: FREE (Basic Node) -->
+        <div class="pricing-card">
+          <div>
+            <span class="mono" style="font-size: 0.72rem; color: #666362; margin-bottom: 8px; display: block;">Basic tier &bull; Observer</span>
+            <h3 style="font-size: 1.6rem; color: #FFFFFF; margin: 0 0 8px; font-weight: 700;">Basic node</h3>
+            <p style="font-size: 0.9rem; color: #666362; margin-bottom: 0; line-height: 1.55;">
+              For freelance technicians, junior artisans, and independent screenwriters establishing a verified track record.
+            </p>
+            <div class="price-number">₹0</div>
+            <div class="price-period">Free forever</div>
+
+            <ul class="features-list">
+              <li><span class="check-icon">✓</span> <div><strong>Verified UCNI ID:</strong> Digital identity and verified craft credentials ledger.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>5 matches / month:</strong> Access open production dispatch calls and equipment requests.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Milestone escrow:</strong> 100% advance deposit protection on verified deliverables.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Community workshops:</strong> Access public masterclass streams and guild curriculum.</div></li>
+              <li class="disabled"><span class="cross-icon">✕</span> <div>Standard coordination fee (7–10% on settled escrow)</div></li>
+              <li class="disabled"><span class="cross-icon">✕</span> <div>Priority contingency dispatch routing unavailable</div></li>
+            </ul>
+          </div>
+          <a href="synq.html?tier=basic" class="btn btn-secondary" style="width: 100%; text-align: center;">
+            Get free node ID &rarr;
+          </a>
+        </div>
+
+        <!-- TIER 2: PREMIUM / PRO (₹999/mo) -->
+        <div class="pricing-card featured architectural-frame">
+          <div class="popular-badge">Recommended operator tier</div>
+          <div>
+            <span class="mono" style="font-size: 0.72rem; color: #FFFFFF; margin-bottom: 8px; display: block; font-weight: 600;">Active operator tier</span>
+            <h3 style="font-size: 1.6rem; color: #FFFFFF; margin: 0 0 8px; font-weight: 700;">Pro node &bull; Operator</h3>
+            <p style="font-size: 0.9rem; color: #666362; margin-bottom: 0; line-height: 1.55;">
+              For active cinematographers, line producers, working directors, and equipment owners executing continuous slates.
+            </p>
+            <div class="price-number" id="premium-price">₹999</div>
+            <div class="price-period" id="premium-period">Per month (billed monthly)</div>
+
+            <ul class="features-list">
+              <li><span class="check-icon">✓</span> <div><strong>Unlimited pipeline matches:</strong> Instant telemetry notifications for qualified production calls.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Reduced coordination fee (3–5%):</strong> Preferred rates on completed escrow disbursements.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Contingency dispatch routing:</strong> Priority rapid replacement matching for emergency shoot disruptions.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Insured asset exchange:</strong> Standardized transit and damage indemnification protocols for sub-leasing.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Monthly masterclass access:</strong> Direct admission to craft clinics with veteran practitioners.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Craft guild status:</strong> Voting member status in regional peer review syndicates.</div></li>
+            </ul>
+          </div>
+          <a href="synq.html?tier=pro" class="btn btn-primary" style="width: 100%; text-align: center;">
+            Start pro synq &rarr;
+          </a>
+        </div>
+
+        <!-- TIER 3: ENTERPRISE -->
+        <div class="pricing-card">
+          <div>
+            <span class="mono" style="font-size: 0.72rem; color: #666362; margin-bottom: 8px; display: block;">Studio &amp; OTT slates</span>
+            <h3 style="font-size: 1.6rem; color: #FFFFFF; margin: 0 0 8px; font-weight: 700;">Studio enterprise &bull; OS</h3>
+            <p style="font-size: 0.9rem; color: #666362; margin-bottom: 0; line-height: 1.55;">
+              For production houses, OTT streamers, and advertising agencies managing multi-city film slates and complex budgets.
+            </p>
+            <div class="price-number" style="font-size: 2.6rem;">Custom</div>
+            <div class="price-period">Annual slate engagement</div>
+
+            <ul class="features-list">
+              <li><span class="check-icon">✓</span> <div><strong>Dedicated coordination desk:</strong> Named operational coordinator for production logistics and contingency support.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Live production telemetry:</strong> Real-time call sheet tracking, muster compliance, and daily budget burn analytics.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Curated talent packaging:</strong> Structured director, HOD, and lead cast packaging for greenlight readiness.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Custom bank escrow workflows:</strong> Multi-party waterfall accounts managed via regulated commercial banking partners.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>ERP &amp; API integration:</strong> Direct sync into studio payroll, asset ledgers, and accounting software.</div></li>
+              <li><span class="check-icon">✓</span> <div><strong>Unlimited studio seats:</strong> Multi-department access across line producers, 1st ADs, and financial controllers.</div></li>
+            </ul>
+          </div>
+          <a href="synq.html?tier=enterprise" class="btn btn-secondary" style="width: 100%; text-align: center;">
+            Contact studio sales &rarr;
+          </a>
+        </div>
+
+      </div>
+
+      <!-- ================= DETAILED FEATURE COMPARISON TABLE ================= -->
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 32px;">
+        <div class="mono" style="font-size:0.75rem;color:#666362;margin-bottom:8px;">Capability matrix</div>
+        <h2 style="font-size: 2rem; font-weight: 700; color: #FFFFFF; margin: 0 0 10px;">Full feature comparison</h2>
+        <p style="color: #666362; font-size: 0.95rem; margin: 0;">Every plan is backed by verifiable performance covenants and transparent operational terms.</p>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Platform capabilities</th>
+              <th>Basic (free)</th>
+              <th style="color: #FFFFFF; font-weight: 700;">Pro (₹999/mo)</th>
+              <th>Studio enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly match quota</td>
+              <td>5 matches / mo</td>
+              <td><strong>Unlimited instant matches</strong></td>
+              <td>Dedicated concierge dispatch</td>
+            </tr>
+            <tr>
+              <td>Escrow coordination fee</td>
+              <td>7 - 10%</td>
+              <td><strong>3 - 5% preferred rate</strong></td>
+              <td>Volume negotiated (&lt; 2.5%)</td>
+            </tr>
+            <tr>
+              <td>Contingency replacement dispatch</td>
+              <td>Standard queue</td>
+              <td><strong>Priority replacement routing [Pilot]</strong></td>
+              <td>Contractual replacement SLA</td>
+            </tr>
+            <tr>
+              <td>Sync legal shield templates</td>
+              <td>Standard non-circumvention</td>
+              <td><strong>Full IP library &amp; e-signatures</strong></td>
+              <td>Custom multi-jurisdiction contracts</td>
+            </tr>
+            <tr>
+              <td>Asset exchange sub-leasing</td>
+              <td>Standard verified listing</td>
+              <td><strong>Insured transit &amp; damage protocols [Pilot]</strong></td>
+              <td>Multi-stage &amp; fleet asset routing</td>
+            </tr>
+            <tr>
+              <td>Masterclasses &amp; workshops</td>
+              <td>Pay-per-session</td>
+              <td><strong>Included monthly masterclass pass</strong></td>
+              <td>All-access studio team passes</td>
+            </tr>
+            <tr>
+              <td>Craft guild membership</td>
+              <td>Observer tier</td>
+              <td><strong>Full voting member [Pilot]</strong></td>
+              <td>Sponsoring studio partner</td>
+            </tr>
+            <tr>
+              <td>Escrow account custody</td>
+              <td>Regulated bank partner</td>
+              <td>Regulated bank partner</td>
+              <td>Dedicated tri-party escrow facility</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ================= 3 PRIMARY REVENUE STREAMS ================= -->
+      <div style="border-top:1px solid #353839;padding-top:48px;margin-bottom:60px;">
+        <div class="mono" style="font-size:0.75rem;letter-spacing:0.18em;color:#666362;margin-bottom:0.6rem;">
+          Revenue architecture &bull; Node 08
+        </div>
+        <h2 style="font-size:clamp(1.8rem, 3.2vw, 2.4rem);font-weight:800;color:#FFFFFF;margin-bottom:0.75rem;">
+          3 primary coordination revenue streams
+        </h2>
+        <p style="color:#666362;max-width:720px;margin-bottom:2.5rem;font-size:1rem;line-height:1.7;">
+          DigiSynq is asset-light by design. We do not own stages, cinema cameras, or intellectual property. We earn when coordination creates measurable commercial value for productions.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;margin-bottom:3.5rem;">
+          <!-- Stream 1 -->
+          <div class="card" style="background:#212122;border:1px solid #353839;padding:2rem;border-radius:12px;border-left:4px solid #FFFFFF;">
+            <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.5rem;">Revenue stream 01</div>
+            <h3 style="font-size:1.3rem;font-weight:700;color:#FFFFFF;margin:0 0 0.75rem;">Coordination &amp; transaction fees</h3>
+            <p style="font-size:0.88rem;line-height:1.65;color:#666362;margin-bottom:1.25rem;">
+              A success-based percentage fee charged on matched capacity: stage sub-leases, camera fleet rentals, or crew attachments mobilized through the network.
+            </p>
+            <div class="mono" style="font-size:0.75rem;color:#FFFFFF;background:#000000;border:1px solid #353839;padding:0.75rem;border-radius:6px;">
+              Status: <span style="color:#FFFFFF;font-weight:700;">Live pilots</span> &bull; 1.5% to 4.5% of transaction volume based on project tier.
+            </div>
+          </div>
+
+          <!-- Stream 2 -->
+          <div class="card" style="background:#212122;border:1px solid #353839;padding:2rem;border-radius:12px;border-left:4px solid #FFFFFF;">
+            <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.5rem;">Revenue stream 02</div>
+            <h3 style="font-size:1.3rem;font-weight:700;color:#FFFFFF;margin:0 0 0.75rem;">Settlement &amp; escrow administration</h3>
+            <p style="font-size:0.88rem;line-height:1.65;color:#666362;margin-bottom:1.25rem;">
+              Administrative verification fees for structuring milestone draw schedules, auditing delivery handoffs, and managing payout authorizations with licensed banking partners.
+            </p>
+            <div class="mono" style="font-size:0.75rem;color:#FFFFFF;background:#000000;border:1px solid #353839;padding:0.75rem;border-radius:6px;">
+              Status: <span style="color:#FFFFFF;font-weight:700;">Banking partnership</span> &bull; Flat milestone fee or basis point schedule.
+            </div>
+          </div>
+
+          <!-- Stream 3 -->
+          <div class="card" style="background:#212122;border:1px solid #353839;padding:2rem;border-radius:12px;border-left:4px solid #FFFFFF;">
+            <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.5rem;">Revenue stream 03</div>
+            <h3 style="font-size:1.3rem;font-weight:700;color:#FFFFFF;margin:0 0 0.75rem;">Enterprise intelligence subscriptions</h3>
+            <p style="font-size:0.88rem;line-height:1.65;color:#666362;margin-bottom:1.25rem;">
+              Institutional subscription access to the 7 telemetry pillars: regional capacity maps, content demand mandates, crew reliability benchmarks, and territory release models.
+            </p>
+            <div class="mono" style="font-size:0.75rem;color:#FFFFFF;background:#000000;border:1px solid #353839;padding:0.75rem;border-radius:6px;">
+              Status: <span style="color:#FFFFFF;font-weight:700;">Enterprise licenses</span> &bull; Custom monthly/annual license.
+            </div>
+          </div>
+        </div>
+
+        <!-- SERVICE CATEGORIZATION MATRIX -->
+        <div style="background:#212122;border:1px solid #353839;border-radius:12px;padding:2.25rem 2rem;margin-bottom:2rem;">
+          <div class="mono" style="font-size:0.75rem;letter-spacing:0.18em;color:#666362;margin-bottom:0.6rem;">
+            Tier delimitation
+          </div>
+          <h3 style="font-size:1.4rem;font-weight:700;color:#FFFFFF;margin:0 0 1.5rem;">
+            Service categorization: what is free, paid, custom, and pilot
+          </h3>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1.25rem;">
+            <div class="card" style="background:#000000;border:1px solid #353839;padding:1.4rem;border-radius:8px;">
+              <span class="mono" style="font-size:0.72rem;color:#FFFFFF;background:#212122;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:0.6rem;">Free basic access</span>
+              <h4 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.5rem;">Creative &amp; technician discovery</h4>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">
+                Verified artisan profiles, public credit registry, guild validation, and receiving inbound match requests is 100% free for individual technicians.
+              </p>
+            </div>
+            <div class="card" style="background:#000000;border:1px solid #353839;padding:1.4rem;border-radius:8px;">
+              <span class="mono" style="font-size:0.72rem;color:#FFFFFF;background:#212122;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:0.6rem;">Paid per project</span>
+              <h4 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.5rem;">Active synqs &amp; dispatch</h4>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">
+                Project-specific coordination, milestone escrow administration, insurance rider verification, and on-call crisis substitution.
+              </p>
+            </div>
+            <div class="card" style="background:#000000;border:1px solid #353839;padding:1.4rem;border-radius:8px;">
+              <span class="mono" style="font-size:0.72rem;color:#FFFFFF;background:#212122;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:0.6rem;">Custom enterprise</span>
+              <h4 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.5rem;">Studio &amp; slate management</h4>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">
+                Multi-project slate tracking, proprietary vendor rate books, customized ERP/accounting integrations, and dedicated account executive desks.
+              </p>
+            </div>
+            <div class="card" style="background:#000000;border:1px solid #353839;padding:1.4rem;border-radius:8px;">
+              <span class="mono" style="font-size:0.72rem;color:#FFFFFF;background:#212122;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:0.6rem;">Active pilots</span>
+              <h4 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.5rem;">Ecosystem programs</h4>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">
+                Regional accelerator slots, soundstage dark-day pooling programs, and cross-border diaspora co-production packaging.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Escrow & Governance Disclosure -->
+      <div class="disclosure-box">
+        <span class="material-symbols-outlined" style="color:#FFFFFF;font-size:2rem;flex-shrink:0;">account_balance</span>
+        <div>
+          <div class="mono" style="font-size:0.76rem;font-weight:700;color:#FFFFFF;letter-spacing:0.08em;margin-bottom:6px;">
+            Escrow &amp; settlement regulatory disclosure
+          </div>
+          <p style="font-size:0.86rem;color:#666362;line-height:1.65;margin:0;">
+            DigiSynq does not operate as a non-banking financial company (NBFC), bank, depository, or escrow agent. All transaction escrow funds are held directly in segregated accounts managed by RBI-regulated Scheduled Commercial Banks and licensed independent escrow trustees. DigiSynq provides the coordination, credential verification, and milestone inspection software layer that triggers verified release instructions.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Site Footer -->
+    <!-- Minimal Site Footer -->
+  <footer class="site-footer-minimal" role="contentinfo">
+    <div class="footer-minimal-inner">
+      <div class="footer-minimal-top">
+        <div class="footer-minimal-brand-wrap">
+          <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+            <div class="site-brand-glyph" aria-hidden="true">DS</div>
+            <span class="site-brand-name">DigiSynq</span>
+          </a>
+          <p class="footer-minimal-tagline">The coordination layer for entertainment.</p>
+        </div>
+      </div>
+      <nav class="footer-minimal-nav" aria-label="Footer Navigation">
+        <a href="index.html">Overview</a>
+        <a href="platform.html">Platform</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="guilds.html">Guilds</a>
+        <a href="modules.html">Modules</a>
+        <a href="intelligence.html">Intelligence</a>
+        <a href="economics.html">Economics</a>
+        <a href="company.html">Company</a>
+        <a href="synq.html" class="footer-nav-highlight">Start a synq &rarr;</a>
+      </nav>
+      <div class="footer-minimal-bottom">
+        <span>&copy; 2026 DigiSynq. All rights reserved.</span>
+        <span>Press <kbd>[K]</kbd> for directory</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/sound-engine.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js?v=2.3"></script>
+  <script>
+    // Annual / Monthly Pricing Switcher
+    let isAnnual = false;
+    const toggleWrap = document.getElementById('billing-toggle-wrap');
+    const toggleBtn = document.getElementById('billing-switch');
+    const priceDisplay = document.getElementById('premium-price');
+    const periodDisplay = document.getElementById('premium-period');
+    const labelMonthly = document.getElementById('label-monthly');
+    const labelAnnual = document.getElementById('label-annual');
+
+    function updatePricing() {
+      if (isAnnual) {
+        toggleWrap.classList.add('annual');
+        priceDisplay.textContent = '₹799';
+        periodDisplay.textContent = 'Per month (billed annually ₹9,588/yr)';
+        labelMonthly.style.color = '#666362';
+        labelMonthly.style.fontWeight = '400';
+        labelAnnual.style.color = '#FFFFFF';
+        labelAnnual.style.fontWeight = '600';
+      } else {
+        toggleWrap.classList.remove('annual');
+        priceDisplay.textContent = '₹999';
+        periodDisplay.textContent = 'Per month (billed monthly)';
+        labelMonthly.style.color = '#FFFFFF';
+        labelMonthly.style.fontWeight = '600';
+        labelAnnual.style.color = '#666362';
+        labelAnnual.style.fontWeight = '400';
+      }
+    }
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        isAnnual = !isAnnual;
+        updatePricing();
+        if (window.DigisynqAudio) window.DigisynqAudio.playSoftClick();
+      });
+      toggleBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          isAnnual = !isAnnual;
+          updatePricing();
+          if (window.DigisynqAudio) window.DigisynqAudio.playSoftClick();
+        }
+      });
+    }
+  </script>
+
+  <!-- Master 10-node directory Drawer Overlay -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true" aria-label="10-node directory">
+    <div class="dialpad-drawer-inner" style="max-width:980px;margin:auto;padding:2.5rem 1.5rem;text-align:center;">
+      <div class="dialpad-drawer-header" style="margin-bottom:2.5rem;">
+        <div class="mono" style="font-size:0.75rem;letter-spacing:0.18em;color:#666362;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;">
+          <span class="material-symbols-outlined" style="font-size:0.95rem;">layers</span>
+          DigiSynq core ecosystem
+        </div>
+        <h2 class="dialpad-drawer-title" style="margin:0;font-size:clamp(1.8rem, 3.5vw, 2.5rem);font-weight:800;color:#FFFFFF;">
+          10-node directory
+        </h2>
+      </div>
+
+      <div class="dialpad-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:1.25rem;max-width:920px;margin:0 auto 2.5rem;">
+        <a href="index.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">01</span></div>
+          <span class="node-key-label">Overview</span>
+        </a>
+        <a href="platform.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">02</span></div>
+          <span class="node-key-label">Platform</span>
+        </a>
+        <a href="solutions.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">03</span></div>
+          <span class="node-key-label">Solutions</span>
+        </a>
+        <a href="ecosystem.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">04</span></div>
+          <span class="node-key-label">Ecosystem</span>
+        </a>
+        <a href="guilds.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">05</span></div>
+          <span class="node-key-label">Guilds</span>
+        </a>
+        <a href="modules.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">06</span></div>
+          <span class="node-key-label">Modules</span>
+        </a>
+        <a href="intelligence.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">07</span></div>
+          <span class="node-key-label">Intelligence</span>
+        </a>
+        <a href="economics.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">08</span></div>
+          <span class="node-key-label">Economics</span>
+        </a>
+        <a href="company.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">09</span></div>
+          <span class="node-key-label">Company</span>
+        </a>
+        <a href="synq.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle" style="border-color:#FFFFFF;"><span class="node-key-digit" style="color:#FFFFFF;">10</span></div>
+          <span class="node-key-label" style="color:#FFFFFF;font-weight:700;">Start a synq</span>
+        </a>
+      </div>
+
+      <button id="closeDialpadDrawer" class="btn btn-secondary" style="padding:0.65rem 1.8rem;font-size:0.88rem;" aria-label="Close directory">
+        Close directory [ESC]
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/telemetry-canvas.js"></script>
+</body>
+</html>

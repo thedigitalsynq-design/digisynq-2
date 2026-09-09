@@ -20,8 +20,8 @@
     nodeCount: window.innerWidth < 768 ? 40 : 75,
     maxDistance: 150,
     mouseRadius: 180,
-    nodeColorStart: '#6C3BF4', // Purple
-    nodeColorEnd: '#00D4AA',   // Sync Teal
+    nodeColorStart: '#FFFFFF', // Purple
+    nodeColorEnd: '#353839',   // Sync Teal
     packetSpeed: 0.02,
     packetChance: 0.008
   };
@@ -103,7 +103,7 @@
       ctx.beginPath();
       ctx.arc(px, py, 2.5, 0, Math.PI * 2);
       ctx.fillStyle = '#FFFFFF';
-      ctx.shadowColor = '#00D4AA';
+      ctx.shadowColor = 'rgba(255, 255, 255, 0.4)';
       ctx.shadowBlur = 10;
       ctx.fill();
       ctx.shadowBlur = 0;
@@ -186,23 +186,23 @@
     // Outer Harmonic Ripple
     ctx.beginPath();
     ctx.arc(centerX, centerY, ringRadius * 2.2, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(245, 184, 64, 0.06)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
     ctx.lineWidth = 1;
     ctx.stroke();
 
     // Intermediate Sync Ring
     ctx.beginPath();
     ctx.arc(centerX, centerY, ringRadius * 1.5, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(0, 212, 170, 0.16)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
     ctx.lineWidth = 1.2;
     ctx.stroke();
 
     // Primary Core Ring
     ctx.beginPath();
     ctx.arc(centerX, centerY, ringRadius, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(108, 59, 244, 0.35)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
     ctx.lineWidth = 1.8;
-    ctx.shadowColor = '#6C3BF4';
+    ctx.shadowColor = 'rgba(255, 255, 255, 0.4)';
     ctx.shadowBlur = 15;
     ctx.stroke();
     ctx.shadowBlur = 0;

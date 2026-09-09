@@ -68,14 +68,14 @@ function initHeroNetworkCanvas() {
   let mouse = { x: null, y: null, maxDistance: 160 };
 
   const assetNodes = [
-    { label: 'Ideas & IP', category: 'Catalog & Scripts', color: '#FF5200', status: 'Dormant to Active' },
-    { label: 'People & Talent', category: 'Cast & Guild Artisans', color: '#ec4899', status: 'Availability Synced' },
-    { label: 'Places & Assets', category: 'Soundstages & Kits', color: '#10b981', status: 'Capacity Activated' },
-    { label: 'Production', category: 'Cinema & Daily Shows', color: '#FF5200', status: 'In Execution' },
-    { label: 'Post & Tech', category: 'VFX, Edit & Sound', color: '#8b5cf6', status: 'Workflow Synced' },
-    { label: 'Distribution', category: 'Theatrical & OTT', color: '#6366f1', status: 'Audience Reach' },
-    { label: 'Audience & Commerce', category: 'Brands & Community', color: '#f43f5e', status: 'Value Creation' },
-    { label: 'Capital & Support', category: 'Escrow & Financing', color: '#f59e0b', status: 'Milestone Protected' }
+    { label: 'Ideas & IP', category: 'Catalog & Scripts', color: '#FFFFFF', status: 'Dormant to Active' },
+    { label: 'People & Talent', category: 'Cast & Guild Artisans', color: '#FFFFFF', status: 'Availability Synced' },
+    { label: 'Places & Assets', category: 'Soundstages & Kits', color: '#FFFFFF', status: 'Capacity Activated' },
+    { label: 'Production', category: 'Cinema & Daily Shows', color: '#FFFFFF', status: 'In Execution' },
+    { label: 'Post & Tech', category: 'VFX, Edit & Sound', color: '#FFFFFF', status: 'Workflow Synced' },
+    { label: 'Distribution', category: 'Theatrical & OTT', color: '#FFFFFF', status: 'Audience Reach' },
+    { label: 'Audience & Commerce', category: 'Brands & Community', color: '#FFFFFF', status: 'Value Creation' },
+    { label: 'Capital & Support', category: 'Escrow & Financing', color: '#FFFFFF', status: 'Milestone Protected' }
   ];
 
   function resize() {
@@ -133,7 +133,7 @@ function initHeroNetworkCanvas() {
       vx: 0,
       vy: 0,
       radius: 9,
-      color: '#FF5200',
+      color: '#FFFFFF',
       isCore: true,
       label: 'DigiSynq Coordination Hub',
       pulse: 0
@@ -297,12 +297,12 @@ function initHeroNetworkCanvas() {
       ctx.beginPath();
       const currentRadius = n1.isCore ? n1.radius + Math.sin(n1.pulse) * 2 : (n1.label ? n1.radius + Math.sin(n1.pulse) * 0.6 : n1.radius);
       ctx.arc(n1.x, n1.y, currentRadius, 0, Math.PI * 2);
-      ctx.fillStyle = isFragmented && n1.label ? '#ef4444' : n1.color;
+      ctx.fillStyle = isFragmented && n1.label ? '#FFFFFF' : n1.color;
       ctx.fill();
 
       // Node Glow
       if (n1.isCore || n1.label) {
-        ctx.shadowColor = isFragmented && n1.label ? '#ef4444' : n1.color;
+        ctx.shadowColor = isFragmented && n1.label ? '#FFFFFF' : n1.color;
         if (window.innerWidth >= 768) ctx.shadowBlur = n1.isCore ? 20 : 12; else ctx.shadowBlur = 0;
       } else {
         ctx.shadowBlur = 0;
@@ -345,8 +345,8 @@ function initHeroNetworkCanvas() {
       badgeY = Math.max(10, Math.min(height - badgeH - 10, badgeY));
 
       // Draw Glass Pill Background
-      ctx.fillStyle = n1.isCore ? 'rgba(6, 24, 40, 0.92)' : 'rgba(10, 14, 22, 0.9)';
-      ctx.strokeStyle = n1.isCore ? 'rgba(255, 82, 0, 0.8)' : (isFragmented ? 'rgba(239, 68, 68, 0.5)' : 'rgba(255, 255, 255, 0.16)');
+      ctx.fillStyle = n1.isCore ? 'rgba(6, 6, 6, 0.92)' : 'rgba(10, 14, 22, 0.9)';
+      ctx.strokeStyle = n1.isCore ? 'rgba(255, 255, 255, 0.8)' : (isFragmented ? 'rgba(255, 255, 255, 0.4)' : 'rgba(255, 255, 255, 0.16)');
       ctx.lineWidth = 1;
 
       ctx.beginPath();
@@ -355,7 +355,7 @@ function initHeroNetworkCanvas() {
       ctx.stroke();
 
       // Text
-      ctx.fillStyle = n1.isCore ? '#FF5200' : (isFragmented ? '#fca5a5' : '#f8fafc');
+      ctx.fillStyle = n1.isCore ? '#FFFFFF' : (isFragmented ? '#FFFFFF' : '#FFFFFF');
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
       ctx.fillText(text, badgeX + padX, badgeY + badgeH / 2);
@@ -1027,18 +1027,18 @@ function init9870089044Controller() {
       return;
     }
 
-    // Number keys 0 to 9 navigate to dedicated node pages
+    // Number keys 1 to 9 and 0 navigate to dedicated 10 ecosystem pages
     const pageMap = {
-      '1': 'node-01.html',
-      '2': 'node-02.html',
-      '3': 'node-03.html',
-      '4': 'node-04.html',
-      '5': 'node-05.html',
-      '6': 'node-06.html',
-      '7': 'node-07.html',
-      '8': 'node-08.html',
-      '9': 'node-09.html',
-      '0': 'node-10.html'
+      '1': 'index.html',
+      '2': 'platform.html',
+      '3': 'solutions.html',
+      '4': 'ecosystem.html',
+      '5': 'guilds.html',
+      '6': 'modules.html',
+      '7': 'intelligence.html',
+      '8': 'economics.html',
+      '9': 'company.html',
+      '0': 'synq.html'
     };
 
     if (pageMap[e.key]) {
@@ -1319,13 +1319,13 @@ function initPipelineTabs() {
 
       display.innerHTML = `
         <div style="margin-bottom:1.5rem;">
-          <div class="mono" style="font-size:0.75rem;font-weight:800;color:#FF5200;letter-spacing:0.18em;margin-bottom:0.35rem;">
+          <div class="mono" style="font-size:0.75rem;font-weight:800;color:#FFFFFF;letter-spacing:0.18em;margin-bottom:0.35rem;">
             ${data.code} &bull; ${data.subtitle}
           </div>
           <h3 style="font-size:clamp(1.5rem, 3vw, 2.2rem);font-weight:800;color:#ffffff;margin:0 0 0.75rem;text-transform:uppercase;">
             ${data.title}
           </h3>
-          <p style="font-size:1.05rem;line-height:1.75;color:#cbd5e1;max-width:880px;margin:0;">
+          <p style="font-size:1.05rem;line-height:1.75;color:#666362;max-width:880px;margin:0;">
             ${data.desc}
           </p>
         </div>
@@ -1336,7 +1336,7 @@ function initPipelineTabs() {
           </div>
           <div class="pipeline-spec-box">
             <div class="pipeline-spec-box-title">VERIFICATION STANDARD:</div>
-            <p style="color:#FF5200;font-size:0.92rem;line-height:1.6;margin:0;">${data.verification}</p>
+            <p style="color:#FFFFFF;font-size:0.92rem;line-height:1.6;margin:0;">${data.verification}</p>
           </div>
           <div class="pipeline-spec-box">
             <div class="pipeline-spec-box-title">DEPLOYED SYSTEM OUTPUT:</div>
@@ -1359,7 +1359,7 @@ const INTAKE_PERSONAS = {
       'Power distribution specs (1200A-2400A silent generator capacity)'
     ],
     outcome: 'Immediate monetization of dark stage days with verified commercial & streaming productions.',
-    nodeTarget: 'node-10.html'
+    nodeTarget: 'synq.html'
   },
   'producer': {
     title: 'Film & Series Producer / Director',
@@ -1371,7 +1371,7 @@ const INTAKE_PERSONAS = {
       'Target distribution windows (Theatrical, OTT, Festival)'
     ],
     outcome: 'Direct, broker-free attachment of synchronized stages, crew pods, and gear fleets.',
-    nodeTarget: 'node-10.html'
+    nodeTarget: 'synq.html'
   },
   'gear': {
     title: 'Equipment House / Fleet Owner',
@@ -1383,7 +1383,7 @@ const INTAKE_PERSONAS = {
       'Available downtime gaps between scheduled main-unit rentals'
     ],
     outcome: 'Continuous hardware fleet yield with full insurance indemnity and replacement escrow.',
-    nodeTarget: 'node-10.html'
+    nodeTarget: 'synq.html'
   },
   'talent': {
     title: 'Talent Guild / Key Department Head',
@@ -1395,7 +1395,7 @@ const INTAKE_PERSONAS = {
       'Transparent milestone compensation preferences'
     ],
     outcome: 'Guaranteed milestone payment security and priority pairing with funded production pods.',
-    nodeTarget: 'node-10.html'
+    nodeTarget: 'synq.html'
   },
   'capital': {
     title: 'Financier / Institutional Escrow Partner',
@@ -1407,7 +1407,7 @@ const INTAKE_PERSONAS = {
       'Completion bond escrow parameters'
     ],
     outcome: 'Real-time telemetry visibility on production milestones and automated escrow release.',
-    nodeTarget: 'node-10.html'
+    nodeTarget: 'synq.html'
   }
 };
 
@@ -1430,32 +1430,32 @@ function initIntakeWizard() {
 
       let listHtml = p.checklist.map(item => `
         <li style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
-          <span style="color:#FF5200;font-weight:900;">&bull;</span>
+          <span style="color:#FFFFFF;font-weight:900;">&bull;</span>
           <span>${item}</span>
         </li>
       `).join('');
 
       detailsBox.innerHTML = `
-        <div style="border:1px solid rgba(255, 82, 0,0.3);background:rgba(255, 82, 0,0.03);padding:1.5rem;border-radius:6px;">
+        <div style="border:1px solid #353839;background:#212122;padding:1.5rem;border-radius:6px;">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
-            <div class="mono" style="font-size:0.75rem;color:#FF5200;font-weight:800;letter-spacing:0.15em;">
+            <div class="mono" style="font-size:0.75rem;color:#FFFFFF;font-weight:800;letter-spacing:0.15em;">
               ${p.badge} &bull; ${p.title}
             </div>
-            <span class="mono" style="font-size:0.7rem;color:#94a3b8;background:rgba(255,255,255,0.06);padding:0.25rem 0.6rem;border-radius:4px;">
+            <span class="mono" style="font-size:0.7rem;color:#666362;background:rgba(255,255,255,0.06);padding:0.25rem 0.6rem;border-radius:4px;">
               INTAKE AUDIT: PRE-CLEARED
             </span>
           </div>
           <h4 style="font-size:1.25rem;color:#ffffff;font-weight:700;margin:0 0 0.75rem;">
             Prerequisites for Synchronized Intake:
           </h4>
-          <ul style="list-style:none;padding:0;margin:0 0 1.25rem;font-size:0.95rem;line-height:1.7;color:#cbd5e1;">
+          <ul style="list-style:none;padding:0;margin:0 0 1.25rem;font-size:0.95rem;line-height:1.7;color:#666362;">
             ${listHtml}
           </ul>
           <div style="padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-            <div style="font-size:0.9rem;color:#94a3b8;max-width:550px;">
-              <strong style="color:#FF5200;">System Outcome:</strong> ${p.outcome}
+            <div style="font-size:0.9rem;color:#666362;max-width:550px;">
+              <strong style="color:#FFFFFF;">System Outcome:</strong> ${p.outcome}
             </div>
-            <a href="node-10.html" class="btn btn-primary" style="font-size:0.88rem;padding:0.65rem 1.4rem;">
+            <a href="synq.html" class="btn btn-primary" style="font-size:0.88rem;padding:0.65rem 1.4rem;">
               SUBMIT INTAKE IN NODE 10 &rarr;
             </a>
           </div>

@@ -6,14 +6,21 @@
   <title>DigiSynq — The Coordination Layer for Entertainment</title>
   <meta name="description" content="DigiSynq connects talent, IP, stages, gear, capital and distribution into coordinated production pathways. Entertainment doesn't have a resource problem. It has a coordination problem.">
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-sans@1.0.1/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/design-system.css">
 </head>
-<body style="overflow-x:hidden;background:#090A0C;color:#FFFFFF;">
+<body style="overflow-x:hidden;background:#353839;color: #FFFFFF;">
+  <!-- 9870089044 Fixed Vertical Edge Ribbon -->
+  <a href="https://www.awwwards.com" target="_blank" rel="noopener" class="site-vertical-ribbon" aria-label="Awwwards Honors">
+    <div class="site-vertical-ribbon-mark">W.</div>
+    <div class="site-vertical-ribbon-text">Honors</div>
+  </a>
+
 
   <!-- Master Fixed Top Navbar -->
   <header class="site-navbar" role="banner">
@@ -26,26 +33,27 @@
       <nav aria-label="Primary Navigation">
         <ul class="site-nav-pills">
           <li><a href="index.html" class="site-nav-pill-link active">Overview</a></li>
-          <li><a href="node-03.html" class="site-nav-pill-link">How It Works</a></li>
-          <li><a href="node-04.html" class="site-nav-pill-link">Solutions</a></li>
+          <li><a href="platform.html" class="site-nav-pill-link">How It Works</a></li>
+          <li><a href="solutions.html" class="site-nav-pill-link">Solutions</a></li>
           <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
-          <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="node-06.html" class="site-nav-pill-link">Intelligence</a></li>
-          <li><a href="about.html" class="site-nav-pill-link">Company</a></li>
+          <li><a href="modules.html" class="site-nav-pill-link">Products</a></li>
+          <li><a href="intelligence.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="economics.html" class="site-nav-pill-link">Pricing</a></li>
+          <li><a href="company.html" class="site-nav-pill-link">Company</a></li>
         </ul>
       </nav>
 
       <div class="site-nav-actions">
         <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
-          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
-          <span>AUDIO: ON</span>
+          <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;">volume_up</span>
+          <span>Audio: on</span>
         </button>
         <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
           <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
-          <span>10 NODES [K]</span>
+          <span>10 nodes [K]</span>
         </button>
-        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
-          START A SYNQ &rarr;
+        <a href="synq.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          Start a synq &rarr;
         </a>
       </div>
     </div>
@@ -53,70 +61,70 @@
 
   <!-- Vertical Edge Badge -->
   <div class="edge-badge-vertical" aria-hidden="true">
-    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> THE COORDINATION LAYER FOR ENTERTAINMENT</span>
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color: #FFFFFF;">radio_button_checked</span> THE COORDINATION LAYER FOR ENTERTAINMENT</span>
   </div>
 
   <main>
     <!-- SECTION 01 — HERO -->
-    <section id="hero" style="min-height:92vh;display:flex;align-items:center;padding:clamp(7.5rem, 12vw, 10.5rem) 1.5rem 4rem;box-sizing:border-box;position:relative;background:radial-gradient(ellipse at 50% 15%, rgba(0, 229, 255, 0.08) 0%, #090A0C 75%);">
+    <section id="hero" style="min-height:92vh;display:flex;align-items:center;padding:clamp(7.5rem, 12vw, 10.5rem) 1.5rem 4rem;box-sizing:border-box;position:relative;background:radial-gradient(ellipse at 50% 15%, rgba(0, 229, 255, 0.08) 0%, #353839 75%);">
       <div class="container" style="max-width:1180px;margin:auto;text-align:left;">
         
-        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:1.5rem;display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,229,255,0.06);padding:0.35rem 0.85rem;border-radius:9999px;border:1px solid rgba(0,229,255,0.25);">
-          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">hub</span>
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:1.5rem;display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,229,255,0.06);padding:0.35rem 0.85rem;border-radius:9999px;border:1px solid rgba(0,229,255,0.25);">
+          <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;">hub</span>
           THE COORDINATION LAYER FOR ENTERTAINMENT
         </div>
 
-        <h1 style="font-size:clamp(2.4rem, 5.5vw, 4.6rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;text-transform:uppercase;color:#ffffff;margin:0 0 1.5rem;max-width:1080px;">
+        <h1 style="font-size:clamp(2.4rem, 5.5vw, 4.6rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;text-transform:uppercase;color: #FFFFFF;margin:0 0 1.5rem;max-width:1080px;">
           Entertainment doesn't have a resource problem.<br>
-          <span style="color:var(--accent-cyan);">It has a coordination problem.</span>
+          <span style="color: #FFFFFF;">It has a coordination problem.</span>
         </h1>
 
-        <p style="font-size:clamp(1.1rem, 2vw, 1.3rem);line-height:1.75;color:#cbd5e1;max-width:860px;margin:0 0 2rem;">
+        <p style="font-size:clamp(1.1rem, 2vw, 1.3rem);line-height:1.75;color: #FFFFFF;max-width:860px;margin:0 0 2rem;">
           DigiSynq connects verified talent, IP, stages, gear, capital and distribution into coordinated production pathways — helping entertainment resources move from idle to active.
         </p>
 
         <!-- Brand Principles Bar -->
         <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;margin-bottom:2.25rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.08);">
-          <div class="mono" style="font-size:0.85rem;color:#FF5200;font-weight:700;">
+          <div class="mono" style="font-size:0.85rem;color: #FFFFFF;font-weight:700;">
             &bull; PRINCIPLE: &ldquo;We don't own the assets. We make them move.&rdquo;
           </div>
-          <div class="mono" style="font-size:0.85rem;color:#94a3b8;">
+          <div class="mono" style="font-size:0.85rem;color: #FFFFFF;">
             &bull; &ldquo;Waste less. Sync more.&rdquo;
           </div>
         </div>
 
         <!-- Primary CTAs -->
         <div style="display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center;margin-bottom:2.5rem;">
-          <a href="node-10.html" class="btn btn-primary" style="padding:0.95rem 2.4rem;font-size:1rem;font-weight:700;">
-            START A SYNQ &rarr;
+          <a href="synq.html" class="btn btn-primary" style="padding:0.95rem 2.4rem;font-size:1rem;font-weight:700;">
+            Start a synq &rarr;
           </a>
-          <a href="node-03.html" class="btn btn-secondary" style="padding:0.95rem 2rem;font-size:1rem;">
+          <a href="platform.html" class="btn btn-secondary" style="padding:0.95rem 2rem;font-size:1rem;">
             SEE HOW IT WORKS
           </a>
-          <a href="about.html" class="btn btn-secondary" style="padding:0.95rem 1.8rem;font-size:1rem;">
+          <a href="company.html" class="btn btn-secondary" style="padding:0.95rem 1.8rem;font-size:1rem;">
             WHY DIGISYNQ
           </a>
         </div>
 
         <!-- Immediate User-Entry Situations Strip -->
         <div>
-          <div class="mono" style="font-size:0.75rem;color:#94a3b8;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">
+          <div class="mono" style="font-size:0.75rem;color: #FFFFFF;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">
             WHAT IS YOUR IMMEDIATE SITUATION? CHOOSE AN ENTRY PATHWAY:
           </div>
           <div style="display:flex;gap:0.65rem;flex-wrap:wrap;">
-            <a href="node-04.html#have" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color:#fff;">
+            <a href="solutions.html#have" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
               I HAVE SOMETHING &rarr;
             </a>
-            <a href="node-04.html#need" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color:#fff;">
+            <a href="solutions.html#need" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
               I NEED SOMETHING &rarr;
             </a>
-            <a href="node-04.html#underused" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color:#fff;">
+            <a href="solutions.html#underused" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
               SOMETHING IS UNDERUSED &rarr;
             </a>
-            <a href="node-04.html#blocked" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color:#fff;">
+            <a href="solutions.html#blocked" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
               SOMETHING IS BLOCKED &rarr;
             </a>
-            <a href="node-04.html#move" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color:#fff;">
+            <a href="solutions.html#move" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
               SOMETHING NEEDS TO MOVE &rarr;
             </a>
           </div>
@@ -126,48 +134,65 @@
     </section>
 
     <!-- SECTION 02 — THE PROBLEM (SYSTEM DIAGNOSIS) -->
-    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#0d0e12;">
+    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#060606;">
       <div class="container" style="max-width:1180px;">
-        <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.75rem;">
+        <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
           <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">troubleshoot</span>
           02 // THE PROBLEM
         </div>
-        <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;line-height:1.12;color:#ffffff;margin:0 0 1.5rem;text-transform:uppercase;">
-          THE RESOURCES EXIST.<br>
-          <span style="color:var(--accent-cyan);">THEY ARE ISOLATED IN SILOS.</span>
+        <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;line-height:1.12;color: #FFFFFF;margin:0 0 1.5rem;text-transform:uppercase;">The resources exist.<br>
+          <span style="color: #FFFFFF;">They are isolated in silos.</span>
         </h2>
-        <p style="font-size:1.12rem;line-height:1.75;color:#cbd5e1;max-width:860px;margin:0 0 3rem;">
+        <p style="font-size:1.12rem;line-height:1.75;color: #FFFFFF;max-width:860px;margin:0 0 3rem;">
           Across Mumbai, Hyderabad, Chennai, Bengaluru, Kochi, and international production hubs, the elements of production already exist: proven directors, guild-certified technicians, acoustic soundstages, camera packages, post houses, private capital, and audience demand. Yet because these participants operate without shared visibility, valuable capacity sits idle while projects stall.
         </p>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.25rem;margin-bottom:2.5rem;">
-          <div class="pastel-card" style="padding:1.5rem;border-left:3px solid #ef4444;">
-            <div class="mono" style="font-size:0.75rem;color:#ef4444;font-weight:700;margin-bottom:0.5rem;">FRICTION 01 // IDLE CAPEX</div>
-            <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.5rem;">Dark Stages &amp; Parked Gear</h3>
-            <p style="font-size:0.9rem;line-height:1.6;color:#94a3b8;margin:0;">
-              Studios carry heavy real-estate carrying costs during unbooked windows. Rental houses let camera bodies sit on shelves while nearby indie and commercial shoots scramble for gear.
-            </p>
+        <div style="margin-bottom:3rem;">
+          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#FFFFFF;display:flex;align-items:center;gap:0.45rem;margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined" style="font-size:1rem;color:#FFFFFF;">error_outline</span>
+            THE 8 STRUCTURAL DISCONNECTIONS OF ENTERTAINMENT
           </div>
-          <div class="pastel-card" style="padding:1.5rem;border-left:3px solid #f59e0b;">
-            <div class="mono" style="font-size:0.75rem;color:#f59e0b;font-weight:700;margin-bottom:0.5rem;">FRICTION 02 // BENCHED CRAFT</div>
-            <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.5rem;">Talent Gap Intervals</h3>
-            <p style="font-size:0.9rem;line-height:1.6;color:#94a3b8;margin:0;">
-              Elite cinematographers, editors, and HODs frequently experience 3-to-6 month gaps between large features because regional production cycles do not communicate.
-            </p>
-          </div>
-          <div class="pastel-card" style="padding:1.5rem;border-left:3px solid #00E5FF;">
-            <div class="mono" style="font-size:0.75rem;color:#00E5FF;font-weight:700;margin-bottom:0.5rem;">FRICTION 03 // HESITANT CAPITAL</div>
-            <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.5rem;">Unstructured Milestones</h3>
-            <p style="font-size:0.9rem;line-height:1.6;color:#94a3b8;margin:0;">
-              Financiers hold back capital when disbursement lacks transparent operational verification and milestone-gated escrow security.
-            </p>
-          </div>
-          <div class="pastel-card" style="padding:1.5rem;border-left:3px solid #10b981;">
-            <div class="mono" style="font-size:0.75rem;color:#10b981;font-weight:700;margin-bottom:0.5rem;">FRICTION 04 // DISTRIBUTION BOTTLENECK</div>
-            <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.5rem;">Fragmented Release Windows</h3>
-            <p style="font-size:0.9rem;line-height:1.6;color:#94a3b8;margin:0;">
-              Finished masters stall without clear, data-informed pathways to theatrical buyers, streaming platforms, and overseas diaspora audiences.
-            </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;">
+            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
+              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">01 // IP &amp; STORIES</div>
+              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Scripts gather dust in drawers.</h3>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Great IP lacks transparent packaging and direct pathways to verified producers and capital pods.</p>
+            </div>
+            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
+              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">02 // TALENT &amp; CREW</div>
+              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Verified craft sits on the bench.</h3>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Skilled cinematographers and technicians wait weeks between informal word-of-mouth calls.</p>
+            </div>
+            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
+              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">03 // SOUNDSTAGES</div>
+              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Stages bleed revenue on dark days.</h3>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Acoustic complexes sit empty between major tentpole blocks due to opaque booking schedules.</p>
+            </div>
+            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
+              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">04 // CINEMA GEAR</div>
+              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">High-end packages sit in flight cases.</h3>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Top-tier sensor packages and anamorphic glass depreciate without active, cross-regional utilization.</p>
+            </div>
+            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
+              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">05 // POST &amp; VFX</div>
+              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Finishing pipelines stall in ambiguity.</h3>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">VFX and sound houses face endless scope creep without objective milestone definitions and verified handoffs.</p>
+            </div>
+            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
+              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">06 // DISTRIBUTION</div>
+              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Finished films get stranded in traffic.</h3>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Completed productions struggle to clear regional windowing, OTT specs, and diaspora theatrical slots.</p>
+            </div>
+            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
+              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">07 // AUDIENCE DEMAND</div>
+              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Communities starve for fresh cinema.</h3>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Passionate audience niches remain disconnected from localized screenings and community premieres.</p>
+            </div>
+            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
+              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">08 // CAPITAL &amp; RISK</div>
+              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Financiers retreat from unverified risk.</h3>
+              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Institutional capital waits on the sidelines without audited milestones and regulated escrow infrastructure.</p>
+            </div>
           </div>
         </div>
 
@@ -175,14 +200,14 @@
         <div class="bento-master-chassis">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding:0 8px;flex-wrap:wrap;gap:10px;">
             <div style="display:flex;align-items:center;gap:10px;">
-              <span class="material-symbols-outlined" style="color:var(--accent-cyan);font-size:1.3rem;">dashboard</span>
-              <span class="mono" style="font-size:0.75rem;letter-spacing:0.15em;color:var(--accent-cyan);font-weight:800;text-transform:uppercase;">
+              <span class="material-symbols-outlined" style="color: #FFFFFF;font-size:1.3rem;">dashboard</span>
+              <span class="mono" style="font-size:0.75rem;letter-spacing:0.15em;color: #FFFFFF;font-weight:800;text-transform:uppercase;">
                 DIGISYNQ // ACTIVE COORDINATION DASHBOARD
               </span>
             </div>
             <div style="display:flex;align-items:center;gap:12px;">
               <span class="status-indicator status-live" style="font-size:0.72rem;">SYSTEM LIVE</span>
-              <span class="mono" style="font-size:0.75rem;color:var(--text-tertiary);">NODE TELEMETRY V2.4</span>
+              <span class="mono" style="font-size:0.75rem;color: #FFFFFF;">NODE TELEMETRY V2.4</span>
             </div>
           </div>
 
@@ -205,10 +230,10 @@
                 </div>
 
                 <div>
-                  <h3 style="font-size:1.5rem;font-weight:800;color:#fff;margin:0 0 4px;letter-spacing:-0.02em;">
+                  <h3 style="font-size:1.5rem;font-weight:800;color: #FFFFFF;margin:0 0 4px;letter-spacing:-0.02em;">
                     ARRI Alexa 35 Package
                   </h3>
-                  <div style="font-size:1.8rem;font-weight:800;font-family:var(--font-headline);color:#fff;line-height:1.2;">
+                  <div style="font-size:1.8rem;font-weight:800;font-family:var(--font-headline);color: #FFFFFF;line-height:1.2;">
                     ₹45,000 <span style="font-size:0.85rem;font-weight:600;opacity:0.85;">/ Day</span>
                   </div>
                   <div style="font-size:0.78rem;opacity:0.9;margin-top:6px;font-family:var(--font-mono);">
@@ -228,7 +253,7 @@
 
                 <div style="text-align:center;margin:10px 0 16px;">
                   <div style="font-size:3rem;line-height:1;">🎬</div>
-                  <div style="font-family:var(--font-headline);font-weight:800;font-size:1.15rem;color:#fff;margin-top:6px;">
+                  <div style="font-family:var(--font-headline);font-weight:800;font-size:1.15rem;color: #FFFFFF;margin-top:6px;">
                     Lead Cinematographer Attached
                   </div>
                   <div style="font-size:0.75rem;opacity:0.9;font-family:var(--font-mono);">UCNI VERIFIED #8849-DP</div>
@@ -236,13 +261,13 @@
 
                 <!-- Floating Action Pills -->
                 <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
-                  <a href="node-10.html?action=director" class="bento-floating-chip">
+                  <a href="synq.html?action=director" class="bento-floating-chip">
                     <span>🎬</span> <span>Director Attached</span>
                   </a>
-                  <a href="node-10.html?action=stage" class="bento-floating-chip">
+                  <a href="synq.html?action=stage" class="bento-floating-chip">
                     <span>🏛️</span> <span>Reserve Stage 04</span>
                   </a>
-                  <a href="node-08.html" class="bento-floating-chip">
+                  <a href="economics.html" class="bento-floating-chip">
                     <span>🔒</span> <span>Escrow Deposit Funded</span>
                   </a>
                 </div>
@@ -259,21 +284,21 @@
                 <!-- Center Top Left: Dispatch Peek / Mobile Node -->
                 <div class="bento-tile bento-tile-dark" style="padding:18px;">
                   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span class="mono" style="font-size:0.68rem;color:var(--accent-cyan);font-weight:700;">UCNI MOBILE DISPATCH</span>
-                    <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">phone_iphone</span>
+                    <span class="mono" style="font-size:0.68rem;color: #FFFFFF;font-weight:700;">UCNI MOBILE DISPATCH</span>
+                    <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;">phone_iphone</span>
                   </div>
                   <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:12px;">
                     <div style="display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:4px;">
-                      <span style="color:#94a3b8;">Call Sheet Call:</span>
-                      <strong style="color:#fff;">05:30 AM</strong>
+                      <span style="color: #FFFFFF;">Call Sheet Call:</span>
+                      <strong style="color: #FFFFFF;">05:30 AM</strong>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:4px;">
-                      <span style="color:#94a3b8;">Crew Muster:</span>
-                      <strong style="color:var(--accent-emerald);">38 / 38 (100%)</strong>
+                      <span style="color: #FFFFFF;">Crew Muster:</span>
+                      <strong style="color: #FFFFFF;">38 / 38 (100%)</strong>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.75rem;">
-                      <span style="color:#94a3b8;">Stage Lock:</span>
-                      <strong style="color:var(--accent-cyan);">Film City Floor 3</strong>
+                      <span style="color: #FFFFFF;">Stage Lock:</span>
+                      <strong style="color: #FFFFFF;">Film City Floor 3</strong>
                     </div>
                   </div>
                 </div>
@@ -281,17 +306,17 @@
                 <!-- Center Top Right: Stacked Notifications -->
                 <div class="bento-tile bento-tile-dark" style="padding:18px;">
                   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                    <span class="mono" style="font-size:0.68rem;color:#F5B840;font-weight:700;">LIVE DISPATCH PULSE</span>
-                    <span style="width:8px;height:8px;border-radius:50%;background:#FF5200;box-shadow:0 0 8px #FF5200;"></span>
+                    <span class="mono" style="font-size:0.68rem;color: #FFFFFF;font-weight:700;">LIVE DISPATCH PULSE</span>
+                    <span style="width:8px;height:8px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 8px #FFFFFF;"></span>
                   </div>
                   <div style="display:flex;flex-direction:column;gap:6px;">
                     <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;">
-                      <span style="font-size:0.72rem;color:#e2e8f0;">⚡ DOP Replacement Routed</span>
-                      <span class="mono" style="font-size:0.62rem;color:#94a3b8;">JUST NOW</span>
+                      <span style="font-size:0.72rem;color: #FFFFFF;">⚡ DOP Replacement Routed</span>
+                      <span class="mono" style="font-size:0.62rem;color: #FFFFFF;">JUST NOW</span>
                     </div>
                     <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;">
-                      <span style="font-size:0.72rem;color:#e2e8f0;">💳 Escrow Tranche B Released</span>
-                      <span class="mono" style="font-size:0.62rem;color:#94a3b8;">4M AGO</span>
+                      <span style="font-size:0.72rem;color: #FFFFFF;">💳 Escrow Tranche B Released</span>
+                      <span class="mono" style="font-size:0.62rem;color: #FFFFFF;">4M AGO</span>
                     </div>
                   </div>
                 </div>
@@ -301,19 +326,19 @@
               <!-- Center Middle: Hero Analytics Bar Chart (The Grand Centerpiece) -->
               <div class="bento-tile bento-tile-orange" style="padding:28px;position:relative;overflow:hidden;">
                 <!-- Decorative Watermark Graphic -->
-                <div style="position:absolute;right:15px;top:10px;font-family:var(--font-headline);font-size:4.5rem;font-weight:900;color:rgba(255,255,255,0.06);letter-spacing:0.05em;pointer-events:none;">
+                <div style="position:absolute;right:15px;top:10px;font-family:var(--font-headline);font-size:4.5rem;font-weight:900;color: #FFFFFF;letter-spacing:0.05em;pointer-events:none;">
                   SYNQ
                 </div>
 
                 <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
                   <div>
-                    <div class="mono" style="font-size:0.72rem;letter-spacing:0.12em;font-weight:800;color:rgba(255,255,255,0.9);text-transform:uppercase;">
+                    <div class="mono" style="font-size:0.72rem;letter-spacing:0.12em;font-weight:800;color: #FFFFFF;text-transform:uppercase;">
                       PRODUCTION THROUGHPUT TELEMETRY
                     </div>
                     <div style="font-size:clamp(2.2rem, 3vw, 3.2rem);font-weight:900;line-height:1;margin:8px 0 4px;font-family:var(--font-headline);">
                       44,500 <span style="font-size:1.1rem;font-weight:600;opacity:0.9;">Hours</span>
                     </div>
-                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.85);">
+                    <div style="font-size:0.85rem;color: #FFFFFF;">
                       Coordinated capacity mobilized across verified film &amp; commercial schedules
                     </div>
                   </div>
@@ -363,22 +388,22 @@
                   <div class="mono" style="font-size:0.7rem;font-weight:800;letter-spacing:0.1em;margin-bottom:8px;opacity:0.9;">
                     RATINGS &amp; AUDITED WRAP
                   </div>
-                  <div style="background:#FFFFFF;border-radius:18px;padding:14px;color:#0E131F;">
+                  <div style="background:#FFFFFF;border-radius:18px;padding:14px;color: #FFFFFF;">
                     <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-                      <div style="width:32px;height:32px;border-radius:50%;background:#FF5B22;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;">
+                      <div style="width:32px;height:32px;border-radius:50%;background:#FFFFFF;color: #FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;">
                         SK
                       </div>
                       <div>
                         <div style="font-weight:800;font-size:0.82rem;line-height:1.2;">S. K. Verma</div>
-                        <div class="mono" style="font-size:0.65rem;color:#10b981;font-weight:700;">✓ Verified Production Wrap</div>
+                        <div class="mono" style="font-size:0.65rem;color: #FFFFFF;font-weight:700;">✓ Verified Production Wrap</div>
                       </div>
                     </div>
-                    <p style="font-size:0.75rem;line-height:1.45;color:#475569;margin:0 0 8px;">
+                    <p style="font-size:0.75rem;line-height:1.45;color: #FFFFFF;margin:0 0 8px;">
                       "The replacement anamorphic prime set was bench-certified and on set 90 minutes before our morning roll."
                     </p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:#64748b;">
-                      <span>Score: <strong style="color:#0E131F;">4.9 / 5.0</strong></span>
-                      <span style="color:#F5B840;letter-spacing:2px;">★★★★★</span>
+                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color: #FFFFFF;">
+                      <span>Score: <strong style="color: #FFFFFF;">4.9 / 5.0</strong></span>
+                      <span style="color: #FFFFFF;letter-spacing:2px;">★★★★★</span>
                     </div>
                   </div>
                 </div>
@@ -386,7 +411,7 @@
                 <!-- Center Bottom Right: Live Radar / Geo Map Card -->
                 <div class="bento-tile bento-tile-dark" style="padding:20px;">
                   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span class="mono" style="font-size:0.7rem;color:var(--accent-cyan);font-weight:700;">STAGE TELEMETRY CORRIDOR</span>
+                    <span class="mono" style="font-size:0.7rem;color: #FFFFFF;font-weight:700;">STAGE TELEMETRY CORRIDOR</span>
                     <span class="mono-tag teal" style="font-size:0.65rem;padding:2px 8px;">MUMBAI &rarr; HYD</span>
                   </div>
 
@@ -394,8 +419,8 @@
                   <div class="bento-radar-map">
                     <div class="bento-map-ping"></div>
                     <div style="position:absolute;bottom:10px;left:10px;right:10px;background:rgba(8,10,14,0.85);backdrop-filter:blur(8px);border-radius:100px;padding:5px 12px;display:flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,0.1);">
-                      <span class="material-symbols-outlined" style="font-size:0.9rem;color:#FF5B22;">navigation</span>
-                      <span style="font-size:0.7rem;color:#FFFFFF;font-weight:700;">Active Transit: Arriving in 18 mins</span>
+                      <span class="material-symbols-outlined" style="font-size:0.9rem;color: #FFFFFF;">navigation</span>
+                      <span style="font-size:0.7rem;color: #FFFFFF;font-weight:700;">Active Transit: Arriving in 18 mins</span>
                     </div>
                   </div>
                 </div>
@@ -410,7 +435,7 @@
               <!-- Right Card 1: Special Modules List (Nested Mini Cards) -->
               <div class="bento-tile bento-tile-orange" style="padding:24px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-                  <h3 style="font-size:1.15rem;font-weight:800;color:#fff;margin:0;">
+                  <h3 style="font-size:1.15rem;font-weight:800;color: #FFFFFF;margin:0;">
                     Active Packages
                   </h3>
                   <span class="mono" style="font-size:0.7rem;background:rgba(0,0,0,0.25);padding:3px 8px;border-radius:100px;font-weight:700;">
@@ -421,11 +446,11 @@
                 <!-- Nested Mini Item 1 -->
                 <div class="bento-nested-item">
                   <div>
-                    <span class="mono" style="font-size:0.65rem;color:#10b981;font-weight:800;">VERIFIED OPTICS</span>
-                    <div style="font-weight:800;font-size:0.85rem;color:#0E131F;">Master Anamorphic T1.9</div>
-                    <div class="mono" style="font-size:0.75rem;color:#64748b;font-weight:700;">₹18,000 / day</div>
+                    <span class="mono" style="font-size:0.65rem;color: #FFFFFF;font-weight:800;">VERIFIED OPTICS</span>
+                    <div style="font-weight:800;font-size:0.85rem;color: #FFFFFF;">Master Anamorphic T1.9</div>
+                    <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;">₹18,000 / day</div>
                   </div>
-                  <a href="node-10.html?asset=optics" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FF5B22;border:none;">
+                  <a href="synq.html?asset=optics" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
                     SYNQ &rarr;
                   </a>
                 </div>
@@ -433,11 +458,11 @@
                 <!-- Nested Mini Item 2 -->
                 <div class="bento-nested-item">
                   <div>
-                    <span class="mono" style="font-size:0.65rem;color:#3b82f6;font-weight:800;">STAGE CAPACITY</span>
-                    <div style="font-weight:800;font-size:0.85rem;color:#0E131F;">Acoustic Floor 04</div>
-                    <div class="mono" style="font-size:0.75rem;color:#64748b;font-weight:700;">₹65,000 / day</div>
+                    <span class="mono" style="font-size:0.65rem;color: #FFFFFF;font-weight:800;">STAGE CAPACITY</span>
+                    <div style="font-weight:800;font-size:0.85rem;color: #FFFFFF;">Acoustic Floor 04</div>
+                    <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;">₹65,000 / day</div>
                   </div>
-                  <a href="node-10.html?asset=stage" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FF5B22;border:none;">
+                  <a href="synq.html?asset=stage" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
                     SYNQ &rarr;
                   </a>
                 </div>
@@ -445,11 +470,11 @@
                 <!-- Nested Mini Item 3 -->
                 <div class="bento-nested-item">
                   <div>
-                    <span class="mono" style="font-size:0.65rem;color:#f59e0b;font-weight:800;">ESCROW VAULT</span>
-                    <div style="font-weight:800;font-size:0.85rem;color:#0E131F;">Milestone Tranche Shield</div>
-                    <div class="mono" style="font-size:0.75rem;color:#64748b;font-weight:700;">Regulated Bank Trustee</div>
+                    <span class="mono" style="font-size:0.65rem;color: #FFFFFF;font-weight:800;">ESCROW VAULT</span>
+                    <div style="font-weight:800;font-size:0.85rem;color: #FFFFFF;">Milestone Tranche Shield</div>
+                    <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;">Regulated Bank Trustee</div>
                   </div>
-                  <a href="node-10.html?asset=escrow" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FF5B22;border:none;">
+                  <a href="synq.html?asset=escrow" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
                     LOCK &rarr;
                   </a>
                 </div>
@@ -458,8 +483,8 @@
               <!-- Right Card 2: Floating Status Pills Cluster -->
               <div class="bento-tile bento-tile-blue" style="min-height:200px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:12px;">
                 <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
-                  <span style="width:10px;height:10px;border-radius:50%;background:#FF5200;box-shadow:0 0 10px #FF5200;"></span>
-                  <span class="mono" style="font-size:0.72rem;font-weight:800;color:#fff;letter-spacing:0.12em;">NETWORK RADAR</span>
+                  <span style="width:10px;height:10px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 10px #FFFFFF;"></span>
+                  <span class="mono" style="font-size:0.72rem;font-weight:800;color: #FFFFFF;letter-spacing:0.12em;">NETWORK RADAR</span>
                 </div>
 
                 <div class="bento-status-pill">
@@ -469,12 +494,12 @@
 
                 <div class="bento-status-pill" style="align-self:flex-end;">
                   <span>Stage Reservations</span>
-                  <span class="bento-pill-count" style="background:#3b82f6;">11</span>
+                  <span class="bento-pill-count" style="background:#FFFFFF;">11</span>
                 </div>
 
                 <div class="bento-status-pill">
                   <span>Pending Escrow Tranches</span>
-                  <span class="bento-pill-count" style="background:#10b981;">42+</span>
+                  <span class="bento-pill-count" style="background:#FFFFFF;">42+</span>
                 </div>
               </div>
 
@@ -490,153 +515,149 @@
       <div class="container" style="max-width:1180px;">
         <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:2.5rem;">
           <div>
-            <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">
+            <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.5rem;">
               <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">category</span>
               03 // THE ECOSYSTEM MODEL
             </div>
-            <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.8rem);font-weight:800;color:#ffffff;margin:0;text-transform:uppercase;">
-              WHAT DIGISYNQ CONNECTS
-            </h2>
+            <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.8rem);font-weight:800;color: #FFFFFF;margin:0;text-transform:uppercase;">What DigiSynq connects</h2>
           </div>
-          <a href="node-02.html" class="mono" style="font-size:0.85rem;color:var(--accent-cyan);text-decoration:none;font-weight:700;">
+          <a href="ecosystem.html" class="mono" style="font-size:0.85rem;color: #FFFFFF;text-decoration:none;font-weight:700;">
             EXPLORE ALL 8 ECOSYSTEM CATEGORIES &rarr;
           </a>
         </div>
-        <p style="font-size:1.08rem;line-height:1.75;color:#cbd5e1;max-width:840px;margin:0 0 3rem;">
+        <p style="font-size:1.08rem;line-height:1.75;color: #FFFFFF;max-width:840px;margin:0 0 3rem;">
           Everything that moves an entertainment project belongs to one of eight core resource categories. DigiSynq indexes availability, requirements, and constraints across all eight:
         </p>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;">
           <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color:var(--accent-cyan);margin-bottom:0.3rem;">CATEGORY 01</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">IP &amp; Ideas</h3>
-            <p style="font-size:0.85rem;color:#94a3b8;margin:0;">Vetted screenplays, rights packages, and developed concepts ready for packaging.</p>
+            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 01</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">IP &amp; Ideas</h3>
+            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Vetted screenplays, rights packages, and developed concepts ready for packaging.</p>
           </div>
           <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color:var(--accent-cyan);margin-bottom:0.3rem;">CATEGORY 02</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Talent &amp; Guilds</h3>
-            <p style="font-size:0.85rem;color:#94a3b8;margin:0;">Directors, cinematographers, HODs, actors, and peer-verified guild technicians.</p>
+            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 02</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Talent &amp; Guilds</h3>
+            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Directors, cinematographers, HODs, actors, and peer-verified guild technicians.</p>
           </div>
           <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color:var(--accent-cyan);margin-bottom:0.3rem;">CATEGORY 03</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Stages &amp; Venues</h3>
-            <p style="font-size:0.85rem;color:#94a3b8;margin:0;">Acoustic soundstages, backlots, standing sets, and specialized shooting locations.</p>
+            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 03</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Stages &amp; Venues</h3>
+            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Acoustic soundstages, backlots, standing sets, and specialized shooting locations.</p>
           </div>
           <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color:var(--accent-cyan);margin-bottom:0.3rem;">CATEGORY 04</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Production Gear</h3>
-            <p style="font-size:0.85rem;color:#94a3b8;margin:0;">Camera packages, anamorphic lenses, lighting trucks, grip packages, and sound kits.</p>
+            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 04</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Production Gear</h3>
+            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Camera packages, anamorphic lenses, lighting trucks, grip packages, and sound kits.</p>
           </div>
           <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color:var(--accent-cyan);margin-bottom:0.3rem;">CATEGORY 05</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Post &amp; Virtual Production</h3>
-            <p style="font-size:0.85rem;color:#94a3b8;margin:0;">Unreal virtual stages, edit suites, color grading facilities, and Dolby Atmos mixing.</p>
+            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 05</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Post &amp; Virtual Production</h3>
+            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Unreal virtual stages, edit suites, color grading facilities, and Dolby Atmos mixing.</p>
           </div>
           <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color:var(--accent-cyan);margin-bottom:0.3rem;">CATEGORY 06</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Distribution</h3>
-            <p style="font-size:0.85rem;color:#94a3b8;margin:0;">Theatrical distributors, digital streaming platforms, international sales agents.</p>
+            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 06</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Distribution</h3>
+            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Theatrical distributors, digital streaming platforms, international sales agents.</p>
           </div>
           <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color:var(--accent-cyan);margin-bottom:0.3rem;">CATEGORY 07</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Audience &amp; Demand</h3>
-            <p style="font-size:0.85rem;color:#94a3b8;margin:0;">Regional market interest signals, fan community traction, theatrical pre-demand.</p>
+            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 07</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Audience &amp; Demand</h3>
+            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Regional market interest signals, fan community traction, theatrical pre-demand.</p>
           </div>
           <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color:var(--accent-cyan);margin-bottom:0.3rem;">CATEGORY 08</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Capital &amp; Escrow</h3>
-            <p style="font-size:0.85rem;color:#94a3b8;margin:0;">Private equity, co-producers, brand sponsors, and milestone-gated escrow structures.</p>
+            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 08</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Capital &amp; Escrow</h3>
+            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Private equity, co-producers, brand sponsors, and milestone-gated escrow structures.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SECTION 04 — HOW IT WORKS (THE 6-STAGE PIPELINE) -->
-    <section id="how-it-works" style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#0d0e12;">
+    <section id="how-it-works" style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#060606;">
       <div class="container" style="max-width:1180px;">
         <div style="text-align:center;max-width:820px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.75rem;">
+          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
             <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">sync</span>
             04 // THE OPERATING MODEL
           </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
-            HOW IT WORKS: THE 6-STAGE PIPELINE
-          </h2>
-          <p style="font-size:1.1rem;line-height:1.75;color:#cbd5e1;margin:0;">
+          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">How it works: the 6-stage pipeline</h2>
+          <p style="font-size:1.1rem;line-height:1.75;color: #FFFFFF;margin:0;">
             DigiSynq executes coordination through a sequential, disciplined operational pipeline. Each stage converts raw inputs into verified production outputs.
           </p>
         </div>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
           <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">STAGE 01</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">MEASURE</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 01</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Measure</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               Verify availability, technical specifications, and contractual constraints before commitments are made.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
               INPUT: Asset / Request &bull; OUTPUT: Verified Readiness Baseline
             </div>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">STAGE 02</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">CONNECT</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 02</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Connect</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               Identify compatible participants, facilities, and packages across regions with matched availability.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
               INPUT: Verified Parameters &bull; OUTPUT: Matched Counterparties
             </div>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">STAGE 03</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">OPTIMIZE</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 03</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Optimize</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               Align commercial terms, calendar timing, dependencies, and milestone delivery schedules.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
               INPUT: Shortlist &bull; OUTPUT: Coordinated Deal Memo &amp; Schedule
             </div>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">STAGE 04</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">DEPLOY</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 04</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Deploy</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               Mobilize physical execution — call sheets, soundstage ingress, gear dispatch, and daily production.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
               INPUT: Executed Agreement &bull; OUTPUT: Active Production Underway
             </div>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">STAGE 05</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">LEARN</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
-              Capture verified outcomes, delivery completion, milestone compliance, and operational ratings.
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 05</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Settle</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
+              Verify milestone delivery completion and authorize escrow fund release through regulated banking partners.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
-              INPUT: Milestone Delivery &bull; OUTPUT: Post-Wrap Telemetry
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
+              INPUT: Milestone Delivery &bull; OUTPUT: Verified Escrow Disbursement
             </div>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">STAGE 06</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">REPEAT</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
-              Compound institutional knowledge to make future coordination faster, cheaper, and more predictable.
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 06</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">LEARN &amp; REPEAT</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
+              Compound institutional knowledge — operational ratings, turnaround benchmarks — to make future coordination faster and more predictable.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
-              INPUT: Historical Performance &bull; OUTPUT: Optimized Future Synqs
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
+              INPUT: Post-Wrap Telemetry &bull; OUTPUT: Optimized Future Synqs
             </div>
           </div>
         </div>
 
         <div style="text-align:center;margin-top:2.5rem;">
-          <a href="node-03.html" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.8rem;">
+          <a href="platform.html" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.8rem;">
             READ FULL OPERATIONAL METHODOLOGY (NODE 03) &rarr;
           </a>
         </div>
@@ -647,26 +668,24 @@
     <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
       <div class="container" style="max-width:1180px;">
         <div style="text-align:center;max-width:760px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.75rem;">
+          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
             <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">extension</span>
             05 // THE PRODUCT MODEL
           </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
-            4 CORE CAPABILITIES
-          </h2>
-          <p style="font-size:1.08rem;line-height:1.75;color:#cbd5e1;margin:0;">
+          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">4 core capabilities</h2>
+          <p style="font-size:1.08rem;line-height:1.75;color: #FFFFFF;margin:0;">
             DigiSynq's 15 coordination modules are organized under four core capabilities:
           </p>
         </div>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.5rem;">
           <div class="card card-glow-teal" style="padding:2rem;">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">CAPABILITY 01</div>
-            <h3 style="font-size:1.4rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">MATCH</h3>
-            <p style="font-size:0.92rem;color:#cbd5e1;line-height:1.65;margin-bottom:1.25rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">CAPABILITY 01</div>
+            <h3 style="font-size:1.4rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Match</h3>
+            <p style="font-size:0.92rem;color: #FFFFFF;line-height:1.65;margin-bottom:1.25rem;">
               Discovery and compatibility mapping for benched talent, dark soundstages, idle gear packages, and ready IP.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;line-height:1.7;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;line-height:1.7;">
               &bull; Talent Revival<br>
               &bull; Stage &amp; Venue Sync<br>
               &bull; Gear Package Matching<br>
@@ -675,12 +694,12 @@
           </div>
 
           <div class="card card-glow-purple" style="padding:2rem;">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">CAPABILITY 02</div>
-            <h3 style="font-size:1.4rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">EXECUTE</h3>
-            <p style="font-size:0.92rem;color:#cbd5e1;line-height:1.65;margin-bottom:1.25rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">CAPABILITY 02</div>
+            <h3 style="font-size:1.4rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Execute</h3>
+            <p style="font-size:0.92rem;color: #FFFFFF;line-height:1.65;margin-bottom:1.25rem;">
               Production coordination and dispatch tools ensuring shoots assemble on schedule and run without missing key elements.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;line-height:1.7;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;line-height:1.7;">
               &bull; Crew Sync &amp; Dispatch<br>
               &bull; Crisis Replacement Support<br>
               &bull; Logistics &amp; Ingress Engine<br>
@@ -689,12 +708,12 @@
           </div>
 
           <div class="card card-glow-gold" style="padding:2rem;">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">CAPABILITY 03</div>
-            <h3 style="font-size:1.4rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">SETTLE</h3>
-            <p style="font-size:0.92rem;color:#cbd5e1;line-height:1.65;margin-bottom:1.25rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">CAPABILITY 03</div>
+            <h3 style="font-size:1.4rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Settle</h3>
+            <p style="font-size:0.92rem;color: #FFFFFF;line-height:1.65;margin-bottom:1.25rem;">
               Milestone-gated financial and contractual settlement handled in coordination with regulated banking/escrow partners.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;line-height:1.7;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;line-height:1.7;">
               &bull; Milestone Escrow Workflows<br>
               &bull; Deal Memo Standards<br>
               &bull; Financier Visibility<br>
@@ -703,12 +722,12 @@
           </div>
 
           <div class="card card-glow-teal" style="padding:2rem;">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.5rem;">CAPABILITY 04</div>
-            <h3 style="font-size:1.4rem;font-weight:800;color:#fff;margin:0 0 0.75rem;">INTELLIGENCE</h3>
-            <p style="font-size:0.92rem;color:#cbd5e1;line-height:1.65;margin-bottom:1.25rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">CAPABILITY 04</div>
+            <h3 style="font-size:1.4rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Intelligence</h3>
+            <p style="font-size:0.92rem;color: #FFFFFF;line-height:1.65;margin-bottom:1.25rem;">
               Telemetry and market demand insights helping producers, distributors, and investors make data-supported decisions.
             </p>
-            <div class="mono" style="font-size:0.75rem;color:#94a3b8;line-height:1.7;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;line-height:1.7;">
               &bull; Capacity Mapping<br>
               &bull; Content Demand Signals<br>
               &bull; Box Office &amp; Window Insights<br>
@@ -718,7 +737,7 @@
         </div>
 
         <div style="text-align:center;margin-top:2.5rem;">
-          <a href="products.html" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.8rem;">
+          <a href="modules.html" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.8rem;">
             EXPLORE ALL 15 COORDINATION MODULES &rarr;
           </a>
         </div>
@@ -726,70 +745,69 @@
     </section>
 
     <!-- SECTION 06 — 5 ENTRY SITUATIONS (USER ENTRY MODEL) -->
-    <section id="situations" style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#0d0e12;">
+    <section id="situations" style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#060606;">
       <div class="container" style="max-width:1180px;">
         <div style="text-align:center;max-width:820px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.75rem;">
+          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
             <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">login</span>
             06 // USER ENTRY PATHWAYS
           </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
-            WHAT NEEDS TO MOVE?
+          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">What needs to move?
           </h2>
-          <p style="font-size:1.1rem;line-height:1.75;color:#cbd5e1;margin:0;">
+          <p style="font-size:1.1rem;line-height:1.75;color: #FFFFFF;margin:0;">
             You enter DigiSynq through your immediate operational need. Select the statement that describes your current situation:
           </p>
         </div>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
           <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.4rem;">SITUATION 01</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.5rem;">&ldquo;I Have Something.&rdquo;</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 01</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;I Have Something.&rdquo;</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               You own an idle asset, a developed screenplay, specialized camera fleet, or an open soundstage calendar. DigiSynq connects your asset to vetted, capitalized productions.
             </p>
-            <a href="node-10.html?situation=have" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">ACTIVATE AN ASSET &rarr;</a>
+            <a href="synq.html?situation=have" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">ACTIVATE AN ASSET &rarr;</a>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.4rem;">SITUATION 02</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.5rem;">&ldquo;I Need Something.&rdquo;</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 02</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;I Need Something.&rdquo;</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               You are packaging a film, OTT series, or commercial and missing key elements: a tested DOP, completion capital, an acoustic stage, or regional distribution partner.
             </p>
-            <a href="node-10.html?situation=need" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">FIND WHAT YOU NEED &rarr;</a>
+            <a href="synq.html?situation=need" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">FIND WHAT YOU NEED &rarr;</a>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.4rem;">SITUATION 03</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.5rem;">&ldquo;Something Is Underused.&rdquo;</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 03</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;Something Is Underused.&rdquo;</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               You are absorbing overhead on dark studio days, inactive edit suites, or benched talent. DigiSynq fills calendar gaps with short-run shoots and pickups.
             </p>
-            <a href="node-10.html?situation=underused" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">FILL DARK CALENDARS &rarr;</a>
+            <a href="synq.html?situation=underused" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">FILL DARK CALENDARS &rarr;</a>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.4rem;">SITUATION 04</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.5rem;">&ldquo;Something Is Blocked.&rdquo;</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 04</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;Something Is Blocked.&rdquo;</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               Your active shoot is stalled by a dropped technician, sudden gear failure, or frozen milestone release. DigiSynq applies emergency coordination to unjam the project.
             </p>
-            <a href="node-10.html?situation=blocked" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">CLEAR A BOTTLENECK &rarr;</a>
+            <a href="synq.html?situation=blocked" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">CLEAR A BOTTLENECK &rarr;</a>
           </div>
 
           <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.4rem;">SITUATION 05</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 0.5rem;">&ldquo;Something Needs to Move.&rdquo;</h3>
-            <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;margin-bottom:1rem;">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 05</div>
+            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;Something Needs to Move.&rdquo;</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
               You have a completed master looking for screens, an IP catalog ready for new exploitation, or an episodic concept seeking co-production finance.
             </p>
-            <a href="node-10.html?situation=move" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">MOBILIZE A PROJECT &rarr;</a>
+            <a href="synq.html?situation=move" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">MOBILIZE A PROJECT &rarr;</a>
           </div>
         </div>
 
         <div style="text-align:center;margin-top:2.5rem;">
-          <a href="node-04.html" class="mono" style="font-size:0.85rem;color:var(--accent-cyan);text-decoration:none;font-weight:700;">
+          <a href="solutions.html" class="mono" style="font-size:0.85rem;color: #FFFFFF;text-decoration:none;font-weight:700;">
             VIEW DETAILED SOLUTIONS BREAKDOWN (NODE 04) &rarr;
           </a>
         </div>
@@ -800,14 +818,12 @@
     <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
       <div class="container" style="max-width:1180px;">
         <div style="text-align:center;max-width:760px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.75rem;">
+          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
             <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">verified</span>
             07 // VERIFIED PROOF &amp; PILOT STUDIES
           </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
-            TESTED ON REAL PRODUCTIONS
-          </h2>
-          <p style="font-size:1.08rem;line-height:1.75;color:#cbd5e1;margin:0;">
+          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">Tested on real productions</h2>
+          <p style="font-size:1.08rem;line-height:1.75;color: #FFFFFF;margin:0;">
             We do not present hypothetical projections as operating facts. Here is how DigiSynq coordinates in active pilots:
           </p>
         </div>
@@ -817,15 +833,15 @@
           <div class="card" style="padding:2rem;background:var(--bg-surface);">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
               <span class="status-badge status-pilot">PILOT COHORT</span>
-              <span class="mono" style="font-size:0.72rem;color:#94a3b8;">MUMBAI &bull; COMMERCIAL</span>
+              <span class="mono" style="font-size:0.72rem;color: #FFFFFF;">MUMBAI &bull; COMMERCIAL</span>
             </div>
-            <h3 style="font-size:1.2rem;font-weight:700;color:#fff;margin:0 0 0.75rem;">Emergency 48-Hour Stage &amp; Optical Match</h3>
-            <p style="font-size:0.9rem;color:#94a3b8;line-height:1.6;margin-bottom:1.25rem;">
+            <h3 style="font-size:1.2rem;font-weight:700;color: #FFFFFF;margin:0 0 0.75rem;">Emergency 48-Hour Stage &amp; Optical Match</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1.25rem;">
               A tier-1 brand commercial faced cancellation when their booked soundstage experienced an HVAC failure. DigiSynq matched an unbooked 12,000 sq ft acoustic lot in Goregaon and re-routed a complete Alexa 35 package within 18 hours.
             </p>
             <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:0.75rem;display:flex;justify-content:space-between;font-size:0.8rem;" class="mono">
-              <span style="color:#94a3b8;">Outcome:</span>
-              <span style="color:#FF5200;">Shoot wrapped on budget</span>
+              <span style="color: #FFFFFF;">Outcome:</span>
+              <span style="color: #FFFFFF;">Shoot wrapped on budget</span>
             </div>
           </div>
 
@@ -833,15 +849,15 @@
           <div class="card" style="padding:2rem;background:var(--bg-surface);">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
               <span class="status-badge status-pilot">PILOT COHORT</span>
-              <span class="mono" style="font-size:0.72rem;color:#94a3b8;">HYDERABAD &bull; INDIE FEATURE</span>
+              <span class="mono" style="font-size:0.72rem;color: #FFFFFF;">HYDERABAD &bull; INDIE FEATURE</span>
             </div>
-            <h3 style="font-size:1.2rem;font-weight:700;color:#fff;margin:0 0 0.75rem;">Milestone Escrow for Multi-State Crew</h3>
-            <p style="font-size:0.9rem;color:#94a3b8;line-height:1.6;margin-bottom:1.25rem;">
+            <h3 style="font-size:1.2rem;font-weight:700;color: #FFFFFF;margin:0 0 0.75rem;">Milestone Escrow for Multi-State Crew</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1.25rem;">
               An independent multilingual feature attached Chennai-based DOP and colorist talent with Mumbai production finance. DigiSynq coordinated banking escrow milestone draws tied to verified dailies handover.
             </p>
             <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:0.75rem;display:flex;justify-content:space-between;font-size:0.8rem;" class="mono">
-              <span style="color:#94a3b8;">Outcome:</span>
-              <span style="color:#FF5200;">Zero payment disputes</span>
+              <span style="color: #FFFFFF;">Outcome:</span>
+              <span style="color: #FFFFFF;">Zero payment disputes</span>
             </div>
           </div>
 
@@ -849,15 +865,15 @@
           <div class="card" style="padding:2rem;background:var(--bg-surface);">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
               <span class="status-badge status-illustrative">ILLUSTRATIVE MODEL</span>
-              <span class="mono" style="font-size:0.72rem;color:#94a3b8;">REGIONAL CINEMA &bull; SLATE</span>
+              <span class="mono" style="font-size:0.72rem;color: #FFFFFF;">REGIONAL CINEMA &bull; SLATE</span>
             </div>
-            <h3 style="font-size:1.2rem;font-weight:700;color:#fff;margin:0 0 0.75rem;">Dark Calendar Stage Recovery</h3>
-            <p style="font-size:0.9rem;color:#94a3b8;line-height:1.6;margin-bottom:1.25rem;">
+            <h3 style="font-size:1.2rem;font-weight:700;color: #FFFFFF;margin:0 0 0.75rem;">Dark Calendar Stage Recovery</h3>
+            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1.25rem;">
               Modeled on a 4-lot studio complex in Chennai: by synchronizing ad pickups and music video units into historical 3-to-7 day dark windows, annual facility yield is projected to increase by 28-34%.
             </p>
             <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:0.75rem;display:flex;justify-content:space-between;font-size:0.8rem;" class="mono">
-              <span style="color:#94a3b8;">Status:</span>
-              <span style="color:var(--accent-cyan);">In Studio Review</span>
+              <span style="color: #FFFFFF;">Status:</span>
+              <span style="color: #FFFFFF;">In Studio Review</span>
             </div>
           </div>
         </div>
@@ -865,52 +881,51 @@
     </section>
 
     <!-- SECTION 08 — PRODUCT / PLATFORM ARCHITECTURE OVERVIEW -->
-    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#0d0e12;">
+    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#060606;">
       <div class="container" style="max-width:1180px;">
         <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center;">
           <div>
-            <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.75rem;">
+            <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
               <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">architecture</span>
               08 // ARCHITECTURE
             </div>
-            <h2 style="font-size:clamp(2rem, 3.5vw, 2.8rem);font-weight:800;color:#ffffff;margin:0 0 1.25rem;text-transform:uppercase;">
-              BUILT FOR PRODUCTION SPEED, BACKED BY RIGOR.
+            <h2 style="font-size:clamp(2rem, 3.5vw, 2.8rem);font-weight:800;color: #FFFFFF;margin:0 0 1.25rem;text-transform:uppercase;">Built for production speed, backed by rigor.
             </h2>
-            <p style="font-size:1.05rem;line-height:1.75;color:#cbd5e1;margin:0 0 1.5rem;">
+            <p style="font-size:1.05rem;line-height:1.75;color: #FFFFFF;margin:0 0 1.5rem;">
               DigiSynq is not a job board or social directory. It is an operating coordination layer that indexes real capacity, verifies credentials, structures commercial terms, and enables milestone settlement.
             </p>
             <div style="display:flex;gap:1rem;flex-wrap:wrap;">
               <a href="platform.html" class="btn btn-primary" style="font-size:0.9rem;padding:0.7rem 1.6rem;">
                 VIEW PLATFORM ARCHITECTURE &rarr;
               </a>
-              <a href="node-09.html#runbook" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.6rem;">
+              <a href="company.html#runbook" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.6rem;">
                 SYSTEM RUNBOOK &rarr;
               </a>
             </div>
           </div>
 
           <div class="pastel-card" style="padding:2rem;background:rgba(0,0,0,0.5);">
-            <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:1rem;">SYSTEM LAYER STACK</div>
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:1rem;">SYSTEM LAYER STACK</div>
             <div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.88rem;" class="mono">
               <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
                 <span>01 USER ENTRY</span>
-                <span style="color:#94a3b8;">5 Situations &bull; Direct Intake</span>
+                <span style="color: #FFFFFF;">5 Situations &bull; Direct Intake</span>
               </div>
               <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
                 <span>02 COORDINATION DESK</span>
-                <span style="color:var(--accent-cyan);">Intelligent Routing Engine</span>
+                <span style="color: #FFFFFF;">Intelligent Routing Engine</span>
               </div>
               <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
                 <span>03 ECOSYSTEM GRAPH</span>
-                <span style="color:#94a3b8;">8 Resource Categories</span>
+                <span style="color: #FFFFFF;">8 Resource Categories</span>
               </div>
               <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
                 <span>04 ESCROW INTEGRATION</span>
-                <span style="color:#FF5200;">Banking Partner Escrow</span>
+                <span style="color: #FFFFFF;">Banking Partner Escrow</span>
               </div>
               <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
                 <span>05 TELEMETRY ENGINE</span>
-                <span style="color:#94a3b8;">7 Telemetry Pillars</span>
+                <span style="color: #FFFFFF;">7 Telemetry Pillars</span>
               </div>
             </div>
           </div>
@@ -922,36 +937,35 @@
     <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
       <div class="container" style="max-width:1180px;">
         <div style="text-align:center;max-width:760px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.75rem;">
+          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
             <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">security</span>
             09 // TRUST &amp; GOVERNANCE
           </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">
-            CLEAR BOUNDARIES. NO CONFLICTS.
+          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">Clear boundaries. No conflicts.
           </h2>
-          <p style="font-size:1.08rem;line-height:1.75;color:#cbd5e1;margin:0;">
+          <p style="font-size:1.08rem;line-height:1.75;color: #FFFFFF;margin:0;">
             Credibility in entertainment requires transparent operational limits. We are clear about what we do and what we do not do.
           </p>
         </div>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;">
-          <div class="card" style="padding:2rem;border-top:3px solid #FF5200;background:var(--bg-surface);">
-            <div class="mono" style="font-size:0.75rem;color:#FF5200;font-weight:700;margin-bottom:0.75rem;">WHAT WE DO</div>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.92rem;color:#cbd5e1;">
-              <li><strong style="color:#fff;">&check; Coordinate verified resources:</strong> Connect talent, gear, stages, and capital.</li>
-              <li><strong style="color:#fff;">&check; Structure milestone contracts:</strong> Align delivery schedules and clear terms.</li>
-              <li><strong style="color:#fff;">&check; Facilitate escrow via licensed partners:</strong> Third-party escrow holding funds safely.</li>
-              <li><strong style="color:#fff;">&check; Protect confidential data:</strong> Project details are shared only with verified counterparties.</li>
+          <div class="card" style="padding:2rem;border-top:3px solid #FFFFFF;background:var(--bg-surface);">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.75rem;">WHAT WE DO</div>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.92rem;color: #FFFFFF;">
+              <li><strong style="color: #FFFFFF;">&check; Coordinate verified resources:</strong> Connect talent, gear, stages, and capital.</li>
+              <li><strong style="color: #FFFFFF;">&check; Structure milestone contracts:</strong> Align delivery schedules and clear terms.</li>
+              <li><strong style="color: #FFFFFF;">&check; Facilitate escrow via licensed partners:</strong> Third-party escrow holding funds safely.</li>
+              <li><strong style="color: #FFFFFF;">&check; Protect confidential data:</strong> Project details are shared only with verified counterparties.</li>
             </ul>
           </div>
 
-          <div class="card" style="padding:2rem;border-top:3px solid #ef4444;background:var(--bg-surface);">
-            <div class="mono" style="font-size:0.75rem;color:#ef4444;font-weight:700;margin-bottom:0.75rem;">WHAT WE DO NOT DO</div>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.92rem;color:#cbd5e1;">
-              <li><strong style="color:#fff;">&times; We are not a talent agency:</strong> We do not take exclusive representation cuts.</li>
-              <li><strong style="color:#fff;">&times; We do not own equipment or soundstages:</strong> We stay 100% asset-light.</li>
-              <li><strong style="color:#fff;">&times; We do not hold client funds directly:</strong> Escrow is custodied by regulated banking partners.</li>
-              <li><strong style="color:#fff;">&times; We do not claim IP ownership:</strong> All creative rights remain entirely with the creator.</li>
+          <div class="card" style="padding:2rem;border-top:3px solid #666362;background:var(--bg-surface);">
+            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.75rem;">WHAT WE DO NOT DO</div>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.92rem;color: #FFFFFF;">
+              <li><strong style="color: #FFFFFF;">&times; We are not a talent agency:</strong> We do not take exclusive representation cuts.</li>
+              <li><strong style="color: #FFFFFF;">&times; We do not own equipment or soundstages:</strong> We stay 100% asset-light.</li>
+              <li><strong style="color: #FFFFFF;">&times; We do not hold client funds directly:</strong> Escrow is custodied by regulated banking partners.</li>
+              <li><strong style="color: #FFFFFF;">&times; We do not claim IP ownership:</strong> All creative rights remain entirely with the creator.</li>
             </ul>
           </div>
         </div>
@@ -959,107 +973,59 @@
     </section>
 
     <!-- SECTION 10 — FINAL CTA -->
-    <section style="padding:6rem 1.5rem 7.5rem;border-top:1px solid rgba(255,255,255,0.08);background:radial-gradient(circle at 50% 50%, rgba(0,229,255,0.08) 0%, #090A0C 75%);text-align:center;">
+    <section style="padding:6rem 1.5rem 7.5rem;border-top:1px solid rgba(255,255,255,0.08);background:radial-gradient(circle at 50% 50%, rgba(0,229,255,0.08) 0%, #353839 75%);text-align:center;">
       <div class="container" style="max-width:880px;margin:auto;">
-        <span class="mono" style="font-size:0.8rem;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;display:block;margin-bottom:1rem;">
-          <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">bolt</span>
-          10 // START A SYNQ
+        <span class="mono" style="font-size:0.8rem;letter-spacing:0.2em;color: #FFFFFF;text-transform:uppercase;display:block;margin-bottom:1rem;">
+          <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color: #FFFFFF;">bolt</span>
+          10 // Start a synq
         </span>
-        <h2 style="font-size:clamp(2.4rem, 5vw, 4rem);font-weight:800;color:#ffffff;margin:0 0 1.25rem;text-transform:uppercase;line-height:1.08;">
-          READY TO MAKE YOUR ASSETS OR PRODUCTION MOVE?
+        <h2 style="font-size:clamp(2.4rem, 5vw, 4rem);font-weight:800;color: #FFFFFF;margin:0 0 1.25rem;text-transform:uppercase;line-height:1.08;">Ready to make your assets or production move?
         </h2>
-        <p style="font-size:1.18rem;line-height:1.75;color:#cbd5e1;max-width:720px;margin:0 auto 2.5rem;">
+        <p style="font-size:1.18rem;line-height:1.75;color: #FFFFFF;max-width:720px;margin:0 auto 2.5rem;">
           Whether you have an idle asset, a missing production role, or a blocked release window — submit your parameters to our coordination desk.
         </p>
         <div style="display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;">
-          <a href="node-10.html" class="btn btn-primary" style="padding:1rem 2.8rem;font-size:1.05rem;font-weight:700;">
-            START A SYNQ &rarr;
+          <a href="synq.html" class="btn btn-primary" style="padding:1rem 2.8rem;font-size:1.05rem;font-weight:700;">
+            Start a synq &rarr;
           </a>
-          <a href="about.html" class="btn btn-secondary" style="padding:1rem 2.2rem;font-size:1.05rem;">
-            READ ABOUT DIGISYNQ
+          <a href="company.html" class="btn btn-secondary" style="padding:1rem 2.2rem;font-size:1.05rem;">
+            Read about DigiSynq
           </a>
         </div>
       </div>
     </section>
-  </main>
+  
+    <!-- 9870089044 Signature Bottom Nav Traversal -->
+    </main>
 
   <!-- Master Canonical Footer -->
-  <footer class="site-footer" style="border-top:1px solid rgba(255,255,255,0.1);padding:4.5rem 1.5rem 3rem;background:#060709;">
-    <div class="container" style="max-width:1180px;">
-      <div style="display:grid;grid-template-columns:1.4fr repeat(3, 1fr);gap:2.5rem;margin-bottom:3rem;">
-        
-        <div>
-          <div style="display:flex;align-items:center;gap:0.65rem;margin-bottom:0.75rem;">
-            <div class="site-brand-glyph" style="width:24px;height:24px;font-size:0.7rem;">DS</div>
-            <span style="font-weight:800;font-size:1.2rem;color:#ffffff;letter-spacing:-0.02em;">DIGISYNQ</span>
-          </div>
-          <p style="font-size:0.88rem;color:#94a3b8;line-height:1.6;margin-bottom:1rem;max-width:320px;">
-            The coordination layer for entertainment. Connecting talent, IP, stages, gear, capital and distribution into coordinated production pathways.
-          </p>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);">
-            &ldquo;We don't own the assets. We make them move.&rdquo;
-          </div>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.75rem;text-transform:uppercase;">Platform &amp; Products</div>
-          <ul style="list-style:none;padding:0;margin:0;font-size:0.88rem;line-height:2;">
-            <li><a href="platform.html" style="color:#cbd5e1;text-decoration:none;">Platform Architecture</a></li>
-            <li><a href="products.html" style="color:#cbd5e1;text-decoration:none;">15 Coordination Modules</a></li>
-            <li><a href="node-03.html" style="color:#cbd5e1;text-decoration:none;">6-Stage Pipeline</a></li>
-            <li><a href="node-06.html" style="color:#cbd5e1;text-decoration:none;">Intelligence &amp; Telemetry</a></li>
-            <li><a href="node-07.html" style="color:#cbd5e1;text-decoration:none;">Compounding Insights</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.75rem;text-transform:uppercase;">Solutions &amp; Ecosystem</div>
-          <ul style="list-style:none;padding:0;margin:0;font-size:0.88rem;line-height:2;">
-            <li><a href="node-04.html" style="color:#cbd5e1;text-decoration:none;">5 Entry Situations</a></li>
-            <li><a href="node-02.html" style="color:#cbd5e1;text-decoration:none;">8 Resource Categories</a></li>
-            <li><a href="node-05.html" style="color:#cbd5e1;text-decoration:none;">5 Mission Modes</a></li>
-            <li><a href="guilds.html" style="color:#cbd5e1;text-decoration:none;">Craft Guilds (Pilot)</a></li>
-            <li><a href="workshops.html" style="color:#cbd5e1;text-decoration:none;">Industry Workshops</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.75rem;text-transform:uppercase;">Company &amp; Trust</div>
-          <ul style="list-style:none;padding:0;margin:0;font-size:0.88rem;line-height:2;">
-            <li><a href="about.html" style="color:#cbd5e1;text-decoration:none;">About DigiSynq</a></li>
-            <li><a href="node-09.html" style="color:#cbd5e1;text-decoration:none;">System Runbook</a></li>
-            <li><a href="pricing.html" style="color:#cbd5e1;text-decoration:none;">Pricing &amp; Value Model</a></li>
-            <li><a href="nodes.html" style="color:#cbd5e1;text-decoration:none;">10-Node Directory</a></li>
-            <li><a href="node-10.html" style="color:#FF5200;text-decoration:none;font-weight:700;">Start a Synq &rarr;</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- 10 Node Architectural Strip -->
-      <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;margin-bottom:1.75rem;">
-        <div class="mono" style="font-size:0.72rem;color:#64748b;margin-bottom:0.5rem;">WEBSITE KNOWLEDGE NODES:</div>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="node-01.html" class="node-route-prev" style="font-size:0.8rem;">01 HOME</a>
-          <a href="node-02.html" class="node-route-prev" style="font-size:0.8rem;">02 ECOSYSTEM</a>
-          <a href="node-03.html" class="node-route-prev" style="font-size:0.8rem;">03 HOW IT WORKS</a>
-          <a href="node-04.html" class="node-route-prev" style="font-size:0.8rem;">04 SOLUTIONS</a>
-          <a href="node-05.html" class="node-route-prev" style="font-size:0.8rem;">05 MISSIONS</a>
-          <a href="node-06.html" class="node-route-prev" style="font-size:0.8rem;">06 INTELLIGENCE</a>
-          <a href="node-07.html" class="node-route-prev" style="font-size:0.8rem;">07 INSIGHTS</a>
-          <a href="node-08.html" class="node-route-prev" style="font-size:0.8rem;">08 VALUE MODEL</a>
-          <a href="node-09.html" class="node-route-prev" style="font-size:0.8rem;">09 RUNBOOK</a>
-          <a href="node-10.html" class="node-route-prev" style="font-size:0.8rem;color:var(--accent-cyan);">10 START A SYNQ</a>
+    <!-- Minimal Site Footer -->
+  <footer class="site-footer-minimal" role="contentinfo">
+    <div class="footer-minimal-inner">
+      <div class="footer-minimal-top">
+        <div class="footer-minimal-brand-wrap">
+          <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+            <div class="site-brand-glyph" aria-hidden="true">DS</div>
+            <span class="site-brand-name">DigiSynq</span>
+          </a>
+          <p class="footer-minimal-tagline">The coordination layer for entertainment.</p>
         </div>
       </div>
-
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.25rem;">
-        <div class="mono" style="font-size:0.75rem;color:#64748b;">
-          &copy; 2026 DIGISYNQ. ALL RIGHTS RESERVED. COORDINATION INFRASTRUCTURE FOR ENTERTAINMENT.
-        </div>
-        <div class="mono" style="font-size:0.72rem;color:#64748b;">
-          HOTKEYS: PRESS [K] FOR KEYPAD &bull; PRESS [0-9] FOR DIRECT NODE
-        </div>
+      <nav class="footer-minimal-nav" aria-label="Footer Navigation">
+        <a href="index.html">Overview</a>
+        <a href="platform.html">Platform</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="guilds.html">Guilds</a>
+        <a href="modules.html">Modules</a>
+        <a href="intelligence.html">Intelligence</a>
+        <a href="economics.html">Economics</a>
+        <a href="company.html">Company</a>
+        <a href="synq.html" class="footer-nav-highlight">Start a synq &rarr;</a>
+      </nav>
+      <div class="footer-minimal-bottom">
+        <span>&copy; 2026 DigiSynq. All rights reserved.</span>
+        <span>Press <kbd>[K]</kbd> for directory</span>
       </div>
     </div>
   </footer>
@@ -1067,23 +1033,23 @@
   <!-- Fullscreen 10-Node Dialpad Drawer -->
   <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
     <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
-    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;">
-      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>
-      DIGISYNQ KNOWLEDGE NODES
+    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.4rem;">
+      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color: #FFFFFF;">layers</span>
+      DigiSynq knowledge nodes
     </div>
-    <div class="dialpad-drawer-title">10-NODE DIRECTORY</div>
+    <div class="dialpad-drawer-title">10-node directory</div>
     <div class="node-dialpad-container" style="max-width:980px;">
       <div class="node-dialpad-grid">
-        <a href="node-01.html" class="node-key-item" aria-label="Node 01: Home"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
-        <a href="node-02.html" class="node-key-item" aria-label="Node 02: Ecosystem"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
-        <a href="node-03.html" class="node-key-item" aria-label="Node 03: How It Works"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
-        <a href="node-04.html" class="node-key-item" aria-label="Node 04: Solutions"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
-        <a href="node-05.html" class="node-key-item" aria-label="Node 05: Missions"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
-        <a href="node-06.html" class="node-key-item" aria-label="Node 06: Intelligence"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
-        <a href="node-07.html" class="node-key-item" aria-label="Node 07: Insights"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-        <a href="node-08.html" class="node-key-item" aria-label="Node 08: Value Model"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-        <a href="node-09.html" class="node-key-item" aria-label="Node 09: Runbook"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">Runbook</span></a>
-        <a href="node-10.html" class="node-key-item" aria-label="Node 10: Start a Synq"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color:var(--accent-cyan);">10</span></div><span class="node-key-label" style="color:var(--accent-cyan);">Start a Synq</span></a>
+        <a href="index.html" class="node-key-item" aria-label="Node 01: Home"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
+        <a href="ecosystem.html" class="node-key-item" aria-label="Node 02: Ecosystem"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
+        <a href="platform.html" class="node-key-item" aria-label="Node 03: How It Works"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
+        <a href="solutions.html" class="node-key-item" aria-label="Node 04: Solutions"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
+        <a href="solutions.html" class="node-key-item" aria-label="Node 05: Missions"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
+        <a href="intelligence.html" class="node-key-item" aria-label="Node 06: Intelligence"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
+        <a href="intelligence.html" class="node-key-item" aria-label="Node 07: Insights"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
+        <a href="economics.html" class="node-key-item" aria-label="Node 08: Value Model"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
+        <a href="company.html" class="node-key-item" aria-label="Node 09: Runbook"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">Runbook</span></a>
+        <a href="synq.html" class="node-key-item" aria-label="Node 10: Start a synq"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color: #FFFFFF;">10</span></div><span class="node-key-label" style="color:#FFFFFF;font-weight:700;">Start a synq</span></a>
       </div>
     </div>
   </div>

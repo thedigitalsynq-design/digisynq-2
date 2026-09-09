@@ -89,13 +89,13 @@
       const currentRadius = a.radius + (a.active ? Math.sin(a.pulse) * 1.5 + 1.5 : 0);
       ctx.beginPath();
       ctx.arc(a.x, a.y, currentRadius, 0, Math.PI * 2);
-      ctx.fillStyle = a.active ? '#FF5200' : `rgba(148, 163, 184, ${a.baseAlpha})`;
+      ctx.fillStyle = a.active ? '#FFFFFF' : `rgba(255, 255, 255, ${a.baseAlpha})`;
       ctx.fill();
 
       // Draw node telemetry tag if active
       if (a.active && a.label) {
-        ctx.font = '9px "DM Sans", monospace';
-        ctx.fillStyle = 'rgba(255, 82, 0, 0.9)';
+        ctx.font = '9px "Cal Sans", monospace';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
         ctx.fillText(`[ ${a.label} ]`, a.x + 8, a.y - 4);
       }
 
@@ -110,7 +110,7 @@
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = a.active || b.active ? `rgba(255, 82, 0, ${alpha})` : `rgba(255, 255, 255, ${alpha})`;
+          ctx.strokeStyle = a.active || b.active ? `rgba(255, 255, 255, ${alpha})` : `rgba(255, 255, 255, ${alpha})`;
           ctx.lineWidth = a.active || b.active ? 1.2 : 0.6;
           ctx.stroke();
         }

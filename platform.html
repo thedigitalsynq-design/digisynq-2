@@ -6,9 +6,10 @@
   <title>Platform Architecture — DigiSynq</title>
   <meta name="description" content="DigiSynq platform architecture: 6-stage operational pipeline, ecosystem stakeholder archetypes, peer-verified reputation framework, and bank-partner milestone escrow.">
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-sans@1.0.1/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/design-system.css">
@@ -126,7 +127,7 @@
       left: 10%;
       right: 10%;
       height: 2px;
-      background: linear-gradient(90deg, #FF5200 0%, #00D4AA 100%);
+      background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 100%);
       opacity: 0.3;
       z-index: 1;
     }
@@ -169,9 +170,16 @@
     }
   </style>
 </head>
-<body style="overflow-x:hidden;background:#090A0C;color:#FFFFFF;">
+<body style="overflow-x:hidden;background:#000000;color: #FFFFFF;">
+  <!-- 9870089044 Fixed Vertical Edge Ribbon -->
+  <a href="https://www.awwwards.com" target="_blank" rel="noopener" class="site-vertical-ribbon" aria-label="Awwwards Honors">
+    <div class="site-vertical-ribbon-mark">W.</div>
+    <div class="site-vertical-ribbon-text">Honors</div>
+  </a>
+
 
   <!-- Master Fixed Top Navbar -->
+    <!-- Master Fixed Top Navbar -->
   <header class="site-navbar" role="banner">
     <div class="site-navbar-inner">
       <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
@@ -182,26 +190,28 @@
       <nav aria-label="Primary Navigation">
         <ul class="site-nav-pills">
           <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
-          <li><a href="node-03.html" class="site-nav-pill-link">How It Works</a></li>
-          <li><a href="node-04.html" class="site-nav-pill-link">Solutions</a></li>
           <li><a href="platform.html" class="site-nav-pill-link active">Platform</a></li>
-          <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="node-06.html" class="site-nav-pill-link">Intelligence</a></li>
-          <li><a href="about.html" class="site-nav-pill-link">Company</a></li>
+          <li><a href="solutions.html" class="site-nav-pill-link">Solutions</a></li>
+          <li><a href="ecosystem.html" class="site-nav-pill-link">Ecosystem</a></li>
+          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
+          <li><a href="modules.html" class="site-nav-pill-link">Modules</a></li>
+          <li><a href="intelligence.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="economics.html" class="site-nav-pill-link">Economics</a></li>
+          <li><a href="company.html" class="site-nav-pill-link">Company</a></li>
         </ul>
       </nav>
 
       <div class="site-nav-actions">
         <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
-          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
-          <span>AUDIO: ON</span>
+          <span class="material-symbols-outlined" style="font-size:1rem;color:#FFFFFF;">volume_up</span>
+          <span>Audio: on</span>
         </button>
         <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
           <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
-          <span>10 NODES [K]</span>
+          <span>10 nodes [K]</span>
         </button>
-        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
-          START A SYNQ &rarr;
+        <a href="synq.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          Start a synq &rarr;
         </a>
       </div>
     </div>
@@ -209,12 +219,12 @@
 
   <!-- Vertical Edge Badge -->
   <div class="edge-badge-vertical" aria-hidden="true">
-    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> PLATFORM ARCHITECTURE &bull; 6-STAGE PIPELINE</span>
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color: #FFFFFF;">radio_button_checked</span> PLATFORM ARCHITECTURE &bull; 6-STAGE PIPELINE</span>
   </div>
 
   <main>
     <!-- ================= PLATFORM HERO ================= -->
-    <section style="padding:clamp(7rem, 11vw, 9.5rem) 0 clamp(3.5rem, 6vw, 5rem);position:relative;background:radial-gradient(circle at 50% 20%, rgba(0, 212, 170, 0.08) 0%, #090A0C 80%);">
+    <section style="padding:clamp(7rem, 11vw, 9.5rem) 0 clamp(3.5rem, 6vw, 5rem);position:relative;background:radial-gradient(circle at 50% 20%, rgba(54, 69, 79, 0.2) 0%, #000000 80%);">
       <div class="container" style="text-align: center; max-width: 960px;">
         <div style="display:inline-flex;gap:0.5rem;align-items:center;margin-bottom:1.25rem;">
           <span class="status-badge live">PLATFORM SPECIFICATION</span>
@@ -223,12 +233,12 @@
         <h1 style="font-size:clamp(2.2rem, 4.5vw, 3.8rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:1.5rem;">
           The Coordination Layer Behind Entertainment
         </h1>
-        <p style="font-size:clamp(1.05rem, 1.8vw, 1.25rem);line-height:1.75;color:#cbd5e1;max-width:820px;margin:0 auto 2rem;">
+        <p style="font-size:clamp(1.05rem, 1.8vw, 1.25rem);line-height:1.75;color: #FFFFFF;max-width:820px;margin:0 auto 2rem;">
           DigiSynq connects verified talent, IP, stages, gear, capital and distribution into executable production pathways. We don't own the assets. We make them move.
         </p>
         <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
           <a href="#pipeline" class="btn btn-primary">EXPLORE 6-STAGE PIPELINE &darr;</a>
-          <a href="node-10.html" class="btn btn-secondary">START A SYNQ &rarr;</a>
+          <a href="synq.html" class="btn btn-secondary">Start a synq &rarr;</a>
         </div>
       </div>
     </section>
@@ -236,9 +246,9 @@
     <!-- ================= SECTION 1: 6-STAGE OPERATIONAL PIPELINE ================= -->
     <section class="container" style="padding: 40px 0 100px;" id="pipeline">
       <div style="text-align: center; max-width: 740px; margin: 0 auto 60px;">
-        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">OPERATING ARCHITECTURE</div>
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.5rem;">OPERATING ARCHITECTURE</div>
         <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;margin-bottom:0.75rem;">The 6-Stage Operational Lifecycle</h2>
-        <p style="color: var(--text-secondary);font-size:1.05rem;line-height:1.65;">Six sequential layers turning fragmented industry assets into synchronized, executable production pathways.</p>
+        <p style="color: #FFFFFF;font-size:1.05rem;line-height:1.65;">Six sequential layers turning fragmented industry assets into synchronized, executable production pathways.</p>
       </div>
 
       <!-- STAGE 01: MEASURE -->
@@ -246,24 +256,39 @@
         <div class="watermark-letter">01</div>
         <div class="stage-content-box">
           <span class="status-badge live" style="margin-bottom:12px;">STAGE 01 &bull; DIAGNOSTIC AUDIT</span>
-          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #fff;">Measure &bull; Audit &amp; Capability Verification</h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
+          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #FFFFFF;">Measure &bull; Audit &amp; Capability Verification</h3>
+          <p style="color: #FFFFFF; font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
             Dormant screenplays, unscheduled technicians, and dark soundstages represent locked capacity. Stage 01 audits and verifies technical specifications, availability windows, and insurance limits before counterparties connect.
           </p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; padding: 0;">
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Verified identity &amp; credentials:</strong> Peer-reviewed checks confirm professional filmographies and equipment serial status.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Technical capability indexing:</strong> Tagging across optical packages, specialized stages, acoustic volumes, and finishing color suites.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Risk baseline calculation:</strong> Objective assessment of scheduling friction and insurance covenants before introduction.</span>
             </li>
           </ul>
+          <!-- Operational Protocol Box (Integrated from Node 03) -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:0.75rem;background:#212122;border:1px solid #353839;padding:1rem 1.25rem;border-radius:8px;margin-bottom:1.5rem;" class="mono">
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 01 INPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Project requirements, asset specifications, or intake submission</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">SYSTEM ACTION</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Credit audit, calendar verification, equipment condition check, rights validation</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 01 OUTPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Verified readiness baseline with standardized technical profile</span>
+            </div>
+          </div>
         </div>
         <div class="stage-visual-box">
           <img src="assets/img/editorial/claude-hands-motif.jpg" alt="Measure Diagnostic Audit" loading="lazy">
@@ -275,24 +300,39 @@
         <div class="watermark-letter">02</div>
         <div class="stage-content-box">
           <span class="status-badge live" style="margin-bottom:12px;">STAGE 02 &bull; GRAPH MATCHING</span>
-          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #fff;">Connect &bull; Constraint-Checked Resource Matching</h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
+          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #FFFFFF;">Connect &bull; Constraint-Checked Resource Matching</h3>
+          <p style="color: #FFFFFF; font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
             Information silos and regional borders stall projects. Stage 02 connects verified talent, equipment packages, and facilities directly into active production schedules without opaque intermediary markups.
           </p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; padding: 0;">
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Cross-regional routing:</strong> Connect verified technical talent across Mumbai, Hyderabad, Chennai, and Bengaluru hubs.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Dark-day facility yield:</strong> Monetize unbooked soundstage gaps and idle camera fleets with verified productions.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Rapid crew replacement:</strong> Fast coordination response to replace dropped HODs or specialized technicians on set.</span>
             </li>
           </ul>
+          <!-- Operational Protocol Box (Integrated from Node 03) -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:0.75rem;background:#212122;border:1px solid #353839;padding:1rem 1.25rem;border-radius:8px;margin-bottom:1.5rem;" class="mono">
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 02 INPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Verified readiness baseline &amp; desired production timeline</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">SYSTEM ACTION</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Cross-regional search across dark stages, benched talent, and dormant gear kits</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 02 OUTPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Structured compatibility shortlist of available counterparties</span>
+            </div>
+          </div>
         </div>
         <div class="stage-visual-box">
           <img src="assets/img/editorial/claude-radar-motif.jpg" alt="Connect Resource Matching" loading="lazy">
@@ -304,24 +344,39 @@
         <div class="watermark-letter">03</div>
         <div class="stage-content-box">
           <span class="status-badge live" style="margin-bottom:12px;">STAGE 03 &bull; OPERATIONAL CLARITY</span>
-          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #fff;">Optimize &bull; Standardized Scope &amp; Milestones</h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
+          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #FFFFFF;">Optimize &bull; Standardized Scope &amp; Milestones</h3>
+          <p style="color: #FFFFFF; font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
             Informal handshakes produce payment disputes and scope creep. Stage 03 establishes modular, legally structured service agreements with unambiguous milestone deliverables, inspection windows, and locked compensation.
           </p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; padding: 0;">
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Standardized SLAs:</strong> Clear contract templates with explicit role definitions, deliverables, and turnaround times.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Milestone-bound payouts:</strong> Financial tranches mapped to objective delivery proof, never vague subjective approval.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Clean room IP protection:</strong> Non-disclosure covenants and timestamped registry protect script treatments from unauthorized leakage.</span>
             </li>
           </ul>
+          <!-- Operational Protocol Box (Integrated from Node 03) -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:0.75rem;background:#212122;border:1px solid #353839;padding:1rem 1.25rem;border-radius:8px;margin-bottom:1.5rem;" class="mono">
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 03 INPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Participant shortlist &amp; production budget parameters</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">SYSTEM ACTION</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Standardized deal memo authoring, schedule de-conflicting, escrow structure setup</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 03 OUTPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Executed commercial terms &amp; milestone escrow agreement</span>
+            </div>
+          </div>
         </div>
         <div class="stage-visual-box">
           <img src="assets/img/editorial/escrow-contract-motif.jpg" alt="Optimize Contract Architecture" loading="lazy">
@@ -333,24 +388,39 @@
         <div class="watermark-letter">04</div>
         <div class="stage-content-box">
           <span class="status-badge live" style="margin-bottom:12px;">STAGE 04 &bull; PRODUCTION SYNCHRONIZATION</span>
-          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #fff;">Deploy &bull; Live Telemetry &amp; DPR Monitoring</h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
+          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #FFFFFF;">Deploy &bull; Live Telemetry &amp; DPR Monitoring</h3>
+          <p style="color: #FFFFFF; font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
             Uncoordinated call sheets burn budget contingency. Stage 04 provides live production telemetry — monitoring call sheets, camera roll pace, and daily rushes turnover to resolve bottlenecks proactively.
           </p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; padding: 0;">
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Daily Production Reports (DPR):</strong> Verified attendance and wrap timecards eliminate disputed billing.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Proactive variance alerts:</strong> Early detection of schedule slip before downstream post-production timelines are impacted.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Verified asset turnover:</strong> Confirmation of raw footage ingest and audio timecode sync prior to stage release.</span>
             </li>
           </ul>
+          <!-- Operational Protocol Box (Integrated from Node 03) -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:0.75rem;background:#212122;border:1px solid #353839;padding:1rem 1.25rem;border-radius:8px;margin-bottom:1.5rem;" class="mono">
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 04 INPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Executed contracts, locked production dates, escrow deposit confirmed</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">SYSTEM ACTION</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Logistics coordination, call sheet verification, on-call crisis substitution</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 04 OUTPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Cameras rolling, stages active, production milestones recorded</span>
+            </div>
+          </div>
         </div>
         <div class="stage-visual-box">
           <img src="assets/img/editorial/claude-camera-motif.jpg" alt="Deploy Execution Tracking" loading="lazy">
@@ -362,24 +432,39 @@
         <div class="watermark-letter">05</div>
         <div class="stage-content-box">
           <span class="status-badge live" style="margin-bottom:12px;">STAGE 05 &bull; BANK-PARTNER ESCROW</span>
-          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #fff;">Settle &bull; Regulated Escrow Disbursement</h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
+          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #FFFFFF;">Settle &bull; Regulated Escrow Disbursement</h3>
+          <p style="color: #FFFFFF; font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
             Technicians and vendors should never have to chase payments. Capital deposited with regulated partner banks releases automatically upon verified milestone turnover and dual-signoff concurrence.
           </p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; padding: 0;">
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Regulated bank custody:</strong> All client funds are held securely in partner scheduled commercial bank escrow accounts.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Dual-signoff release:</strong> Objective verification instructions trigger automated settlement directly to vendor accounts.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-cyan);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Two-stage mediation:</strong> Structured technical panel arbitration resolves delivery variance quickly without legal stalls.</span>
             </li>
           </ul>
+          <!-- Operational Protocol Box (Integrated from Node 03) -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:0.75rem;background:#212122;border:1px solid #353839;padding:1rem 1.25rem;border-radius:8px;margin-bottom:1.5rem;" class="mono">
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 05 INPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Dailies handover, wrap reports, QC inspection certificates</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">SYSTEM ACTION</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Milestone verification, payout trigger to escrow partner, feedback logging</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 05 OUTPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Clean settlement, updated participant reliability telemetry</span>
+            </div>
+          </div>
         </div>
         <div class="stage-visual-box">
           <img src="assets/img/editorial/claude-lock-motif.jpg" alt="Settle Escrow Protocols" loading="lazy">
@@ -391,24 +476,39 @@
         <div class="watermark-letter">06</div>
         <div class="stage-content-box">
           <span class="status-badge live" style="margin-bottom:12px;">STAGE 06 &bull; RECURSIVE INTELLIGENCE</span>
-          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #fff;">Learn &amp; Repeat &bull; Compounding Precision</h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
+          <h3 style="font-size: 2rem; margin: 8px 0 16px; color: #FFFFFF;">Learn &amp; Repeat &bull; Compounding Precision</h3>
+          <p style="color: #FFFFFF; font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
             Completed productions inform future network matches. Verified performance data updates participant reliability scores, while established partner pairings unlock expedited contracting for subsequent slates.
           </p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; padding: 0;">
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Empirical yield analysis:</strong> Post-wrap review compares budget-to-actual and schedule variance to optimize future synqs.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Peer verification badges:</strong> Objective performance proof updates guild standing without subjective favoritism.</span>
             </li>
-            <li style="display: flex; align-items: flex-start; gap: 10px; color: #cbd5e1; font-size:0.92rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent-emerald);">check_circle</span>
+            <li style="display: flex; align-items: flex-start; gap: 10px; color: #FFFFFF; font-size:0.92rem;">
+              <span class="material-symbols-outlined" style="font-size:1.1rem;color: #FFFFFF;">check_circle</span>
               <span><strong>Pre-cleared fast track:</strong> High-performing pods bypass preliminary diligence on subsequent co-productions.</span>
             </li>
           </ul>
+          <!-- Operational Protocol Box (Integrated from Node 03) -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:0.75rem;background:#212122;border:1px solid #353839;padding:1rem 1.25rem;border-radius:8px;margin-bottom:1.5rem;" class="mono">
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 06 INPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Completed project telemetry, dispute records, schedule delta data</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">SYSTEM ACTION</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Graph calibration, rate baseline updates, partner priority re-weighting</span>
+            </div>
+            <div>
+              <span style="font-size:0.68rem;color:#666362;display:block;margin-bottom:0.25rem;letter-spacing:0.08em;">STAGE 06 OUTPUT</span>
+              <span style="font-size:0.82rem;color:#FFFFFF;line-height:1.4;">Compounded network intelligence for next production cycle</span>
+            </div>
+          </div>
         </div>
         <div class="stage-visual-box">
           <img src="assets/img/editorial/claude-post-motif.jpg" alt="Learn and Compounding Feedback" loading="lazy">
@@ -419,52 +519,52 @@
     <!-- ================= SECTION 2: ECOSYSTEM STAKEHOLDER PROFILES ================= -->
     <section class="container" style="padding: 60px 0 100px; border-top:1px solid rgba(255,255,255,0.08);" id="stakeholders">
       <div style="text-align: center; max-width: 740px; margin: 0 auto 50px;">
-        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">ECOSYSTEM VALUE CHAIN</div>
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.5rem;">ECOSYSTEM VALUE CHAIN</div>
         <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;margin-bottom:0.75rem;">Stakeholder Interaction Models</h2>
-        <p style="color: var(--text-secondary);font-size:1.05rem;line-height:1.65;">How participants across the 8 resource categories synchronize through DigiSynq's coordination infrastructure.</p>
+        <p style="color: #FFFFFF;font-size:1.05rem;line-height:1.65;">How participants across the 8 resource categories synchronize through DigiSynq's coordination infrastructure.</p>
       </div>
 
       <div class="node-types-grid">
         <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
-          <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.5rem;">01 // CREATIVE DIRECTORS</div>
-          <h4 style="font-size:1.15rem;color:#fff;margin-bottom:0.5rem;">Directors &amp; Creators</h4>
-          <p style="font-size:0.88rem;color:#94a3b8;line-height:1.6;margin-bottom:1rem;">Access pre-cleared craft pods, verified budget packaging, and guaranteed stage dates without broker markup.</p>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-emerald);">BENEFIT: Packaged Execution Pods</div>
+          <div class="mono" style="font-size:0.72rem;color: #FFFFFF;margin-bottom:0.5rem;">01 // CREATIVE DIRECTORS</div>
+          <h4 style="font-size:1.15rem;color: #FFFFFF;margin-bottom:0.5rem;">Directors &amp; Creators</h4>
+          <p style="font-size:0.88rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">Access pre-cleared craft pods, verified budget packaging, and guaranteed stage dates without broker markup.</p>
+          <div class="mono" style="font-size:0.75rem;color: #FFFFFF;">BENEFIT: Packaged Execution Pods</div>
         </div>
 
         <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
-          <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.5rem;">02 // PRODUCERS &amp; LINE PRODUCERS</div>
-          <h4 style="font-size:1.15rem;color:#fff;margin-bottom:0.5rem;">Producers &amp; Production Execs</h4>
-          <p style="font-size:0.88rem;color:#94a3b8;line-height:1.6;margin-bottom:1rem;">Transparent rate cards, rapid crew replacement, and structured milestone escrow that prevents cost overruns.</p>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-emerald);">BENEFIT: Leakage &amp; Budget Control</div>
+          <div class="mono" style="font-size:0.72rem;color: #FFFFFF;margin-bottom:0.5rem;">02 // PRODUCERS &amp; LINE PRODUCERS</div>
+          <h4 style="font-size:1.15rem;color: #FFFFFF;margin-bottom:0.5rem;">Producers &amp; Production Execs</h4>
+          <p style="font-size:0.88rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">Transparent rate cards, rapid crew replacement, and structured milestone escrow that prevents cost overruns.</p>
+          <div class="mono" style="font-size:0.75rem;color: #FFFFFF;">BENEFIT: Leakage &amp; Budget Control</div>
         </div>
 
         <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
-          <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.5rem;">03 // CRAFT TECHNICIANS</div>
-          <h4 style="font-size:1.15rem;color:#fff;margin-bottom:0.5rem;">Cinematographers &amp; Sound HODs</h4>
-          <p style="font-size:0.88rem;color:#94a3b8;line-height:1.6;margin-bottom:1rem;">Verified credit records, continuous schedule booking, and guaranteed escrow clearance upon wrap signoff.</p>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-emerald);">BENEFIT: Guaranteed Milestone Payouts</div>
+          <div class="mono" style="font-size:0.72rem;color: #FFFFFF;margin-bottom:0.5rem;">03 // CRAFT TECHNICIANS</div>
+          <h4 style="font-size:1.15rem;color: #FFFFFF;margin-bottom:0.5rem;">Cinematographers &amp; Sound HODs</h4>
+          <p style="font-size:0.88rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">Verified credit records, continuous schedule booking, and guaranteed escrow clearance upon wrap signoff.</p>
+          <div class="mono" style="font-size:0.75rem;color: #FFFFFF;">BENEFIT: Guaranteed Milestone Payouts</div>
         </div>
 
         <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
-          <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.5rem;">04 // IP HOLDERS &amp; WRITERS</div>
-          <h4 style="font-size:1.15rem;color:#fff;margin-bottom:0.5rem;">Screenwriters &amp; Rights Owners</h4>
-          <p style="font-size:0.88rem;color:#94a3b8;line-height:1.6;margin-bottom:1rem;">Clean room registry, director attachment packaging, and direct evaluation by qualified producers.</p>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-emerald);">BENEFIT: Protected IP Packaging</div>
+          <div class="mono" style="font-size:0.72rem;color: #FFFFFF;margin-bottom:0.5rem;">04 // IP HOLDERS &amp; WRITERS</div>
+          <h4 style="font-size:1.15rem;color: #FFFFFF;margin-bottom:0.5rem;">Screenwriters &amp; Rights Owners</h4>
+          <p style="font-size:0.88rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">Clean room registry, director attachment packaging, and direct evaluation by qualified producers.</p>
+          <div class="mono" style="font-size:0.75rem;color: #FFFFFF;">BENEFIT: Protected IP Packaging</div>
         </div>
 
         <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
-          <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.5rem;">05 // SOUNDSTAGES &amp; STUDIOS</div>
-          <h4 style="font-size:1.15rem;color:#fff;margin-bottom:0.5rem;">Studio Complexes &amp; Backlots</h4>
-          <p style="font-size:0.88rem;color:#94a3b8;line-height:1.6;margin-bottom:1rem;">Monetize dark-day gaps between scheduled slates, insured bookings, and escrow-guaranteed payouts.</p>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-emerald);">BENEFIT: Dark-Day Floor Yield</div>
+          <div class="mono" style="font-size:0.72rem;color: #FFFFFF;margin-bottom:0.5rem;">05 // SOUNDSTAGES &amp; STUDIOS</div>
+          <h4 style="font-size:1.15rem;color: #FFFFFF;margin-bottom:0.5rem;">Studio Complexes &amp; Backlots</h4>
+          <p style="font-size:0.88rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">Monetize dark-day gaps between scheduled slates, insured bookings, and escrow-guaranteed payouts.</p>
+          <div class="mono" style="font-size:0.75rem;color: #FFFFFF;">BENEFIT: Dark-Day Floor Yield</div>
         </div>
 
         <div class="card" style="padding:1.5rem;background:rgba(18,19,26,0.7);border:1px solid rgba(255,255,255,0.08);">
-          <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.5rem;">06 // CAPITAL ALLOCATORS</div>
-          <h4 style="font-size:1.15rem;color:#fff;margin-bottom:0.5rem;">Financiers &amp; Private Funds</h4>
-          <p style="font-size:0.88rem;color:#94a3b8;line-height:1.6;margin-bottom:1rem;">Tranche-gated capital deployment, real-time burn-rate monitoring, and verified milestone delivery proofs.</p>
-          <div class="mono" style="font-size:0.75rem;color:var(--accent-emerald);">BENEFIT: De-risked Milestone Tranches</div>
+          <div class="mono" style="font-size:0.72rem;color: #FFFFFF;margin-bottom:0.5rem;">06 // CAPITAL ALLOCATORS</div>
+          <h4 style="font-size:1.15rem;color: #FFFFFF;margin-bottom:0.5rem;">Financiers &amp; Private Funds</h4>
+          <p style="font-size:0.88rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">Tranche-gated capital deployment, real-time burn-rate monitoring, and verified milestone delivery proofs.</p>
+          <div class="mono" style="font-size:0.75rem;color: #FFFFFF;">BENEFIT: De-risked Milestone Tranches</div>
         </div>
       </div>
     </section>
@@ -473,21 +573,21 @@
     <section class="container" style="padding: 60px 0 100px; border-top:1px solid rgba(255,255,255,0.08);" id="ranking">
       <div class="trust-split-grid">
         <div>
-          <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">PERFORMANCE PROOF PROTOCOL</div>
+          <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.5rem;">PERFORMANCE PROOF PROTOCOL</div>
           <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.4rem);font-weight:800;margin-bottom:1rem;">Objective Verification Over Industry Rumors</h2>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
+          <p style="color: #FFFFFF; font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
             Entertainment has historically operated on word-of-mouth hearsay and opaque relationships. DigiSynq is piloting an objective, empirical reputation framework based on verified milestone deliveries, call-sheet punctuality, and escrow completion records.
           </p>
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="display: flex; align-items: center; gap: 12px; color: #cbd5e1; font-size:0.92rem;">
+            <div style="display: flex; align-items: center; gap: 12px; color: #FFFFFF; font-size:0.92rem;">
               <span class="status-badge live" style="min-width:130px;text-align:center;">VERIFIED ID</span>
               <span>Identity, guild membership, and equipment serial numbers confirmed via diagnostic audit.</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 12px; color: #cbd5e1; font-size:0.92rem;">
+            <div style="display: flex; align-items: center; gap: 12px; color: #FFFFFF; font-size:0.92rem;">
               <span class="status-badge pilot" style="min-width:130px;text-align:center;">ACTIVE SLATE</span>
               <span>Demonstrated track record of completed milestone wraps and objective deliverable sign-offs.</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 12px; color: #cbd5e1; font-size:0.92rem;">
+            <div style="display: flex; align-items: center; gap: 12px; color: #FFFFFF; font-size:0.92rem;">
               <span class="status-badge verified" style="min-width:130px;text-align:center;">GUILD SYNDICATE</span>
               <span>Senior craftsperson standing with priority routing on complex high-budget co-productions.</span>
             </div>
@@ -495,22 +595,22 @@
         </div>
 
         <!-- Visual Ranking Prototype -->
-        <div class="card-glass" style="padding: 40px; text-align: center; border:1px solid rgba(0,212,170,0.3);">
+        <div class="card-glass" style="padding: 40px; text-align: center; border:1px solid rgba(255, 255, 255, 0.3);">
           <div class="gauge-wrapper">
             <svg class="gauge-svg" viewBox="0 0 200 200">
               <defs>
                 <linearGradient id="gauge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FF5200" />
-                  <stop offset="50%" stop-color="#00D4AA" />
-                  <stop offset="100%" stop-color="#38BDF8" />
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="50%" stop-color="#FFFFFF" />
+                  <stop offset="100%" stop-color="#FFFFFF" />
                 </linearGradient>
               </defs>
               <circle class="gauge-bg" cx="100" cy="100" r="90"></circle>
               <circle class="gauge-progress" cx="100" cy="100" r="90"></circle>
             </svg>
             <div class="gauge-text">
-              <div style="font-family: var(--font-headline); font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1;">VERIFIED</div>
-              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan); text-transform: uppercase; margin-top:4px;">PILOT PROFILE</div>
+              <div style="font-family: var(--font-headline); font-size: 2.8rem; font-weight: 800; color: #FFFFFF; line-height: 1;">VERIFIED</div>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #FFFFFF; text-transform: uppercase; margin-top:4px;">PILOT PROFILE</div>
             </div>
           </div>
 
@@ -518,7 +618,7 @@
             <span class="status-badge verified">SICA / WICA VERIFIED</span>
             <span class="status-badge live">ZERO DEFAULT STRIKES</span>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-tertiary); margin: 0;">
+          <p style="font-size: 0.85rem; color: #FFFFFF; margin: 0;">
             Peer Craft Syndicate Benchmark &bull; Controlled Pilot Deployment
           </p>
         </div>
@@ -528,9 +628,9 @@
     <!-- ================= SECTION 4: BANK-PARTNER ESCROW FLOW ================= -->
     <section class="container" style="padding: 60px 0 120px; border-top:1px solid rgba(255,255,255,0.08);" id="escrow">
       <div style="text-align: center; max-width: 740px; margin: 0 auto 40px;">
-        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.5rem;">TRANSACTIONAL TRUST</div>
+        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.16em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.5rem;">TRANSACTIONAL TRUST</div>
         <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;margin-bottom:0.75rem;">Milestone Escrow: 4-Step Settlement Flow</h2>
-        <p style="color: var(--text-secondary);font-size:1.05rem;line-height:1.65;">
+        <p style="color: #FFFFFF;font-size:1.05rem;line-height:1.65;">
           All client funds are held securely by regulated partner scheduled commercial banks. Funds disburse only upon verified milestone delivery and dual signoff.
         </p>
       </div>
@@ -538,126 +638,140 @@
       <div class="escrow-flow-grid">
         <div class="escrow-step-card">
           <div class="escrow-step-num">01</div>
-          <h4 style="color: #fff; margin-bottom: 8px;">Tranche Deposit</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0; line-height:1.6;">
+          <h4 style="color: #FFFFFF; margin-bottom: 8px;">Tranche Deposit</h4>
+          <p style="font-size: 0.88rem; color: #FFFFFF; margin: 0; line-height:1.6;">
             Producer deposits milestone capital into a segregated partner bank escrow account prior to resource mobilization.
           </p>
         </div>
 
         <div class="escrow-step-card">
           <div class="escrow-step-num">02</div>
-          <h4 style="color: #fff; margin-bottom: 8px;">Shoot Execution</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0; line-height:1.6;">
+          <h4 style="color: #FFFFFF; margin-bottom: 8px;">Shoot Execution</h4>
+          <p style="font-size: 0.88rem; color: #FFFFFF; margin: 0; line-height:1.6;">
             Cast, crew, soundstages, and gear houses deploy with certainty that capital is locked in their name.
           </p>
         </div>
 
         <div class="escrow-step-card">
           <div class="escrow-step-num">03</div>
-          <h4 style="color: #fff; margin-bottom: 8px;">Technical Verification</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0; line-height:1.6;">
+          <h4 style="color: #FFFFFF; margin-bottom: 8px;">Technical Verification</h4>
+          <p style="font-size: 0.88rem; color: #FFFFFF; margin: 0; line-height:1.6;">
             Objective milestone proof (DPR wrap signoff, raw footage ingest, sound master delivery) is confirmed by counterparties.
           </p>
         </div>
 
         <div class="escrow-step-card">
           <div class="escrow-step-num">04</div>
-          <h4 style="color: #fff; margin-bottom: 8px;">Direct Settlement</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0; line-height:1.6;">
+          <h4 style="color: #FFFFFF; margin-bottom: 8px;">Direct Settlement</h4>
+          <p style="font-size: 0.88rem; color: #FFFFFF; margin: 0; line-height:1.6;">
             The partner bank executes direct account-to-account settlement via RTGS / NEFT within 24 hours of dual concurrence.
           </p>
         </div>
       </div>
 
       <!-- Escrow Regulatory Disclosure -->
-      <div style="max-width:820px;margin:2.5rem auto 0;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);padding:1.25rem 1.5rem;border-radius:4px;font-size:0.85rem;color:#94a3b8;line-height:1.6;text-align:center;">
-        <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;color:var(--accent-cyan);margin-right:0.35rem;">verified_user</span>
+      <div style="max-width:820px;margin:2.5rem auto 0;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);padding:1.25rem 1.5rem;border-radius:4px;font-size:0.85rem;color: #FFFFFF;line-height:1.6;text-align:center;">
+        <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;color: #FFFFFF;margin-right:0.35rem;">verified_user</span>
         <strong>Regulatory Disclosure:</strong> DigiSynq provides technical verification and contract logic. Escrow accounts are held and administered exclusively by regulated scheduled commercial banks and licensed trustees. DigiSynq does not take balance-sheet custody of client funds.
       </div>
     </section>
-  </main>
+  
+    <!-- 9870089044 Signature Bottom Nav Traversal -->
+    </main>
 
   <!-- Canonical Architectural Footer -->
-  <footer class="site-footer" style="background:#090A0C;border-top:1px solid rgba(255,255,255,0.08);padding:4rem 0 2rem;">
-    <div class="container" style="max-width:1180px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;margin-bottom:3rem;">
-        <div>
-          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
-            <div class="site-brand-glyph" aria-hidden="true" style="width:28px;height:28px;font-size:0.75rem;">DS</div>
-            <span style="font-weight:800;letter-spacing:0.05em;color:#fff;">DIGISYNQ</span>
-          </div>
-          <p style="font-size:0.88rem;line-height:1.65;color:#94a3b8;margin-bottom:1rem;">
-            The coordination layer for entertainment. Connecting verified talent, IP, stages, gear, capital and distribution.
-          </p>
-          <div class="mono" style="font-size:0.8rem;color:var(--accent-cyan);">
-            We don't own the assets. We make them move.
-          </div>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">System Architecture</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
-            <li><a href="index.html" style="color:#94a3b8;text-decoration:none;">Overview</a></li>
-            <li><a href="node-03.html" style="color:#94a3b8;text-decoration:none;">How It Works (6-Stage Pipeline)</a></li>
-            <li><a href="platform.html" style="color:var(--accent-cyan);text-decoration:none;font-weight:600;">Platform Architecture</a></li>
-            <li><a href="products.html" style="color:#94a3b8;text-decoration:none;">15 Coordination Modules</a></li>
-            <li><a href="node-06.html" style="color:#94a3b8;text-decoration:none;">Intelligence Telemetry</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">10 Knowledge Nodes</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
-            <li><a href="node-01.html" style="color:#94a3b8;text-decoration:none;">Node 01: Problem / Switchboard</a></li>
-            <li><a href="node-02.html" style="color:#94a3b8;text-decoration:none;">Node 02: 8 Ecosystem Categories</a></li>
-            <li><a href="node-04.html" style="color:#94a3b8;text-decoration:none;">Node 04: 5 Entry Situations</a></li>
-            <li><a href="node-05.html" style="color:#94a3b8;text-decoration:none;">Node 05: 5 Mission Modes</a></li>
-            <li><a href="node-07.html" style="color:#94a3b8;text-decoration:none;">Node 07: Compounding Insights</a></li>
-            <li><a href="node-08.html" style="color:#94a3b8;text-decoration:none;">Node 08: Commercial Value Model</a></li>
-            <li><a href="node-09.html" style="color:#94a3b8;text-decoration:none;">Node 09: System Runbook</a></li>
-            <li><a href="node-10.html" style="color:#94a3b8;text-decoration:none;">Node 10: System Intake</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">Trust &amp; Governance</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
-            <li><a href="about.html" style="color:#94a3b8;text-decoration:none;">Company Charter</a></li>
-            <li><a href="guilds.html" style="color:#94a3b8;text-decoration:none;">Peer Craft Syndicates</a></li>
-            <li><a href="workshops.html" style="color:#94a3b8;text-decoration:none;">Learning Workshops</a></li>
-            <li><a href="pricing.html" style="color:#94a3b8;text-decoration:none;">Commercial Tiers</a></li>
-            <li><span style="color:#64748b;font-size:0.82rem;">Escrow held by partner banks</span></li>
-          </ul>
+    <!-- Canonical Master 4-Column Footer -->
+    <!-- Minimal Site Footer -->
+  <footer class="site-footer-minimal" role="contentinfo">
+    <div class="footer-minimal-inner">
+      <div class="footer-minimal-top">
+        <div class="footer-minimal-brand-wrap">
+          <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+            <div class="site-brand-glyph" aria-hidden="true">DS</div>
+            <span class="site-brand-name">DigiSynq</span>
+          </a>
+          <p class="footer-minimal-tagline">The coordination layer for entertainment.</p>
         </div>
       </div>
-
-      <div style="padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.82rem;color:#64748b;">
-        <div>&copy; 2026 DIGISYNQ NETWORKS. All rights reserved. Operating as an independent coordination network.</div>
-        <div class="mono" style="font-size:0.78rem;color:var(--accent-cyan);">WASTE LESS. SYNC MORE.</div>
+      <nav class="footer-minimal-nav" aria-label="Footer Navigation">
+        <a href="index.html">Overview</a>
+        <a href="platform.html">Platform</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="guilds.html">Guilds</a>
+        <a href="modules.html">Modules</a>
+        <a href="intelligence.html">Intelligence</a>
+        <a href="economics.html">Economics</a>
+        <a href="company.html">Company</a>
+        <a href="synq.html" class="footer-nav-highlight">Start a synq &rarr;</a>
+      </nav>
+      <div class="footer-minimal-bottom">
+        <span>&copy; 2026 DigiSynq. All rights reserved.</span>
+        <span>Press <kbd>[K]</kbd> for directory</span>
       </div>
     </div>
   </footer>
 
   <!-- 10 Nodes Dialpad Drawer -->
-  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true" aria-label="10 Nodes Knowledge Map">
-    <button class="dialpad-drawer-close" id="closeDialpadDrawer" aria-label="Close Dialpad">&times;</button>
-    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;">
-      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>THE COORDINATION LAYER FOR ENTERTAINMENT
-    </div>
-    <div class="dialpad-drawer-title">10 NODES KNOWLEDGE ARCHITECTURE</div>
-    <div class="node-dialpad-container" style="max-width:980px;">
-      <div class="node-dialpad-grid">
-        <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home / Problem</span></a>
-        <a href="node-02.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
-        <a href="node-03.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
-        <a href="node-04.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
-        <a href="node-05.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
-        <a href="node-06.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
-        <a href="node-07.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-        <a href="node-08.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-        <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">System Runbook</span></a>
-        <a href="node-10.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">10</span></div><span class="node-key-label">Start a Synq</span></a>
+    <!-- Master 10-node directory Drawer Overlay -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true" aria-label="10-node directory">
+    <div class="dialpad-drawer-inner" style="max-width:980px;margin:auto;padding:2.5rem 1.5rem;text-align:center;">
+      <div class="dialpad-drawer-header" style="margin-bottom:2.5rem;">
+        <div class="mono" style="font-size:0.75rem;letter-spacing:0.18em;color:#666362;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;">
+          <span class="material-symbols-outlined" style="font-size:0.95rem;">layers</span>
+          DigiSynq core ecosystem
+        </div>
+        <h2 class="dialpad-drawer-title" style="margin:0;font-size:clamp(1.8rem, 3.5vw, 2.5rem);font-weight:800;color:#FFFFFF;text-transform:uppercase;">
+          10-node directory
+        </h2>
       </div>
+
+      <div class="dialpad-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:1.25rem;max-width:920px;margin:0 auto 2.5rem;">
+        <a href="index.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">01</span></div>
+          <span class="node-key-label">Overview</span>
+        </a>
+        <a href="platform.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">02</span></div>
+          <span class="node-key-label">Platform</span>
+        </a>
+        <a href="solutions.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">03</span></div>
+          <span class="node-key-label">Solutions</span>
+        </a>
+        <a href="ecosystem.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">04</span></div>
+          <span class="node-key-label">Ecosystem</span>
+        </a>
+        <a href="guilds.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">05</span></div>
+          <span class="node-key-label">Guilds</span>
+        </a>
+        <a href="modules.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">06</span></div>
+          <span class="node-key-label">Modules</span>
+        </a>
+        <a href="intelligence.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">07</span></div>
+          <span class="node-key-label">Intelligence</span>
+        </a>
+        <a href="economics.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">08</span></div>
+          <span class="node-key-label">Economics</span>
+        </a>
+        <a href="company.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">09</span></div>
+          <span class="node-key-label">Company</span>
+        </a>
+        <a href="synq.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle" style="border-color:#FFFFFF;"><span class="node-key-digit" style="color:#FFFFFF;">10</span></div>
+          <span class="node-key-label" style="color:#FFFFFF;font-weight:700;">Start a synq</span>
+        </a>
+      </div>
+
+      <button id="closeDialpadDrawer" class="btn btn-secondary" style="padding:0.65rem 1.8rem;font-size:0.88rem;" aria-label="Close directory">
+        Close directory [ESC]
+      </button>
     </div>
   </div>
 

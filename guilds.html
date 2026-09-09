@@ -6,9 +6,10 @@
   <title>Peer Craft Syndicates — DigiSynq</title>
   <meta name="description" content="Peer-led craft syndicates protecting rate standards, sharing technical intelligence, and establishing verified cross-language mobility across Indian cinema.">
   <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-sans@1.0.1/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/design-system.css">
@@ -20,7 +21,7 @@
       margin: 40px 0 80px;
     }
     .guild-card {
-      background: radial-gradient(circle at 80% 10%, rgba(0, 212, 170, 0.04) 0%, #12121A 70%);
+      background: radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.04) 0%, #212122 70%);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-xl);
       padding: 32px;
@@ -46,7 +47,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(0, 212, 170, 0.1);
+      background: rgba(255, 255, 255, 0.1);
       border: 1px solid var(--accent-cyan);
       display: flex;
       align-items: center;
@@ -54,8 +55,8 @@
       color: var(--accent-cyan);
     }
     .featured-guild-banner {
-      background: linear-gradient(135deg, rgba(0, 212, 170, 0.08) 0%, rgba(108, 59, 244, 0.08) 100%);
-      border: 1px solid rgba(0, 212, 170, 0.25);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.08) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: var(--radius-xl);
       padding: 40px;
       margin-bottom: 60px;
@@ -69,9 +70,16 @@
     }
   </style>
 </head>
-<body style="overflow-x:hidden;background:#090A0C;color:#FFFFFF;">
+<body style="overflow-x:hidden;background:#000000;color: #FFFFFF;">
+  <!-- 9870089044 Fixed Vertical Edge Ribbon -->
+  <a href="https://www.awwwards.com" target="_blank" rel="noopener" class="site-vertical-ribbon" aria-label="Awwwards Honors">
+    <div class="site-vertical-ribbon-mark">W.</div>
+    <div class="site-vertical-ribbon-text">Honors</div>
+  </a>
+
 
   <!-- Master Fixed Top Navbar -->
+    <!-- Master Fixed Top Navbar -->
   <header class="site-navbar" role="banner">
     <div class="site-navbar-inner">
       <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
@@ -82,26 +90,28 @@
       <nav aria-label="Primary Navigation">
         <ul class="site-nav-pills">
           <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
-          <li><a href="node-03.html" class="site-nav-pill-link">How It Works</a></li>
-          <li><a href="node-04.html" class="site-nav-pill-link">Solutions</a></li>
           <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
-          <li><a href="products.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="node-06.html" class="site-nav-pill-link">Intelligence</a></li>
-          <li><a href="about.html" class="site-nav-pill-link">Company</a></li>
+          <li><a href="solutions.html" class="site-nav-pill-link">Solutions</a></li>
+          <li><a href="ecosystem.html" class="site-nav-pill-link">Ecosystem</a></li>
+          <li><a href="guilds.html" class="site-nav-pill-link active">Guilds</a></li>
+          <li><a href="modules.html" class="site-nav-pill-link">Modules</a></li>
+          <li><a href="intelligence.html" class="site-nav-pill-link">Intelligence</a></li>
+          <li><a href="economics.html" class="site-nav-pill-link">Economics</a></li>
+          <li><a href="company.html" class="site-nav-pill-link">Company</a></li>
         </ul>
       </nav>
 
       <div class="site-nav-actions">
         <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
-          <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">volume_up</span>
-          <span>AUDIO: ON</span>
+          <span class="material-symbols-outlined" style="font-size:1rem;color:#FFFFFF;">volume_up</span>
+          <span>Audio: on</span>
         </button>
         <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
           <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
-          <span>10 NODES [K]</span>
+          <span>10 nodes [K]</span>
         </button>
-        <a href="node-10.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
-          START A SYNQ &rarr;
+        <a href="synq.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
+          Start a synq &rarr;
         </a>
       </div>
     </div>
@@ -109,12 +119,12 @@
 
   <!-- Vertical Edge Badge -->
   <div class="edge-badge-vertical" aria-hidden="true">
-    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> PEER CRAFT SYNDICATES &bull; PILOT GUILDS</span>
+    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color: #FFFFFF;">radio_button_checked</span> PEER CRAFT SYNDICATES &bull; PILOT GUILDS</span>
   </div>
 
   <main>
     <!-- ================= GUILDS HERO ================= -->
-    <section style="padding:clamp(7rem, 11vw, 9.5rem) 0 clamp(2rem, 4vw, 3.5rem);position:relative;background:radial-gradient(circle at 50% 20%, rgba(0, 212, 170, 0.08) 0%, #090A0C 80%);">
+    <section style="padding:clamp(7rem, 11vw, 9.5rem) 0 clamp(2rem, 4vw, 3.5rem);position:relative;background:radial-gradient(circle at 50% 20%, rgba(54, 69, 79, 0.2) 0%, #000000 80%);">
       <div class="container" style="text-align: center; max-width: 900px;">
         <div style="display:inline-flex;gap:0.5rem;align-items:center;margin-bottom:1.25rem;">
           <span class="status-badge pilot">PILOT GUILD PROTOCOL</span>
@@ -123,9 +133,45 @@
         <h1 style="font-size:clamp(2.2rem, 4.5vw, 3.8rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:1.5rem;">
           Peer Craft Syndicates: Verified Professional Standards
         </h1>
-        <p style="font-size:clamp(1.05rem, 1.8vw, 1.25rem);line-height:1.75;color:#cbd5e1;max-width:760px;margin:0 auto 1rem;">
+        <p style="font-size:clamp(1.05rem, 1.8vw, 1.25rem);line-height:1.75;color: #FFFFFF;max-width:760px;margin:0 auto 1rem;">
           DigiSynq Guilds unite verified technicians and creators into peer-governed working syndicates that maintain rate benchmarks, establish clear turn-around standards, and open cross-language mobility across regional film industries.
         </p>
+      </div>
+    </section>
+
+    <!-- ================= WHAT ARE PEER CRAFT SYNDICATES ================= -->
+    <section class="container" style="margin-bottom: 2.5rem;">
+      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: clamp(1.5rem, 3vw, 2.5rem);">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div>
+            <div class="mono" style="font-size:0.75rem;font-weight:700;letter-spacing:0.16em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.5rem;">
+              CRAFT FOUNDATION
+            </div>
+            <h3 style="font-size:1.35rem;font-weight:800;color: #FFFFFF;margin-bottom:0.75rem;">
+              How Syndicates Power DigiSynq Verification
+            </h3>
+            <p style="font-size:0.95rem;line-height:1.7;color: #FFFFFF;margin-bottom:1rem;">
+              Peer Craft Syndicates are self-governing groups of industry specialists who establish trade standards, verify credits, and uphold production etiquette across regional film hubs.
+            </p>
+            <div style="font-size:0.88rem;color: #FFFFFF;">
+              Guild standing determines priority dispatch and routing in the matchmaking engine. <a href="platform.html" style="color: #FFFFFF;text-decoration:underline;">See how platform verification works &rarr;</a>
+            </div>
+          </div>
+          <div>
+            <div class="mono" style="font-size:0.75rem;font-weight:700;letter-spacing:0.16em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.5rem;">
+              SKILLS &amp; MOBILITY
+            </div>
+            <h3 style="font-size:1.35rem;font-weight:800;color: #FFFFFF;margin-bottom:0.75rem;">
+              The Path to Syndicate Evaluation
+            </h3>
+            <p style="font-size:0.95rem;line-height:1.7;color: #FFFFFF;margin-bottom:1rem;">
+              Demonstrated mastery is required for tier-1 syndicate admission. Hands-on practitioner masterclasses serve as a direct pipeline for verified crew qualification and rate endorsement.
+            </p>
+            <div style="font-size:0.88rem;color: #FFFFFF;">
+              Workshops are the primary training path to syndicate evaluation. <a href="guilds.html" style="color: #FFFFFF;text-decoration:underline;">Browse Practitioner Masterclasses &rarr;</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -133,11 +179,11 @@
     <section class="container">
       <div class="featured-guild-banner">
         <div>
-          <div class="mono" style="font-size:0.75rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.75rem;">
+          <div class="mono" style="font-size:0.75rem;font-weight:700;letter-spacing:0.16em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
             FLAGSHIP PILOT ALLIANCE &bull; CINEMATOGRAPHY
           </div>
-          <h2 style="font-size: 2rem; margin-bottom: 14px; color: #fff;">Indian Cinematographers Syndicate (ICS Pilot)</h2>
-          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; margin-bottom: 20px;">
+          <h2 style="font-size: 2rem; margin-bottom: 14px; color: #FFFFFF;">Indian Cinematographers Syndicate (ICS Pilot)</h2>
+          <p style="color: #FFFFFF; font-size: 1rem; line-height: 1.65; margin-bottom: 20px;">
             Connecting Directors of Photography across Mumbai, Chennai, Hyderabad, and Bengaluru. Setting transparent camera package rate benchmarks, enforcing standard 12-hour turnarounds, and maintaining rapid-dispatch emergency replacement rosters.
           </p>
           <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;">
@@ -150,20 +196,18 @@
           </button>
         </div>
         <div style="background: rgba(10,10,15,0.7); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px;">
-          <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); font-size: 0.82rem; text-transform: uppercase; margin-bottom: 12px;">
-            SYNDICATE WORKING STANDARDS
-          </h4>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #cbd5e1; padding: 0;">
+          <h4 style="color: #FFFFFF; font-family: var(--font-mono); font-size: 0.82rem; text-transform: uppercase; margin-bottom: 12px;">Syndicate working standards</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #FFFFFF; padding: 0;">
             <li style="display:flex;gap:8px;align-items:flex-start;">
-              <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-emerald);margin-top:2px;">check</span>
+              <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;margin-top:2px;">check</span>
               <span><strong>Transparent Rate Benchmarks:</strong> Clear minimum day-rate schedules for feature, OTT episodic, and commercial tiers.</span>
             </li>
             <li style="display:flex;gap:8px;align-items:flex-start;">
-              <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-emerald);margin-top:2px;">check</span>
+              <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;margin-top:2px;">check</span>
               <span><strong>Equipment Calibration Standards:</strong> Optical and sensor maintenance protocols verified before gear release.</span>
             </li>
             <li style="display:flex;gap:8px;align-items:flex-start;">
-              <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-emerald);margin-top:2px;">check</span>
+              <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;margin-top:2px;">check</span>
               <span><strong>Bank Escrow Compliance:</strong> Guaranteed milestone settlement release without unverified payment delays.</span>
             </li>
           </ul>
@@ -175,7 +219,7 @@
     <section class="container" style="padding-bottom:100px;">
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; flex-wrap:wrap; gap:1rem;">
         <div>
-          <div class="mono" style="font-size:0.75rem;font-weight:700;letter-spacing:0.16em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.25rem;">PILOT WORKING GROUPS</div>
+          <div class="mono" style="font-size:0.75rem;font-weight:700;letter-spacing:0.16em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.25rem;">PILOT WORKING GROUPS</div>
           <h2 style="font-size:1.8rem;margin:0;">Craft Syndicate Directory</h2>
         </div>
         <span class="status-badge pilot">6 CRAFT GROUPS IN PILOT</span>
@@ -190,8 +234,8 @@
               <span class="status-badge live">DIRECTION &amp; SHOWRUNNING</span>
               <span class="status-badge pilot">PILOT</span>
             </div>
-            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 8px;">Showrunners &amp; Directors Syndicate</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 8px;">Showrunners &amp; Directors Syndicate</h3>
+            <p style="font-size: 0.9rem; color: #FFFFFF; line-height: 1.6;">
               Episodic creators and feature directors enforcing clean narrative attribution, structured writer-room schedules, and clear milestone handoffs with production houses.
             </p>
           </div>
@@ -199,8 +243,8 @@
             <div class="guild-master-meta">
               <div class="guild-master-icon"><span class="material-symbols-outlined">movie</span></div>
               <div>
-                <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Directorial Working Group</div>
-                <div style="font-size: 0.75rem; color: var(--text-tertiary);">Mumbai &bull; Hyderabad Hubs</div>
+                <div style="font-size: 0.88rem; font-weight: 600; color: #FFFFFF;">Directorial Working Group</div>
+                <div style="font-size: 0.75rem; color: #FFFFFF;">Mumbai &bull; Hyderabad Hubs</div>
               </div>
             </div>
             <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Showrunners & Directors Syndicate">Apply for Membership</button>
@@ -214,8 +258,8 @@
               <span class="status-badge live">VIRTUAL TECH &amp; VFX</span>
               <span class="status-badge pilot">PILOT</span>
             </div>
-            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 8px;">VFX &amp; Virtual Production Circle</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 8px;">VFX &amp; Virtual Production Circle</h3>
+            <p style="font-size: 0.9rem; color: #FFFFFF; line-height: 1.6;">
               Unreal Engine technicians, LED volume specialists, and compositors sharing shader libraries, standardized color conform pipelines, and on-set VP training.
             </p>
           </div>
@@ -223,8 +267,8 @@
             <div class="guild-master-meta">
               <div class="guild-master-icon"><span class="material-symbols-outlined">smart_toy</span></div>
               <div>
-                <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Virtual Production Advisory Pod</div>
-                <div style="font-size: 0.75rem; color: var(--text-tertiary);">Bengaluru &bull; Chennai Hubs</div>
+                <div style="font-size: 0.88rem; font-weight: 600; color: #FFFFFF;">Virtual Production Advisory Pod</div>
+                <div style="font-size: 0.75rem; color: #FFFFFF;">Bengaluru &bull; Chennai Hubs</div>
               </div>
             </div>
             <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="VFX & Virtual Production Circle">Apply for Membership</button>
@@ -238,8 +282,8 @@
               <span class="status-badge live">PRODUCING &amp; CO-FINANCE</span>
               <span class="status-badge pilot">PILOT</span>
             </div>
-            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 8px;">Independent Producers Exchange</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 8px;">Independent Producers Exchange</h3>
+            <p style="font-size: 0.9rem; color: #FFFFFF; line-height: 1.6;">
               Independent line producers and slate executives establishing standardized co-production agreements, festival packaging workflows, and clean escrow templates.
             </p>
           </div>
@@ -247,8 +291,8 @@
             <div class="guild-master-meta">
               <div class="guild-master-icon"><span class="material-symbols-outlined">work</span></div>
               <div>
-                <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Producers Steering Council</div>
-                <div style="font-size: 0.75rem; color: var(--text-tertiary);">Pan-India Co-Production Network</div>
+                <div style="font-size: 0.88rem; font-weight: 600; color: #FFFFFF;">Producers Steering Council</div>
+                <div style="font-size: 0.75rem; color: #FFFFFF;">Pan-India Co-Production Network</div>
               </div>
             </div>
             <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Independent Producers Exchange">Apply for Membership</button>
@@ -262,8 +306,8 @@
               <span class="status-badge live">POST-PRODUCTION CRAFT</span>
               <span class="status-badge pilot">PILOT</span>
             </div>
-            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 8px;">Editors Craft Society (ECS)</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 8px;">Editors Craft Society (ECS)</h3>
+            <p style="font-size: 0.9rem; color: #FFFFFF; line-height: 1.6;">
               Feature, commercial, and streaming editors maintaining version control standards, turnaround agreements, and objective conform sign-off criteria.
             </p>
           </div>
@@ -271,8 +315,8 @@
             <div class="guild-master-meta">
               <div class="guild-master-icon"><span class="material-symbols-outlined">cut</span></div>
               <div>
-                <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Editorial Craft Advisory</div>
-                <div style="font-size: 0.75rem; color: var(--text-tertiary);">Mumbai &bull; Chennai Hubs</div>
+                <div style="font-size: 0.88rem; font-weight: 600; color: #FFFFFF;">Editorial Craft Advisory</div>
+                <div style="font-size: 0.75rem; color: #FFFFFF;">Mumbai &bull; Chennai Hubs</div>
               </div>
             </div>
             <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Editors Craft Society">Apply for Membership</button>
@@ -286,8 +330,8 @@
               <span class="status-badge live">AUDIO &amp; SOUND CRAFT</span>
               <span class="status-badge pilot">PILOT</span>
             </div>
-            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 8px;">Sound Engineers &amp; Foley Syndicate</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 8px;">Sound Engineers &amp; Foley Syndicate</h3>
+            <p style="font-size: 0.9rem; color: #FFFFFF; line-height: 1.6;">
               Location sync sound recordists and Atmos mix engineers maintaining acoustic specifications, boom calibration benchmarks, and quiet-set covenants.
             </p>
           </div>
@@ -295,8 +339,8 @@
             <div class="guild-master-meta">
               <div class="guild-master-icon"><span class="material-symbols-outlined">graphic_eq</span></div>
               <div>
-                <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Sound Engineering Working Pod</div>
-                <div style="font-size: 0.75rem; color: var(--text-tertiary);">Chennai &bull; Mumbai Hubs</div>
+                <div style="font-size: 0.88rem; font-weight: 600; color: #FFFFFF;">Sound Engineering Working Pod</div>
+                <div style="font-size: 0.75rem; color: #FFFFFF;">Chennai &bull; Mumbai Hubs</div>
               </div>
             </div>
             <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Sound Engineers Syndicate">Apply for Membership</button>
@@ -310,8 +354,8 @@
               <span class="status-badge live">SCREENWRITING &amp; IP</span>
               <span class="status-badge pilot">PILOT</span>
             </div>
-            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 8px;">Pan-Indian Screenwriters Syndicate</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            <h3 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 8px;">Pan-Indian Screenwriters Syndicate</h3>
+            <p style="font-size: 0.9rem; color: #FFFFFF; line-height: 1.6;">
               Screenwriters and dialog specialists establishing clean IP registration protocols, minimum script fee benchmarks, and cross-regional language translation standards.
             </p>
           </div>
@@ -319,8 +363,8 @@
             <div class="guild-master-meta">
               <div class="guild-master-icon"><span class="material-symbols-outlined">edit_note</span></div>
               <div>
-                <div style="font-size: 0.88rem; font-weight: 600; color: #fff;">Screenwriters Advisory Council</div>
-                <div style="font-size: 0.75rem; color: var(--text-tertiary);">Pan-India Linguistic Alliance</div>
+                <div style="font-size: 0.88rem; font-weight: 600; color: #FFFFFF;">Screenwriters Advisory Council</div>
+                <div style="font-size: 0.75rem; color: #FFFFFF;">Pan-India Linguistic Alliance</div>
               </div>
             </div>
             <button class="btn btn-secondary btn-sm apply-guild-btn" style="width: 100%;" data-guild="Pan-Indian Screenwriters Syndicate">Apply for Membership</button>
@@ -329,65 +373,39 @@
 
       </div>
     </section>
-  </main>
+  
+    <!-- 9870089044 Signature Bottom Nav Traversal -->
+    </main>
 
   <!-- Canonical Architectural Footer -->
-  <footer class="site-footer" style="background:#090A0C;border-top:1px solid rgba(255,255,255,0.08);padding:4rem 0 2rem;">
-    <div class="container" style="max-width:1180px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;margin-bottom:3rem;">
-        <div>
-          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
-            <div class="site-brand-glyph" aria-hidden="true" style="width:28px;height:28px;font-size:0.75rem;">DS</div>
-            <span style="font-weight:800;letter-spacing:0.05em;color:#fff;">DIGISYNQ</span>
-          </div>
-          <p style="font-size:0.88rem;line-height:1.65;color:#94a3b8;margin-bottom:1rem;">
-            The coordination layer for entertainment. Connecting verified talent, IP, stages, gear, capital and distribution.
-          </p>
-          <div class="mono" style="font-size:0.8rem;color:var(--accent-cyan);">
-            We don't own the assets. We make them move.
-          </div>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">System Architecture</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
-            <li><a href="index.html" style="color:#94a3b8;text-decoration:none;">Overview</a></li>
-            <li><a href="node-03.html" style="color:#94a3b8;text-decoration:none;">How It Works (6-Stage Pipeline)</a></li>
-            <li><a href="platform.html" style="color:#94a3b8;text-decoration:none;">Platform Architecture</a></li>
-            <li><a href="products.html" style="color:#94a3b8;text-decoration:none;">15 Coordination Modules</a></li>
-            <li><a href="node-06.html" style="color:#94a3b8;text-decoration:none;">Intelligence Telemetry</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">10 Knowledge Nodes</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
-            <li><a href="node-01.html" style="color:#94a3b8;text-decoration:none;">Node 01: Problem / Switchboard</a></li>
-            <li><a href="node-02.html" style="color:#94a3b8;text-decoration:none;">Node 02: 8 Ecosystem Categories</a></li>
-            <li><a href="node-04.html" style="color:#94a3b8;text-decoration:none;">Node 04: 5 Entry Situations</a></li>
-            <li><a href="node-05.html" style="color:#94a3b8;text-decoration:none;">Node 05: 5 Mission Modes</a></li>
-            <li><a href="node-07.html" style="color:#94a3b8;text-decoration:none;">Node 07: Compounding Insights</a></li>
-            <li><a href="node-08.html" style="color:#94a3b8;text-decoration:none;">Node 08: Commercial Value Model</a></li>
-            <li><a href="node-09.html" style="color:#94a3b8;text-decoration:none;">Node 09: System Runbook</a></li>
-            <li><a href="node-10.html" style="color:#94a3b8;text-decoration:none;">Node 10: System Intake</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="mono" style="font-size:0.75rem;font-weight:700;color:var(--accent-cyan);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">Trust &amp; Governance</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.88rem;">
-            <li><a href="about.html" style="color:#94a3b8;text-decoration:none;">Company Charter</a></li>
-            <li><a href="guilds.html" style="color:var(--accent-cyan);text-decoration:none;font-weight:600;">Peer Craft Syndicates</a></li>
-            <li><a href="workshops.html" style="color:#94a3b8;text-decoration:none;">Learning Workshops</a></li>
-            <li><a href="pricing.html" style="color:#94a3b8;text-decoration:none;">Commercial Tiers</a></li>
-            <li><span style="color:#64748b;font-size:0.82rem;">Escrow held by partner banks</span></li>
-          </ul>
+    <!-- Canonical Master 4-Column Footer -->
+    <!-- Minimal Site Footer -->
+  <footer class="site-footer-minimal" role="contentinfo">
+    <div class="footer-minimal-inner">
+      <div class="footer-minimal-top">
+        <div class="footer-minimal-brand-wrap">
+          <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
+            <div class="site-brand-glyph" aria-hidden="true">DS</div>
+            <span class="site-brand-name">DigiSynq</span>
+          </a>
+          <p class="footer-minimal-tagline">The coordination layer for entertainment.</p>
         </div>
       </div>
-
-      <div style="padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.82rem;color:#64748b;">
-        <div>&copy; 2026 DIGISYNQ NETWORKS. All rights reserved. Operating as an independent coordination network.</div>
-        <div class="mono" style="font-size:0.78rem;color:var(--accent-cyan);">WASTE LESS. SYNC MORE.</div>
+      <nav class="footer-minimal-nav" aria-label="Footer Navigation">
+        <a href="index.html">Overview</a>
+        <a href="platform.html">Platform</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="guilds.html">Guilds</a>
+        <a href="modules.html">Modules</a>
+        <a href="intelligence.html">Intelligence</a>
+        <a href="economics.html">Economics</a>
+        <a href="company.html">Company</a>
+        <a href="synq.html" class="footer-nav-highlight">Start a synq &rarr;</a>
+      </nav>
+      <div class="footer-minimal-bottom">
+        <span>&copy; 2026 DigiSynq. All rights reserved.</span>
+        <span>Press <kbd>[K]</kbd> for directory</span>
       </div>
     </div>
   </footer>
@@ -397,23 +415,23 @@
     <div class="modal-dialog">
       <button class="modal-close-btn">&times;</button>
       <div class="status-badge pilot" style="margin-bottom: 12px;">PILOT SYNDICATE ADMISSION</div>
-      <h2 id="modal-guild-name" style="font-size: 1.8rem; margin-bottom: 8px; color: #fff;">Guild Title</h2>
-      <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px; line-height:1.6;">
+      <h2 id="modal-guild-name" style="font-size: 1.8rem; margin-bottom: 8px; color: #FFFFFF;">Guild Title</h2>
+      <p style="font-size: 0.95rem; color: #FFFFFF; margin-bottom: 24px; line-height:1.6;">
         Submit your verified filmography or portfolio link for review by our regional working group coordinators.
       </p>
 
       <form id="guildAppForm" onsubmit="handleGuildSubmit(event)">
         <div class="form-group" style="margin-bottom:1rem;">
-          <label class="form-label" for="guild-applicant-name" style="display:block;font-size:0.85rem;color:#cbd5e1;margin-bottom:4px;">Applicant Name / Pseudonym</label>
-          <input type="text" id="guild-applicant-name" class="form-input" placeholder="Your full name" required style="width:100%;padding:0.7rem;background:#090A0C;border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:4px;">
+          <label class="form-label" for="guild-applicant-name" style="display:block;font-size:0.85rem;color: #FFFFFF;margin-bottom:4px;">Applicant Name / Pseudonym</label>
+          <input type="text" id="guild-applicant-name" class="form-input" placeholder="Your full name" required style="width:100%;padding:0.7rem;background:#000000;border:1px solid rgba(255,255,255,0.15);color: #FFFFFF;border-radius:4px;">
         </div>
         <div class="form-group" style="margin-bottom:1rem;">
-          <label class="form-label" for="guild-imdb" style="display:block;font-size:0.85rem;color:#cbd5e1;margin-bottom:4px;">IMDb / Professional Portfolio URL</label>
-          <input type="url" id="guild-imdb" class="form-input" placeholder="https://..." required style="width:100%;padding:0.7rem;background:#090A0C;border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:4px;">
+          <label class="form-label" for="guild-imdb" style="display:block;font-size:0.85rem;color: #FFFFFF;margin-bottom:4px;">IMDb / Professional Portfolio URL</label>
+          <input type="url" id="guild-imdb" class="form-input" placeholder="https://..." required style="width:100%;padding:0.7rem;background:#000000;border:1px solid rgba(255,255,255,0.15);color: #FFFFFF;border-radius:4px;">
         </div>
         <div class="form-group" style="margin-bottom:1.5rem;">
-          <label class="form-label" for="guild-contact" style="display:block;font-size:0.85rem;color:#cbd5e1;margin-bottom:4px;">Direct Contact Email</label>
-          <input type="email" id="guild-contact" class="form-input" placeholder="coordinator@domain.com" required style="width:100%;padding:0.7rem;background:#090A0C;border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:4px;">
+          <label class="form-label" for="guild-contact" style="display:block;font-size:0.85rem;color: #FFFFFF;margin-bottom:4px;">Direct Contact Email</label>
+          <input type="email" id="guild-contact" class="form-input" placeholder="coordinator@domain.com" required style="width:100%;padding:0.7rem;background:#000000;border:1px solid rgba(255,255,255,0.15);color: #FFFFFF;border-radius:4px;">
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%; padding:0.85rem; cursor:pointer;">
@@ -421,10 +439,10 @@
         </button>
       </form>
 
-      <div id="guildConfirmation" style="display:none;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.3);padding:1.5rem;border-radius:6px;margin-top:1rem;text-align:center;">
-        <span class="material-symbols-outlined" style="font-size:2rem;color:var(--accent-emerald);margin-bottom:0.5rem;">check_circle</span>
-        <h4 style="color:#fff;margin:0 0 0.5rem;">Application Logged</h4>
-        <p style="color:#cbd5e1;font-size:0.88rem;line-height:1.6;margin:0;">
+      <div id="guildConfirmation" style="display:none;background:rgba(255, 255, 255, 0.06);border:1px solid rgba(255, 255, 255, 0.3);padding:1.5rem;border-radius:6px;margin-top:1rem;text-align:center;">
+        <span class="material-symbols-outlined" style="font-size:2rem;color: #FFFFFF;margin-bottom:0.5rem;">check_circle</span>
+        <h4 style="color: #FFFFFF;margin:0 0 0.5rem;">Application Logged</h4>
+        <p style="color: #FFFFFF;font-size:0.88rem;line-height:1.6;margin:0;">
           Your application has been received by our regional craft coordinators. We review credentials within 48 hours.
         </p>
       </div>
@@ -432,25 +450,65 @@
   </div>
 
   <!-- 10 Nodes Dialpad Drawer -->
-  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true" aria-label="10 Nodes Knowledge Map">
-    <button class="dialpad-drawer-close" id="closeDialpadDrawer" aria-label="Close Dialpad">&times;</button>
-    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:0.4rem;">
-      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color:var(--accent-cyan);">layers</span>THE COORDINATION LAYER FOR ENTERTAINMENT
-    </div>
-    <div class="dialpad-drawer-title">10 NODES KNOWLEDGE ARCHITECTURE</div>
-    <div class="node-dialpad-container" style="max-width:980px;">
-      <div class="node-dialpad-grid">
-        <a href="node-01.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home / Problem</span></a>
-        <a href="node-02.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
-        <a href="node-03.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
-        <a href="node-04.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
-        <a href="node-05.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
-        <a href="node-06.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
-        <a href="node-07.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-        <a href="node-08.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-        <a href="node-09.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">System Runbook</span></a>
-        <a href="node-10.html" class="node-key-item"><div class="node-key-circle"><span class="node-key-digit">10</span></div><span class="node-key-label">Start a Synq</span></a>
+    <!-- Master 10-node directory Drawer Overlay -->
+  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true" aria-label="10-node directory">
+    <div class="dialpad-drawer-inner" style="max-width:980px;margin:auto;padding:2.5rem 1.5rem;text-align:center;">
+      <div class="dialpad-drawer-header" style="margin-bottom:2.5rem;">
+        <div class="mono" style="font-size:0.75rem;letter-spacing:0.18em;color:#666362;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;">
+          <span class="material-symbols-outlined" style="font-size:0.95rem;">layers</span>
+          DigiSynq core ecosystem
+        </div>
+        <h2 class="dialpad-drawer-title" style="margin:0;font-size:clamp(1.8rem, 3.5vw, 2.5rem);font-weight:800;color:#FFFFFF;text-transform:uppercase;">
+          10-node directory
+        </h2>
       </div>
+
+      <div class="dialpad-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:1.25rem;max-width:920px;margin:0 auto 2.5rem;">
+        <a href="index.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">01</span></div>
+          <span class="node-key-label">Overview</span>
+        </a>
+        <a href="platform.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">02</span></div>
+          <span class="node-key-label">Platform</span>
+        </a>
+        <a href="solutions.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">03</span></div>
+          <span class="node-key-label">Solutions</span>
+        </a>
+        <a href="ecosystem.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">04</span></div>
+          <span class="node-key-label">Ecosystem</span>
+        </a>
+        <a href="guilds.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">05</span></div>
+          <span class="node-key-label">Guilds</span>
+        </a>
+        <a href="modules.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">06</span></div>
+          <span class="node-key-label">Modules</span>
+        </a>
+        <a href="intelligence.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">07</span></div>
+          <span class="node-key-label">Intelligence</span>
+        </a>
+        <a href="economics.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">08</span></div>
+          <span class="node-key-label">Economics</span>
+        </a>
+        <a href="company.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle"><span class="node-key-digit">09</span></div>
+          <span class="node-key-label">Company</span>
+        </a>
+        <a href="synq.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+          <div class="node-key-circle" style="border-color:#FFFFFF;"><span class="node-key-digit" style="color:#FFFFFF;">10</span></div>
+          <span class="node-key-label" style="color:#FFFFFF;font-weight:700;">Start a synq</span>
+        </a>
+      </div>
+
+      <button id="closeDialpadDrawer" class="btn btn-secondary" style="padding:0.65rem 1.8rem;font-size:0.88rem;" aria-label="Close directory">
+        Close directory [ESC]
+      </button>
     </div>
   </div>
 
