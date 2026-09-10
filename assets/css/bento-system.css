@@ -202,24 +202,65 @@ body, .bg-page {
 .bg-card--purple .bg-body-text { color: rgba(255,255,255,0.85); }
 .bg-card--purple h1,.bg-card--purple h2,.bg-card--purple h3,.bg-card--purple h4 { color: var(--b-white); }
 
-/* Sunlight Amber Feature Card */
+/* Sunlight Amber Feature Card — STRICTLY PURE WHITE FONTS */
 .bg-card--yellow {
-  background: linear-gradient(145deg, #D97706 0%, #92400E 100%);
+  background: linear-gradient(145deg, #D97706 0%, #92400E 100%) !important;
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   border: 1px solid rgba(251, 191, 36, 0.35);
   box-shadow: 0 20px 48px -10px rgba(180, 83, 9, 0.45),
               inset 0 1.2px 0 rgba(255, 255, 255, 0.32);
-  color: var(--b-navy);
+  color: #FFFFFF !important;
 }
 .bg-card--yellow:hover {
   box-shadow: 0 24px 60px -10px rgba(180, 83, 9, 0.6),
               0 0 24px rgba(245, 158, 11, 0.25),
               inset 0 1.2px 0 rgba(255, 255, 255, 0.4);
 }
-.bg-card--yellow .bg-label,.bg-card--yellow .bg-meta { color: var(--b-navy); opacity: 0.65; }
-.bg-card--yellow .bg-body-text { color: var(--b-navy-soft); }
-.bg-card--yellow h1,.bg-card--yellow h2,.bg-card--yellow h3,.bg-card--yellow h4 { color: var(--b-navy); }
+.bg-card--yellow,
+.bg-card--yellow *,
+.bg-card--yellow h1,
+.bg-card--yellow h2,
+.bg-card--yellow h3,
+.bg-card--yellow h4,
+.bg-card--yellow h5,
+.bg-card--yellow h6,
+.bg-card--yellow .bg-display,
+.bg-card--yellow .bg-body-text,
+.bg-card--yellow p,
+.bg-card--yellow span,
+.bg-card--yellow div {
+  color: #FFFFFF !important;
+}
+.bg-card--yellow em { color: #FFFFFF !important; text-decoration: underline !important; text-underline-offset: 6px !important; text-decoration-color: rgba(255, 255, 255, 0.75) !important; font-style: italic !important; }
+.bg-card--yellow .bg-label,
+.bg-card--yellow .bg-meta,
+.bg-card--yellow .bg-metric-sublabel {
+  color: rgba(255, 255, 255, 0.88) !important;
+  opacity: 1 !important;
+}
+.bg-card--yellow .bg-badge {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+}
+.bg-card--yellow .bg-chip {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.30) !important;
+}
+.bg-card--yellow a.bg-chip:hover {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+}
+.bg-card--yellow a.bg-chip:hover * {
+  color: #0F172A !important;
+}
+.bg-card--yellow .bg-step-num-block {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+}
 
 /* Architectural Terracotta Card */
 .bg-card--coral {
@@ -840,7 +881,7 @@ body, .bg-page {
 
 /* Contextual Emphasized Operatives — Extra Bold Italic in Normal Matching Colors */
 .bg-card--cream em { color: #4338CA !important; }
-.bg-card--yellow em { color: #0F172A !important; text-decoration: underline; text-underline-offset: 4px; }
+.bg-card--yellow em { color: #FFFFFF !important; text-decoration: underline !important; text-underline-offset: 6px !important; text-decoration-color: rgba(255, 255, 255, 0.75) !important; font-style: italic !important; }
 .bg-card--purple em { color: #FDE68A !important; }
 .bg-card--coral em { color: #FEF08A !important; }
 .bg-card--dark em, .bg-card--dark-alt em { color: #F59E0B !important; }
