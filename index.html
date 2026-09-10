@@ -30,6 +30,33 @@
   </style>
 </head>
 <body class="bg-page">
+  <!-- FLOATING LIQUID-GLASS CAPSULE RAIL (BLENDED FROM IMAGE 1 & 2) -->
+  <aside class="bg-floating-rail" aria-label="Quick Navigation Rail">
+    <a href="index.html" class="bg-rail-item active" title="Home">
+      <span class="bg-rail-sparkle">✦</span>
+    </a>
+    <div class="bg-rail-divider"></div>
+    <a href="how-it-works.html" class="bg-rail-item" title="How it Works">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+    </a>
+    <a href="platform.html" class="bg-rail-item" title="Platform">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+    </a>
+    <a href="network.html" class="bg-rail-item" title="Network">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+    </a>
+    <a href="intelligence.html" class="bg-rail-item" title="Intelligence">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+    </a>
+    <a href="economics.html" class="bg-rail-item" title="Economics">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+    </a>
+    <div class="bg-rail-divider"></div>
+    <a href="start-a-synq.html" class="bg-rail-item" title="Start a Synq" style="background:rgba(255,255,255,0.12);color:#FFFFFF;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </a>
+  </aside>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- BENTO NAVIGATION -->
@@ -120,51 +147,70 @@
           </div>
         </div>
 
-        <!-- 12ms Metric Card (coral, 3 col) -->
-        <div class="bg-card bg-card--coral bg-3 bg-reveal bg-reveal-delay-2" style="min-height:190px;">
-          <div class="bg-label" style="color:rgba(255,255,255,0.78);margin-bottom:0.5rem;">Synq Latency</div>
-          <div class="bg-metric-value bg-metric-value--xl" style="color:white;">12ms</div>
-          <div class="bg-metric-sublabel" style="color:rgba(255,255,255,0.75);margin-top:auto;padding-top:0.5rem;">Instant Handshake · Zero Middlemen</div>
+        <!-- Real-Time Network Telemetry Sparkline Card (dark, 3 col, from Image 2) -->
+        <div class="bg-card bg-card--dark bg-3 bg-reveal bg-reveal-delay-2" style="min-height:210px;justify-content:space-between;">
+          <div class="bg-widget-telemetry">
+            <div class="bg-telemetry-header">
+              <span class="bg-label" style="color:rgba(255,255,255,0.65);">Live Telemetry</span>
+              <span class="bg-time-pill">12ms · 07:45 PM</span>
+            </div>
+            <svg class="bg-sparkline-svg" viewBox="0 0 200 64" preserveAspectRatio="none">
+              <path class="bg-sparkline-path" d="M0,48 Q35,12 70,36 T140,20 T200,32" />
+              <circle cx="70" cy="36" r="4" class="bg-sparkline-pulse" />
+              <circle cx="140" cy="20" r="4" class="bg-sparkline-pulse" />
+            </svg>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.5rem;">
+            <div class="bg-metric-value" style="font-size:1.85rem;color:white;">12ms</div>
+            <span class="bg-chip bg-chip--dark" style="font-size:0.68rem;">Deterministic Sync</span>
+          </div>
         </div>
 
-        <!-- 4,800+ Nodes Card (cream, 3 col) -->
-        <div class="bg-card bg-card--cream bg-3 bg-reveal bg-reveal-delay-3" style="min-height:190px;">
-          <div class="bg-label bg-text-muted-light" style="margin-bottom:0.5rem;">Verified Network</div>
-          <div class="bg-metric-value bg-metric-value--xl" style="color:var(--b-purple);">4,800+</div>
+        <!-- 4,800+ Nodes Card (cream, 3 col, from Image 1 Frosted Surface) -->
+        <div class="bg-card bg-card--cream bg-3 bg-reveal bg-reveal-delay-3" style="min-height:210px;justify-content:space-between;">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="bg-label bg-text-muted-light">Verified Network</span>
+            <span class="bg-pill-white" style="font-size:0.68rem;padding:0.25rem 0.65rem;">Active Nodes</span>
+          </div>
+          <div class="bg-metric-value bg-metric-value--xl" style="color:var(--b-purple);line-height:0.95;">4,800+</div>
           <div class="bg-metric-sublabel bg-text-muted-light" style="margin-top:auto;padding-top:0.5rem;">Production Nodes · +24% capacity</div>
         </div>
 
-        <!-- 99.4% Reliability Card (dark, 3 col) -->
-        <div class="bg-card bg-card--dark bg-3 bg-reveal bg-reveal-delay-2" style="min-height:190px;">
-          <div class="bg-label bg-text-muted" style="margin-bottom:0.5rem;">Milestone Reliability</div>
-          <div class="bg-metric-value" style="color:var(--b-yellow);font-size:clamp(2.5rem,4.5vw,3.8rem);">99.4%</div>
-          <div class="bg-progress-track" style="margin-top:0.75rem;">
-            <div class="bg-progress-fill bg-progress-fill--yellow" style="width:99.4%;"></div>
+        <!-- Circular Progress Ring Widget Card (dark, 3 col, from Image 2) -->
+        <div class="bg-card bg-card--dark bg-3 bg-reveal bg-reveal-delay-2" style="min-height:210px;justify-content:space-between;">
+          <div class="bg-widget-ring">
+            <div>
+              <span class="bg-label bg-text-muted" style="display:block;margin-bottom:0.35rem;">Settlement Finality</span>
+              <div class="bg-metric-value" style="color:var(--b-yellow);font-size:2.2rem;line-height:1;">99.4%</div>
+              <span class="bg-metric-sublabel bg-text-muted" style="font-size:0.75rem;display:block;margin-top:0.3rem;">14/14 Synqs Closed</span>
+            </div>
+            <div class="bg-ring-container">
+              <svg class="bg-ring-svg" viewBox="0 0 80 80">
+                <circle class="bg-ring-bg" cx="40" cy="40" r="35" />
+                <circle class="bg-ring-progress bg-ring-progress--amber" cx="40" cy="40" r="35" />
+              </svg>
+              <div class="bg-ring-center-text" style="color:var(--b-yellow-lt);font-size:0.85rem;">99%</div>
+            </div>
           </div>
-          <div class="bg-metric-sublabel bg-text-muted" style="margin-top:0.5rem;">Execution Track Record</div>
+          <div class="bg-metric-sublabel bg-text-muted" style="margin-top:auto;padding-top:0.4rem;">Execution Track Record · Zero Default</div>
         </div>
 
-        <!-- Network Bars Card (dark, 3 col) -->
-        <div class="bg-card bg-card--dark bg-3 bg-reveal bg-reveal-delay-4" style="min-height:190px;">
-          <div class="bg-label bg-text-muted" style="margin-bottom:0.75rem;">Live Network · Decentralized Mesh</div>
-          <div style="display:flex;flex-direction:column;gap:0.6rem;flex:1;">
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;">
-              <span style="font-size:0.78rem;color:rgba(255,255,255,0.5);min-width:40px;">Talent</span>
-              <div class="bg-progress-track" style="flex:1;"><div class="bg-progress-fill bg-progress-fill--purple" style="width:98%;"></div></div>
-              <span style="font-size:0.75rem;color:rgba(255,255,255,0.7);font-weight:600;min-width:30px;text-align:right;">98%</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;">
-              <span style="font-size:0.78rem;color:rgba(255,255,255,0.5);min-width:40px;">Stages</span>
-              <div class="bg-progress-track" style="flex:1;"><div class="bg-progress-fill bg-progress-fill--yellow" style="width:94%;"></div></div>
-              <span style="font-size:0.75rem;color:rgba(255,255,255,0.7);font-weight:600;min-width:30px;text-align:right;">94%</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;">
-              <span style="font-size:0.78rem;color:rgba(255,255,255,0.5);min-width:40px;">Escrow</span>
-              <div class="bg-progress-track" style="flex:1;"><div class="bg-progress-fill" style="width:100%;background:var(--b-coral);"></div></div>
-              <span style="font-size:0.75rem;color:rgba(255,255,255,0.7);font-weight:600;min-width:30px;text-align:right;">100%</span>
-            </div>
+        <!-- Weekly Protocol Activity Bar Chart Card (dark, 3 col, from Image 2) -->
+        <div class="bg-card bg-card--dark bg-3 bg-reveal bg-reveal-delay-4" style="min-height:210px;justify-content:space-between;">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="bg-label bg-text-muted">Weekly Activity</span>
+            <span class="bg-chip bg-chip--dark" style="font-size:0.65rem;">This Week</span>
           </div>
-          <div class="bg-label bg-text-muted" style="margin-top:0.75rem;">All rails operational</div>
+          <div class="bg-widget-bars">
+            <div class="bg-bar-col"><div class="bg-bar-pill" style="height:32px;"></div><span class="bg-bar-label">M</span></div>
+            <div class="bg-bar-col"><div class="bg-bar-pill" style="height:48px;"></div><span class="bg-bar-label">T</span></div>
+            <div class="bg-bar-col"><div class="bg-bar-pill" style="height:40px;"></div><span class="bg-bar-label">W</span></div>
+            <div class="bg-bar-col"><div class="bg-bar-pill" style="height:56px;"></div><span class="bg-bar-label">T</span></div>
+            <div class="bg-bar-col"><div class="bg-bar-pill" style="height:44px;"></div><span class="bg-bar-label">F</span></div>
+            <div class="bg-bar-col"><div class="bg-bar-pill active" style="height:62px;"><span class="bg-bar-tooltip">7.8k</span></div><span class="bg-bar-label" style="color:white;">S</span></div>
+            <div class="bg-bar-col"><div class="bg-bar-pill" style="height:50px;"></div><span class="bg-bar-label">S</span></div>
+          </div>
+          <div class="bg-label bg-text-muted" style="margin-top:auto;padding-top:0.4rem;">Mesh Throughput Operational</div>
         </div>
 
         <!-- CTA Bar (cream, 6 col) -->
@@ -176,6 +222,93 @@
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
             <a href="start-a-synq.html" class="bg-btn bg-btn--primary">Start a synq &rarr;</a>
             <a href="how-it-works.html" class="bg-btn bg-btn--outline-navy">How it works</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <!-- BLENDED SHOWCASE: CHECKLIST & TACTILE SHORTCUTS (IMAGE 1 + IMAGE 2) -->
+    <section aria-label="Coordination Telemetry & Shortcuts" style="padding:var(--b-gap) 0;">
+      <div class="bg-grid">
+
+        <!-- Protocol Execution Checklist (dark, 6 col, from Image 2) -->
+        <div class="bg-card bg-card--dark bg-6 bg-reveal" style="min-height:240px;justify-content:space-between;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <span class="bg-rail-sparkle" style="color:#3B82F6;">✦</span>
+              <span class="bg-label" style="color:rgba(255,255,255,0.7);">Protocol Execution Pipeline</span>
+            </div>
+            <span class="bg-chip bg-chip--dark" style="font-size:0.68rem;">Real-time</span>
+          </div>
+          <div class="bg-widget-checklist">
+            <div class="bg-checklist-row">
+              <div class="bg-checklist-left">
+                <div class="bg-check-circle bg-check-circle--done">✓</div>
+                <span class="bg-checklist-name">NC-25 Soundstage Synchronization</span>
+              </div>
+              <span class="bg-checklist-status bg-checklist-status--done">Deterministic · Complete</span>
+            </div>
+            <div class="bg-checklist-row">
+              <div class="bg-checklist-left">
+                <div class="bg-check-circle bg-check-circle--active">●</div>
+                <span class="bg-checklist-name">Guild Routing &amp; Jurisdictional Lock</span>
+              </div>
+              <span class="bg-checklist-status bg-checklist-status--active">Multi-Sig · Active</span>
+            </div>
+            <div class="bg-checklist-row">
+              <div class="bg-checklist-left">
+                <div class="bg-check-circle bg-check-circle--pending">○</div>
+                <span class="bg-checklist-name">Milestone Liquidity &amp; Escrow Release</span>
+              </div>
+              <span class="bg-checklist-status bg-checklist-status--pending">Zero-Knowledge · Verifying</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+            <span class="bg-meta" style="font-size:0.75rem;color:rgba(255,255,255,0.45);">Automated milestone verification via smart contract</span>
+            <a href="how-it-works.html" class="bg-pill-white" style="font-size:0.72rem;padding:0.3rem 0.8rem;">Explore pipeline &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Tactile Shortcuts Matrix & Operations (cream, 6 col, from Image 1 & 2) -->
+        <div class="bg-card bg-card--cream bg-6 bg-reveal bg-reveal-delay-1" style="min-height:240px;justify-content:space-between;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <span style="font-size:0.9rem;">⚡</span>
+              <span class="bg-label" style="color:var(--b-navy);opacity:0.7;">Tactile Operations Matrix</span>
+            </div>
+            <span class="bg-pill-dark" style="font-size:0.68rem;padding:0.25rem 0.75rem;">Command Deck</span>
+          </div>
+          <div class="bg-widget-shortcuts">
+            <a href="solutions.html#have" class="bg-shortcut-btn" style="background:rgba(15,23,42,0.06);color:var(--b-navy);border-color:rgba(15,23,42,0.08);">
+              <span class="bg-shortcut-icon">🏛</span>
+              <span>Soundstages</span>
+            </a>
+            <a href="solutions.html#need" class="bg-shortcut-btn" style="background:rgba(15,23,42,0.06);color:var(--b-navy);border-color:rgba(15,23,42,0.08);">
+              <span class="bg-shortcut-icon">🎭</span>
+              <span>Guilds</span>
+            </a>
+            <a href="platform.html" class="bg-shortcut-btn" style="background:rgba(15,23,42,0.06);color:var(--b-navy);border-color:rgba(15,23,42,0.08);">
+              <span class="bg-shortcut-icon">🔒</span>
+              <span>Escrow</span>
+            </a>
+            <a href="network.html" class="bg-shortcut-btn" style="background:rgba(15,23,42,0.06);color:var(--b-navy);border-color:rgba(15,23,42,0.08);">
+              <span class="bg-shortcut-icon">📡</span>
+              <span>Telemetry</span>
+            </a>
+            <a href="economics.html" class="bg-shortcut-btn" style="background:rgba(15,23,42,0.06);color:var(--b-navy);border-color:rgba(15,23,42,0.08);">
+              <span class="bg-shortcut-icon">📊</span>
+              <span>Economics</span>
+            </a>
+            <a href="start-a-synq.html" class="bg-shortcut-btn" style="background:var(--b-purple);color:white;border:none;">
+              <span class="bg-shortcut-icon">✦</span>
+              <span>Start Synq</span>
+            </a>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+            <span class="bg-meta" style="font-size:0.75rem;color:var(--b-navy-soft);">Instant launchpad for verified production rails</span>
+            <span class="bg-chip bg-chip--light" style="font-size:0.72rem;">6 Rails Online</span>
           </div>
         </div>
 
