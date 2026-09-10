@@ -647,7 +647,7 @@
   background: var(--gradient-cyan-teal);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.30));
+  
   display: inline-block;
 }
 
@@ -838,7 +838,7 @@
   background: var(--gradient-cyan-teal);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.35));
+  
   display: inline-block;
 }
 

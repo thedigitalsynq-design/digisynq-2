@@ -1,40 +1,106 @@
 /* ==========================================================================
-   DIGISYNQ — DARK GLASSMORPHISM + APPLE LIQUID GLASS DESIGN SYSTEM
-   Aesthetic: Frosted Glass Panels, Specular Highlights, Ambient Glow Orbs,
-              Apple-Style Fluid Motion, Luminous Accent Palette
-   WCAG 2.2 Compliant | Dark Canvas | Liquid Glass Surfaces
+   DENTON EXTRABOLD & EXTRABOLD ITALIC TYPOGRAPHY SYSTEM
+   Only ExtraBold (800) and ExtraBold Italic (800 Italic) across the entire site.
+   No radiant colors. Harmonious matching palette.
    ========================================================================== */
 
-/* ==========================================================================
-   GOOGLE SANS TYPOGRAPHY SYSTEM
-   Typeface: Google Sans
-   Weights: 400 Regular · 500 Medium · 700 Bold · 800 Extra Bold · 900 Black
-   Strict Rule: No Italic anywhere. Bold & Extra Bold hierarchy.
-   ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;800;900&display=swap');
-@import url('https://fonts.cdnfonts.com/css/google-sans');
+@font-face {
+  font-family: 'Denton';
+  src: local('Denton ExtraBold'), local('Denton-ExtraBold'), local('DentonTest-ExtraBold'),
+       url('../fonts/DentonTest-ExtraBold.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
-/* Global No-Italic Enforcement */
-*, *::before, *::after, em, i, cite, var, address {
-  font-style: normal !important;
+@font-face {
+  font-family: 'Denton';
+  src: local('Denton ExtraBoldItalic'), local('Denton-ExtraBoldItalic'), local('DentonTest-ExtraBoldItalic'),
+       url('../fonts/DentonTest-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Explicit fallback weights for all browser engines */
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBold.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBold.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Denton';
+  src: url('../fonts/DentonTest-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
 }
 
 :root {
   /* ── Bento System Color Tokens ── */
-  --b-bg:        #111113;
-  --b-bg-alt:    #17171C;
-  --b-cream:     #F5F0E8;
-  --b-cream-alt: #EDE8DF;
-  --b-dark-card: #1C1C23;
-  --b-dark-alt:  #22222C;
-  --b-purple:    #5B4FE8;
-  --b-purple-lt: #7B70F0;
-  --b-yellow:    #F5C842;
-  --b-yellow-lt: #FADA72;
-  --b-coral:     #E8533A;
-  --b-coral-lt:  #F07260;
-  --b-navy:      #0F1623;
-  --b-navy-soft: #1E2840;
+  --b-bg:        #121316;
+  --b-bg-alt:    #18191E;
+  --b-cream:     #F4EFE6;
+  --b-cream-alt: #EAE4D8;
+  --b-dark-card: #1A1B22;
+  --b-dark-alt:  #22232C;
+  --b-purple:    #4338CA;
+  --b-purple-lt: #6366F1;
+  --b-yellow:    #D97706;
+  --b-yellow-lt: #F59E0B;
+  --b-coral:     #C2410C;
+  --b-coral-lt:  #EA580C;
+  --b-navy:      #0F172A;
+  --b-navy-soft: #334155;
   --b-white:     #FFFFFF;
   --b-off-white: rgba(255,255,255,0.92);
   --b-muted:     rgba(255,255,255,0.52);
@@ -69,29 +135,29 @@
   --text-white: rgba(255, 255, 255, 0.98);
 
   /* ── Luminous Accent Palette (Synchronized with Bento Hero Signature) ── */
-  --accent-cyan: #22D3EE;
-  --accent-teal: #34D399;
-  --accent-violet: #C084FC;
-  --accent-rose: #F43F5E;
-  --accent-primary: #C084FC;
-  --accent-hover: #D8B4FE;
+  --accent-cyan: #38BDF8;
+  --accent-teal: #10B981;
+  --accent-violet: #6366F1;
+  --accent-rose: #E11D48;
+  --accent-primary: #4F46E5;
+  --accent-hover: #4338CA;
   --accent-subtle: rgba(192, 132, 252, 0.12);
-  --accent-indigo: #818CF8;
-  --accent-indigo-hover: #A5B4FC;
-  --status-emerald: #34D399;
-  --status-amber: #FBBF24;
-  --status-coral: #F87171;
+  --accent-indigo: #4338CA;
+  --accent-indigo-hover: #3730A3;
+  --status-emerald: #10B981;
+  --status-amber: #D97706;
+  --status-coral: #C2410C;
 
-  /* ── Signature Dual-Gradient Tokens ── */
-  --gradient-cyan-teal: linear-gradient(135deg, #22D3EE 0%, #34D399 100%);
-  --gradient-violet-rose: linear-gradient(135deg, #C084FC 0%, #F43F5E 100%);
-  --gradient-signature: linear-gradient(135deg, #22D3EE 0%, #C084FC 55%, #F43F5E 100%);
+  /* ── Harmonious Palette Gradient Tokens ── */
+  --gradient-cyan-teal: linear-gradient(135deg, #4338CA 0%, #6366F1 100%);
+  --gradient-violet-rose: linear-gradient(135deg, #C2410C 0%, #EA580C 100%);
+  --gradient-signature: linear-gradient(135deg, #4338CA 0%, #6366F1 55%, #C2410C 100%);
 
-  /* ── Glow Tokens ── */
-  --glow-cyan: rgba(34, 211, 238, 0.35);
-  --glow-teal: rgba(52, 211, 153, 0.25);
-  --glow-violet: rgba(192, 132, 252, 0.35);
-  --glow-rose: rgba(244, 63, 94, 0.25);
+  /* ── Soft Ambient Glow Tokens ── */
+  --glow-cyan: rgba(67, 56, 202, 0.20);
+  --glow-teal: rgba(99, 102, 241, 0.15);
+  --glow-violet: rgba(194, 65, 12, 0.20);
+  --glow-rose: rgba(234, 88, 12, 0.15);
   --glow-white: rgba(255, 255, 255, 0.08);
 
   /* ── Dark Gray Scale ── */
@@ -115,10 +181,10 @@
   --shadow-modal: 0 24px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
   --shadow-btn-glow: 0 0 20px rgba(139, 92, 246, 0.3), 0 4px 16px rgba(0, 0, 0, 0.3);
 
-  /* ── Typography — DM Serif Display (display) + System Sans (UI/body) ── */
-  --font-display: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-sans: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* ── Typography — Denton (display & body) ── */
+  --font-display: 'Denton', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Denton', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Denton', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 
   /* ── Radius Scale ── */
@@ -155,290 +221,51 @@
 }
 
 /* ==========================================================================
-   BASE RESETS & ACCESSIBILITY (DM SERIF DISPLAY DESIGN SYSTEM)
+   TYPOGRAPHY UTILITY CLASSES — ENFORCING EXTRABOLD & EXTRABOLD ITALIC ONLY
    ========================================================================== */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  background-color: var(--bg-canvas);
-  color: var(--text-primary);
-  font-family: var(--font-display);
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-  color-scheme: dark;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg-canvas);
-  background-image:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
-  color: var(--text-primary);
-  font-family: var(--font-display);
-  font-weight: 400;
-  overflow-x: hidden;
-  position: relative;
-}
-
-button, input, select, textarea {
-  font-family: inherit;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Skip Link */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 1.5rem;
-  background: var(--accent-primary);
-  color: #FFFFFF;
-  padding: 0.65rem 1.25rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  z-index: 99999;
-  transition: top var(--duration-fast) var(--ease-linear);
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-}
-.skip-link:focus {
-  top: 1.5rem;
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 2px;
-}
-
-:focus-visible {
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 2px;
-}
-
-/* ==========================================================================
-   TYPOGRAPHY HIERARCHY — DM SERIF DISPLAY
-   Single weight (400) serif. Hierarchy via size, tracking, italic & colour.
-   - XL Display  : hero titles, primary statements  → 3rem–5.25rem, tight tracking
-   - L Display   : section titles, major headings    → 2rem–3.25rem
-   - M Display   : card titles, subheadings          → 1.25rem–1.75rem
-   - Italic      : emphasis, gradient operatives, decorative contrast
-   - Body/UI     : system sans stack (navigation, buttons, labels, inputs)
-   ========================================================================== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-style: normal !important;
-  color: var(--text-primary);
-}
-
-/* XL — Hero & Primary Statements */
-h1, .hero-title, .cta-banner-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.85rem, 6.2vw, 5.25rem);
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  font-style: normal !important;
-  line-height: 1.08;
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  letter-spacing: -0.02em;
-  font-weight: 800;
-  font-style: normal !important;
-  line-height: 1.15;
-}
-
-/* Emphasized Operatives — italic for DM Serif Display contrast */
-h1 em, .hero-title em, .cta-banner-title em, .section-title em {
-  font-weight: 900;
-  font-style: normal !important;
-  letter-spacing: -0.01em;
-}
-
-/* Dual-Gradient Operative Sequence */
-h1 em:nth-of-type(1),
-.hero-title em:nth-of-type(1) {
-  background: linear-gradient(135deg, #22D3EE 0%, #34D399 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.35));
-  display: inline-block;
-  padding-right: 0.04em;
-}
-
-h1 em:nth-of-type(2),
-.hero-title em:nth-of-type(2) {
-  background: linear-gradient(135deg, #C084FC 0%, #F43F5E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 24px rgba(192, 132, 252, 0.35));
-  display: inline-block;
-  padding-right: 0.04em;
-}
-
-h1 em:only-of-type,
-.hero-title em:only-of-type,
-h2 em, .section-title em {
-  background: linear-gradient(135deg, #22D3EE 0%, #C084FC 55%, #F43F5E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.30));
-  display: inline-block;
-  padding-right: 0.04em;
-}
-
-/* Metrics & Numbers — display serif, italic for editorial character */
-.step-num, .stat-value, .stat-number, .metric-value, .fee-percentage, .bento-stat-num {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-style: normal !important;
-  letter-spacing: -0.02em;
-}
-
-/* L — Structural Headings */
-h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
-  letter-spacing: -0.015em;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.24;
-}
-
-/* M — Card & Sub-section Titles */
-h3, .card-title, .bento-card h3 {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  letter-spacing: -0.01em;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-}
-
-h4, .step-name {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  letter-spacing: -0.005em;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.38;
-}
-
-h3 em, h4 em {
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Body copy — system sans for readability at small sizes */
-p {
-  color: var(--text-secondary);
-  font-family: var(--font-sans);
-  font-size: 1.025rem;
-  font-weight: 400;
-  line-height: 1.72;
-  letter-spacing: 0;
-}
-
-p.section-desc, .editorial-sub {
-  font-family: var(--font-sans);
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.68;
-  color: var(--text-secondary);
-  letter-spacing: 0;
-}
-
-em, i, cite, blockquote, .quote-axiom {
-  font-style: normal;
-}
-
-/* Explicit Hierarchy Utility Classes */
-.font-display {
-  font-family: var(--font-display) !important;
-  font-weight: 400 !important;
-}
-
-.font-display-italic {
-  font-family: var(--font-display) !important;
-  font-weight: 800 !important;
-  font-style: normal !important;
-}
-
-.font-regular {
-  font-family: var(--font-sans) !important;
-  font-weight: 400 !important;
-}
-
-.font-bold {
-  font-family: var(--font-sans) !important;
-  font-weight: 700 !important;
-}
-
-.font-extrabold {
+.font-regular,
+.font-bold,
+.font-extrabold,
+.denton-regular,
+.denton-bold,
+.denton-extrabold {
   font-family: var(--font-sans) !important;
   font-weight: 800 !important;
-}
-
-/* Backward compatibility: all legacy Denton/Space Grotesk utility classes → DM Serif Display */
-.denton-extrabold, .denton-bold {
-  font-family: var(--font-display) !important;
-  font-weight: 400 !important;
-}
-
-.denton-extrabold-italic, .denton-bold-italic, .denton-italic {
-  font-family: var(--font-display) !important;
-  font-weight: 800 !important;
   font-style: normal !important;
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, #22D3EE 0%, #C084FC 55%, #F43F5E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.25));
+.font-italic,
+.font-bold-italic,
+.font-extrabold-italic,
+.denton-italic,
+.denton-bold-italic,
+.denton-extrabold-italic {
+  font-family: var(--font-sans) !important;
+  font-weight: 800 !important;
+  font-style: italic !important;
 }
 
+.text-gradient,
 .text-gradient-cyan,
 .bento-text-gradient-cyan,
 .synq-cyan {
-  background: linear-gradient(135deg, #22D3EE 0%, #34D399 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.35));
-  display: inline-block;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  filter: none !important;
+  color: var(--b-purple-lt) !important;
+  font-weight: 800 !important;
+  font-style: italic !important;
 }
 
 .text-gradient-violet,
 .bento-text-gradient-violet,
 .synq-violet {
-  background: linear-gradient(135deg, #C084FC 0%, #F43F5E 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  filter: drop-shadow(0 0 24px rgba(192, 132, 252, 0.35));
-  display: inline-block;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  filter: none !important;
+  color: var(--b-coral-lt) !important;
+  font-weight: 800 !important;
+  font-style: italic !important;
 }
 
 .mono {
