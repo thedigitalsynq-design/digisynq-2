@@ -4,1059 +4,884 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DigiSynq — The Coordination Layer for Entertainment</title>
-  <meta name="description" content="DigiSynq connects talent, IP, stages, gear, capital and distribution into coordinated production pathways. Entertainment doesn't have a resource problem. It has a coordination problem.">
-  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-sans@1.0.1/index.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="DigiSynq connects verified production capacity to real requirements — from crew and stages to equipment, post, capital and distribution into coordinated production pathways.">
+  <meta name="keywords" content="entertainment coordination, film production infrastructure, virtual production, soundstage booking, crew verification, production finance">
+  <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/index.html">
+  
+  <meta property="og:title" content="DigiSynq — The Coordination Layer for Entertainment">
+  <meta property="og:description" content="Entertainment doesn't have a resource problem. It has a coordination problem. DigiSynq connects verified capacity to real requirements.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/index.html">
+  <!-- Font preloads: critical Space Grotesk weights -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/bento-hero.css">
 </head>
-<body style="overflow-x:hidden;background:#353839;color: #FFFFFF;">
-  <!-- 9870089044 Fixed Vertical Edge Ribbon -->
-  <a href="https://www.awwwards.com" target="_blank" rel="noopener" class="site-vertical-ribbon" aria-label="Awwwards Honors">
-    <div class="site-vertical-ribbon-mark">W.</div>
-    <div class="site-vertical-ribbon-text">Honors</div>
-  </a>
+<body class="bento-active">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-
-  <!-- Master Fixed Top Navbar -->
-  <header class="site-navbar" role="banner">
-    <div class="site-navbar-inner">
-      <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
-        <div class="site-brand-glyph" aria-hidden="true">DS</div>
-        <span>DIGISYNQ</span>
+  <!-- CANONICAL NAVIGATION HEADER (LINEAR TRANSLUCENT SPEC) -->
+  <header class="navbar" role="banner">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
+        <span class="nav-brand-name">DigiSynq</span>
+        <span class="nav-brand-sub">Coordination protocol</span>
       </a>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="site-nav-pills">
-          <li><a href="index.html" class="site-nav-pill-link active">Overview</a></li>
-          <li><a href="platform.html" class="site-nav-pill-link">How It Works</a></li>
-          <li><a href="solutions.html" class="site-nav-pill-link">Solutions</a></li>
-          <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
-          <li><a href="modules.html" class="site-nav-pill-link">Products</a></li>
-          <li><a href="intelligence.html" class="site-nav-pill-link">Intelligence</a></li>
-          <li><a href="economics.html" class="site-nav-pill-link">Pricing</a></li>
-          <li><a href="company.html" class="site-nav-pill-link">Company</a></li>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How it works</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="nav-link">Platform</a></li>
+          <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
+          <li><a href="economics.html" class="nav-link">Economics</a></li>
+          <li><a href="trust.html" class="nav-link">Trust</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
         </ul>
       </nav>
 
-      <div class="site-nav-actions">
-        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
-          <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;">volume_up</span>
-          <span>Audio: on</span>
+      <div class="nav-actions">
+        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span>
+          <kbd>⌘K</kbd>
         </button>
-        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
-          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
-          <span>10 nodes [K]</span>
-        </button>
-        <a href="synq.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
-          Start a synq &rarr;
-        </a>
+        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
       </div>
     </div>
   </header>
 
-  <!-- Vertical Edge Badge -->
-  <div class="edge-badge-vertical" aria-hidden="true">
-    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color: #FFFFFF;">radio_button_checked</span> THE COORDINATION LAYER FOR ENTERTAINMENT</span>
+  <!-- ACCESSIBLE MOBILE DRAWER -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-nav-link active">Home</a>
+    <a href="how-it-works.html" class="mobile-nav-link">How it works</a>
+    <a href="solutions.html" class="mobile-nav-link">Solutions</a>
+    <a href="platform.html" class="mobile-nav-link">Platform</a>
+    <a href="network.html" class="mobile-nav-link">Network</a>
+    <a href="intelligence.html" class="mobile-nav-link">Intelligence</a>
+    <a href="economics.html" class="mobile-nav-link">Economics</a>
+    <a href="trust.html" class="mobile-nav-link">Trust center</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    </div>
   </div>
 
-  <main>
-    <!-- SECTION 01 — HERO -->
-    <section id="hero" style="min-height:92vh;display:flex;align-items:center;padding:clamp(7.5rem, 12vw, 10.5rem) 1.5rem 4rem;box-sizing:border-box;position:relative;background:radial-gradient(ellipse at 50% 15%, rgba(0, 229, 255, 0.08) 0%, #353839 75%);">
-      <div class="container" style="max-width:1180px;margin:auto;text-align:left;">
-        
-        <div class="mono" style="font-size:0.78rem;font-weight:700;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:1.5rem;display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,229,255,0.06);padding:0.35rem 0.85rem;border-radius:9999px;border:1px solid rgba(0,229,255,0.25);">
-          <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;">hub</span>
-          THE COORDINATION LAYER FOR ENTERTAINMENT
-        </div>
+  <main id="main-content">
+    <!-- SECTION 01 — BENTO GRID HERO -->
+    <section class="hero-section bento-hero" aria-label="Hero Overview">
+      <div class="bento-hero-grid">
 
-        <h1 style="font-size:clamp(2.4rem, 5.5vw, 4.6rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;text-transform:uppercase;color: #FFFFFF;margin:0 0 1.5rem;max-width:1080px;">
-          Entertainment doesn't have a resource problem.<br>
-          <span style="color: #FFFFFF;">It has a coordination problem.</span>
-        </h1>
-
-        <p style="font-size:clamp(1.1rem, 2vw, 1.3rem);line-height:1.75;color: #FFFFFF;max-width:860px;margin:0 0 2rem;">
-          DigiSynq connects verified talent, IP, stages, gear, capital and distribution into coordinated production pathways — helping entertainment resources move from idle to active.
-        </p>
-
-        <!-- Brand Principles Bar -->
-        <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;margin-bottom:2.25rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.08);">
-          <div class="mono" style="font-size:0.85rem;color: #FFFFFF;font-weight:700;">
-            &bull; PRINCIPLE: &ldquo;We don't own the assets. We make them move.&rdquo;
+        <!-- CARD 1: Headline — "coordinate better, synq closer" -->
+        <div class="bento-hero-card bento-card-cream bento-headline-card" id="bento-headline">
+          <div class="bento-card-ambient-glow glow-violet"></div>
+          <div class="bento-metaphor-tag">
+            <span class="status-indicator-dot teal"></span>
+            Zero-Friction Protocol &bull; v2.6
           </div>
-          <div class="mono" style="font-size:0.85rem;color: #FFFFFF;">
-            &bull; &ldquo;Waste less. Sync more.&rdquo;
+          <h1 class="bento-headline-text">
+            coordinate<br>
+            better, <span class="bento-text-gradient-cyan"><em>synq</em></span><br>
+            <span class="bento-text-gradient-violet"><em>closer</em></span>
+          </h1>
+          <div class="bento-headline-foot">
+            <span class="foot-label">Autonomous Production Layer</span>
+            <span class="foot-badge"><span class="status-indicator-dot"></span>Deterministic</span>
           </div>
         </div>
 
-        <!-- Primary CTAs -->
-        <div style="display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center;margin-bottom:2.5rem;">
-          <a href="synq.html" class="btn btn-primary" style="padding:0.95rem 2.4rem;font-size:1rem;font-weight:700;">
-            Start a synq &rarr;
-          </a>
-          <a href="platform.html" class="btn btn-secondary" style="padding:0.95rem 2rem;font-size:1rem;">
-            SEE HOW IT WORKS
-          </a>
-          <a href="company.html" class="btn btn-secondary" style="padding:0.95rem 1.8rem;font-size:1rem;">
-            WHY DIGISYNQ
-          </a>
+        <!-- CARD 2: Handshake — Bilateral Protocol Metaphor -->
+        <div class="bento-hero-card bento-card-cream bento-handshake-card" id="bento-handshake">
+          <div class="bento-card-ambient-glow glow-blue"></div>
+          <div class="bento-handshake-inner">
+            <div class="bento-meta-pill">
+              <span class="status-indicator-dot"></span>
+              Instant Handshake
+            </div>
+            <div class="bento-metaphor-headline">Frictionless Alignment</div>
+            <div class="bento-synq-flow">
+              <span class="synq-node">Producer</span>
+              <div class="synq-line-wrap">
+                <span class="synq-line">
+                  <span class="synq-pulse-comet"></span>
+                </span>
+                <span class="synq-metric">⚡ 12ms synq</span>
+              </div>
+              <span class="synq-node">Guild</span>
+            </div>
+            <div class="bento-chip-row">
+              <span class="bento-mini-chip highlight">✓ Escrow Synq</span>
+              <span class="bento-mini-chip">0% Middlemen</span>
+              <span class="bento-mini-chip">Bilateral SLA</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Immediate User-Entry Situations Strip -->
-        <div>
-          <div class="mono" style="font-size:0.75rem;color: #FFFFFF;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">
-            WHAT IS YOUR IMMEDIATE SITUATION? CHOOSE AN ENTRY PATHWAY:
+        <!-- CARD 3: Event / Schedule card (red) -->
+        <div class="bento-hero-card bento-card-red bento-event-card" id="bento-event">
+          <div class="bento-card-ambient-glow glow-rose"></div>
+          <div class="bento-event-inner">
+            <div class="bento-event-meta">
+              <span class="bento-live-badge"><span class="status-indicator-dot rose"></span>STAGE 04 &bull; LIVE</span>
+              <div class="bento-sound-waveform" title="Live audio visualizer">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="bento-event-title">
+              Instant<br>Stage Lock
+            </div>
+            <div class="bento-event-sub-row">
+              <span class="bento-event-sub">Zero holdover waste</span>
+              <span class="bento-sub-pill">$0 Lock Fee</span>
+            </div>
           </div>
-          <div style="display:flex;gap:0.65rem;flex-wrap:wrap;">
-            <a href="solutions.html#have" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
-              I HAVE SOMETHING &rarr;
-            </a>
-            <a href="solutions.html#need" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
-              I NEED SOMETHING &rarr;
-            </a>
-            <a href="solutions.html#underused" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
-              SOMETHING IS UNDERUSED &rarr;
-            </a>
-            <a href="solutions.html#blocked" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
-              SOMETHING IS BLOCKED &rarr;
-            </a>
-            <a href="solutions.html#move" class="btn btn-secondary" style="padding:0.5rem 1rem;font-size:0.82rem;border-color:rgba(0,229,255,0.3);color: #FFFFFF;">
-              SOMETHING NEEDS TO MOVE &rarr;
-            </a>
+        </div>
+
+        <!-- CARD 4: DigiSynq Real Brand Logo (teal) -->
+        <div class="bento-hero-card bento-card-teal bento-logo-card" id="bento-logo">
+          <div class="bento-logo-halo"></div>
+          <div class="bento-brand-lockup">
+            <div class="bento-meta-pill mini">
+              <span class="status-indicator-dot teal"></span>
+              Verified Standard
+            </div>
+            <img src="assets/img/digisynq-brand-logo.png" alt="DigiSynq" class="bento-real-logo" width="220" height="61">
+            <div class="bento-logo-sub">Coordination OS</div>
+          </div>
+        </div>
+
+        <!-- CARD 5: Tagline — 4 Pillars Metaphor -->
+        <div class="bento-hero-card bento-card-cream bento-tagline-card" id="bento-tagline">
+          <div class="bento-card-ambient-glow glow-indigo"></div>
+          <div class="bento-meta-pill" style="margin-bottom: 0.85rem;">The Production Mesh</div>
+          <div class="bento-tagline-heading">People. Places.<br>Gear. Capital.</div>
+          <div class="bento-pillars-chips">
+            <span class="pillar-chip"><span class="pillar-dot dot-1"></span>Talent</span>
+            <span class="pillar-chip"><span class="pillar-dot dot-2"></span>Stages</span>
+            <span class="pillar-chip"><span class="pillar-dot dot-3"></span>Packages</span>
+            <span class="pillar-chip"><span class="pillar-dot dot-4"></span>Escrow</span>
+          </div>
+          <div class="bento-tagline-url">[ deterministic coordination ]</div>
+        </div>
+
+        <!-- CARD 6: Chat bubbles (cream) -->
+        <div class="bento-hero-card bento-card-cream bento-chat-card" id="bento-chat">
+          <div class="bento-chat-header">
+            <span class="bento-card-header-tag">Instant Dispatch</span>
+            <span class="bento-chat-time">09:41 AM</span>
+          </div>
+          <div class="bento-chat-bubbles">
+            <div class="bento-chat-msg incoming">
+              <div class="bento-chat-avatar">DS</div>
+              <div class="bento-chat-bubble bubble-dark">Soundstage 02 free tomorrow?</div>
+            </div>
+            <div class="bento-chat-msg outgoing">
+              <div class="bento-chat-avatar check">✓</div>
+              <div class="bento-chat-bubble bubble-green">Locked &amp; Synqd &bull; Hold confirmed</div>
+            </div>
+            <div class="bento-chat-status">
+              <span>⚡ 1.2s settlement</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 7: Speech bubble with avatars (teal) -->
+        <div class="bento-hero-card bento-card-teal bento-speech-card" id="bento-speech">
+          <div class="bento-card-ambient-glow glow-teal"></div>
+          <div class="bento-speech-bubble">
+            <span class="status-indicator-dot"></span>
+            3 Guilds Synqd
+          </div>
+          <div class="bento-speech-avatars">
+            <div class="bento-guild-badge av-1" title="Director"><span class="role-text">DIR</span></div>
+            <div class="bento-guild-badge av-2" title="Director of Photography"><span class="role-text">DP</span></div>
+            <div class="bento-guild-badge av-3" title="Production Lead"><span class="role-text">PROD</span></div>
+          </div>
+          <div class="bento-speech-sub">Real-Time Consensus &bull; 100% Signed</div>
+        </div>
+
+        <!-- CARD 8: Network / People — Decentralized Mesh Metaphor -->
+        <div class="bento-hero-card bento-card-teal bento-people-card" id="bento-people">
+          <div class="bento-card-ambient-glow glow-cyan"></div>
+          <div class="bento-network-inner">
+            <div class="bento-network-header">
+              <div class="bento-meta-pill">
+                <span class="status-indicator-dot teal"></span>
+                Decentralized Mesh
+              </div>
+              <span class="bento-live-ping">● LIVE</span>
+            </div>
+            <div class="bento-network-metric">
+              <span class="network-number">4,800+</span>
+              <div class="network-metric-side">
+                <span class="network-unit">Verified Nodes</span>
+                <span class="network-growth">▲ +24% capacity</span>
+              </div>
+            </div>
+            <div class="bento-stat-bars">
+              <div class="bento-mini-bar">
+                <span class="bar-label">Talent</span>
+                <div class="mini-bar-track"><div class="mini-bar-fill fill-talent" style="width: 98%;"></div></div>
+                <span class="bar-pct">98%</span>
+              </div>
+              <div class="bento-mini-bar">
+                <span class="bar-label">Stages</span>
+                <div class="mini-bar-track"><div class="mini-bar-fill fill-stages" style="width: 94%;"></div></div>
+                <span class="bar-pct">94%</span>
+              </div>
+              <div class="bento-mini-bar">
+                <span class="bar-label">Escrow</span>
+                <div class="mini-bar-track"><div class="mini-bar-fill fill-escrow" style="width: 100%;"></div></div>
+                <span class="bar-pct">100%</span>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
+
+      <!-- CTA Row -->
+      <div class="bento-hero-cta">
+        <a href="start-a-synq.html" class="btn btn-primary btn-lg btn-pill">Start a synq &rarr;</a>
+        <a href="how-it-works.html" class="btn btn-secondary btn-lg btn-pill">See how it works</a>
+        <a href="solutions.html" class="btn btn-secondary btn-lg btn-pill">Explore solutions</a>
+      </div>
     </section>
 
-    <!-- SECTION 02 — THE PROBLEM (SYSTEM DIAGNOSIS) -->
-    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#060606;">
-      <div class="container" style="max-width:1180px;">
-        <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
-          <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">troubleshoot</span>
-          02 // THE PROBLEM
-        </div>
-        <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;line-height:1.12;color: #FFFFFF;margin:0 0 1.5rem;text-transform:uppercase;">The resources exist.<br>
-          <span style="color: #FFFFFF;">They are isolated in silos.</span>
-        </h2>
-        <p style="font-size:1.12rem;line-height:1.75;color: #FFFFFF;max-width:860px;margin:0 0 3rem;">
-          Across Mumbai, Hyderabad, Chennai, Bengaluru, Kochi, and international production hubs, the elements of production already exist: proven directors, guild-certified technicians, acoustic soundstages, camera packages, post houses, private capital, and audience demand. Yet because these participants operate without shared visibility, valuable capacity sits idle while projects stall.
-        </p>
-
-        <div style="margin-bottom:3rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#FFFFFF;display:flex;align-items:center;gap:0.45rem;margin-bottom:1.25rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;color:#FFFFFF;">error_outline</span>
-            THE 8 STRUCTURAL DISCONNECTIONS OF ENTERTAINMENT
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;">
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">01 // IP &amp; STORIES</div>
-              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Scripts gather dust in drawers.</h3>
-              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Great IP lacks transparent packaging and direct pathways to verified producers and capital pods.</p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">02 // TALENT &amp; CREW</div>
-              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Verified craft sits on the bench.</h3>
-              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Skilled cinematographers and technicians wait weeks between informal word-of-mouth calls.</p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">03 // SOUNDSTAGES</div>
-              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Stages bleed revenue on dark days.</h3>
-              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Acoustic complexes sit empty between major tentpole blocks due to opaque booking schedules.</p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">04 // CINEMA GEAR</div>
-              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">High-end packages sit in flight cases.</h3>
-              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Top-tier sensor packages and anamorphic glass depreciate without active, cross-regional utilization.</p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">05 // POST &amp; VFX</div>
-              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Finishing pipelines stall in ambiguity.</h3>
-              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">VFX and sound houses face endless scope creep without objective milestone definitions and verified handoffs.</p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">06 // DISTRIBUTION</div>
-              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Finished films get stranded in traffic.</h3>
-              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Completed productions struggle to clear regional windowing, OTT specs, and diaspora theatrical slots.</p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">07 // AUDIENCE DEMAND</div>
-              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Communities starve for fresh cinema.</h3>
-              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Passionate audience niches remain disconnected from localized screenings and community premieres.</p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.25rem 1.4rem;border-radius:8px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.35rem;">08 // CAPITAL &amp; RISK</div>
-              <h3 style="font-size:1.05rem;font-weight:700;color:#FFFFFF;margin:0 0 0.35rem;">Financiers retreat from unverified risk.</h3>
-              <p style="font-size:0.85rem;line-height:1.6;color:#666362;margin:0;">Institutional capital waits on the sidelines without audited milestones and regulated escrow infrastructure.</p>
-            </div>
-          </div>
+    <!-- SECTION 02 — LINEAR BENTO GRID: THE COORDINATION PROBLEM -->
+    <section class="section-block" aria-label="The Coordination Problem">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">01 / Structural Imperative</div>
+          <h2 class="section-title text-gradient">Global production capacity exists.<br>Institutional coordination does not.</h2>
+          <p class="section-desc">
+            Feature productions, episodic slates, and commercial ventures surrender up to 23% of total capitalization to friction, idle stage overhead, and counterparty opacity. DigiSynq replaces fragmented intermediary brokerage with a deterministic coordination infrastructure.
+          </p>
         </div>
 
-        <!-- MASTER BENTO SHOWCASE DASHBOARD (Sample-Matched Architecture) -->
-        <div class="bento-master-chassis">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding:0 8px;flex-wrap:wrap;gap:10px;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <span class="material-symbols-outlined" style="color: #FFFFFF;font-size:1.3rem;">dashboard</span>
-              <span class="mono" style="font-size:0.75rem;letter-spacing:0.15em;color: #FFFFFF;font-weight:800;text-transform:uppercase;">
-                DIGISYNQ // ACTIVE COORDINATION DASHBOARD
-              </span>
+        <div class="bento-grid" style="margin-bottom: 3rem;">
+          <!-- Bento 1: Silo 01 -->
+          <div class="bento-card bento-span-4">
+            <div>
+              <div class="label-mono" style="margin-bottom: 0.75rem;">Vector 01 &bull; Physical Infrastructure Drag</div>
+              <h3 style="margin-bottom: 0.75rem;">Unsynchronized Stages & Capital Assets</h3>
+              <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary);">
+                Acoustically certified soundstages, LED virtual production volumes, and Tier-1 cinema packages sit dormant between bookings absent real-time capacity syndication and programmatic availability telemetry.
+              </p>
             </div>
-            <div style="display:flex;align-items:center;gap:12px;">
-              <span class="status-indicator status-live" style="font-size:0.72rem;">SYSTEM LIVE</span>
-              <span class="mono" style="font-size:0.75rem;color: #FFFFFF;">NODE TELEMETRY V2.4</span>
+            <div class="bento-micro-ui">
+              <div class="bento-progress-row">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-secondary);">
+                  <span>Stage Vacancy Window</span>
+                  <span class="mono" style="color: var(--status-amber);">42% Idle Gap</span>
+                </div>
+                <div class="linear-progress-bar">
+                  <div class="linear-progress-fill" style="width: 42%; background: var(--status-amber);"></div>
+                </div>
+              </div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">Soundstages NC-25</span>
+                <span class="bento-chip">LED Volumes</span>
+                <span class="bento-chip">Large Format Cine</span>
+              </div>
             </div>
           </div>
 
-          <div class="bento-master-grid">
+          <!-- Bento 2: Silo 02 -->
+          <div class="bento-card bento-span-4">
+            <div>
+              <div class="label-mono" style="margin-bottom: 0.75rem;">Vector 02 &bull; Specialized Human Capital</div>
+              <h3 style="margin-bottom: 0.75rem;">Unverified Availability & Guild Routing</h3>
+              <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary);">
+                Principal crew assembly remains constrained to informal phone trees and unverified hold drops, lacking cryptographic credit verification, DGA/IATSE jurisdictional checks, and immutable calendar lock.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Scheduling Bottleneck</div>
+              <div class="mono" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
+                Phone tree latency &bull; Unverified hold drops &bull; Zero credit audit
+              </div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">IATSE 600 / DGA</span>
+                <span class="bento-chip">Supervising Sound</span>
+                <span class="bento-chip">Unreal 5.4 Specialists</span>
+              </div>
+            </div>
+          </div>
 
-            <!-- COLUMN 1 (LEFT): Hero Asset Card + Persona Card with Floating Action Pills -->
-            <div class="bento-col-left">
-
-              <!-- Left Card 1: Vibrant Asset Hero Card -->
-              <div class="bento-tile bento-tile-orange" style="min-height:280px;padding:26px;">
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-                  <span class="mono" style="font-size:0.7rem;letter-spacing:0.12em;background:rgba(0,0,0,0.25);padding:4px 10px;border-radius:100px;font-weight:800;">
-                    CATEGORY 04 // GEAR
-                  </span>
-                  <span class="material-symbols-outlined" style="font-size:1.5rem;opacity:0.9;">videocam</span>
+          <!-- Bento 3: Silo 03 -->
+          <div class="bento-card bento-span-4">
+            <div>
+              <div class="label-mono" style="margin-bottom: 0.75rem;">Vector 03 &bull; Capital Settlement Latency</div>
+              <h3 style="margin-bottom: 0.75rem;">Liquidity Impasse & Escrow Stagnation</h3>
+              <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary);">
+                Milestone authorizations, completion bond audits, and vendor disbursements suffer 45–60 day reconciliation cycles, imposing costly bridge interest drag and counterparty insolvency risk.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="bento-progress-row">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-secondary);">
+                  <span>Settlement Latency</span>
+                  <span class="mono" style="color: var(--status-coral);">45–60 Days Drag</span>
                 </div>
-
-                <div style="margin:24px 0 12px;text-align:center;">
-                  <div style="font-size:3.8rem;line-height:1;filter:drop-shadow(0 10px 20px rgba(0,0,0,0.3));">🎥</div>
+                <div class="linear-progress-bar">
+                  <div class="linear-progress-fill" style="width: 85%; background: var(--status-coral);"></div>
                 </div>
+              </div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">Bridge Debt Drag</span>
+                <span class="bento-chip">Intermediary Spread</span>
+              </div>
+            </div>
+          </div>
 
+          <!-- Bento 4: The Coordinated Solution (Span 8 Gradient) -->
+          <div class="bento-card bento-span-8 bento-card-gradient">
+            <div class="bento-glow-top" aria-hidden="true"></div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                <div class="label-mono" style="color: var(--accent-indigo);">The DigiSynq Protocol &bull; Neutral Coordination Layer</div>
+                <span class="badge badge-live">[DETERMINISTIC PIPELINE]</span>
+              </div>
+              <h3 style="font-size: 1.65rem; margin-bottom: 0.75rem;">From Fragmented Brokerage to Deterministic Execution Rails</h3>
+              <p style="max-width: 680px; margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+                DigiSynq operates as the institutional protocol connecting verified physical demand with authenticated market supply. By structuring cryptographically certified inventory, standardized milestone covenants, and automated banking escrow, productions eliminate idle drag and accelerate capital velocity.
+              </p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="solutions.html#need" class="btn btn-primary btn-sm btn-pill">Procure Capacity &rarr;</a>
+              <a href="solutions.html#have" class="btn btn-secondary btn-sm btn-pill">Syndicate Inventory &rarr;</a>
+              <a href="how-it-works.html" class="btn btn-secondary btn-sm btn-pill">Operating Model</a>
+            </div>
+          </div>
+
+          <!-- Bento 5: Measured Coordination Metric (Span 4) -->
+          <div class="bento-card bento-span-4" style="background: var(--bg-surface-elevated);">
+            <div>
+              <div class="label-mono" style="margin-bottom: 0.5rem;">Deterministic Execution Metric</div>
+              <div class="bento-stat-num text-gradient">0</div>
+              <div class="bento-stat-label" style="margin-bottom: 1rem;">Preventable Production Delays</div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                When physical facility telemetry, optical specs, and union availability are verified pre-flight, automated contingency protocols safeguard schedule continuity.
+              </p>
+            </div>
+            <div class="bento-chip-group">
+              <span class="bento-chip"><span class="status-dot"></span> Certified Pre-Flight</span>
+              <span class="bento-chip">Net-24H Settlement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03 — LINEAR BENTO GRID: WHAT DIGISYNQ DOES -->
+    <section class="section-block" aria-label="The 6-Step Operating Model">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">02 / Canonical Operating Model</div>
+          <h2 class="section-title text-gradient">How DigiSynq Coordinates</h2>
+          <p class="section-desc">
+            A standardized, disciplined 6-stage lifecycle applied across institutional soundstage holds, Tier-1 camera syndication, guild crew assembly, and post-production pipelines.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Bento Row 1: Verify & Match (Span 7) -->
+          <div class="bento-card bento-span-7">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span class="label-mono">Stages 01 & 02 &bull; Verification & Multi-Constraint Matching</span>
+                <span class="badge badge-live">[ALGORITHMIC MATCHING]</span>
+              </div>
+              <h3 style="font-size: 1.45rem; margin-bottom: 0.75rem;">Deterministic Multi-Variable Constraint Solving</h3>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Validate physical and legal truth prior to pairing. The engine checks corporate tax entities, NC acoustic attenuation ratings, serialized optical collimation, and union compliance before solving multidimensional schedules.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.75rem; margin-bottom: 0.5rem;">
+                <span class="mono" style="color: var(--text-primary); font-weight: 500;">Constraint Resolution Simulator</span>
+                <span class="mono" style="color: var(--status-emerald); font-weight: 600;">99.4% Match Score</span>
+              </div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">&#10003; 80ft Curved Volume</span>
+                <span class="bento-chip">&#10003; 250kW Clean Feed</span>
+                <span class="bento-chip">&#10003; Alexa 35 Package</span>
+                <span class="bento-chip">&#10003; Oct 14–22 Window</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Row 1: Commit (Span 5) -->
+          <div class="bento-card bento-span-5">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span class="label-mono">Stage 03 &bull; Commit</span>
+                <span class="badge badge-live">[Standardized terms]</span>
+              </div>
+              <h3 style="font-size: 1.45rem; margin-bottom: 0.75rem;">Bilateral Agreement & Escrow Depository Lock</h3>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Compress weeks of contract negotiation into standardized bilateral covenants, executed with cryptographic signatures and secured in regulated partner escrow accounts.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="mono" style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.6;">
+                &bull; Standardized bilateral covenants executed<br>
+                &bull; 35% mobilization locked in chartered bank escrow<br>
+                &bull; Immutable 24-hour capacity reservation established
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Row 2: Execute (Span 5) -->
+          <div class="bento-card bento-span-5">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span class="label-mono">Stage 04 &bull; Execute</span>
+                <span class="badge badge-live">[DEPENDENCY TELEMETRY]</span>
+              </div>
+              <h3 style="font-size: 1.45rem; margin-bottom: 0.75rem;">Real-Time Operational Telemetry</h3>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Granular milestone surveillance across certified call sheets, camera package health, union turnaround rules, and facility load-in logistics.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="bento-progress-row">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-secondary);">
+                  <span>Shoot Schedule Adherence</span>
+                  <span class="mono" style="color: var(--status-emerald);">On Schedule</span>
+                </div>
+                <div class="linear-progress-bar">
+                  <div class="linear-progress-fill" style="width: 100%; background: var(--status-emerald);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Row 2: Settle & Learn (Span 7) -->
+          <div class="bento-card bento-span-7">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span class="label-mono">Stages 05 & 06 &bull; Settlement & Institutional Reputation</span>
+                <span class="badge badge-live">[REGULATED RAILS]</span>
+              </div>
+              <h3 style="font-size: 1.45rem; margin-bottom: 0.75rem;">Automated Multi-Sig Escrow Disbursement & Reputation Consensus</h3>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Cryptographically certified wrap inspections trigger sub-24-hour milestone disbursements via regulated banking partners. Completed production contracts automatically update bilateral solvency indexes and delivery reliability metrics.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem;">
+                <span class="mono" style="color: var(--text-primary);">Wrap Inspection Sign-off</span>
+                <span class="badge badge-live">CLEARED &bull; NET 24H PAYOUT</span>
+              </div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.5rem;">
+                Bilateral trust score updated: +15pts verified execution credit.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: right;">
+          <a href="how-it-works.html" class="text-link">Explore the detailed 6-step documentation &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04 — ONE REALISTIC WORKED EXAMPLE -->
+    <section class="section-block" style="background: rgba(255, 255, 255, 0.01);" aria-label="Worked Case Study">
+      <div class="container">
+        <div class="section-header">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.75rem;">
+            <div class="section-label" style="margin: 0;">03 / Operational Case Study</div>
+            <span class="badge badge-illustrative">[ILLUSTRATIVE MODEL &bull; VIRTUAL STAGE COORDINATION]</span>
+          </div>
+          <h2 class="section-title text-gradient">Mission-Critical Virtual Stage Syndication: 192-Hour Window</h2>
+          <p class="section-desc">
+            A $14M Tier-1 feature film faced a catastrophic substation failure at their contracted UK facility, demanding a certified LED volume stage with 250kW clean power and Unreal 5.4 gen-lock within 8 calendar days.
+          </p>
+        </div>
+
+        <div class="card card-solid" style="padding: 2rem;">
+          <nav class="linear-window-tabs" style="margin-bottom: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1rem;" aria-label="Case Study Progression">
+            <button class="timeline-tab linear-win-tab active" data-target="pane-req">01 Requirement</button>
+            <button class="timeline-tab linear-win-tab" data-target="pane-avail">02 Availability</button>
+            <button class="timeline-tab linear-win-tab" data-target="pane-verif">03 Verification</button>
+            <button class="timeline-tab linear-win-tab" data-target="pane-match">04 Match</button>
+            <button class="timeline-tab linear-win-tab" data-target="pane-terms">05 Commercial Terms</button>
+            <button class="timeline-tab linear-win-tab" data-target="pane-exec">06 Execution & Settle</button>
+          </nav>
+
+          <div id="pane-req" class="timeline-content-pane active">
+            <div class="grid-2">
+              <div>
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Pre-Production Disturbance & Mandate Intake</div>
+                <h3 style="margin-bottom: 1rem;">Primary Facility Substation Failure</h3>
+                <p>
+                  A $14M feature production required 6 shooting days on an LED volume with sub-frame Unreal Engine 5.4 gen-lock synchronization. The primary facility suffered an unrecoverable electrical failure, threatening a $480,000 contingency burn.
+                </p>
+              </div>
+              <div class="card" style="background: rgba(0,0,0,0.4);">
+                <div class="label-mono" style="margin-bottom: 0.5rem;">DigiSynq Protocol Intake</div>
+                <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                  &bull; Intake mandate: Virtual Production Stage Replacement<br>
+                  &bull; Constraints: &ge;80ft curved volume, 250kW clean power<br>
+                  &bull; Optical requirements: 4K camera tracking, gen-lock sync<br>
+                  &bull; Production deadline: 192 hours to principal photography
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="pane-avail" class="timeline-content-pane">
+            <div class="grid-2">
+              <div>
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Network Capacity Discovery & Syndication</div>
+                <h3 style="margin-bottom: 1rem;">Unallocated Stage Window Identified</h3>
+                <p>
+                  A commercial production at an accredited partner soundstage wrapped 4 days early, opening an unexpected 10-day capacity window on a certified 95ft volume stage within 35 miles of London Heathrow.
+                </p>
+              </div>
+              <div class="card" style="background: rgba(0,0,0,0.4);">
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Algorithmic Routing Telemetry</div>
+                <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                  &bull; Capacity query matched two pre-cleared facilities<br>
+                  &bull; Stage A: 95ft volume confirmed available Oct 13<br>
+                  &bull; Facility telemetry: 250kW clean feed, NC-25 attenuation<br>
+                  &bull; Dead facility gap converted to active production yield
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="pane-verif" class="timeline-content-pane">
+            <div class="grid-2">
+              <div>
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Technical Telemetry & Fiduciary Audit</div>
+                <h3 style="margin-bottom: 1rem;">Cryptographic Pre-Flight System Audit</h3>
+                <p>
+                  DigiSynq verified the facility's £10M commercial general liability insurance, Brompton SX40 calibration certificates, Mo-Sys StarTracker optical alignment, and confirmed optical compatibility with the production's Alexa 35 package.
+                </p>
+              </div>
+              <div class="card" style="background: rgba(0,0,0,0.4);">
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Verification Telemetry</div>
+                <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                  &bull; Processor spec: Brompton SX40 dual-redundant gen-lock<br>
+                  &bull; Tracking system: Mo-Sys StarTracker fiducial map certified<br>
+                  &bull; Underwriting audit: Completion bond pre-approval cleared<br>
+                  &bull; Pre-flight audit turnaround: 14 hours from intake
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="pane-match" class="timeline-content-pane">
+            <div class="grid-2">
+              <div>
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Deterministic Coordination Protocol</div>
+                <h3 style="margin-bottom: 1rem;">Bilateral Counterparty Execution Lock</h3>
+                <p>
+                  Both counterparties received standardized bilateral terms. The line producer validated optical sync profiles; the facility director approved prep schedules, power staging, and IATSE/Bectu crew load-in protocols.
+                </p>
+              </div>
+              <div class="card" style="background: rgba(0,0,0,0.4);">
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Protocol State</div>
+                <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                  &bull; Match confirmed: 100% technical and regulatory compatibility<br>
+                  &bull; Capacity hold: Immutable 24-hour reservation established<br>
+                  &bull; Counterparty credential: Institutional Tier-1 accreditation
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="pane-terms" class="timeline-content-pane">
+            <div class="grid-2">
+              <div>
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Contractual Execution & Depository Escrow</div>
+                <h3 style="margin-bottom: 1rem;">Standardized Milestone Covenants</h3>
+                <p>
+                  Standardized commercial agreement executed without legal gridlock: 35% mobilization deposit locked into licensed escrow partner upon load-in, 65% balance disbursed upon certified wrap inspection.
+                </p>
+              </div>
+              <div class="card" style="background: rgba(0,0,0,0.4);">
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Settlement Architecture</div>
+                <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                  &bull; Standardized bilateral covenants executed digitally<br>
+                  &bull; Mobilization escrow secured via chartered partner bank<br>
+                  &bull; Zero negotiation gridlock: execution completed in 4 hours
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="pane-exec" class="timeline-content-pane">
+            <div class="grid-2">
+              <div>
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Milestone Delivery & Consensus Settlement</div>
+                <h3 style="margin-bottom: 1rem;">Flawless Delivery & Reputation Accretion</h3>
+                <p>
+                  Principal photography concluded precisely on schedule. Digital wrap certificate authenticated by producer and facility director. Regulated escrow partner released remaining funds within 18 hours.
+                </p>
+              </div>
+              <div class="card" style="background: rgba(0,0,0,0.4);">
+                <div class="label-mono" style="margin-bottom: 0.5rem;">Audited Outcomes</div>
+                <div class="mono" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                  &bull; Schedule integrity: 0 lost principal photography days<br>
+                  &bull; Facility utilization recovered: £72,000 idle gap monetized<br>
+                  &bull; Settlement latency: 18 hours from certified wrap sign-off
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05 — LINEAR ASYMMETRIC BENTO GRID: THE 8 PILLARS -->
+    <section class="section-block" aria-label="Ecosystem Network">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">04 / The Coordinated Production Matrix</div>
+          <h2 class="section-title text-gradient">Eight Pillars of Institutional Production</h2>
+          <p class="section-desc">
+            DigiSynq organizes entertainment infrastructure into eight verified capacity domains governed by deterministic coordination protocols.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Bento 1: Physical Infrastructure (Span 8) -->
+          <div class="bento-card bento-span-8 bento-card-gradient">
+            <div class="bento-glow-top" aria-hidden="true"></div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span class="label-mono">Domains 03 & 04 &bull; Physical Infrastructure & Cinema Hardware</span>
+                <span class="badge badge-live">[LIVE & PILOT RAILS]</span>
+              </div>
+              <h3 style="font-size: 1.65rem; margin-bottom: 0.75rem;">Acoustic Soundstages, Virtual Volumes & Large Format Optics</h3>
+              <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); max-width: 680px; margin-bottom: 1.5rem;">
+                Acoustically certified soundstages (NC-25), LED virtual production volumes, water stages, and serialized cinema hardware packages (Arri Alexa 35, Sony Venice 2, Cooke Anamorphic/i) authenticated by optical collimation benchmarks and verified maintenance histories.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="grid-2" style="gap: 1rem;">
                 <div>
-                  <h3 style="font-size:1.5rem;font-weight:800;color: #FFFFFF;margin:0 0 4px;letter-spacing:-0.02em;">
-                    ARRI Alexa 35 Package
-                  </h3>
-                  <div style="font-size:1.8rem;font-weight:800;font-family:var(--font-headline);color: #FFFFFF;line-height:1.2;">
-                    ₹45,000 <span style="font-size:0.85rem;font-weight:600;opacity:0.85;">/ Day</span>
+                  <div class="label-mono" style="margin-bottom: 0.35rem;">Facility Telemetry</div>
+                  <div class="mono" style="font-size: 0.78rem; color: var(--text-primary); line-height: 1.6;">
+                    &bull; NC-25 / NC-30 acoustic isolation certs<br>
+                    &bull; 250kW–400kW transformer clean feeds<br>
+                    &bull; Brompton SX40 / Unreal 5.4 gen-lock
                   </div>
-                  <div style="font-size:0.78rem;opacity:0.9;margin-top:6px;font-family:var(--font-mono);">
-                    BENCH QC PASSED &bull; OPTICAL COLLIMATION 100%
+                </div>
+                <div>
+                  <div class="label-mono" style="margin-bottom: 0.35rem;">Serialized Hardware</div>
+                  <div class="mono" style="font-size: 0.78rem; color: var(--text-primary); line-height: 1.6;">
+                    &bull; 100% serialized maintenance histories<br>
+                    &bull; Automated prep bay check-in/out telemetry<br>
+                    &bull; Certified optical collimator bench tests
                   </div>
                 </div>
               </div>
-
-              <!-- Left Card 2: Interactive Persona with Floating Action Pills -->
-              <div class="bento-tile bento-tile-blue" style="min-height:260px;padding:24px;position:relative;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-                  <span class="mono" style="font-size:0.7rem;letter-spacing:0.12em;background:rgba(0,0,0,0.2);padding:4px 10px;border-radius:100px;font-weight:800;">
-                    PRODUCTION CREW
-                  </span>
-                  <span class="material-symbols-outlined" style="font-size:1.3rem;">groups</span>
-                </div>
-
-                <div style="text-align:center;margin:10px 0 16px;">
-                  <div style="font-size:3rem;line-height:1;">🎬</div>
-                  <div style="font-family:var(--font-headline);font-weight:800;font-size:1.15rem;color: #FFFFFF;margin-top:6px;">
-                    Lead Cinematographer Attached
-                  </div>
-                  <div style="font-size:0.75rem;opacity:0.9;font-family:var(--font-mono);">UCNI VERIFIED #8849-DP</div>
-                </div>
-
-                <!-- Floating Action Pills -->
-                <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
-                  <a href="synq.html?action=director" class="bento-floating-chip">
-                    <span>🎬</span> <span>Director Attached</span>
-                  </a>
-                  <a href="synq.html?action=stage" class="bento-floating-chip">
-                    <span>🏛️</span> <span>Reserve Stage 04</span>
-                  </a>
-                  <a href="economics.html" class="bento-floating-chip">
-                    <span>🔒</span> <span>Escrow Deposit Funded</span>
-                  </a>
-                </div>
+              <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="network.html#stages" class="text-link">Explore Stages &rarr;</a>
+                <span style="color: var(--border-medium);">&bull;</span>
+                <a href="network.html#gear" class="text-link">Explore Gear Packages &rarr;</a>
               </div>
-
             </div>
+          </div>
 
-            <!-- COLUMN 2 (CENTER): Split Top + Hero Analytics Bar Chart + Split Bottom -->
-            <div class="bento-col-center">
-
-              <!-- Center Top Subgrid: 2 Compact Cards -->
-              <div class="bento-subgrid-2">
-
-                <!-- Center Top Left: Dispatch Peek / Mobile Node -->
-                <div class="bento-tile bento-tile-dark" style="padding:18px;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span class="mono" style="font-size:0.68rem;color: #FFFFFF;font-weight:700;">UCNI MOBILE DISPATCH</span>
-                    <span class="material-symbols-outlined" style="font-size:1rem;color: #FFFFFF;">phone_iphone</span>
-                  </div>
-                  <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:12px;">
-                    <div style="display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:4px;">
-                      <span style="color: #FFFFFF;">Call Sheet Call:</span>
-                      <strong style="color: #FFFFFF;">05:30 AM</strong>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:4px;">
-                      <span style="color: #FFFFFF;">Crew Muster:</span>
-                      <strong style="color: #FFFFFF;">38 / 38 (100%)</strong>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;font-size:0.75rem;">
-                      <span style="color: #FFFFFF;">Stage Lock:</span>
-                      <strong style="color: #FFFFFF;">Film City Floor 3</strong>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Center Top Right: Stacked Notifications -->
-                <div class="bento-tile bento-tile-dark" style="padding:18px;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                    <span class="mono" style="font-size:0.68rem;color: #FFFFFF;font-weight:700;">LIVE DISPATCH PULSE</span>
-                    <span style="width:8px;height:8px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 8px #FFFFFF;"></span>
-                  </div>
-                  <div style="display:flex;flex-direction:column;gap:6px;">
-                    <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;">
-                      <span style="font-size:0.72rem;color: #FFFFFF;">⚡ DOP Replacement Routed</span>
-                      <span class="mono" style="font-size:0.62rem;color: #FFFFFF;">JUST NOW</span>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;">
-                      <span style="font-size:0.72rem;color: #FFFFFF;">💳 Escrow Tranche B Released</span>
-                      <span class="mono" style="font-size:0.62rem;color: #FFFFFF;">4M AGO</span>
-                    </div>
-                  </div>
-                </div>
-
+          <!-- Bento 2: Verified Talent (Span 4) -->
+          <div class="bento-card bento-span-4">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span class="label-mono">Domain 01 &bull; Specialized Human Capital</span>
+                <span class="badge badge-pilot">[PILOT]</span>
               </div>
-
-              <!-- Center Middle: Hero Analytics Bar Chart (The Grand Centerpiece) -->
-              <div class="bento-tile bento-tile-orange" style="padding:28px;position:relative;overflow:hidden;">
-                <!-- Decorative Watermark Graphic -->
-                <div style="position:absolute;right:15px;top:10px;font-family:var(--font-headline);font-size:4.5rem;font-weight:900;color: #FFFFFF;letter-spacing:0.05em;pointer-events:none;">
-                  SYNQ
-                </div>
-
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
-                  <div>
-                    <div class="mono" style="font-size:0.72rem;letter-spacing:0.12em;font-weight:800;color: #FFFFFF;text-transform:uppercase;">
-                      PRODUCTION THROUGHPUT TELEMETRY
-                    </div>
-                    <div style="font-size:clamp(2.2rem, 3vw, 3.2rem);font-weight:900;line-height:1;margin:8px 0 4px;font-family:var(--font-headline);">
-                      44,500 <span style="font-size:1.1rem;font-weight:600;opacity:0.9;">Hours</span>
-                    </div>
-                    <div style="font-size:0.85rem;color: #FFFFFF;">
-                      Coordinated capacity mobilized across verified film &amp; commercial schedules
-                    </div>
-                  </div>
-                  <span class="mono" style="background:rgba(0,0,0,0.25);padding:6px 12px;border-radius:100px;font-size:0.75rem;font-weight:700;">
-                    LIVE CYCLE
-                  </span>
-                </div>
-
-                <!-- 7-Day Interactive CSS Bar Chart (Matching Sample Image Exactly) -->
-                <div class="bento-barchart-wrap">
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:48%;"></div>
-                    <span class="bento-barchart-label">Mon</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:62%;"></div>
-                    <span class="bento-barchart-label">Tue</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar highlight" style="height:88%;"></div>
-                    <span class="bento-barchart-label">Wed</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:70%;"></div>
-                    <span class="bento-barchart-label">Thu</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar highlight" style="height:100%;"></div>
-                    <span class="bento-barchart-label">Fri</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:76%;"></div>
-                    <span class="bento-barchart-label">Sat</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:55%;"></div>
-                    <span class="bento-barchart-label">Sun</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Center Bottom Subgrid: Ratings & Trust + Live Telemetry Radar Map -->
-              <div class="bento-subgrid-2">
-
-                <!-- Center Bottom Left: Rating / Credential Verification Card -->
-                <div class="bento-tile bento-tile-orange" style="padding:22px;">
-                  <div class="mono" style="font-size:0.7rem;font-weight:800;letter-spacing:0.1em;margin-bottom:8px;opacity:0.9;">
-                    RATINGS &amp; AUDITED WRAP
-                  </div>
-                  <div style="background:#FFFFFF;border-radius:18px;padding:14px;color: #FFFFFF;">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-                      <div style="width:32px;height:32px;border-radius:50%;background:#FFFFFF;color: #FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;">
-                        SK
-                      </div>
-                      <div>
-                        <div style="font-weight:800;font-size:0.82rem;line-height:1.2;">S. K. Verma</div>
-                        <div class="mono" style="font-size:0.65rem;color: #FFFFFF;font-weight:700;">✓ Verified Production Wrap</div>
-                      </div>
-                    </div>
-                    <p style="font-size:0.75rem;line-height:1.45;color: #FFFFFF;margin:0 0 8px;">
-                      "The replacement anamorphic prime set was bench-certified and on set 90 minutes before our morning roll."
-                    </p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color: #FFFFFF;">
-                      <span>Score: <strong style="color: #FFFFFF;">4.9 / 5.0</strong></span>
-                      <span style="color: #FFFFFF;letter-spacing:2px;">★★★★★</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Center Bottom Right: Live Radar / Geo Map Card -->
-                <div class="bento-tile bento-tile-dark" style="padding:20px;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span class="mono" style="font-size:0.7rem;color: #FFFFFF;font-weight:700;">STAGE TELEMETRY CORRIDOR</span>
-                    <span class="mono-tag teal" style="font-size:0.65rem;padding:2px 8px;">MUMBAI &rarr; HYD</span>
-                  </div>
-
-                  <!-- Radar Map Canvas Graphic -->
-                  <div class="bento-radar-map">
-                    <div class="bento-map-ping"></div>
-                    <div style="position:absolute;bottom:10px;left:10px;right:10px;background:rgba(8,10,14,0.85);backdrop-filter:blur(8px);border-radius:100px;padding:5px 12px;display:flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,0.1);">
-                      <span class="material-symbols-outlined" style="font-size:0.9rem;color: #FFFFFF;">navigation</span>
-                      <span style="font-size:0.7rem;color: #FFFFFF;font-weight:700;">Active Transit: Arriving in 18 mins</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Verified Heads of Department & Guild Personnel</h3>
+              <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Directors of Photography, Production Designers, Gaffers, and Virtual Production Technicians credentialed through authenticated DGA, IATSE 600/728/80, and PGA affiliations with immutable credit histories.
+              </p>
             </div>
-
-            <!-- COLUMN 3 (RIGHT): Special Menu / Module Catalog + Floating Status Pills -->
-            <div class="bento-col-right">
-
-              <!-- Right Card 1: Special Modules List (Nested Mini Cards) -->
-              <div class="bento-tile bento-tile-orange" style="padding:24px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-                  <h3 style="font-size:1.15rem;font-weight:800;color: #FFFFFF;margin:0;">
-                    Active Packages
-                  </h3>
-                  <span class="mono" style="font-size:0.7rem;background:rgba(0,0,0,0.25);padding:3px 8px;border-radius:100px;font-weight:700;">
-                    LIVE
-                  </span>
-                </div>
-
-                <!-- Nested Mini Item 1 -->
-                <div class="bento-nested-item">
-                  <div>
-                    <span class="mono" style="font-size:0.65rem;color: #FFFFFF;font-weight:800;">VERIFIED OPTICS</span>
-                    <div style="font-weight:800;font-size:0.85rem;color: #FFFFFF;">Master Anamorphic T1.9</div>
-                    <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;">₹18,000 / day</div>
-                  </div>
-                  <a href="synq.html?asset=optics" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
-                    SYNQ &rarr;
-                  </a>
-                </div>
-
-                <!-- Nested Mini Item 2 -->
-                <div class="bento-nested-item">
-                  <div>
-                    <span class="mono" style="font-size:0.65rem;color: #FFFFFF;font-weight:800;">STAGE CAPACITY</span>
-                    <div style="font-weight:800;font-size:0.85rem;color: #FFFFFF;">Acoustic Floor 04</div>
-                    <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;">₹65,000 / day</div>
-                  </div>
-                  <a href="synq.html?asset=stage" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
-                    SYNQ &rarr;
-                  </a>
-                </div>
-
-                <!-- Nested Mini Item 3 -->
-                <div class="bento-nested-item">
-                  <div>
-                    <span class="mono" style="font-size:0.65rem;color: #FFFFFF;font-weight:800;">ESCROW VAULT</span>
-                    <div style="font-weight:800;font-size:0.85rem;color: #FFFFFF;">Milestone Tranche Shield</div>
-                    <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;">Regulated Bank Trustee</div>
-                  </div>
-                  <a href="synq.html?asset=escrow" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
-                    LOCK &rarr;
-                  </a>
-                </div>
+            <div class="bento-micro-ui">
+              <div class="bento-chip-group">
+                <span class="bento-chip">&#10003; DGA & IATSE Compliant</span>
+                <span class="bento-chip">&#10003; Cryptographic Credit Ledger</span>
+                <span class="bento-chip">&#10003; Direct Availability Windows</span>
               </div>
-
-              <!-- Right Card 2: Floating Status Pills Cluster -->
-              <div class="bento-tile bento-tile-blue" style="min-height:200px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:12px;">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
-                  <span style="width:10px;height:10px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 10px #FFFFFF;"></span>
-                  <span class="mono" style="font-size:0.72rem;font-weight:800;color: #FFFFFF;letter-spacing:0.12em;">NETWORK RADAR</span>
-                </div>
-
-                <div class="bento-status-pill">
-                  <span>New Shoots Today</span>
-                  <span class="bento-pill-count">14</span>
-                </div>
-
-                <div class="bento-status-pill" style="align-self:flex-end;">
-                  <span>Stage Reservations</span>
-                  <span class="bento-pill-count" style="background:#FFFFFF;">11</span>
-                </div>
-
-                <div class="bento-status-pill">
-                  <span>Pending Escrow Tranches</span>
-                  <span class="bento-pill-count" style="background:#FFFFFF;">42+</span>
-                </div>
+              <div style="margin-top: 1rem;">
+                <a href="network.html#people" class="text-link">Explore Talent Protocols &rarr;</a>
               </div>
-
             </div>
+          </div>
 
+          <!-- Bento 3: Post & Finishing (Span 4) -->
+          <div class="bento-card bento-span-4">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span class="label-mono">Domain 05 &bull; Post-Production & VFX</span>
+                <span class="badge badge-partner">[PARTNER]</span>
+              </div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Theatrical Sound Stages, DI Conform & VFX Syndication</h3>
+              <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Theatrical Dolby Atmos 7.1.4 mixing stages, ACES 1.3 color grading suites, and visual effects vendor pipelines accredited under Motion Picture Association Trusted Partner Network (TPN) security benchmarks.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="bento-chip-group">
+                <span class="bento-chip">Dolby Atmos 7.1.4</span>
+                <span class="bento-chip">ACES 1.3 DI Color</span>
+                <span class="bento-chip">TPN Accredited</span>
+              </div>
+              <div style="margin-top: 1rem;">
+                <a href="network.html#post" class="text-link">Explore Post Protocols &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 4: Commercial & Capital Pathways (Span 8) -->
+          <div class="bento-card bento-span-8">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span class="label-mono">Domains 02, 06, 07 & 08 &bull; Institutional Commercial Rails</span>
+                <span class="badge badge-live">[FINANCE & DISTRIBUTION]</span>
+              </div>
+              <h3 style="font-size: 1.65rem; margin-bottom: 0.75rem;">Structured Mezzanine Capital, Distribution Mandates & IP Telemetry</h3>
+              <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); max-width: 680px; margin-bottom: 1.5rem;">
+                Senior production debt, state and national tax incentive rebate monetization, audited literary IP chain-of-title, active theatrical and streaming buyer mandates, and multi-territory audience predictive modeling.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="grid-3" style="gap: 1rem;">
+                <div>
+                  <div class="label-mono" style="margin-bottom: 0.25rem;">Capital & Debt</div>
+                  <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                    Tax credit monetization & completion bond underwriting facilitated via chartered institutional partners.
+                  </p>
+                </div>
+                <div>
+                  <div class="label-mono" style="margin-bottom: 0.25rem;">Distribution Mandates</div>
+                  <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                    Verified theatrical release slates & streaming platform buyer acquisition windows.
+                  </p>
+                </div>
+                <div>
+                  <div class="label-mono" style="margin-bottom: 0.25rem;">Audience Telemetry</div>
+                  <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                    Multi-source territorial genre demand econometric modeling to de-risk packaging.
+                  </p>
+                </div>
+              </div>
+              <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="network.html#capital" class="text-link">Explore Capital &rarr;</a>
+                <span style="color: var(--border-medium);">&bull;</span>
+                <a href="network.html#distribution" class="text-link">Explore Distribution &rarr;</a>
+                <span style="color: var(--border-medium);">&bull;</span>
+                <a href="network.html#ip" class="text-link">Explore IP &rarr;</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 03 — WHAT DIGISYNQ CONNECTS (8 RESOURCE CATEGORIES) -->
-    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
-      <div class="container" style="max-width:1180px;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:2.5rem;">
-          <div>
-            <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.5rem;">
-              <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">category</span>
-              03 // THE ECOSYSTEM MODEL
-            </div>
-            <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.8rem);font-weight:800;color: #FFFFFF;margin:0;text-transform:uppercase;">What DigiSynq connects</h2>
-          </div>
-          <a href="ecosystem.html" class="mono" style="font-size:0.85rem;color: #FFFFFF;text-decoration:none;font-weight:700;">
-            EXPLORE ALL 8 ECOSYSTEM CATEGORIES &rarr;
-          </a>
-        </div>
-        <p style="font-size:1.08rem;line-height:1.75;color: #FFFFFF;max-width:840px;margin:0 0 3rem;">
-          Everything that moves an entertainment project belongs to one of eight core resource categories. DigiSynq indexes availability, requirements, and constraints across all eight:
+    <!-- SECTION 06 — FINAL HOMEPAGE CTA -->
+    <section class="cta-banner" aria-label="Start Coordination">
+      <div class="container" style="text-align: center;">
+        <div class="section-label" style="display: inline-block;">Capital & Production Mobilization</div>
+        <h2 class="cta-banner-title text-gradient">Critical assets must move.<br>Coordinate deterministically.</h2>
+        <p class="cta-banner-sub" style="margin: 0 auto 2.5rem;">
+          Submit your production mandate, idle soundstage inventory, specialized cinema package, or capital requirement into the DigiSynq coordination protocol.
         </p>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;">
-          <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 01</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">IP &amp; Ideas</h3>
-            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Vetted screenplays, rights packages, and developed concepts ready for packaging.</p>
-          </div>
-          <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 02</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Talent &amp; Guilds</h3>
-            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Directors, cinematographers, HODs, actors, and peer-verified guild technicians.</p>
-          </div>
-          <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 03</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Stages &amp; Venues</h3>
-            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Acoustic soundstages, backlots, standing sets, and specialized shooting locations.</p>
-          </div>
-          <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 04</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Production Gear</h3>
-            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Camera packages, anamorphic lenses, lighting trucks, grip packages, and sound kits.</p>
-          </div>
-          <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 05</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Post &amp; Virtual Production</h3>
-            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Unreal virtual stages, edit suites, color grading facilities, and Dolby Atmos mixing.</p>
-          </div>
-          <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 06</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Distribution</h3>
-            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Theatrical distributors, digital streaming platforms, international sales agents.</p>
-          </div>
-          <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 07</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Audience &amp; Demand</h3>
-            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Regional market interest signals, fan community traction, theatrical pre-demand.</p>
-          </div>
-          <div class="pastel-card" style="padding:1.25rem;">
-            <div class="mono" style="font-size:0.7rem;color: #FFFFFF;margin-bottom:0.3rem;">CATEGORY 08</div>
-            <h3 style="font-size:1.1rem;font-weight:700;color: #FFFFFF;margin:0 0 0.4rem;">Capital &amp; Escrow</h3>
-            <p style="font-size:0.85rem;color: #FFFFFF;margin:0;">Private equity, co-producers, brand sponsors, and milestone-gated escrow structures.</p>
-          </div>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="start-a-synq.html" class="btn btn-primary btn-lg btn-pill">Start a synq &rarr;</a>
+          <a href="start-a-synq.html?intent=enterprise" class="btn btn-secondary btn-lg btn-pill">Institutional Advisory</a>
+          <a href="trust.html" class="btn btn-secondary btn-lg btn-pill">Review Trust Standards</a>
         </div>
       </div>
     </section>
+  </main>
 
-    <!-- SECTION 04 — HOW IT WORKS (THE 6-STAGE PIPELINE) -->
-    <section id="how-it-works" style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#060606;">
-      <div class="container" style="max-width:1180px;">
-        <div style="text-align:center;max-width:820px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">sync</span>
-            04 // THE OPERATING MODEL
-          </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">How it works: the 6-stage pipeline</h2>
-          <p style="font-size:1.1rem;line-height:1.75;color: #FFFFFF;margin:0;">
-            DigiSynq executes coordination through a sequential, disciplined operational pipeline. Each stage converts raw inputs into verified production outputs.
+  <!-- CANONICAL ENTERPRISE FOOTER WITH LINEAR STATUS INDICATOR -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">DigiSynq</div>
+          <p class="footer-brand-desc">
+            The coordination layer for entertainment. DigiSynq connects verified people, places, equipment, capital and distribution into coordinated production pathways.
           </p>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
-          <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 01</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Measure</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              Verify availability, technical specifications, and contractual constraints before commitments are made.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
-              INPUT: Asset / Request &bull; OUTPUT: Verified Readiness Baseline
-            </div>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 02</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Connect</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              Identify compatible participants, facilities, and packages across regions with matched availability.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
-              INPUT: Verified Parameters &bull; OUTPUT: Matched Counterparties
-            </div>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 03</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Optimize</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              Align commercial terms, calendar timing, dependencies, and milestone delivery schedules.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
-              INPUT: Shortlist &bull; OUTPUT: Coordinated Deal Memo &amp; Schedule
-            </div>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 04</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Deploy</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              Mobilize physical execution — call sheets, soundstage ingress, gear dispatch, and daily production.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
-              INPUT: Executed Agreement &bull; OUTPUT: Active Production Underway
-            </div>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 05</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Settle</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              Verify milestone delivery completion and authorize escrow fund release through regulated banking partners.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
-              INPUT: Milestone Delivery &bull; OUTPUT: Verified Escrow Disbursement
-            </div>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-top:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">STAGE 06</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">LEARN &amp; REPEAT</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              Compound institutional knowledge — operational ratings, turnaround benchmarks — to make future coordination faster and more predictable.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;background:rgba(0,0,0,0.3);padding:0.5rem 0.75rem;border-radius:4px;">
-              INPUT: Post-Wrap Telemetry &bull; OUTPUT: Optimized Future Synqs
-            </div>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>All coordination rails operational</span>
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:2.5rem;">
-          <a href="platform.html" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.8rem;">
-            READ FULL OPERATIONAL METHODOLOGY (NODE 03) &rarr;
-          </a>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="how-it-works.html" class="footer-link">How it works</a></li>
+            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
+            <li><a href="platform.html" class="footer-link">Platform</a></li>
+            <li><a href="network.html" class="footer-link">Network</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Infrastructure</div>
+          <ul class="footer-links">
+            <li><a href="intelligence.html" class="footer-link">Intelligence</a></li>
+            <li><a href="economics.html" class="footer-link">Economics</a></li>
+            <li><a href="trust.html" class="footer-link">Trust center</a></li>
+            <li><a href="about.html" class="footer-link">About DigiSynq</a></li>
+            <li><a href="start-a-synq.html" class="footer-link">Start a synq</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Situations</div>
+          <ul class="footer-links">
+            <li><a href="solutions.html#have" class="footer-link">I have something</a></li>
+            <li><a href="solutions.html#need" class="footer-link">I need something</a></li>
+            <li><a href="solutions.html#underused" class="footer-link">Underused capacity</a></li>
+            <li><a href="solutions.html#blocked" class="footer-link">Production bottlenecks</a></li>
+            <li><a href="solutions.html#enterprise" class="footer-link">For enterprise</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Governance</div>
+          <ul class="footer-links">
+            <li><a href="trust.html#identity" class="footer-link">Identity verification</a></li>
+            <li><a href="trust.html#governance" class="footer-link">Neutrality policy</a></li>
+            <li><a href="trust.html#disputes" class="footer-link">Dispute resolution</a></li>
+            <li><a href="economics.html#fee-table" class="footer-link">Fee schedule</a></li>
+            <li><a href="trust.html#data" class="footer-link">Data governance</a></li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- SECTION 05 — 4 CORE CAPABILITIES (PRODUCT MODEL) -->
-    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
-      <div class="container" style="max-width:1180px;">
-        <div style="text-align:center;max-width:760px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">extension</span>
-            05 // THE PRODUCT MODEL
-          </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">4 core capabilities</h2>
-          <p style="font-size:1.08rem;line-height:1.75;color: #FFFFFF;margin:0;">
-            DigiSynq's 15 coordination modules are organized under four core capabilities:
-          </p>
+      <div class="footer-bottom">
+        <div class="footer-regulatory">
+          <strong>Regulatory disclosure:</strong> DigiSynq is an entertainment coordination infrastructure platform. DigiSynq is not a bank, non-banking financial company (NBFC), registered broker-dealer, investment adviser, insurance carrier, or regulated escrow depository. Any contractual escrow, fiduciary, or financial settlement workflows are facilitated exclusively through licensed, regulated third-party institutional partners. All operational claims and metrics are governed under verified data classifications.
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.5rem;">
-          <div class="card card-glow-teal" style="padding:2rem;">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">CAPABILITY 01</div>
-            <h3 style="font-size:1.4rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Match</h3>
-            <p style="font-size:0.92rem;color: #FFFFFF;line-height:1.65;margin-bottom:1.25rem;">
-              Discovery and compatibility mapping for benched talent, dark soundstages, idle gear packages, and ready IP.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;line-height:1.7;">
-              &bull; Talent Revival<br>
-              &bull; Stage &amp; Venue Sync<br>
-              &bull; Gear Package Matching<br>
-              &bull; Screenplay Packaging
-            </div>
-          </div>
-
-          <div class="card card-glow-purple" style="padding:2rem;">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">CAPABILITY 02</div>
-            <h3 style="font-size:1.4rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Execute</h3>
-            <p style="font-size:0.92rem;color: #FFFFFF;line-height:1.65;margin-bottom:1.25rem;">
-              Production coordination and dispatch tools ensuring shoots assemble on schedule and run without missing key elements.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;line-height:1.7;">
-              &bull; Crew Sync &amp; Dispatch<br>
-              &bull; Crisis Replacement Support<br>
-              &bull; Logistics &amp; Ingress Engine<br>
-              &bull; Call Sheet Synchronization
-            </div>
-          </div>
-
-          <div class="card card-glow-gold" style="padding:2rem;">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">CAPABILITY 03</div>
-            <h3 style="font-size:1.4rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Settle</h3>
-            <p style="font-size:0.92rem;color: #FFFFFF;line-height:1.65;margin-bottom:1.25rem;">
-              Milestone-gated financial and contractual settlement handled in coordination with regulated banking/escrow partners.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;line-height:1.7;">
-              &bull; Milestone Escrow Workflows<br>
-              &bull; Deal Memo Standards<br>
-              &bull; Financier Visibility<br>
-              &bull; Completion Draw Verifications
-            </div>
-          </div>
-
-          <div class="card card-glow-teal" style="padding:2rem;">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.5rem;">CAPABILITY 04</div>
-            <h3 style="font-size:1.4rem;font-weight:800;color: #FFFFFF;margin:0 0 0.75rem;">Intelligence</h3>
-            <p style="font-size:0.92rem;color: #FFFFFF;line-height:1.65;margin-bottom:1.25rem;">
-              Telemetry and market demand insights helping producers, distributors, and investors make data-supported decisions.
-            </p>
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;line-height:1.7;">
-              &bull; Capacity Mapping<br>
-              &bull; Content Demand Signals<br>
-              &bull; Box Office &amp; Window Insights<br>
-              &bull; Rate Transparency Baselines
-            </div>
-          </div>
+        <div class="footer-meta">
+          <div>&copy; 2026 DigiSynq Infrastructure Protocol. All rights reserved.</div>
+          <div>Swiss editorial &bull; Monochrome infrastructure architecture</div>
         </div>
-
-        <div style="text-align:center;margin-top:2.5rem;">
-          <a href="modules.html" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.8rem;">
-            EXPLORE ALL 15 COORDINATION MODULES &rarr;
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06 — 5 ENTRY SITUATIONS (USER ENTRY MODEL) -->
-    <section id="situations" style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#060606;">
-      <div class="container" style="max-width:1180px;">
-        <div style="text-align:center;max-width:820px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">login</span>
-            06 // USER ENTRY PATHWAYS
-          </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">What needs to move?
-          </h2>
-          <p style="font-size:1.1rem;line-height:1.75;color: #FFFFFF;margin:0;">
-            You enter DigiSynq through your immediate operational need. Select the statement that describes your current situation:
-          </p>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
-          <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 01</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;I Have Something.&rdquo;</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              You own an idle asset, a developed screenplay, specialized camera fleet, or an open soundstage calendar. DigiSynq connects your asset to vetted, capitalized productions.
-            </p>
-            <a href="synq.html?situation=have" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">ACTIVATE AN ASSET &rarr;</a>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 02</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;I Need Something.&rdquo;</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              You are packaging a film, OTT series, or commercial and missing key elements: a tested DOP, completion capital, an acoustic stage, or regional distribution partner.
-            </p>
-            <a href="synq.html?situation=need" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">FIND WHAT YOU NEED &rarr;</a>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 03</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;Something Is Underused.&rdquo;</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              You are absorbing overhead on dark studio days, inactive edit suites, or benched talent. DigiSynq fills calendar gaps with short-run shoots and pickups.
-            </p>
-            <a href="synq.html?situation=underused" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">FILL DARK CALENDARS &rarr;</a>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 04</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;Something Is Blocked.&rdquo;</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              Your active shoot is stalled by a dropped technician, sudden gear failure, or frozen milestone release. DigiSynq applies emergency coordination to unjam the project.
-            </p>
-            <a href="synq.html?situation=blocked" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">CLEAR A BOTTLENECK &rarr;</a>
-          </div>
-
-          <div class="pastel-card" style="padding:1.75rem;border-left:3px solid var(--accent-cyan);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.4rem;">SITUATION 05</div>
-            <h3 style="font-size:1.25rem;font-weight:800;color: #FFFFFF;margin:0 0 0.5rem;">&ldquo;Something Needs to Move.&rdquo;</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1rem;">
-              You have a completed master looking for screens, an IP catalog ready for new exploitation, or an episodic concept seeking co-production finance.
-            </p>
-            <a href="synq.html?situation=move" class="btn btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem;">MOBILIZE A PROJECT &rarr;</a>
-          </div>
-        </div>
-
-        <div style="text-align:center;margin-top:2.5rem;">
-          <a href="solutions.html" class="mono" style="font-size:0.85rem;color: #FFFFFF;text-decoration:none;font-weight:700;">
-            VIEW DETAILED SOLUTIONS BREAKDOWN (NODE 04) &rarr;
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 07 — REAL / VERIFIED PROOF -->
-    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
-      <div class="container" style="max-width:1180px;">
-        <div style="text-align:center;max-width:760px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">verified</span>
-            07 // VERIFIED PROOF &amp; PILOT STUDIES
-          </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">Tested on real productions</h2>
-          <p style="font-size:1.08rem;line-height:1.75;color: #FFFFFF;margin:0;">
-            We do not present hypothetical projections as operating facts. Here is how DigiSynq coordinates in active pilots:
-          </p>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
-          <!-- Case 1 -->
-          <div class="card" style="padding:2rem;background:var(--bg-surface);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-              <span class="status-badge status-pilot">PILOT COHORT</span>
-              <span class="mono" style="font-size:0.72rem;color: #FFFFFF;">MUMBAI &bull; COMMERCIAL</span>
-            </div>
-            <h3 style="font-size:1.2rem;font-weight:700;color: #FFFFFF;margin:0 0 0.75rem;">Emergency 48-Hour Stage &amp; Optical Match</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1.25rem;">
-              A tier-1 brand commercial faced cancellation when their booked soundstage experienced an HVAC failure. DigiSynq matched an unbooked 12,000 sq ft acoustic lot in Goregaon and re-routed a complete Alexa 35 package within 18 hours.
-            </p>
-            <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:0.75rem;display:flex;justify-content:space-between;font-size:0.8rem;" class="mono">
-              <span style="color: #FFFFFF;">Outcome:</span>
-              <span style="color: #FFFFFF;">Shoot wrapped on budget</span>
-            </div>
-          </div>
-
-          <!-- Case 2 -->
-          <div class="card" style="padding:2rem;background:var(--bg-surface);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-              <span class="status-badge status-pilot">PILOT COHORT</span>
-              <span class="mono" style="font-size:0.72rem;color: #FFFFFF;">HYDERABAD &bull; INDIE FEATURE</span>
-            </div>
-            <h3 style="font-size:1.2rem;font-weight:700;color: #FFFFFF;margin:0 0 0.75rem;">Milestone Escrow for Multi-State Crew</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1.25rem;">
-              An independent multilingual feature attached Chennai-based DOP and colorist talent with Mumbai production finance. DigiSynq coordinated banking escrow milestone draws tied to verified dailies handover.
-            </p>
-            <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:0.75rem;display:flex;justify-content:space-between;font-size:0.8rem;" class="mono">
-              <span style="color: #FFFFFF;">Outcome:</span>
-              <span style="color: #FFFFFF;">Zero payment disputes</span>
-            </div>
-          </div>
-
-          <!-- Case 3 -->
-          <div class="card" style="padding:2rem;background:var(--bg-surface);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-              <span class="status-badge status-illustrative">ILLUSTRATIVE MODEL</span>
-              <span class="mono" style="font-size:0.72rem;color: #FFFFFF;">REGIONAL CINEMA &bull; SLATE</span>
-            </div>
-            <h3 style="font-size:1.2rem;font-weight:700;color: #FFFFFF;margin:0 0 0.75rem;">Dark Calendar Stage Recovery</h3>
-            <p style="font-size:0.9rem;color: #FFFFFF;line-height:1.6;margin-bottom:1.25rem;">
-              Modeled on a 4-lot studio complex in Chennai: by synchronizing ad pickups and music video units into historical 3-to-7 day dark windows, annual facility yield is projected to increase by 28-34%.
-            </p>
-            <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:0.75rem;display:flex;justify-content:space-between;font-size:0.8rem;" class="mono">
-              <span style="color: #FFFFFF;">Status:</span>
-              <span style="color: #FFFFFF;">In Studio Review</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 08 — PRODUCT / PLATFORM ARCHITECTURE OVERVIEW -->
-    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);background:#060606;">
-      <div class="container" style="max-width:1180px;">
-        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center;">
-          <div>
-            <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
-              <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">architecture</span>
-              08 // ARCHITECTURE
-            </div>
-            <h2 style="font-size:clamp(2rem, 3.5vw, 2.8rem);font-weight:800;color: #FFFFFF;margin:0 0 1.25rem;text-transform:uppercase;">Built for production speed, backed by rigor.
-            </h2>
-            <p style="font-size:1.05rem;line-height:1.75;color: #FFFFFF;margin:0 0 1.5rem;">
-              DigiSynq is not a job board or social directory. It is an operating coordination layer that indexes real capacity, verifies credentials, structures commercial terms, and enables milestone settlement.
-            </p>
-            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-              <a href="platform.html" class="btn btn-primary" style="font-size:0.9rem;padding:0.7rem 1.6rem;">
-                VIEW PLATFORM ARCHITECTURE &rarr;
-              </a>
-              <a href="company.html#runbook" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.6rem;">
-                SYSTEM RUNBOOK &rarr;
-              </a>
-            </div>
-          </div>
-
-          <div class="pastel-card" style="padding:2rem;background:rgba(0,0,0,0.5);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:1rem;">SYSTEM LAYER STACK</div>
-            <div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.88rem;" class="mono">
-              <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
-                <span>01 USER ENTRY</span>
-                <span style="color: #FFFFFF;">5 Situations &bull; Direct Intake</span>
-              </div>
-              <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
-                <span>02 COORDINATION DESK</span>
-                <span style="color: #FFFFFF;">Intelligent Routing Engine</span>
-              </div>
-              <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
-                <span>03 ECOSYSTEM GRAPH</span>
-                <span style="color: #FFFFFF;">8 Resource Categories</span>
-              </div>
-              <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
-                <span>04 ESCROW INTEGRATION</span>
-                <span style="color: #FFFFFF;">Banking Partner Escrow</span>
-              </div>
-              <div style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.04);border-radius:4px;display:flex;justify-content:space-between;">
-                <span>05 TELEMETRY ENGINE</span>
-                <span style="color: #FFFFFF;">7 Telemetry Pillars</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 09 — TRUST, GOVERNANCE & PRIVACY -->
-    <section style="padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
-      <div class="container" style="max-width:1180px;">
-        <div style="text-align:center;max-width:760px;margin:0 auto 3.5rem;">
-          <div class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.75rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">security</span>
-            09 // TRUST &amp; GOVERNANCE
-          </div>
-          <h2 style="font-size:clamp(2rem, 4vw, 3.2rem);font-weight:800;color: #FFFFFF;margin:0 0 1rem;text-transform:uppercase;">Clear boundaries. No conflicts.
-          </h2>
-          <p style="font-size:1.08rem;line-height:1.75;color: #FFFFFF;margin:0;">
-            Credibility in entertainment requires transparent operational limits. We are clear about what we do and what we do not do.
-          </p>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;">
-          <div class="card" style="padding:2rem;border-top:3px solid #FFFFFF;background:var(--bg-surface);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.75rem;">WHAT WE DO</div>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.92rem;color: #FFFFFF;">
-              <li><strong style="color: #FFFFFF;">&check; Coordinate verified resources:</strong> Connect talent, gear, stages, and capital.</li>
-              <li><strong style="color: #FFFFFF;">&check; Structure milestone contracts:</strong> Align delivery schedules and clear terms.</li>
-              <li><strong style="color: #FFFFFF;">&check; Facilitate escrow via licensed partners:</strong> Third-party escrow holding funds safely.</li>
-              <li><strong style="color: #FFFFFF;">&check; Protect confidential data:</strong> Project details are shared only with verified counterparties.</li>
-            </ul>
-          </div>
-
-          <div class="card" style="padding:2rem;border-top:3px solid #666362;background:var(--bg-surface);">
-            <div class="mono" style="font-size:0.75rem;color: #FFFFFF;font-weight:700;margin-bottom:0.75rem;">WHAT WE DO NOT DO</div>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.92rem;color: #FFFFFF;">
-              <li><strong style="color: #FFFFFF;">&times; We are not a talent agency:</strong> We do not take exclusive representation cuts.</li>
-              <li><strong style="color: #FFFFFF;">&times; We do not own equipment or soundstages:</strong> We stay 100% asset-light.</li>
-              <li><strong style="color: #FFFFFF;">&times; We do not hold client funds directly:</strong> Escrow is custodied by regulated banking partners.</li>
-              <li><strong style="color: #FFFFFF;">&times; We do not claim IP ownership:</strong> All creative rights remain entirely with the creator.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 10 — FINAL CTA -->
-    <section style="padding:6rem 1.5rem 7.5rem;border-top:1px solid rgba(255,255,255,0.08);background:radial-gradient(circle at 50% 50%, rgba(0,229,255,0.08) 0%, #353839 75%);text-align:center;">
-      <div class="container" style="max-width:880px;margin:auto;">
-        <span class="mono" style="font-size:0.8rem;letter-spacing:0.2em;color: #FFFFFF;text-transform:uppercase;display:block;margin-bottom:1rem;">
-          <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color: #FFFFFF;">bolt</span>
-          10 // Start a synq
-        </span>
-        <h2 style="font-size:clamp(2.4rem, 5vw, 4rem);font-weight:800;color: #FFFFFF;margin:0 0 1.25rem;text-transform:uppercase;line-height:1.08;">Ready to make your assets or production move?
-        </h2>
-        <p style="font-size:1.18rem;line-height:1.75;color: #FFFFFF;max-width:720px;margin:0 auto 2.5rem;">
-          Whether you have an idle asset, a missing production role, or a blocked release window — submit your parameters to our coordination desk.
-        </p>
-        <div style="display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;">
-          <a href="synq.html" class="btn btn-primary" style="padding:1rem 2.8rem;font-size:1.05rem;font-weight:700;">
-            Start a synq &rarr;
-          </a>
-          <a href="company.html" class="btn btn-secondary" style="padding:1rem 2.2rem;font-size:1.05rem;">
-            Read about DigiSynq
-          </a>
-        </div>
-      </div>
-    </section>
-  
-    <!-- 9870089044 Signature Bottom Nav Traversal -->
-    </main>
-
-  <!-- Master Canonical Footer -->
-    <!-- Minimal Site Footer -->
-  <footer class="site-footer-minimal" role="contentinfo">
-    <div class="footer-minimal-inner">
-      <div class="footer-minimal-top">
-        <div class="footer-minimal-brand-wrap">
-          <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
-            <div class="site-brand-glyph" aria-hidden="true">DS</div>
-            <span class="site-brand-name">DigiSynq</span>
-          </a>
-          <p class="footer-minimal-tagline">The coordination layer for entertainment.</p>
-        </div>
-      </div>
-      <nav class="footer-minimal-nav" aria-label="Footer Navigation">
-        <a href="index.html">Overview</a>
-        <a href="platform.html">Platform</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="ecosystem.html">Ecosystem</a>
-        <a href="guilds.html">Guilds</a>
-        <a href="modules.html">Modules</a>
-        <a href="intelligence.html">Intelligence</a>
-        <a href="economics.html">Economics</a>
-        <a href="company.html">Company</a>
-        <a href="synq.html" class="footer-nav-highlight">Start a synq &rarr;</a>
-      </nav>
-      <div class="footer-minimal-bottom">
-        <span>&copy; 2026 DigiSynq. All rights reserved.</span>
-        <span>Press <kbd>[K]</kbd> for directory</span>
       </div>
     </div>
   </footer>
 
-  <!-- Fullscreen 10-Node Dialpad Drawer -->
-  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true">
-    <button class="dialpad-drawer-close" id="closeDialpadDrawer">&times;</button>
-    <div class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;color: #FFFFFF;text-transform:uppercase;margin-bottom:0.4rem;">
-      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;color: #FFFFFF;">layers</span>
-      DigiSynq knowledge nodes
-    </div>
-    <div class="dialpad-drawer-title">10-node directory</div>
-    <div class="node-dialpad-container" style="max-width:980px;">
-      <div class="node-dialpad-grid">
-        <a href="index.html" class="node-key-item" aria-label="Node 01: Home"><div class="node-key-circle"><span class="node-key-digit">01</span></div><span class="node-key-label">Home</span></a>
-        <a href="ecosystem.html" class="node-key-item" aria-label="Node 02: Ecosystem"><div class="node-key-circle"><span class="node-key-digit">02</span></div><span class="node-key-label">Ecosystem</span></a>
-        <a href="platform.html" class="node-key-item" aria-label="Node 03: How It Works"><div class="node-key-circle"><span class="node-key-digit">03</span></div><span class="node-key-label">How It Works</span></a>
-        <a href="solutions.html" class="node-key-item" aria-label="Node 04: Solutions"><div class="node-key-circle"><span class="node-key-digit">04</span></div><span class="node-key-label">Solutions</span></a>
-        <a href="solutions.html" class="node-key-item" aria-label="Node 05: Missions"><div class="node-key-circle"><span class="node-key-digit">05</span></div><span class="node-key-label">Missions</span></a>
-        <a href="intelligence.html" class="node-key-item" aria-label="Node 06: Intelligence"><div class="node-key-circle"><span class="node-key-digit">06</span></div><span class="node-key-label">Intelligence</span></a>
-        <a href="intelligence.html" class="node-key-item" aria-label="Node 07: Insights"><div class="node-key-circle"><span class="node-key-digit">07</span></div><span class="node-key-label">Insights</span></a>
-        <a href="economics.html" class="node-key-item" aria-label="Node 08: Value Model"><div class="node-key-circle"><span class="node-key-digit">08</span></div><span class="node-key-label">Value Model</span></a>
-        <a href="company.html" class="node-key-item" aria-label="Node 09: Runbook"><div class="node-key-circle"><span class="node-key-digit">09</span></div><span class="node-key-label">Runbook</span></a>
-        <a href="synq.html" class="node-key-item" aria-label="Node 10: Start a synq"><div class="node-key-circle" style="border-color:var(--accent-cyan);"><span class="node-key-digit" style="color: #FFFFFF;">10</span></div><span class="node-key-label" style="color:#FFFFFF;font-weight:700;">Start a synq</span></a>
-      </div>
-    </div>
-  </div>
-
-  <script src="assets/js/telemetry-canvas.js"></script>
-  <script src="assets/js/sound-engine.js"></script>
-  <script src="assets/js/synq-simulator.js"></script>
-  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

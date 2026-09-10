@@ -2,12 +2,433 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=company.html">
-  <title>Redirecting to company.html...</title>
-  <link rel="canonical" href="company.html">
-  <script>location.href = 'company.html';</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About DigiSynq — The Coordination Layer for Entertainment</title>
+  <meta name="description" content="Understand DigiSynq in 60 seconds: why we exist, what we actually do, what we do not do, who we serve, how we maintain neutrality, and what is live today.">
+  <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/about.html">
+  
+  <meta property="og:title" content="About DigiSynq — The Coordination Layer for Entertainment">
+  <meta property="og:description" content="Entertainment doesn't have a resource problem. It has a coordination problem. We don't own the assets; we make them move.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/about.html">
+  <!-- Font preloads: critical Space Grotesk weights -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/design-system.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body style="background:#000000; color:#FFFFFF; font-family:sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0;">
-  <p>Redirecting to <a href="company.html" style="color:#FFFFFF;">company.html</a>...</p>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- CANONICAL HEADER -->
+  <header class="navbar" role="banner">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
+        <span class="nav-brand-name">DigiSynq</span>
+        <span class="nav-brand-sub">COORDINATION INFRASTRUCTURE</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How it works</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="nav-link">Platform</a></li>
+          <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
+          <li><a href="economics.html" class="nav-link">Economics</a></li>
+          <li><a href="trust.html" class="nav-link">Trust</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span>
+          <kbd>⌘K</kbd>
+        </button>
+        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="how-it-works.html" class="mobile-nav-link">How it works</a>
+    <a href="solutions.html" class="mobile-nav-link">Solutions</a>
+    <a href="platform.html" class="mobile-nav-link">Platform</a>
+    <a href="network.html" class="mobile-nav-link">Network</a>
+    <a href="intelligence.html" class="mobile-nav-link">Intelligence</a>
+    <a href="economics.html" class="mobile-nav-link">Economics</a>
+    <a href="trust.html" class="mobile-nav-link">Trust center</a>
+    <a href="about.html" class="mobile-nav-link active">About</a>
+    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    </div>
+  </div>
+
+  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem);">
+    <!-- HERO: UNDERSTAND IN 60 SECONDS -->
+    <section class="container" style="padding-bottom: 4rem; border-bottom: 1px solid var(--gray-800);">
+      <div class="section-label">Institutional Charter &bull; Understand in 60 Seconds</div>
+      <h1 style="margin-bottom: 1.5rem;">
+        We don't own the assets.<br>we make them <span class="text-gradient-cyan"><em>synq</em></span> &amp; <span class="text-gradient-violet"><em>move</em></span>.
+      </h1>
+      <p style="font-size: 1.25rem; max-width: 840px; color: var(--gray-200); line-height: 1.6; margin-bottom: 2rem;">
+        Global entertainment does not suffer from a deficit of cinematic hardware, acoustic soundstages, or world-class guild artisans. It suffers from a systemic coordination failure that strands billions in physical capital while tier-one slates incur crippling delay penalties.
+      </p>
+
+      <div class="bento-grid">
+        <div class="bento-card bento-span-4 bento-card-gradient">
+          <div class="bento-glow-top"></div>
+          <div>
+            <div class="bento-header-tag">
+              <span class="label-mono">Core Protocol</span>
+              <span class="badge badge-live">[INFRASTRUCTURE]</span>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Deterministic Coordination Layer</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              The neutral software clearinghouse matching authenticated facility capacity with verified production requirements across global studio pipelines.
+            </p>
+          </div>
+          <div class="bento-micro-ui">
+            <div class="bento-chip-group">
+              <span class="bento-chip">Authenticated Supply</span>
+              <span class="bento-chip">Bilateral Demand</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card bento-span-4">
+          <div>
+            <div class="bento-header-tag">
+              <span class="label-mono">Operating Discipline</span>
+              <span class="badge badge-live">[GOVERNANCE]</span>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Empirical Proof Over Hype</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              We reject speculative industry PR and unverified announcements. Every capability, transaction metric, and operational benchmark is anchored in verifiable telemetry.
+            </p>
+          </div>
+          <div class="bento-micro-ui">
+            <div class="bento-chip-group">
+              <span class="bento-chip">Audited Telemetry</span>
+              <span class="bento-chip">Zero Fictional Metrics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card bento-span-4">
+          <div>
+            <div class="bento-header-tag">
+              <span class="label-mono">Fiduciary Boundary</span>
+              <span class="badge badge-live">[NEUTRAL]</span>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Strict Asset Neutrality</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
+              Zero proprietary soundstages, camera packages, or talent rosters. We never compete against ecosystem participants or distort algorithmic routing.
+            </p>
+          </div>
+          <div class="bento-micro-ui">
+            <div class="bento-chip-group">
+              <span class="bento-chip">Zero Captive Stages</span>
+              <span class="bento-chip">Conflict-Free Protocol</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 01 — THE SIX CRUCIAL QUESTIONS -->
+    <section style="padding: 5rem 0; border-bottom: 1px solid var(--gray-800);">
+      <div class="container">
+        <!-- Question 1: WHY DOES DIGISYNQ EXIST? -->
+        <div style="padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--gray-850);">
+          <div class="grid-12">
+            <div style="grid-column: span 4;">
+              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 01</div>
+              <h2 style="font-size: 1.75rem;">Why does DigiSynq exist?</h2>
+            </div>
+            <div style="grid-column: span 8;">
+              <p style="font-size: 1.1rem; line-height: 1.7; color: var(--gray-200); margin-bottom: 1rem;">
+                Physical film and television production represents one of the world's most capital-intensive, high-velocity operating environments, yet its operational backplane still relies on disconnected SMS threads, unverified intermediary claims, and fragile ad-hoc spreadsheets.
+              </p>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--gray-400);">
+                When a 25,000 sq ft virtual production LED volume sits idle for 14 days between tentpole episodic shoots, that carrying capacity evaporates permanently. When a line producer burns 3 shooting days hunting for an IATSE-accredited underwater camera crew, the physical contingency budget collapses. DigiSynq replaces asymmetric market friction with deterministic, code-enforced protocol coordination.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2: WHAT DOES IT ACTUALLY DO? -->
+        <div style="padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--gray-850);">
+          <div class="grid-12">
+            <div style="grid-column: span 4;">
+              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 02</div>
+              <h2 style="font-size: 1.75rem;">What does it actually do?</h2>
+            </div>
+            <div style="grid-column: span 8;">
+              <p style="font-size: 1.1rem; line-height: 1.7; color: var(--gray-200); margin-bottom: 1rem;">
+                DigiSynq executes a standardized 6-stage lifecycle across eight institutional production pillars:
+              </p>
+              <div class="mono" style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.8; background-color: var(--gray-950); padding: 1.5rem; border: 1px solid var(--gray-800);">
+                01 VERIFY &mdash; Cryptographically authenticate corporate standing, TPN facility credentials, serialized gear manifests, and guild rosters.<br>
+                02 MATCH &mdash; Isolate exact spatial, acoustic, electrical, and calendar compatibility behind zero-knowledge bilateral privacy gates.<br>
+                03 COMMIT &mdash; Execute standardized digital covenants and fund segregated escrow accounts at chartered depository banking partners.<br>
+                04 EXECUTE &mdash; Ingest operational telemetry: call sheet check-ins, Brompton gen-lock benchmarks, load-in milestones, and wrap logs.<br>
+                05 SETTLE &mdash; Reconcile audit manifests, execute wrap sign-offs, and trigger sub-48-hour automated milestone disbursements.<br>
+                06 LEARN &mdash; Aggregate objective execution metrics into transparent, non-custodial trust ratings and predictive capacity indices.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3: WHAT DOES IT NOT DO? -->
+        <div style="padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--gray-850);">
+          <div class="grid-12">
+            <div style="grid-column: span 4;">
+              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 03</div>
+              <h2 style="font-size: 1.75rem;">What does it not do?</h2>
+            </div>
+            <div style="grid-column: span 8;">
+              <div class="grid-2" style="gap: 1.5rem;">
+                <div class="card" style="background-color: var(--gray-950);">
+                  <div class="label-mono" style="margin-bottom: 0.5rem;">Not a Talent Agency</div>
+                  <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
+                    We do not manage talent or skim commissions from union wages. We verify guild accreditation and facilitate direct scheduling without intermediary markups.
+                  </p>
+                </div>
+                <div class="card" style="background-color: var(--gray-950);">
+                  <div class="label-mono" style="margin-bottom: 0.5rem;">Not an Asset Owner</div>
+                  <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
+                    We own zero soundstages, camera packages, or lighting trucks. We never prioritize proprietary inventory over partner facilities.
+                  </p>
+                </div>
+                <div class="card" style="background-color: var(--gray-950);">
+                  <div class="label-mono" style="margin-bottom: 0.5rem;">Not a Bank / Escrow Depository</div>
+                  <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
+                    We do not custody balance-sheet funds. All earnest deposits, completion draws, and disbursements are executed through licensed, chartered FDIC/FCA banking partners.
+                  </p>
+                </div>
+                <div class="card" style="background-color: var(--gray-950);">
+                  <div class="label-mono" style="margin-bottom: 0.5rem;">Not a Creative Arbiter</div>
+                  <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
+                    We do not provide script coverage, cast attachments, or editorial notes. We coordinate physical operational infrastructure so filmmakers can execute uninhibited.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4: WHO IS IT FOR? -->
+        <div style="padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--gray-850);">
+          <div class="grid-12">
+            <div style="grid-column: span 4;">
+              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 04</div>
+              <h2 style="font-size: 1.75rem;">Who is it for?</h2>
+            </div>
+            <div style="grid-column: span 8;">
+              <ul class="mono" style="font-size: 0.88rem; color: var(--gray-300); list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+                <li>&bull; <strong class="text-white">Studio &amp; Streamer Executives:</strong> Managing slate-wide capacity allocations, cross-territory tax incentive monetizations, and multi-hub facility commitments.</li>
+                <li>&bull; <strong class="text-white">Independent Line Producers &amp; UPMs:</strong> Locking certified soundstages, serialized cine packages, and vetted guild crew on budget and on schedule.</li>
+                <li>&bull; <strong class="text-white">Soundstage &amp; Lot Operators:</strong> Monetizing 14-to-60 day dark windows between major studio tentpole leases with zero rate-card dilution.</li>
+                <li>&bull; <strong class="text-white">Equipment Rental Houses:</strong> Expanding deployment velocity for high-capital cinema camera packages, anamorphic glass, and mobile LED rigs.</li>
+                <li>&bull; <strong class="text-white">Theatrical Post-Production Suites:</strong> Filling color grading DI suites, conform pipelines, and Dolby Atmos 7.1.4 mixing schedules.</li>
+                <li>&bull; <strong class="text-white">Financiers &amp; Completion Guarantors:</strong> De-risking physical execution with verifiable milestone telemetry and structured escrow draw releases.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 5: HOW DOES IT STAY NEUTRAL? -->
+        <div>
+          <div class="grid-12">
+            <div style="grid-column: span 4;">
+              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 05</div>
+              <h2 style="font-size: 1.75rem;">How does it stay neutral?</h2>
+            </div>
+            <div style="grid-column: span 8;">
+              <p style="font-size: 1.1rem; line-height: 1.7; color: var(--gray-200); margin-bottom: 1rem;">
+                DigiSynq's neutrality is hardcoded into its economic architecture and corporate bylaws.
+              </p>
+              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--gray-400); margin-bottom: 1rem;">
+                Because we own zero physical production assets and represent zero talent rosters, we have zero financial incentive to route a booking to one facility over another. Matching decisions are governed strictly by technical parameters, calendar availability, and verified reputation scores.
+              </p>
+              <div class="mono" style="font-size: 0.8rem; color: var(--white); border-left: 2px solid var(--white); padding-left: 1rem;">
+                RULE: Unbiased algorithmic matching with published reputation scoring formulas.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 — LIVE TODAY VS BEING BUILT -->
+    <section style="padding: 5rem 0; background-color: var(--gray-950); border-bottom: 1px solid var(--gray-800);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Roadmap Transparency &amp; Claim Governance</div>
+          <h2 class="section-title">What is live today vs. what is being built</h2>
+          <p class="section-desc">
+            We hold ourselves to rigorous claim governance. We never represent future roadmap items as current production features.
+          </p>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Capability / Module</th>
+                <th>Status</th>
+                <th>Current Operational Scope</th>
+                <th>Target Horizon</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>DigiSynq Core Identity Registry</strong></td>
+                <td><span class="badge badge-live">[LIVE]</span></td>
+                <td>Corporate KYC/KYB, authorized signatory verification, secure intake brief triage</td>
+                <td>Active global production</td>
+              </tr>
+              <tr>
+                <td><strong>Venue &amp; Soundstage Telemetry</strong></td>
+                <td><span class="badge badge-live">[LIVE]</span></td>
+                <td>Stage dimension verification, NC acoustic profiling, 3-phase power verification</td>
+                <td>Active global production</td>
+              </tr>
+              <tr>
+                <td><strong>Guild Labor Telemetry &amp; Roster Sync</strong></td>
+                <td><span class="badge badge-pilot">[PILOT]</span></td>
+                <td>Selected pilot productions validating IATSE/DGA HOD scheduling verification</td>
+                <td>Q3 2026 expansion</td>
+              </tr>
+              <tr>
+                <td><strong>Serialized Cine Equipment Registry</strong></td>
+                <td><span class="badge badge-pilot">[PILOT]</span></td>
+                <td>Serialized camera package registry with partner rental houses</td>
+                <td>Q4 2026 expansion</td>
+              </tr>
+              <tr>
+                <td><strong>Depository Escrow Administration</strong></td>
+                <td><span class="badge badge-partner">[PARTNER]</span></td>
+                <td>Chartered banking partner escrow workflows for bilateral contracts</td>
+                <td>Continuous integration</td>
+              </tr>
+              <tr>
+                <td><strong>Predictive Capacity Intelligence</strong></td>
+                <td><span class="badge badge-pilot">[PILOT]</span></td>
+                <td>Regional soundstage utilization models derived from pilot telemetry</td>
+                <td>Q1 2027 enterprise rollout</td>
+              </tr>
+              <tr>
+                <td><strong>Cross-Border Tax Rebate Monetization</strong></td>
+                <td><span class="badge badge-partner">[PARTNER]</span></td>
+                <td>Automated tax incentive verification and bridge debt structuring with institutional lenders</td>
+                <td>Under partner design</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="section-label">Institutional Integration</div>
+        <h2 class="cta-banner-title">Build the coordination infrastructure with us.</h2>
+        <p class="cta-banner-sub">
+          Submit your requirements to our coordination protocol and help eliminate friction across global entertainment pipelines.
+        </p>
+        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="start-a-synq.html" class="btn btn-primary btn-lg">Start a synq &rarr;</a>
+          <a href="trust.html" class="btn btn-secondary btn-lg">Review trust standards</a>
+          <a href="economics.html" class="btn btn-secondary btn-lg">Explore Economics</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CANONICAL ENTERPRISE FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">DigiSynq</div>
+          <p class="footer-brand-desc">
+            The coordination layer for entertainment. DigiSynq connects verified people, places, equipment, capital and distribution into coordinated production pathways.
+          </p>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>All coordination rails operational</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="how-it-works.html" class="footer-link">How it works</a></li>
+            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
+            <li><a href="platform.html" class="footer-link">Platform</a></li>
+            <li><a href="network.html" class="footer-link">Network</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Infrastructure</div>
+          <ul class="footer-links">
+            <li><a href="intelligence.html" class="footer-link">Intelligence</a></li>
+            <li><a href="economics.html" class="footer-link">Economics</a></li>
+            <li><a href="trust.html" class="footer-link">Trust center</a></li>
+            <li><a href="about.html" class="footer-link">About DigiSynq</a></li>
+            <li><a href="start-a-synq.html" class="footer-link">Start a synq</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Situations</div>
+          <ul class="footer-links">
+            <li><a href="solutions.html#have" class="footer-link">I have something</a></li>
+            <li><a href="solutions.html#need" class="footer-link">I need something</a></li>
+            <li><a href="solutions.html#underused" class="footer-link">Underused capacity</a></li>
+            <li><a href="solutions.html#blocked" class="footer-link">Production bottlenecks</a></li>
+            <li><a href="solutions.html#enterprise" class="footer-link">For enterprise</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Governance</div>
+          <ul class="footer-links">
+            <li><a href="trust.html#identity" class="footer-link">Identity verification</a></li>
+            <li><a href="trust.html#governance" class="footer-link">Neutrality policy</a></li>
+            <li><a href="trust.html#disputes" class="footer-link">Dispute resolution</a></li>
+            <li><a href="economics.html#fee-table" class="footer-link">Fee schedule</a></li>
+            <li><a href="trust.html#data" class="footer-link">Data governance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-regulatory">
+          <strong>Regulatory disclosure:</strong> DigiSynq is an entertainment coordination infrastructure platform. DigiSynq is not a bank, non-banking financial company (NBFC), registered broker-dealer, investment adviser, insurance carrier, or regulated escrow depository. Any contractual escrow, fiduciary, or financial settlement workflows are facilitated exclusively through licensed, regulated third-party institutional partners. All operational claims and metrics are governed under verified data classifications.
+        </div>
+
+        <div class="footer-meta">
+          <div>&copy; 2026 DigiSynq Infrastructure Protocol. All rights reserved.</div>
+          <div>Swiss editorial &bull; Monochrome infrastructure architecture</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

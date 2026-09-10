@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — DigiSynq Coordination Architecture</title>
+  <meta name="description" content="Detailed guide to DigiSynq's canonical 6-stage coordination lifecycle: Verify, Match, Commit, Execute, Settle, and Learn for entertainment productions.">
+  <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/how-it-works.html">
+  
+  <meta property="og:title" content="How It Works — DigiSynq Coordination Architecture">
+  <meta property="og:description" content="Explore the 6-stage lifecycle coordinating talent, soundstages, equipment, and capital into verifiable production pathways.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/how-it-works.html">
+  <!-- Font preloads: critical Space Grotesk weights -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/design-system.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- CANONICAL HEADER -->
+  <header class="navbar" role="banner">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
+        <span class="nav-brand-name">DigiSynq</span>
+        <span class="nav-brand-sub">COORDINATION INFRASTRUCTURE</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link active">How it works</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="nav-link">Platform</a></li>
+          <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
+          <li><a href="economics.html" class="nav-link">Economics</a></li>
+          <li><a href="trust.html" class="nav-link">Trust</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span>
+          <kbd>⌘K</kbd>
+        </button>
+        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="how-it-works.html" class="mobile-nav-link active">How it works</a>
+    <a href="solutions.html" class="mobile-nav-link">Solutions</a>
+    <a href="platform.html" class="mobile-nav-link">Platform</a>
+    <a href="network.html" class="mobile-nav-link">Network</a>
+    <a href="intelligence.html" class="mobile-nav-link">Intelligence</a>
+    <a href="economics.html" class="mobile-nav-link">Economics</a>
+    <a href="trust.html" class="mobile-nav-link">Trust center</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    </div>
+  </div>
+
+  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem);">
+    <!-- HERO -->
+    <section class="container" style="padding-bottom: 4rem; border-bottom: 1px solid var(--gray-800);">
+      <div class="section-label">Deterministic Operating Architecture</div>
+      <h1 style="margin-bottom: 1.5rem;">
+        The 6-Stage <span class="text-gradient-cyan"><em>Deterministic</em></span> Production <span class="text-gradient-violet"><em>Protocol</em></span>
+      </h1>
+      <p style="font-size: 1.25rem; max-width: 820px; color: var(--gray-200); line-height: 1.6; margin-bottom: 2rem;">
+        DigiSynq transforms the structural chaos of entertainment logistics into an institutional, mathematically verified coordination pipeline. Every state transition executes strictly upon authenticated counterparty evidence.
+      </p>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#stage-01" class="btn btn-secondary btn-sm">01 Verify</a>
+        <a href="#stage-02" class="btn btn-secondary btn-sm">02 Match</a>
+        <a href="#stage-03" class="btn btn-secondary btn-sm">03 Commit</a>
+        <a href="#stage-04" class="btn btn-secondary btn-sm">04 Execute</a>
+        <a href="#stage-05" class="btn btn-secondary btn-sm">05 Settle</a>
+        <a href="#stage-06" class="btn btn-secondary btn-sm">06 Learn</a>
+      </div>
+    </section>
+
+    <!-- DETAILED STAGE BREAKDOWNS: LINEAR BENTO GRID -->
+    <section class="section-block" style="border-bottom: 1px solid var(--border-hairline);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Operating Pipeline &bull; Stages 01 to 06</div>
+          <h2 class="section-title text-gradient">The Six-Stage Deterministic Coordination Engine</h2>
+          <p class="section-desc">
+            Immutable state progression: each stage transitions only upon verified counterparty evidence and regulatory compliance.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- STAGE 01: VERIFY (Span 6) -->
+          <div id="stage-01" class="bento-card bento-span-6 bento-card-gradient">
+            <div class="bento-glow-top"></div>
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">Stage 01 of 06 &bull; Cryptographic Authentication</span>
+                <span class="badge badge-live">[Active protocol]</span>
+              </div>
+              <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">01 verify</h2>
+              <div class="mono" style="font-size: 0.82rem; color: var(--accent-indigo); font-weight: 600; margin-bottom: 0.75rem;">
+                &ldquo;Authenticate ground truth before asset entry.&rdquo;
+              </div>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem;">
+                Production schedules frequently collapse under phantom stage availability, uncertified technical claims, and unverifiable crew holds. DigiSynq requires cryptographic entity verification and empirical spec validation before any resource enters the syndication network.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="label-mono" style="font-size: 0.7rem; margin-bottom: 0.5rem;">Verified Telemetry Vectors</div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">&bull; Corporate Legal Entities & KYC</span>
+                <span class="bento-chip">&bull; NC-25 / NC-30 Acoustic Ratings</span>
+                <span class="bento-chip">&bull; Serialized Gear Benchmarks</span>
+                <span class="bento-chip">&bull; DGA / IATSE / PGA Credentials</span>
+                <span class="bento-chip">&bull; Commercial Liability ($10M)</span>
+              </div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.85rem;">
+                Operational imperative: Eliminates 94% of pre-production discovery churn and erroneous availability declarations.
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 02: MATCH (Span 6) -->
+          <div id="stage-02" class="bento-card bento-span-6">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">Stage 02 of 06 &bull; Multi-Variable Constraint Solving</span>
+                <span class="badge badge-live">[Active protocol]</span>
+              </div>
+              <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">02 match</h2>
+              <div class="mono" style="font-size: 0.82rem; color: var(--accent-indigo); font-weight: 600; margin-bottom: 0.75rem;">
+                &ldquo;Deterministic synthesis of physical demand and capacity.&rdquo;
+              </div>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem;">
+                The DigiSynq constraint engine evaluates multi-dimensional variables—geographical proximity, power transformer capacity, camera optical profiles, union turnaround rules, and counterparty delivery scores—to synthesize optimal pairings.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="label-mono" style="font-size: 0.7rem; margin-bottom: 0.5rem;">Matching Parameters</div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">&bull; Sub-Second Constraint Resolution</span>
+                <span class="bento-chip">&bull; Multi-Jurisdictional Tax Compliance</span>
+                <span class="bento-chip">&bull; Bilateral Solvency Indices</span>
+                <span class="bento-chip">&bull; High-Frequency Optical Sync</span>
+              </div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.85rem;">
+                Institutional neutrality: DigiSynq holds zero balance-sheet equipment or facilities; algorithmic pairing is provably unbiased.
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 03: COMMIT (Span 6) -->
+          <div id="stage-03" class="bento-card bento-span-6">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">Stage 03 of 06 &bull; Bilateral Covenants & Escrow Depository</span>
+                <span class="badge badge-live">[Active protocol]</span>
+              </div>
+              <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">03 commit</h2>
+              <div class="mono" style="font-size: 0.82rem; color: var(--accent-indigo); font-weight: 600; margin-bottom: 0.75rem;">
+                &ldquo;Standardized commercial covenants and capital locking.&rdquo;
+              </div>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem;">
+                Replaces protracted legal negotiation and multi-week contract redlines with pre-structured bilateral covenants, automated hold progression, and regulated multi-signature escrow tranches.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="label-mono" style="font-size: 0.7rem; margin-bottom: 0.5rem;">Commitment Protocols</div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">&bull; Standardized Master Covenants</span>
+                <span class="bento-chip">&bull; Programmatic 24h / 48h Holds</span>
+                <span class="bento-chip">&bull; Force Majeure & Weather Terms</span>
+                <span class="bento-chip">&bull; Bank Escrow Depository Lock</span>
+              </div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.85rem;">
+                Fiduciary architecture: Mobilization capital locked in chartered banking partner escrow; released strictly upon authenticated milestone certificates.
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 04: EXECUTE (Span 6) -->
+          <div id="stage-04" class="bento-card bento-span-6">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">Stage 04 of 06 &bull; Production Telemetry & Milestone Surveillance</span>
+                <span class="badge badge-live">[Active protocol]</span>
+              </div>
+              <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">04 execute</h2>
+              <div class="mono" style="font-size: 0.82rem; color: var(--accent-indigo); font-weight: 600; margin-bottom: 0.75rem;">
+                &ldquo;Surveil operational dependencies and mitigate variance.&rdquo;
+              </div>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem;">
+                Granular milestone surveillance monitors operational dependencies across prep check-in, load-in telemetry, call sheet turnarounds, and principal wrap. Emerging variances trigger automated contingency re-routing across local network inventory.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="label-mono" style="font-size: 0.7rem; margin-bottom: 0.5rem;">Execution Telemetry</div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">&bull; Authenticated Call Sheet Sync</span>
+                <span class="bento-chip">&bull; Optical Collimator Bench Tests</span>
+                <span class="bento-chip">&bull; Stage Power Staging Telemetry</span>
+                <span class="bento-chip">&bull; Automated Contingency Routing</span>
+              </div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.85rem;">
+                Contingency guarantee: Pre-cleared secondary inventory within 35 miles deployed automatically upon critical equipment exception.
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 05: SETTLE (Span 6) -->
+          <div id="stage-05" class="bento-card bento-span-6">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">Stage 05 of 06 &bull; Wrap Verification & Net-24H Settlement</span>
+                <span class="badge badge-live">[Active protocol]</span>
+              </div>
+              <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">05 settle</h2>
+              <div class="mono" style="font-size: 0.82rem; color: var(--accent-indigo); font-weight: 600; margin-bottom: 0.75rem;">
+                &ldquo;Instant invoice verification and programmatic capital release.&rdquo;
+              </div>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem;">
+                Settlement latency and carrying costs are eradicated through automated milestone audit, instant invoice reconciliation against contractual covenants, and certified wrap sign-off releases.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="label-mono" style="font-size: 0.7rem; margin-bottom: 0.5rem;">Settlement Workflow</div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">&bull; Certified Wrap Sign-Off</span>
+                <span class="bento-chip">&bull; Contractual Invoice Reconciliation</span>
+                <span class="bento-chip">&bull; Regulated Chartered Bank Payouts</span>
+                <span class="bento-chip">&bull; Automated Tax Reporting (1099/TDS)</span>
+              </div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.85rem;">
+                Regulatory disclosure: Fiduciary custody and fiat disbursements facilitated exclusively through licensed, chartered institutional partners.
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 06: LEARN (Span 6) -->
+          <div id="stage-06" class="bento-card bento-span-6">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">Stage 06 of 06 &bull; Adaptive Telemetry & Consensus Reputation</span>
+                <span class="badge badge-live">[Active protocol]</span>
+              </div>
+              <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">06 learn</h2>
+              <div class="mono" style="font-size: 0.82rem; color: var(--accent-indigo); font-weight: 600; margin-bottom: 0.75rem;">
+                &ldquo;Accrete empirical performance into predictive intelligence.&rdquo;
+              </div>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem;">
+                Every completed production injects empirical telemetry back into the protocol—updating bilateral counterparty trust scores, refining power efficiency indices, and training predictive capacity models across global entertainment hubs.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="label-mono" style="font-size: 0.7rem; margin-bottom: 0.5rem;">Adaptive Outcomes</div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">&bull; Bilateral Solvency & Trust Accretion</span>
+                <span class="bento-chip">&bull; Facility Power Utilization Telemetry</span>
+                <span class="bento-chip">&bull; Algorithmic Seasonal Rate Indices</span>
+                <span class="bento-chip">&bull; Guild Turnaround Compliance Logs</span>
+              </div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.85rem;">
+                Institutional confidentiality: Telemetry is cryptographically anonymized and aggregated; proprietary scripts, budgets, and creative IP remain strictly confidential.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKED EXAMPLE 02: POST-PRODUCTION & VFX -->
+    <section style="background-color: var(--gray-950); padding: 5rem 0; border-top: 1px solid var(--gray-800); border-bottom: 1px solid var(--gray-800);">
+      <div class="container">
+        <div class="section-label">Worked Pipeline 02 &bull; Theatrical Finishing & Conform</div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          <h2 style="font-size: 2.2rem;">Theatrical Dolby Atmos & DCI Mastering: 14-Day Lock</h2>
+          <span class="badge badge-illustrative">[Illustrative model &bull; Post coordination]</span>
+        </div>
+        <p style="max-width: 820px; color: var(--gray-300); margin-bottom: 2.5rem;">
+          A premier tier-one independent feature facing a rigid Venice / Telluride delivery cut-off required an accredited theatrical Dolby Atmos 7.1.4 mix facility and ACES 1.3 master color grading within a 14-calendar-day window.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="label-mono" style="margin-bottom: 0.5rem;">01 / Discovery & Fiduciary Verification</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Accredited Facility Identified</h3>
+            <p style="font-size: 0.88rem; color: var(--gray-300); line-height: 1.6;">
+              DigiSynq queried verified TPN-accredited post houses across Paris and London. An acoustically certified theatrical stage was identified during an 8-day commercial client gap.
+            </p>
+          </div>
+          <div class="card">
+            <div class="label-mono" style="margin-bottom: 0.5rem;">02 / Telemetry & Pipeline Sync</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Pre-Flight Spec Validation</h3>
+            <p style="font-size: 0.88rem; color: var(--gray-300); line-height: 1.6;">
+              ProTools Ultimate session templates, stem routing specifications, and ACES 1.3 / DCI-P3 color profiles were validated pre-flight to eliminate conforming latency.
+            </p>
+          </div>
+          <div class="card">
+            <div class="label-mono" style="margin-bottom: 0.5rem;">03 / Delivery & Consensus Settlement</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Theatrical Master Cleared</h3>
+            <p style="font-size: 0.88rem; color: var(--gray-300); line-height: 1.6;">
+              100% QC sign-off on first pass. DCI compliant encrypted DCPs generated. Regulated escrow partner disbursed final funds within 12 hours of producer sign-off.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="section-label">Deploy Institutional Coordination</div>
+        <h2 class="cta-banner-title">Activate the 6-Stage Deterministic Protocol.</h2>
+        <p class="cta-banner-sub">
+          Submit your production mandate, idle stage inventory, specialized camera package, or post pipeline into DigiSynq for zero-friction execution.
+        </p>
+        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="start-a-synq.html" class="btn btn-primary btn-lg">Start a synq &rarr;</a>
+          <a href="solutions.html" class="btn btn-secondary btn-lg">View solutions by situation</a>
+          <a href="trust.html" class="btn btn-secondary btn-lg">Review trust standards</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CANONICAL ENTERPRISE FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">DigiSynq</div>
+          <p class="footer-brand-desc">
+            The coordination layer for entertainment. DigiSynq connects verified people, places, equipment, capital and distribution into coordinated production pathways.
+          </p>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>All coordination rails operational</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="how-it-works.html" class="footer-link">How it works</a></li>
+            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
+            <li><a href="platform.html" class="footer-link">Platform</a></li>
+            <li><a href="network.html" class="footer-link">Network</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Infrastructure</div>
+          <ul class="footer-links">
+            <li><a href="intelligence.html" class="footer-link">Intelligence</a></li>
+            <li><a href="economics.html" class="footer-link">Economics</a></li>
+            <li><a href="trust.html" class="footer-link">Trust center</a></li>
+            <li><a href="about.html" class="footer-link">About DigiSynq</a></li>
+            <li><a href="start-a-synq.html" class="footer-link">Start a synq</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Situations</div>
+          <ul class="footer-links">
+            <li><a href="solutions.html#have" class="footer-link">I have something</a></li>
+            <li><a href="solutions.html#need" class="footer-link">I need something</a></li>
+            <li><a href="solutions.html#underused" class="footer-link">Underused capacity</a></li>
+            <li><a href="solutions.html#blocked" class="footer-link">Production bottlenecks</a></li>
+            <li><a href="solutions.html#enterprise" class="footer-link">For enterprise</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Governance</div>
+          <ul class="footer-links">
+            <li><a href="trust.html#verification" class="footer-link">Identity verification</a></li>
+            <li><a href="trust.html#neutrality" class="footer-link">Neutrality policy</a></li>
+            <li><a href="trust.html#disputes" class="footer-link">Dispute resolution</a></li>
+            <li><a href="economics.html#fee-table" class="footer-link">Fee schedule</a></li>
+            <li><a href="trust.html#data" class="footer-link">Data governance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-regulatory">
+          <strong>Regulatory disclosure:</strong> DigiSynq is an entertainment coordination infrastructure platform. DigiSynq is not a bank, non-banking financial company (NBFC), registered broker-dealer, investment adviser, insurance carrier, or regulated escrow depository. Any contractual escrow, fiduciary, or financial settlement workflows are facilitated exclusively through licensed, regulated third-party institutional partners. All operational claims and metrics are governed under verified data classifications.
+        </div>
+
+        <div class="footer-meta">
+          <div>&copy; 2026 DigiSynq Infrastructure Protocol. All rights reserved.</div>
+          <div>Swiss editorial &bull; Monochrome infrastructure architecture</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

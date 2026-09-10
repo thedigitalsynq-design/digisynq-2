@@ -3,747 +3,464 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7 Telemetry Pillars & Production Intelligence — DigiSynq</title>
-  <meta name="description" content="Production telemetry derived from verified market transactions: soundstage occupancy indices, gear price dispersion, crew availability, and pilot study outcomes.">
-  <link rel="icon" type="image/png" href="assets/img/digisynq-logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Production Intelligence — DigiSynq Entertainment Coordination</title>
+  <meta name="description" content="DigiSynq production intelligence architecture: transforming empirical production data into actionable signals across capacity, talent, post, and audience demand.">
+  <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/intelligence.html">
+  
+  <meta property="og:title" content="Production Intelligence — DigiSynq Entertainment Coordination">
+  <meta property="og:description" content="Explore the continuous learning loop and data provenance model powering entertainment coordination.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/intelligence.html">
+  <!-- Font preloads: critical Space Grotesk weights -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/design-system.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body style="overflow-x:hidden;background:#060606;color:#FFFFFF;">
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Master Fixed Top Navbar -->
-    <!-- Master Fixed Top Navbar -->
-  <header class="site-navbar" role="banner">
-    <div class="site-navbar-inner">
-      <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
-        <div class="site-brand-glyph" aria-hidden="true">DS</div>
-        <span>DIGISYNQ</span>
+  <!-- CANONICAL HEADER -->
+  <header class="navbar" role="banner">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
+        <span class="nav-brand-name">DigiSynq</span>
+        <span class="nav-brand-sub">COORDINATION INFRASTRUCTURE</span>
       </a>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="site-nav-pills">
-          <li><a href="index.html" class="site-nav-pill-link">Overview</a></li>
-          <li><a href="platform.html" class="site-nav-pill-link">Platform</a></li>
-          <li><a href="solutions.html" class="site-nav-pill-link">Solutions</a></li>
-          <li><a href="ecosystem.html" class="site-nav-pill-link">Ecosystem</a></li>
-          <li><a href="guilds.html" class="site-nav-pill-link">Guilds</a></li>
-          <li><a href="modules.html" class="site-nav-pill-link">Modules</a></li>
-          <li><a href="intelligence.html" class="site-nav-pill-link active">Intelligence</a></li>
-          <li><a href="economics.html" class="site-nav-pill-link">Economics</a></li>
-          <li><a href="company.html" class="site-nav-pill-link">Company</a></li>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="how-it-works.html" class="nav-link">How it works</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="nav-link">Platform</a></li>
+          <li><a href="network.html" class="nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="nav-link active">Intelligence</a></li>
+          <li><a href="economics.html" class="nav-link">Economics</a></li>
+          <li><a href="trust.html" class="nav-link">Trust</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
         </ul>
       </nav>
 
-      <div class="site-nav-actions">
-        <button id="audioHudToggle" class="btn-hud-audio" aria-label="Toggle sensory audio">
-          <span class="material-symbols-outlined" style="font-size:1rem;color:#FFFFFF;">volume_up</span>
-          <span>Audio: on</span>
+      <div class="nav-actions">
+        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span>
+          <kbd>⌘K</kbd>
         </button>
-        <button class="btn-keypad-trigger" data-open-dialpad aria-label="Open 10-node knowledge map">
-          <span class="material-symbols-outlined" style="font-size:1rem;">grid_view</span>
-          <span>10 nodes [K]</span>
-        </button>
-        <a href="synq.html" class="btn btn-primary" style="padding:0.45rem 1.15rem;font-size:0.82rem;">
-          Start a synq &rarr;
-        </a>
+        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
       </div>
     </div>
   </header>
 
-  <div class="edge-badge-vertical" aria-hidden="true">
-    <span>DIGISYNQ <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin:0 0.25rem;color:var(--accent-cyan);">radio_button_checked</span> TELEMETRY LAYER &bull; NODE 06: INTELLIGENCE</span>
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="how-it-works.html" class="mobile-nav-link">How it works</a>
+    <a href="solutions.html" class="mobile-nav-link">Solutions</a>
+    <a href="platform.html" class="mobile-nav-link">Platform</a>
+    <a href="network.html" class="mobile-nav-link">Network</a>
+    <a href="intelligence.html" class="mobile-nav-link active">Intelligence</a>
+    <a href="economics.html" class="mobile-nav-link">Economics</a>
+    <a href="trust.html" class="mobile-nav-link">Trust center</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    </div>
   </div>
 
-  <main>
-    <section style="padding-top:clamp(7rem, 11vw, 9.5rem);padding-bottom:clamp(4rem, 8vw, 6rem);">
-      <div class="container" style="max-width:1180px;">
+  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem);">
+    <!-- HERO -->
+    <section class="container" style="padding-bottom: 4rem; border-bottom: 1px solid var(--gray-800);">
+      <div class="section-label">Empirical Production Telemetry & Analytics</div>
+      <h1 style="margin-bottom: 1.5rem;">
+        Predictive Production <span class="text-gradient-cyan"><em>Intelligence</em></span> <span class="text-gradient-violet"><em>Protocol</em></span>
+      </h1>
+      <p style="font-size: 1.25rem; max-width: 820px; color: var(--gray-200); line-height: 1.6; margin-bottom: 2rem;">
+        Production intelligence is valuable only when it unlocks deterministic decisions. DigiSynq grounds intelligence directly in transactional coordination telemetry, soundstage utilization telemetry, and audited settlement data—eliminating speculative industry rumors.
+      </p>
 
-        <!-- Colossal Numeral Layout -->
-        <div class="colossal-numeral-layout">
-          <div class="colossal-digit" aria-label="Node 06: INTELLIGENCE">06</div>
-          <div class="colossal-title-stack">
-            <div class="mono" style="font-size:0.8rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-cyan);margin-bottom:0.45rem;display:flex;align-items:center;gap:0.45rem;">
-              <span class="material-symbols-outlined" style="font-size:1.1rem;">radar</span> PRODUCTION TELEMETRY
-            </div>
-            <h1 class="colossal-title">Intelligence</h1>
-            <p class="colossal-caption">How the Coordination Layer Sees</p>
-          </div>
-        </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#pipeline" class="btn btn-secondary btn-sm">The learning loop</a>
+        <a href="#domains" class="btn btn-secondary btn-sm">Seven intelligence domains</a>
+        <a href="#provenance" class="btn btn-secondary btn-sm">Data provenance standards</a>
+      </div>
+    </section>
 
-        <!-- Master Headline -->
-        <div class="schematic-frame-box" style="margin-bottom:3.5rem;">
-          <div class="schematic-crosshair-tl"></div><div class="schematic-crosshair-tr"></div>
-          <div class="schematic-crosshair-bl"></div><div class="schematic-crosshair-br"></div>
-          <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:0.6rem;">
-            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px;margin-right:0.35rem;">sensors</span>
-            THE PRINCIPLE OF VERIFIABLE SIGNAL
-          </span>
-          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">Signal quality depends on verified inputs.
-          </h2>
-          <p style="font-size:1.1rem;line-height:1.75;color:#666362;margin:0 0 1.25rem;max-width:860px;">
-            Entertainment analytics too often rely on unverified rumors or scrapings. DigiSynq grounds intelligence directly in verified operational inputs: confirmed soundstage calendars, gear maintenance logs, call sheet records, and milestone delivery proofs.
+    <!-- SECTION 01 — THE 7-STEP LEARNING LOOP -->
+    <section id="pipeline" style="padding: 5rem 0; border-bottom: 1px solid var(--gray-800);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Telemetry Pipeline & Protocol Architecture</div>
+          <h2 class="section-title">The Continuous Production Learning Loop</h2>
+          <p class="section-desc">
+            How empirical production transactions convert into deterministic planning advantages across global slates.
           </p>
-          <div class="mono" style="font-size:0.88rem;color:#FFFFFF;font-weight:700;">
-            &bull; OBJECTIVE TELEMETRY OVER INTUITION
-          </div>
         </div>
 
-        <!-- Data -> Signal -> Insight -> Decision Continuum -->
-        <div class="schematic-frame-box" style="margin-bottom:3.5rem;">
-          <div class="schematic-crosshair-tl"></div><div class="schematic-crosshair-tr"></div>
-          <div class="schematic-crosshair-bl"></div><div class="schematic-crosshair-br"></div>
-          <span class="mono" style="font-size:0.75rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:1rem;">
-            THE INTELLIGENCE CONTINUUM
-          </span>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1.25rem;">
-            <div class="pastel-card" style="padding:1.25rem;border-left:3px solid #666362;">
-              <div class="mono" style="font-size:0.72rem;color:#666362;margin-bottom:0.3rem;">STAGE 01</div>
-              <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Data</h3>
-              <p style="font-size:0.85rem;color:#666362;line-height:1.6;margin:0;">
-                Raw recorded operational records: shoot wrap times, camera serial numbers, facility booking dates, escrow amounts.
-              </p>
+        <div class="steps-grid" style="grid-template-columns: repeat(7, 1fr);">
+          <div class="step-card">
+            <div>
+              <div class="step-num">01</div>
+              <div class="step-name" style="font-size: 1.15rem;">Telemetry</div>
             </div>
-            <div class="pastel-card" style="padding:1.25rem;border-left:3px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);margin-bottom:0.3rem;">STAGE 02</div>
-              <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Signal</h3>
-              <p style="font-size:0.85rem;color:#666362;line-height:1.6;margin:0;">
-                Filtered, verified trends showing supply availability, regional crew tightness, and genuine territorial demand.
-              </p>
+            <p class="step-desc">Verified transactions, stage check-ins, optical bench manifests, bank escrow settlements.</p>
+          </div>
+
+          <div class="step-card">
+            <div>
+              <div class="step-num">02</div>
+              <div class="step-name" style="font-size: 1.15rem;">Signal</div>
             </div>
-            <div class="pastel-card" style="padding:1.25rem;border-left:3px solid #2B1B17;">
-              <div class="mono" style="font-size:0.72rem;color:#2B1B17;margin-bottom:0.3rem;">STAGE 03</div>
-              <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Insight</h3>
-              <p style="font-size:0.85rem;color:#666362;line-height:1.6;margin:0;">
-                Contextual understanding of underlying friction points, margin opportunities, and risk exposures.
-              </p>
+            <p class="step-desc">Algorithmic pattern detection: seasonal stage vacancy spikes, regional camera shortages.</p>
+          </div>
+
+          <div class="step-card">
+            <div>
+              <div class="step-num">03</div>
+              <div class="step-name" style="font-size: 1.15rem;">Modeling</div>
             </div>
-            <div class="pastel-card" style="padding:1.25rem;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.72rem;color:#FFFFFF;margin-bottom:0.3rem;">STAGE 04</div>
-              <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.4rem;">Decision</h3>
-              <p style="font-size:0.85rem;color:#666362;line-height:1.6;margin:0;">
-                Actionable choices: greenlighting a package, re-routing camera kits, or deploying capital into verified milestone schedules.
-              </p>
+            <p class="step-desc">Correlation models: impact of prep delays on post-production conform windows.</p>
+          </div>
+
+          <div class="step-card">
+            <div>
+              <div class="step-num">04</div>
+              <div class="step-name" style="font-size: 1.15rem;">Calibration</div>
             </div>
+            <p class="step-desc">Line producers book verified capacity earlier with calibrated price bands.</p>
+          </div>
+
+          <div class="step-card">
+            <div>
+              <div class="step-num">05</div>
+              <div class="step-name" style="font-size: 1.15rem;">Covenant Lock</div>
+            </div>
+            <p class="step-desc">Executing digital bilateral covenants and funding regulated partner escrow deposits.</p>
+          </div>
+
+          <div class="step-card">
+            <div>
+              <div class="step-num">06</div>
+              <div class="step-name" style="font-size: 1.15rem;">Delivery</div>
+            </div>
+            <p class="step-desc">Zero lost shoot days, certified wrap sign-off, rapid milestone disbursement.</p>
+          </div>
+
+          <div class="step-card">
+            <div>
+              <div class="step-num">07</div>
+              <div class="step-name" style="font-size: 1.15rem;">Consensus</div>
+            </div>
+            <p class="step-desc">Updating bilateral partner trust ratings and training capacity forecasting algorithms.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- MASTER BENTO SHOWCASE DASHBOARD (Sample-Matched Architecture) -->
-        <div class="bento-master-chassis">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding:0 8px;flex-wrap:wrap;gap:10px;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <span class="material-symbols-outlined" style="color:var(--accent-cyan);font-size:1.3rem;">analytics</span>
-              <span class="mono" style="font-size:0.75rem;letter-spacing:0.15em;color:var(--accent-cyan);font-weight:800;text-transform:uppercase;">
-                TELEMETRY NODE 06 // ACTIVE MEASUREMENT MATRIX
-              </span>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px;">
-              <span class="status-indicator status-live" style="font-size:0.72rem;">RADAR ACTIVE</span>
-              <span class="mono" style="font-size:0.75rem;color:var(--text-tertiary);">PILOT HUBS</span>
-            </div>
-          </div>
-
-          <div class="bento-master-grid">
-
-            <!-- COLUMN 1 (LEFT): Hero Asset Card + Persona Card with Floating Action Pills -->
-            <div class="bento-col-left">
-
-              <!-- Left Card 1: Vibrant Asset Hero Card -->
-              <div class="bento-tile bento-tile-orange" style="min-height:280px;padding:26px;">
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-                  <span class="mono" style="font-size:0.7rem;letter-spacing:0.12em;background:rgba(0,0,0,0.25);padding:4px 10px;border-radius:100px;font-weight:800;">
-                    STAGE CAPACITY
-                  </span>
-                  <span class="material-symbols-outlined" style="font-size:1.5rem;opacity:0.9;">domain</span>
-                </div>
-
-                <div style="margin:24px 0 12px;text-align:center;">
-                  <div style="font-size:3.8rem;line-height:1;filter:drop-shadow(0 10px 20px rgba(0,0,0,0.3));">🏛️</div>
-                </div>
-
-                <div>
-                  <h3 style="font-size:1.5rem;font-weight:800;color:#fff;margin:0 0 4px;letter-spacing:-0.02em;">
-                    Floor 03 Soundstage
-                  </h3>
-                  <div style="font-size:1.8rem;font-weight:800;font-family:var(--font-headline);color:#fff;line-height:1.2;">
-                    18,000 <span style="font-size:0.85rem;font-weight:600;opacity:0.85;">Sq Ft</span>
-                  </div>
-                  <div style="font-size:0.78rem;opacity:0.9;margin-top:6px;font-family:var(--font-mono);">
-                    NC-25 SOUNDPROOF RATED &bull; 40FT GRID
-                  </div>
-                </div>
-              </div>
-
-              <!-- Left Card 2: Interactive Persona with Floating Action Pills -->
-              <div class="bento-tile bento-tile-blue" style="min-height:260px;padding:24px;position:relative;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-                  <span class="mono" style="font-size:0.7rem;letter-spacing:0.12em;background:rgba(0,0,0,0.2);padding:4px 10px;border-radius:100px;font-weight:800;">
-                    LIVE MAPPING
-                  </span>
-                  <span class="material-symbols-outlined" style="font-size:1.3rem;">sensors</span>
-                </div>
-
-                <div style="text-align:center;margin:10px 0 16px;">
-                  <div style="font-size:3rem;line-height:1;">📡</div>
-                  <div style="font-family:var(--font-headline);font-weight:800;font-size:1.15rem;color:#fff;margin-top:6px;">
-                    Ecosystem Sensor Radar
-                  </div>
-                  <div style="font-size:0.75rem;opacity:0.9;font-family:var(--font-mono);">MUMBAI &bull; HYDERABAD &bull; CHENNAI</div>
-                </div>
-
-                <!-- Floating Action Pills -->
-                <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
-                  <a href="synq.html?telemetry=occupancy" class="bento-floating-chip">
-                    <span>📊</span> <span>Occupancy Radar</span>
-                  </a>
-                  <a href="synq.html?telemetry=burn" class="bento-floating-chip">
-                    <span>🔥</span> <span>Budget Burn Tracking</span>
-                  </a>
-                  <a href="economics.html" class="bento-floating-chip">
-                    <span>🔒</span> <span>Escrow Tranche Audit</span>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- COLUMN 2 (CENTER): Split Top + Hero Analytics Bar Chart + Split Bottom -->
-            <div class="bento-col-center">
-
-              <!-- Center Top Subgrid: 2 Compact Cards -->
-              <div class="bento-subgrid-2">
-
-                <!-- Center Top Left: Signal Verification -->
-                <div class="bento-tile bento-tile-dark" style="padding:18px;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span class="mono" style="font-size:0.68rem;color:var(--accent-cyan);font-weight:700;">ACTIVE METRIC AUDIT</span>
-                    <span class="material-symbols-outlined" style="font-size:1rem;color:var(--accent-cyan);">speed</span>
-                  </div>
-                  <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:12px;">
-                    <div style="display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:4px;">
-                      <span style="color:#666362;">Call Sheet Variance:</span>
-                      <strong style="color:var(--accent-emerald);">&lt; 4% Shift</strong>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:4px;">
-                      <span style="color:#666362;">Stage Gap Fill:</span>
-                      <strong style="color:var(--accent-cyan);">32 Dark Days</strong>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;font-size:0.75rem;">
-                      <span style="color:#666362;">Escrow Recoupment:</span>
-                      <strong style="color:#fff;">100% Waterfalled</strong>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Center Top Right: Stacked Notifications -->
-                <div class="bento-tile bento-tile-dark" style="padding:18px;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                    <span class="mono" style="font-size:0.68rem;color:#343434;font-weight:700;">TELEMETRY STREAM</span>
-                    <span style="width:8px;height:8px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 8px #FFFFFF;"></span>
-                  </div>
-                  <div style="display:flex;flex-direction:column;gap:6px;">
-                    <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;">
-                      <span style="font-size:0.72rem;color:#FFFFFF;">⚡ Acoustic Collimation Verified</span>
-                      <span class="mono" style="font-size:0.62rem;color:#666362;">JUST NOW</span>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;">
-                      <span style="font-size:0.72rem;color:#FFFFFF;">💳 Tranche 3 Escrow Cleared</span>
-                      <span class="mono" style="font-size:0.62rem;color:#666362;">12M AGO</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Center Middle: Hero Analytics Bar Chart (The Grand Centerpiece) -->
-              <div class="bento-tile bento-tile-orange" style="padding:28px;position:relative;overflow:hidden;">
-                <!-- Decorative Watermark Graphic -->
-                <div style="position:absolute;right:15px;top:10px;font-family:var(--font-headline);font-size:4.5rem;font-weight:900;color:rgba(255,255,255,0.06);letter-spacing:0.05em;pointer-events:none;">
-                  TELEMETRY
-                </div>
-
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
-                  <div>
-                    <div class="mono" style="font-size:0.72rem;letter-spacing:0.12em;font-weight:800;color:rgba(255,255,255,0.9);text-transform:uppercase;">
-                      COORDINATED PRODUCTION HOURS
-                    </div>
-                    <div style="font-size:clamp(2.2rem, 3vw, 3.2rem);font-weight:900;line-height:1;margin:8px 0 4px;font-family:var(--font-headline);">
-                      44,500 <span style="font-size:1.1rem;font-weight:600;opacity:0.9;">Hours</span>
-                    </div>
-                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.85);">
-                      Verified studio and on-location shooting time audited across pilot slates
-                    </div>
-                  </div>
-                  <span class="mono" style="background:rgba(0,0,0,0.25);padding:6px 12px;border-radius:100px;font-size:0.75rem;font-weight:700;">
-                    LIVE CYCLE
-                  </span>
-                </div>
-
-                <!-- 7-Day Interactive CSS Bar Chart -->
-                <div class="bento-barchart-wrap">
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:48%;"></div>
-                    <span class="bento-barchart-label">Mon</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:62%;"></div>
-                    <span class="bento-barchart-label">Tue</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar highlight" style="height:88%;"></div>
-                    <span class="bento-barchart-label">Wed</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:70%;"></div>
-                    <span class="bento-barchart-label">Thu</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar highlight" style="height:100%;"></div>
-                    <span class="bento-barchart-label">Fri</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:76%;"></div>
-                    <span class="bento-barchart-label">Sat</span>
-                  </div>
-                  <div class="bento-barchart-col">
-                    <div class="bento-barchart-bar" style="height:55%;"></div>
-                    <span class="bento-barchart-label">Sun</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Center Bottom Subgrid: Ratings & Trust + Live Telemetry Radar Map -->
-              <div class="bento-subgrid-2">
-
-                <!-- Center Bottom Left: Rating / Credential Verification Card -->
-                <div class="bento-tile bento-tile-orange" style="padding:22px;">
-                  <div class="mono" style="font-size:0.7rem;font-weight:800;letter-spacing:0.1em;margin-bottom:8px;opacity:0.9;">
-                    AUDITED TELEMETRY INTEGRITY
-                  </div>
-                  <div style="background:#FFFFFF;border-radius:18px;padding:14px;color:#0D0907;">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-                      <div style="width:32px;height:32px;border-radius:50%;background:#FFFFFF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;">
-                        LP
-                      </div>
-                      <div>
-                        <div style="font-weight:800;font-size:0.82rem;line-height:1.2;">Lead Line Producer</div>
-                        <div class="mono" style="font-size:0.65rem;color:#2C3227;font-weight:700;">✓ Audited Production Audit</div>
-                      </div>
-                    </div>
-                    <p style="font-size:0.75rem;line-height:1.45;color:#666362;margin:0 0 8px;">
-                      "Having verified daily burn telemetry prevented unbudgeted overtime across our 24-day Hyderabad schedule."
-                    </p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:#666362;">
-                      <span>Score: <strong style="color:#0D0907;">4.95 / 5.0</strong></span>
-                      <span style="color:#343434;letter-spacing:2px;">★★★★★</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Center Bottom Right: Live Radar / Geo Map Card -->
-                <div class="bento-tile bento-tile-dark" style="padding:20px;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span class="mono" style="font-size:0.7rem;color:var(--accent-cyan);font-weight:700;">CORRIDOR OCCUPANCY MAP</span>
-                    <span class="mono-tag teal" style="font-size:0.65rem;padding:2px 8px;">LIVE PILOT</span>
-                  </div>
-
-                  <!-- Radar Map Canvas Graphic -->
-                  <div class="bento-radar-map">
-                    <div class="bento-map-ping"></div>
-                    <div style="position:absolute;bottom:10px;left:10px;right:10px;background:rgba(8,10,14,0.85);backdrop-filter:blur(8px);border-radius:100px;padding:5px 12px;display:flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,0.1);">
-                      <span class="material-symbols-outlined" style="font-size:0.9rem;color:#FFFFFF;">navigation</span>
-                      <span style="font-size:0.7rem;color:#FFFFFF;font-weight:700;">Active Hub: 92% Telemetry Match</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- COLUMN 3 (RIGHT): Special Menu / Module Catalog + Floating Status Pills -->
-            <div class="bento-col-right">
-
-              <!-- Right Card 1: Special Modules List (Nested Mini Cards) -->
-              <div class="bento-tile bento-tile-orange" style="padding:24px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-                  <h3 style="font-size:1.15rem;font-weight:800;color:#fff;margin:0;">
-                    Telemetry Streams
-                  </h3>
-                  <span class="mono" style="font-size:0.7rem;background:rgba(0,0,0,0.25);padding:3px 8px;border-radius:100px;font-weight:700;">
-                    STREAMING
-                  </span>
-                </div>
-
-                <!-- Nested Mini Item 1 -->
-                <div class="bento-nested-item">
-                  <div>
-                    <span class="mono" style="font-size:0.65rem;color:#2C3227;font-weight:800;">PILLAR 01</span>
-                    <div style="font-weight:800;font-size:0.85rem;color:#0D0907;">Market Signal Radar</div>
-                    <div class="mono" style="font-size:0.75rem;color:#666362;font-weight:700;">Production Volume</div>
-                  </div>
-                  <a href="synq.html?pillar=1" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
-                    INSPECT &rarr;
-                  </a>
-                </div>
-
-                <!-- Nested Mini Item 2 -->
-                <div class="bento-nested-item">
-                  <div>
-                    <span class="mono" style="font-size:0.65rem;color:#36454F;font-weight:800;">PILLAR 03</span>
-                    <div style="font-weight:800;font-size:0.85rem;color:#0D0907;">Stage Dark-Day Map</div>
-                    <div class="mono" style="font-size:0.75rem;color:#666362;font-weight:700;">Capacity Gaps</div>
-                  </div>
-                  <a href="synq.html?pillar=3" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
-                    INSPECT &rarr;
-                  </a>
-                </div>
-
-                <!-- Nested Mini Item 3 -->
-                <div class="bento-nested-item">
-                  <div>
-                    <span class="mono" style="font-size:0.65rem;color:#343434;font-weight:800;">PILLAR 06</span>
-                    <div style="font-weight:800;font-size:0.85rem;color:#0D0907;">Escrow Milestones</div>
-                    <div class="mono" style="font-size:0.75rem;color:#666362;font-weight:700;">Bank Custody Ledger</div>
-                  </div>
-                  <a href="synq.html?pillar=6" class="btn btn-primary" style="padding:4px 10px;font-size:0.7rem;border-radius:100px;background:#FFFFFF;border:none;">
-                    INSPECT &rarr;
-                  </a>
-                </div>
-              </div>
-
-              <!-- Right Card 2: Floating Status Pills Cluster -->
-              <div class="bento-tile bento-tile-blue" style="min-height:200px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:12px;">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
-                  <span style="width:10px;height:10px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 10px #FFFFFF;"></span>
-                  <span class="mono" style="font-size:0.72rem;font-weight:800;color:#fff;letter-spacing:0.12em;">LIVE TELEMETRY FEEDS</span>
-                </div>
-
-                <div class="bento-status-pill">
-                  <span>Permits Audited Today</span>
-                  <span class="bento-pill-count">18</span>
-                </div>
-
-                <div class="bento-status-pill" style="align-self:flex-end;">
-                  <span>Stage Utilization Rate</span>
-                  <span class="bento-pill-count" style="background:#36454F;">78%</span>
-                </div>
-
-                <div class="bento-status-pill">
-                  <span>Milestone Verified Traps</span>
-                  <span class="bento-pill-count" style="background:#2C3227;">0%</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- 7 Telemetry Pillars Detailed -->
-        <div style="margin-bottom:3.5rem;">
-          <span class="mono" style="font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-cyan);display:block;margin-bottom:1.5rem;">
-            THE 7 TELEMETRY PILLARS
-          </span>
-
-          <div style="display:flex;flex-direction:column;gap:1.5rem;">
-
-            <!-- Pillar 1 -->
-            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">PILLAR 01 // PRODUCTION ACTIVITY</div>
-              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 1rem;">Market Signal</h3>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;font-size:0.85rem;line-height:1.6;color:#666362;" class="mono">
-                <div><strong style="color:var(--accent-cyan);">DATA SOURCE:</strong> Filming permit registers, call sheets, trade notices.</div>
-                <div><strong style="color:#FFFFFF);">WHAT IS MEASURED:</strong> Active production volume by city, genre, budget tier.</div>
-                <div><strong style="color:#fff;">HOW VERIFIED:</strong> Confirmed stage bookings &amp; guild attachments.</div>
-                <div><strong style="color:#666362;">WHAT USER GETS:</strong> Macro visibility on where production volume is surging or contracting.</div>
-              </div>
-            </div>
-
-            <!-- Pillar 2 -->
-            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">PILLAR 02 // ACQUISITION APPETITE</div>
-              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 1rem;">Content Demand</h3>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;font-size:0.85rem;line-height:1.6;color:#666362;" class="mono">
-                <div><strong style="color:var(--accent-cyan);">DATA SOURCE:</strong> Theatrical distributor acquisition desks &amp; OTT procurement mandates.</div>
-                <div><strong style="color:#FFFFFF);">WHAT IS MEASURED:</strong> Open buyer genre windows, target runtimes, language dub needs.</div>
-                <div><strong style="color:#fff;">HOW VERIFIED:</strong> Direct buyer RFPs &amp; confirmed platform slate mandates.</div>
-                <div><strong style="color:#666362;">WHAT USER GETS:</strong> Targeted packaging direction aligned with confirmed buyer appetite.</div>
-              </div>
-            </div>
-
-            <!-- Pillar 3 -->
-            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">PILLAR 03 // FACILITY AVAILABILITY</div>
-              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 1rem;">Capacity Map</h3>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;font-size:0.85rem;line-height:1.6;color:#666362;" class="mono">
-                <div><strong style="color:var(--accent-cyan);">DATA SOURCE:</strong> Soundstage facility management systems &amp; rental lot calendars.</div>
-                <div><strong style="color:#FFFFFF);">WHAT IS MEASURED:</strong> Dark calendar windows, lot square footage, acoustic ratings.</div>
-                <div><strong style="color:#fff;">HOW VERIFIED:</strong> Direct owner calendar integrations &amp; daily occupancy checks.</div>
-                <div><strong style="color:#666362;">WHAT USER GETS:</strong> Immediate discovery of vacant stage days at negotiated short-run rates.</div>
-              </div>
-            </div>
-
-            <!-- Pillar 4 -->
-            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">PILLAR 04 // TERRITORIAL TRACTION</div>
-              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 1rem;">Audience Pulse</h3>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;font-size:0.85rem;line-height:1.6;color:#666362;" class="mono">
-                <div><strong style="color:var(--accent-cyan);">DATA SOURCE:</strong> Regional advance ticketing inquiries, fan communities, search trends.</div>
-                <div><strong style="color:#FFFFFF);">WHAT IS MEASURED:</strong> Territory-by-territory viewer interest before release.</div>
-                <div><strong style="color:#fff;">HOW VERIFIED:</strong> Verified engagement thresholds &amp; sample demographic polling.</div>
-                <div><strong style="color:#666362;">WHAT USER GETS:</strong> Data-backed screen allocation advice and targeted marketing guidance.</div>
-              </div>
-            </div>
-
-            <!-- Pillar 5 -->
-            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">PILLAR 05 // LIQUIDITY FLOW</div>
-              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 1rem;">Capital Flow</h3>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;font-size:0.85rem;line-height:1.6;color:#666362;" class="mono">
-                <div><strong style="color:var(--accent-cyan);">DATA SOURCE:</strong> Media funds, completion lenders, co-production entities.</div>
-                <div><strong style="color:#FFFFFF);">WHAT IS MEASURED:</strong> Available debt and equity allocations seeking production attachments.</div>
-                <div><strong style="color:#fff;">HOW VERIFIED:</strong> Verified escrow reserves &amp; formal institutional commitments.</div>
-                <div><strong style="color:#666362;">WHAT USER GETS:</strong> Direct insight into active financial counterparties for specific budget ranges.</div>
-              </div>
-            </div>
-
-            <!-- Pillar 6 -->
-            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">PILLAR 06 // HUMAN RESOURCE METRICS</div>
-              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 1rem;">Crew Telemetry</h3>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;font-size:0.85rem;line-height:1.6;color:#666362;" class="mono">
-                <div><strong style="color:var(--accent-cyan);">DATA SOURCE:</strong> Verified call sheet participation &amp; post-wrap peer audits.</div>
-                <div><strong style="color:#FFFFFF);">WHAT IS MEASURED:</strong> On-time call sheet reliability, overtime adherence, specialization.</div>
-                <div><strong style="color:#fff;">HOW VERIFIED:</strong> Producer wrap sign-offs and peer guild review checks.</div>
-                <div><strong style="color:#666362;">WHAT USER GETS:</strong> Objective reliability scores replacing word-of-mouth gossip.</div>
-              </div>
-            </div>
-
-            <!-- Pillar 7 -->
-            <div class="pastel-card" style="padding:1.75rem;border-left:4px solid var(--accent-cyan);">
-              <div class="mono" style="font-size:0.72rem;color:var(--accent-cyan);font-weight:700;margin-bottom:0.35rem;">PILLAR 07 // PIPELINE COMPLETION SPEED</div>
-              <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin:0 0 1rem;">Post Throughput</h3>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;font-size:0.85rem;line-height:1.6;color:#666362;" class="mono">
-                <div><strong style="color:var(--accent-cyan);">DATA SOURCE:</strong> VFX facility capacity, DI suite schedules, Atmos audio stages.</div>
-                <div><strong style="color:#FFFFFF);">WHAT IS MEASURED:</strong> Turnaround latency from rough cut to final delivery master.</div>
-                <div><strong style="color:#fff;">HOW VERIFIED:</strong> Delivery QC certificates &amp; platform inspection handoffs.</div>
-                <div><strong style="color:#666362;">WHAT USER GETS:</strong> Accurate post-production scheduling and elimination of release delays.</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- THE COMPOUNDING LEARNING LOOP (INTEGRATED FROM NODE 07) -->
-        <div style="margin-bottom:4rem;border-top:1px solid #353839;padding-top:3.5rem;">
-          <div class="mono" style="font-size:0.75rem;letter-spacing:0.18em;color:#666362;text-transform:uppercase;margin-bottom:0.6rem;">
-            CONTINUOUS OPERATIONAL INTELLIGENCE (NODE 07)
-          </div>
-          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.5rem);font-weight:800;color:#FFFFFF;margin-bottom:1rem;">
-            The 4-Part Compounding Learning Loop
-          </h2>
-          <p style="color:#666362;max-width:720px;margin-bottom:2rem;font-size:1.05rem;line-height:1.7;">
-            In traditional filmmaking, each production starts from scratch — repeating the same scheduling bottlenecks, budget leaks, and vendor disputes. DigiSynq captures verified delivery data to ensure the network compounds knowledge with every completed project.
+    <!-- SECTION 02 — SEVEN SUBORDINATE DOMAINS -->
+    <section id="domains" style="padding: 5rem 0; background-color: var(--gray-950); border-bottom: 1px solid var(--gray-800);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Intelligence Domains &bull; 01 to 07</div>
+          <h2 class="section-title">Seven Specialized Intelligence Systems</h2>
+          <p class="section-desc">
+            Subordinate econometric intelligence systems serving the primary production coordination mission.
           </p>
+        </div>
 
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.25rem;margin-bottom:3rem;">
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.75rem;border-radius:10px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.4rem;">LOOP STEP 01</div>
-              <h3 style="font-size:1.25rem;font-weight:800;color:#FFFFFF;margin:0 0 0.5rem;">Action</h3>
-              <p style="font-size:0.88rem;color:#666362;line-height:1.65;margin:0;">
-                A coordinated synq executes in the physical world: call sheets are issued, stages occupied, lenses mounted, and milestone tasks completed on schedule.
+        <div class="bento-grid">
+          <!-- 03 Capacity (Span 7 Featured) -->
+          <div class="bento-card bento-span-7 bento-card-gradient">
+            <div class="bento-glow-top"></div>
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">03 &bull; Capacity intelligence</span>
+                <span class="badge badge-live">[FIRST-PARTY / PARTNER]</span>
+              </div>
+              <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem;">Real-Time Soundstage & Volume Booking Curves</h3>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                Empirical stage occupancy indices, advance booking lead times, and capacity gaps across certified studio facilities in London, Atlanta, and Vancouver.
               </p>
             </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.75rem;border-radius:10px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.4rem;">LOOP STEP 02</div>
-              <h3 style="font-size:1.25rem;font-weight:800;color:#FFFFFF;margin:0 0 0.5rem;">Outcome</h3>
-              <p style="font-size:0.88rem;color:#666362;line-height:1.65;margin:0;">
-                Execution is verified against agreed milestone deliverables: schedule adherence, budget variance, technical delivery QC, and wrap handover.
+            <div class="bento-micro-ui">
+              <div class="bento-header-tag" style="margin-bottom: 0.5rem;">
+                <span class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">TELEMETRY INTEGRATION</span>
+                <span class="badge badge-live">LIVE FEED</span>
+              </div>
+              <div class="bento-chip-group">
+                <span class="bento-chip">Direct API Calendar Sync</span>
+                <span class="bento-chip">Turnaround Curves</span>
+                <span class="bento-chip">Power Consumption</span>
+              </div>
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.75rem;">
+                SOURCE: Direct facility operator calendar integrations & smart sub-metering.
+              </div>
+            </div>
+          </div>
+
+          <!-- 01 Market (Span 5) -->
+          <div class="bento-card bento-span-5">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">01 &bull; Market intelligence</span>
+                <span class="badge badge-partner">[PARTNER / PUBLIC]</span>
+              </div>
+              <h3 style="font-size: 1.45rem; margin-bottom: 0.75rem;">Buyer Mandates & Theatrical Windowing</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                Tracking studio theatrical release slates, platform content acquisition mandates, and territory licensing appetites to align packaging with active market demand.
               </p>
             </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.75rem;border-radius:10px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.4rem;">LOOP STEP 03</div>
-              <h3 style="font-size:1.25rem;font-weight:800;color:#FFFFFF;margin:0 0 0.5rem;">Insight</h3>
-              <p style="font-size:0.88rem;color:#666362;line-height:1.65;margin:0;">
-                Operational data is anonymized and audited: friction patterns are flagged, vendor turnaround latency is measured, and rate baselines are calibrated.
+            <div class="bento-micro-ui">
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
+                SOURCE: Verified distributor submissions & formal trade disclosures.
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 Demand (Span 6) -->
+          <div class="bento-card bento-span-6">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">02 &bull; Demand forecasting</span>
+                <span class="badge badge-modelled">[MODELLED DATA]</span>
+              </div>
+              <h3 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Macro Production Pipeline Gaps</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                Anticipating upcoming crew and facility shortages caused by simultaneous blockbuster and high-end episodic production waves across major global hubs.
               </p>
             </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.75rem;border-radius:10px;border-left:3px solid #FFFFFF;">
-              <div class="mono" style="font-size:0.7rem;color:#FFFFFF;font-weight:700;margin-bottom:0.4rem;">LOOP STEP 04</div>
-              <h3 style="font-size:1.25rem;font-weight:800;color:#FFFFFF;margin:0 0 0.5rem;">Better Connection</h3>
-              <p style="font-size:0.88rem;color:#666362;line-height:1.65;margin:0;">
-                The next production matches with higher accuracy, tighter budget allocations, realistic calendar buffers, and verified counterparties.
+            <div class="bento-micro-ui">
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
+                SOURCE: Regional permit filings & advance project registrations.
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 Audience (Span 6) -->
+          <div class="bento-card bento-span-6">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">04 &bull; Audience intelligence</span>
+                <span class="badge badge-pilot">[LICENSED DATA]</span>
+              </div>
+              <h3 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Territory Demographic & Genre Signals</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                Aggregated viewership behavior and genre affinity modeling across global streaming and theatrical markets to support greenlight and distribution modeling.
               </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
+                SOURCE: Syndicated measurement partners & box office telemetry.
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 Capital (Span 4) -->
+          <div class="bento-card bento-span-4">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">05 &bull; Capital intelligence</span>
+                <span class="badge badge-partner">[PARTNER]</span>
+              </div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Incentive Spreads & Mezzanine Debt</h3>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                Tax rebate monetization rates, mezzanine debt spreads, and completion guarantor risk premiums.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">SOURCE: Regulated lending & guarantor partners.</div>
+            </div>
+          </div>
+
+          <!-- 06 Crew (Span 4) -->
+          <div class="bento-card bento-span-4">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">06 &bull; Labor telemetry</span>
+                <span class="badge badge-live">[FIRST-PARTY]</span>
+              </div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Guild Labor Scale Baselines</h3>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                Verified Head of Department scale rates, union overtime multipliers, and seasonal labor availability indices.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">SOURCE: Union collective agreements & payroll telemetry.</div>
+            </div>
+          </div>
+
+          <!-- 07 Post (Span 4) -->
+          <div class="bento-card bento-span-4">
+            <div>
+              <div class="bento-header-tag">
+                <span class="label-mono">07 &bull; Post-production telemetry</span>
+                <span class="badge badge-pilot">[PILOT]</span>
+              </div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Finishing Turnaround Indices</h3>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                Benchmarked color grading turnaround days, Dolby Atmos conform latency, and VFX shot delivery velocity.
+              </p>
+            </div>
+            <div class="bento-micro-ui">
+              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">SOURCE: Conform facility delivery logs & QC reports.</div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- DATA GOVERNANCE & PRIVACY SAFEGUARDS (INTEGRATED FROM NODE 07) -->
-        <div style="margin-bottom:4rem;border-top:1px solid #353839;padding-top:3.5rem;">
-          <div class="mono" style="font-size:0.75rem;letter-spacing:0.18em;color:#666362;text-transform:uppercase;margin-bottom:0.6rem;">
-            NETWORK INTEGRITY &bull; PRIVACY PROTOCOLS
-          </div>
-          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.5rem);font-weight:800;color:#FFFFFF;margin-bottom:1.5rem;">
-            Data Governance &amp; Clean-Room Covenants
-          </h2>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.25rem;">
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.5rem;border-radius:10px;">
-              <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.5rem;">QUESTION 01</div>
-              <h4 style="font-size:1rem;font-weight:700;color:#FFFFFF;margin:0 0 0.5rem;">What Data Is Captured?</h4>
-              <p style="font-size:0.86rem;line-height:1.6;color:#666362;margin:0;">
-                Operational completion metadata only: verified stage occupancy hours, camera package availability dates, milestone sign-offs, and anonymized day-rate baselines.
-              </p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.5rem;border-radius:10px;">
-              <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.5rem;">QUESTION 02</div>
-              <h4 style="font-size:1rem;font-weight:700;color:#FFFFFF;margin:0 0 0.5rem;">What Is Anonymized?</h4>
-              <p style="font-size:0.86rem;line-height:1.6;color:#666362;margin:0;">
-                All proprietary script contents, dialogue, plot points, raw financial splits, and private studio investor names are strictly segregated and never entered into the public learning graph.
-              </p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.5rem;border-radius:10px;">
-              <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.5rem;">QUESTION 03</div>
-              <h4 style="font-size:1rem;font-weight:700;color:#FFFFFF;margin:0 0 0.5rem;">Who Owns The Data?</h4>
-              <p style="font-size:0.86rem;line-height:1.6;color:#666362;margin:0;">
-                Creators and productions retain 100% ownership of their creative intellectual property, screenplays, masters, and financial records. DigiSynq holds zero claim over production assets.
-              </p>
-            </div>
-            <div class="card" style="background:#212122;border:1px solid #353839;padding:1.5rem;border-radius:10px;">
-              <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.5rem;">QUESTION 04</div>
-              <h4 style="font-size:1rem;font-weight:700;color:#FFFFFF;margin:0 0 0.5rem;">How Does The Network Improve?</h4>
-              <p style="font-size:0.86rem;line-height:1.6;color:#666362;margin:0;">
-                By updating verified availability scores and eliminating ghost listings, reducing matchmaking latency from weeks to hours for active production pods.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Master CTA Card -->
-        <div class="schematic-frame-box" style="text-align:center;padding:3rem 2rem;margin-bottom:3rem;">
-          <div class="schematic-crosshair-tl"></div><div class="schematic-crosshair-tr"></div>
-          <div class="schematic-crosshair-bl"></div><div class="schematic-crosshair-br"></div>
-          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.5rem);font-weight:800;color:#ffffff;margin:0 0 1rem;text-transform:uppercase;">How does the system compound over time?
-          </h2>
-          <p style="font-size:1.05rem;line-height:1.75;color:#666362;max-width:760px;margin:0 auto 2rem;">
-            Telemetry is only useful if it compounds into institutional learning. Explore the learning loop in Node 07.
+    <!-- SECTION 03 — DATA PROVENANCE STANDARDS -->
+    <section id="provenance" style="padding: 5rem 0; border-bottom: 1px solid var(--gray-800);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Evidentiary Classification & Provenance</div>
+          <h2 class="section-title">Cryptographic Data Provenance Framework</h2>
+          <p class="section-desc">
+            We never label speculative or modeled projections as verified facts. Every data source adheres to strict provenance labeling.
           </p>
-          <a href="intelligence.html" class="btn btn-primary" style="padding:0.9rem 2.2rem;font-size:1rem;font-weight:700;">
-            EXPLORE THE LEARNING LOOP (NODE 07) &rarr;
-          </a>
         </div>
 
-        <!-- Route Bar -->
-        <div class="node-route-bar">
-          <a href="solutions.html" class="node-route-prev">&larr; Node 05: Missions</a>
-          <a href="intelligence.html" class="btn btn-secondary">Node 07: Insights &rarr;</a>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Classification</th>
+                <th>Definition & Evidentiary Standard</th>
+                <th>Verification Method</th>
+                <th>Typical System Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-live">[FIRST-PARTY]</span></td>
+                <td>Direct transactional data generated on the DigiSynq protocol.</td>
+                <td>Cryptographic hash of bilateral sign-off and wrap certificates.</td>
+                <td>Capacity booking logs, check-in timestamps, trust scores.</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-partner">[PARTNER]</span></td>
+                <td>Direct telemetry provided by verified facility or financial partners.</td>
+                <td>API integration or authenticated audit document upload.</td>
+                <td>Stage power telemetries, escrow confirmations, credit ratings.</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-beta">[PUBLIC]</span></td>
+                <td>Public corporate filings, union collective bargaining agreements, trade logs.</td>
+                <td>Official government registers & published union scale schedules.</td>
+                <td>Guild rate baselines, entity tax registrations, box office records.</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-pilot">[LICENSED]</span></td>
+                <td>Commercial industry intelligence from accredited research vendors.</td>
+                <td>Authorized commercial licensing agreements.</td>
+                <td>Syndicated streaming viewership and international buyer mandates.</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-modelled">[MODELLED]</span></td>
+                <td>Algorithmic projections and scenario simulations derived from historical trends.</td>
+                <td>Backtested statistical regressions with explicit variance ranges.</td>
+                <td>Seasonal utilization curves, regional crew demand forecasting.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+    </section>
 
+    <!-- CALL TO ACTION -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="section-label">Operational Telemetry</div>
+        <h2 class="cta-banner-title">Base Your Production Decisions on Empirical Truth.</h2>
+        <p class="cta-banner-sub">
+          Coordinate your production requirements backed by empirical capacity telemetry.
+        </p>
+        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="start-a-synq.html" class="btn btn-primary btn-lg">Start a synq &rarr;</a>
+          <a href="trust.html" class="btn btn-secondary btn-lg">Review trust standards</a>
+          <a href="economics.html" class="btn btn-secondary btn-lg">Explore Economics</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Master Canonical Footer -->
-    <!-- Canonical Master 4-Column Footer -->
-    <!-- Minimal Site Footer -->
-  <footer class="site-footer-minimal" role="contentinfo">
-    <div class="footer-minimal-inner">
-      <div class="footer-minimal-top">
-        <div class="footer-minimal-brand-wrap">
-          <a href="index.html" class="site-brand-link" aria-label="DigiSynq Home">
-            <div class="site-brand-glyph" aria-hidden="true">DS</div>
-            <span class="site-brand-name">DigiSynq</span>
-          </a>
-          <p class="footer-minimal-tagline">The coordination layer for entertainment.</p>
+  <!-- CANONICAL ENTERPRISE FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">DigiSynq</div>
+          <p class="footer-brand-desc">
+            The coordination layer for entertainment. DigiSynq connects verified people, places, equipment, capital and distribution into coordinated production pathways.
+          </p>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>All coordination rails operational</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="how-it-works.html" class="footer-link">How it works</a></li>
+            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
+            <li><a href="platform.html" class="footer-link">Platform</a></li>
+            <li><a href="network.html" class="footer-link">Network</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Infrastructure</div>
+          <ul class="footer-links">
+            <li><a href="intelligence.html" class="footer-link">Intelligence</a></li>
+            <li><a href="economics.html" class="footer-link">Economics</a></li>
+            <li><a href="trust.html" class="footer-link">Trust center</a></li>
+            <li><a href="about.html" class="footer-link">About DigiSynq</a></li>
+            <li><a href="start-a-synq.html" class="footer-link">Start a synq</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Situations</div>
+          <ul class="footer-links">
+            <li><a href="solutions.html#have" class="footer-link">I have something</a></li>
+            <li><a href="solutions.html#need" class="footer-link">I need something</a></li>
+            <li><a href="solutions.html#underused" class="footer-link">Underused capacity</a></li>
+            <li><a href="solutions.html#blocked" class="footer-link">Production bottlenecks</a></li>
+            <li><a href="solutions.html#enterprise" class="footer-link">For enterprise</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Governance</div>
+          <ul class="footer-links">
+            <li><a href="trust.html#verification" class="footer-link">Identity verification</a></li>
+            <li><a href="trust.html#neutrality" class="footer-link">Neutrality policy</a></li>
+            <li><a href="trust.html#disputes" class="footer-link">Dispute resolution</a></li>
+            <li><a href="economics.html#fee-table" class="footer-link">Fee schedule</a></li>
+            <li><a href="trust.html#data" class="footer-link">Data governance</a></li>
+          </ul>
         </div>
       </div>
-      <nav class="footer-minimal-nav" aria-label="Footer Navigation">
-        <a href="index.html">Overview</a>
-        <a href="platform.html">Platform</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="ecosystem.html">Ecosystem</a>
-        <a href="guilds.html">Guilds</a>
-        <a href="modules.html">Modules</a>
-        <a href="intelligence.html">Intelligence</a>
-        <a href="economics.html">Economics</a>
-        <a href="company.html">Company</a>
-        <a href="synq.html" class="footer-nav-highlight">Start a synq &rarr;</a>
-      </nav>
-      <div class="footer-minimal-bottom">
-        <span>&copy; 2026 DigiSynq. All rights reserved.</span>
-        <span>Press <kbd>[K]</kbd> for directory</span>
+
+      <div class="footer-bottom">
+        <div class="footer-regulatory">
+          <strong>Regulatory disclosure:</strong> DigiSynq is an entertainment coordination infrastructure platform. DigiSynq is not a bank, non-banking financial company (NBFC), registered broker-dealer, investment adviser, insurance carrier, or regulated escrow depository. Any contractual escrow, fiduciary, or financial settlement workflows are facilitated exclusively through licensed, regulated third-party institutional partners. All operational claims and metrics are governed under verified data classifications.
+        </div>
+
+        <div class="footer-meta">
+          <div>&copy; 2026 DigiSynq Infrastructure Protocol. All rights reserved.</div>
+          <div>Swiss editorial &bull; Monochrome infrastructure architecture</div>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Fullscreen 10-Node Dialpad Drawer -->
-    <!-- Master 10-node directory Drawer Overlay -->
-  <div class="dialpad-drawer" id="dialpadDrawer" role="dialog" aria-modal="true" aria-label="10-node directory">
-    <div class="dialpad-drawer-inner" style="max-width:980px;margin:auto;padding:2.5rem 1.5rem;text-align:center;">
-      <div class="dialpad-drawer-header" style="margin-bottom:2.5rem;">
-        <div class="mono" style="font-size:0.75rem;letter-spacing:0.18em;color:#666362;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;">
-          <span class="material-symbols-outlined" style="font-size:0.95rem;">layers</span>
-          DigiSynq core ecosystem
-        </div>
-        <h2 class="dialpad-drawer-title" style="margin:0;font-size:clamp(1.8rem, 3.5vw, 2.5rem);font-weight:800;color:#FFFFFF;text-transform:uppercase;">
-          10-node directory
-        </h2>
-      </div>
-
-      <div class="dialpad-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:1.25rem;max-width:920px;margin:0 auto 2.5rem;">
-        <a href="index.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">01</span></div>
-          <span class="node-key-label">Overview</span>
-        </a>
-        <a href="platform.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">02</span></div>
-          <span class="node-key-label">Platform</span>
-        </a>
-        <a href="solutions.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">03</span></div>
-          <span class="node-key-label">Solutions</span>
-        </a>
-        <a href="ecosystem.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">04</span></div>
-          <span class="node-key-label">Ecosystem</span>
-        </a>
-        <a href="guilds.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">05</span></div>
-          <span class="node-key-label">Guilds</span>
-        </a>
-        <a href="modules.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">06</span></div>
-          <span class="node-key-label">Modules</span>
-        </a>
-        <a href="intelligence.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">07</span></div>
-          <span class="node-key-label">Intelligence</span>
-        </a>
-        <a href="economics.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">08</span></div>
-          <span class="node-key-label">Economics</span>
-        </a>
-        <a href="company.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle"><span class="node-key-digit">09</span></div>
-          <span class="node-key-label">Company</span>
-        </a>
-        <a href="synq.html" class="node-key-item" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
-          <div class="node-key-circle" style="border-color:#FFFFFF;"><span class="node-key-digit" style="color:#FFFFFF;">10</span></div>
-          <span class="node-key-label" style="color:#FFFFFF;font-weight:700;">Start a synq</span>
-        </a>
-      </div>
-
-      <button id="closeDialpadDrawer" class="btn btn-secondary" style="padding:0.65rem 1.8rem;font-size:0.88rem;" aria-label="Close directory">
-        Close directory [ESC]
-      </button>
-    </div>
-  </div>
-
-  <script src="assets/js/telemetry-canvas.js"></script>
-  <script src="assets/js/sound-engine.js"></script>
-  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
