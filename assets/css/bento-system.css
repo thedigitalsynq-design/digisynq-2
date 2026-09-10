@@ -941,3 +941,120 @@ body, .bg-page {
   display: block !important;
   margin-bottom: 1.25rem !important;
 }
+
+
+/* ==========================================================================
+   MAXIMUM BENTO GRID ATTACHMENT COLORS
+   Attachment 1: Deep Cobalt Royal Indigo (#3B38D4 -> #252294)
+   Attachment 2: Deep Terracotta Rust Copper (#B43A09 -> #7C2D12)
+   ========================================================================== */
+
+/* ATTACHMENT 1: COBALT ROYAL PURPLE BENTO CARD */
+.bg-card--purple {
+  background: linear-gradient(150deg, #3B38D4 0%, #252294 100%) !important;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(165, 180, 252, 0.35) !important;
+  box-shadow: 0 20px 48px -10px rgba(37, 34, 148, 0.55),
+              inset 0 1.2px 0 rgba(255, 255, 255, 0.30) !important;
+  color: #FFFFFF !important;
+}
+.bg-card--purple:hover {
+  box-shadow: 0 26px 65px -10px rgba(37, 34, 148, 0.70),
+              0 0 28px rgba(99, 102, 241, 0.35),
+              inset 0 1.2px 0 rgba(255, 255, 255, 0.40) !important;
+}
+.bg-card--purple,
+.bg-card--purple *,
+.bg-card--purple h1,
+.bg-card--purple h2,
+.bg-card--purple h3,
+.bg-card--purple h4,
+.bg-card--purple h5,
+.bg-card--purple h6,
+.bg-card--purple .bg-display {
+  color: #FFFFFF !important;
+}
+.bg-card--purple em {
+  color: #FEF08A !important;
+  font-style: italic !important;
+  text-decoration: none !important;
+}
+.bg-card--purple .bg-label,
+.bg-card--purple .bg-meta {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+.bg-card--purple .bg-body-text,
+.bg-card--purple p {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.bg-card--purple .bg-chip {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #FFFFFF !important;
+}
+.bg-card--purple .bg-badge {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #FFFFFF !important;
+}
+.bg-card--purple .bg-step-num-block {
+  background: rgba(255, 255, 255, 0.20) !important;
+  border: 1px solid rgba(255, 255, 255, 0.30) !important;
+  color: #FFFFFF !important;
+}
+
+/* ATTACHMENT 2: TERRACOTTA RUST COPPER BENTO CARD */
+.bg-card--coral {
+  background: linear-gradient(150deg, #B43A09 0%, #7C2D12 100%) !important;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(251, 146, 60, 0.35) !important;
+  box-shadow: 0 20px 48px -10px rgba(124, 45, 18, 0.55),
+              inset 0 1.2px 0 rgba(255, 255, 255, 0.28) !important;
+  color: #FFFFFF !important;
+}
+.bg-card--coral:hover {
+  box-shadow: 0 26px 65px -10px rgba(124, 45, 18, 0.70),
+              0 0 24px rgba(245, 158, 11, 0.30),
+              inset 0 1.2px 0 rgba(255, 255, 255, 0.38) !important;
+}
+.bg-card--coral,
+.bg-card--coral *,
+.bg-card--coral h1,
+.bg-card--coral h2,
+.bg-card--coral h3,
+.bg-card--coral h4,
+.bg-card--coral h5,
+.bg-card--coral h6,
+.bg-card--coral .bg-display {
+  color: #FFFFFF !important;
+}
+.bg-card--coral em {
+  color: #FDE68A !important;
+  font-style: italic !important;
+  text-decoration: none !important;
+}
+.bg-card--coral .bg-label,
+.bg-card--coral .bg-meta {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+.bg-card--coral .bg-body-text,
+.bg-card--coral p {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.bg-card--coral .bg-chip {
+  background: rgba(0, 0, 0, 0.22) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  color: #FFFFFF !important;
+}
+.bg-card--coral .bg-badge {
+  background: rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid rgba(245, 158, 11, 0.50) !important;
+  color: #FBBF24 !important;
+}
+.bg-card--coral .bg-step-num-block {
+  background: rgba(0, 0, 0, 0.28) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #FFFFFF !important;
+}
