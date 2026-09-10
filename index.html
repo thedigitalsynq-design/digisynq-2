@@ -119,24 +119,36 @@
     <section aria-label="Hero Overview" style="padding:calc(var(--b-gap)*2) 0 var(--b-gap);">
       <div class="bg-grid">
 
-        <!-- Headline Card (yellow, 5 col, 2 row) -->
-        <div class="bg-card bg-card--coral bg-5 bg-row-2 bg-reveal" style="min-height:400px;justify-content:space-between;">
+        <!-- Headline Card (Terracotta Rust, 5 col, 2 row) -->
+        <div class="bg-card bg-card--coral bg-5 bg-row-2 bg-reveal" style="min-height:430px;justify-content:space-between;">
           <div>
-            <span class="bg-badge bg-badge--dark" style="background:rgba(255,255,255,0.18);color:#FFFFFF;border:1px solid rgba(255,255,255,0.35);margin-bottom:1.25rem;display:inline-flex;">Zero-Friction Protocol · Live Platform</span>
-            <h1 class="bg-display bg-display--xl" style="margin-top:0.5rem;line-height:1.04;letter-spacing:-0.03em;color:#FFFFFF;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem;">
+              <span class="bg-badge bg-badge--dark" style="background:rgba(255,255,255,0.18);color:#FFFFFF;border:1px solid rgba(255,255,255,0.35);display:inline-flex;">Zero-Friction Protocol · Live Platform</span>
+              <span class="bg-badge bg-badge--yellow" style="font-size:0.68rem;padding:0.2rem 0.6rem;">[REAL / VERIFIED]</span>
+            </div>
+            <h1 class="bg-display bg-display--xl" style="margin-top:0.25rem;line-height:1.02;letter-spacing:-0.03em;color:#FFFFFF;">
               coordinate<br>better, <em>synq</em><br>closer
             </h1>
+            <p style="font-size:0.92rem;line-height:1.55;color:rgba(255,255,255,0.9);margin-top:0.85rem;">
+              The neutral operating system connecting underutilized soundstages, cinema packages, and guild talent to active productions—settled via partner-bank escrow.
+            </p>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
-            <span class="bg-label" style="color:rgba(255,255,255,0.88);">Autonomous Production Layer</span>
-            <span class="bg-chip bg-chip--outline-white" style="display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,0.18);color:#FFFFFF;border-color:rgba(255,255,255,0.3);">
-              <span style="width:6px;height:6px;border-radius:50%;background:#FFFFFF;display:inline-block;"></span>Deterministic
-            </span>
+          <div>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.15rem;">
+              <a href="solutions.html#have" class="bg-btn bg-btn--primary" style="padding:0.55rem 1rem;font-size:0.82rem;background:#3B38D4;border:none;">Syndicate Capacity &rarr;</a>
+              <a href="solutions.html#need" class="bg-btn bg-btn--outline-white" style="padding:0.55rem 1rem;font-size:0.82rem;">Procure Capacity &rarr;</a>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.2);">
+              <span class="bg-label" style="color:rgba(255,255,255,0.88);">Autonomous Production Layer</span>
+              <span class="bg-chip bg-chip--outline-white" style="display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,0.18);color:#FFFFFF;border-color:rgba(255,255,255,0.3);">
+                <span style="width:6px;height:6px;border-radius:50%;background:#FFFFFF;display:inline-block;"></span>Deterministic
+              </span>
+            </div>
           </div>
         </div>
 
         <!-- Brand Card (purple, 4 col, 2 row) -->
-        <div class="bg-card bg-card--purple bg-4 bg-row-2 bg-reveal bg-reveal-delay-1" style="min-height:400px;justify-content:space-between;">
+        <div class="bg-card bg-card--purple bg-4 bg-row-2 bg-reveal bg-reveal-delay-1" style="min-height:430px;justify-content:space-between;">
           <div style="display:flex;align-items:center;gap:0.75rem;">
             <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);display:inline-block;"></span>
             <span class="bg-label" style="color:rgba(255,255,255,0.65);">Verified Standard</span>
@@ -157,8 +169,8 @@
         <div class="bg-card bg-card--purple bg-3 bg-reveal bg-reveal-delay-2" style="min-height:210px;justify-content:space-between;">
           <div class="bg-widget-telemetry">
             <div class="bg-telemetry-header">
-              <span class="bg-label" style="color:rgba(255,255,255,0.65);">Live Telemetry</span>
-              <span class="bg-time-pill">Live Telemetry</span>
+              <span class="bg-label" style="color:rgba(255,255,255,0.7);">Live Telemetry</span>
+              <span class="bg-time-pill">[SIMULATED]</span>
             </div>
             <svg class="bg-sparkline-svg" viewBox="0 0 200 64" preserveAspectRatio="none">
               <path class="bg-sparkline-path" d="M0,48 Q35,12 70,36 T140,20 T200,32" />
@@ -198,14 +210,17 @@
               <div class="bg-ring-center-text" style="color:var(--b-yellow-lt);font-size:0.75rem;">High</div>
             </div>
           </div>
-          <div class="bg-metric-sublabel bg-text-muted" style="margin-top:auto;padding-top:0.4rem;">Execution Track Record · Zero Default</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.4rem;">
+            <span class="bg-metric-sublabel bg-text-muted">Zero Default Track Record</span>
+            <span class="bg-chip bg-chip--dark" style="font-size:0.65rem;">[ILLUSTRATIVE]</span>
+          </div>
         </div>
 
         <!-- Weekly Protocol Activity Bar Chart Card (dark, 3 col, from Image 2) -->
         <div class="bg-card bg-card--coral bg-3 bg-reveal bg-reveal-delay-4" style="min-height:210px;justify-content:space-between;">
           <div style="display:flex;align-items:center;justify-content:space-between;">
             <span class="bg-label" style="color:rgba(255,255,255,0.78);">Weekly Activity</span>
-            <span class="bg-chip bg-chip--dark" style="font-size:0.65rem;">This Week</span>
+            <span class="bg-chip bg-chip--dark" style="font-size:0.65rem;">[SIMULATED]</span>
           </div>
           <div class="bg-widget-bars">
             <div class="bg-bar-col"><div class="bg-bar-pill" style="height:32px;"></div><span class="bg-bar-label">M</span></div>
@@ -491,7 +506,10 @@
 
         <div class="bg-card bg-card--dark bg-12 bg-reveal" style="flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;padding:1.75rem var(--b-pad);">
           <div>
-            <span class="bg-label bg-text-muted" style="margin-bottom:0.4rem;display:block;">03 / Canonical Scenario</span>
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem;">
+              <span class="bg-label bg-text-muted">03 / Canonical Scenario</span>
+              <span class="bg-badge bg-badge--purple" style="font-size:0.68rem;padding:0.2rem 0.55rem;">[CANONICAL PILOT SCENARIO]</span>
+            </div>
             <h2 class="bg-display bg-display--md" style="color:white;">Mission-Critical Virtual Stage Syndication: <em>Expedited Window</em></h2>
           </div>
           <span class="bg-badge bg-badge--green">Deterministic Pipeline Active</span>
