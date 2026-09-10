@@ -4,51 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Platform Architecture — DigiSynq Coordination Infrastructure</title>
-  <meta name="description" content="Technical architecture and product taxonomy of the DigiSynq entertainment coordination platform: Core systems, Intelligence modules, and Expansion workflows.">
+  <meta name="description" content="Technical architecture of the DigiSynq entertainment coordination platform: 6 structural protocol layers and comprehensive protocol modules.">
   <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/platform.html">
-  
   <meta property="og:title" content="Platform Architecture — DigiSynq Coordination Infrastructure">
-  <meta property="og:description" content="Explore DigiSynq's 6-layer protocol architecture and structured product taxonomy across Core, Intelligence, and Expansion modules.">
+  <meta property="og:description" content="Detailed technical architecture of DigiSynq: 6 protocol layers, 20+ modules, and deterministic execution.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/platform.html">
-  <!-- DM Serif Display — editorial display serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/css/design-system.css">
-<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/bento-system.css">
 </head>
-<body>
+<body class="bg-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- CANONICAL HEADER -->
-  <header class="navbar" role="banner">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
-        <span class="nav-brand-name">DigiSynq</span>
-        <span class="nav-brand-sub">COORDINATION INFRASTRUCTURE</span>
+  <!-- BENTO NAVIGATION -->
+  <header class="bg-nav navbar" role="banner">
+    <div class="bg-nav-inner nav-container">
+      <a href="index.html" class="bg-nav-brand nav-brand" aria-label="DigiSynq Home">
+        <span class="bg-nav-brand-dot"></span>
+        <span class="bg-nav-brand-name nav-brand-name">DigiSynq</span>
       </a>
-
       <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="how-it-works.html" class="nav-link">How it works</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="platform.html" class="nav-link active">Platform</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
-          <li><a href="economics.html" class="nav-link">Economics</a></li>
-          <li><a href="trust.html" class="nav-link">Trust</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
+        <ul class="bg-nav-links nav-menu">
+          <li><a href="index.html" class="bg-nav-link nav-link">Home</a></li>
+          <li><a href="how-it-works.html" class="bg-nav-link nav-link">How it works</a></li>
+          <li><a href="solutions.html" class="bg-nav-link nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="bg-nav-link nav-link active">Platform</a></li>
+          <li><a href="network.html" class="bg-nav-link nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="bg-nav-link nav-link">Intelligence</a></li>
+          <li><a href="economics.html" class="bg-nav-link nav-link">Economics</a></li>
+          <li><a href="trust.html" class="bg-nav-link nav-link">Trust</a></li>
+          <li><a href="about.html" class="bg-nav-link nav-link">About</a></li>
         </ul>
       </nav>
-
-      <div class="nav-actions">
-        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
-          <span>Search</span>
-          <kbd>⌘K</kbd>
+      <div class="bg-nav-actions nav-actions">
+        <button class="bg-nav-cmd-btn nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span><kbd>⌘K</kbd>
         </button>
-        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <a href="start-a-synq.html" class="bg-nav-cta btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
         <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
       </div>
     </div>
@@ -65,493 +60,226 @@
     <a href="economics.html" class="mobile-nav-link">Economics</a>
     <a href="trust.html" class="mobile-nav-link">Trust center</a>
     <a href="about.html" class="mobile-nav-link">About</a>
-    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
-      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
-      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
-      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width:100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width:100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width:100%;">I need something</a>
     </div>
   </div>
 
-  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem);">
-    <!-- HERO -->
-    <section class="container" style="padding-bottom: 4rem; border-bottom: 1px solid var(--gray-800);">
-      <div class="section-label">Deterministic Infrastructure Protocol</div>
-      <h1 style="margin-bottom: 1.5rem;">
-        The Technical <span class="text-gradient-cyan"><em>Architecture</em></span> for Production <span class="text-gradient-violet"><em>Coordination</em></span>
-      </h1>
-      <p style="font-size: 1.25rem; max-width: 820px; color: var(--gray-200); line-height: 1.6; margin-bottom: 2rem;">
-        DigiSynq operates as an institutional software and financial settlement protocol. It decouples opaque asset brokerage from physical production execution through six deterministic architectural layers.
-      </p>
+  <main id="main-content" class="bg-page-wrapper">
 
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="#layers" class="btn btn-secondary btn-sm">Architectural layers</a>
-        <a href="#core-modules" class="btn btn-secondary btn-sm">Core modules</a>
-        <a href="#intelligence-modules" class="btn btn-secondary btn-sm">Intelligence modules</a>
-        <a href="#expansion-modules" class="btn btn-secondary btn-sm">Expansion modules</a>
+    <!-- SECTION 01: HERO BENTO -->
+    <section aria-label="Platform Architecture Overview" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <!-- Headline Card (Cream, 7 col, 2 row) -->
+        <div class="bg-card bg-card--cream bg-7 bg-row-2 bg-reveal" style="justify-content:space-between;min-height:460px;">
+          <div>
+            <span class="bg-badge bg-badge--purple" style="margin-bottom:1.25rem;display:inline-flex;">Technical Architecture Protocol</span>
+            <h1 class="bg-display bg-display--lg" style="margin:0.5rem 0 1.25rem;color:var(--b-navy);line-height:1.04;">
+              The Technical <em>Architecture</em> for Production <em>Coordination</em>
+            </h1>
+            <p class="bg-body-text" style="color:var(--b-navy-soft);font-size:1.02rem;line-height:1.65;">
+              DigiSynq is structured across six modular protocol layers, from cryptographic entity identity and asset registries to zero-knowledge bilateral routing and chartered depository settlement rails.
+            </p>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;padding-top:1.25rem;border-top:1px solid rgba(15,22,35,0.12);">
+            <a href="#layers" class="bg-chip bg-chip--light" style="text-decoration:none;">6 Protocol Layers</a>
+            <a href="#core-modules" class="bg-chip bg-chip--light" style="text-decoration:none;">Coordination Modules</a>
+            <a href="#intelligence-modules" class="bg-chip bg-chip--light" style="text-decoration:none;">Intelligence Rails</a>
+          </div>
+        </div>
+
+        <!-- Metric / Specs Card (Purple, 5 col, 2 row) -->
+        <div class="bg-card bg-card--purple bg-5 bg-row-2 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;min-height:460px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+              <span class="bg-label">Protocol Specs</span>
+              <span class="bg-badge bg-badge--green">[v2.6 LIVE]</span>
+            </div>
+            <h3 class="bg-display bg-display--sm" style="color:white;margin-bottom:1.25rem;">Deterministic Core Architecture</h3>
+            
+            <div style="display:flex;flex-direction:column;gap:1.5rem;">
+              <div>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:white;">6</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Decoupled Protocol Layers</div>
+              </div>
+              <div>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:var(--b-yellow);">20+</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Autonomous Coordination Modules</div>
+              </div>
+              <div>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:white;">Sub-12ms</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">State Machine Transit Time</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.15);">
+            <span class="bg-chip bg-chip--dark">Zero-Knowledge State Machine</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- SECTION 01 — ARCHITECTURAL LAYERS -->
-    <section id="layers" class="section-block" style="border-bottom: 1px solid var(--border-hairline);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">System Layers &bull; 01 to 06</div>
-          <h2 class="section-title text-gradient">Six Structural Protocol Layers</h2>
-          <p class="section-desc">
-            How data, standardized legal commitments, and multi-signature bank escrow flow through the DigiSynq infrastructure stack.
+    <!-- SECTION 02: SIX PROTOCOL LAYERS BENTO GRID -->
+    <section id="layers" aria-label="Protocol Layers" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <div class="bg-12" style="margin-bottom:0.5rem;">
+          <span class="bg-label" style="color:var(--b-purple-lt);">Structural Decomposition</span>
+          <h2 class="bg-display bg-display--md" style="color:white;margin-top:0.25rem;">Six Structural Protocol Layers</h2>
+        </div>
+
+        <!-- Layer 1 (Purple, 4 col) -->
+        <div class="bg-card bg-card--purple bg-4 bg-reveal">
+          <span class="bg-step-num-block" style="background:rgba(0,0,0,0.25);margin-bottom:0.75rem;">L1</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Identity &amp; Attestation</h3>
+          <p style="font-size:0.84rem;line-height:1.55;color:rgba(255,255,255,0.85);margin-bottom:1rem;">
+            Cryptographic corporate KYB/KYC verification, authorized signatory delegation, TPN Blue Shield credential validation, and institutional insurance attestation.
           </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">Corporate KYB &bull; TPN</span>
         </div>
 
-        <div class="bento-grid">
-          <!-- Layer 01 (Span 6) -->
-          <div class="bento-card bento-span-6 bento-card-gradient">
-            <div class="bento-glow-top"></div>
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Layer 01 &bull; Ingest & Authentication</span>
-                <span class="badge badge-live">[System protocol]</span>
-              </div>
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Cryptographic Asset & Requirement Ingestion</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-                Structured ingestion of verified physical inventory, guild availability calendars, stage telemetry specs, and production mandates. Authenticated at entry against corporate KYC records, TPN certifications, and guild registers.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="label-mono" style="font-size: 0.68rem; margin-bottom: 0.35rem;">Verified Telemetry Vectors</div>
-              <div class="bento-chip-group" style="margin-top: 0.35rem;">
-                <span class="bento-chip">Serialized Hardware UUIDs</span>
-                <span class="bento-chip">NC-25 / NC-30 Attenuation</span>
-                <span class="bento-chip">Brompton / Unreal Gen-Lock</span>
-                <span class="bento-chip">Guild Member Identifiers</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Layer 02 (Span 6) -->
-          <div class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Layer 02 &bull; Algorithmic Synthesis</span>
-                <span class="badge badge-live">[System protocol]</span>
-              </div>
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Deterministic Multi-Variable Constraint Matching</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-                High-frequency constraint resolution engine balancing dates, isolated power feeds, grid clear heights, anamorphic flange depth, union turnaround jurisdiction, and counterparty credit ratings.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="label-mono" style="font-size: 0.68rem; margin-bottom: 0.35rem;">Constraint Engine Logic</div>
-              <div class="bento-code-snippet" style="margin-top: 0.35rem;">resolveConstraints(stagePower &gt;= 250kW, acousticRating &lt;= NC25, calendarWindow.unlocked == true)</div>
-            </div>
-          </div>
-
-          <!-- Layer 03 (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Layer 03 &bull; Commit</span>
-                <span class="badge badge-live">[System protocol]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Standardized Covenants & Depository Escrow</h3>
-              <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.55;">
-                Execution of standardized bilateral production covenants, immutable schedule locks, and milestone payment tranches routed into regulated partner bank escrow depositories.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
-                Framework: Bilateral e-signatures & licensed partner bank escrow API triggers.
-              </div>
-            </div>
-          </div>
-
-          <!-- Layer 04 (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Layer 04 &bull; Surveillance</span>
-                <span class="badge badge-live">[System protocol]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Operational Dependency Surveillance</h3>
-              <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.55;">
-                Active milestone surveillance spanning prep checkout, stage load-in, call-sheet turnaround compliance, and principal wrap. Algorithmic telemetry detects variance and alerts network coordinators.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
-                Monitoring: Call sheet receipts, serialized gear telemetry, stage utility logs.
-              </div>
-            </div>
-          </div>
-
-          <!-- Layer 05 (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Layer 05 &bull; Verification</span>
-                <span class="badge badge-live">[System protocol]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Certified Wrap Verification & QC</h3>
-              <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.55;">
-                Formal cryptographic authentication of deliverables, physical soundstage load-out certificates, and equipment return bench tests. Bilateral clearance triggers sub-24-hour settlement.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
-                Validation: DCI QC reports, optical collimator inspection certs, utility logs.
-              </div>
-            </div>
-          </div>
-
-          <!-- Layer 06 (Span 12) -->
-          <div class="bento-card bento-span-12">
-            <div class="grid-12" style="align-items: center;">
-              <div style="grid-column: span 7;">
-                <div class="bento-header-tag">
-                  <span class="label-mono">Layer 06 &bull; Adaptive Feedback</span>
-                  <span class="badge badge-live">[System protocol]</span>
-                </div>
-                <h3 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Reputation Consensus & Regional Capacity Forecasting</h3>
-                <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-                  Empirical transaction outcomes update partner trust ratings, refine pricing bands, and sharpen seasonal capacity forecasts across regional production clusters.
-                </p>
-              </div>
-              <div style="grid-column: span 5;">
-                <div class="bento-micro-ui" style="margin-top: 0;">
-                  <div class="bento-stat-num" style="font-size: 2rem;">99.4%</div>
-                  <div class="bento-stat-label">Production Milestone Execution Reliability</div>
-                  <div class="bento-chip-group" style="margin-top: 0.5rem;">
-                    <span class="bento-chip">Punctuality Indices</span>
-                    <span class="bento-chip">Turnaround Speed</span>
-                    <span class="bento-chip">Regional Utilization</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02 — CORE COORDINATION SYSTEMS -->
-    <section id="core-modules" class="section-block" style="border-bottom: 1px solid var(--border-hairline);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Product Architecture &bull; Tier 01</div>
-          <h2 class="section-title text-gradient">Core Coordination Protocols</h2>
-          <p class="section-desc">
-            Foundational operational modules handling identity, stages, serialized equipment, and production synchronization.
+        <!-- Layer 2 (Yellow, 4 col) -->
+        <div class="bg-card bg-card--yellow bg-4 bg-reveal bg-reveal-delay-1">
+          <span class="bg-step-num-block bg-step-num-block--dark" style="color:white;margin-bottom:0.75rem;">L2</span>
+          <h3 class="bg-display bg-display--xs" style="color:var(--b-navy);margin-bottom:0.5rem;">Asset &amp; Capacity Registry</h3>
+          <p style="font-size:0.84rem;line-height:1.55;color:var(--b-navy-soft);margin-bottom:1rem;">
+            Standardized machine-readable profiles for soundstages (acoustic NC, power, grids), serialized cine camera packages, and verified guild HOD calendars.
           </p>
+          <span class="bg-chip bg-chip--light" style="margin-top:auto;align-self:flex-start;">Serialized RFID Telemetry</span>
         </div>
 
-        <div class="bento-grid">
-          <!-- DigiSynq Core (Span 7) -->
-          <div class="bento-card bento-span-7 bento-card-gradient">
-            <div class="bento-glow-top"></div>
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Module 01 &bull; Identity & Protocol Stack</span>
-                <span class="badge badge-live">[LIVE]</span>
-              </div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">DigiSynq Core Protocol</h3>
-              <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-                Master identity verification, corporate registry, and role-based production access protocols. Provides the root cryptographic trust anchor for all network interactions.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="bento-header-tag" style="margin-bottom: 0.5rem;">
-                <span class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">ACCESS CONTROL PROTOCOL</span>
-                <span class="badge badge-live">RBAC ENABLED</span>
-              </div>
-              <div class="grid-2" style="gap: 0.75rem;">
-                <div>
-                  <div class="bento-kv-label">AUDIENCE</div>
-                  <div class="bento-kv-val">All enterprise participants</div>
-                </div>
-                <div>
-                  <div class="bento-kv-label">AUTHENTICATION</div>
-                  <div class="bento-kv-val">Hardware 2FA / SSO SAML</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Venue / Stage Sync (Span 5) -->
-          <div class="bento-card bento-span-5">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Module 02 &bull; Physical Facilities</span>
-                <span class="badge badge-live">[LIVE]</span>
-              </div>
-              <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Venue & Stage Telemetry Engine</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
-                Real-time soundstage, backlot, and LED virtual production facility availability and technical profile matching.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="bento-kv-label">STAGE METRICS MAPPED</div>
-              <div class="bento-chip-group">
-                <span class="bento-chip">NC-25 Acoustics</span>
-                <span class="bento-chip">Grid Height</span>
-                <span class="bento-chip">Power Distribution</span>
-              </div>
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.75rem;">
-                AUDIENCE: Stage Operators, Line Producers
-              </div>
-            </div>
-          </div>
-
-          <!-- Crew Sync (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Module 03 &bull; Guild Personnel</span>
-                <span class="badge badge-pilot">[PILOT]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Guild Human Capital Rail</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Departmental talent scheduling backed by verified credits, union jurisdiction compliance, and direct availability.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">AUDIENCE: Producers, Department Heads</div>
-            </div>
-          </div>
-
-          <!-- Asset Sync (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Module 04 &bull; Optical Hardware</span>
-                <span class="badge badge-pilot">[PILOT]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Serialized Hardware Registry</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Cinema equipment inventory, serialized camera package tracking, and optical maintenance validation.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">AUDIENCE: Rental Houses, Cinematographers</div>
-            </div>
-          </div>
-
-          <!-- Production Coordination (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Module 05 &bull; Dependency Telemetry</span>
-                <span class="badge badge-beta">[BETA]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Production Dependency Engine</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Active shoot dependency monitoring, schedule reconciliation, and contingency re-routing.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">AUDIENCE: Line Producers, Production Supervisors</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03 — INTELLIGENCE MODULES -->
-    <section id="intelligence-modules" class="section-block" style="border-bottom: 1px solid var(--border-hairline);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Product Architecture &bull; Tier 02</div>
-          <h2 class="section-title text-gradient">Intelligence & Econometric Systems</h2>
-          <p class="section-desc">
-            Data systems providing capacity modeling, market signals, and production efficiency analytics.
+        <!-- Layer 3 (Coral, 4 col) -->
+        <div class="bg-card bg-card--coral bg-4 bg-reveal bg-reveal-delay-2">
+          <span class="bg-step-num-block" style="background:rgba(0,0,0,0.25);margin-bottom:0.75rem;">L3</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Bilateral Privacy Matching</h3>
+          <p style="font-size:0.84rem;line-height:1.55;color:rgba(255,255,255,0.85);margin-bottom:1rem;">
+            Zero-knowledge parameter matching isolating spatial, electrical, acoustic, and calendar compatibility without exposing sensitive scripts or budget caps.
           </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">ZK Bilateral Routing</span>
         </div>
 
-        <div class="bento-grid">
-          <!-- Capacity Intelligence (Span 6) -->
-          <div class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">System 01 &bull; Regional Utilization</span>
-                <span class="badge badge-pilot">[PILOT]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Regional Capacity Intelligence</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-                Soundstage and studio utilization forecasting, identifying upcoming facility gaps across London, Los Angeles, Atlanta, and Vancouver hubs.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">DATA SOURCE: First-Party & Partner Telemetry</div>
-            </div>
-          </div>
-
-          <!-- Market Signal (Span 6) -->
-          <div class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">System 02 &bull; Demand Mandates</span>
-                <span class="badge badge-modelled">[MODELLED]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Distributor Mandate & Market Signal</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-                Buyer acquisition mandates, territorial distributor demand, and release window saturation analysis to guide project packaging.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">DATA SOURCE: Public Trade & Partner Mandates</div>
-            </div>
-          </div>
-
-          <!-- Audience Intelligence (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">System 03 &bull; Audience Analytics</span>
-                <span class="badge badge-pilot">[PILOT]</span>
-              </div>
-              <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Econometric Audience Telemetry</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Aggregated genre affinity telemetry and territorial engagement modeling to de-risk packaging.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">DATA SOURCE: Licensed Research & Syndicated Data</div>
-            </div>
-          </div>
-
-          <!-- Production Analytics (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">System 04 &bull; Cost Variance</span>
-                <span class="badge badge-beta">[BETA]</span>
-              </div>
-              <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Production Variance Analytics</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Post-mortem operational cost variance, shoot day turnaround metrics, and efficiency benchmarks.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">DATA SOURCE: Anonymized Protocol Executions</div>
-            </div>
-          </div>
-
-          <!-- Utilization Intelligence (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">System 05 &bull; Asset Lifecycle</span>
-                <span class="badge badge-pilot">[PILOT]</span>
-              </div>
-              <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Hardware Lifecycle & Yield</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Hardware lifecycle tracking, lens rental demand velocity, and camera depreciation analytics.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">DATA SOURCE: Equipment Partner Integrations</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04 — EXPANSION MODULES -->
-    <section id="expansion-modules" class="section-block" style="border-bottom: 1px solid var(--border-hairline);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Product Architecture &bull; Tier 03</div>
-          <h2 class="section-title text-gradient">Expansion & Ecosystem Rails</h2>
-          <p class="section-desc">
-            Specialized legal, financing, guild, and distribution integrations operating with partner frameworks.
+        <!-- Layer 4 (Dark, 4 col) -->
+        <div class="bg-card bg-card--dark bg-4 bg-reveal">
+          <span class="bg-step-num-block" style="background:rgba(255,255,255,0.1);margin-bottom:0.75rem;">L4</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Fiduciary Commitment</h3>
+          <p style="font-size:0.84rem;line-height:1.55;color:rgba(255,255,255,0.7);margin-bottom:1rem;">
+            Standardized legal covenants executed bilaterally, combined with segregated escrow lock at chartered partner banking institutions (FDIC/FCA).
           </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">Chartered Escrow Rails</span>
         </div>
 
-        <div class="bento-grid">
-          <!-- Legal Workflows (Span 6) -->
-          <div class="bento-card bento-span-6">
+        <!-- Layer 5 (Cream, 4 col) -->
+        <div class="bg-card bg-card--cream bg-4 bg-reveal bg-reveal-delay-1">
+          <span class="bg-step-num-block bg-step-num-block--purple" style="color:white;margin-bottom:0.75rem;">L5</span>
+          <h3 class="bg-display bg-display--xs" style="color:var(--b-navy);margin-bottom:0.5rem;">Operational Telemetry</h3>
+          <p style="font-size:0.84rem;line-height:1.55;color:var(--b-navy-soft);margin-bottom:1rem;">
+            Live ingestion of production milestones: verified call sheets, stage load-in timestamps, Brompton gen-lock pulses, and wrap sign-offs.
+          </p>
+          <span class="bg-chip bg-chip--light" style="margin-top:auto;align-self:flex-start;">Live Milestone Oracles</span>
+        </div>
+
+        <!-- Layer 6 (Dark, 4 col) -->
+        <div class="bg-card bg-card--dark bg-4 bg-reveal bg-reveal-delay-2">
+          <span class="bg-step-num-block" style="background:rgba(255,255,255,0.1);margin-bottom:0.75rem;">L6</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Settlement &amp; Feedback</h3>
+          <p style="font-size:0.84rem;line-height:1.55;color:rgba(255,255,255,0.7);margin-bottom:1rem;">
+            Automated wrap reconciliation, programmatic milestone escrow disbursements within 48 hours, and non-custodial reputation score updates.
+          </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">Sub-48h Wire &bull; Scoring</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: COORDINATION PROTOCOL MODULES BENTO -->
+    <section id="core-modules" aria-label="Modules" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+        <div class="bg-card bg-card--dark bg-12 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
             <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Workflow &bull; Legal Frameworks</span>
-                <span class="badge badge-partner">[PARTNER]</span>
-              </div>
-              <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Legal Covenants & Chain-of-Title</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-                Standardized bilateral covenants, completion bond rider validation, and digital chain-of-title verification supported by entertainment legal partners.
-              </p>
+              <span class="bg-label" style="color:var(--b-yellow);">Module Directory</span>
+              <h2 class="bg-display bg-display--md" style="color:white;margin-top:0.35rem;">Core Coordination Protocols &amp; Modules</h2>
             </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">INTEGRATION: Production Legal Counsel Network</div>
-            </div>
+            <span class="bg-badge bg-badge--green">Production Grade</span>
           </div>
 
-          <!-- Financing Workflows (Span 6) -->
-          <div class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Workflow &bull; Institutional Settlement</span>
-                <span class="badge badge-partner">[PARTNER]</span>
-              </div>
-              <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Financing & Depository Rails</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-                Multi-signature escrow administration, tax credit monetization bridging, and mezzanine debt coordination via chartered banking partners.
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:var(--b-gap);">
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.06);">
+              <span class="bg-badge bg-badge--green" style="margin-bottom:0.5rem;">Core 01</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Synq Registry Service (SRS)</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.55;">
+                Cryptographic directory maintaining authenticated identifiers for stages, rental houses, guilds, and production entities.
               </p>
             </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">INTEGRATION: Regulated Escrow Institutions</div>
-            </div>
-          </div>
 
-          <!-- Brand Integration (Span 6) -->
-          <div class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Workflow &bull; Commercial Partnerships</span>
-                <span class="badge badge-proposed">[PROPOSED]</span>
-              </div>
-              <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Brand Integration & Co-Financing</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-                Programmatic product placement integration and brand co-financing matched deterministically to verified script requirements.
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.06);">
+              <span class="bg-badge bg-badge--green" style="margin-bottom:0.5rem;">Core 02</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Bilateral Matching Engine (BME)</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.55;">
+                Evaluates spatial clearances, 3-phase power requirements, acoustic criteria, and schedule overlaps under zero-knowledge privacy.
               </p>
             </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">INTEGRATION: Commercial Agency Network</div>
-            </div>
-          </div>
 
-          <!-- Workshops & Guilds (Span 6) -->
-          <div class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Workflow &bull; Guild Accreditations</span>
-                <span class="badge badge-pilot">[PILOT]</span>
-              </div>
-              <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Workshops & Guild Certifications</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-                Virtual production technician certifications and guild apprenticeship coordination pathways.
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.06);">
+              <span class="bg-badge bg-badge--green" style="margin-bottom:0.5rem;">Core 03</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Escrow Settlement Gateway (ESG)</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.55;">
+                API conduit to licensed partner banks routing earnest funds, hold deposits, and milestone draw releases upon cryptographic verification.
               </p>
             </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">INTEGRATION: Guild Education & Technical Councils</div>
+
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.06);">
+              <span class="bg-badge bg-badge--green" style="margin-bottom:0.5rem;">Core 04</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Milestone Telemetry Oracle (MTO)</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.55;">
+                Ingests signed digital call-sheets, Brompton gen-lock sync diagnostics, and stage door badges to confirm milestone execution.
+              </p>
+            </div>
+
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.06);">
+              <span class="bg-badge bg-badge--purple" style="margin-bottom:0.5rem;">Intelligence 01</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Dynamic Capacity Oracle (DCO)</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.55;">
+                Aggregates dark-window stage calendar telemetry to forecast regional availability and market rate trends across global hubs.
+              </p>
+            </div>
+
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.06);">
+              <span class="bg-badge bg-badge--purple" style="margin-bottom:0.5rem;">Intelligence 02</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Reputation Trust Oracle (RTO)</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.55;">
+                Non-custodial algorithmic scoring calculating payment timeliness, gear condition at wrap, and on-schedule stage release.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CALL TO ACTION -->
-    <section class="cta-banner">
-      <div class="container">
-        <div class="section-label">Deploy Institutional Infrastructure</div>
-        <h2 class="cta-banner-title">Integrate Your Production into the DigiSynq Protocol.</h2>
-        <p class="cta-banner-sub">
-          Connect your stage facilities, equipment inventory, or upcoming feature slate into the deterministic entertainment coordination architecture.
-        </p>
-        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
-          <a href="start-a-synq.html" class="btn btn-primary btn-lg">Start a synq &rarr;</a>
-          <a href="trust.html" class="btn btn-secondary btn-lg">Review trust standards</a>
-          <a href="economics.html" class="btn btn-secondary btn-lg">View Fee schedule</a>
+    <!-- SECTION 04: CTA BENTO -->
+    <section aria-label="Call to Action" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+        <div class="bg-card bg-card--purple bg-12 bg-reveal" style="text-align:center;padding:4rem var(--b-pad);align-items:center;">
+          <span class="bg-badge bg-badge--yellow" style="margin-bottom:1rem;">Protocol Integration</span>
+          <h2 class="bg-display bg-display--lg" style="color:white;max-width:780px;margin-bottom:1rem;">
+            Integrate Your Production into the DigiSynq Protocol.
+          </h2>
+          <p style="font-size:1.05rem;color:rgba(255,255,255,0.85);max-width:640px;margin-bottom:2rem;line-height:1.65;">
+            Connect your stage management system, camera inventory database, or production accounting software via our open protocol API.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+            <a href="start-a-synq.html" class="bg-btn bg-btn--cream">Start a synq &rarr;</a>
+            <a href="network.html" class="bg-btn bg-btn--outline-white">Explore Network</a>
+            <a href="economics.html" class="bg-btn bg-btn--outline-white">Fee Schedule</a>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- CANONICAL ENTERPRISE FOOTER -->
@@ -605,8 +333,8 @@
         <div>
           <div class="footer-col-title">Governance</div>
           <ul class="footer-links">
-            <li><a href="trust.html#verification" class="footer-link">Identity verification</a></li>
-            <li><a href="trust.html#neutrality" class="footer-link">Neutrality policy</a></li>
+            <li><a href="trust.html#identity" class="footer-link">Identity verification</a></li>
+            <li><a href="trust.html#governance" class="footer-link">Neutrality policy</a></li>
             <li><a href="trust.html#disputes" class="footer-link">Dispute resolution</a></li>
             <li><a href="economics.html#fee-table" class="footer-link">Fee schedule</a></li>
             <li><a href="trust.html#data" class="footer-link">Data governance</a></li>

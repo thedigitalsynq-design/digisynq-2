@@ -35,7 +35,7 @@ function initLiquidMotion() {
   });
 
   if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.liquid-reveal').forEach(el => el.classList.add('is-visible'));
+    document.querySelectorAll('.liquid-reveal, .bg-reveal').forEach(el => el.classList.add('is-visible'));
     return;
   }
 
@@ -47,11 +47,11 @@ function initLiquidMotion() {
       }
     });
   }, {
-    threshold: 0.06,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.04,
+    rootMargin: '0px 0px -20px 0px'
   });
 
-  document.querySelectorAll('.liquid-reveal').forEach(el => {
+  document.querySelectorAll('.liquid-reveal, .bg-reveal').forEach(el => {
     observer.observe(el);
   });
 }

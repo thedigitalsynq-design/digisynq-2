@@ -36,6 +36,29 @@
 }
 
 :root {
+  /* ── Bento System Color Tokens ── */
+  --b-bg:        #111113;
+  --b-bg-alt:    #17171C;
+  --b-cream:     #F5F0E8;
+  --b-cream-alt: #EDE8DF;
+  --b-dark-card: #1C1C23;
+  --b-dark-alt:  #22222C;
+  --b-purple:    #5B4FE8;
+  --b-purple-lt: #7B70F0;
+  --b-yellow:    #F5C842;
+  --b-yellow-lt: #FADA72;
+  --b-coral:     #E8533A;
+  --b-coral-lt:  #F07260;
+  --b-navy:      #0F1623;
+  --b-navy-soft: #1E2840;
+  --b-white:     #FFFFFF;
+  --b-off-white: rgba(255,255,255,0.92);
+  --b-muted:     rgba(255,255,255,0.52);
+  --b-gap:       14px;
+  --b-radius:    24px;
+  --b-radius-sm: 16px;
+  --b-radius-xs: 10px;
+
   /* ── Dark Glassmorphism Canvas & Surface Tokens ── */
   --bg-canvas: #0A0A0F;
   --bg-core: #0D0D14;

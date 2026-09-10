@@ -6,49 +6,44 @@
   <title>About DigiSynq — The Coordination Layer for Entertainment</title>
   <meta name="description" content="Understand DigiSynq in 60 seconds: why we exist, what we actually do, what we do not do, who we serve, how we maintain neutrality, and what is live today.">
   <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/about.html">
-  
   <meta property="og:title" content="About DigiSynq — The Coordination Layer for Entertainment">
   <meta property="og:description" content="Entertainment doesn't have a resource problem. It has a coordination problem. We don't own the assets; we make them move.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/about.html">
-  <!-- DM Serif Display — editorial display serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/css/design-system.css">
-<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/bento-system.css">
 </head>
-<body>
+<body class="bg-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- CANONICAL HEADER -->
-  <header class="navbar" role="banner">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
-        <span class="nav-brand-name">DigiSynq</span>
-        <span class="nav-brand-sub">COORDINATION INFRASTRUCTURE</span>
+  <!-- BENTO NAVIGATION -->
+  <header class="bg-nav navbar" role="banner">
+    <div class="bg-nav-inner nav-container">
+      <a href="index.html" class="bg-nav-brand nav-brand" aria-label="DigiSynq Home">
+        <span class="bg-nav-brand-dot"></span>
+        <span class="bg-nav-brand-name nav-brand-name">DigiSynq</span>
       </a>
-
       <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="how-it-works.html" class="nav-link">How it works</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
-          <li><a href="economics.html" class="nav-link">Economics</a></li>
-          <li><a href="trust.html" class="nav-link">Trust</a></li>
-          <li><a href="about.html" class="nav-link active">About</a></li>
+        <ul class="bg-nav-links nav-menu">
+          <li><a href="index.html" class="bg-nav-link nav-link">Home</a></li>
+          <li><a href="how-it-works.html" class="bg-nav-link nav-link">How it works</a></li>
+          <li><a href="solutions.html" class="bg-nav-link nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="bg-nav-link nav-link">Platform</a></li>
+          <li><a href="network.html" class="bg-nav-link nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="bg-nav-link nav-link">Intelligence</a></li>
+          <li><a href="economics.html" class="bg-nav-link nav-link">Economics</a></li>
+          <li><a href="trust.html" class="bg-nav-link nav-link">Trust</a></li>
+          <li><a href="about.html" class="bg-nav-link nav-link active">About</a></li>
         </ul>
       </nav>
-
-      <div class="nav-actions">
-        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
-          <span>Search</span>
-          <kbd>⌘K</kbd>
+      <div class="bg-nav-actions nav-actions">
+        <button class="bg-nav-cmd-btn nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span><kbd>⌘K</kbd>
         </button>
-        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <a href="start-a-synq.html" class="bg-nav-cta btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
         <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
       </div>
     </div>
@@ -65,295 +60,386 @@
     <a href="economics.html" class="mobile-nav-link">Economics</a>
     <a href="trust.html" class="mobile-nav-link">Trust center</a>
     <a href="about.html" class="mobile-nav-link active">About</a>
-    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
-      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
-      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
-      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width:100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width:100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width:100%;">I need something</a>
     </div>
   </div>
 
-  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem);">
-    <!-- HERO: UNDERSTAND IN 60 SECONDS -->
-    <section class="container" style="padding-bottom: 4rem; border-bottom: 1px solid var(--gray-800);">
-      <div class="section-label">Institutional Charter &bull; Understand in 60 Seconds</div>
-      <h1 style="margin-bottom: 1.5rem;">
-        We don't own the assets.<br>we make them <span class="text-gradient-cyan"><em>synq</em></span> &amp; <span class="text-gradient-violet"><em>move</em></span>.
-      </h1>
-      <p style="font-size: 1.25rem; max-width: 840px; color: var(--gray-200); line-height: 1.6; margin-bottom: 2rem;">
-        Global entertainment does not suffer from a deficit of cinematic hardware, acoustic soundstages, or world-class guild artisans. It suffers from a systemic coordination failure that strands billions in physical capital while tier-one slates incur crippling delay penalties.
-      </p>
+  <main id="main-content" class="bg-page-wrapper">
 
-      <div class="bento-grid">
-        <div class="bento-card bento-span-4 bento-card-gradient">
-          <div class="bento-glow-top"></div>
+    <!-- SECTION 01: HERO & CHARTER BENTO -->
+    <section aria-label="Institutional Charter" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <!-- Main Charter Card (Cream, 7 col, 2 row) -->
+        <div class="bg-card bg-card--cream bg-7 bg-row-2 bg-reveal" style="justify-content:space-between;min-height:460px;">
           <div>
-            <div class="bento-header-tag">
-              <span class="label-mono">Core Protocol</span>
-              <span class="badge badge-live">[INFRASTRUCTURE]</span>
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.25rem;">
+              <span class="bg-badge bg-badge--purple">Charter</span>
+              <span class="bg-label">Understand in 60 Seconds</span>
             </div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Deterministic Coordination Layer</h3>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-              The neutral software clearinghouse matching authenticated facility capacity with verified production requirements across global studio pipelines.
+            <h1 class="bg-display bg-display--lg" style="margin-bottom:1.5rem;color:var(--b-navy);">
+              We don't own the assets.<br>We make them <em>synq</em> &amp; <em>move</em>.
+            </h1>
+            <p class="bg-body-text" style="color:var(--b-navy-soft);max-width:580px;font-size:1.05rem;">
+              Global entertainment does not suffer from a deficit of cinematic hardware, acoustic soundstages, or world-class guild artisans. It suffers from a systemic coordination failure that strands billions in physical capital while tier-one slates incur crippling delay penalties.
             </p>
           </div>
-          <div class="bento-micro-ui">
-            <div class="bento-chip-group">
-              <span class="bento-chip">Authenticated Supply</span>
-              <span class="bento-chip">Bilateral Demand</span>
-            </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid rgba(15,22,35,0.12);">
+            <span class="bg-chip bg-chip--light">Authenticated Supply</span>
+            <span class="bg-chip bg-chip--light">Bilateral Demand</span>
+            <span class="bg-chip bg-chip--purple">Deterministic Clearing</span>
           </div>
         </div>
 
-        <div class="bento-card bento-span-4">
-          <div>
-            <div class="bento-header-tag">
-              <span class="label-mono">Operating Discipline</span>
-              <span class="badge badge-live">[GOVERNANCE]</span>
-            </div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Empirical Proof Over Hype</h3>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-              We reject speculative industry PR and unverified announcements. Every capability, transaction metric, and operational benchmark is anchored in verifiable telemetry.
-            </p>
-          </div>
-          <div class="bento-micro-ui">
-            <div class="bento-chip-group">
-              <span class="bento-chip">Audited Telemetry</span>
-              <span class="bento-chip">Zero Fictional Metrics</span>
-            </div>
+        <!-- Visual Hero Photo Card (5 col, 2 row) -->
+        <div class="bg-card bg-card--image bg-5 bg-row-2 bg-reveal bg-reveal-delay-1" style="position:relative;min-height:460px;">
+          <img src="assets/img/bento/photo-people-group.png" alt="Film crew and production personnel coordinating on soundstage set" style="width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(to top, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.4) 60%, transparent 100%);">
+            <span class="bg-badge bg-badge--green" style="margin-bottom:0.5rem;display:inline-flex;">Operational Telemetry</span>
+            <h3 class="bg-display bg-display--sm" style="color:white;margin:0.25rem 0 0.5rem;">4,800+ Verified Entities</h3>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.72);margin:0;line-height:1.45;">Connecting soundstages, certified DGA/IATSE keys, serialized camera packages, and institutional escrow.</p>
           </div>
         </div>
 
-        <div class="bento-card bento-span-4">
-          <div>
-            <div class="bento-header-tag">
-              <span class="label-mono">Fiduciary Boundary</span>
-              <span class="badge badge-live">[NEUTRAL]</span>
-            </div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Strict Asset Neutrality</h3>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">
-              Zero proprietary soundstages, camera packages, or talent rosters. We never compete against ecosystem participants or distort algorithmic routing.
-            </p>
+        <!-- 3 Principles row -->
+        <div class="bg-card bg-card--purple bg-4 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span class="bg-label">Core Protocol</span>
+            <span class="bg-badge bg-badge--green">[INFRASTRUCTURE]</span>
           </div>
-          <div class="bento-micro-ui">
-            <div class="bento-chip-group">
-              <span class="bento-chip">Zero Captive Stages</span>
-              <span class="bento-chip">Conflict-Free Protocol</span>
-            </div>
+          <h3 class="bg-display bg-display--sm" style="margin-bottom:0.75rem;color:white;">Deterministic Coordination Layer</h3>
+          <p style="font-size:0.88rem;line-height:1.6;color:rgba(255,255,255,0.82);margin-bottom:1.25rem;">
+            The neutral software clearinghouse matching authenticated facility capacity with verified production requirements across global studio pipelines.
+          </p>
+          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:auto;">
+            <span class="bg-chip bg-chip--dark">Authenticated Supply</span>
+            <span class="bg-chip bg-chip--dark">Bilateral Demand</span>
           </div>
         </div>
+
+        <div class="bg-card bg-card--yellow bg-4 bg-reveal bg-reveal-delay-1">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span class="bg-label">Operating Discipline</span>
+            <span class="bg-badge bg-badge--purple">[GOVERNANCE]</span>
+          </div>
+          <h3 class="bg-display bg-display--sm" style="margin-bottom:0.75rem;color:var(--b-navy);">Empirical Proof Over Hype</h3>
+          <p style="font-size:0.88rem;line-height:1.6;color:var(--b-navy-soft);margin-bottom:1.25rem;">
+            We reject speculative industry PR and unverified announcements. Every capability, transaction metric, and operational benchmark is anchored in verifiable telemetry.
+          </p>
+          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:auto;">
+            <span class="bg-chip bg-chip--light">Audited Telemetry</span>
+            <span class="bg-chip bg-chip--light">Zero Fictional Metrics</span>
+          </div>
+        </div>
+
+        <div class="bg-card bg-card--coral bg-4 bg-reveal bg-reveal-delay-2">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span class="bg-label">Fiduciary Boundary</span>
+            <span class="bg-badge bg-badge--yellow">[NEUTRAL]</span>
+          </div>
+          <h3 class="bg-display bg-display--sm" style="margin-bottom:0.75rem;color:white;">Strict Asset Neutrality</h3>
+          <p style="font-size:0.88rem;line-height:1.6;color:rgba(255,255,255,0.85);margin-bottom:1.25rem;">
+            Zero proprietary soundstages, camera packages, or talent rosters. We never compete against ecosystem participants or distort algorithmic routing.
+          </p>
+          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:auto;">
+            <span class="bg-chip bg-chip--dark">Zero Captive Stages</span>
+            <span class="bg-chip bg-chip--dark">Conflict-Free Protocol</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- SECTION 01 — THE SIX CRUCIAL QUESTIONS -->
-    <section style="padding: 5rem 0; border-bottom: 1px solid var(--gray-800);">
-      <div class="container">
-        <!-- Question 1: WHY DOES DIGISYNQ EXIST? -->
-        <div style="padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--gray-850);">
-          <div class="grid-12">
-            <div style="grid-column: span 4;">
-              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 01</div>
-              <h2 style="font-size: 1.75rem;">Why does DigiSynq exist?</h2>
-            </div>
-            <div style="grid-column: span 8;">
-              <p style="font-size: 1.1rem; line-height: 1.7; color: var(--gray-200); margin-bottom: 1rem;">
-                Physical film and television production represents one of the world's most capital-intensive, high-velocity operating environments, yet its operational backplane still relies on disconnected SMS threads, unverified intermediary claims, and fragile ad-hoc spreadsheets.
-              </p>
-              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--gray-400);">
-                When a 25,000 sq ft virtual production LED volume sits idle for 14 days between tentpole episodic shoots, that carrying capacity evaporates permanently. When a line producer burns 3 shooting days hunting for an IATSE-accredited underwater camera crew, the physical contingency budget collapses. DigiSynq replaces asymmetric market friction with deterministic, code-enforced protocol coordination.
-              </p>
-            </div>
-          </div>
+    <!-- SECTION 02: THE SIX CRUCIAL QUESTIONS BENTO -->
+    <section aria-label="Crucial Questions" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <div class="bg-12" style="margin-bottom:0.5rem;">
+          <span class="bg-label" style="color:var(--b-purple-lt);">Analytical Transparency</span>
+          <h2 class="bg-display bg-display--md" style="color:white;margin-top:0.25rem;">The Crucial Institutional Questions</h2>
         </div>
 
-        <!-- Question 2: WHAT DOES IT ACTUALLY DO? -->
-        <div style="padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--gray-850);">
-          <div class="grid-12">
-            <div style="grid-column: span 4;">
-              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 02</div>
-              <h2 style="font-size: 1.75rem;">What does it actually do?</h2>
-            </div>
-            <div style="grid-column: span 8;">
-              <p style="font-size: 1.1rem; line-height: 1.7; color: var(--gray-200); margin-bottom: 1rem;">
-                DigiSynq executes a standardized 6-stage lifecycle across eight institutional production pillars:
-              </p>
-              <div class="mono" style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.8; background-color: var(--gray-950); padding: 1.5rem; border: 1px solid var(--gray-800);">
-                01 VERIFY &mdash; Cryptographically authenticate corporate standing, TPN facility credentials, serialized gear manifests, and guild rosters.<br>
-                02 MATCH &mdash; Isolate exact spatial, acoustic, electrical, and calendar compatibility behind zero-knowledge bilateral privacy gates.<br>
-                03 COMMIT &mdash; Execute standardized digital covenants and fund segregated escrow accounts at chartered depository banking partners.<br>
-                04 EXECUTE &mdash; Ingest operational telemetry: call sheet check-ins, Brompton gen-lock benchmarks, load-in milestones, and wrap logs.<br>
-                05 SETTLE &mdash; Reconcile audit manifests, execute wrap sign-offs, and trigger sub-48-hour automated milestone disbursements.<br>
-                06 LEARN &mdash; Aggregate objective execution metrics into transparent, non-custodial trust ratings and predictive capacity indices.
-              </div>
-            </div>
+        <!-- Question 1: WHY DOES DIGISYNQ EXIST? (6 col) -->
+        <div class="bg-card bg-card--dark bg-6 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+            <span class="bg-label" style="color:var(--b-purple-lt);">Question 01</span>
+            <span class="bg-badge bg-badge--purple">Market Failure</span>
           </div>
-        </div>
-
-        <!-- Question 3: WHAT DOES IT NOT DO? -->
-        <div style="padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--gray-850);">
-          <div class="grid-12">
-            <div style="grid-column: span 4;">
-              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 03</div>
-              <h2 style="font-size: 1.75rem;">What does it not do?</h2>
-            </div>
-            <div style="grid-column: span 8;">
-              <div class="grid-2" style="gap: 1.5rem;">
-                <div class="card" style="background-color: var(--gray-950);">
-                  <div class="label-mono" style="margin-bottom: 0.5rem;">Not a Talent Agency</div>
-                  <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
-                    We do not manage talent or skim commissions from union wages. We verify guild accreditation and facilitate direct scheduling without intermediary markups.
-                  </p>
-                </div>
-                <div class="card" style="background-color: var(--gray-950);">
-                  <div class="label-mono" style="margin-bottom: 0.5rem;">Not an Asset Owner</div>
-                  <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
-                    We own zero soundstages, camera packages, or lighting trucks. We never prioritize proprietary inventory over partner facilities.
-                  </p>
-                </div>
-                <div class="card" style="background-color: var(--gray-950);">
-                  <div class="label-mono" style="margin-bottom: 0.5rem;">Not a Bank / Escrow Depository</div>
-                  <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
-                    We do not custody balance-sheet funds. All earnest deposits, completion draws, and disbursements are executed through licensed, chartered FDIC/FCA banking partners.
-                  </p>
-                </div>
-                <div class="card" style="background-color: var(--gray-950);">
-                  <div class="label-mono" style="margin-bottom: 0.5rem;">Not a Creative Arbiter</div>
-                  <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
-                    We do not provide script coverage, cast attachments, or editorial notes. We coordinate physical operational infrastructure so filmmakers can execute uninhibited.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Question 4: WHO IS IT FOR? -->
-        <div style="padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--gray-850);">
-          <div class="grid-12">
-            <div style="grid-column: span 4;">
-              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 04</div>
-              <h2 style="font-size: 1.75rem;">Who is it for?</h2>
-            </div>
-            <div style="grid-column: span 8;">
-              <ul class="mono" style="font-size: 0.88rem; color: var(--gray-300); list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
-                <li>&bull; <strong class="text-white">Studio &amp; Streamer Executives:</strong> Managing slate-wide capacity allocations, cross-territory tax incentive monetizations, and multi-hub facility commitments.</li>
-                <li>&bull; <strong class="text-white">Independent Line Producers &amp; UPMs:</strong> Locking certified soundstages, serialized cine packages, and vetted guild crew on budget and on schedule.</li>
-                <li>&bull; <strong class="text-white">Soundstage &amp; Lot Operators:</strong> Monetizing 14-to-60 day dark windows between major studio tentpole leases with zero rate-card dilution.</li>
-                <li>&bull; <strong class="text-white">Equipment Rental Houses:</strong> Expanding deployment velocity for high-capital cinema camera packages, anamorphic glass, and mobile LED rigs.</li>
-                <li>&bull; <strong class="text-white">Theatrical Post-Production Suites:</strong> Filling color grading DI suites, conform pipelines, and Dolby Atmos 7.1.4 mixing schedules.</li>
-                <li>&bull; <strong class="text-white">Financiers &amp; Completion Guarantors:</strong> De-risking physical execution with verifiable milestone telemetry and structured escrow draw releases.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Question 5: HOW DOES IT STAY NEUTRAL? -->
-        <div>
-          <div class="grid-12">
-            <div style="grid-column: span 4;">
-              <div class="label-mono" style="margin-bottom: 0.5rem;">Question 05</div>
-              <h2 style="font-size: 1.75rem;">How does it stay neutral?</h2>
-            </div>
-            <div style="grid-column: span 8;">
-              <p style="font-size: 1.1rem; line-height: 1.7; color: var(--gray-200); margin-bottom: 1rem;">
-                DigiSynq's neutrality is hardcoded into its economic architecture and corporate bylaws.
-              </p>
-              <p style="font-size: 0.95rem; line-height: 1.65; color: var(--gray-400); margin-bottom: 1rem;">
-                Because we own zero physical production assets and represent zero talent rosters, we have zero financial incentive to route a booking to one facility over another. Matching decisions are governed strictly by technical parameters, calendar availability, and verified reputation scores.
-              </p>
-              <div class="mono" style="font-size: 0.8rem; color: var(--white); border-left: 2px solid var(--white); padding-left: 1rem;">
-                RULE: Unbiased algorithmic matching with published reputation scoring formulas.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02 — LIVE TODAY VS BEING BUILT -->
-    <section style="padding: 5rem 0; background-color: var(--gray-950); border-bottom: 1px solid var(--gray-800);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Roadmap Transparency &amp; Claim Governance</div>
-          <h2 class="section-title">What is live today vs. what is being built</h2>
-          <p class="section-desc">
-            We hold ourselves to rigorous claim governance. We never represent future roadmap items as current production features.
+          <h3 class="bg-display bg-display--sm" style="color:white;margin-bottom:1rem;">Why does DigiSynq exist?</h3>
+          <p class="bg-body-text" style="color:rgba(255,255,255,0.78);margin-bottom:1rem;">
+            Physical film and television production represents one of the world's most capital-intensive, high-velocity operating environments, yet its operational backplane still relies on disconnected SMS threads, unverified intermediary claims, and fragile ad-hoc spreadsheets.
+          </p>
+          <p style="font-size:0.88rem;line-height:1.65;color:rgba(255,255,255,0.55);margin-top:auto;">
+            When a 25,000 sq ft virtual production LED volume sits idle for 14 days between tentpole episodic shoots, that carrying capacity evaporates permanently. DigiSynq replaces asymmetric market friction with deterministic, code-enforced protocol coordination.
           </p>
         </div>
 
-        <div class="table-container">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Capability / Module</th>
-                <th>Status</th>
-                <th>Current Operational Scope</th>
-                <th>Target Horizon</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>DigiSynq Core Identity Registry</strong></td>
-                <td><span class="badge badge-live">[LIVE]</span></td>
-                <td>Corporate KYC/KYB, authorized signatory verification, secure intake brief triage</td>
-                <td>Active global production</td>
-              </tr>
-              <tr>
-                <td><strong>Venue &amp; Soundstage Telemetry</strong></td>
-                <td><span class="badge badge-live">[LIVE]</span></td>
-                <td>Stage dimension verification, NC acoustic profiling, 3-phase power verification</td>
-                <td>Active global production</td>
-              </tr>
-              <tr>
-                <td><strong>Guild Labor Telemetry &amp; Roster Sync</strong></td>
-                <td><span class="badge badge-pilot">[PILOT]</span></td>
-                <td>Selected pilot productions validating IATSE/DGA HOD scheduling verification</td>
-                <td>Q3 2026 expansion</td>
-              </tr>
-              <tr>
-                <td><strong>Serialized Cine Equipment Registry</strong></td>
-                <td><span class="badge badge-pilot">[PILOT]</span></td>
-                <td>Serialized camera package registry with partner rental houses</td>
-                <td>Q4 2026 expansion</td>
-              </tr>
-              <tr>
-                <td><strong>Depository Escrow Administration</strong></td>
-                <td><span class="badge badge-partner">[PARTNER]</span></td>
-                <td>Chartered banking partner escrow workflows for bilateral contracts</td>
-                <td>Continuous integration</td>
-              </tr>
-              <tr>
-                <td><strong>Predictive Capacity Intelligence</strong></td>
-                <td><span class="badge badge-pilot">[PILOT]</span></td>
-                <td>Regional soundstage utilization models derived from pilot telemetry</td>
-                <td>Q1 2027 enterprise rollout</td>
-              </tr>
-              <tr>
-                <td><strong>Cross-Border Tax Rebate Monetization</strong></td>
-                <td><span class="badge badge-partner">[PARTNER]</span></td>
-                <td>Automated tax incentive verification and bridge debt structuring with institutional lenders</td>
-                <td>Under partner design</td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Question 02: WHAT DOES IT ACTUALLY DO? (6 col, Cream) -->
+        <div class="bg-card bg-card--cream bg-6 bg-reveal bg-reveal-delay-1">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+            <span class="bg-label" style="color:var(--b-navy);">Question 02</span>
+            <span class="bg-badge bg-badge--purple">6-Stage Lifecycle</span>
+          </div>
+          <h3 class="bg-display bg-display--sm" style="color:var(--b-navy);margin-bottom:1rem;">What does it actually do?</h3>
+          
+          <div class="bg-step-flow">
+            <div class="bg-step-row">
+              <div class="bg-step-num-block">01</div>
+              <div class="bg-step-content">
+                <span class="bg-step-title" style="color:var(--b-navy);">VERIFY</span>
+                <span class="bg-step-desc" style="color:var(--b-navy-soft);">Cryptographically authenticate corporate standing, TPN facility credentials, and guild rosters.</span>
+              </div>
+            </div>
+            <div class="bg-step-row">
+              <div class="bg-step-num-block bg-step-num-block--yellow">02</div>
+              <div class="bg-step-content">
+                <span class="bg-step-title" style="color:var(--b-navy);">MATCH</span>
+                <span class="bg-step-desc" style="color:var(--b-navy-soft);">Isolate spatial, acoustic, electrical, and calendar compatibility behind zero-knowledge bilateral privacy gates.</span>
+              </div>
+            </div>
+            <div class="bg-step-row">
+              <div class="bg-step-num-block bg-step-num-block--coral">03</div>
+              <div class="bg-step-content">
+                <span class="bg-step-title" style="color:var(--b-navy);">COMMIT</span>
+                <span class="bg-step-desc" style="color:var(--b-navy-soft);">Standardized digital covenants &amp; segregated escrow at chartered depository banking partners.</span>
+              </div>
+            </div>
+            <div class="bg-step-row">
+              <div class="bg-step-num-block">04</div>
+              <div class="bg-step-content">
+                <span class="bg-step-title" style="color:var(--b-navy);">EXECUTE</span>
+                <span class="bg-step-desc" style="color:var(--b-navy-soft);">Operational telemetry: call sheet check-ins, Brompton gen-lock benchmarks, load-in milestones, and wrap logs.</span>
+              </div>
+            </div>
+            <div class="bg-step-row">
+              <div class="bg-step-num-block bg-step-num-block--yellow">05</div>
+              <div class="bg-step-content">
+                <span class="bg-step-title" style="color:var(--b-navy);">SETTLE</span>
+                <span class="bg-step-desc" style="color:var(--b-navy-soft);">Audit manifests, execute wrap sign-offs, and trigger sub-48-hour automated milestone disbursements.</span>
+              </div>
+            </div>
+            <div class="bg-step-row">
+              <div class="bg-step-num-block bg-step-num-block--coral">06</div>
+              <div class="bg-step-content">
+                <span class="bg-step-title" style="color:var(--b-navy);">LEARN</span>
+                <span class="bg-step-desc" style="color:var(--b-navy-soft);">Aggregate objective metrics into transparent non-custodial trust ratings and predictive capacity indices.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3: WHAT DOES IT NOT DO? (12 col) -->
+        <div class="bg-card bg-card--dark-alt bg-12 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+            <div>
+              <span class="bg-label" style="color:var(--b-coral);">Question 03 · Operational Boundaries</span>
+              <h3 class="bg-display bg-display--sm" style="color:white;margin-top:0.25rem;">What does it not do?</h3>
+            </div>
+            <span class="bg-badge bg-badge--coral">Non-Negotiable Guardrails</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--b-gap);">
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--b-radius-sm);padding:1.5rem;">
+              <span class="bg-chip bg-chip--coral" style="margin-bottom:0.75rem;">Not a Talent Agency</span>
+              <p style="font-size:0.85rem;color:rgba(255,255,255,0.72);line-height:1.6;margin:0;">
+                We do not manage talent or skim commissions from union wages. We verify guild accreditation and facilitate direct scheduling without intermediary markups.
+              </p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--b-radius-sm);padding:1.5rem;">
+              <span class="bg-chip bg-chip--coral" style="margin-bottom:0.75rem;">Not an Asset Owner</span>
+              <p style="font-size:0.85rem;color:rgba(255,255,255,0.72);line-height:1.6;margin:0;">
+                We own zero soundstages, camera packages, or lighting trucks. We never prioritize proprietary inventory over partner facilities.
+              </p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--b-radius-sm);padding:1.5rem;">
+              <span class="bg-chip bg-chip--coral" style="margin-bottom:0.75rem;">Not a Bank / Escrow Depository</span>
+              <p style="font-size:0.85rem;color:rgba(255,255,255,0.72);line-height:1.6;margin:0;">
+                We do not custody balance-sheet funds. All earnest deposits, completion draws, and disbursements are executed through licensed, chartered FDIC/FCA banking partners.
+              </p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--b-radius-sm);padding:1.5rem;">
+              <span class="bg-chip bg-chip--coral" style="margin-bottom:0.75rem;">Not a Creative Arbiter</span>
+              <p style="font-size:0.85rem;color:rgba(255,255,255,0.72);line-height:1.6;margin:0;">
+                We do not provide script coverage, cast attachments, or editorial notes. We coordinate physical operational infrastructure so filmmakers can execute uninhibited.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4: WHO IS IT FOR? (7 col) -->
+        <div class="bg-card bg-card--dark bg-7 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+            <span class="bg-label" style="color:var(--b-yellow);">Question 04 · Market Participants</span>
+            <span class="bg-badge bg-badge--yellow">Ecosystem Scope</span>
+          </div>
+          <h3 class="bg-display bg-display--sm" style="color:white;margin-bottom:1.25rem;">Who is it for?</h3>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+              <span style="color:var(--b-yellow);font-weight:bold;">&rarr;</span>
+              <div>
+                <strong style="color:white;font-size:0.9rem;">Studio &amp; Streamer Executives:</strong>
+                <span style="color:rgba(255,255,255,0.65);font-size:0.85rem;"> Managing slate-wide capacity allocations, tax incentive monetizations, and multi-hub facility commitments.</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+              <span style="color:var(--b-yellow);font-weight:bold;">&rarr;</span>
+              <div>
+                <strong style="color:white;font-size:0.9rem;">Independent Line Producers &amp; UPMs:</strong>
+                <span style="color:rgba(255,255,255,0.65);font-size:0.85rem;"> Locking certified soundstages, serialized cine packages, and vetted guild crew on budget and on schedule.</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+              <span style="color:var(--b-yellow);font-weight:bold;">&rarr;</span>
+              <div>
+                <strong style="color:white;font-size:0.9rem;">Soundstage &amp; Lot Operators:</strong>
+                <span style="color:rgba(255,255,255,0.65);font-size:0.85rem;"> Monetizing 14-to-60 day dark windows between major studio tentpole leases with zero rate-card dilution.</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+              <span style="color:var(--b-yellow);font-weight:bold;">&rarr;</span>
+              <div>
+                <strong style="color:white;font-size:0.9rem;">Equipment Rental Houses:</strong>
+                <span style="color:rgba(255,255,255,0.65);font-size:0.85rem;"> Expanding deployment velocity for high-capital cinema camera packages, anamorphic glass, and mobile LED rigs.</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+              <span style="color:var(--b-yellow);font-weight:bold;">&rarr;</span>
+              <div>
+                <strong style="color:white;font-size:0.9rem;">Theatrical Post-Production Suites:</strong>
+                <span style="color:rgba(255,255,255,0.65);font-size:0.85rem;"> Filling color grading DI suites, conform pipelines, and Dolby Atmos 7.1.4 mixing schedules.</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;">
+              <span style="color:var(--b-yellow);font-weight:bold;">&rarr;</span>
+              <div>
+                <strong style="color:white;font-size:0.9rem;">Financiers &amp; Completion Guarantors:</strong>
+                <span style="color:rgba(255,255,255,0.65);font-size:0.85rem;"> De-risking physical execution with verifiable milestone telemetry and structured escrow draw releases.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 5: HOW DOES IT STAY NEUTRAL? (5 col, Purple) -->
+        <div class="bg-card bg-card--purple bg-5 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+              <span class="bg-label">Question 05</span>
+              <span class="bg-badge bg-badge--green">Hardcoded Neutrality</span>
+            </div>
+            <h3 class="bg-display bg-display--sm" style="color:white;margin-bottom:1.25rem;">How does it stay neutral?</h3>
+            <p style="font-size:0.92rem;line-height:1.68;color:rgba(255,255,255,0.85);margin-bottom:1rem;">
+              DigiSynq's neutrality is hardcoded into its economic architecture and corporate bylaws. Because we own zero physical production assets and represent zero talent rosters, we have zero financial incentive to route a booking to one facility over another.
+            </p>
+            <p style="font-size:0.88rem;line-height:1.6;color:rgba(255,255,255,0.72);">
+              Matching decisions are governed strictly by technical parameters, calendar availability, and verified reputation scores.
+            </p>
+          </div>
+          <div style="padding:1rem;background:rgba(0,0,0,0.22);border-radius:var(--b-radius-xs);margin-top:1.5rem;">
+            <span class="bg-label" style="color:var(--b-yellow);">Protocol Covenant</span>
+            <div style="font-family:'DM Serif Display', Georgia, serif;font-style:italic;font-size:1.15rem;color:white;margin-top:0.25rem;">
+              Unbiased algorithmic matching with published reputation scoring formulas.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: LIVE TODAY VS BEING BUILT BENTO TABLE -->
+    <section aria-label="Roadmap Governance" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+        <div class="bg-card bg-card--dark bg-12 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+            <div>
+              <span class="bg-label" style="color:var(--b-purple-lt);">Roadmap Transparency &amp; Claim Governance</span>
+              <h2 class="bg-display bg-display--md" style="color:white;margin-top:0.35rem;">What is live today vs. what is being built</h2>
+            </div>
+            <span class="bg-chip bg-chip--dark">Rigorous Claim Governance · Zero Phantom Features</span>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table class="bg-fee-table">
+              <thead>
+                <tr>
+                  <th style="color:rgba(255,255,255,0.6);">Capability / Module</th>
+                  <th style="color:rgba(255,255,255,0.6);">Status</th>
+                  <th style="color:rgba(255,255,255,0.6);">Current Operational Scope</th>
+                  <th style="color:rgba(255,255,255,0.6);">Target Horizon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="color:white;font-weight:600;">DigiSynq Core Identity Registry</td>
+                  <td><span class="bg-badge bg-badge--green">[LIVE]</span></td>
+                  <td style="color:rgba(255,255,255,0.7);">Corporate KYC/KYB, authorized signatory verification, secure intake brief triage</td>
+                  <td style="color:rgba(255,255,255,0.5);">Active global production</td>
+                </tr>
+                <tr>
+                  <td style="color:white;font-weight:600;">Venue &amp; Soundstage Telemetry</td>
+                  <td><span class="bg-badge bg-badge--green">[LIVE]</span></td>
+                  <td style="color:rgba(255,255,255,0.7);">Stage dimension verification, NC acoustic profiling, 3-phase power verification</td>
+                  <td style="color:rgba(255,255,255,0.5);">Active global production</td>
+                </tr>
+                <tr>
+                  <td style="color:white;font-weight:600;">Guild Labor Telemetry &amp; Roster Sync</td>
+                  <td><span class="bg-badge bg-badge--purple">[PILOT]</span></td>
+                  <td style="color:rgba(255,255,255,0.7);">Selected pilot productions validating IATSE/DGA HOD scheduling verification</td>
+                  <td style="color:rgba(255,255,255,0.5);">Q3 2026 expansion</td>
+                </tr>
+                <tr>
+                  <td style="color:white;font-weight:600;">Serialized Cine Equipment Registry</td>
+                  <td><span class="bg-badge bg-badge--purple">[PILOT]</span></td>
+                  <td style="color:rgba(255,255,255,0.7);">Serialized camera package registry with partner rental houses</td>
+                  <td style="color:rgba(255,255,255,0.5);">Q4 2026 expansion</td>
+                </tr>
+                <tr>
+                  <td style="color:white;font-weight:600;">Depository Escrow Administration</td>
+                  <td><span class="bg-badge bg-badge--yellow">[PARTNER]</span></td>
+                  <td style="color:rgba(255,255,255,0.7);">Chartered banking partner escrow workflows for bilateral contracts</td>
+                  <td style="color:rgba(255,255,255,0.5);">Continuous integration</td>
+                </tr>
+                <tr>
+                  <td style="color:white;font-weight:600;">Predictive Capacity Intelligence</td>
+                  <td><span class="bg-badge bg-badge--purple">[PILOT]</span></td>
+                  <td style="color:rgba(255,255,255,0.7);">Regional soundstage utilization models derived from pilot telemetry</td>
+                  <td style="color:rgba(255,255,255,0.5);">Q1 2027 enterprise rollout</td>
+                </tr>
+                <tr>
+                  <td style="color:white;font-weight:600;">Cross-Border Tax Rebate Monetization</td>
+                  <td><span class="bg-badge bg-badge--yellow">[PARTNER]</span></td>
+                  <td style="color:rgba(255,255,255,0.7);">Automated tax incentive verification and bridge debt structuring with institutional lenders</td>
+                  <td style="color:rgba(255,255,255,0.5);">Under partner design</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CALL TO ACTION -->
-    <section class="cta-banner">
-      <div class="container">
-        <div class="section-label">Institutional Integration</div>
-        <h2 class="cta-banner-title">Build the coordination infrastructure with us.</h2>
-        <p class="cta-banner-sub">
-          Submit your requirements to our coordination protocol and help eliminate friction across global entertainment pipelines.
-        </p>
-        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
-          <a href="start-a-synq.html" class="btn btn-primary btn-lg">Start a synq &rarr;</a>
-          <a href="trust.html" class="btn btn-secondary btn-lg">Review trust standards</a>
-          <a href="economics.html" class="btn btn-secondary btn-lg">Explore Economics</a>
+    <!-- SECTION 04: CTA BANNER BENTO -->
+    <section aria-label="Call to Action" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+        <div class="bg-card bg-card--yellow bg-12 bg-reveal" style="text-align:center;padding:4rem var(--b-pad);align-items:center;">
+          <span class="bg-badge bg-badge--purple" style="margin-bottom:1rem;">Institutional Integration</span>
+          <h2 class="bg-display bg-display--lg" style="color:var(--b-navy);max-width:760px;margin-bottom:1rem;">
+            Build the coordination infrastructure with us.
+          </h2>
+          <p style="font-size:1.05rem;color:var(--b-navy-soft);max-width:620px;margin-bottom:2rem;line-height:1.65;">
+            Submit your requirements to our coordination protocol and help eliminate friction across global entertainment pipelines.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+            <a href="start-a-synq.html" class="bg-btn bg-btn--primary">Start a synq &rarr;</a>
+            <a href="trust.html" class="bg-btn bg-btn--outline-navy">Review trust standards</a>
+            <a href="economics.html" class="bg-btn bg-btn--outline-navy">Explore Economics</a>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- CANONICAL ENTERPRISE FOOTER -->

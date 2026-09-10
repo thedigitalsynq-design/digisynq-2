@@ -6,49 +6,44 @@
   <title>Production Intelligence — DigiSynq Entertainment Coordination</title>
   <meta name="description" content="DigiSynq production intelligence architecture: transforming empirical production data into actionable signals across capacity, talent, post, and audience demand.">
   <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/intelligence.html">
-  
   <meta property="og:title" content="Production Intelligence — DigiSynq Entertainment Coordination">
   <meta property="og:description" content="Explore the continuous learning loop and data provenance model powering entertainment coordination.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/intelligence.html">
-  <!-- DM Serif Display — editorial display serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/css/design-system.css">
-<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/bento-system.css">
 </head>
-<body>
+<body class="bg-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- CANONICAL HEADER -->
-  <header class="navbar" role="banner">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
-        <span class="nav-brand-name">DigiSynq</span>
-        <span class="nav-brand-sub">COORDINATION INFRASTRUCTURE</span>
+  <!-- BENTO NAVIGATION -->
+  <header class="bg-nav navbar" role="banner">
+    <div class="bg-nav-inner nav-container">
+      <a href="index.html" class="bg-nav-brand nav-brand" aria-label="DigiSynq Home">
+        <span class="bg-nav-brand-dot"></span>
+        <span class="bg-nav-brand-name nav-brand-name">DigiSynq</span>
       </a>
-
       <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="how-it-works.html" class="nav-link">How it works</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="intelligence.html" class="nav-link active">Intelligence</a></li>
-          <li><a href="economics.html" class="nav-link">Economics</a></li>
-          <li><a href="trust.html" class="nav-link">Trust</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
+        <ul class="bg-nav-links nav-menu">
+          <li><a href="index.html" class="bg-nav-link nav-link">Home</a></li>
+          <li><a href="how-it-works.html" class="bg-nav-link nav-link">How it works</a></li>
+          <li><a href="solutions.html" class="bg-nav-link nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="bg-nav-link nav-link">Platform</a></li>
+          <li><a href="network.html" class="bg-nav-link nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="bg-nav-link nav-link active">Intelligence</a></li>
+          <li><a href="economics.html" class="bg-nav-link nav-link">Economics</a></li>
+          <li><a href="trust.html" class="bg-nav-link nav-link">Trust</a></li>
+          <li><a href="about.html" class="bg-nav-link nav-link">About</a></li>
         </ul>
       </nav>
-
-      <div class="nav-actions">
-        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
-          <span>Search</span>
-          <kbd>⌘K</kbd>
+      <div class="bg-nav-actions nav-actions">
+        <button class="bg-nav-cmd-btn nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span><kbd>⌘K</kbd>
         </button>
-        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <a href="start-a-synq.html" class="bg-nav-cta btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
         <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
       </div>
     </div>
@@ -65,327 +60,275 @@
     <a href="economics.html" class="mobile-nav-link">Economics</a>
     <a href="trust.html" class="mobile-nav-link">Trust center</a>
     <a href="about.html" class="mobile-nav-link">About</a>
-    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
-      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
-      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
-      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width:100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width:100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width:100%;">I need something</a>
     </div>
   </div>
 
-  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem);">
-    <!-- HERO -->
-    <section class="container" style="padding-bottom: 4rem; border-bottom: 1px solid var(--gray-800);">
-      <div class="section-label">Empirical Production Telemetry & Analytics</div>
-      <h1 style="margin-bottom: 1.5rem;">
-        Predictive Production <span class="text-gradient-cyan"><em>Intelligence</em></span> <span class="text-gradient-violet"><em>Protocol</em></span>
-      </h1>
-      <p style="font-size: 1.25rem; max-width: 820px; color: var(--gray-200); line-height: 1.6; margin-bottom: 2rem;">
-        Production intelligence is valuable only when it unlocks deterministic decisions. DigiSynq grounds intelligence directly in transactional coordination telemetry, soundstage utilization telemetry, and audited settlement data—eliminating speculative industry rumors.
-      </p>
+  <main id="main-content" class="bg-page-wrapper">
 
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="#pipeline" class="btn btn-secondary btn-sm">The learning loop</a>
-        <a href="#domains" class="btn btn-secondary btn-sm">Seven intelligence domains</a>
-        <a href="#provenance" class="btn btn-secondary btn-sm">Data provenance standards</a>
+    <!-- SECTION 01: HERO BENTO -->
+    <section aria-label="Intelligence Overview" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <!-- Hero Headline Card (Cream, 7 col, 2 row) -->
+        <div class="bg-card bg-card--cream bg-7 bg-row-2 bg-reveal" style="justify-content:space-between;min-height:460px;">
+          <div>
+            <span class="bg-badge bg-badge--purple" style="margin-bottom:1.25rem;display:inline-flex;">Empirical Production Telemetry</span>
+            <h1 class="bg-display bg-display--lg" style="margin:0.5rem 0 1.25rem;color:var(--b-navy);line-height:1.04;">
+              Predictive Production <em>Intelligence</em> <em>Protocol</em>
+            </h1>
+            <p class="bg-body-text" style="color:var(--b-navy-soft);font-size:1.02rem;line-height:1.65;">
+              Production intelligence is valuable only when it unlocks deterministic decisions. DigiSynq grounds intelligence directly in transactional coordination telemetry, soundstage utilization telemetry, and audited settlement data—eliminating speculative industry rumors.
+            </p>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;padding-top:1.25rem;border-top:1px solid rgba(15,22,35,0.12);">
+            <a href="#pipeline" class="bg-chip bg-chip--light" style="text-decoration:none;">The Learning Loop</a>
+            <a href="#domains" class="bg-chip bg-chip--light" style="text-decoration:none;">Seven Intelligence Domains</a>
+            <a href="#provenance" class="bg-chip bg-chip--light" style="text-decoration:none;">Data Provenance Standards</a>
+          </div>
+        </div>
+
+        <!-- Telemetry Metrics Card (Purple, 5 col, 2 row) -->
+        <div class="bg-card bg-card--purple bg-5 bg-row-2 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;min-height:460px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+              <span class="bg-label">System Telemetry</span>
+              <span class="bg-badge bg-badge--green">[LIVE RADAR]</span>
+            </div>
+            <h3 class="bg-display bg-display--sm" style="color:white;margin-bottom:1.25rem;">Real-Time Global Signals</h3>
+            
+            <div style="display:flex;flex-direction:column;gap:1.5rem;">
+              <div>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:white;">7</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Specialized Intelligence Domains</div>
+              </div>
+              <div>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:var(--b-yellow);">100%</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Cryptographically Provenanced Telemetry</div>
+              </div>
+              <div>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:white;">0.00%</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Speculative Synthetic Sentiment</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.15);">
+            <span class="bg-chip bg-chip--dark">Zero-Knowledge Aggregations</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- SECTION 01 — THE 7-STEP LEARNING LOOP -->
-    <section id="pipeline" style="padding: 5rem 0; border-bottom: 1px solid var(--gray-800);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Telemetry Pipeline & Protocol Architecture</div>
-          <h2 class="section-title">The Continuous Production Learning Loop</h2>
-          <p class="section-desc">
-            How empirical production transactions convert into deterministic planning advantages across global slates.
+    <!-- SECTION 02: THE LEARNING LOOP BENTO -->
+    <section id="pipeline" aria-label="Learning Loop" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <div class="bg-card bg-card--dark bg-12 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+            <div>
+              <span class="bg-label" style="color:var(--b-purple-lt);">Continuous Telemetry Loop</span>
+              <h2 class="bg-display bg-display--md" style="color:white;margin-top:0.35rem;">The Continuous Production Learning Loop</h2>
+            </div>
+            <span class="bg-chip bg-chip--dark">7 State Transition Milestones</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:var(--b-gap);">
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--b-radius-sm);padding:1.25rem;">
+              <span class="bg-step-num-block" style="margin-bottom:0.75rem;width:34px;height:34px;font-size:0.85rem;">01</span>
+              <strong style="color:white;display:block;font-size:0.9rem;margin-bottom:0.35rem;">Operational Ingestion</strong>
+              <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.5;">Ingest check-in logs, stage load-in timestamps, Brompton gen-lock telemetry, and milestone completions.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--b-radius-sm);padding:1.25rem;">
+              <span class="bg-step-num-block bg-step-num-block--yellow" style="margin-bottom:0.75rem;width:34px;height:34px;font-size:0.85rem;">02</span>
+              <strong style="color:white;display:block;font-size:0.9rem;margin-bottom:0.35rem;">ZK Sanitization</strong>
+              <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.5;">Strip NDA-governed creative IP, script details, cast names, and proprietary budgets behind zero-knowledge gates.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--b-radius-sm);padding:1.25rem;">
+              <span class="bg-step-num-block bg-step-num-block--coral" style="margin-bottom:0.75rem;width:34px;height:34px;font-size:0.85rem;">03</span>
+              <strong style="color:white;display:block;font-size:0.9rem;margin-bottom:0.35rem;">Normalization</strong>
+              <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.5;">Normalize facility acoustic NC profiles, 3-phase power, LED refresh rates, and guild credentials.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--b-radius-sm);padding:1.25rem;">
+              <span class="bg-step-num-block" style="margin-bottom:0.75rem;width:34px;height:34px;font-size:0.85rem;">04</span>
+              <strong style="color:white;display:block;font-size:0.9rem;margin-bottom:0.35rem;">Model Scoring</strong>
+              <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.5;">Compute non-custodial reputation indices, stage utilization curves, and milestone reliability ratios.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--b-radius-sm);padding:1.25rem;">
+              <span class="bg-step-num-block bg-step-num-block--yellow" style="margin-bottom:0.75rem;width:34px;height:34px;font-size:0.85rem;">05</span>
+              <strong style="color:white;display:block;font-size:0.9rem;margin-bottom:0.35rem;">Predictive Routing</strong>
+              <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.5;">Route upcoming production inquiries into verified available dark windows and certified packages.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--b-radius-sm);padding:1.25rem;">
+              <span class="bg-step-num-block bg-step-num-block--coral" style="margin-bottom:0.75rem;width:34px;height:34px;font-size:0.85rem;">06</span>
+              <strong style="color:white;display:block;font-size:0.9rem;margin-bottom:0.35rem;">Settlement Feedback</strong>
+              <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.5;">Verify completion draw releases, wrap certifications, and escrow reconciliations back into scoring oracles.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: SEVEN INTELLIGENCE DOMAINS BENTO -->
+    <section id="domains" aria-label="Seven Domains" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <div class="bg-12" style="margin-bottom:0.5rem;">
+          <span class="bg-label" style="color:var(--b-yellow);">Domain Architecture</span>
+          <h2 class="bg-display bg-display--md" style="color:white;margin-top:0.25rem;">Seven Specialized Intelligence Systems</h2>
+        </div>
+
+        <!-- Domain 1: Soundstage & Venue (Purple, 4 col) -->
+        <div class="bg-card bg-card--purple bg-4 bg-reveal">
+          <span class="bg-badge bg-badge--green" style="margin-bottom:0.75rem;align-self:flex-start;">Domain 01</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Stage &amp; Venue Capacity Intelligence</h3>
+          <p style="font-size:0.85rem;line-height:1.6;color:rgba(255,255,255,0.85);margin-bottom:1rem;">
+            Real-time stage utilization, square footage, clear heights, NC ratings, silent HVAC specs, and dark window calendar syndication.
           </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">NC-25 / 3-Phase Telemetry</span>
         </div>
 
-        <div class="steps-grid" style="grid-template-columns: repeat(7, 1fr);">
-          <div class="step-card">
-            <div>
-              <div class="step-num">01</div>
-              <div class="step-name" style="font-size: 1.15rem;">Telemetry</div>
-            </div>
-            <p class="step-desc">Verified transactions, stage check-ins, optical bench manifests, bank escrow settlements.</p>
-          </div>
-
-          <div class="step-card">
-            <div>
-              <div class="step-num">02</div>
-              <div class="step-name" style="font-size: 1.15rem;">Signal</div>
-            </div>
-            <p class="step-desc">Algorithmic pattern detection: seasonal stage vacancy spikes, regional camera shortages.</p>
-          </div>
-
-          <div class="step-card">
-            <div>
-              <div class="step-num">03</div>
-              <div class="step-name" style="font-size: 1.15rem;">Modeling</div>
-            </div>
-            <p class="step-desc">Correlation models: impact of prep delays on post-production conform windows.</p>
-          </div>
-
-          <div class="step-card">
-            <div>
-              <div class="step-num">04</div>
-              <div class="step-name" style="font-size: 1.15rem;">Calibration</div>
-            </div>
-            <p class="step-desc">Line producers book verified capacity earlier with calibrated price bands.</p>
-          </div>
-
-          <div class="step-card">
-            <div>
-              <div class="step-num">05</div>
-              <div class="step-name" style="font-size: 1.15rem;">Covenant Lock</div>
-            </div>
-            <p class="step-desc">Executing digital bilateral covenants and funding regulated partner escrow deposits.</p>
-          </div>
-
-          <div class="step-card">
-            <div>
-              <div class="step-num">06</div>
-              <div class="step-name" style="font-size: 1.15rem;">Delivery</div>
-            </div>
-            <p class="step-desc">Zero lost shoot days, certified wrap sign-off, rapid milestone disbursement.</p>
-          </div>
-
-          <div class="step-card">
-            <div>
-              <div class="step-num">07</div>
-              <div class="step-name" style="font-size: 1.15rem;">Consensus</div>
-            </div>
-            <p class="step-desc">Updating bilateral partner trust ratings and training capacity forecasting algorithms.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02 — SEVEN SUBORDINATE DOMAINS -->
-    <section id="domains" style="padding: 5rem 0; background-color: var(--gray-950); border-bottom: 1px solid var(--gray-800);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Intelligence Domains &bull; 01 to 07</div>
-          <h2 class="section-title">Seven Specialized Intelligence Systems</h2>
-          <p class="section-desc">
-            Subordinate econometric intelligence systems serving the primary production coordination mission.
+        <!-- Domain 2: Guild Labor & Crew (Yellow, 4 col) -->
+        <div class="bg-card bg-card--yellow bg-4 bg-reveal bg-reveal-delay-1">
+          <span class="bg-badge bg-badge--purple" style="margin-bottom:0.75rem;align-self:flex-start;">Domain 02</span>
+          <h3 class="bg-display bg-display--xs" style="color:var(--b-navy);margin-bottom:0.5rem;">Guild Artisan &amp; Crew Telemetry</h3>
+          <p style="font-size:0.85rem;line-height:1.6;color:var(--b-navy-soft);margin-bottom:1rem;">
+            IATSE, DGA, and Teamster credential authentication, verified head-of-department credits, and availability tracking across film territories.
           </p>
+          <span class="bg-chip bg-chip--light" style="margin-top:auto;align-self:flex-start;">Tier 1 Guild Keys</span>
         </div>
 
-        <div class="bento-grid">
-          <!-- 03 Capacity (Span 7 Featured) -->
-          <div class="bento-card bento-span-7 bento-card-gradient">
-            <div class="bento-glow-top"></div>
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">03 &bull; Capacity intelligence</span>
-                <span class="badge badge-live">[FIRST-PARTY / PARTNER]</span>
-              </div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem;">Real-Time Soundstage & Volume Booking Curves</h3>
-              <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-                Empirical stage occupancy indices, advance booking lead times, and capacity gaps across certified studio facilities in London, Atlanta, and Vancouver.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="bento-header-tag" style="margin-bottom: 0.5rem;">
-                <span class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">TELEMETRY INTEGRATION</span>
-                <span class="badge badge-live">LIVE FEED</span>
-              </div>
-              <div class="bento-chip-group">
-                <span class="bento-chip">Direct API Calendar Sync</span>
-                <span class="bento-chip">Turnaround Curves</span>
-                <span class="bento-chip">Power Consumption</span>
-              </div>
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.75rem;">
-                SOURCE: Direct facility operator calendar integrations & smart sub-metering.
-              </div>
-            </div>
-          </div>
-
-          <!-- 01 Market (Span 5) -->
-          <div class="bento-card bento-span-5">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">01 &bull; Market intelligence</span>
-                <span class="badge badge-partner">[PARTNER / PUBLIC]</span>
-              </div>
-              <h3 style="font-size: 1.45rem; margin-bottom: 0.75rem;">Buyer Mandates & Theatrical Windowing</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-                Tracking studio theatrical release slates, platform content acquisition mandates, and territory licensing appetites to align packaging with active market demand.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
-                SOURCE: Verified distributor submissions & formal trade disclosures.
-              </div>
-            </div>
-          </div>
-
-          <!-- 02 Demand (Span 6) -->
-          <div class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">02 &bull; Demand forecasting</span>
-                <span class="badge badge-modelled">[MODELLED DATA]</span>
-              </div>
-              <h3 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Macro Production Pipeline Gaps</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-                Anticipating upcoming crew and facility shortages caused by simultaneous blockbuster and high-end episodic production waves across major global hubs.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
-                SOURCE: Regional permit filings & advance project registrations.
-              </div>
-            </div>
-          </div>
-
-          <!-- 04 Audience (Span 6) -->
-          <div class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">04 &bull; Audience intelligence</span>
-                <span class="badge badge-pilot">[LICENSED DATA]</span>
-              </div>
-              <h3 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Territory Demographic & Genre Signals</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-                Aggregated viewership behavior and genre affinity modeling across global streaming and theatrical markets to support greenlight and distribution modeling.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">
-                SOURCE: Syndicated measurement partners & box office telemetry.
-              </div>
-            </div>
-          </div>
-
-          <!-- 05 Capital (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">05 &bull; Capital intelligence</span>
-                <span class="badge badge-partner">[PARTNER]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Incentive Spreads & Mezzanine Debt</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Tax rebate monetization rates, mezzanine debt spreads, and completion guarantor risk premiums.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">SOURCE: Regulated lending & guarantor partners.</div>
-            </div>
-          </div>
-
-          <!-- 06 Crew (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">06 &bull; Labor telemetry</span>
-                <span class="badge badge-live">[FIRST-PARTY]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Guild Labor Scale Baselines</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Verified Head of Department scale rates, union overtime multipliers, and seasonal labor availability indices.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">SOURCE: Union collective agreements & payroll telemetry.</div>
-            </div>
-          </div>
-
-          <!-- 07 Post (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">07 &bull; Post-production telemetry</span>
-                <span class="badge badge-pilot">[PILOT]</span>
-              </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Finishing Turnaround Indices</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Benchmarked color grading turnaround days, Dolby Atmos conform latency, and VFX shot delivery velocity.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">SOURCE: Conform facility delivery logs & QC reports.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03 — DATA PROVENANCE STANDARDS -->
-    <section id="provenance" style="padding: 5rem 0; border-bottom: 1px solid var(--gray-800);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Evidentiary Classification & Provenance</div>
-          <h2 class="section-title">Cryptographic Data Provenance Framework</h2>
-          <p class="section-desc">
-            We never label speculative or modeled projections as verified facts. Every data source adheres to strict provenance labeling.
+        <!-- Domain 3: Cine Equipment & Optical (Coral, 4 col) -->
+        <div class="bg-card bg-card--coral bg-4 bg-reveal bg-reveal-delay-2">
+          <span class="bg-badge bg-badge--yellow" style="margin-bottom:0.75rem;align-self:flex-start;">Domain 03</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Cine Equipment &amp; Optical Inventory</h3>
+          <p style="font-size:0.85rem;line-height:1.6;color:rgba(255,255,255,0.85);margin-bottom:1rem;">
+            Serialized cine packages, anamorphic lens coverage, firmware versions, wireless video systems, and mobile LED rig availability.
           </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">RFID Manifests</span>
         </div>
 
-        <div class="table-container">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Classification</th>
-                <th>Definition & Evidentiary Standard</th>
-                <th>Verification Method</th>
-                <th>Typical System Usage</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="badge badge-live">[FIRST-PARTY]</span></td>
-                <td>Direct transactional data generated on the DigiSynq protocol.</td>
-                <td>Cryptographic hash of bilateral sign-off and wrap certificates.</td>
-                <td>Capacity booking logs, check-in timestamps, trust scores.</td>
-              </tr>
-              <tr>
-                <td><span class="badge badge-partner">[PARTNER]</span></td>
-                <td>Direct telemetry provided by verified facility or financial partners.</td>
-                <td>API integration or authenticated audit document upload.</td>
-                <td>Stage power telemetries, escrow confirmations, credit ratings.</td>
-              </tr>
-              <tr>
-                <td><span class="badge badge-beta">[PUBLIC]</span></td>
-                <td>Public corporate filings, union collective bargaining agreements, trade logs.</td>
-                <td>Official government registers & published union scale schedules.</td>
-                <td>Guild rate baselines, entity tax registrations, box office records.</td>
-              </tr>
-              <tr>
-                <td><span class="badge badge-pilot">[LICENSED]</span></td>
-                <td>Commercial industry intelligence from accredited research vendors.</td>
-                <td>Authorized commercial licensing agreements.</td>
-                <td>Syndicated streaming viewership and international buyer mandates.</td>
-              </tr>
-              <tr>
-                <td><span class="badge badge-modelled">[MODELLED]</span></td>
-                <td>Algorithmic projections and scenario simulations derived from historical trends.</td>
-                <td>Backtested statistical regressions with explicit variance ranges.</td>
-                <td>Seasonal utilization curves, regional crew demand forecasting.</td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Domain 4: Virtual Production (Dark, 6 col) -->
+        <div class="bg-card bg-card--dark bg-6 bg-reveal">
+          <span class="bg-badge bg-badge--purple" style="margin-bottom:0.75rem;align-self:flex-start;">Domain 04</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Spatial &amp; Virtual Production Telemetry</h3>
+          <p style="font-size:0.85rem;line-height:1.6;color:rgba(255,255,255,0.7);margin-bottom:1rem;">
+            Brompton processor calibration logs, Megapixel VR Helios specs, Unreal Engine 5.4 gen-lock sync telemetry, and motion-tracking camera volumes.
+          </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">Gen-Lock Sync Diagnostics</span>
+        </div>
+
+        <!-- Domain 5: Post-Production & Finishing (Dark, 6 col) -->
+        <div class="bg-card bg-card--dark bg-6 bg-reveal bg-reveal-delay-1">
+          <span class="bg-badge bg-badge--purple" style="margin-bottom:0.75rem;align-self:flex-start;">Domain 05</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Theatrical Post &amp; Finishing Bandwidth</h3>
+          <p style="font-size:0.85rem;line-height:1.6;color:rgba(255,255,255,0.7);margin-bottom:1rem;">
+            Dolby Atmos 7.1.4 certified mix stages, Baselight and DaVinci DI finishing suites, VFX render farms, and secure TPN-accredited cloud dailies conduits.
+          </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">TPN Blue Shield &bull; Atmos</span>
+        </div>
+
+        <!-- Domain 6: Tax Incentive (Cream, 6 col) -->
+        <div class="bg-card bg-card--cream bg-6 bg-reveal">
+          <span class="bg-badge bg-badge--purple" style="margin-bottom:0.75rem;align-self:flex-start;">Domain 06</span>
+          <h3 class="bg-display bg-display--xs" style="color:var(--b-navy);margin-bottom:0.5rem;">Cross-Territory Tax Rebate Telemetry</h3>
+          <p style="font-size:0.85rem;line-height:1.6;color:var(--b-navy-soft);margin-bottom:1rem;">
+            Jurisdictional rebate models (UK Film Tax Relief, Georgia 30%, Ontario 21.5%, Australia 40%) paired with institutional lender bridge schedules.
+          </p>
+          <span class="bg-chip bg-chip--light" style="margin-top:auto;align-self:flex-start;">Bridge Finance Mapping</span>
+        </div>
+
+        <!-- Domain 7: Settlement Velocity (Purple, 6 col) -->
+        <div class="bg-card bg-card--purple bg-6 bg-reveal bg-reveal-delay-1">
+          <span class="bg-badge bg-badge--green" style="margin-bottom:0.75rem;align-self:flex-start;">Domain 07</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin-bottom:0.5rem;">Commercial &amp; Settlement Velocity Index</h3>
+          <p style="font-size:0.85rem;line-height:1.6;color:rgba(255,255,255,0.85);margin-bottom:1rem;">
+            Empirical turnaround times for counterparty execution, milestone escrow release velocities, wrap reconciliation duration, and counterparty reliability.
+          </p>
+          <span class="bg-chip bg-chip--dark" style="margin-top:auto;align-self:flex-start;">Sub-48h Wire Audit</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 04: DATA PROVENANCE BENTO -->
+    <section id="provenance" aria-label="Data Provenance" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+        <div class="bg-card bg-card--dark bg-12 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+            <div>
+              <span class="bg-label" style="color:var(--b-coral);">Verification Framework</span>
+              <h2 class="bg-display bg-display--md" style="color:white;margin-top:0.35rem;">Cryptographic Data Provenance Framework</h2>
+            </div>
+            <span class="bg-chip bg-chip--dark">Rigorous Cryptographic Grounding</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:var(--b-gap);">
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.07);">
+              <span class="bg-badge bg-badge--green" style="margin-bottom:0.5rem;">Tier 1 · Cryptographic</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Direct Telemetry &amp; Hardware</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.55;">
+                Brompton processor logs, smart-meter 3-phase power reads, and RFID inventory scanners signed with hardware-level keys.
+              </p>
+            </div>
+
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.07);">
+              <span class="bg-badge bg-badge--yellow" style="margin-bottom:0.5rem;">Tier 2 · Fiduciary</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Depository Banking &amp; Escrow</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.55;">
+                Audited wire confirmations, completion draw disbursement logs, and chartered partner bank account statements.
+              </p>
+            </div>
+
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.07);">
+              <span class="bg-badge bg-badge--purple" style="margin-bottom:0.5rem;">Tier 3 · Legal</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Guild Roster &amp; Credentials</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.55;">
+                IATSE/DGA authorized standing rosters, TPN facility security audits, and COI certificates from licensed brokers.
+              </p>
+            </div>
+
+            <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border-radius:var(--b-radius-sm);border:1px solid rgba(255,255,255,0.07);">
+              <span class="bg-badge bg-badge--coral" style="margin-bottom:0.5rem;">Tier 4 · Operational</span>
+              <strong style="color:white;display:block;font-size:0.92rem;margin-bottom:0.35rem;">Wrap &amp; Milestone Sign-Offs</strong>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.55;">
+                UPM and Line Producer digital execution signatures, call-sheet logs, and equipment return condition inspection sign-offs.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CALL TO ACTION -->
-    <section class="cta-banner">
-      <div class="container">
-        <div class="section-label">Operational Telemetry</div>
-        <h2 class="cta-banner-title">Base Your Production Decisions on Empirical Truth.</h2>
-        <p class="cta-banner-sub">
-          Coordinate your production requirements backed by empirical capacity telemetry.
-        </p>
-        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
-          <a href="start-a-synq.html" class="btn btn-primary btn-lg">Start a synq &rarr;</a>
-          <a href="trust.html" class="btn btn-secondary btn-lg">Review trust standards</a>
-          <a href="economics.html" class="btn btn-secondary btn-lg">Explore Economics</a>
+    <!-- SECTION 05: CTA BENTO -->
+    <section aria-label="Call to Action" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+        <div class="bg-card bg-card--yellow bg-12 bg-reveal" style="text-align:center;padding:4rem var(--b-pad);align-items:center;">
+          <span class="bg-badge bg-badge--purple" style="margin-bottom:1rem;">Empirical Truth</span>
+          <h2 class="bg-display bg-display--lg" style="color:var(--b-navy);max-width:780px;margin-bottom:1rem;">
+            Base Your Production Decisions on Empirical Truth.
+          </h2>
+          <p style="font-size:1.05rem;color:var(--b-navy-soft);max-width:640px;margin-bottom:2rem;line-height:1.65;">
+            Join leading production executives and facility operators orchestrating physical entertainment slates via deterministic telemetry.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+            <a href="start-a-synq.html" class="bg-btn bg-btn--primary">Start a synq &rarr;</a>
+            <a href="platform.html" class="bg-btn bg-btn--outline-navy">Protocol Architecture</a>
+            <a href="trust.html" class="bg-btn bg-btn--outline-navy">Review Trust Center</a>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- CANONICAL ENTERPRISE FOOTER -->
@@ -439,8 +382,8 @@
         <div>
           <div class="footer-col-title">Governance</div>
           <ul class="footer-links">
-            <li><a href="trust.html#verification" class="footer-link">Identity verification</a></li>
-            <li><a href="trust.html#neutrality" class="footer-link">Neutrality policy</a></li>
+            <li><a href="trust.html#identity" class="footer-link">Identity verification</a></li>
+            <li><a href="trust.html#governance" class="footer-link">Neutrality policy</a></li>
             <li><a href="trust.html#disputes" class="footer-link">Dispute resolution</a></li>
             <li><a href="economics.html#fee-table" class="footer-link">Fee schedule</a></li>
             <li><a href="trust.html#data" class="footer-link">Data governance</a></li>

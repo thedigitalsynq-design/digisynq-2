@@ -6,49 +6,91 @@
   <title>Start a Synq — Production Coordination Intake</title>
   <meta name="description" content="Initiate a verified entertainment coordination brief: soundstages, cinema equipment, verified crew, post-production, capital, or distribution.">
   <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/start-a-synq.html">
-  
   <meta property="og:title" content="Start a Synq — Production Coordination Intake">
   <meta property="og:description" content="Submit your production requirement into DigiSynq's deterministic coordination protocol.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/start-a-synq.html">
-  <!-- DM Serif Display — editorial display serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/css/design-system.css">
-<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/bento-system.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Bento form card styling */
+    .intake-category-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--b-radius-sm);
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: all var(--b-dur-fast) var(--b-ease-out);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .intake-category-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--b-purple-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .intake-category-card.selected {
+      background: rgba(91, 79, 232, 0.16);
+      border-color: var(--b-purple);
+      box-shadow: 0 0 0 1px var(--b-purple);
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--b-radius-xs);
+      padding: 0.85rem 1rem;
+      color: white;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color var(--b-dur-fast);
+      box-sizing: border-box;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--b-purple-lt);
+      background: rgba(255, 255, 255, 0.09);
+    }
+    .form-select option {
+      background: #17171C;
+      color: white;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- CANONICAL HEADER -->
-  <header class="navbar" role="banner">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
-        <span class="nav-brand-name">DigiSynq</span>
-        <span class="nav-brand-sub">COORDINATION INFRASTRUCTURE</span>
+  <!-- BENTO NAVIGATION -->
+  <header class="bg-nav navbar" role="banner">
+    <div class="bg-nav-inner nav-container">
+      <a href="index.html" class="bg-nav-brand nav-brand" aria-label="DigiSynq Home">
+        <span class="bg-nav-brand-dot"></span>
+        <span class="bg-nav-brand-name nav-brand-name">DigiSynq</span>
       </a>
-
       <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="how-it-works.html" class="nav-link">How it works</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
-          <li><a href="economics.html" class="nav-link">Economics</a></li>
-          <li><a href="trust.html" class="nav-link">Trust</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
+        <ul class="bg-nav-links nav-menu">
+          <li><a href="index.html" class="bg-nav-link nav-link">Home</a></li>
+          <li><a href="how-it-works.html" class="bg-nav-link nav-link">How it works</a></li>
+          <li><a href="solutions.html" class="bg-nav-link nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="bg-nav-link nav-link">Platform</a></li>
+          <li><a href="network.html" class="bg-nav-link nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="bg-nav-link nav-link">Intelligence</a></li>
+          <li><a href="economics.html" class="bg-nav-link nav-link">Economics</a></li>
+          <li><a href="trust.html" class="bg-nav-link nav-link">Trust</a></li>
+          <li><a href="about.html" class="bg-nav-link nav-link">About</a></li>
         </ul>
       </nav>
-
-      <div class="nav-actions">
-        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
-          <span>Search</span>
-          <kbd>⌘K</kbd>
+      <div class="bg-nav-actions nav-actions">
+        <button class="bg-nav-cmd-btn nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span><kbd>⌘K</kbd>
         </button>
-        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <a href="start-a-synq.html" class="bg-nav-cta btn btn-primary btn-sm btn-pill active">Start a synq &rarr;</a>
         <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
       </div>
     </div>
@@ -65,146 +107,158 @@
     <a href="economics.html" class="mobile-nav-link">Economics</a>
     <a href="trust.html" class="mobile-nav-link">Trust center</a>
     <a href="about.html" class="mobile-nav-link">About</a>
-    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
-      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
-      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
-      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width:100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width:100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width:100%;">I need something</a>
     </div>
   </div>
 
-  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem);">
-    <div class="container container-narrow" style="padding-bottom: 5rem;">
-      <!-- PROGRESS INDICATOR -->
-      <div style="margin-bottom: 2.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem;">
-          <div class="label-mono">Coordination Intake Protocol &bull; Mandate Initiation</div>
-          <div class="mono" style="font-size: 0.75rem; color: var(--white);">Progress: Deterministic Intake</div>
-        </div>
-        <div style="width: 100%; height: 2px; background-color: var(--gray-800); position: relative;">
-          <div id="intake-progress-bar" style="width: 33%; height: 100%; background-color: var(--white); transition: width 0.3s ease;"></div>
-        </div>
-      </div>
+  <main id="main-content" class="bg-page-wrapper">
 
-      <!-- INTAKE HEADER -->
-      <div style="margin-bottom: 3rem;">
-        <span class="badge badge-live" style="margin-bottom: 0.75rem;">[LIVE COORDINATION ENGINE]</span>
-        <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">
-          Initiate a Production <span class="text-gradient-cyan"><em>Synq</em></span> <span class="text-gradient-violet"><em>Mandate</em></span>
-        </h1>
-        <p style="color: var(--gray-300); font-size: 1.1rem; line-height: 1.6;">
-          Specify your operational requirements or underutilized facility capacity. The DigiSynq deterministic protocol routes your mandate through zero-knowledge verification gates directly into authenticated counterparties.
-        </p>
-      </div>
+    <section class="bg-section-wrap--lg">
+      <div class="bg-grid">
 
-      <!-- STEP 01 — WHAT ARE YOU TRYING TO MOVE? -->
-      <form id="synq-intake-form">
-        <input type="hidden" id="selected-category-input" name="category" value="">
-
-        <div style="margin-bottom: 2.5rem;">
-          <div class="label-mono" style="margin-bottom: 1rem;">Step 01 of 03 &bull; Select Primary Operational Mandate</div>
-          <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">
-            What production capacity are you looking to coordinate?
-          </h2>
-
-          <div class="grid-3" style="gap: 1rem;">
-            <div class="intake-category-card form-radio-card" data-category="production">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">01</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Full-Slate / Feature</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  Multi-stage studio slates, cross-territory tax incentive packages, and comprehensive physical production.
-                </p>
-              </div>
-            </div>
-
-            <div class="intake-category-card form-radio-card" data-category="crew">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">02</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Guild Crew &amp; HODs</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  IATSE / DGA / BSC accredited Heads of Department, union camera operators, and specialized technicians.
-                </p>
-              </div>
-            </div>
-
-            <div class="intake-category-card form-radio-card" data-category="equipment">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">03</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Cinema Hardware &amp; Optics</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  ARRI Alexa 35, Sony Venice 2, anamorphic glass, technocranes, and mobile high-output LED rigs.
-                </p>
-              </div>
-            </div>
-
-            <div class="intake-category-card form-radio-card" data-category="stage">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">04</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Soundstages &amp; Volumes</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  Certified soundstages (NC-25 acoustic rating), Brompton-driven LED virtual production stages, and backlots.
-                </p>
-              </div>
-            </div>
-
-            <div class="intake-category-card form-radio-card" data-category="post">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">05</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Theatrical Post &amp; DI</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  Color grading suites, Dolby Atmos 7.1.4 mix stages, ACES conform pipelines, and DCI theatrical mastering.
-                </p>
-              </div>
-            </div>
-
-            <div class="intake-category-card form-radio-card" data-category="capital">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">06</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Capital &amp; Tax Credits</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  Tax rebate monetization, mezzanine bridge financing, and regulated completion guarantor covenants.
-                </p>
-              </div>
-            </div>
-
-            <div class="intake-category-card form-radio-card" data-category="distribution">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">07</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Theatrical &amp; Streaming</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  Worldwide theatrical windowing, OTT platform licensing, and territory minimum guarantee (MG) sales.
-                </p>
-              </div>
-            </div>
-
-            <div class="intake-category-card form-radio-card" data-category="production">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">08</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Underlying IP &amp; Rights</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  Chain-of-title verification, underlying literary rights, format licensing, and catalog syndication.
-                </p>
-              </div>
-            </div>
-
-            <div class="intake-category-card form-radio-card" data-category="other">
-              <div>
-                <div class="mono" style="font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.25rem;">09</div>
-                <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.35rem;">Custom Enterprise Synq</strong>
-                <p style="font-size: 0.78rem; color: var(--gray-400); margin: 0; line-height: 1.4;">
-                  Bespoke multi-hub bottlenecks, facility capacity syndication, or film commission sovereign mandates.
-                </p>
-              </div>
-            </div>
+        <!-- Progress Indicator Bento Card (12 col) -->
+        <div class="bg-card bg-card--dark bg-12 bg-reveal" style="padding:1.5rem 2rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+            <div class="bg-label" style="color:var(--b-purple-lt);">Coordination Intake Protocol &bull; Mandate Initiation</div>
+            <div style="font-size:0.78rem;font-family:-apple-system,sans-serif;color:rgba(255,255,255,0.7);">Progress: Deterministic Intake</div>
+          </div>
+          <div style="width:100%;height:3px;background:rgba(255,255,255,0.08);border-radius:999px;position:relative;overflow:hidden;">
+            <div id="intake-progress-bar" style="width:33%;height:100%;background:var(--b-purple);border-radius:999px;transition:width 0.4s var(--b-ease);"></div>
           </div>
         </div>
 
-        <!-- DYNAMIC SECONDARY QUESTIONS (RENDERED ON SELECTION) -->
-        <div id="dynamic-questions-step" style="display: none;">
-          <!-- Dynamically populated by assets/js/main.js -->
+        <!-- Intake Header Card (Cream, 12 col) -->
+        <div class="bg-card bg-card--cream bg-12 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;">
+          <div style="max-width:880px;">
+            <span class="bg-badge bg-badge--purple" style="margin-bottom:0.75rem;">Live Coordination Engine</span>
+            <h1 class="bg-display bg-display--md" style="color:var(--b-navy);margin:0.25rem 0 1rem;line-height:1.08;">
+              Initiate a Production <em>Synq</em> <em>Mandate</em>
+            </h1>
+            <p class="bg-body-text" style="color:var(--b-navy-soft);font-size:1.02rem;margin:0;">
+              Specify your operational requirements or underutilized facility capacity. The DigiSynq deterministic protocol routes your mandate through zero-knowledge verification gates directly into authenticated counterparties.
+            </p>
+          </div>
         </div>
-      </form>
-    </div>
+
+        <!-- Form Card (Dark, 12 col) -->
+        <div class="bg-card bg-card--dark bg-12 bg-reveal bg-reveal-delay-2" style="padding:2.5rem var(--b-pad);">
+          <form id="synq-intake-form">
+            <input type="hidden" id="selected-category-input" name="category" value="">
+
+            <div style="margin-bottom:2.5rem;">
+              <div class="bg-label" style="color:var(--b-yellow);margin-bottom:0.75rem;">Step 01 of 03 &bull; Select Primary Operational Mandate</div>
+              <h2 class="bg-display bg-display--sm" style="color:white;margin-bottom:1.5rem;">
+                What production capacity are you looking to coordinate?
+              </h2>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:var(--b-gap);">
+
+                <div class="intake-category-card form-radio-card" data-category="production">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">01</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Full-Slate / Feature</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      Multi-stage studio slates, cross-territory tax incentive packages, and comprehensive physical production.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="intake-category-card form-radio-card" data-category="crew">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">02</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Guild Crew &amp; HODs</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      IATSE / DGA / BSC accredited Heads of Department, union camera operators, and specialized technicians.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="intake-category-card form-radio-card" data-category="equipment">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">03</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Cinema Hardware &amp; Optics</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      ARRI Alexa 35, Sony Venice 2, anamorphic glass, technocranes, and mobile high-output LED rigs.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="intake-category-card form-radio-card" data-category="stage">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">04</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Soundstages &amp; Volumes</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      Certified soundstages (NC-25 acoustic rating), Brompton-driven LED virtual production stages, and backlots.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="intake-category-card form-radio-card" data-category="post">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">05</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Theatrical Post &amp; DI</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      Color grading suites, Dolby Atmos 7.1.4 mix stages, ACES conform pipelines, and DCI theatrical mastering.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="intake-category-card form-radio-card" data-category="capital">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">06</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Capital &amp; Tax Credits</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      Tax rebate monetization, mezzanine bridge financing, and regulated completion guarantor covenants.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="intake-category-card form-radio-card" data-category="distribution">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">07</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Theatrical &amp; Streaming</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      Worldwide theatrical windowing, OTT platform licensing, and territory minimum guarantee (MG) sales.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="intake-category-card form-radio-card" data-category="production">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">08</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Underlying IP &amp; Rights</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      Chain-of-title verification, underlying literary rights, format licensing, and catalog syndication.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="intake-category-card form-radio-card" data-category="other">
+                  <div>
+                    <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.25rem;font-style:italic;color:var(--b-purple-lt);margin-bottom:0.25rem;">09</div>
+                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Custom Enterprise Synq</strong>
+                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
+                      Bespoke multi-hub bottlenecks, facility capacity syndication, or film commission sovereign mandates.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- DYNAMIC SECONDARY QUESTIONS (RENDERED ON SELECTION) -->
+            <div id="dynamic-questions-step" style="display:none;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);">
+              <!-- Dynamically populated by assets/js/main.js -->
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- CANONICAL ENTERPRISE FOOTER -->

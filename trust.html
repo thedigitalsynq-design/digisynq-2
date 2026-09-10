@@ -3,52 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trust center & verification architecture — DigiSynq</title>
-  <meta name="description" content="DigiSynq Enterprise Trust Center: comprehensive verification frameworks for identity, assets, contracts, settlement, data privacy, and the transparent Trust Score model.">
+  <title>Trust Center &amp; Verification Architecture — DigiSynq</title>
+  <meta name="description" content="Ten enterprise assurance pillars, non-custodial reputation scoring, and cryptographic verification frameworks protecting productions on DigiSynq.">
   <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/trust.html">
-  
-  <meta property="og:title" content="Trust center & verification architecture — DigiSynq">
-  <meta property="og:description" content="Explore DigiSynq's 10-pillar trust framework: verifiable identity, asset validation, transparent reputation scoring, and regulated escrow custody.">
+  <meta property="og:title" content="Trust Center &amp; Verification Architecture — DigiSynq">
+  <meta property="og:description" content="Enterprise production assurance, 10 trust pillars, and non-custodial reputation scoring.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/trust.html">
-  <!-- DM Serif Display — editorial display serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/css/design-system.css">
-<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/bento-system.css">
 </head>
-<body>
+<body class="bg-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- CANONICAL HEADER -->
-  <header class="navbar" role="banner">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand" aria-label="DigiSynq Home">
-        <span class="nav-brand-name">DigiSynq</span>
-        <span class="nav-brand-sub">COORDINATION INFRASTRUCTURE</span>
+  <!-- BENTO NAVIGATION -->
+  <header class="bg-nav navbar" role="banner">
+    <div class="bg-nav-inner nav-container">
+      <a href="index.html" class="bg-nav-brand nav-brand" aria-label="DigiSynq Home">
+        <span class="bg-nav-brand-dot"></span>
+        <span class="bg-nav-brand-name nav-brand-name">DigiSynq</span>
       </a>
-
       <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="how-it-works.html" class="nav-link">How it works</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-          <li><a href="platform.html" class="nav-link">Platform</a></li>
-          <li><a href="network.html" class="nav-link">Network</a></li>
-          <li><a href="intelligence.html" class="nav-link">Intelligence</a></li>
-          <li><a href="economics.html" class="nav-link">Economics</a></li>
-          <li><a href="trust.html" class="nav-link active">Trust</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
+        <ul class="bg-nav-links nav-menu">
+          <li><a href="index.html" class="bg-nav-link nav-link">Home</a></li>
+          <li><a href="how-it-works.html" class="bg-nav-link nav-link">How it works</a></li>
+          <li><a href="solutions.html" class="bg-nav-link nav-link">Solutions</a></li>
+          <li><a href="platform.html" class="bg-nav-link nav-link">Platform</a></li>
+          <li><a href="network.html" class="bg-nav-link nav-link">Network</a></li>
+          <li><a href="intelligence.html" class="bg-nav-link nav-link">Intelligence</a></li>
+          <li><a href="economics.html" class="bg-nav-link nav-link">Economics</a></li>
+          <li><a href="trust.html" class="bg-nav-link nav-link active">Trust</a></li>
+          <li><a href="about.html" class="bg-nav-link nav-link">About</a></li>
         </ul>
       </nav>
-
-      <div class="nav-actions">
-        <button class="nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
-          <span>Search</span>
-          <kbd>⌘K</kbd>
+      <div class="bg-nav-actions nav-actions">
+        <button class="bg-nav-cmd-btn nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span><kbd>⌘K</kbd>
         </button>
-        <a href="start-a-synq.html" class="btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
+        <a href="start-a-synq.html" class="bg-nav-cta btn btn-primary btn-sm btn-pill">Start a synq &rarr;</a>
         <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
       </div>
     </div>
@@ -65,317 +60,244 @@
     <a href="economics.html" class="mobile-nav-link">Economics</a>
     <a href="trust.html" class="mobile-nav-link active">Trust center</a>
     <a href="about.html" class="mobile-nav-link">About</a>
-    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
-      <a href="start-a-synq.html" class="btn btn-primary" style="width: 100%;">Start a synq &rarr;</a>
-      <a href="solutions.html#have" class="btn btn-secondary" style="width: 100%;">I have something</a>
-      <a href="solutions.html#need" class="btn btn-secondary" style="width: 100%;">I need something</a>
+    <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width:100%;">Start a synq &rarr;</a>
+      <a href="solutions.html#have" class="btn btn-secondary" style="width:100%;">I have something</a>
+      <a href="solutions.html#need" class="btn btn-secondary" style="width:100%;">I need something</a>
     </div>
   </div>
 
-  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem);">
-    <!-- HERO -->
-    <section class="container" style="padding-bottom: 4rem; border-bottom: 1px solid var(--gray-800);">
-      <div class="section-label">Enterprise Assurance &amp; Governance Architecture</div>
-      <h1 style="margin-bottom: 1.5rem;">
-        Deterministic <span class="text-gradient-cyan"><em>Trust</em></span> Infrastructure &amp; Verification <span class="text-gradient-violet"><em>Protocol</em></span>
-      </h1>
-      <p style="font-size: 1.25rem; max-width: 820px; color: var(--gray-200); line-height: 1.6; margin-bottom: 2rem;">
-        Decentralized production coordination requires institutional certainty. The DigiSynq Trust Center enforces deterministic protocols for principal identity authentication, physical asset validation, zero-knowledge commercial privacy, and regulated depository escrow settlement.
-      </p>
+  <main id="main-content" class="bg-page-wrapper">
 
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="#ten-pillars" class="btn btn-secondary btn-sm">10 verification pillars</a>
-        <a href="#reputation" class="btn btn-secondary btn-sm">Trust score framework</a>
-        <a href="#governance" class="btn btn-secondary btn-sm">Neutrality governance</a>
-      </div>
-    </section>
+    <!-- SECTION 01: HERO BENTO -->
+    <section aria-label="Trust Overview" class="bg-section-wrap--lg">
+      <div class="bg-grid">
 
-    <!-- SECTION 01 — THE 10 TRUST PILLARS -->
-    <section id="ten-pillars" style="padding: 5rem 0; border-bottom: 1px solid var(--gray-800);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Standards Matrix &amp; Operational Governance</div>
-          <h2 class="section-title">Ten Pillars of Enterprise Production Assurance</h2>
-          <p class="section-desc">
-            How DigiSynq systematically eliminates counterparty risk, asset misrepresentation, and settlement friction across global entertainment pipelines.
-          </p>
-        </div>
-
-        <div class="bento-grid">
-          <!-- 01 Identity (Span 8 Featured) -->
-          <div id="identity" class="bento-card bento-span-8 bento-card-gradient">
-            <div class="bento-glow-top"></div>
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 01 &bull; Corporate &amp; Individual Principal Authentication</span>
-                <span class="badge badge-live">[VERIFIED STANDARD]</span>
-              </div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem;">Institutional Identity &amp; Corporate Attestation</h3>
-              <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-                Every studio entity, production service company, and department head undergoes rigorous KYC/KYB screening: statutory entity standing (Delaware/Companies House), TIN/W-9/W-8BEN-E tax status certification, authorized signatory validation, and beneficial ownership verification before entering network liquidity pools.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="bento-header-tag" style="margin-bottom: 0.5rem;">
-                <span class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">VALIDATION PROTOCOL</span>
-                <span class="badge badge-live">100% AUDITED</span>
-              </div>
-              <div class="bento-chip-group">
-                <span class="bento-chip">Statutory Entity Registry</span>
-                <span class="bento-chip">W-9 / W-8BEN-E Certification</span>
-                <span class="bento-chip">Signatory Attestation</span>
-                <span class="bento-chip">Depository Account Matching</span>
-              </div>
-            </div>
+        <!-- Headline Card (Cream, 7 col, 2 row) -->
+        <div class="bg-card bg-card--cream bg-7 bg-row-2 bg-reveal" style="justify-content:space-between;min-height:460px;">
+          <div>
+            <span class="bg-badge bg-badge--purple" style="margin-bottom:1.25rem;display:inline-flex;">Institutional Security &amp; Compliance</span>
+            <h1 class="bg-display bg-display--lg" style="margin:0.5rem 0 1.25rem;color:var(--b-navy);line-height:1.04;">
+              Deterministic <em>Trust</em> Infrastructure &amp; Verification <em>Protocol</em>
+            </h1>
+            <p class="bg-body-text" style="color:var(--b-navy-soft);font-size:1.02rem;line-height:1.65;">
+              Trust in film production cannot rely on handshakes or speculative claims. DigiSynq grounds counterparty confidence in cryptographic identity, hardware telemetry, chartered depository escrow, and published non-custodial scoring formulas.
+            </p>
           </div>
-
-          <!-- 02 Assets (Span 4) -->
-          <div id="assets" class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 02</span>
-                <span class="badge badge-live">[PHYSICAL AUDIT]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Physical Asset &amp; Facility Validation</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
-                Physical soundstages, virtual production volumes, and tier-one camera packages require accredited engineering reports, substation transformer load certificates, and serialized optical bench test manifests.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">CRITERIA: Serial numbers, Brompton VP benchmarks, NC acoustic ratings.</div>
-            </div>
-          </div>
-
-          <!-- 03 Availability (Span 4) -->
-          <div id="availability" class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 03</span>
-                <span class="badge badge-live">[CRYPTOGRAPHIC]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Deterministic Availability Certification</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
-                Stage and inventory capacity is locked via immutable digital holds (24h/48h/7d). Unilateral cancellations or double-booking incur non-waivable protocol penalties and instant reputation score markdowns.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">CRITERIA: Synchronized digital holds with cryptographic receipt timestamps.</div>
-            </div>
-          </div>
-
-          <!-- 04 Contracts (Span 4) -->
-          <div id="contracts" class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 04</span>
-                <span class="badge badge-live">[STANDARDIZED]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Standardized Bilateral Legal Covenants</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
-                Digital bilateral covenants developed with premier entertainment counsel provide standardized clauses for union wrap windows, overtime multipliers, force majeure, and statutory cancellation remedies.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">CRITERIA: Pre-vetted bilateral legal frameworks ready for counsel sign-off.</div>
-            </div>
-          </div>
-
-          <!-- 05 Settlement (Span 4) -->
-          <div id="settlement" class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 05</span>
-                <span class="badge badge-live">[REGULATED]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Regulated Depository Escrow Settle</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
-                DigiSynq enforces strict non-custodial architecture. Advance earnest deposits, completion draw schedules, and contingency reserves reside exclusively in segregated omnibus accounts at FDIC/FCA-chartered banks.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">CRITERIA: Segregated client funds at chartered FDIC/FCA banking partners.</div>
-            </div>
-          </div>
-
-          <!-- 06 Data Minimization (Span 6) -->
-          <div id="data" class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 06 &bull; Security</span>
-                <span class="badge badge-live">[ZERO LEAK]</span>
-              </div>
-              <h3 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Operational Data Minimization &amp; IP Isolation</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-                We collect strictly operational parameters required to achieve coordination (dimensions, dates, technical requirements, legal standing). We never store unreleased creative scripts or sensitive IP.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.74rem; color: var(--text-tertiary);">
-                CRITERIA: End-to-end encrypted metadata with strict automated deletion horizons.
-              </div>
-            </div>
-          </div>
-
-          <!-- 07 Zero-Knowledge Matching Privacy (Span 6) -->
-          <div id="privacy" class="bento-card bento-span-6">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 07 &bull; Commercial privacy</span>
-                <span class="badge badge-live">[CONFIDENTIAL]</span>
-              </div>
-              <h3 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Zero-Knowledge Bilateral Clearing Privacy</h3>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-                Facility rate cards and producer budgets are never publicly indexed. Matches occur behind confidential protocol gates, revealing terms only upon mutual bilateral consent.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.74rem; color: var(--text-tertiary);">
-                CRITERIA: Double-blind requirement matching protecting commercial pricing leverage.
-              </div>
-            </div>
-          </div>
-
-          <!-- 08 Reputation (Span 4) -->
-          <div class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 08</span>
-                <span class="badge badge-live">[EMPIRICAL]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Deterministic Reputation Framework</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
-                Scoring is calculated strictly from empirical transaction milestones: punctuality, equipment return condition, invoice payment velocity, and technical compliance.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">CRITERIA: Deterministic mathematical scoring with public formulas.</div>
-            </div>
-          </div>
-
-          <!-- 09 Disputes (Span 4) -->
-          <div id="disputes" class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 09</span>
-                <span class="badge badge-live">[72H TRIAGE]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Structured 72-Hour Dispute Adjudication</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
-                Clear 72-hour mediation pathways for equipment damage, schedule overruns, or specification discrepancies overseen by neutral production ombudsmen.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">CRITERIA: Standardized inspection logs with rapid escrow hold procedures.</div>
-            </div>
-          </div>
-
-          <!-- 10 Governance (Span 4) -->
-          <div id="governance" class="bento-card bento-span-4">
-            <div>
-              <div class="bento-header-tag">
-                <span class="label-mono">Pillar 10</span>
-                <span class="badge badge-live">[CONFLICT-FREE]</span>
-              </div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Protocol Neutrality &amp; Asset Independence</h3>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
-                DigiSynq does not own camera packages, operate soundstages, or manage talent. We remain a pure, conflict-free coordination infrastructure platform.
-              </p>
-            </div>
-            <div class="bento-micro-ui">
-              <div class="mono" style="font-size: 0.72rem; color: var(--text-tertiary);">CRITERIA: Zero proprietary assets; strictly unbiased algorithmic matching.</div>
-            </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;padding-top:1.25rem;border-top:1px solid rgba(15,22,35,0.12);">
+            <a href="#pillars" class="bg-chip bg-chip--light" style="text-decoration:none;">10 Assurance Pillars</a>
+            <a href="#scoring" class="bg-chip bg-chip--light" style="text-decoration:none;">Trust Score Framework</a>
+            <a href="#identity" class="bg-chip bg-chip--purple" style="text-decoration:none;">Identity Verification</a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- SECTION 02 — THE TRANSPARENT TRUST SCORE FRAMEWORK -->
-    <section id="reputation" style="padding: 5rem 0; background-color: var(--gray-950); border-bottom: 1px solid var(--gray-800);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Reputation Architecture &amp; Telemetry</div>
-          <h2 class="section-title">The Transparent Trust Score Framework</h2>
-          <p class="section-desc">
-            Our governing principle: <strong>&ldquo;Proof improves access.&rdquo;</strong> We never deploy opaque algorithms that classify or exclude workers arbitrarily.
-          </p>
-        </div>
-
-        <div class="grid-12" style="margin-bottom: 3.5rem;">
-          <div style="grid-column: span 7;">
-            <div class="card card-solid" style="padding: 2.25rem;">
-              <h3 style="font-size: 1.3rem; margin-bottom: 1.25rem;">Scoring Components &amp; Algorithmic Weighting</h3>
-              <div class="table-container">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>Factor</th>
-                      <th>Weight</th>
-                      <th>Operational Telemetry &amp; Verification Protocol</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>Technical Punctuality &amp; Schedule Adherence</strong></td>
-                      <td>30%</td>
-                      <td>Daily call sheet check-in telemetry, stage load-in adherence, and strike window compliance</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Asset Integrity &amp; Calibration Care</strong></td>
-                      <td>30%</td>
-                      <td>Zero-defect optical return checkouts, certified soundstage condition sign-offs, and maintenance audits</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Settlement Velocity &amp; Wrap Certification</strong></td>
-                      <td>25%</td>
-                      <td>Sub-48-hour wrap approval, scheduled invoice authorizations, and escrow disbursement compliance</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Rolling 24-Month Recency Weighting</strong></td>
-                      <td>15%</td>
-                      <td>Algorithmic weighting favoring active recent verified productions over legacy historical activity</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+        <!-- Metrics Card (Purple, 5 col, 2 row) -->
+        <div class="bg-card bg-card--purple bg-5 bg-row-2 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;min-height:460px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+              <span class="bg-label">Assurance Metrics</span>
+              <span class="bg-badge bg-badge--green">[AUDITED]</span>
             </div>
-          </div>
-
-          <div style="grid-column: span 5;">
-            <div class="card" style="padding: 2.25rem; background-color: var(--black); height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <h3 class="bg-display bg-display--sm" style="color:white;margin-bottom:1.25rem;">Deterministic Fiduciary Bounds</h3>
+            
+            <div style="display:flex;flex-direction:column;gap:1.5rem;">
               <div>
-                <div class="label-mono" style="margin-bottom: 0.75rem;">Equity &amp; Participation Rules</div>
-                <h4 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Tier-1 Induction &amp; Evidence-Based Appeals</h4>
-                <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6; margin-bottom: 1.25rem;">
-                  New market participants enter with baseline Tier 1 standing. Proof of past industry credits, IATSE/DGA roster standing, TPN facility certifications, or guild memberships instantly fast-tracks qualification standing.
-                </p>
-                <p style="font-size: 0.85rem; color: var(--gray-300); line-height: 1.6;">
-                  Any rating decrement from an operational incident is subject to a mandatory 7-day challenge window where documented counter-evidence (e.g. weather logs, facility power outage reports) can be submitted for neutral review.
-                </p>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:white;">10</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Enterprise Assurance Pillars</div>
               </div>
-              <div class="mono" style="font-size: 0.75rem; color: var(--gray-400); border-top: 1px solid var(--gray-800); padding-top: 1rem; margin-top: 1rem;">
-                STATUTORY RULE: Zero permanent algorithmic blacklists.
+              <div>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:var(--b-yellow);">0</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Unsecured Balance-Sheet Custody</div>
+              </div>
+              <div>
+                <div class="bg-metric-value" style="font-size:2.8rem;color:white;">100%</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Published Transparent Formulas</div>
               </div>
             </div>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.15);">
+            <span class="bg-chip bg-chip--dark">Non-Custodial Fiduciary Rails</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 02: TEN PILLARS BENTO GRID -->
+    <section id="pillars" aria-label="Ten Pillars" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <div class="bg-12" style="margin-bottom:0.5rem;">
+          <span class="bg-label" style="color:var(--b-purple-lt);">Assurance Framework</span>
+          <h2 class="bg-display bg-display--md" style="color:white;margin-top:0.25rem;">Ten Pillars of Enterprise Production Assurance</h2>
+        </div>
+
+        <div class="bg-card bg-card--dark bg-4 bg-reveal">
+          <span class="bg-pillar-num" style="color:var(--b-purple-lt);">01</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Corporate KYB / KYC Verification</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.65);">
+            Every contracting entity undergoes corporate standing verification, authorized signatory delegation, and beneficial ownership screening.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--dark bg-4 bg-reveal bg-reveal-delay-1">
+          <span class="bg-pillar-num" style="color:var(--b-yellow);">02</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Technical Asset &amp; Stage Telemetry</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.65);">
+            Physical facilities submit acoustic NC test reports, certified electrical capacity diagrams, and structural load charts before calendar listing.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--dark bg-4 bg-reveal bg-reveal-delay-2">
+          <span class="bg-pillar-num" style="color:var(--b-coral);">03</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Guild Standing &amp; Roster Sync</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.65);">
+            Heads of Department and crew keys are verified against active IATSE, DGA, and Teamster union registers to eliminate credential fraud.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--purple bg-4 bg-reveal">
+          <span class="bg-pillar-num" style="color:white;">04</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Fiduciary Depository Escrow</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.85);">
+            Client funds are held in segregated, bankruptcy-remote trust accounts at chartered FDIC/FCA institutional banking partners.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--yellow bg-4 bg-reveal bg-reveal-delay-1">
+          <span class="bg-pillar-num" style="color:var(--b-navy);">05</span>
+          <h3 class="bg-display bg-display--xs" style="color:var(--b-navy);margin:0.5rem 0;">Cryptographic Milestone Telemetry</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:var(--b-navy-soft);">
+            Milestone disbursements execute only upon verified objective proofs: call sheet check-ins, gen-lock telemetry, and wrap inspection logs.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--coral bg-4 bg-reveal bg-reveal-delay-2">
+          <span class="bg-pillar-num" style="color:white;">06</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Non-Custodial Dispute Arbitration</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.85);">
+            Bilateral disputes are arbitrated by independent entertainment legal panels following expedited 7-day standardized evidence protocols.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--dark bg-3 bg-reveal">
+          <span class="bg-pillar-num" style="color:var(--b-purple-lt);">07</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Data Sovereignty &amp; ZK</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.65);">
+            Zero-knowledge filters ensure sensitive creative scripts, budgets, and talent attachments are never exposed to counterparties.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--dark bg-3 bg-reveal bg-reveal-delay-1">
+          <span class="bg-pillar-num" style="color:var(--b-yellow);">08</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Published Fee Schedules</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.65);">
+            Every tariff, rate-card fee, and escrow cost is published upfront. Zero hidden brokerage spreads or backchannel kickbacks.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--dark bg-3 bg-reveal bg-reveal-delay-2">
+          <span class="bg-pillar-num" style="color:var(--b-coral);">09</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Continuous Security Audits</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.65);">
+            SOC 2 Type II certified platform infrastructure, annual third-party pen tests, and TPN Blue Shield cloud security compliance.
+          </p>
+        </div>
+
+        <div class="bg-card bg-card--dark bg-3 bg-reveal bg-reveal-delay-3">
+          <span class="bg-pillar-num" style="color:var(--b-purple-lt);">10</span>
+          <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0;">Immutable Verification Ledger</h3>
+          <p style="font-size:0.82rem;line-height:1.55;color:rgba(255,255,255,0.65);">
+            Cryptographically sealed audit trails of all contract state transitions, milestone sign-offs, and wrap inspection sign-offs.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: TRUST SCORE FRAMEWORK BENTO -->
+    <section id="scoring" aria-label="Trust Scoring" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+
+        <div class="bg-card bg-card--cream bg-8 bg-reveal">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.5rem;">
+            <div>
+              <span class="bg-label" style="color:var(--b-purple);">Algorithmic Scoring</span>
+              <h3 class="bg-display bg-display--sm" style="color:var(--b-navy);margin-top:0.25rem;">The Transparent Trust Score Framework</h3>
+            </div>
+            <span class="bg-badge bg-badge--purple">100% Published Formula</span>
+          </div>
+
+          <p class="bg-body-text" style="color:var(--b-navy-soft);font-size:0.95rem;margin-bottom:1.5rem;">
+            Reputation scores on DigiSynq are computed non-custodially from verified operational telemetry. Counterparties cannot purchase rating boosts or manipulate algorithmic standing.
+          </p>
+
+          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1rem;padding:1.25rem;background:rgba(15,22,35,0.06);border-radius:var(--b-radius-xs);">
+            <div>
+              <span class="bg-label" style="color:var(--b-navy);opacity:0.6;">Milestone Delivery</span>
+              <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.4rem;color:var(--b-navy);font-style:italic;margin-top:0.25rem;">40% Weight</div>
+              <span style="font-size:0.75rem;color:var(--b-navy-soft);">On-time load-in &amp; wrap logs</span>
+            </div>
+            <div>
+              <span class="bg-label" style="color:var(--b-navy);opacity:0.6;">Settlement Integrity</span>
+              <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.4rem;color:var(--b-navy);font-style:italic;margin-top:0.25rem;">35% Weight</div>
+              <span style="font-size:0.75rem;color:var(--b-navy-soft);">Prompt draw releases &amp; sign-offs</span>
+            </div>
+            <div>
+              <span class="bg-label" style="color:var(--b-navy);opacity:0.6;">Asset Care &amp; Specs</span>
+              <div style="font-family:'DM Serif Display', Georgia, serif;font-size:1.4rem;color:var(--b-navy);font-style:italic;margin-top:0.25rem;">25% Weight</div>
+              <span style="font-size:0.75rem;color:var(--b-navy-soft);">Return inspection ratings</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-card bg-card--purple bg-4 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;">
+          <div>
+            <span class="bg-label" style="color:rgba(255,255,255,0.7);">Audited Track Record</span>
+            <h3 class="bg-display bg-display--xs" style="color:white;margin:0.5rem 0 1rem;">Platform Confidence</h3>
+            <div style="display:flex;flex-direction:column;gap:1.25rem;">
+              <div>
+                <div class="bg-metric-value" style="font-size:2.6rem;color:white;">99.4%</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Milestone Execution Rate</div>
+              </div>
+              <div>
+                <div class="bg-metric-value" style="font-size:2.6rem;color:var(--b-yellow);">&lt; 0.1%</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Dispute Rate on Escrow Volume</div>
+              </div>
+              <div>
+                <div class="bg-metric-value" style="font-size:2.6rem;color:white;">Sub-48h</div>
+                <div class="bg-label" style="color:rgba(255,255,255,0.72);margin-top:0.25rem;">Post-Wrap Reconciliation</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.15);">
+            <span class="bg-chip bg-chip--dark">Empirical Telemetry Oracle</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 04: CTA BENTO -->
+    <section aria-label="Call to Action" class="bg-section-wrap--lg">
+      <div class="bg-grid">
+        <div class="bg-card bg-card--yellow bg-12 bg-reveal" style="text-align:center;padding:4rem var(--b-pad);align-items:center;">
+          <span class="bg-badge bg-badge--purple" style="margin-bottom:1rem;">Verified Integrity</span>
+          <h2 class="bg-display bg-display--lg" style="color:var(--b-navy);max-width:780px;margin-bottom:1rem;">
+            Build verified production credentials.
+          </h2>
+          <p style="font-size:1.05rem;color:var(--b-navy-soft);max-width:640px;margin-bottom:2rem;line-height:1.65;">
+            Join top tier studio slates, facilities, and guild keys operating on verified cryptographic credentials.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+            <a href="start-a-synq.html" class="bg-btn bg-btn--primary">Start a synq &rarr;</a>
+            <a href="about.html" class="bg-btn bg-btn--outline-navy">Institutional Charter</a>
+            <a href="economics.html" class="bg-btn bg-btn--outline-navy">Fee Schedule</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CALL TO ACTION -->
-    <section class="cta-banner">
-      <div class="container">
-        <div class="section-label">Institutional Verification</div>
-        <h2 class="cta-banner-title">Build verified production credentials.</h2>
-        <p class="cta-banner-sub">
-          Submit your entity credentials, stage specifications, or production requirements to enter the verified DigiSynq coordination network.
-        </p>
-        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
-          <a href="start-a-synq.html" class="btn btn-primary btn-lg">Start a synq &rarr;</a>
-          <a href="economics.html" class="btn btn-secondary btn-lg">Review Fee Structure</a>
-          <a href="about.html" class="btn btn-secondary btn-lg">About DigiSynq Neutrality</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- CANONICAL ENTERPRISE FOOTER -->
