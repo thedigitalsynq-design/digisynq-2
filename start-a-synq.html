@@ -156,13 +156,13 @@
         </div>
 
         <!-- Intake Header Card (Cream, 12 col) -->
-        <div class="bg-card bg-card--cream bg-12 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;">
+        <div class="bg-card bg-card--purple bg-12 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;">
           <div style="max-width:880px;">
-            <span class="bg-badge bg-badge--purple" style="margin-bottom:0.75rem;">Live Coordination Engine</span>
-            <h1 class="bg-display bg-display--md" style="color:var(--b-navy);margin:0.25rem 0 1rem;line-height:1.08;">
-              Initiate a Production <em>Synq</em> <em>Mandate</em>
+            <span class="bg-badge bg-badge--purple" style="margin-bottom:0.75rem;background:rgba(255,255,255,0.18);color:#FFFFFF;border-color:rgba(255,255,255,0.35);">Live Coordination Engine</span>
+            <h1 class="bg-display bg-display--md" style="color:#FFFFFF;margin:0.25rem 0 1rem;line-height:1.08;">
+              Initiate a Production <em style="color:#FEF08A;">Synq Mandate</em>
             </h1>
-            <p class="bg-body-text" style="color:var(--b-navy-soft);font-size:1.02rem;margin:0;">
+            <p class="bg-body-text" style="color:rgba(255,255,255,0.88);font-size:1.02rem;margin:0;">
               Specify your operational requirements or underutilized facility capacity. The DigiSynq deterministic protocol routes your mandate through zero-knowledge verification gates directly into authenticated counterparties.
             </p>
           </div>
@@ -360,5 +360,23 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script>
+    // Pre-select tab or intent based on URL query parameters
+    document.addEventListener('DOMContentLoaded', function() {
+      const params = new URLSearchParams(window.location.search);
+      const intent = params.get('intent');
+      const type = params.get('type');
+      if (intent === 'enterprise') {
+        const entOption = document.querySelector('[data-category="enterprise"]') || document.querySelector('[data-mandate="enterprise"]');
+        if (entOption) entOption.click();
+      } else if (type === 'supply') {
+        const supOption = document.querySelector('[data-category="stages"]') || document.querySelector('[data-mandate="supply"]');
+        if (supOption) supOption.click();
+      } else if (type === 'demand') {
+        const demOption = document.querySelector('[data-category="crew"]') || document.querySelector('[data-mandate="demand"]');
+        if (demOption) demOption.click();
+      }
+    });
+  </script>
 </body>
 </html>
