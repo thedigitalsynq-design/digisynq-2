@@ -844,3 +844,59 @@ body, .bg-page {
 .bg-card--purple em { color: #FDE68A !important; }
 .bg-card--coral em { color: #FEF08A !important; }
 .bg-card--dark em, .bg-card--dark-alt em { color: #F59E0B !important; }
+
+/* ==========================================================================
+   BIG LOGO SYSTEM
+   Prominent, crisp, large-scale logo display in navbar, hero, and footer.
+   ========================================================================== */
+.navbar, .bg-nav {
+  height: 76px !important;
+}
+
+.bg-nav-brand, .nav-brand {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  padding: 4px 0 !important;
+}
+
+.bg-nav-logo-img, .nav-logo-img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 220px !important;
+  object-fit: contain !important;
+  filter: brightness(0) invert(1) !important;
+  display: block !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.bg-nav-brand:hover .bg-nav-logo-img,
+.nav-brand:hover .nav-logo-img {
+  transform: scale(1.06) !important;
+}
+
+/* Big Hero Brand Logo */
+.hero-brand-logo-big {
+  width: 320px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.98 !important;
+  display: block !important;
+  margin-bottom: 1.25rem !important;
+  transition: transform 0.3s ease !important;
+}
+.hero-brand-logo-big:hover {
+  transform: scale(1.03) !important;
+}
+
+/* Big Footer Brand Logo */
+.footer-logo-big {
+  width: 260px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.95 !important;
+  display: block !important;
+  margin-bottom: 1.25rem !important;
+}
