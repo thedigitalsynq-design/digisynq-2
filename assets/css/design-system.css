@@ -1141,3 +1141,85 @@ kbd, .kbd {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ==========================================================================
+   NUMBERED NAVIGATION & STATUS TAXONOMY TOKENS
+   ========================================================================== */
+.nav-idx {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  opacity: 0.55;
+  margin-right: 4px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.bg-nav-link:hover .nav-idx,
+.bg-nav-link.active .nav-idx {
+  opacity: 1;
+  color: var(--b-yellow);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.status-badge--live {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.status-badge--verified {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.status-badge--simulated {
+  background: rgba(254, 240, 138, 0.12);
+  color: #FEF08A;
+  border: 1px solid rgba(254, 240, 138, 0.3);
+}
+.status-badge--illustrative {
+  background: rgba(148, 163, 184, 0.12);
+  color: #CBD5E1;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+.status-badge--dev {
+  background: rgba(168, 85, 247, 0.15);
+  color: #C084FC;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* System diagram loops */
+.system-loop-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+.system-loop-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 110px;
+}
+.system-loop-arrow {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+}
+

@@ -3,103 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start a Synq — Production Coordination Intake</title>
-  <meta name="description" content="Initiate a verified entertainment coordination brief: soundstages, cinema equipment, verified crew, post-production, capital, or distribution.">
+  <title>10 — Start a Synq: Initiate Ecosystem Coordination &bull; DigiSynq</title>
+  <meta name="description" content="Something exists. Something is needed. Something is blocked. Initiate a verified entertainment coordination mandate with DigiSynq.">
   <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/start-a-synq.html">
-  <meta property="og:title" content="Start a Synq — Production Coordination Intake">
-  <meta property="og:description" content="Submit your production requirement into DigiSynq's deterministic coordination protocol.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://thedigitalsynq-design.github.io/digisynq-2/start-a-synq.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/design-system.css">
   <link rel="stylesheet" href="assets/css/bento-system.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/bento-hero.css">
   <style>
-    /* Bento form card styling */
-    .intake-category-card {
+    .condition-tab-btn {
+      flex: 1 1 200px;
+      padding: 1rem 1.25rem;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--b-radius-sm);
-      padding: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.9rem;
       cursor: pointer;
-      transition: all var(--b-dur-fast) var(--b-ease-out);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      transition: all 0.2s ease;
+      text-align: left;
     }
-    .intake-category-card:hover {
+    .condition-tab-btn:hover {
       background: rgba(255, 255, 255, 0.08);
-      border-color: var(--b-purple-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-color: rgba(255, 255, 255, 0.3);
     }
-    .intake-category-card.selected {
-      background: rgba(91, 79, 232, 0.16);
-      border-color: var(--b-purple);
-      box-shadow: 0 0 0 1px var(--b-purple);
+    .condition-tab-btn.active {
+      background: #3B38D4;
+      border-color: #5B4FE8;
+      box-shadow: 0 0 20px rgba(59, 56, 212, 0.4);
     }
-    .form-input, .form-select, .form-textarea {
+    .intake-input, .intake-select, .intake-textarea {
       width: 100%;
-      background: rgba(255, 255, 255, 0.06);
+      background: #15161B;
       border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: var(--b-radius-xs);
+      border-radius: 6px;
       padding: 0.85rem 1rem;
-      color: white;
-      font-size: 0.95rem;
+      color: #FFFFFF;
       font-family: inherit;
-      outline: none;
-      transition: border-color var(--b-dur-fast);
+      font-size: 0.92rem;
       box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s ease;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--b-purple-lt);
-      background: rgba(255, 255, 255, 0.09);
+    .intake-input:focus, .intake-select:focus, .intake-textarea:focus {
+      border-color: #FEF08A;
+      background: #191A20;
     }
-    .form-select option {
-      background: #17171C;
-      color: white;
+    .intake-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
   </style>
 </head>
 <body class="bg-page">
-    <aside class="bg-floating-rail" aria-label="Quick Navigation Rail">
-    <a href="index.html" class="bg-rail-item" title="Home">
+
+  <!-- QUICK NAVIGATION FLOATING RAIL -->
+  <aside class="bg-floating-rail" aria-label="Quick Navigation Rail">
+    <a href="index.html" class="bg-rail-item" title="01 Home">
       <span class="bg-rail-sparkle">✦</span>
     </a>
-    <a href="how-it-works.html" class="bg-rail-item" title="How it Works">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+    <a href="ecosystem.html" class="bg-rail-item" title="02 Ecosystem">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">02</span>
     </a>
-    <a href="solutions.html" class="bg-rail-item" title="Solutions">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+    <a href="mechanism.html" class="bg-rail-item" title="03 Mechanism">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">03</span>
     </a>
-    <a href="platform.html" class="bg-rail-item" title="Platform">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+    <a href="missions.html" class="bg-rail-item" title="04 Missions">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">04</span>
     </a>
-    <a href="network.html" class="bg-rail-item" title="Network">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+    <a href="intelligence.html" class="bg-rail-item" title="05 Intelligence">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">05</span>
     </a>
-    <a href="intelligence.html" class="bg-rail-item" title="Intelligence">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+    <a href="network.html" class="bg-rail-item" title="06 Network">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">06</span>
     </a>
-    <a href="economics.html" class="bg-rail-item" title="Economics">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+    <a href="execution.html" class="bg-rail-item" title="07 Execution">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">07</span>
     </a>
-    <a href="trust.html" class="bg-rail-item" title="Trust">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    <a href="value.html" class="bg-rail-item" title="08 Value">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">08</span>
     </a>
-    <a href="about.html" class="bg-rail-item" title="About">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+    <a href="about.html" class="bg-rail-item" title="09 About">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">09</span>
     </a>
     <div class="bg-rail-divider"></div>
-    <a href="start-a-synq.html" class="bg-rail-item active" title="Start a Synq" style="background:rgba(255,255,255,0.14);color:#FFFFFF;">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    <a href="start-a-synq.html" class="bg-rail-item active" title="10 Start a Synq" style="background:rgba(255,255,255,0.14);color:#FFFFFF;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:800;color:#FEF08A;">10</span>
     </a>
   </aside>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- BENTO NAVIGATION -->
+  <!-- TOP HEADER -->
   <header class="bg-nav navbar" role="banner">
     <div class="bg-nav-inner nav-container">
       <a href="index.html" class="bg-nav-brand nav-brand" aria-label="DigiSynq Home">
@@ -107,22 +110,24 @@
       </a>
       <nav aria-label="Main Navigation">
         <ul class="bg-nav-links nav-menu">
-          <li><a href="index.html" class="bg-nav-link nav-link">Home</a></li>
-          <li><a href="how-it-works.html" class="bg-nav-link nav-link">How it works</a></li>
-          <li><a href="solutions.html" class="bg-nav-link nav-link">Solutions</a></li>
-          <li><a href="platform.html" class="bg-nav-link nav-link">Platform</a></li>
-          <li><a href="network.html" class="bg-nav-link nav-link">Network</a></li>
-          <li><a href="intelligence.html" class="bg-nav-link nav-link">Intelligence</a></li>
-          <li><a href="economics.html" class="bg-nav-link nav-link">Economics</a></li>
-          <li><a href="trust.html" class="bg-nav-link nav-link">Trust</a></li>
-          <li><a href="about.html" class="bg-nav-link nav-link">About</a></li>
+          <li><a href="index.html" class="bg-nav-link nav-link"><span class="nav-idx">01</span>Home</a></li>
+          <li><a href="ecosystem.html" class="bg-nav-link nav-link"><span class="nav-idx">02</span>Ecosystem</a></li>
+          <li><a href="mechanism.html" class="bg-nav-link nav-link"><span class="nav-idx">03</span>Mechanism</a></li>
+          <li><a href="missions.html" class="bg-nav-link nav-link"><span class="nav-idx">04</span>Missions</a></li>
+          <li><a href="intelligence.html" class="bg-nav-link nav-link"><span class="nav-idx">05</span>Intelligence</a></li>
+          <li><a href="network.html" class="bg-nav-link nav-link"><span class="nav-idx">06</span>Network</a></li>
+          <li><a href="execution.html" class="bg-nav-link nav-link"><span class="nav-idx">07</span>Execution</a></li>
+          <li><a href="value.html" class="bg-nav-link nav-link"><span class="nav-idx">08</span>Value</a></li>
+          <li><a href="about.html" class="bg-nav-link nav-link"><span class="nav-idx">09</span>About</a></li>
         </ul>
       </nav>
       <div class="bg-nav-actions nav-actions">
         <button class="bg-nav-cmd-btn nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
           <span>Search</span><kbd>⌘K</kbd>
         </button>
-        <a href="start-a-synq.html" class="bg-nav-cta btn btn-primary btn-sm btn-pill active">Start a synq &rarr;</a>
+        <a href="start-a-synq.html" class="bg-nav-cta btn btn-primary btn-sm btn-pill active">
+          <span class="nav-idx" style="color:#FEF08A;margin-right:4px;">10</span>Start a synq &rarr;
+        </a>
         <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
       </div>
     </div>
@@ -130,187 +135,148 @@
 
   <!-- MOBILE DRAWER -->
   <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-    <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="how-it-works.html" class="mobile-nav-link">How it works</a>
-    <a href="solutions.html" class="mobile-nav-link">Solutions</a>
-    <a href="platform.html" class="mobile-nav-link">Platform</a>
-    <a href="network.html" class="mobile-nav-link">Network</a>
-    <a href="intelligence.html" class="mobile-nav-link">Intelligence</a>
-    <a href="economics.html" class="mobile-nav-link">Economics</a>
-    <a href="trust.html" class="mobile-nav-link">Trust center</a>
-    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="index.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">01</span>Home</a>
+    <a href="ecosystem.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">02</span>Ecosystem</a>
+    <a href="mechanism.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">03</span>Mechanism</a>
+    <a href="missions.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">04</span>Missions</a>
+    <a href="intelligence.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">05</span>Intelligence</a>
+    <a href="network.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">06</span>Network &amp; Trust</a>
+    <a href="execution.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">07</span>Execution Engine</a>
+    <a href="value.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">08</span>Value &amp; Model</a>
+    <a href="about.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">09</span>About DigiSynq</a>
     <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
-      <a href="start-a-synq.html" class="btn btn-primary" style="width:100%;">Start a synq &rarr;</a>
-      <a href="solutions.html#have" class="btn btn-secondary" style="width:100%;">I have something</a>
-      <a href="solutions.html#need" class="btn btn-secondary" style="width:100%;">I need something</a>
+      <a href="start-a-synq.html" class="btn btn-primary" style="width:100%;"><span class="mono" style="color:#FEF08A;margin-right:6px;">10</span>Start a synq &rarr;</a>
     </div>
   </div>
 
   <main id="main-content" class="bg-page-wrapper">
 
-    <section class="bg-section-wrap--lg">
+    <!-- HERO SECTION -->
+    <section aria-label="Intake Overview" style="padding:calc(var(--b-gap)*2) 0 var(--b-gap);">
       <div class="bg-grid">
 
-        <!-- Progress Indicator Bento Card (12 col) -->
-        <div class="bg-card bg-card--dark bg-12 bg-reveal" style="padding:1.5rem 2rem;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-            <div class="bg-label" style="color:var(--b-purple-lt);">Coordination Intake Protocol &bull; Mandate Initiation</div>
-            <div style="font-size:0.78rem;font-family:-apple-system,sans-serif;color:rgba(255,255,255,0.7);">Progress: Deterministic Intake</div>
+        <div class="bg-card bg-card--coral bg-12 bg-reveal" style="padding:2.75rem;background:#101114;border:1px solid rgba(255,255,255,0.15);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
+            <span class="bg-badge bg-badge--dark" style="background:rgba(255,255,255,0.15);color:#FFFFFF;border:1px solid rgba(255,255,255,0.3);">
+              DIGISYNQ / 10 INITIATE COORDINATION
+            </span>
+            <span class="status-badge status-badge--verified">[ACTIVE INTAKE]</span>
           </div>
-          <div style="width:100%;height:3px;background:rgba(255,255,255,0.08);border-radius:999px;position:relative;overflow:hidden;">
-            <div id="intake-progress-bar" style="width:33%;height:100%;background:var(--b-purple);border-radius:999px;transition:width 0.4s var(--b-ease);"></div>
-          </div>
+          <h1 class="bg-display bg-display--xl" style="color:#FFFFFF;margin:0;line-height:1.02;text-transform:uppercase;">
+            START A SYNQ.
+          </h1>
+          <p class="bg-display bg-display--xs" style="color:#FEF08A;margin:0.75rem 0 0;font-weight:700;">
+            SOMETHING EXISTS. SOMETHING IS NEEDED. SOMETHING IS BLOCKED.
+          </p>
+          <p style="font-size:0.95rem;line-height:1.6;color:rgba(255,255,255,0.85);margin-top:0.75rem;max-width:760px;">
+            Every Synq begins with a condition that can be coordinated. Select your operational situation below to submit your mandate into Phase 01 (Verify) of the DigiSynq Execution Engine.
+          </p>
         </div>
 
-        <!-- Intake Header Card (Cream, 12 col) -->
-        <div class="bg-card bg-card--purple bg-12 bg-reveal bg-reveal-delay-1" style="justify-content:space-between;">
-          <div style="max-width:880px;">
-            <span class="bg-badge bg-badge--purple" style="margin-bottom:0.75rem;background:rgba(255,255,255,0.18);color:#FFFFFF;border-color:rgba(255,255,255,0.35);">Live Coordination Engine</span>
-            <h1 class="bg-display bg-display--md" style="color:#FFFFFF;margin:0.25rem 0 1rem;line-height:1.08;">
-              Initiate a Production <em style="color:#FEF08A;">Synq Mandate</em>
-            </h1>
-            <p class="bg-body-text" style="color:rgba(255,255,255,0.88);font-size:1.02rem;margin:0;">
-              Specify your operational requirements or underutilized facility capacity. The DigiSynq deterministic protocol routes your mandate through zero-knowledge verification gates directly into authenticated counterparties.
-            </p>
+      </div>
+    </section>
+
+    <!-- INTAKE CONSOLE FORM -->
+    <section aria-label="Coordination Intake Form" style="padding:var(--b-gap) 0 calc(var(--b-gap)*2);">
+      <div class="bg-grid">
+
+        <div class="bg-card bg-12 bg-reveal" style="padding:2.5rem;background:#0d0e11;border:1px solid rgba(255,255,255,0.15);">
+          
+          <!-- Tri-Mode Condition Selector -->
+          <div style="margin-bottom:2rem;">
+            <span class="intake-label" style="color:#FEF08A;">SELECT YOUR SITUATION</span>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem;">
+              <button type="button" class="condition-tab-btn active" data-condition-mode="have">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#FEF08A;margin-bottom:0.25rem;">OPTION 01</div>
+                I HAVE SOMETHING
+                <div style="font-weight:400;font-size:0.78rem;color:rgba(255,255,255,0.7);margin-top:0.25rem;">Idle stage, camera fleet, turnaround IP, capital facility</div>
+              </button>
+              <button type="button" class="condition-tab-btn" data-condition-mode="need">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#FEF08A;margin-bottom:0.25rem;">OPTION 02</div>
+                I NEED SOMETHING
+                <div style="font-weight:400;font-size:0.78rem;color:rgba(255,255,255,0.7);margin-top:0.25rem;">Stage window, lead HoD artisan, post suite, distribution window</div>
+              </button>
+              <button type="button" class="condition-tab-btn" data-condition-mode="blocked">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#FEF08A;margin-bottom:0.25rem;">OPTION 03</div>
+                SOMETHING IS BLOCKED
+                <div style="font-weight:400;font-size:0.78rem;color:rgba(255,255,255,0.7);margin-top:0.25rem;">Permit revoked, scheduling collision, missing attachment, financing gap</div>
+              </button>
+            </div>
           </div>
-        </div>
 
-        <!-- Form Card (Dark, 12 col) -->
-        <div class="bg-card bg-card--dark bg-12 bg-reveal bg-reveal-delay-2" style="padding:2.5rem var(--b-pad);">
-          <form id="synq-intake-form">
-            <input type="hidden" id="selected-category-input" name="category" value="">
+          <!-- The Intake Form -->
+          <form id="synqIntakeForm" style="display:flex;flex-direction:column;gap:1.5rem;">
 
-            <div style="margin-bottom:2.5rem;">
-              <div class="bg-label" style="color:var(--b-yellow);margin-bottom:0.75rem;">Step 01 of 03 &bull; Select Primary Operational Mandate</div>
-              <h2 class="bg-display bg-display--sm" style="color:white;margin-bottom:1.5rem;">
-                What production capacity are you looking to coordinate?
-              </h2>
-
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:var(--b-gap);">
-
-                <div class="intake-category-card form-radio-card" data-category="production">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">01</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Full-Slate / Feature</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      Multi-stage studio slates, cross-territory tax incentive packages, and comprehensive physical production.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="intake-category-card form-radio-card" data-category="crew">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">02</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Guild Crew &amp; HODs</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      IATSE / DGA / BSC accredited Heads of Department, union camera operators, and specialized technicians.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="intake-category-card form-radio-card" data-category="equipment">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">03</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Cinema Hardware &amp; Optics</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      ARRI Alexa 35, Sony Venice 2, anamorphic glass, technocranes, and mobile high-output LED rigs.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="intake-category-card form-radio-card" data-category="stage">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">04</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Soundstages &amp; Volumes</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      Certified soundstages (certified acoustic rating), Brompton-driven LED virtual production stages, and backlots.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="intake-category-card form-radio-card" data-category="post">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">05</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Theatrical Post &amp; DI</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      Color grading suites, Dolby Atmos immersive mix stages, ACES conform pipelines, and DCI theatrical mastering.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="intake-category-card form-radio-card" data-category="capital">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">06</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Capital &amp; Tax Credits</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      Tax rebate monetization, mezzanine bridge financing, and regulated completion guarantor covenants.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="intake-category-card form-radio-card" data-category="distribution">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">07</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Theatrical &amp; Streaming</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      Worldwide theatrical windowing, OTT platform licensing, and territory minimum guarantee (MG) sales.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="intake-category-card form-radio-card" data-category="production">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">08</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Underlying IP &amp; Rights</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      Chain-of-title verification, underlying literary rights, format licensing, and catalog syndication.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="intake-category-card form-radio-card" data-category="other">
-                  <div>
-                    <div style="font-family:'Denton', sans-serif; font-weight:800;font-size:1.25rem;font-style:normal;color:var(--b-purple-lt);margin-bottom:0.25rem;">09</div>
-                    <strong style="color:white;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Custom Enterprise Synq</strong>
-                    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.45;">
-                      Bespoke multi-hub bottlenecks, facility capacity syndication, or film commission sovereign mandates.
-                    </p>
-                  </div>
-                </div>
-
+            <!-- Row 1: Name & Contact -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.25rem;">
+              <div>
+                <label for="intakeName" class="intake-label">Name &amp; Organization</label>
+                <input type="text" id="intakeName" class="intake-input" placeholder="e.g. Elena Rostova / Lumina Pictures LLC" required>
+              </div>
+              <div>
+                <label for="intakeContact" class="intake-label">Contact Email / Phone</label>
+                <input type="email" id="intakeContact" class="intake-input" placeholder="e.g. elena@luminapictures.com" required>
               </div>
             </div>
 
-            <!-- DYNAMIC SECONDARY QUESTIONS (RENDERED ON SELECTION) -->
-            <div id="dynamic-questions-step" style="display:none;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);">
-              <!-- Dynamically populated by assets/js/main.js -->
+            <!-- Row 2: Node Type & Timeline -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.25rem;">
+              <div>
+                <label for="intakeNode" class="intake-label">Canonical Node Type (01 &mdash; 10)</label>
+                <select id="intakeNode" class="intake-select" required>
+                  <option value="" disabled selected>Select Primary Node Category...</option>
+                  <option value="01 People">01 &bull; PEOPLE (Talent, Guilds, HoDs, Artisans)</option>
+                  <option value="02 Ideas & IP">02 &bull; IDEAS &amp; IP (Rights, Formats, Catalogues)</option>
+                  <option value="03 Production">03 &bull; PRODUCTION (Active Slates, Workflows)</option>
+                  <option value="04 Places">04 &bull; PLACES (Soundstages, Backlots, Volumes)</option>
+                  <option value="05 Assets">05 &bull; ASSETS (Camera Packages, Optics, Grip)</option>
+                  <option value="06 Technology">06 &bull; TECHNOLOGY (Virtual Prod, Mix, Conform)</option>
+                  <option value="07 Capital">07 &bull; CAPITAL (Tax Credits, Gap, Escrow)</option>
+                  <option value="08 Distribution">08 &bull; DISTRIBUTION (Theatrical, FAST, OTT)</option>
+                  <option value="09 Audience">09 &bull; AUDIENCE (Fandom, Demand Signals)</option>
+                  <option value="10 Signals">10 &bull; SIGNALS &amp; OPPORTUNITIES</option>
+                </select>
+              </div>
+              <div>
+                <label for="intakeTimeline" class="intake-label">Execution Timeline / Urgency</label>
+                <select id="intakeTimeline" class="intake-select" required>
+                  <option value="Immediate (< 14 Days)">Emergency / Urgent (&lt; 14 Days)</option>
+                  <option value="30 - 60 Days" selected>Active Window (30 &mdash; 60 Days)</option>
+                  <option value="Next Quarter">Upcoming Slate (Next Quarter)</option>
+                  <option value="Long-term Architecture">Strategic Asset / Catalogue Planning</option>
+                </select>
+              </div>
             </div>
-          </form>
-        </div>
 
-        <!-- Post-Submission SLA & Fiduciary Guarantee Bento (12 col) -->
-        <div class="bg-card bg-card--dark bg-12 bg-reveal bg-reveal-delay-2" style="margin-top:var(--b-gap);">
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
-            <div style="display:flex;align-items:center;gap:0.75rem;">
-              <span class="bg-badge bg-badge--purple">[ENCRYPTED ZERO-KNOWLEDGE INTAKE]</span>
-              <span class="bg-label" style="color:rgba(255,255,255,0.7);">Post-Submission Coordination SLA</span>
+            <!-- Row 3: Location / Market Jurisdiction -->
+            <div>
+              <label for="intakeLocation" class="intake-label">Location / Market Jurisdiction</label>
+              <input type="text" id="intakeLocation" class="intake-input" placeholder="e.g. Atlanta, GA / London UK / Worldwide Digital Rights" required>
             </div>
-            <span class="bg-badge bg-badge--green">Instant Constraint Evaluation Active</span>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1rem;">
-            <div style="background:rgba(255,255,255,0.03);padding:1rem;border-radius:var(--b-radius-xs);border:1px solid rgba(255,255,255,0.06);">
-              <strong style="color:white;font-size:0.92rem;display:block;margin-bottom:0.25rem;">1. Automated Constraint Evaluation</strong>
-              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.5;">Requirements verified against authenticated soundstage calendars, serialized equipment registries, and guild rosters.</p>
+
+            <!-- Row 4: Dynamic Condition Textarea -->
+            <div>
+              <label for="intakeDetail" id="conditionDetailLabel" class="intake-label">
+                What Exists? (Describe Capacity, Rights, or Resource)
+              </label>
+              <textarea id="intakeDetail" class="intake-textarea" rows="4" placeholder="Detail the specific parameters: square footage, dates, camera kit specs, chain of title, or budget tranches..." required></textarea>
             </div>
-            <div style="background:rgba(255,255,255,0.03);padding:1rem;border-radius:var(--b-radius-xs);border:1px solid rgba(255,255,255,0.06);">
-              <strong style="color:white;font-size:0.92rem;display:block;margin-bottom:0.25rem;">2. Bilateral Mutual NDA &amp; Covenant</strong>
-              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.5;">Standardized bilateral covenants generated instantly to protect proprietary budget lines and facility rate cards.</p>
+
+            <!-- Submit Action -->
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:rgba(255,255,255,0.5);">
+                Every Synq begins with a condition that can be coordinated.
+              </div>
+              <button type="submit" id="submitSynqBtn" class="bg-btn bg-btn--primary" style="padding:0.75rem 1.75rem;font-size:0.92rem;background:#3B38D4;border:none;">
+                SUBMIT SYNQ &rarr;
+              </button>
             </div>
-            <div style="background:rgba(255,255,255,0.03);padding:1rem;border-radius:var(--b-radius-xs);border:1px solid rgba(255,255,255,0.06);">
-              <strong style="color:white;font-size:0.92rem;display:block;margin-bottom:0.25rem;">3. Dedicated Protocol Coordinator</strong>
-              <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin:0;line-height:1.5;">Direct verification outreach from a DigiSynq infrastructure engineer to confirm escrow milestones and load-in schedules.</p>
-            </div>
-          </div>
+
+          </form>
+
+          <!-- Live Submitted Manifest Output -->
+          <div id="intakeResultBox" style="display:none;margin-top:2rem;"></div>
+
         </div>
 
       </div>
@@ -318,96 +284,158 @@
 
   </main>
 
-  <!-- CANONICAL ENTERPRISE FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="assets/img/digisynq-brand-logo.png" alt="DigiSynq" class="footer-logo-big" width="260" height="72">
-          <p class="footer-brand-desc">
-            The coordination layer for entertainment. DigiSynq connects verified people, places, equipment, capital and distribution into coordinated production pathways.
-          </p>
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            <span>All coordination rails operational</span>
-          </div>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Navigation</div>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="how-it-works.html" class="footer-link">How it works</a></li>
-            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
-            <li><a href="platform.html" class="footer-link">Platform</a></li>
-            <li><a href="network.html" class="footer-link">Network</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Infrastructure</div>
-          <ul class="footer-links">
-            <li><a href="intelligence.html" class="footer-link">Intelligence</a></li>
-            <li><a href="economics.html" class="footer-link">Economics</a></li>
-            <li><a href="trust.html" class="footer-link">Trust center</a></li>
-            <li><a href="about.html" class="footer-link">About DigiSynq</a></li>
-            <li><a href="start-a-synq.html" class="footer-link">Start a synq</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Situations</div>
-          <ul class="footer-links">
-            <li><a href="solutions.html#have" class="footer-link">I have something</a></li>
-            <li><a href="solutions.html#need" class="footer-link">I need something</a></li>
-            <li><a href="solutions.html#underused" class="footer-link">Underused capacity</a></li>
-            <li><a href="solutions.html#blocked" class="footer-link">Production bottlenecks</a></li>
-            <li><a href="solutions.html#enterprise" class="footer-link">For enterprise</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Governance</div>
-          <ul class="footer-links">
-            <li><a href="trust.html#identity" class="footer-link">Identity verification</a></li>
-            <li><a href="trust.html#governance" class="footer-link">Neutrality policy</a></li>
-            <li><a href="trust.html#disputes" class="footer-link">Dispute resolution</a></li>
-            <li><a href="economics.html#fee-table" class="footer-link">Fee schedule</a></li>
-            <li><a href="trust.html#data" class="footer-link">Data governance</a></li>
-          </ul>
-        </div>
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo" style="background:#090a0c;border-top:1px solid rgba(255,255,255,0.1);padding:3.5rem 0 2rem;">
+    <div class="bg-grid" style="max-width:1320px;margin:0 auto;padding:0 var(--b-gap);">
+      <div class="bg-4" style="margin-bottom:2rem;">
+        <img src="assets/img/digisynq-brand-logo.png" alt="DigiSynq" width="165" height="46" style="margin-bottom:1rem;">
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.5;max-width:320px;">
+          The Coordination Mechanism for the Entertainment Ecosystem. Neutral, asset-light infrastructure connecting people, ideas, capacity, capital, and distribution.
+        </p>
       </div>
-
-      <div class="footer-bottom">
-        <div class="footer-regulatory">
-          <strong>Regulatory disclosure:</strong> DigiSynq is an entertainment coordination infrastructure platform. DigiSynq is not a bank, non-banking financial company (NBFC), registered broker-dealer, investment adviser, insurance carrier, or regulated escrow depository. Any contractual escrow, fiduciary, or financial settlement workflows are facilitated exclusively through licensed, regulated third-party institutional partners. All operational claims and metrics are governed under verified data classifications.
-        </div>
-
-        <div class="footer-meta">
-          <div>&copy; 2026 DigiSynq Infrastructure Protocol. All rights reserved.</div>
-          <div>Swiss editorial &bull; Monochrome infrastructure architecture</div>
-        </div>
+      <div class="bg-3" style="margin-bottom:2rem;">
+        <h4 style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#FEF08A;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1rem;">
+          PAGES 01 &mdash; 05
+        </h4>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.85rem;">
+          <li><a href="index.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">01</span>Home</a></li>
+          <li><a href="ecosystem.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">02</span>Ecosystem (10 Nodes)</a></li>
+          <li><a href="mechanism.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">03</span>The Mechanism</a></li>
+          <li><a href="missions.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">04</span>Missions (13 Patterns)</a></li>
+          <li><a href="intelligence.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">05</span>Intelligence Telemetry</a></li>
+        </ul>
+      </div>
+      <div class="bg-3" style="margin-bottom:2rem;">
+        <h4 style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#FEF08A;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1rem;">
+          PAGES 06 &mdash; 10
+        </h4>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.85rem;">
+          <li><a href="network.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">06</span>The Network &amp; Trust</a></li>
+          <li><a href="execution.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">07</span>Execution Engine</a></li>
+          <li><a href="value.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">08</span>Value &amp; Model</a></li>
+          <li><a href="about.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">09</span>About DigiSynq</a></li>
+          <li><a href="start-a-synq.html" style="color:#FEF08A;font-weight:700;text-decoration:none;"><span class="mono" style="color:#FEF08A;margin-right:4px;">10</span>Start a Synq &rarr;</a></li>
+        </ul>
+      </div>
+      <div class="bg-2" style="margin-bottom:2rem;">
+        <h4 style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#FEF08A;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1rem;">
+          CORE AXIOM
+        </h4>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.45;margin:0 0 0.75rem;">
+          <strong>NOTHING IS WASTE.<br>EVERYTHING IS POTENTIAL.</strong>
+        </p>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js"></script>
   <script>
-    // Pre-select tab or intent based on URL query parameters
-    document.addEventListener('DOMContentLoaded', function() {
-      const params = new URLSearchParams(window.location.search);
-      const intent = params.get('intent');
-      const type = params.get('type');
-      if (intent === 'enterprise') {
-        const entOption = document.querySelector('[data-category="enterprise"]') || document.querySelector('[data-mandate="enterprise"]');
-        if (entOption) entOption.click();
-      } else if (type === 'supply') {
-        const supOption = document.querySelector('[data-category="stages"]') || document.querySelector('[data-mandate="supply"]');
-        if (supOption) supOption.click();
-      } else if (type === 'demand') {
-        const demOption = document.querySelector('[data-category="crew"]') || document.querySelector('[data-mandate="demand"]');
-        if (demOption) demOption.click();
+    // Interactive Intake State Controller
+    document.addEventListener('DOMContentLoaded', () => {
+      const conditionButtons = document.querySelectorAll('[data-condition-mode]');
+      const detailLabel = document.getElementById('conditionDetailLabel');
+      const detailTextarea = document.getElementById('intakeDetail');
+      const form = document.getElementById('synqIntakeForm');
+      const resultBox = document.getElementById('intakeResultBox');
+      const submitBtn = document.getElementById('submitSynqBtn');
+
+      let currentMode = 'have';
+
+      const modeCopy = {
+        'have': {
+          label: 'What Exists? (Describe Capacity, Rights, or Resource)',
+          placeholder: 'Detail the specific capacity: square footage, unbooked dates, camera package specs, turnaround script rights, or capital facility...'
+        },
+        'need': {
+          label: 'What is Needed? (Describe Target Attachment or Capability)',
+          placeholder: 'Detail your required node: soundstage location, guild HoD specialty, post-production mixing timeline, or distribution route...'
+        },
+        'blocked': {
+          label: 'What is Blocked? (Describe Operational Bottleneck)',
+          placeholder: 'Detail what is blocking execution: lost location permit, sudden schedule collision, financing latency, or missing key attachment...'
+        }
+      };
+
+      // Support direct hash navigation (#have, #need, #blocked)
+      if (window.location.hash) {
+        const hashMode = window.location.hash.replace('#', '');
+        if (['have', 'need', 'blocked'].includes(hashMode)) {
+          setMode(hashMode);
+        }
       }
+
+      conditionButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const mode = btn.getAttribute('data-condition-mode');
+          setMode(mode);
+        });
+      });
+
+      function setMode(mode) {
+        currentMode = mode;
+        conditionButtons.forEach(b => b.classList.remove('active'));
+        const targetBtn = document.querySelector(`[data-condition-mode="${mode}"]`);
+        if (targetBtn) targetBtn.classList.add('active');
+
+        if (modeCopy[mode]) {
+          detailLabel.textContent = modeCopy[mode].label;
+          detailTextarea.placeholder = modeCopy[mode].placeholder;
+        }
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'VERIFYING MANDATE...';
+
+        const name = document.getElementById('intakeName').value;
+        const node = document.getElementById('intakeNode').value;
+        const timeline = document.getElementById('intakeTimeline').value;
+        const location = document.getElementById('intakeLocation').value;
+        const details = document.getElementById('intakeDetail').value;
+        const mandateUid = 'SYNQ-' + Math.floor(100000 + Math.random() * 900000);
+
+        setTimeout(() => {
+          resultBox.style.display = 'block';
+          resultBox.innerHTML = `
+            <div style="background:rgba(255,255,255,0.03);border:1px solid #10B981;border-radius:10px;padding:1.75rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:1rem;">
+                <div style="display:flex;align-items:center;gap:0.5rem;">
+                  <span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;"></span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:800;color:#FFFFFF;">
+                    MANDATE INTAKE VERIFIED &bull; ${mandateUid}
+                  </span>
+                </div>
+                <span class="status-badge status-badge--simulated">[SIMULATED INTAKE]</span>
+              </div>
+              <p style="font-size:0.95rem;color:#FFFFFF;margin:0 0 1rem;line-height:1.5;">
+                Thank you, <strong>${name}</strong>. Your condition has entered <strong>Phase 01: Verify</strong> of the DigiSynq Execution Engine.
+              </p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:1rem;margin-bottom:1rem;font-size:0.85rem;">
+                <div>
+                  <span style="font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,0.5);display:block;font-size:0.7rem;">SITUATION MODE</span>
+                  <strong style="color:#FEF08A;text-transform:uppercase;">${currentMode.toUpperCase()}</strong>
+                </div>
+                <div>
+                  <span style="font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,0.5);display:block;font-size:0.7rem;">PRIMARY NODE</span>
+                  <strong style="color:#FFFFFF;">${node}</strong>
+                </div>
+                <div>
+                  <span style="font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,0.5);display:block;font-size:0.7rem;">TIMELINE / MARKET</span>
+                  <strong style="color:#FFFFFF;">${timeline} &bull; ${location}</strong>
+                </div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03);padding:0.75rem 1rem;border-radius:6px;font-size:0.8rem;color:rgba(255,255,255,0.75);">
+                <strong>Next Step:</strong> DigiSynq measures counterparty compatibility and cross-references active ecosystem telemetry. A coordination specialist will review the mandate parameters within 24 hours.
+              </div>
+            </div>
+          `;
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'SUBMIT SYNQ →';
+          resultBox.scrollIntoView({ behavior: 'smooth' });
+        }, 600);
+      });
     });
   </script>
 </body>

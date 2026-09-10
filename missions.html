@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 — Missions: Coordination Patterns &bull; DigiSynq</title>
+  <meta name="description" content="Explore DigiSynq Missions: 13 repeatable coordination patterns solving real-world entertainment ecosystem problems — from idle capacity to IP revival and production recovery.">
+  <link rel="canonical" href="https://thedigitalsynq-design.github.io/digisynq-2/missions.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/bento-system.css">
+  <link rel="stylesheet" href="assets/css/bento-hero.css">
+</head>
+<body class="bg-page">
+
+  <!-- QUICK NAVIGATION FLOATING RAIL -->
+  <aside class="bg-floating-rail" aria-label="Quick Navigation Rail">
+    <a href="index.html" class="bg-rail-item" title="01 Home">
+      <span class="bg-rail-sparkle">✦</span>
+    </a>
+    <a href="ecosystem.html" class="bg-rail-item" title="02 Ecosystem">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">02</span>
+    </a>
+    <a href="mechanism.html" class="bg-rail-item" title="03 Mechanism">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">03</span>
+    </a>
+    <a href="missions.html" class="bg-rail-item active" title="04 Missions">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">04</span>
+    </a>
+    <a href="intelligence.html" class="bg-rail-item" title="05 Intelligence">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">05</span>
+    </a>
+    <a href="network.html" class="bg-rail-item" title="06 Network">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">06</span>
+    </a>
+    <a href="execution.html" class="bg-rail-item" title="07 Execution">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">07</span>
+    </a>
+    <a href="value.html" class="bg-rail-item" title="08 Value">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">08</span>
+    </a>
+    <a href="about.html" class="bg-rail-item" title="09 About">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;">09</span>
+    </a>
+    <div class="bg-rail-divider"></div>
+    <a href="start-a-synq.html" class="bg-rail-item" title="10 Start a Synq" style="background:rgba(255,255,255,0.14);color:#FFFFFF;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:800;color:#FEF08A;">10</span>
+    </a>
+  </aside>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- TOP HEADER -->
+  <header class="bg-nav navbar" role="banner">
+    <div class="bg-nav-inner nav-container">
+      <a href="index.html" class="bg-nav-brand nav-brand" aria-label="DigiSynq Home">
+        <img src="assets/img/digisynq-brand-logo.png" alt="DigiSynq" class="bg-nav-logo-img" width="165" height="46">
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="bg-nav-links nav-menu">
+          <li><a href="index.html" class="bg-nav-link nav-link"><span class="nav-idx">01</span>Home</a></li>
+          <li><a href="ecosystem.html" class="bg-nav-link nav-link"><span class="nav-idx">02</span>Ecosystem</a></li>
+          <li><a href="mechanism.html" class="bg-nav-link nav-link"><span class="nav-idx">03</span>Mechanism</a></li>
+          <li><a href="missions.html" class="bg-nav-link nav-link active"><span class="nav-idx">04</span>Missions</a></li>
+          <li><a href="intelligence.html" class="bg-nav-link nav-link"><span class="nav-idx">05</span>Intelligence</a></li>
+          <li><a href="network.html" class="bg-nav-link nav-link"><span class="nav-idx">06</span>Network</a></li>
+          <li><a href="execution.html" class="bg-nav-link nav-link"><span class="nav-idx">07</span>Execution</a></li>
+          <li><a href="value.html" class="bg-nav-link nav-link"><span class="nav-idx">08</span>Value</a></li>
+          <li><a href="about.html" class="bg-nav-link nav-link"><span class="nav-idx">09</span>About</a></li>
+        </ul>
+      </nav>
+      <div class="bg-nav-actions nav-actions">
+        <button class="bg-nav-cmd-btn nav-cmd-btn" data-open-cmd aria-label="Open Command Palette">
+          <span>Search</span><kbd>⌘K</kbd>
+        </button>
+        <a href="start-a-synq.html" class="bg-nav-cta btn btn-primary btn-sm btn-pill">
+          <span class="nav-idx" style="color:#FEF08A;margin-right:4px;">10</span>Start a synq &rarr;
+        </a>
+        <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">01</span>Home</a>
+    <a href="ecosystem.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">02</span>Ecosystem</a>
+    <a href="mechanism.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">03</span>Mechanism</a>
+    <a href="missions.html" class="mobile-nav-link active"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">04</span>Missions</a>
+    <a href="intelligence.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">05</span>Intelligence</a>
+    <a href="network.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">06</span>Network &amp; Trust</a>
+    <a href="execution.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">07</span>Execution Engine</a>
+    <a href="value.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">08</span>Value &amp; Model</a>
+    <a href="about.html" class="mobile-nav-link"><span class="mono" style="color:var(--b-yellow);margin-right:6px;">09</span>About DigiSynq</a>
+    <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+      <a href="start-a-synq.html" class="btn btn-primary" style="width:100%;"><span class="mono" style="color:#FEF08A;margin-right:6px;">10</span>Start a synq &rarr;</a>
+    </div>
+  </div>
+
+  <main id="main-content" class="bg-page-wrapper">
+
+    <!-- HERO SECTION -->
+    <section aria-label="Missions Overview" style="padding:calc(var(--b-gap)*2) 0 var(--b-gap);">
+      <div class="bg-grid">
+
+        <div class="bg-card bg-card--purple bg-12 bg-reveal" style="padding:2.75rem;background:#101114;border:1px solid rgba(255,255,255,0.15);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
+            <span class="bg-badge bg-badge--dark" style="background:rgba(255,255,255,0.15);color:#FFFFFF;border:1px solid rgba(255,255,255,0.3);">
+              DIGISYNQ / 04 MISSIONS
+            </span>
+            <span class="status-badge status-badge--verified">[13 COORDINATION PATTERNS]</span>
+          </div>
+          <h1 class="bg-display bg-display--xl" style="color:#FFFFFF;margin:0;line-height:1.02;text-transform:uppercase;">
+            COORDINATION PATTERNS FOR<br>
+            <em style="color:#FEF08A;">REAL-WORLD PROBLEMS.</em>
+          </h1>
+          <p style="font-size:1.05rem;line-height:1.6;color:rgba(255,255,255,0.85);margin-top:1.25rem;max-width:820px;">
+            DigiSynq does not sell a menu of agency services or software licenses. We execute <strong>Missions</strong> — repeatable, battle-tested coordination patterns designed to resolve specific ecosystem conditions and turn latent capacity into coordinated outcomes.
+          </p>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.5rem;">
+            <a href="start-a-synq.html" class="bg-btn bg-btn--primary" style="padding:0.65rem 1.3rem;font-size:0.86rem;background:#3B38D4;border:none;">
+              Trigger a Mission &rarr;
+            </a>
+            <a href="execution.html" class="bg-btn bg-btn--outline-white" style="padding:0.65rem 1.3rem;font-size:0.86rem;">
+              Operational Lifecycle
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 13 MISSIONS BENTO MATRIX -->
+    <section aria-label="13 Coordination Patterns" style="padding:var(--b-gap) 0;">
+      <div class="bg-grid">
+
+        <!-- Mission 01: Project Activation -->
+        <div class="bg-card bg-card--purple bg-6 bg-reveal" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 01</span>
+              <span class="status-badge status-badge--verified">PACKAGING</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">PROJECT ACTIVATION</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Connect the critical missing nodes required to move an unfinanced or stalled project from development into funded pre-production.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 02 IP + 01 People (Lead Director) + 07 Capital (Gap/Incentives)
+          </div>
+        </div>
+
+        <!-- Mission 02: Idle Capacity Activation -->
+        <div class="bg-card bg-card--coral bg-6 bg-reveal bg-reveal-delay-1" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 02</span>
+              <span class="status-badge status-badge--verified">UTILIZATION</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">IDLE CAPACITY ACTIVATION</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Turn unbooked soundstages, empty LED volumes, and dormant physical facilities into productive, fully booked calendar cycles.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 04 Places (Dark Stage) + 03 Production (Displaced Shoot) + 07 Capital
+          </div>
+        </div>
+
+        <!-- Mission 03: IP Revival -->
+        <div class="bg-card bg-card--coral bg-6 bg-reveal" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 03</span>
+              <span class="status-badge status-badge--verified">REVITALIZATION</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">IP REVIVAL</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Identify proven turnaround scripts, unencumbered book rights, and dormant intellectual property, assembling the attachments required to reactivate development.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 02 IP (Chain of Title) + 01 People + 08 Distribution (Pre-sales)
+          </div>
+        </div>
+
+        <!-- Mission 04: Talent Synq -->
+        <div class="bg-card bg-card--purple bg-6 bg-reveal bg-reveal-delay-1" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 04</span>
+              <span class="status-badge status-badge--verified">CAPABILITY</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">TALENT SYNQ</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Connect proven HoDs, cinematographers, production designers, and technicians directly to verified project requirements without representation lag.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 01 People (Guild HoD) + 03 Production + 07 Capital (Payroll Lock)
+          </div>
+        </div>
+
+        <!-- Mission 05: Production Recovery -->
+        <div class="bg-card bg-card--purple bg-6 bg-reveal" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 05</span>
+              <span class="status-badge status-badge--verified">EMERGENCY</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">PRODUCTION RECOVERY</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Coordinate rapid counterparty replacement when a production faces a lost location permit, missing key artisan, or sudden schedule collision.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 03 Production (Disrupted) + 04 Places (Backlot) + 05 Assets
+          </div>
+        </div>
+
+        <!-- Mission 06: Co-Production Bridge -->
+        <div class="bg-card bg-card--coral bg-6 bg-reveal bg-reveal-delay-1" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 06</span>
+              <span class="status-badge status-badge--verified">CROSS-BORDER</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">CO-PRODUCTION BRIDGE</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Connect compatible producers across jurisdictions, linking qualified regional tax credits, local production service partners, and market access.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 07 Capital (Tax Incentive) + 03 Production + 08 Distribution
+          </div>
+        </div>
+
+        <!-- Mission 07: Distribution Clearing -->
+        <div class="bg-card bg-card--coral bg-6 bg-reveal" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 07</span>
+              <span class="status-badge status-badge--verified">MARKET ACCESS</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">DISTRIBUTION CLEARING</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Establish unbundled multi-window distribution pathways for finished films across boutique theatrical circuits, FAST networks, and regional streaming platforms.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 08 Distribution + 02 IP (Sovereign Rights) + 09 Audience
+          </div>
+        </div>
+
+        <!-- Mission 08: Audience Synq -->
+        <div class="bg-card bg-card--purple bg-6 bg-reveal bg-reveal-delay-1" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 08</span>
+              <span class="status-badge status-badge--verified">DEMAND ALIGNMENT</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">AUDIENCE SYNQ</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Connect production packaging and theatrical screening decisions directly with verified fan communities, mitigating speculative box-office risk.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 09 Audience (Fandom Community) + 08 Distribution + 02 IP
+          </div>
+        </div>
+
+        <!-- Mission 09: Asset Utilization -->
+        <div class="bg-card bg-card--purple bg-6 bg-reveal" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 09</span>
+              <span class="status-badge status-badge--verified">EQUIPMENT</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">ASSET UTILIZATION</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Increase the productive utilization of high-end cinema optics, camera packages, and technical hardware sitting idle between major studio bookings.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 05 Assets (Optics) + 03 Production (Short sprint) + 07 Capital
+          </div>
+        </div>
+
+        <!-- Mission 10: Post-Production Recovery -->
+        <div class="bg-card bg-card--coral bg-6 bg-reveal bg-reveal-delay-1" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 10</span>
+              <span class="status-badge status-badge--verified">TECHNICAL POST</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">POST-PRODUCTION RECOVERY</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Coordinate certified Dolby Atmos mixing suites, color grading pipelines, and remote conform capacity to save tight festival or studio delivery deadlines.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 06 Technology (Sound Mix Suite) + 01 People + 03 Production
+          </div>
+        </div>
+
+        <!-- Mission 11: Capital Synq -->
+        <div class="bg-card bg-card--coral bg-6 bg-reveal" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 11</span>
+              <span class="status-badge status-badge--verified">LIQUIDITY</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">CAPITAL SYNQ</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Align gap lenders, tax credit purchasers, and completion guarantors with verifiable milestone drawdown schedules, eliminating capital latency.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 07 Capital (Gap/Escrow) + 03 Production + 08 Distribution
+          </div>
+        </div>
+
+        <!-- Mission 12: Archive Activation -->
+        <div class="bg-card bg-card--purple bg-6 bg-reveal bg-reveal-delay-1" style="min-height:240px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 12</span>
+              <span class="status-badge status-badge--verified">CATALOGUE</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">ARCHIVE ACTIVATION</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;">
+              Turn dormant film catalogues and library assets into newly monetized opportunities through digital remastering, format reboots, and unbundled territory licensing.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 02 IP (Library Catalogue) + 06 Technology + 08 Distribution
+          </div>
+        </div>
+
+        <!-- Mission 13: Risk Intelligence -->
+        <div class="bg-card bg-card--purple bg-12 bg-reveal" style="min-height:200px;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#FEF08A;font-weight:800;">MISSION 13</span>
+              <span class="status-badge status-badge--verified">RISK FORECAST</span>
+            </div>
+            <h3 style="font-size:1.15rem;color:#FFFFFF;margin:0 0 0.4rem;text-transform:uppercase;">RISK INTELLIGENCE</h3>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.45;max-width:860px;">
+              Identify emerging ecosystem conditions before they impact execution — regulatory shifts in regional tax legislation, stage availability bottlenecks, or counterparty insolvency warnings.
+            </p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);padding:0.6rem 0.75rem;border-radius:6px;font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:0.75rem;">
+            <strong>Coordinated Nodes:</strong> 10 Signals &amp; Telemetry + 03 Production + 07 Capital (Contingency)
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section aria-label="Missions Call to Action" style="padding:var(--b-gap) 0 calc(var(--b-gap)*2);">
+      <div class="bg-grid">
+        <div class="bg-card bg-12 bg-reveal" style="padding:2.5rem;background:#101114;text-align:center;border:1px solid rgba(255,255,255,0.15);">
+          <h2 class="bg-display bg-display--md" style="color:#FFFFFF;margin:0 0 0.75rem;text-transform:uppercase;">
+            DOES YOUR CURRENT MANDATE MATCH A MISSION?
+          </h2>
+          <p style="font-size:0.95rem;color:rgba(255,255,255,0.8);max-width:640px;margin:0 auto 1.5rem;line-height:1.5;">
+            Submit your condition to the mechanism and watch our coordination patterns align the required nodes.
+          </p>
+          <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+            <a href="start-a-synq.html" class="bg-btn bg-btn--primary" style="padding:0.7rem 1.4rem;font-size:0.88rem;background:#3B38D4;border:none;">
+              Start a Synq &rarr;
+            </a>
+            <a href="intelligence.html" class="bg-btn bg-btn--outline-white" style="padding:0.7rem 1.4rem;font-size:0.88rem;">
+              See Intelligence Telemetry
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo" style="background:#090a0c;border-top:1px solid rgba(255,255,255,0.1);padding:3.5rem 0 2rem;">
+    <div class="bg-grid" style="max-width:1320px;margin:0 auto;padding:0 var(--b-gap);">
+      <div class="bg-4" style="margin-bottom:2rem;">
+        <img src="assets/img/digisynq-brand-logo.png" alt="DigiSynq" width="165" height="46" style="margin-bottom:1rem;">
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.5;max-width:320px;">
+          The Coordination Mechanism for the Entertainment Ecosystem. Neutral, asset-light infrastructure connecting people, ideas, capacity, capital, and distribution.
+        </p>
+      </div>
+      <div class="bg-3" style="margin-bottom:2rem;">
+        <h4 style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#FEF08A;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1rem;">
+          PAGES 01 &mdash; 05
+        </h4>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.85rem;">
+          <li><a href="index.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">01</span>Home</a></li>
+          <li><a href="ecosystem.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">02</span>Ecosystem (10 Nodes)</a></li>
+          <li><a href="mechanism.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">03</span>The Mechanism</a></li>
+          <li><a href="missions.html" style="color:#FEF08A;font-weight:700;text-decoration:none;"><span class="mono" style="color:#FEF08A;margin-right:4px;">04</span>Missions (13 Patterns)</a></li>
+          <li><a href="intelligence.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">05</span>Intelligence Telemetry</a></li>
+        </ul>
+      </div>
+      <div class="bg-3" style="margin-bottom:2rem;">
+        <h4 style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#FEF08A;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1rem;">
+          PAGES 06 &mdash; 10
+        </h4>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.85rem;">
+          <li><a href="network.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">06</span>The Network &amp; Trust</a></li>
+          <li><a href="execution.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">07</span>Execution Engine</a></li>
+          <li><a href="value.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">08</span>Value &amp; Model</a></li>
+          <li><a href="about.html" style="color:rgba(255,255,255,0.8);text-decoration:none;"><span class="mono" style="color:rgba(255,255,255,0.4);margin-right:4px;">09</span>About DigiSynq</a></li>
+          <li><a href="start-a-synq.html" style="color:#FEF08A;font-weight:700;text-decoration:none;"><span class="mono" style="color:#FEF08A;margin-right:4px;">10</span>Start a Synq &rarr;</a></li>
+        </ul>
+      </div>
+      <div class="bg-2" style="margin-bottom:2rem;">
+        <h4 style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#FEF08A;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1rem;">
+          CORE AXIOM
+        </h4>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.45;margin:0 0 0.75rem;">
+          <strong>NOTHING IS WASTE.<br>EVERYTHING IS POTENTIAL.</strong>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,138 +1,358 @@
 /**
- * DIGISYNQ — Interactive Synq Simulator Console
- * Simulates real-time asset & counterparty coordination across the 6 pipeline stages.
+ * DIGISYNQ — Interactive Coordination Engine Simulator ("SEE A SYNQ HAPPEN")
+ *
+ * Implements the tri-mode selection:
+ * - [I HAVE SOMETHING] (Talent, IP, Stage, Equipment, Capital, Audience, Distribution, Technology, Project, Opportunity)
+ * - [I NEED SOMETHING] (Talent, IP, Stage, Equipment, Capital, Audience, Distribution, Technology, Solution)
+ * - [I AM BLOCKED]     (Stage Conflict, Missing Key HoD, Trapped IP, Post Bottleneck, Capital Latency)
+ *
+ * Demonstrates the 7-step coordination progression:
+ * MEASURE → IDENTIFY NODES → FIND CONNECTIONS → COORDINATE → ACTIVATE → MONITOR → OUTCOME
+ *
+ * Generates an institutional Synq Manifest clearly stamped with [SIMULATED].
  */
-(function() {
+
+(function () {
+  'use strict';
+
   const SIMULATION_DATA = {
-    'stage': {
-      label: 'Vacant Atlanta Soundstage (15,000 sq ft)',
-      matchedNode: 'Commercial Automotive Production (4-Day Sprint)',
-      playbook: 'Mission 04: Soundstage Dark-Day Rescue',
-      governance: 'Rule 06: Escrowed Milestone Payouts & Pre-cleared Load-in Terms',
-      surplusYield: '[MODELED BENCHMARK] Dark-Day Utilization & Overhead Recovery',
-      cycleTime: 'Turnaround compressed from 45 days to 72 hours'
+    // I HAVE
+    'have_stage': {
+      mode: 'I HAVE',
+      node: '04 PLACES (Soundstage Facility)',
+      inputLabel: 'Dark Soundstage (22,000 sq ft, 3-Week Window)',
+      mission: 'Mission 02: Idle Capacity Activation',
+      matchedNodes: ['03 PRODUCTION (Independent Drama Series)', '05 ASSETS (Optics Package)', '07 CAPITAL (Regional Incentive)'],
+      steps: {
+        measure: 'Telemetry detects 21 unbooked stage days between Tier-1 studio hires.',
+        identify: 'Matched to scripted streaming unit facing 2-week regional venue displacement.',
+        connect: 'Mapped acoustic specs, power load requirements, and rigging clearance.',
+        coordinate: 'Standardized rate bridge, load-in dates, and milestone security terms.',
+        activate: 'Dual-party mandate locked. Crew call sheet attachments verified.',
+        monitor: 'Stage power draw, environmental compliance, and milestone check-ins monitored.',
+        outcome: 'Stage utilized at full occupancy; production timeline saved from 18-day stall.'
+      },
+      frictionResolved: 'Eliminated facility dark days & prevented $180k delay overhead.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
     },
-    'ip': {
-      label: 'Shelved Sci-Fi Thriller Script (Turnaround IP)',
-      matchedNode: 'Lead Guild Artisan + Indie Producer with Regional Tax Credit',
-      playbook: 'Mission 02: Shelved IP Revival',
-      governance: 'Rule 04: Transparent Net Revenue Participation & Defined Credits',
-      surplusYield: '[MODELED BENCHMARK] Private Co-Production Assembly via Packaged Attachments',
-      cycleTime: 'Assembly shortened by estimated 4 months'
+    'have_ip': {
+      mode: 'I HAVE',
+      node: '02 IDEAS & IP (Turnaround Rights)',
+      inputLabel: 'Shelved Sci-Fi Thriller Script (Unencumbered Rights)',
+      mission: 'Mission 03: IP Revival',
+      matchedNodes: ['01 PEOPLE (Lead Director Attachment)', '07 CAPITAL (Co-Production Facility)', '08 DISTRIBUTION (Pre-Sales FAST/OTT)'],
+      steps: {
+        measure: 'Rights audited for chain of title, territory exclusions, and underlying credits.',
+        identify: 'Matched to BAFTA-nominated genre director and European co-financing corridor.',
+        connect: 'Synchronized development milestones, director schedule, and target market audience.',
+        coordinate: 'Aligned non-dilutive co-production terms and transparent milestone waterfall.',
+        activate: 'Development tranche funded; production package activated.',
+        monitor: 'Script polish milestones and attachment confirmations tracked.',
+        outcome: 'Dormant catalogue asset converted into active pre-production pipeline.'
+      },
+      frictionResolved: 'Compressed revival discovery from 14 months to 11 days.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
     },
-    'optics': {
-      label: 'Idle Master Prime Anamorphic Lens Fleet (UK)',
-      matchedNode: 'Regional Streaming Mini-Series (London Unit)',
-      playbook: 'Mission 05: Optical Kit Fleet Mobilization',
-      governance: 'Rule 03: Verified Technical Inspection & Replacement Value Escrow',
-      surplusYield: '[MODELED BENCHMARK] Hardware Fleet Capital Efficiency & Asset Mobilization',
-      cycleTime: 'Direct equipment clearing in 24 hours'
+    'have_equipment': {
+      mode: 'I HAVE',
+      node: '05 ASSETS (Camera & Optics)',
+      inputLabel: 'Idle Anamorphic Lens Fleet & Mobile DIT Cart',
+      mission: 'Mission 09: Asset Utilization',
+      matchedNodes: ['03 PRODUCTION (Commercial Automotive Sprint)', '01 PEOPLE (IATSE DP Unit)', '06 TECHNOLOGY (Colour Pipeline)'],
+      steps: {
+        measure: 'Hardware diagnostics and maintenance certification verified.',
+        identify: 'Commercial unit in adjacent metro requires 4-day high-end anamorphic package.',
+        connect: 'Logistics corridor, optical calibration specs, and insurance certificates linked.',
+        coordinate: 'Pre-cleared turnaround terms and equipment return escrow conditions set.',
+        activate: 'Courier dispatch triggered; package received on set.',
+        monitor: 'Equipment custody handoff logged with digital asset inspection.',
+        outcome: 'Hardware generates productive yield during scheduled downtime.'
+      },
+      frictionResolved: 'Zero idle equipment depreciation; instant turnaround match.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
     },
-    'community': {
-      label: 'Organic Indie Horror Fandom (120,000 Active Fans)',
-      matchedNode: 'Independent Regional Cinema Exhibitor Circuit (8 Cities)',
-      playbook: 'Mission 10: Theatrical Micro-Circuit',
-      governance: 'Rule 07: Verified Ticketing Data & Audience Privacy Boundaries',
-      surplusYield: '[MODELED BENCHMARK] Synchronized Theatrical Screen Event Series',
-      cycleTime: 'Eventized distribution rollout in 14 days'
+    'have_talent': {
+      mode: 'I HAVE',
+      node: '01 PEOPLE (Guild HoD / Artisan)',
+      inputLabel: 'Emmy-Nominated Production Designer (Available in 10 Days)',
+      mission: 'Mission 04: Talent Synq',
+      matchedNodes: ['03 PRODUCTION (Historical Drama Feature)', '04 PLACES (UK Studio Lot)', '07 CAPITAL (Tax Credit Unit)'],
+      steps: {
+        measure: 'Availability schedule, union jurisdiction, and design portfolio indexed.',
+        identify: 'Historical feature in pre-production requiring rapid period world-building.',
+        connect: 'Cross-referenced production calendar, prep requirements, and location logistics.',
+        coordinate: 'Deal memo aligned with guild minimums and milestone approvals.',
+        activate: 'Contractual attachment executed; remote art department onboarding initiated.',
+        monitor: 'Art department delivery schedule tracked against shoot commencement.',
+        outcome: 'Key HoD attached without agency latency; design prep commenced on schedule.'
+      },
+      frictionResolved: 'Saved 3 weeks of talent representation search friction.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
     },
-    'distribution': {
-      label: 'Completed Festival Drama (Sovereign Rights)',
-      matchedNode: 'FAST Channel Syndicator + Regional TVOD Platform',
-      playbook: 'Mission 11: FAST Syndication Rollout',
-      governance: 'Rule 01 & 04: Unbundled Windowing & Non-Exclusive Licensing',
-      surplusYield: '[MODELED BENCHMARK] Multi-Window Monetization with Retained IP Sovereignty',
-      cycleTime: 'Direct market release in under 3 weeks'
+    'have_capital': {
+      mode: 'I HAVE',
+      node: '07 CAPITAL (Financing & Incentives)',
+      inputLabel: 'Structured Gap Financing & State Tax Credit Facility',
+      mission: 'Mission 11: Capital Synq',
+      matchedNodes: ['03 PRODUCTION (Indie Feature in Prep)', '08 DISTRIBUTION (Minimum Guarantee)', '02 IDEAS & IP (Clean Title)'],
+      steps: {
+        measure: 'Capital mandate verified against eligible jurisdiction criteria and drawdown schedule.',
+        identify: 'Package-ready indie feature requiring final closing gap tranche.',
+        connect: 'Collateralized against verified sales estimates and qualifying regional expenditures.',
+        coordinate: 'Escrow milestone conditions, interest corridors, and completion guarantor linked.',
+        activate: 'Drawdown milestones released upon verifiable third-party completions.',
+        monitor: 'Daily expenditure tracking and production audit compliance verified.',
+        outcome: 'Project closes financing gap and meets regional tax credit qualification window.'
+      },
+      frictionResolved: 'Overcame 8-week financing freeze in 72 hours.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
+    },
+
+    // I NEED
+    'need_distribution': {
+      mode: 'I NEED',
+      node: '08 DISTRIBUTION (Market Clearing)',
+      inputLabel: 'Completed Independent Festival Feature Seeking Territorial Windows',
+      mission: 'Mission 07: Distribution Clearing',
+      matchedNodes: ['08 DISTRIBUTION (AVOD/FAST Network)', '09 AUDIENCE (Genre Fandom)', '02 IDEAS & IP (Ancillary Rights)'],
+      steps: {
+        measure: 'Asset deliverables, technical QC specs, and worldwide rights availability checked.',
+        identify: '3 regional boutique theatrical curators and North American FAST syndicators matched.',
+        connect: 'Multi-window release strategy mapped preserving sovereign digital rights.',
+        coordinate: 'Transparent royalty waterfalls and verifiable streaming reporting terms set.',
+        activate: 'Digital deliverables ingested; licensing windows opened.',
+        monitor: 'Impression velocity, audience completion rates, and platform disbursements tracked.',
+        outcome: 'Completed film reaches active paying audiences across 4 unbundled windows.'
+      },
+      frictionResolved: 'Bypassed predatory single-buyer all-rights buyout traps.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
+    },
+    'need_post': {
+      mode: 'I NEED',
+      node: '06 TECHNOLOGY (Post-Production)',
+      inputLabel: 'Dolby Atmos Sound Mixing & Remote Colour Grading Facility',
+      mission: 'Mission 10: Post-Production Recovery',
+      matchedNodes: ['06 TECHNOLOGY (Certified Mix Suite)', '01 PEOPLE (Supervising Sound Editor)', '03 PRODUCTION (Final Delivery Cut)'],
+      steps: {
+        measure: 'Timeline urgency, conform format, and delivery technical specifications indexed.',
+        identify: 'Certified post facility in London with 10 open calendar days between studio bookings.',
+        connect: 'High-speed encrypted proxy sync and remote review infrastructure configured.',
+        coordinate: 'Milestone delivery schedule and mix approvals locked with escrow protection.',
+        activate: 'Conformed master files ingested into secure pipeline; mix sessions commence.',
+        monitor: 'Approval stems and stem delivery milestones logged in real time.',
+        outcome: 'Picture and sound deliver on festival deadline without expedite penalty fees.'
+      },
+      frictionResolved: 'Resolved critical post-production delivery bottleneck in 48 hours.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
+    },
+    'need_stage': {
+      mode: 'I NEED',
+      node: '04 PLACES (Virtual Production Stage)',
+      inputLabel: 'Virtual Production LED Volume (In-Camera VFX for 5-Day Shoot)',
+      mission: 'Mission 01: Project Activation',
+      matchedNodes: ['04 PLACES (Certified LED Volume)', '06 TECHNOLOGY (Unreal Engine Team)', '05 ASSETS (Tracking System)'],
+      steps: {
+        measure: 'Shooting dates, frustum tracking requirements, and LED pitch specifications analyzed.',
+        identify: 'Regional studio volume with unexpected rescheduling gap matched.',
+        connect: 'Digital asset pipeline pre-calibrated for real-time camera tracking.',
+        coordinate: 'Volume technician rates, stage hours, and load-in milestones agreed.',
+        activate: 'Digital environment loaded into engine; live test shoot passes QC.',
+        monitor: 'Stage operations and telemetry monitored across the 5 shoot days.',
+        outcome: 'Production executes complex VFX scenes in-camera without location travel costs.'
+      },
+      frictionResolved: 'Eliminated 6 weeks of location scouting and post-VFX turnaround latency.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
+    },
+
+    // I AM BLOCKED
+    'blocked_schedule': {
+      mode: 'I AM BLOCKED',
+      node: '03 PRODUCTION (Disrupted Schedule)',
+      inputLabel: 'Principal Photography Stalled: Location Permitting Revoked 48h Before Call',
+      mission: 'Mission 05: Production Recovery',
+      matchedNodes: ['04 PLACES (Permitted Standing Backlot)', '01 PEOPLE (Local Production Service)', '03 PRODUCTION (Active Crew)'],
+      steps: {
+        measure: 'Immediate requirements extracted: architectural style, power needs, crew headcount.',
+        identify: 'Surfaced pre-cleared private studio backlot located 35 miles away.',
+        connect: 'Re-routed logistics, local permits, and equipment transport manifests.',
+        coordinate: 'Emergency location agreement signed under standardized DigiSynq terms.',
+        activate: 'Crew notifications dispatched; basecamp relocated overnight.',
+        monitor: 'Day-one shoot schedule monitored for continuity and crew safety.',
+        outcome: 'Production resumes filming on schedule with zero lost shoot days.'
+      },
+      frictionResolved: 'Avoided an estimated $420k production shutdown insurance claim.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
+    },
+    'blocked_capital': {
+      mode: 'I AM BLOCKED',
+      node: '07 CAPITAL (Incentive Bridging Delay)',
+      inputLabel: 'State Rebate Processing Delayed 90 Days; Payroll Threatened',
+      mission: 'Mission 13: Risk Intelligence',
+      matchedNodes: ['07 CAPITAL (Incentive Bridging Lender)', '03 PRODUCTION (Payroll Accounts)', '01 PEOPLE (Cast & Crew)'],
+      steps: {
+        measure: 'Verified audit letters, approved spend ledgers, and state agency acknowledgment.',
+        identify: 'Matched to institutional entertainment liquidity partner with pre-cleared rebate appetite.',
+        connect: 'Collateralized bridge financing structure mapped with direct payroll disbursement.',
+        coordinate: 'Tripartite agreement between producer, lender, and state tax authority established.',
+        activate: 'Short-term bridge facility executed; payroll obligations met on Friday.',
+        monitor: 'Disbursement reconciliation and state payment tracking maintained.',
+        outcome: 'Production continues uninterrupted without guild action or crew walkouts.'
+      },
+      frictionResolved: 'Saved project from catastrophic insolvency and union stop-work order.',
+      statusTaxonomy: '[SIMULATED BENCHMARK]'
     }
   };
 
   function initSimulator() {
+    const root = document.getElementById('synq-simulator-root');
+    if (!root) return;
+
+    const modeTabs = root.querySelectorAll('[data-sim-mode]');
+    const triggerSelect = root.getElementById ? root.getElementById('simConditionSelect') : document.getElementById('simConditionSelect');
     const runBtn = document.getElementById('runSimulatorBtn');
-    const assetSelect = document.getElementById('simAssetSelect');
-    const stageOutput = document.getElementById('simStageStatus');
+    const progressBox = document.getElementById('simProgressBox');
     const manifestBox = document.getElementById('simManifestResult');
 
-    if (!runBtn || !assetSelect || !stageOutput || !manifestBox) return;
+    if (!runBtn || !triggerSelect || !progressBox || !manifestBox) return;
+
+    let activeMode = 'have';
+
+    // Populate dropdown based on mode
+    function updateOptions(mode) {
+      triggerSelect.innerHTML = '';
+      activeMode = mode;
+
+      const keys = Object.keys(SIMULATION_DATA).filter(k => k.startsWith(mode + '_'));
+      keys.forEach(k => {
+        const item = SIMULATION_DATA[k];
+        const opt = document.createElement('option');
+        opt.value = k;
+        opt.textContent = `${item.node} — ${item.inputLabel}`;
+        triggerSelect.appendChild(opt);
+      });
+    }
+
+    modeTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        modeTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const mode = tab.getAttribute('data-sim-mode');
+        updateOptions(mode);
+      });
+    });
+
+    // Initial populate
+    updateOptions('have');
 
     runBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const assetKey = assetSelect.value;
-      const data = SIMULATION_DATA[assetKey] || SIMULATION_DATA['stage'];
+      const selectedKey = triggerSelect.value;
+      const data = SIMULATION_DATA[selectedKey] || SIMULATION_DATA['have_stage'];
 
       runBtn.disabled = true;
-      runBtn.innerText = 'COORDINATING PIPELINE...';
+      runBtn.innerHTML = '<span>COORDINATING SYSTEM...</span>';
       manifestBox.style.display = 'none';
-      stageOutput.style.display = 'block';
+      progressBox.style.display = 'block';
 
-      const steps = [
-        'STAGE 01 &bull; MEASURING REAL ASSET CAPACITY & AVAILABILITY...',
-        'STAGE 02 &bull; ALGORITHMIC MATCHING ACROSS ECOSYSTEM NODES...',
-        'STAGE 03 &bull; ENFORCING 7 CLARITY RULES & MILESTONE ESCROW...',
-        'STAGE 04 &bull; READY FOR DEPLOYMENT: SYNQ MANIFEST GENERATED!'
+      const sequence = [
+        { name: 'MEASURE', detail: data.steps.measure },
+        { name: 'IDENTIFY NODES', detail: data.steps.identify },
+        { name: 'FIND CONNECTIONS', detail: data.steps.connect },
+        { name: 'COORDINATE', detail: data.steps.coordinate },
+        { name: 'ACTIVATE', detail: data.steps.activate },
+        { name: 'MONITOR', detail: data.steps.monitor },
+        { name: 'OUTCOME', detail: data.steps.outcome }
       ];
 
-      let stepIndex = 0;
-      stageOutput.innerHTML = `<span class="mono" style="color:var(--accent-cyan);font-weight:700;">${steps[0]}</span>`;
+      let step = 0;
+      renderProgressStep(sequence[0], 0, sequence.length);
 
-      const interval = setInterval(() => {
-        stepIndex++;
-        if (stepIndex < steps.length) {
-          stageOutput.innerHTML = `<span class="mono" style="color:var(--accent-cyan);font-weight:700;">${steps[stepIndex]}</span>`;
+      const timer = setInterval(() => {
+        step++;
+        if (step < sequence.length) {
+          renderProgressStep(sequence[step], step, sequence.length);
           if (window.DigiSynqSound) window.DigiSynqSound.playClick();
         } else {
-          clearInterval(interval);
+          clearInterval(timer);
           renderManifest(data);
           runBtn.disabled = false;
-          runBtn.innerText = 'RUN COORDINATION ENGINE';
+          runBtn.innerHTML = '<span>RUN COORDINATION ENGINE &rarr;</span>';
           if (window.DigiSynqSound) window.DigiSynqSound.playSynqSuccess();
         }
-      }, 550);
+      }, 420);
     });
 
+    function renderProgressStep(item, idx, total) {
+      progressBox.innerHTML = `
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:1rem 1.25rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--b-yellow);font-weight:700;letter-spacing:0.12em;">
+              STEP 0${idx + 1} OF 0${total} &bull; ${item.name}
+            </span>
+            <span class="bg-chip bg-chip--dark" style="font-size:0.65rem;">[SIMULATED TELEMETRY]</span>
+          </div>
+          <p style="font-size:0.88rem;color:#FFFFFF;margin:0;line-height:1.5;">${item.detail}</p>
+        </div>
+      `;
+    }
+
     function renderManifest(data) {
-      stageOutput.style.display = 'none';
+      progressBox.style.display = 'none';
       manifestBox.style.display = 'block';
+
+      const nodesHtml = data.matchedNodes.map(n => `
+        <span style="display:inline-block;padding:0.25rem 0.6rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#FFFFFF;margin:0.2rem 0.3rem 0.2rem 0;">
+          ${n}
+        </span>
+      `).join('');
+
       manifestBox.innerHTML = `
-        <div style="border-top:1px solid #353839;padding-top:1.25rem;">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
-            <span class="mono" style="font-size:0.75rem;color:#FFFFFF;font-weight:800;letter-spacing:0.15em;">
-              <span class="material-symbols-outlined" style="font-size:0.95rem;vertical-align:-2px;margin-right:0.25rem;color:#FFFFFF;">verified</span>SYNQ EXECUTION MANIFEST [VERIFIED]
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:1.5rem;margin-top:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:1.25rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;"></span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;font-weight:800;color:#FFFFFF;letter-spacing:0.12em;">
+                SYNQ MANIFEST #${Math.floor(100000 + Math.random() * 900000)}
+              </span>
+            </div>
+            <div style="display:flex;gap:0.5rem;align-items:center;">
+              <span class="bg-chip bg-chip--dark" style="font-size:0.7rem;color:#FEF08A;border-color:rgba(254,240,138,0.3);">
+                ${data.statusTaxonomy}
+              </span>
+              <span class="bg-chip bg-chip--outline-white" style="font-size:0.7rem;">COORDINATED</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin-bottom:1.25rem;">
+            <div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.5);display:block;margin-bottom:0.25rem;">ORIGIN NODE</span>
+              <div style="font-weight:700;color:#FFFFFF;font-size:0.9rem;">${data.node}</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);margin-top:0.2rem;">${data.inputLabel}</div>
+            </div>
+            <div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.5);display:block;margin-bottom:0.25rem;">COORDINATION PATTERN</span>
+              <div style="font-weight:700;color:#FFFFFF;font-size:0.9rem;">${data.mission}</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);margin-top:0.2rem;">Deterministic Execution Path</div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:1.25rem;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.5);display:block;margin-bottom:0.4rem;">COORDINATED ECOSYSTEM NODES</span>
+            <div>${nodesHtml}</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.03);border-left:3px solid #FEF08A;padding:0.75rem 1rem;border-radius:0 6px 6px 0;margin-bottom:1.25rem;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#FEF08A;font-weight:700;display:block;margin-bottom:0.2rem;">SYSTEMIC VALUE CREATED</span>
+            <p style="font-size:0.85rem;color:#FFFFFF;margin:0;line-height:1.4;">${data.frictionResolved}</p>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.08);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:rgba(255,255,255,0.4);">
+              Nothing is waste. Everything is potential.
             </span>
-            <span class="mono" style="font-size:0.7rem;color:#666362;background:#212122;padding:0.2rem 0.5rem;border:1px solid #353839;border-radius:3px;">
-              REF: SYNQ-${Math.floor(Math.random() * 89999 + 10000)}
-            </span>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin-bottom:1.25rem;font-size:0.9rem;">
-            <div>
-              <strong class="mono" style="font-size:0.72rem;color:#666362;display:block;">INPUT ASSET:</strong>
-              <span style="color:#ffffff;font-weight:600;">${data.label}</span>
-            </div>
-            <div>
-              <strong class="mono" style="font-size:0.72rem;color:#666362;display:block;">MATCHED COUNTERPARTY:</strong>
-              <span style="color:#FFFFFF;font-weight:600;">${data.matchedNode}</span>
-            </div>
-            <div>
-              <strong class="mono" style="font-size:0.72rem;color:#666362;display:block;">ASSIGNED PLAYBOOK:</strong>
-              <span style="color:#ffffff;">${data.playbook}</span>
-            </div>
-            <div>
-              <strong class="mono" style="font-size:0.72rem;color:#666362;display:block;">GOVERNANCE STANDARD:</strong>
-              <span style="color:#ffffff;">${data.governance}</span>
-            </div>
-          </div>
-          <div style="background:#212122;border:1px solid #353839;padding:1rem;border-radius:4px;margin-bottom:1.25rem;">
-            <div class="mono" style="font-size:0.72rem;color:#FFFFFF;font-weight:700;margin-bottom:0.25rem;">SURPLUS IMPACT (ESTIMATED):</div>
-            <div style="font-size:1.05rem;color:#ffffff;font-weight:700;margin-bottom:0.25rem;">${data.surplusYield}</div>
-            <div style="font-size:0.85rem;color:#FFFFFF;margin-bottom:0.5rem;">${data.cycleTime}</div>
-            <div class="mono" style="font-size:0.7rem;color:#666362;line-height:1.4;">
-              *Illustrative scenario modeled on representative operational parameters. Actual outcomes depend on verified asset audit, counterparty constraints, and negotiated legal terms.
-            </div>
-          </div>
-          <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
-            <a href="synq.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.25rem;">
-              EXECUTE THIS SYNQ IN NODE 10 &rarr;
+            <a href="start-a-synq.html" class="bg-btn bg-btn--primary" style="font-size:0.78rem;padding:0.45rem 0.9rem;">
+              Activate This Synq &rarr;
             </a>
-            <span class="mono" style="font-size:0.75rem;color:#666362;"><span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:-1px;margin-right:0.2rem;color:#FFFFFF;">lock</span>CONFIDENTIAL INTAKE &bull; NO OBLIGATION</span>
           </div>
         </div>
       `;

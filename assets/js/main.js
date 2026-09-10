@@ -103,19 +103,26 @@ function initCommandPalette() {
             <kbd>ESC</kbd>
           </div>
           <ul id="cmd-results-list" class="cmd-list">
-            <li><a href="index.html" class="cmd-item"><span>Home overview</span><span class="label-mono">Page</span></a></li>
-            <li><a href="how-it-works.html" class="cmd-item"><span>How it works (6-step model)</span><span class="label-mono">Guide</span></a></li>
-            <li><a href="solutions.html" class="cmd-item"><span>Solutions by situation</span><span class="label-mono">Page</span></a></li>
-            <li><a href="platform.html" class="cmd-item"><span>Platform architecture & modules</span><span class="label-mono">Page</span></a></li>
-            <li><a href="network.html" class="cmd-item"><span>Network ecosystem (8 pillars)</span><span class="label-mono">Page</span></a></li>
-            <li><a href="intelligence.html" class="cmd-item"><span>Production intelligence telemetry</span><span class="label-mono">Page</span></a></li>
-            <li><a href="economics.html" class="cmd-item"><span>Economics & fee schedule</span><span class="label-mono">Page</span></a></li>
-            <li><a href="trust.html" class="cmd-item"><span>Trust center & verification</span><span class="label-mono">Page</span></a></li>
-            <li><a href="about.html" class="cmd-item"><span>About DigiSynq (60s summary)</span><span class="label-mono">Page</span></a></li>
-            <li><a href="start-a-synq.html" class="cmd-item"><span>Start a synq (intake)</span><span class="badge badge-live">Action</span></a></li>
-            <li><a href="network.html#stages" class="cmd-item"><span>Search soundstages & LED volumes</span><span class="label-mono">Domain</span></a></li>
-            <li><a href="network.html#gear" class="cmd-item"><span>Search cinema equipment packages</span><span class="label-mono">Domain</span></a></li>
-            <li><a href="network.html#people" class="cmd-item"><span>Search verified crew & heads of dept</span><span class="label-mono">Domain</span></a></li>
+            <li><a href="index.html" class="cmd-item"><span>01 — Home (Coordination Mechanism Overview)</span><span class="label-mono">01 Page</span></a></li>
+            <li><a href="ecosystem.html" class="cmd-item"><span>02 — Ecosystem (10 Canonical Nodes)</span><span class="label-mono">02 Page</span></a></li>
+            <li><a href="mechanism.html" class="cmd-item"><span>03 — Mechanism (Continuous Coordination Loop)</span><span class="label-mono">03 Page</span></a></li>
+            <li><a href="missions.html" class="cmd-item"><span>04 — Missions (Coordination Patterns)</span><span class="label-mono">04 Page</span></a></li>
+            <li><a href="intelligence.html" class="cmd-item"><span>05 — Intelligence (Ecosystem Telemetry)</span><span class="label-mono">05 Page</span></a></li>
+            <li><a href="network.html" class="cmd-item"><span>06 — Network &amp; Trust (The Ecosystem Network)</span><span class="label-mono">06 Page</span></a></li>
+            <li><a href="execution.html" class="cmd-item"><span>07 — Execution (7-Phase Operational Engine)</span><span class="label-mono">07 Page</span></a></li>
+            <li><a href="value.html" class="cmd-item"><span>08 — Value (Friction Reduction &amp; Compounding)</span><span class="label-mono">08 Page</span></a></li>
+            <li><a href="about.html" class="cmd-item"><span>09 — About (Institutional Axiom &amp; Thesis)</span><span class="label-mono">09 Page</span></a></li>
+            <li><a href="start-a-synq.html" class="cmd-item"><span>10 — Start a Synq (Condition Intake)</span><span class="badge badge-live">Action</span></a></li>
+            <li><a href="ecosystem.html#people" class="cmd-item"><span>Node 01: People (Talent, Guilds, HoDs)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#ip" class="cmd-item"><span>Node 02: Ideas &amp; IP (Rights, Libraries)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#production" class="cmd-item"><span>Node 03: Production (Projects, Slates)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#places" class="cmd-item"><span>Node 04: Places (Stages, Facilities)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#assets" class="cmd-item"><span>Node 05: Assets (Optics, Packages)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#technology" class="cmd-item"><span>Node 06: Technology (Virtual Prod, Post)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#capital" class="cmd-item"><span>Node 07: Capital (Incentives, Escrow)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#distribution" class="cmd-item"><span>Node 08: Distribution (Theatrical, FAST, OTT)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#audience" class="cmd-item"><span>Node 09: Audience (Demand Signals)</span><span class="label-mono">Node</span></a></li>
+            <li><a href="ecosystem.html#signals" class="cmd-item"><span>Node 10: Signals &amp; Opportunities</span><span class="label-mono">Node</span></a></li>
           </ul>
           <div class="cmd-footer">
             <span>Navigation: <kbd>&uarr;</kbd> <kbd>&darr;</kbd> to navigate</span>
