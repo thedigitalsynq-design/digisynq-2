@@ -14,7 +14,7 @@
   --bento-green-dark: rgba(52, 211, 153, 0.7);
   --bento-gap: 10px;
   --bento-radius: 20px;
-  --bento-font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --bento-font-display: 'Google Sans', sans-serif;
 }
 
 /* ---------- HERO SECTION OVERRIDE ---------- */
@@ -254,7 +254,7 @@
 .bento-headline-text em {
   font-family: var(--bento-font-display);
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   letter-spacing: -0.015em;
   padding-right: 0.04em;
 }
@@ -376,7 +376,7 @@
 .bento-metaphor-headline {
   font-family: var(--bento-font-display);
   font-weight: 800;
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(1.4rem, 2vw, 1.8rem);
   line-height: 1.15;
   color: #FFFFFF;

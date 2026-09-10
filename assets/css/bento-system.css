@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;800;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/google-sans');
+
+/* Global No-Italic Rule */
+*, *::before, *::after, em, i, cite {
+  font-style: normal !important;
+}
+
+body {
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 /* ==========================================================================
    DIGISYNQ — BENTO DESIGN SYSTEM
    Extracted from reference: editorial Bento Grid, asymmetric card composition,
@@ -133,32 +145,36 @@
 .bg-split-content { padding: var(--b-pad); display: flex; flex-direction: column; justify-content: flex-end; }
 
 /* TYPOGRAPHY IN BENTO */
-.bg-display { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-style: normal; line-height: 1.06; letter-spacing: -0.025em; }
-.bg-display--xl { font-size: clamp(3rem, 5.5vw, 5.5rem); }
-.bg-display--lg { font-size: clamp(2.2rem, 4vw, 4rem); }
-.bg-display--md { font-size: clamp(1.75rem, 3vw, 2.75rem); }
-.bg-display--sm { font-size: clamp(1.35rem, 2.2vw, 1.85rem); }
-.bg-display--xs { font-size: clamp(1.1rem, 1.8vw, 1.4rem); }
-.bg-display em { font-style: italic; }
+.bg-display { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-style: normal !important; line-height: 1.06; letter-spacing: -0.025em; }
+.bg-display--xl { font-size: clamp(3rem, 5.5vw, 5.5rem); font-weight: 900; }
+.bg-display--lg { font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 800; }
+.bg-display--md { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; }
+.bg-display--sm { font-size: clamp(1.35rem, 2.2vw, 1.85rem); font-weight: 700; }
+.bg-display--xs { font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 700; }
+.bg-display em { font-style: normal !important; font-weight: 900; }
 
 .bg-metric-value {
-  font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-style: italic;
-  font-size: clamp(3rem, 5vw, 5rem); line-height: 1; letter-spacing: -0.04em;
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800;
+  font-style: normal !important;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 .bg-metric-value--xl { font-size: clamp(3.5rem, 7vw, 6.5rem); }
 .bg-metric-value--lg { font-size: clamp(2.5rem, 5vw, 4.5rem); }
 
 .bg-label {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4;
 }
-.bg-body-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.95rem; line-height: 1.68; font-weight: 400; }
-.bg-meta { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.82rem; line-height: 1.55; }
-.bg-metric-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; }
-.bg-metric-sublabel { font-size: 0.82rem; line-height: 1.45; opacity: 0.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.bg-body-text { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.95rem; line-height: 1.68; font-weight: 400; }
+.bg-meta { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.82rem; line-height: 1.55; }
+.bg-metric-label { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; }
+.bg-metric-sublabel { font-size: 0.82rem; line-height: 1.45; opacity: 0.6; font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 
 /* CHIPS & BADGES */
-.bg-chip { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; letter-spacing: 0.03em; }
+.bg-chip { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; letter-spacing: 0.03em; }
 .bg-chip--dark    { background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.82); }
 .bg-chip--light   { background: rgba(15,22,35,0.12); color: var(--b-navy); }
 .bg-chip--purple  { background: var(--b-purple); color: white; }
@@ -204,7 +220,7 @@
 .bg-progress-fill--coral { background: var(--b-coral); }
 
 /* BUTTONS */
-.bg-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 999px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.01em; cursor: pointer; transition: all var(--b-dur-fast) var(--b-ease-out); text-decoration: none; border: none; white-space: nowrap; }
+.bg-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 999px; font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.01em; cursor: pointer; transition: all var(--b-dur-fast) var(--b-ease-out); text-decoration: none; border: none; white-space: nowrap; }
 .bg-btn--primary { background: var(--b-navy); color: var(--b-white); }
 .bg-btn--primary:hover { background: var(--b-navy-soft); transform: translateY(-1px); }
 .bg-btn--purple { background: var(--b-purple); color: white; }
@@ -227,16 +243,16 @@
 }
 .bg-nav-inner { width: 100%; max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .bg-nav-brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; flex-shrink: 0; }
-.bg-nav-brand-name { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 1.1rem; color: var(--b-white); letter-spacing: -0.01em; }
+.bg-nav-brand-name { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--b-white); letter-spacing: -0.02em; }
 .bg-nav-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--b-purple); flex-shrink: 0; }
 .bg-nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; flex: 1; justify-content: center; }
-.bg-nav-link { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.62); text-decoration: none; padding: 0.4rem 0.7rem; border-radius: var(--b-radius-xs); transition: all var(--b-dur-fast) ease; white-space: nowrap; }
+.bg-nav-link { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.62); text-decoration: none; padding: 0.4rem 0.7rem; border-radius: var(--b-radius-xs); transition: all var(--b-dur-fast) ease; white-space: nowrap; }
 .bg-nav-link:hover { color: var(--b-white); background: rgba(255,255,255,0.06); }
 .bg-nav-link.active { color: var(--b-white); background: rgba(255,255,255,0.08); }
 .bg-nav-actions { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
 .bg-nav-cmd-btn { display: flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.65rem; border-radius: var(--b-radius-xs); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09); color: rgba(255,255,255,0.55); font-size: 0.72rem; font-family: -apple-system, sans-serif; cursor: pointer; transition: all var(--b-dur-fast) ease; }
 .bg-nav-cmd-btn:hover { background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.8); }
-.bg-nav-cta { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.82rem; font-weight: 600; background: var(--b-white); color: var(--b-navy); padding: 0.45rem 1rem; border-radius: 999px; text-decoration: none; transition: all var(--b-dur-fast) ease; white-space: nowrap; }
+.bg-nav-cta { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.82rem; font-weight: 600; background: var(--b-white); color: var(--b-navy); padding: 0.45rem 1rem; border-radius: 999px; text-decoration: none; transition: all var(--b-dur-fast) ease; white-space: nowrap; }
 .bg-nav-cta:hover { background: var(--b-cream); transform: translateY(-1px); }
 .bg-nav-hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 0.4rem; }
 .bg-nav-hamburger span { width: 20px; height: 2px; background: rgba(255,255,255,0.75); border-radius: 2px; transition: all var(--b-dur-fast) ease; }
@@ -265,41 +281,41 @@
 .bg-pillar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--b-gap); }
 .bg-pillar-card { background: var(--b-dark-card); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--b-radius-sm); padding: 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; transition: all var(--b-dur) var(--b-ease); }
 .bg-pillar-card:hover { border-color: rgba(255,255,255,0.16); transform: translateY(-2px); background: var(--b-dark-alt); }
-.bg-pillar-num { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.5rem; font-style: italic; color: var(--b-purple-lt); line-height: 1; letter-spacing: -0.02em; }
-.bg-pillar-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--b-white); line-height: 1.35; }
-.bg-pillar-desc { font-size: 0.8rem; color: rgba(255,255,255,0.52); line-height: 1.55; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.bg-pillar-num { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 1.5rem; font-weight: 800; font-style: normal !important; color: var(--b-purple-lt); line-height: 1; letter-spacing: -0.02em; }
+.bg-pillar-title { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--b-white); line-height: 1.35; }
+.bg-pillar-desc { font-size: 0.8rem; color: rgba(255,255,255,0.52); line-height: 1.55; font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 
 /* STEP FLOW */
 .bg-step-flow { display: flex; flex-direction: column; gap: 0; }
 .bg-step-row { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
 .bg-card--cream .bg-step-row { border-bottom-color: rgba(15,22,35,0.10); }
 .bg-step-row:last-child { border-bottom: none; }
-.bg-step-num-block { width: 42px; height: 42px; border-radius: var(--b-radius-xs); background: var(--b-purple); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', Georgia, serif; font-size: 1rem; font-style: italic; color: white; flex-shrink: 0; }
+.bg-step-num-block { width: 42px; height: 42px; border-radius: var(--b-radius-xs); background: var(--b-purple); display: flex; align-items: center; justify-content: center; font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 1rem; font-weight: 800; font-style: normal !important; color: white; flex-shrink: 0; }
 .bg-step-num-block--yellow { background: var(--b-yellow); color: var(--b-navy); }
 .bg-step-num-block--coral  { background: var(--b-coral); }
 .bg-step-num-block--dark   { background: rgba(255,255,255,0.08); }
 .bg-step-content { display: flex; flex-direction: column; gap: 0.25rem; }
-.bg-step-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.92rem; font-weight: 600; line-height: 1.3; }
-.bg-step-desc  { font-size: 0.82rem; line-height: 1.55; opacity: 0.65; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.bg-step-title { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.92rem; font-weight: 600; line-height: 1.3; }
+.bg-step-desc  { font-size: 0.82rem; line-height: 1.55; opacity: 0.65; font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 
 /* ACCORDION */
 .bg-accordion-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
 .bg-card--cream .bg-accordion-item { border-bottom-color: rgba(15,22,35,0.10); }
 .bg-accordion-item:last-child { border-bottom: none; }
 .bg-accordion-trigger { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; text-align: left; gap: 1rem; color: inherit; }
-.bg-accordion-question { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+.bg-accordion-question { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
 .bg-accordion-icon { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; opacity: 0.5; font-size: 0.75rem; transition: all var(--b-dur-fast) ease; }
 .bg-accordion-item.open .bg-accordion-icon { opacity: 1; background: var(--b-purple); border-color: var(--b-purple); color: white; transform: rotate(45deg); }
 .bg-accordion-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.42s var(--b-ease), opacity 0.3s ease, padding 0.3s ease; padding: 0; }
 .bg-accordion-item.open .bg-accordion-content { max-height: 800px; opacity: 1; padding-bottom: 1.25rem; }
-.bg-accordion-answer { font-size: 0.88rem; line-height: 1.68; opacity: 0.72; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.bg-accordion-answer { font-size: 0.88rem; line-height: 1.68; opacity: 0.72; font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 
 /* FEE TABLE */
 .bg-fee-table { width: 100%; border-collapse: collapse; }
-.bg-fee-table th { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.55; padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(15,22,35,0.12); }
-.bg-fee-table td { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.88rem; padding: 1rem; border-bottom: 1px solid rgba(15,22,35,0.08); vertical-align: top; color: var(--b-navy-soft); }
+.bg-fee-table th { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.55; padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(15,22,35,0.12); }
+.bg-fee-table td { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.88rem; padding: 1rem; border-bottom: 1px solid rgba(15,22,35,0.08); vertical-align: top; color: var(--b-navy-soft); }
 .bg-fee-table tr:last-child td { border-bottom: none; }
-.bg-fee-rate { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.35rem; font-style: italic; letter-spacing: -0.02em; color: var(--b-navy); font-weight: 400; }
+.bg-fee-rate { font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 1.35rem; font-weight: 800; font-style: normal !important; letter-spacing: -0.02em; color: var(--b-navy); }
 
 /* RESPONSIVE TABLET */
 @media (max-width: 1024px) {
@@ -321,9 +337,16 @@
   .bg-grid { grid-template-columns: 1fr; padding: 0 10px; }
   .bg-1,.bg-2,.bg-3,.bg-4,.bg-5,.bg-6,.bg-7,.bg-8,.bg-9,.bg-10,.bg-11,.bg-12 { grid-column: span 1; }
   .bg-pillar-grid { grid-template-columns: 1fr 1fr; }
-  .bg-display--xl { font-size: clamp(2.2rem, 8vw, 3.2rem); }
-  .bg-display--lg { font-size: clamp(1.8rem, 6.5vw, 2.5rem); }
-  .bg-metric-value { font-size: clamp(2.5rem, 9vw, 3.5rem); }
+  .bg-display--xl { font-size: clamp(3rem, 5.5vw, 5.5rem); font-weight: 900; }
+  .bg-display--lg { font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 800; }
+  .bg-metric-value {
+  font-family: 'Google Sans', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800;
+  font-style: normal !important;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
   .bg-nav-links { display: none; }
   .bg-nav-hamburger { display: flex; }
   .bg-cta-block { padding: 2.5rem 1.25rem; }

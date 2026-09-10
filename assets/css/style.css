@@ -641,7 +641,7 @@
 .section-title em {
   font-family: var(--font-display);
   font-weight: 800;
-  font-style: italic;
+  font-style: normal;
   letter-spacing: 0.015em;
   padding-right: 0.05em;
   background: var(--gradient-cyan-teal);
@@ -653,7 +653,7 @@
 
 .section-desc {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.2rem;
   color: var(--text-secondary);
   max-width: 800px;
@@ -832,7 +832,7 @@
 .cta-banner-title em {
   font-family: var(--font-display);
   font-weight: 800;
-  font-style: italic;
+  font-style: normal;
   letter-spacing: 0.015em;
   padding-right: 0.05em;
   background: var(--gradient-cyan-teal);

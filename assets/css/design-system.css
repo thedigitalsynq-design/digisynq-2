@@ -6,33 +6,17 @@
    ========================================================================== */
 
 /* ==========================================================================
-   DM SERIF DISPLAY EDITORIAL TYPOGRAPHY SYSTEM
-   Typeface: DM Serif Display (Google Fonts)
-   Weights available: 400 Normal · 400 Italic (only)
-   Hierarchy is expressed through:
-   - Size     : hero → section → subhead → body scale
-   - Italic   : emphasis, gradient operatives, decorative contrast
-   - Tracking : tighter for large display, looser for small labels
-   - Color    : gradient fills for primary operatives
-   UI/mono fallback: -apple-system, BlinkMacSystemFont, Segoe UI
+   GOOGLE SANS TYPOGRAPHY SYSTEM
+   Typeface: Google Sans
+   Weights: 400 Regular · 500 Medium · 700 Bold · 800 Extra Bold · 900 Black
+   Strict Rule: No Italic anywhere. Bold & Extra Bold hierarchy.
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;800;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/google-sans');
 
-/* DM Serif Display — loaded via Google Fonts <link> in every HTML page */
-/* @font-face declarations below act as a local-cache hint if files exist */
-@font-face {
-  font-family: 'DM Serif Display';
-  src: local('DM Serif Display Regular'), local('DMSerifDisplay-Regular');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'DM Serif Display';
-  src: local('DM Serif Display Italic'), local('DMSerifDisplay-Italic');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+/* Global No-Italic Enforcement */
+*, *::before, *::after, em, i, cite, var, address {
+  font-style: normal !important;
 }
 
 :root {
@@ -132,9 +116,9 @@
   --shadow-btn-glow: 0 0 20px rgba(139, 92, 246, 0.3), 0 4px 16px rgba(0, 0, 0, 0.3);
 
   /* ── Typography — DM Serif Display (display) + System Sans (UI/body) ── */
-  --font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
-  --font-heading: 'DM Serif Display', Georgia, 'Times New Roman', serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 
   /* ── Radius Scale ── */
@@ -257,7 +241,8 @@ button, input, select, textarea {
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 800;
+  font-style: normal !important;
   color: var(--text-primary);
 }
 
@@ -265,25 +250,25 @@ h1, h2, h3, h4, h5, h6 {
 h1, .hero-title, .cta-banner-title {
   font-family: var(--font-display);
   font-size: clamp(2.85rem, 6.2vw, 5.25rem);
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  font-style: normal !important;
+  line-height: 1.08;
 }
 
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.25rem);
-  letter-spacing: -0.015em;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-style: normal !important;
+  line-height: 1.15;
 }
 
 /* Emphasized Operatives — italic for DM Serif Display contrast */
 h1 em, .hero-title em, .cta-banner-title em, .section-title em {
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 900;
+  font-style: normal !important;
   letter-spacing: -0.01em;
 }
 
@@ -325,9 +310,9 @@ h2 em, .section-title em {
 /* Metrics & Numbers — display serif, italic for editorial character */
 .step-num, .stat-value, .stat-number, .metric-value, .fee-percentage, .bento-stat-num {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: -0.015em;
+  font-weight: 800;
+  font-style: normal !important;
+  letter-spacing: -0.02em;
 }
 
 /* L — Structural Headings */
@@ -361,7 +346,7 @@ h4, .step-name {
 
 h3 em, h4 em {
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
 }
 
 /* Body copy — system sans for readability at small sizes */
@@ -384,7 +369,7 @@ p.section-desc, .editorial-sub {
 }
 
 em, i, cite, blockquote, .quote-axiom {
-  font-style: italic;
+  font-style: normal;
 }
 
 /* Explicit Hierarchy Utility Classes */
@@ -395,8 +380,8 @@ em, i, cite, blockquote, .quote-axiom {
 
 .font-display-italic {
   font-family: var(--font-display) !important;
-  font-weight: 400 !important;
-  font-style: italic !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
 }
 
 .font-regular {
@@ -422,8 +407,8 @@ em, i, cite, blockquote, .quote-axiom {
 
 .denton-extrabold-italic, .denton-bold-italic, .denton-italic {
   font-family: var(--font-display) !important;
-  font-weight: 400 !important;
-  font-style: italic !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
 }
 
 .text-gradient {
