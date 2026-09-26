@@ -69,7 +69,7 @@ export default function MasterRadarBento({
     : allMovies.filter(m => m.industry === selectedIndustry);
   
   // Find spotlight movie or default to first movie of filtered list
-  const spotlightMovie = displayedMovies.find(m => m.title?.toLowerCase() === currentMovie?.toLowerCase()) || displayedMovies[0] || allMovies[0] || null;
+  const spotlightMovie = displayedMovies.find(m => m?.title?.toLowerCase() === currentMovie?.toLowerCase()) || displayedMovies[0] || allMovies[0] || null;
 
   return (
     <div className="flex flex-col gap-5 animate-fade-in">
@@ -225,14 +225,14 @@ export default function MasterRadarBento({
               {/* Plotted Movie Blips */}
               {allMovies.map((movie) => (
                 <RadarBlip
-    key={movie.title}
-    movie={movie}
-    isSelected={(currentMovie?.toLowerCase() === movie.title?.toLowerCase()) || (spotlightMovie?.title === movie.title)}
-    selectedIndustry={selectedIndustry}
-    onSelectMovie={onSelectMovie}
-    setHoveredBlip={setHoveredBlip}
-  />
-))}
+                  key={movie?.title || Math.random()}
+                  movie={movie}
+                  isSelected={(currentMovie?.toLowerCase() === movie?.title?.toLowerCase()) || (spotlightMovie?.title?.toLowerCase() === movie?.title?.toLowerCase())}
+                  selectedIndustry={selectedIndustry}
+                  onSelectMovie={onSelectMovie}
+                  setHoveredBlip={setHoveredBlip}
+                />
+              ))}
             </div>
           </div>
 
@@ -455,8 +455,8 @@ export default function MasterRadarBento({
         {/* Releases Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
           {displayedMovies.map((m, idx) => {
-            const title = typeof m === 'string' ? m : m.title;
-            const isSelected = (currentMovie?.toLowerCase() === title.toLowerCase()) || (spotlightMovie?.title === title);
+            const title = (typeof m === 'string' ? m : m?.title) || `Title ${idx + 1}`;
+            const isSelected = (currentMovie?.toLowerCase() === title.toLowerCase()) || (spotlightMovie?.title?.toLowerCase() === title.toLowerCase());
             const timing = typeof m === 'object' ? m.releaseTiming : 'Day in theaters';
             const bo = typeof m === 'object' && (m.boxOfficeSummary || m.corroboratedBoxOffice);
             const trust = typeof m === 'object' ? m.trustScore : 90;
