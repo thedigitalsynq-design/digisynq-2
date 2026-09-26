@@ -372,7 +372,7 @@ export default function App() {
         currentMovie={currentQuery}
         releasesCount={discoveredMovies.length}
         defconLevel={defconLevel}
-        sensorsOnline={`${movieData?.freshnessMap?.filter(s => s.status === 'HEALTHY').length || 6}/6`}
+        sensorsOnline={`${movieData?.freshnessMap ? movieData.freshnessMap.filter(s => s.status === 'HEALTHY').length : 9}/${movieData?.freshnessMap?.length || 9}`}
         discoveredMovies={discoveredMovies}
         onSelectMovie={(title) => fetchMovie(title)}
         loading={loading}

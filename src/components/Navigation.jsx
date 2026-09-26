@@ -58,7 +58,7 @@ export default function Navigation({
       subtitle: '15-Day Radar',
       targetTab: 'radar',
       icon: Radar,
-      badge: `${releasesCount || 7} Releases`,
+      badge: `${releasesCount || 7}`,
       activeIf: ['radar']
     },
     {
@@ -85,7 +85,7 @@ export default function Navigation({
       subtitle: 'Performance & WOM',
       targetTab: 'twin',
       icon: BarChart2,
-      badge: currentMovie ? (currentMovie.length > 10 ? currentMovie.slice(0, 9) + '…' : currentMovie) : 'Metrics',
+      badge: 'Metrics',
       activeIf: ['twin']
     },
     {
@@ -94,8 +94,8 @@ export default function Navigation({
       subtitle: 'Narratives & Roots',
       targetTab: 'forensics',
       icon: GitFork,
-      badge: 'Diagnostics',
-      activeIf: ['forensics', 'twin']
+      badge: 'Roots',
+      activeIf: ['forensics']
     },
     {
       id: 'compare',
@@ -103,7 +103,7 @@ export default function Navigation({
       subtitle: 'Theatrical Matrix',
       targetTab: 'twin',
       icon: Scale,
-      badge: 'Benchmarking',
+      badge: 'Matrix',
       activeIf: ['twin']
     },
     {
@@ -160,11 +160,11 @@ export default function Navigation({
   })).filter(m => m.title);
 
   return (
-    <nav className="bg-[#070b14]/90 border-b border-white/[0.08] px-4 lg:px-8 py-1.5 sticky top-14 z-40 backdrop-blur-xl shadow-lg shadow-black/40">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
+    <nav className="bg-[#070b14]/95 border-b border-white/[0.08] px-3 lg:px-6 py-1.5 sticky top-14 z-40 backdrop-blur-xl shadow-lg shadow-black/40">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         
-        {/* Process Workflow Steps Stepper */}
-        <div className="flex items-center gap-1 sm:gap-1.5 w-full justify-start overflow-x-auto no-scrollbar py-0.5">
+        {/* 1. Process Workflow Stepper (Flexible Width, Never Overlaps Dropdown) */}
+        <div className="min-w-0 flex-1 flex items-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar py-0.5">
           {workflowSteps.map((step, idx) => {
             const Icon = step.icon;
             const isTabActive = step.activeIf.includes(activeTab);
@@ -173,34 +173,28 @@ export default function Navigation({
               <React.Fragment key={step.id}>
                 <button
                   onClick={() => handleStepClick(step)}
-                  className={`group relative px-2.5 sm:px-3 py-1.5 rounded-lg flex items-center gap-2 transition-all font-mono text-xs whitespace-nowrap border shrink-0 ${
+                  className={`group relative px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition-all font-mono text-xs whitespace-nowrap border shrink-0 ${
                     isTabActive
-                      ? 'bg-gradient-to-r from-cyan-950/70 to-blue-950/70 text-white border-cyan-500/50 shadow-md shadow-cyan-950/40 ring-1 ring-cyan-400/30'
+                      ? 'bg-gradient-to-r from-cyan-950/80 to-blue-950/80 text-white border-cyan-500/50 shadow-md shadow-cyan-950/40 ring-1 ring-cyan-400/30'
                       : 'bg-white/[0.02] text-slate-400 hover:text-slate-200 border-transparent hover:bg-white/[0.05] hover:border-white/10'
                   }`}
                   title={`${step.stage}: ${step.subtitle}`}
                 >
-                  <Icon className={`w-3.5 h-3.5 shrink-0 ${isTabActive ? 'text-cyan-400 animate-pulse' : 'text-slate-400 group-hover:text-slate-200'}`} />
+                  <Icon className={`w-3.5 h-3.5 shrink-0 ${isTabActive ? 'text-cyan-400' : 'text-slate-400 group-hover:text-slate-200'}`} />
                   
-                  <div className="flex flex-col text-left">
-                    <div className="flex items-center gap-1.5">
-                      <span className={`font-bold tracking-wider text-[0.7rem] ${isTabActive ? 'text-white' : 'text-slate-300'}`}>
-                        {step.stage}
-                      </span>
-                      {step.badge && (
-                        <span className={`text-[0.58rem] px-1 py-0.1 rounded border font-semibold ${
-                          isTabActive 
-                            ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30' 
-                            : 'bg-white/5 text-slate-400 border-white/10'
-                        }`}>
-                          {step.badge}
-                        </span>
-                      )}
-                    </div>
-                    <span className="hidden xl:inline-block text-[0.56rem] text-slate-500 font-sans">
-                      {step.subtitle}
+                  <span className={`font-bold tracking-wider text-[0.68rem] ${isTabActive ? 'text-white' : 'text-slate-300'}`}>
+                    {step.stage}
+                  </span>
+
+                  {step.badge && (
+                    <span className={`text-[0.58rem] px-1.5 py-0.2 rounded border font-semibold ${
+                      isTabActive 
+                        ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30' 
+                        : 'bg-white/5 text-slate-400 border-white/10'
+                    }`}>
+                      {step.badge}
                     </span>
-                  </div>
+                  )}
 
                   {/* Active Step Indicator Underline */}
                   {isTabActive && (
@@ -208,37 +202,41 @@ export default function Navigation({
                   )}
                 </button>
 
-                {/* Arrow connector between steps */}
+                {/* Subtle divider arrow between steps */}
                 {idx < workflowSteps.length - 1 && (
-                  <ChevronRight className="w-3 h-3 text-slate-600 shrink-0 hidden lg:inline-block" />
+                  <span className="text-slate-700 text-[0.65rem] shrink-0 select-none hidden lg:inline">›</span>
                 )}
               </React.Fragment>
             );
           })}
         </div>
 
-        {/* ── Global Movie Selector (Always Visible, Syncs All Dashboards) ── */}
+        {/* 2. Global Movie Selector (Cleanly Partitioned On Right) */}
         {movieOptions.length > 0 && (
-          <div className="relative shrink-0" ref={dropdownRef}>
-            <button
-              onClick={() => setMovieDropdownOpen(prev => !prev)}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all whitespace-nowrap ${
-                currentMovie
-                  ? 'bg-gradient-to-r from-cyan-950/60 to-blue-950/60 border-cyan-500/50 text-white shadow-md shadow-cyan-950/40 ring-1 ring-cyan-400/20'
-                  : 'bg-white/[0.03] border-white/10 text-slate-400 hover:text-white hover:bg-white/[0.06]'
-              }`}
-              title="Switch active film — syncs all dashboards instantly"
-            >
-              {loading ? (
-                <Loader2 className="w-3.5 h-3.5 text-cyan-400 animate-spin shrink-0" />
-              ) : (
-                <Film className={`w-3.5 h-3.5 shrink-0 ${currentMovie ? 'text-cyan-400' : 'text-slate-500'}`} />
-              )}
-              <span className="max-w-[110px] truncate font-bold text-[0.7rem]">
-                {currentMovie || 'Select Film'}
-              </span>
-              <ChevronDown className={`w-3 h-3 text-slate-400 transition-transform shrink-0 ${movieDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
+          <div className="shrink-0 flex items-center gap-2 pl-3 border-l border-white/[0.08]" ref={dropdownRef}>
+            <span className="text-[0.6rem] font-mono text-slate-400 uppercase tracking-wider font-semibold hidden 2xl:inline">
+              Active Film:
+            </span>
+            <div className="relative">
+              <button
+                onClick={() => setMovieDropdownOpen(prev => !prev)}
+                className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg border text-xs font-mono transition-all whitespace-nowrap ${
+                  currentMovie
+                    ? 'bg-gradient-to-r from-cyan-950/70 to-blue-950/70 border-cyan-500/50 text-white shadow-md shadow-cyan-950/40 ring-1 ring-cyan-400/20'
+                    : 'bg-white/[0.03] border-white/10 text-slate-400 hover:text-white hover:bg-white/[0.06]'
+                }`}
+                title="Switch active film — syncs all dashboards instantly"
+              >
+                {loading ? (
+                  <Loader2 className="w-3.5 h-3.5 text-cyan-400 animate-spin shrink-0" />
+                ) : (
+                  <Film className={`w-3.5 h-3.5 shrink-0 ${currentMovie ? 'text-cyan-400' : 'text-slate-500'}`} />
+                )}
+                <span className="max-w-[120px] sm:max-w-[145px] truncate font-bold text-[0.7rem] text-slate-200">
+                  {currentMovie || 'Select Film'}
+                </span>
+                <ChevronDown className={`w-3 h-3 text-slate-400 transition-transform shrink-0 ${movieDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
 
             {/* Dropdown */}
             {movieDropdownOpen && (
@@ -299,7 +297,8 @@ export default function Navigation({
               </div>
             )}
           </div>
-        )}
+        </div>
+      )}
 
       </div>
     </nav>
