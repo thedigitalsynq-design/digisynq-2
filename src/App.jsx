@@ -3,6 +3,7 @@
 // ZERO HARDCODED MOVIE NAMES • 100% REALTIME DATA STREAM • MULTI-PAGE ARCHITECTURE
 
 import React, { useState, useEffect } from 'react';
+import { fetchISTTime, fetchRadar, fetchMovieLive } from './api';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import CinemaRadar from './components/CinemaRadar';
@@ -35,6 +36,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [discoveredMovies, setDiscoveredMovies] = useState([]);
+  const [systemStatus, setSystemStatus] = useState('LIVE');
 
   // Multi-Page Navigation State (synced with URL search params and hash)
   const getInitialTab = () => {
@@ -107,11 +109,8 @@ export default function App() {
   // Fetch IST window information for navigation & headers
   const fetchISTInfo = async () => {
     try {
-      const res = await fetch('/api/time/ist');
-      if (res.ok) {
-        const data = await res.json();
-        setIstWindowInfo(data);
-      }
+      const data = await fetchISTTime();
+      setIstWindowInfo(data);
     } catch (e) {
       console.warn('IST info fetch failed:', e.message);
     }
@@ -130,7 +129,7 @@ export default function App() {
     }
   }, []);
 
-  const fetchMovie = async (title) => {
+  const fetchMovie = async (title, force = false) => {
     if (!title || !title.trim()) return;
     setLoading(true);
     setError(null);
@@ -138,15 +137,18 @@ export default function App() {
     setCustomSnapshotState(null);
 
     try {
-      const res = await fetch(`/api/movie/live?query=${encodeURIComponent(title)}`);
-      if (!res.ok) {
-        throw new Error(`Sensor gateway returned HTTP ${res.status}`);
+      const data = await fetchMovieLive(title, { force });
+      if (data._source) {
+        setSystemStatus(data._source);
       }
-      const data = await res.json();
+      if (data.isOffline && !data.hasData) {
+        setError(data.message || 'Offline intelligence mode');
+      }
       setMovieData(data);
     } catch (err) {
       setError(err.message || 'Failed to communicate with Sensor Adapter Network');
       setMovieData(null);
+      setSystemStatus('OFFLINE');
     } finally {
       setLoading(false);
     }
@@ -167,10 +169,10 @@ export default function App() {
 
     try {
       // 1. Refresh live radar & feed pulse
-      const radarPromise = fetch('/api/radar?refresh=true')
-        .then(r => r.ok ? r.json() : null)
+      const radarPromise = fetchRadar({ force: true })
         .then(data => {
           if (data?.movies) setDiscoveredMovies(data.movies);
+          if (data?._source) setSystemStatus(data._source);
           if (data?.windowRange) {
             setIstWindowInfo(prev => ({
               ...prev,
@@ -184,8 +186,7 @@ export default function App() {
       // 2. Refresh active movie digital twin if title is active
       let moviePromise = Promise.resolve();
       if (currentQuery) {
-        moviePromise = fetch(`/api/movie/live?query=${encodeURIComponent(currentQuery)}&refresh=true`)
-          .then(r => r.ok ? r.json() : null)
+        moviePromise = fetchMovieLive(currentQuery, { force: true })
           .then(newData => {
             if (newData && newData.hasData) {
               setMovieData(prev => {
@@ -231,22 +232,31 @@ export default function App() {
     return () => clearInterval(timer);
   }, [autoSyncEnabled, currentQuery, isSyncing, loading]);
 
+  // Pause auto-sync when browser tab is hidden to prevent tab memory/CPU leaks
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!document.hidden && autoSyncEnabled) {
+        triggerSync();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, [autoSyncEnabled, currentQuery]);
+
   // Real-time automatic discovery on initial mount (ZERO hardcoding)
   useEffect(() => {
     async function initDiscovery() {
       setLoading(true);
       try {
-        const radarRes = await fetch('/api/radar');
-        if (radarRes.ok) {
-          const radarData = await radarRes.json();
-          const movies = radarData.movies || [];
-          setDiscoveredMovies(movies);
+        const radarData = await fetchRadar();
+        if (radarData._source) setSystemStatus(radarData._source);
+        const movies = radarData.movies || [];
+        setDiscoveredMovies(movies);
 
-          // Build digital twin for the top movie currently trending in live feeds
-          if (movies.length > 0 && !currentQuery) {
-            const topMovieTitle = movies[0].title;
-            fetchMovie(topMovieTitle);
-          }
+        // Build digital twin for the top movie currently trending in live feeds
+        if (movies.length > 0 && !currentQuery) {
+          const topMovieTitle = movies[0].title;
+          fetchMovie(topMovieTitle);
         }
       } catch (err) {
         console.warn('Initial live radar discovery error:', err);
@@ -257,6 +267,7 @@ export default function App() {
 
     initDiscovery();
   }, []);
+
 
   const handleWhyClick = (whyKeyOrObject) => {
     if (typeof whyKeyOrObject === 'string') {
@@ -363,6 +374,8 @@ export default function App() {
         syncCountdown={syncCountdown}
         autoSyncEnabled={autoSyncEnabled}
         onToggleAutoSync={() => setAutoSyncEnabled(!autoSyncEnabled)}
+        onManualSync={() => triggerSync(true)}
+        systemStatus={systemStatus}
       />
 
       {/* 1.5 Cinema Intelligence Process Workflow Navigator (DISCOVER → TRACK → COLLECT → ANALYSE → UNDERSTAND → COMPARE → ACT) */}
@@ -377,6 +390,26 @@ export default function App() {
         onSelectMovie={(title) => fetchMovie(title)}
         loading={loading}
       />
+
+      {/* Honest Offline / Standby Resilience Notice */}
+      {systemStatus === 'OFFLINE' && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 w-full">
+          <div className="bg-amber-950/40 border border-amber-500/30 rounded-xl px-4 py-2.5 flex items-center justify-between gap-4 text-xs text-amber-200">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
+              <span>
+                <strong>Standby / Offline Telemetry Mode:</strong> Live external internet sensor stream is currently unreachable. Operating with cached and fallback intelligence.
+              </span>
+            </div>
+            <button 
+              onClick={() => triggerSync(true)} 
+              className="px-2.5 py-1 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded text-amber-300 font-mono text-[0.7rem] transition-colors shrink-0"
+            >
+              Retry Sync
+            </button>
+          </div>
+        </div>
+      )}
 
 
       {/* Real-Time Sync Notification Toast */}

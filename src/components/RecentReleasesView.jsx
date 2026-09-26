@@ -1,5 +1,5 @@
-// src/components/RecentReleasesView.jsx
 import React, { useState, useEffect } from 'react';
+import { fetchRecentReleases } from '../api';
 import { Calendar, RefreshCw, ArrowRight, TrendingUp, AlertTriangle, ExternalLink, Sparkles, Film, ShieldCheck, Info, ChevronDown } from 'lucide-react';
 
 const INDUSTRY_CONFIG = {
@@ -30,9 +30,10 @@ export default function RecentReleasesView({ onSelectMovie, currentMovie }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`/api/recent-releases?days=15${force ? '&refresh=true' : ''}`);
-      if (!res.ok) throw new Error('Failed to fetch recent theatrical releases');
-      const json = await res.json();
+      const json = await fetchRecentReleases({ days: 15, force });
+      if (json.isOffline && (!json.releases || json.releases.length === 0)) {
+        setError(json.error || 'Theatrical release stream offline');
+      }
       setData(json);
     } catch (err) {
       setError(err.message);
@@ -66,7 +67,11 @@ export default function RecentReleasesView({ onSelectMovie, currentMovie }) {
             <h3 className="text-sm font-bold uppercase tracking-wider text-white font-mono flex items-center gap-2 flex-wrap">
               Indian Cinema Theatrical Releases (Last 15 Days)
               <span className="badge badge-info text-[0.65rem] py-0.5">Rolling Window</span>
-              <span className="badge badge-positive text-[0.62rem] py-0.5 font-mono">5/5 Verified</span>
+              {allReleases.length > 0 && data?._source !== 'OFFLINE' ? (
+                <span className="badge badge-positive text-[0.62rem] py-0.5 font-mono">✓ 5/5 Verified</span>
+              ) : (
+                <span className="badge badge-warning text-[0.62rem] py-0.5 font-mono">Offline / Standby</span>
+              )}
               <span className="badge badge-warning text-[0.62rem] py-0.5 font-mono">IST (UTC+05:30)</span>
             </h3>
             <p className="text-xs text-slate-400 flex items-center gap-2 flex-wrap">

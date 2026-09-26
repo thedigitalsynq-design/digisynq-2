@@ -1,5 +1,15 @@
-/* src/index.css - Obsidian Command-Center Design System with Google Sans Flex */
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-slate-850: #111726;
+  --color-slate-950: #070b14;
+}
+
+/* src/index.css - Obsidian Command-Center Design System with Google Sans Flex */
+
 
 :root {
   --bg-primary: #07090e;

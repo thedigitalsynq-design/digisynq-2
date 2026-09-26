@@ -1,5 +1,5 @@
-// src/components/SensorTelemetryView.jsx
 import React, { useState, useEffect } from 'react';
+import { fetchISTTime } from '../api';
 import { Radio, RefreshCw, CheckCircle2, ShieldCheck, Clock, Server, AlertTriangle, ExternalLink } from 'lucide-react';
 
 export default function SensorTelemetryView({ freshnessMap = [], onRefreshSensors }) {
@@ -9,17 +9,15 @@ export default function SensorTelemetryView({ freshnessMap = [], onRefreshSensor
   const fetchIST = async () => {
     setLoadingIST(true);
     try {
-      const res = await fetch('/api/time/ist');
-      if (res.ok) {
-        const d = await res.json();
-        setIstData(d);
-      }
+      const d = await fetchISTTime();
+      setIstData(d);
     } catch (e) {
       console.error(e);
     } finally {
       setLoadingIST(false);
     }
   };
+
 
   useEffect(() => {
     fetchIST();

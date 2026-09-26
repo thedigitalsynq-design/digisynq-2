@@ -1,6 +1,5 @@
-// src/components/Header.jsx
-// Apple/Linear-Style Unified Command Bar for Cinema Damage Control (CDC)
 import React, { useState, useEffect } from 'react';
+import { fetchISTTime } from '../api';
 import { 
   Radar, 
   ShieldAlert, 
@@ -31,7 +30,8 @@ export default function Header({
   syncCountdown = 30,
   autoSyncEnabled = true,
   onToggleAutoSync,
-  onManualSync
+  onManualSync,
+  systemStatus = 'LIVE'
 }) {
   const [inputVal, setInputVal] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -42,11 +42,8 @@ export default function Header({
   // Sync with server IST time & window definition
   const fetchServerIST = async () => {
     try {
-      const res = await fetch('/api/time/ist');
-      if (res.ok) {
-        const data = await res.json();
-        setIstWindowInfo(data);
-      }
+      const data = await fetchISTTime();
+      setIstWindowInfo(data);
     } catch (e) {
       // non-blocking
     }
@@ -127,9 +124,24 @@ export default function Header({
             <span className="font-mono font-black text-sm tracking-wider text-white flex items-center gap-1.5">
               <span className="text-cyan-400 font-bold">CDC</span>
               <span className="text-slate-600 font-light">//</span>
-              <span className="tracking-widest hidden sm:inline">DAMAGE CONTROL</span>
             </span>
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" title="Live Continuous Sensor Stream" />
+            <div className="flex items-center gap-1.5 ml-1">
+              <span 
+                className={`w-2 h-2 rounded-full inline-block ${
+                  systemStatus === 'LIVE' ? 'bg-emerald-400 animate-ping' :
+                  systemStatus === 'CACHE' || systemStatus === 'STALE' ? 'bg-amber-400' :
+                  'bg-red-400'
+                }`} 
+                title={`Telemetry status: ${systemStatus}`} 
+              />
+              <span className={`text-[0.62rem] font-mono px-1.5 py-0.2 rounded border uppercase tracking-wider font-bold ${
+                systemStatus === 'LIVE' ? 'border-emerald-500/40 text-emerald-400 bg-emerald-500/10' :
+                systemStatus === 'CACHE' || systemStatus === 'STALE' ? 'border-amber-500/40 text-amber-300 bg-amber-500/10' :
+                'border-red-500/40 text-red-400 bg-red-500/10'
+              }`}>
+                {systemStatus}
+              </span>
+            </div>
           </div>
         </div>
 

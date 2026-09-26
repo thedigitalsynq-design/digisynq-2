@@ -1,5 +1,5 @@
-// src/components/CinemaRadar.jsx
 import React, { useState, useEffect } from 'react';
+import { fetchRadar as getRadar } from '../api';
 import { Radar, RefreshCw, ExternalLink, ArrowRight, ShieldAlert, Sparkles, TrendingUp } from 'lucide-react';
 
 export default function CinemaRadar({ onSelectMovie, currentMovie }) {
@@ -12,9 +12,10 @@ export default function CinemaRadar({ onSelectMovie, currentMovie }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`/api/radar${force ? '?refresh=true' : ''}`);
-      if (!res.ok) throw new Error('Failed to load Cinema Radar feed');
-      const data = await res.json();
+      const data = await getRadar({ force });
+      if (data.isOffline && (!data.movies || data.movies.length === 0)) {
+        setError(data.error || 'Radar telemetry stream offline');
+      }
       setRadarData(data);
     } catch (err) {
       setError(err.message);

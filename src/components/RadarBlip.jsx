@@ -31,11 +31,20 @@ export default function RadarBlip({
   return (
     <div
       key={movie.title}
+      role="button"
+      tabIndex={isMatchingIndustry ? 0 : -1}
+      aria-label={`Select ${movie.title} on radar`}
       onMouseEnter={() => setHoveredBlip(movie)}
       onMouseLeave={() => setHoveredBlip(null)}
       onClick={() => onSelectMovie(movie.title)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onSelectMovie(movie.title);
+        }
+      }}
       style={{ left: `${leftPercent}%`, top: `${topPercent}%` }}
-      className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all z-20 group ${
+      className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all z-20 group focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-full ${
         !isMatchingIndustry ? 'opacity-20 scale-75 pointer-events-none' : 'opacity-100'
       }`}
     >
