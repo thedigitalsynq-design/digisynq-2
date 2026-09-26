@@ -393,7 +393,7 @@ export default function App() {
 
       {/* Honest Offline / Standby Resilience Notice */}
       {systemStatus === 'OFFLINE' && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 w-full">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-3 w-full">
           <div className="bg-amber-950/40 border border-amber-500/30 rounded-xl px-4 py-2.5 flex items-center justify-between gap-4 text-xs text-amber-200">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
@@ -421,7 +421,7 @@ export default function App() {
       )}
 
       {/* Main Multi-Page Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-5 flex flex-col gap-6">
+      <main className="flex-1 max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-6">
         
         {/* Global Loading Overlay Banner when actively harvesting a film */}
         {loading && (

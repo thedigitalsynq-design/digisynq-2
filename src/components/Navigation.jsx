@@ -160,8 +160,8 @@ export default function Navigation({
   })).filter(m => m.title);
 
   return (
-    <nav className="bg-[#070b14]/95 border-b border-white/[0.08] px-3 lg:px-6 py-1.5 sticky top-14 z-40 backdrop-blur-xl shadow-lg shadow-black/40">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+    <nav className="bg-[#070b14]/95 border-b border-white/[0.08] py-1.5 sticky top-14 z-40 backdrop-blur-xl shadow-lg shadow-black/40">
+      <div className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
         
         {/* 1. Process Workflow Stepper (Flexible Width, Never Overlaps Dropdown) */}
         <div className="min-w-0 flex-1 flex items-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar py-0.5">

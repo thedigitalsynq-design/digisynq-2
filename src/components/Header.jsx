@@ -113,7 +113,7 @@ export default function Header({
     <header className="border-b border-white/[0.08] bg-[#070b14]/95 backdrop-blur-xl sticky top-0 z-50 shadow-xl shadow-black/50">
       
       {/* Unified Executive Command Bar */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 h-14 flex items-center justify-between gap-4">
+      <div className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
         
         {/* 1. Left Branding */}
         <div className="flex items-center gap-2.5 shrink-0">

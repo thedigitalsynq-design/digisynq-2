@@ -152,56 +152,45 @@ export default function MasterRadarBento({
   return (
     <div className="flex flex-col gap-5 animate-fade-in">
 
-      {/* 0. 5-Layer Verification & Rolling Window Command Strip */}
-      <div className="bento-card p-3 sm:p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 bg-gradient-to-r from-[#070d18] via-[#091322] to-[#070d18] border-cyan-500/25">
-        <div className="flex items-center gap-2.5 flex-wrap">
-          <div className="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+      {/* 0. Unified 5-Layer Verification, Rolling Window & Cinema Filter Strip */}
+      <div className="bento-card p-3 sm:p-3.5 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-3 bg-gradient-to-r from-[#080d19] via-[#0c1527] to-[#080d19] border-cyan-500/30 shadow-lg">
+        {/* Left: Window & Verification Status */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 shadow-sm shadow-emerald-950/40">
             <ShieldCheck className="w-4 h-4" />
           </div>
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-xs font-mono font-black uppercase text-white tracking-wider">
-                Rolling 15-Day Theatrical Window:
+                Rolling 15-Day Window:
               </span>
               <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/15 border border-cyan-500/30 text-cyan-300">
                 {windowRange} (IST)
               </span>
-              <span className="text-[0.62rem] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">
-                ✓ 5/5 Verification Layers Active
+              <span className="text-[0.62rem] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold flex items-center gap-1">
+                ✓ 5/5 Layers Active
               </span>
             </div>
             <p className="text-[0.68rem] text-slate-400 font-mono mt-0.5">
               Window auto-shifts daily (tomorrow: Sept 13–27). Older movies auto-drop off list.
             </p>
           </div>
+
+          <button
+            onClick={() => setShowLayersModal(!showLayersModal)}
+            className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[0.7rem] font-mono text-cyan-300 flex items-center gap-1.5 transition-colors cursor-pointer"
+          >
+            <Info className="w-3 h-3" />
+            <span>{showLayersModal ? 'Hide Pipeline' : 'Inspect 5 Layers'}</span>
+            <ChevronDown className={`w-3 h-3 transition-transform ${showLayersModal ? 'rotate-180' : ''}`} />
+          </button>
         </div>
 
-        <button
-          onClick={() => setShowLayersModal(!showLayersModal)}
-          className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-cyan-300 flex items-center gap-1.5 transition-colors cursor-pointer self-stretch sm-self-auto justify-center"
-        >
-          <Info className="w-3.5 h-3.5" />
-          <span>{showLayersModal ? 'Hide Verification Pipeline' : 'Inspect 5 Verification Layers'}</span>
-          <ChevronDown className={`w-3.5 h-3.5 transition-transform ${showLayersModal ? 'rotate-180' : ''}`} />
-        </button>
-      </div>
-      <VerificationLayersModal
-        show={showLayersModal}
-        onClose={() => setShowLayersModal(false)}
-        layers={VERIFICATION_LAYERS}
-      />
-
-      {/* 0.5 Multi-Industry Theatrical Quick Filter Bar */}
-      <div className="bento-card p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <Film className="w-4 h-4 text-cyan-400" />
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
-            Cinema Industries:
-          </span>
-        </div>
-
-        {/* Filter Pills */}
+        {/* Right: Cinema Industry Filter Pills */}
         <div className="flex items-center gap-1.5 flex-wrap">
+          <span className="text-[0.68rem] font-mono font-bold text-slate-400 uppercase tracking-wider mr-1 hidden sm:inline">
+            Industry:
+          </span>
           {Object.entries(INDUSTRY_CONFIG).map(([key, cfg]) => {
             const count = key === 'ALL' ? allMovies.length : (industryBreakdown[key] || allMovies.filter(m => m.industry === key).length);
             const isActive = selectedIndustry === key;
@@ -228,6 +217,11 @@ export default function MasterRadarBento({
           })}
         </div>
       </div>
+      <VerificationLayersModal
+        show={showLayersModal}
+        onClose={() => setShowLayersModal(false)}
+        layers={VERIFICATION_LAYERS}
+      />
       
       {/* 1. Main Top Bento Grid: 2D Radar (Col 7) + Spotlight & Tactical Actions (Col 5) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
@@ -271,12 +265,12 @@ export default function MasterRadarBento({
 
           {/* 2D Circular Radar Canvas */}
           <div className="flex-1 flex items-center justify-center py-4 relative my-2">
-            <div className="relative w-full max-w-[400px] aspect-square rounded-full border border-cyan-500/25 bg-[#060a12]/90 p-3 flex items-center justify-center shadow-2xl shadow-cyan-950/60 overflow-hidden">
+            <div className="relative w-full max-w-[440px] aspect-square rounded-full border border-cyan-500/30 bg-[#060a12]/95 p-3.5 flex items-center justify-center shadow-2xl shadow-cyan-950/80 overflow-hidden">
               
               {/* Concentric circular grid rings */}
-              <div className="absolute inset-4 rounded-full border border-cyan-500/15" />
-              <div className="absolute inset-16 rounded-full border border-cyan-500/15" />
-              <div className="absolute inset-28 rounded-full border border-cyan-500/15" />
+              <div className="absolute inset-3 rounded-full border border-cyan-500/15" />
+              <div className="absolute inset-14 rounded-full border border-cyan-500/15" />
+              <div className="absolute inset-26 rounded-full border border-cyan-500/15" />
               <div className="absolute inset-36 rounded-full border border-cyan-500/10" />
 
               {/* Crosshair Axes */}
@@ -438,9 +432,15 @@ export default function MasterRadarBento({
                 </div>
 
                 {/* Latest Verified Ground Headline */}
-                <p className="text-xs text-slate-300/90 italic leading-relaxed pl-2.5 border-l-2 border-red-500/40 line-clamp-2">
-                  "{spotlightMovie.latestHeadline}"
-                </p>
+                <div className="bg-[#070c17]/90 p-2.5 sm:p-3 rounded-xl border border-white/[0.08] shadow-inner mt-2">
+                  <div className="flex items-center gap-1.5 text-[0.62rem] font-mono text-cyan-400 font-bold mb-1 uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                    <span>Verified Trade Corroboration</span>
+                  </div>
+                  <p className="text-xs text-slate-200 italic leading-relaxed">
+                    "{spotlightMovie.latestHeadline?.replace(/["\\]/g, '')}"
+                  </p>
+                </div>
               </div>
 
               {/* Action Buttons */}
@@ -534,7 +534,7 @@ export default function MasterRadarBento({
         </div>
 
         {/* Releases Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3.5">
           {displayedMovies.map((m, idx) => {
             const title = (typeof m === 'string' ? m : m?.title) || `Title ${idx + 1}`;
             const isSelected = (currentMovie?.toLowerCase() === title.toLowerCase()) || (spotlightMovie?.title?.toLowerCase() === title.toLowerCase());

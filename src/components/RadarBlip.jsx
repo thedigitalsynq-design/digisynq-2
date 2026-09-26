@@ -39,6 +39,8 @@ export default function RadarBlip({
     setHoveredBlip(null);
   };
 
+  const isNearBottom = topPercent > 75;
+
   return (
     <div
       key={movie.title}
@@ -90,7 +92,7 @@ export default function RadarBlip({
 
       {/* Tactical Label: Clean, collision-free, expands on hover or selection */}
       <div
-        className={`absolute top-4 left-1/2 -translate-x-1/2 whitespace-nowrap text-[0.62rem] font-mono px-2 py-0.5 rounded pointer-events-none font-bold shadow-xl transition-all duration-150 ${
+        className={`absolute ${isNearBottom ? 'bottom-5' : 'top-4'} left-1/2 -translate-x-1/2 whitespace-nowrap text-[0.62rem] font-mono px-2 py-0.5 rounded pointer-events-none font-bold shadow-xl transition-all duration-150 ${
           isSelected
             ? 'bg-cyan-950/95 text-cyan-200 border border-cyan-400 ring-1 ring-cyan-400/40 scale-105 z-30 opacity-100'
             : isHovered
