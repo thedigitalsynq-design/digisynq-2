@@ -101,7 +101,7 @@ export default function Header({
   const totalSensors = freshnessMap ? freshnessMap.length : 6;
 
   const tabs = [
-    { id: 'radar', name: '15-Day Radar', icon: Radar, badge: `${discoveredMovies.length || 7}` },
+    { id: 'radar', name: 'Threat Matrix', icon: Layers, badge: `${discoveredMovies.length || 19}` },
     { id: 'twin', name: 'Digital Twin', icon: ShieldAlert },
     { id: 'war-room', name: 'Decision Engine', icon: Swords, badge: 'AHP' },
     { id: 'products', name: 'Crisis Arsenal', icon: Briefcase, badge: '4 Tools' },

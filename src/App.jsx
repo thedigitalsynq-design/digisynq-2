@@ -688,7 +688,7 @@ export default function App() {
 
       {/* Executive Global Footer */}
       <footer className="border-t border-white/5 bg-[#05070b] py-6 px-4 text-center text-xs text-slate-500 font-mono mt-auto">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-[1600px] w-full px-4 sm:px-6 lg:px-8 mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>Cinema Damage-Control Platform • Indian Cinema Intelligence</span>

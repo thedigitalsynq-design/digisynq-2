@@ -46,7 +46,7 @@ export default function RadarBlip({
       key={movie.title}
       role="button"
       tabIndex={isMatchingIndustry ? 0 : -1}
-      aria-label={`Select ${movie.title} on radar`}
+      aria-label={`Select ${movie.title} on matrix`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => onSelectMovie(movie.title)}
@@ -57,59 +57,53 @@ export default function RadarBlip({
         }
       }}
       style={{ left: `${leftPercent}%`, top: `${topPercent}%` }}
-      className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-200 z-20 group focus:outline-none rounded-full ${
+      className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-300 z-20 group focus:outline-none rounded-full ${
         !isMatchingIndustry ? 'opacity-15 scale-75 pointer-events-none' : 'opacity-100'
       } ${isSelected || isHovered ? 'z-30' : 'z-20'}`}
     >
-      {/* Pulsing radar alert ring for selected or critical threats */}
-      {(isSelected || isCritical) && isMatchingIndustry && (
-        <span
-          className={`absolute -inset-2.5 rounded-full animate-ping pointer-events-none ${
-            isCritical ? 'bg-red-500/40' : 'bg-cyan-400/40'
-          }`}
-        />
-      )}
-
-      {/* Target Crosshair Ring for Selected Item */}
+      {/* Subtle ping ring for selected target */}
       {isSelected && isMatchingIndustry && (
-        <span className="absolute -inset-2 rounded-full border border-cyan-400/80 animate-pulse pointer-events-none" />
+        <span className="absolute -inset-3 rounded-full bg-cyan-400/25 animate-ping pointer-events-none" />
       )}
 
-      {/* Blip Target Dot */}
+      {/* Target Focus Ring for Selected Item */}
+      {isSelected && isMatchingIndustry && (
+        <span className="absolute -inset-2 rounded-full border border-cyan-400/80 ring-1 ring-cyan-400/30 animate-pulse pointer-events-none" />
+      )}
+
+      {/* Minimalist Bead Dot */}
       <div
-        className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-150 ${
+        className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-200 ${
           isSelected
-            ? 'bg-cyan-400 border-white scale-125 shadow-lg shadow-cyan-400/90 ring-2 ring-cyan-400'
+            ? 'bg-cyan-400 border-white scale-125 shadow-[0_0_14px_rgba(34,211,238,0.8)] ring-2 ring-cyan-400/60'
             : isCritical
-            ? 'bg-red-500 border-red-200 shadow-md shadow-red-500/80'
+            ? 'bg-rose-500 border-rose-200/90 shadow-[0_0_10px_rgba(244,63,94,0.6)]'
             : isFavorable
-            ? 'bg-emerald-400 border-emerald-200 shadow-md shadow-emerald-500/40'
-            : 'bg-cyan-500 border-cyan-200'
-        } ${isHovered ? 'scale-125 ring-2 ring-white/60' : ''}`}
+            ? 'bg-emerald-400 border-emerald-200/90 shadow-[0_0_10px_rgba(52,211,153,0.5)]'
+            : 'bg-slate-300 border-white/60 shadow-sm'
+        } ${isHovered ? 'scale-125 ring-2 ring-white/70 shadow-lg' : ''}`}
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-white" />
+        <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-slate-950' : 'bg-white'}`} />
       </div>
 
-      {/* Tactical Label: Clean, collision-free, expands on hover or selection */}
+      {/* Linear-Style Tooltip Pill: Frosted dark capsule, zero clipping, typography aligned */}
       <div
-        className={`absolute ${isNearBottom ? 'bottom-5' : 'top-4'} left-1/2 -translate-x-1/2 whitespace-nowrap text-[0.62rem] font-mono px-2 py-0.5 rounded pointer-events-none font-bold shadow-xl transition-all duration-150 ${
+        className={`absolute ${isNearBottom ? 'bottom-5' : 'top-5'} left-1/2 -translate-x-1/2 whitespace-nowrap px-2.5 py-1 rounded-md pointer-events-none font-sans shadow-2xl transition-all duration-150 backdrop-blur-md ${
           isSelected
-            ? 'bg-cyan-950/95 text-cyan-200 border border-cyan-400 ring-1 ring-cyan-400/40 scale-105 z-30 opacity-100'
+            ? 'bg-[#09111e]/95 text-white border border-cyan-400/80 ring-1 ring-cyan-400/30 scale-105 z-30 opacity-100'
             : isHovered
-            ? 'bg-[#060a12]/95 text-white border border-cyan-500/60 scale-110 z-40 opacity-100 shadow-cyan-950/80 ring-1 ring-white/20'
+            ? 'bg-[#090e18]/95 text-white border border-white/20 scale-110 z-40 opacity-100 shadow-cyan-950/80'
             : showStaticLabel
-            ? 'bg-black/80 text-slate-300 border border-white/10 opacity-80 group-hover:opacity-100'
-            : 'opacity-0 group-hover:opacity-100 bg-[#060a12]/95 text-cyan-200 border border-cyan-500/50 scale-105 z-30'
+            ? 'bg-black/80 text-slate-300 border border-white/10 opacity-70 group-hover:opacity-100'
+            : 'opacity-0 group-hover:opacity-100 bg-[#090e18]/95 text-white border border-white/15 scale-105 z-30'
         }`}
       >
-        <span className="flex items-center gap-1.5">
-          {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />}
-          <span>{movie.title}</span>
-          {(isSelected || isHovered) && (
-            <span className={`text-[0.55rem] font-semibold ${womVal >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
-              ({womVal >= 0 ? '+' : ''}{womVal}%)
-            </span>
-          )}
+        <span className="flex items-center gap-1.5 text-xs font-medium">
+          {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />}
+          <span className="tracking-tight">{movie.title}</span>
+          <span className={`text-[0.65rem] font-mono font-bold ${womVal >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+            {womVal >= 0 ? '+' : ''}{womVal}%
+          </span>
         </span>
       </div>
     </div>

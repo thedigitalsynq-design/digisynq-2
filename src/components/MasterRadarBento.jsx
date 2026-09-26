@@ -71,50 +71,47 @@ export default function MasterRadarBento({
   // Find spotlight movie or default to first movie of filtered list
   const spotlightMovie = displayedMovies.find(m => m?.title?.toLowerCase() === currentMovie?.toLowerCase()) || displayedMovies[0] || allMovies[0] || null;
 
-  // Compute collision-free radar positions so blips never sit on top of each other
+  // Compute collision-free 2D Cartesian positions (X: Net Sentiment, Y: Theatrical Velocity)
   const positionedMovies = React.useMemo(() => {
     if (!allMovies || allMovies.length === 0) return [];
 
     const items = allMovies.map((movie, idx) => {
-      // 1. Initial coordinates from netSentiment / daysInTheaters
-      let x = typeof movie.xCoordinate === 'number'
-        ? movie.xCoordinate
-        : (typeof movie.netSentiment === 'number' ? movie.netSentiment : 0);
+      // 1. X-coordinate: Net Word-of-Mouth sentiment from -100% to +100%
+      let sentiment = typeof movie.netSentiment === 'number'
+        ? movie.netSentiment
+        : (typeof movie.xCoordinate === 'number' ? movie.xCoordinate : 0);
 
-      let y = typeof movie.yCoordinate === 'number'
-        ? movie.yCoordinate
-        : Math.min(92, Math.max(22, Math.round(95 - (movie.daysInTheaters || (idx + 1)) * 4.5)));
+      // Clamp sentiment between -90 and +90 for balanced padding
+      sentiment = Math.max(-90, Math.min(90, sentiment));
 
-      // If x is 0 or unassigned, distribute along clean circular angles
-      if (x === 0 && typeof movie.xCoordinate !== 'number') {
-        const angle = (idx / Math.max(1, allMovies.length)) * 2 * Math.PI;
-        x = Math.round(Math.sin(angle) * 45);
-        y = Math.round(55 + Math.cos(angle) * 30);
-      }
+      // 2. Y-coordinate: Theatrical Velocity / Days in Theaters (1 to 15)
+      // Day 1 = Opening Day peak velocity (Top: ~16%)
+      // Day 15 = Mature run / catalog boundary (Bottom: ~84%)
+      let days = typeof movie.daysInTheaters === 'number'
+        ? movie.daysInTheaters
+        : (typeof movie.releaseTiming === 'string' && movie.releaseTiming.match(/Day\s+(\d+)/i)
+            ? parseInt(movie.releaseTiming.match(/Day\s+(\d+)/i)[1], 10)
+            : ((idx % 14) + 1));
+      
+      days = Math.max(1, Math.min(15, days));
 
-      let left = 50 + x * 0.44;
-      let top = 90 - y * 0.8;
+      // Map sentiment to left percentage: 50% is center (0% sentiment), range [10%, 90%]
+      let left = 50 + (sentiment / 100) * 40;
 
-      // Constrain inside radar circle (radius ~41%)
-      const dx = left - 50;
-      const dy = top - 50;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist > 40) {
-        left = 50 + (dx / dist) * 40;
-        top = 50 + (dy / dist) * 40;
-      }
+      // Map days to top percentage: Day 1 -> 16%, Day 15 -> 84%
+      let top = 16 + ((days - 1) / 14) * 68;
 
       return { movie, left, top };
     });
 
-    // 2. Anti-clumping relaxation passes to push overlapping blips apart
+    // Anti-clumping relaxation passes to push overlapping blips apart in Cartesian space
     for (let pass = 0; pass < 8; pass++) {
       for (let i = 0; i < items.length; i++) {
         for (let j = i + 1; j < items.length; j++) {
           const dx = items[j].left - items[i].left;
           const dy = items[j].top - items[i].top;
           const d = Math.sqrt(dx * dx + dy * dy);
-          const minDist = 8.5; // minimum separation in percentage points
+          const minDist = 8.0; // minimum separation in percentage points
           if (d < minDist && d > 0.01) {
             const overlap = (minDist - d) / 2;
             const nx = dx / d;
@@ -124,27 +121,25 @@ export default function MasterRadarBento({
             items[j].left += nx * overlap;
             items[j].top += ny * overlap;
           } else if (d <= 0.01) {
-            items[j].left += (j % 2 === 0 ? 4.5 : -4.5);
-            items[j].top += (j % 3 === 0 ? 4.5 : -4.5);
+            items[j].left += (j % 2 === 0 ? 3.5 : -3.5);
+            items[j].top += (j % 3 === 0 ? 3.5 : -3.5);
           }
         }
       }
+
+      // Constrain points inside Cartesian grid bounds
+      for (let i = 0; i < items.length; i++) {
+        items[i].left = Math.max(8, Math.min(92, items[i].left));
+        items[i].top = Math.max(12, Math.min(88, items[i].top));
+      }
     }
 
-    // 3. Final containment pass inside circle
     return items.map((item, idx) => {
-      let dx = item.left - 50;
-      let dy = item.top - 50;
-      let dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist > 41) {
-        item.left = 50 + (dx / dist) * 41;
-        item.top = 50 + (dy / dist) * 41;
-      }
       return {
         ...item.movie,
         computedPercentLeft: Math.round(item.left * 10) / 10,
         computedPercentTop: Math.round(item.top * 10) / 10,
-        shouldShowStaticLabel: allMovies.length <= 5 && idx < 3
+        shouldShowStaticLabel: allMovies.length <= 6 || idx < 3
       };
     });
   }, [allMovies]);
@@ -227,23 +222,23 @@ export default function MasterRadarBento({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
         
         {/* =========================================================================
-            BENTO CARD 1: 🎯 INTERACTIVE 2D THREAT & REPUTATION RADAR (Col 7)
+            BENTO CARD 1: 🎯 LINEAR-STYLE 2D THREAT & REPUTATION MATRIX (Col 7)
         ========================================================================= */}
-        <div className="lg:col-span-7 bento-card bento-card-hero p-5 sm:p-6 flex flex-col justify-between relative min-h-[460px]">
+        <div className="lg:col-span-7 bento-card bento-card-hero p-5 sm:p-6 flex flex-col justify-between relative min-h-[480px]">
           
           {/* Header */}
           <div className="flex items-center justify-between pb-3 border-b border-white/[0.08] relative z-10">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                <Radar className="w-4 h-4 animate-spin-slow" />
+                <Layers className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-sm font-black uppercase tracking-wider text-white font-mono flex items-center gap-2">
-                  Theatrical Threat & Reputation Radar
+                <h3 className="text-sm font-bold uppercase tracking-wider text-white flex items-center gap-2">
+                  Theatrical Threat & Reputation Matrix
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
                 </h3>
                 <p className="text-[0.68rem] text-slate-400 font-mono">
-                  Rolling 15-Day Window • {windowRange} • 5-Layer Validated
+                  Cartesian WOM vs Theatrical Velocity • 15-Day IST Rolling Window
                 </p>
               </div>
             </div>
@@ -255,43 +250,60 @@ export default function MasterRadarBento({
               <button
                 onClick={onRefresh}
                 disabled={loading}
-                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"
-                title="Sweep sensor radar"
+                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors cursor-pointer"
+                title="Sweep sensor matrix"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-cyan-400' : ''}`} />
               </button>
             </div>
           </div>
 
-          {/* 2D Circular Radar Canvas */}
-          <div className="flex-1 flex items-center justify-center py-4 relative my-2">
-            <div className="relative w-full max-w-[440px] aspect-square rounded-full border border-cyan-500/30 bg-[#060a12]/95 p-3.5 flex items-center justify-center shadow-2xl shadow-cyan-950/80 overflow-hidden">
+          {/* 2D Cartesian Scatter Matrix */}
+          <div className="flex-1 flex flex-col justify-between py-3 relative my-2">
+            <div className="relative w-full h-[360px] sm:h-[400px] rounded-xl border border-white/[0.08] bg-[#070b14]/90 shadow-2xl overflow-hidden backdrop-blur-md">
               
-              {/* Concentric circular grid rings */}
-              <div className="absolute inset-3 rounded-full border border-cyan-500/15" />
-              <div className="absolute inset-14 rounded-full border border-cyan-500/15" />
-              <div className="absolute inset-26 rounded-full border border-cyan-500/15" />
-              <div className="absolute inset-36 rounded-full border border-cyan-500/10" />
+              {/* 4 Quadrant Subtle Ambient Atmospheric Washes */}
+              <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-rose-500/[0.05] to-transparent pointer-events-none" />
+              <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-emerald-500/[0.05] to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-amber-500/[0.04] to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-cyan-500/[0.04] to-transparent pointer-events-none" />
 
-              {/* Crosshair Axes */}
-              <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-cyan-500/20" />
-              <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-cyan-500/20" />
+              {/* Cartesian Coordinate Axes */}
+              {/* Center Vertical Axis (Net Sentiment = 0) */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/[0.12] z-0" />
+              {/* Center Horizontal Axis (Mid Theatrical Run = Day 7-8) */}
+              <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white/[0.12] z-0" />
 
-              {/* Sweeping Radar Beam */}
-              <div className="radar-sweep" />
+              {/* 25% and 75% subtle guide lines */}
+              <div className="absolute left-1/4 top-0 bottom-0 w-[1px] border-r border-dashed border-white/[0.04] pointer-events-none" />
+              <div className="absolute left-3/4 top-0 bottom-0 w-[1px] border-r border-dashed border-white/[0.04] pointer-events-none" />
+              <div className="absolute top-1/4 left-0 right-0 h-[1px] border-b border-dashed border-white/[0.04] pointer-events-none" />
+              <div className="absolute top-3/4 left-0 right-0 h-[1px] border-b border-dashed border-white/[0.04] pointer-events-none" />
 
-              {/* Quadrant Micro Labels */}
-              <div className="absolute top-2 text-[0.58rem] font-mono tracking-widest text-cyan-400/90 uppercase font-bold bg-[#060a12]/80 px-2 py-0.5 rounded border border-cyan-500/20">
-                ↑ High Velocity Emergence
+              {/* Minimalist Linear Quadrant Badges */}
+              <div className="absolute top-3 left-3 text-[0.6rem] font-mono tracking-wider text-rose-400/80 uppercase font-semibold pointer-events-none flex items-center gap-1.5 bg-[#070b14]/70 px-2 py-0.5 rounded border border-rose-500/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 inline-block" />
+                <span>Critical Friction • Rapid Spread</span>
               </div>
-              <div className="absolute bottom-2 text-[0.58rem] font-mono tracking-widest text-slate-500 uppercase font-bold bg-[#060a12]/80 px-2 py-0.5 rounded border border-white/5">
-                ↓ Contained / Stable
+
+              <div className="absolute top-3 right-3 text-[0.6rem] font-mono tracking-wider text-emerald-400/80 uppercase font-semibold pointer-events-none flex items-center gap-1.5 bg-[#070b14]/70 px-2 py-0.5 rounded border border-emerald-500/20">
+                <span>Viral Breakout • Strong WOM</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
               </div>
-              <div className="absolute left-2 text-[0.58rem] font-mono tracking-widest text-red-400/90 uppercase font-bold bg-[#060a12]/80 px-2 py-0.5 rounded border border-red-500/20">
-                ← Critical Friction
+
+              <div className="absolute bottom-3 left-3 text-[0.6rem] font-mono tracking-wider text-amber-400/70 uppercase font-semibold pointer-events-none flex items-center gap-1.5 bg-[#070b14]/70 px-2 py-0.5 rounded border border-amber-500/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block" />
+                <span>Late Stage • Attrition Risk</span>
               </div>
-              <div className="absolute right-2 text-[0.58rem] font-mono tracking-widest text-emerald-400/90 uppercase font-bold bg-[#060a12]/80 px-2 py-0.5 rounded border border-emerald-500/20">
-                Favorable WOM →
+
+              <div className="absolute bottom-3 right-3 text-[0.6rem] font-mono tracking-wider text-cyan-400/70 uppercase font-semibold pointer-events-none flex items-center gap-1.5 bg-[#070b14]/70 px-2 py-0.5 rounded border border-cyan-500/20">
+                <span>Sustained Run • Evergreen Hold</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 inline-block" />
+              </div>
+
+              {/* Left Y-Axis Vertical Guide */}
+              <div className="absolute left-2.5 top-1/2 -translate-y-1/2 -rotate-90 origin-left text-[0.58rem] font-mono text-slate-500 uppercase tracking-widest pointer-events-none select-none">
+                ↑ THEATRICAL VELOCITY (DAY 1 PEAK → DAY 15)
               </div>
 
               {/* Plotted Movie Blips with Anti-Collision Separation */}
@@ -309,9 +321,22 @@ export default function MasterRadarBento({
                 />
               ))}
             </div>
+
+            {/* X-Axis Footer Legend */}
+            <div className="flex items-center justify-between px-2 pt-2 text-[0.65rem] font-mono text-slate-400">
+              <span className="flex items-center gap-1 text-rose-400/80">
+                <span>←</span> Critical Resistance (-100%)
+              </span>
+              <span className="text-slate-500 font-semibold uppercase tracking-wider text-[0.62rem]">
+                Net Audience Word-of-Mouth (WOM)
+              </span>
+              <span className="flex items-center gap-1 text-emerald-400/80">
+                Positive Advocacy (+100%) <span>→</span>
+              </span>
+            </div>
           </div>
 
-          {/* Active Hover / Target Blip Readout */}
+          {/* Active Target Blip Readout */}
           <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono">
             <div className="flex items-center gap-2">
               <span className="text-slate-400 text-[0.68rem]">Sensor Focus:</span>
