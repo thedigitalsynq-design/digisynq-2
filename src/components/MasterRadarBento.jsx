@@ -71,6 +71,84 @@ export default function MasterRadarBento({
   // Find spotlight movie or default to first movie of filtered list
   const spotlightMovie = displayedMovies.find(m => m?.title?.toLowerCase() === currentMovie?.toLowerCase()) || displayedMovies[0] || allMovies[0] || null;
 
+  // Compute collision-free radar positions so blips never sit on top of each other
+  const positionedMovies = React.useMemo(() => {
+    if (!allMovies || allMovies.length === 0) return [];
+
+    const items = allMovies.map((movie, idx) => {
+      // 1. Initial coordinates from netSentiment / daysInTheaters
+      let x = typeof movie.xCoordinate === 'number'
+        ? movie.xCoordinate
+        : (typeof movie.netSentiment === 'number' ? movie.netSentiment : 0);
+
+      let y = typeof movie.yCoordinate === 'number'
+        ? movie.yCoordinate
+        : Math.min(92, Math.max(22, Math.round(95 - (movie.daysInTheaters || (idx + 1)) * 4.5)));
+
+      // If x is 0 or unassigned, distribute along clean circular angles
+      if (x === 0 && typeof movie.xCoordinate !== 'number') {
+        const angle = (idx / Math.max(1, allMovies.length)) * 2 * Math.PI;
+        x = Math.round(Math.sin(angle) * 45);
+        y = Math.round(55 + Math.cos(angle) * 30);
+      }
+
+      let left = 50 + x * 0.44;
+      let top = 90 - y * 0.8;
+
+      // Constrain inside radar circle (radius ~41%)
+      const dx = left - 50;
+      const dy = top - 50;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist > 40) {
+        left = 50 + (dx / dist) * 40;
+        top = 50 + (dy / dist) * 40;
+      }
+
+      return { movie, left, top };
+    });
+
+    // 2. Anti-clumping relaxation passes to push overlapping blips apart
+    for (let pass = 0; pass < 8; pass++) {
+      for (let i = 0; i < items.length; i++) {
+        for (let j = i + 1; j < items.length; j++) {
+          const dx = items[j].left - items[i].left;
+          const dy = items[j].top - items[i].top;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          const minDist = 8.5; // minimum separation in percentage points
+          if (d < minDist && d > 0.01) {
+            const overlap = (minDist - d) / 2;
+            const nx = dx / d;
+            const ny = dy / d;
+            items[i].left -= nx * overlap;
+            items[i].top -= ny * overlap;
+            items[j].left += nx * overlap;
+            items[j].top += ny * overlap;
+          } else if (d <= 0.01) {
+            items[j].left += (j % 2 === 0 ? 4.5 : -4.5);
+            items[j].top += (j % 3 === 0 ? 4.5 : -4.5);
+          }
+        }
+      }
+    }
+
+    // 3. Final containment pass inside circle
+    return items.map((item, idx) => {
+      let dx = item.left - 50;
+      let dy = item.top - 50;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist > 41) {
+        item.left = 50 + (dx / dist) * 41;
+        item.top = 50 + (dy / dist) * 41;
+      }
+      return {
+        ...item.movie,
+        computedPercentLeft: Math.round(item.left * 10) / 10,
+        computedPercentTop: Math.round(item.top * 10) / 10,
+        shouldShowStaticLabel: allMovies.length <= 5 && idx < 3
+      };
+    });
+  }, [allMovies]);
+
   return (
     <div className="flex flex-col gap-5 animate-fade-in">
 
@@ -222,11 +300,14 @@ export default function MasterRadarBento({
                 Favorable WOM →
               </div>
 
-              {/* Plotted Movie Blips */}
-              {allMovies.map((movie) => (
+              {/* Plotted Movie Blips with Anti-Collision Separation */}
+              {positionedMovies.map((movie) => (
                 <RadarBlip
                   key={movie?.title || Math.random()}
                   movie={movie}
+                  customLeft={movie.computedPercentLeft}
+                  customTop={movie.computedPercentTop}
+                  showStaticLabel={movie.shouldShowStaticLabel}
                   isSelected={(currentMovie?.toLowerCase() === movie?.title?.toLowerCase()) || (spotlightMovie?.title?.toLowerCase() === movie?.title?.toLowerCase())}
                   selectedIndustry={selectedIndustry}
                   onSelectMovie={onSelectMovie}
