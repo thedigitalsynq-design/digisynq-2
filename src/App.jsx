@@ -24,13 +24,18 @@ import SensorTelemetryView from './components/SensorTelemetryView';
 import MasterRadarBento from './components/MasterRadarBento';
 import MoviePerformanceMetrics from './components/MoviePerformanceMetrics';
 import CinemaDamageControlProducts from './components/CinemaDamageControlProducts';
+import AuthModal from './components/AuthModal';
+import CommandPalette from './components/CommandPalette';
+import { useAuth } from './context/AuthContext';
 import { 
   ShieldAlert, RefreshCw, Sparkles, Layers, AlertCircle, 
   Calendar, Swords, GitFork, Radio, ArrowRight, CheckCircle2,
-  Clock, Flame 
+  Clock, Flame, Command 
 } from 'lucide-react';
 
 export default function App() {
+  const { user, isAuthenticated, authModalOpen, setAuthModalOpen } = useAuth();
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
   const [currentQuery, setCurrentQuery] = useState('');
   const [movieData, setMovieData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -81,6 +86,18 @@ export default function App() {
     };
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Global Keyboard Shortcut: ⌘K or Ctrl+K to open Command Palette
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setCommandPaletteOpen(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   // Update browser URL query params without reloading to support direct deep-linking
@@ -376,6 +393,7 @@ export default function App() {
         onToggleAutoSync={() => setAutoSyncEnabled(!autoSyncEnabled)}
         onManualSync={() => triggerSync(true)}
         systemStatus={systemStatus}
+        onOpenCommandPalette={() => setCommandPaletteOpen(true)}
       />
 
       {/* Honest Offline / Standby Resilience Notice */}
@@ -709,6 +727,28 @@ export default function App() {
         isOpen={freshnessModalOpen}
         onClose={() => setFreshnessModalOpen(false)}
         freshnessMap={movieData?.freshnessMap || []}
+      />
+
+      {/* Enterprise Studio Authentication & Access Modal */}
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+      />
+
+      {/* Universal Command Palette (⌘K) */}
+      <CommandPalette
+        isOpen={commandPaletteOpen}
+        onClose={() => setCommandPaletteOpen(false)}
+        discoveredMovies={discoveredMovies}
+        onSelectMovie={(title) => {
+          fetchMovie(title);
+          changeTab('twin');
+        }}
+        activeTab={activeTab}
+        onSelectTab={changeTab}
+        onTriggerSync={triggerSync}
+        onOpenAuth={() => setAuthModalOpen(true)}
+        onOpenLayersModal={() => {}}
       />
 
     </div>
