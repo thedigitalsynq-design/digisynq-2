@@ -378,19 +378,6 @@ export default function App() {
         systemStatus={systemStatus}
       />
 
-      {/* 1.5 Cinema Intelligence Process Workflow Navigator (DISCOVER → TRACK → COLLECT → ANALYSE → UNDERSTAND → COMPARE → ACT) */}
-      <Navigation
-        activeTab={activeTab}
-        onSelectTab={changeTab}
-        currentMovie={currentQuery}
-        releasesCount={discoveredMovies.length}
-        defconLevel={defconLevel}
-        sensorsOnline={`${movieData?.freshnessMap ? movieData.freshnessMap.filter(s => s.status === 'HEALTHY').length : 9}/${movieData?.freshnessMap?.length || 9}`}
-        discoveredMovies={discoveredMovies}
-        onSelectMovie={(title) => fetchMovie(title)}
-        loading={loading}
-      />
-
       {/* Honest Offline / Standby Resilience Notice */}
       {systemStatus === 'OFFLINE' && (
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-3 w-full">

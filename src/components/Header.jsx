@@ -143,9 +143,68 @@ export default function Header({
               </span>
             </div>
           </div>
+
+          {/* Active Film Quick Switcher */}
+          {discoveredMovies && discoveredMovies.length > 0 && (
+            <div className="relative ml-1 sm:ml-3">
+              <button
+                type="button"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 rounded-lg bg-[#0b1222] hover:bg-[#111a30] border border-white/[0.08] hover:border-cyan-500/40 text-xs transition-all shadow-sm group"
+                title="Select active film"
+              >
+                <Film className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <span className="text-slate-400 text-[0.65rem] font-mono uppercase hidden lg:inline">Film:</span>
+                <span className="font-bold text-white max-w-[100px] sm:max-w-[140px] truncate">
+                  {currentQuery || (discoveredMovies[0]?.title || discoveredMovies[0])}
+                </span>
+                <ChevronDown className={`w-3 h-3 text-slate-400 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {dropdownOpen && (
+                <div className="absolute left-0 top-full mt-1.5 w-64 max-h-80 overflow-y-auto bg-[#0a0f1d] border border-white/10 rounded-xl shadow-2xl p-1 z-50 animate-fade-in backdrop-blur-2xl divide-y divide-white/[0.04]">
+                  <div className="px-2.5 py-1.5 text-[0.62rem] font-mono uppercase tracking-wider text-slate-400 flex items-center justify-between">
+                    <span>15-Day Active Theaters</span>
+                    <span className="text-cyan-400 font-bold">{discoveredMovies.length} Titles</span>
+                  </div>
+                  <div className="py-1">
+                    {discoveredMovies.map((m) => {
+                      const title = typeof m === 'string' ? m : m.title;
+                      const isSelected = (currentQuery || '').toLowerCase() === title.toLowerCase();
+                      const industry = typeof m === 'object' ? m.industry : null;
+
+                      return (
+                        <button
+                          key={title}
+                          type="button"
+                          onClick={() => {
+                            onSearch(title);
+                            setDropdownOpen(false);
+                          }}
+                          className={`w-full px-2.5 py-1.5 text-left rounded-lg text-xs flex items-center justify-between transition-colors ${
+                            isSelected 
+                              ? 'bg-cyan-950/70 text-cyan-200 font-bold border border-cyan-500/30' 
+                              : 'text-slate-300 hover:bg-white/[0.05] hover:text-white'
+                          }`}
+                        >
+                          <div className="flex items-center gap-1.5 truncate pr-2">
+                            {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 animate-pulse" />}
+                            <span className="truncate">{title}</span>
+                          </div>
+                          {industry && (
+                            <span className="text-[0.6rem] font-mono text-slate-500 shrink-0">
+                              {industry}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
-
-
 
         {/* 2. Center Segmented Navigation Tabs (Single-Line, Whitespace-Nowrap) */}
         <nav className="hidden md:flex items-center gap-1 bg-[#0b101d] p-1 rounded-xl border border-white/[0.08] shadow-inner shrink-0">
