@@ -13,14 +13,14 @@ const ASSURANCES = [
 ];
 
 export default function Login() {
-  const { login } = useAuth();
+  const { login, loginGuest } = useAuth();
   const [email, setEmail] = useState(DEMO_CREDENTIALS[0].email);
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState(DEMO_CREDENTIALS[0].password);
   const [showPassword, setShowPassword] = useState(false);
   const [status, setStatus] = useState({ phase: 'idle', message: '' });
 
   const submit = async (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     if (status.phase === 'working') return;
     if (!email.trim() || !password) {
       setStatus({ phase: 'error', message: 'Enter your work email and password to continue.' });
@@ -40,10 +40,19 @@ export default function Login() {
     }
   };
 
-  const fillDemo = (cred) => {
+  const fillDemo = async (cred) => {
     setEmail(cred.email);
     setPassword(cred.password);
-    setStatus({ phase: 'idle', message: '' });
+    setStatus({ phase: 'working', message: `Verifying ${cred.label}…` });
+    try {
+      const session = await login(cred.email, cred.password);
+      setStatus({
+        phase: 'success',
+        message: `Welcome back, ${session?.user?.name || 'operator'}. Loading workspace…`,
+      });
+    } catch (err) {
+      setStatus({ phase: 'error', message: err.message || 'Sign-in failed.' });
+    }
   };
 
   return (
@@ -129,6 +138,15 @@ export default function Login() {
 
             <button type="submit" className="btn-primary btn-block" disabled={status.phase === 'working'}>
               {status.phase === 'working' ? 'Signing in…' : 'Sign in'}
+            </button>
+            <button
+              type="button"
+              className="btn-secondary btn-block"
+              style={{ marginTop: '0.625rem' }}
+              onClick={() => loginGuest && loginGuest()}
+              disabled={status.phase === 'working'}
+            >
+              Instant Guest Preview (No Password)
             </button>
           </form>
 

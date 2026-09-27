@@ -972,7 +972,7 @@ export async function onRequest(context) {
 
   // 6. Live Movie Digital Twin Intelligence Engine
   if (pathname === '/api/movie/live') {
-    const query = (url.searchParams.get('query') || '').trim();
+    const query = (url.searchParams.get('query') || url.searchParams.get('title') || url.searchParams.get('q') || '').trim();
     if (!query) {
       return new Response(JSON.stringify({
         error: 'Query parameter is required. Enter an Indian cinema title (e.g., "The Paradise", "Sardar 2", "Toxic", "Daayra").'

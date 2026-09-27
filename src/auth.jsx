@@ -34,14 +34,24 @@ export function AuthProvider({ children }) {
     return session;
   }, []);
 
+  const loginGuest = useCallback(() => {
+    const guestUser = { email: 'guest@cinema-damage-control.com', name: 'Studio Guest', role: 'guest' };
+    setUser(guestUser);
+    try {
+      localStorage.setItem('cdc_auth_token', 'guest-token');
+      localStorage.setItem('cdc_auth_user', JSON.stringify(guestUser));
+    } catch {}
+    return { token: 'guest-token', user: guestUser, _source: 'LOCAL' };
+  }, []);
+
   const logout = useCallback(async () => {
     await logoutRequest();
     setUser(null);
   }, []);
 
   const value = useMemo(
-    () => ({ user, isAuthenticated: Boolean(user), sessionChecked, login, logout }),
-    [user, sessionChecked, login, logout]
+    () => ({ user, isAuthenticated: Boolean(user), sessionChecked, login, loginGuest, logout }),
+    [user, sessionChecked, login, loginGuest, logout]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

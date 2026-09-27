@@ -115,15 +115,17 @@ export default function CinemaRadar({ onSelectMovie, currentMovie }) {
 
               {/* Plotted Movie Blips */}
               {radarData?.movies?.map((movie) => {
-                // Map xCoordinate (-100 to +100) -> percentage (10% to 90%)
-                const leftPercent = 50 + (movie.xCoordinate / 220) * 100;
-                // Map yCoordinate (0 to 100) -> inverted percentage (90% at 0, 10% at 100)
-                const topPercent = 90 - (movie.yCoordinate / 115) * 80;
+                const xVal = typeof movie.xCoordinate === 'number' ? movie.xCoordinate : (typeof movie.netSentiment === 'number' ? movie.netSentiment : 0);
+                const yVal = typeof movie.yCoordinate === 'number' ? movie.yCoordinate : Math.max(20, Math.min(90, 95 - (movie.daysInTheaters || 1) * 5));
+                // Map xVal (-100 to +100) -> percentage (10% to 90%)
+                const leftPercent = Math.max(8, Math.min(92, 50 + (xVal / 220) * 100));
+                // Map yVal (0 to 100) -> inverted percentage (90% at 0, 10% at 100)
+                const topPercent = Math.max(10, Math.min(90, 90 - (yVal / 115) * 80));
 
-                const isCurrent = currentMovie?.toLowerCase() === movie.title.toLowerCase();
+                const isCurrent = currentMovie?.toLowerCase() === movie.title?.toLowerCase();
                 const isHovered = hoveredMovie?.title === movie.title;
-                const isControversy = movie.controversySignals > 0 || movie.xCoordinate < -15;
-                const isPositive = movie.xCoordinate > 15;
+                const isControversy = (movie.controversySignals > 0) || (xVal < -15) || (movie.threatLevel === 'HIGH');
+                const isPositive = xVal > 15;
 
                 const blipColor = isControversy 
                   ? 'bg-red-500 shadow-red-500/50' 

@@ -252,7 +252,7 @@ app.get('/api/movie/scores', async (req, res) => {
 
 // 5. Live Movie Digital Twin Intelligence Engine
 app.get('/api/movie/live', async (req, res) => {
-  const query = (req.query.query || '').trim();
+  const query = (req.query.query || req.query.title || req.query.q || '').trim();
   if (!query) {
     return res.status(400).json({
       error: 'Query parameter is required. Enter an Indian cinema title (e.g., "The Paradise", "Sardar 2", "Toxic", "Daayra").'
