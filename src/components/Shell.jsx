@@ -41,7 +41,7 @@ function StatusDot({ status }) {
 export default function Shell({
   activeTab, onSelectTab, currentQuery, discoveredMovies = [],
   onSearch, loading, systemStatus = 'LIVE', isSyncing,
-  onManualSync, istLabel, children, toast,
+  onManualSync, istLabel, children, toast, onOpenCommandPalette,
 }) {
   const { user, logout } = useAuth();
   const [q, setQ] = useState('');
@@ -150,6 +150,28 @@ export default function Shell({
                 aria-label="Search a film"
               />
               <button type="submit" disabled={loading}>Go</button>
+              {onOpenCommandPalette && (
+                <button
+                  type="button"
+                  onClick={onOpenCommandPalette}
+                  className="cmd-pill"
+                  title="Universal Quick-Finder (⌘K / Ctrl+K)"
+                  aria-label="Open command palette (⌘K)"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: '6px',
+                    padding: '2px 6px',
+                    fontSize: '11px',
+                    fontFamily: 'var(--font-mono)',
+                    color: 'var(--ink-3)',
+                    cursor: 'pointer',
+                    marginLeft: '4px'
+                  }}
+                >
+                  ⌘K
+                </button>
+              )}
             </form>
             <span className="ist-pill" title="Indian Standard Time">{istLabel || 'IST ···'}</span>
             <StatusDot status={systemStatus} />

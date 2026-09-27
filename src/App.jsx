@@ -24,6 +24,7 @@ import CinemaSolutionsWarRoom from './components/CinemaSolutionsWarRoom';
 import SensorTelemetryView from './components/SensorTelemetryView';
 import MoviePerformanceMetrics from './components/MoviePerformanceMetrics';
 import CinemaDamageControlProducts from './components/CinemaDamageControlProducts';
+import CommandPalette from './components/CommandPalette';
 import {
   AlertTriangle, ArrowRight, Clapperboard, Film, Loader2,
   RefreshCw, SearchX, ShieldAlert, WifiOff,
@@ -110,7 +111,20 @@ function Workspace() {
   const [istClock, setIstClock] = useState('');
   const [industry, setIndustry] = useState('ALL');
   const [responseView, setResponseView] = useState('playbooks');
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
   const isInitialMount = React.useRef(true);
+
+  // ── Keyboard shortcut: ⌘K / Ctrl+K for Universal Command Palette ──
+  useEffect(() => {
+    const onKey = (e) => {
+      if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        setCommandPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   // ── URL sync (new ids; old ids still resolve on load) ──
   useEffect(() => {
@@ -288,6 +302,7 @@ function Workspace() {
       loading={loading} systemStatus={systemStatus}
       isSyncing={isSyncing} onManualSync={() => triggerSync(true)}
       istLabel={istLabel} toast={toast}
+      onOpenCommandPalette={() => setCommandPaletteOpen(true)}
     >
       {systemStatus === 'OFFLINE' && (
         <div className="banner is-warn" role="alert">
@@ -527,6 +542,15 @@ function Workspace() {
 
       <WhyModal isOpen={Boolean(whyData)} onClose={() => setWhyData(null)} data={whyData} />
       <DataFreshnessMap isOpen={freshnessOpen} onClose={() => setFreshnessOpen(false)} freshnessMap={movieData?.freshnessMap || []} />
+      <CommandPalette
+        isOpen={commandPaletteOpen}
+        onClose={() => setCommandPaletteOpen(false)}
+        discoveredMovies={discoveredMovies}
+        onSelectMovie={(t) => { fetchMovie(t); changeTab('film'); }}
+        activeTab={activeTab}
+        onSelectTab={changeTab}
+        onTriggerSync={() => triggerSync(true)}
+      />
     </Shell>
   );
 }
