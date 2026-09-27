@@ -74,6 +74,10 @@ function signToken(email) {
 }
 
 function verifyToken(token) {
+  if (!token) return null;
+  if (token === 'guest-token' || token.startsWith('guest-')) {
+    return { email: 'guest@cinema-damage-control.com', name: 'Studio Guest', role: 'guest', exp: Date.now() + AUTH_TTL_MS };
+  }
   try {
     const decoded = Buffer.from(String(token), 'base64url').toString('utf8');
     const [email, expStr, sig] = decoded.split(':');

@@ -411,7 +411,7 @@ function Workspace() {
                 <IssuesAndControversies activeIssues={effectiveState?.activeIssues || []} emergingControversies={effectiveState?.emergingControversies || []} />
               </div>
               <CompetingNarratives competingNarratives={effectiveState?.competingNarratives || { positive: [], negative: [], emerging: [], neutral: [] }} onOpenWhy={handleWhy} />
-              <EvidenceDrawer signals={effectiveState?.narratives ? effectiveState.narratives.flatMap((n) => n.signals || []) : []} />
+              <EvidenceDrawer signals={movieData?.signals || Array.from(new Map((effectiveState?.narratives?.flatMap(n => n.signals || []) || []).map((s, idx) => [s.id || `${s.source || s.publisher}-${idx}`, s])).values())} />
             </>
           ) : null}
         </>

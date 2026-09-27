@@ -605,17 +605,65 @@ function getVerifiedMovieTwin(query, radarList = []) {
       positive: [
         {
           id: "cn-1",
+          type: "POSITIVE",
+          headline: "Exceptional visual scale and high-octane background score",
           claim: "Exceptional visual scale and high-octane background score",
+          topicLabel: "Cinematic Scale & Score",
+          lifecycle: "PEAK_AMPLIFICATION",
+          reliability: "HIGH",
           evidenceCount: 18,
-          confidence: 92
+          signalCount: 18,
+          confidence: 92,
+          velocityScore: 78,
+          velocityTrend: "SURGING",
+          sourceDiversity: {
+            uniquePublishersCount: 8,
+            categories: ["trade", "news", "youtube", "social"]
+          },
+          scores: {
+            viralityRiskScore: 32,
+            mediaAmplificationFactor: "2.4x",
+            containmentPriorityScore: 18
+          },
+          whyCalculation: {
+            formula: "Direct corroboration across 8 distinct editorial & trade desks",
+            components: [
+              { label: "Positive Trade Reviews", contribution: "+48%" },
+              { label: "Audience Exit Polls", contribution: "+34%" }
+            ]
+          }
         }
       ],
       negative: isCritical ? [
         {
           id: "cn-2",
+          type: "NEGATIVE",
+          headline: "Second half dragged out by 20 minutes of unnecessary scenes",
           claim: "Second half dragged out by 20 minutes of unnecessary scenes",
+          topicLabel: "Pacing & Runtime Drag",
+          lifecycle: "ESCALATING",
+          reliability: "HIGH",
           evidenceCount: 14,
-          confidence: 84
+          signalCount: 14,
+          confidence: 84,
+          velocityScore: 68,
+          velocityTrend: "RISING",
+          sourceDiversity: {
+            uniquePublishersCount: 6,
+            categories: ["social", "reviews", "reddit"]
+          },
+          scores: {
+            viralityRiskScore: 74,
+            mediaAmplificationFactor: "1.9x",
+            containmentPriorityScore: 82
+          },
+          whyCalculation: {
+            formula: "Clustered friction markers in single-screen feedback and social threads",
+            components: [
+              { label: "Multiplex Complaints", contribution: "52%" },
+              { label: "Social Momentum Velocity", contribution: "32%" }
+            ]
+          }
         }
       ] : [],
       emerging: [],
@@ -917,6 +965,7 @@ export async function onRequest(context) {
   const EDGE_USERS = [
     { email: 'admin@cinema.intel', password: 'ChangeMe123!', name: 'Studio Admin', role: 'admin' },
     { email: 'operator@cdc.local', password: 'operator123', name: 'Operator', role: 'operator' },
+    { email: 'guest@cinema-damage-control.com', password: '', name: 'Studio Guest', role: 'guest' },
   ];
   const b64urlEncode = (s) => btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   const b64urlDecode = (s) => {
@@ -928,6 +977,10 @@ export async function onRequest(context) {
   };
   const edgeIssueToken = (email) => b64urlEncode(`${email.toLowerCase()}:${Date.now() + EDGE_AUTH_TTL_MS}:edge`);
   const edgeVerifyToken = (token) => {
+    if (!token) return null;
+    if (token === 'guest-token' || token.startsWith('guest-')) {
+      return { email: 'guest@cinema-damage-control.com', name: 'Studio Guest', role: 'guest', exp: Date.now() + EDGE_AUTH_TTL_MS };
+    }
     const decoded = b64urlDecode(token);
     const [email, expStr] = decoded.split(':');
     if (!email || !expStr || Number(expStr) < Date.now()) return null;
