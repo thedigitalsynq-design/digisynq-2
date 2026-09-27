@@ -15,13 +15,30 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      if (!getAuthToken()) {
+      const explicitLogout = typeof window !== 'undefined' && sessionStorage.getItem('cdc_logged_out') === 'true';
+      const token = getAuthToken();
+
+      if (!token) {
+        if (!explicitLogout) {
+          // Auto-initialize guest session so deep-links (tab/movie) and first-time visitors work seamlessly
+          const guestUser = { email: 'guest@cinema-damage-control.com', name: 'Studio Guest', role: 'guest' };
+          try {
+            localStorage.setItem('cdc_auth_token', 'guest-token');
+            localStorage.setItem('cdc_auth_user', JSON.stringify(guestUser));
+          } catch {}
+          if (!cancelled) {
+            setUser(guestUser);
+            setSessionChecked(true);
+          }
+          return;
+        }
         setSessionChecked(true);
         return;
       }
+
       const me = await fetchAuthUser();
       if (!cancelled) {
-        setUser(me);
+        setUser(me || { email: 'guest@cinema-damage-control.com', name: 'Studio Guest', role: 'guest' });
         setSessionChecked(true);
       }
     })();
@@ -29,12 +46,14 @@ export function AuthProvider({ children }) {
   }, []);
 
   const login = useCallback(async (email, password) => {
+    try { sessionStorage.removeItem('cdc_logged_out'); } catch {}
     const session = await loginRequest(email, password);
     setUser(session.user);
     return session;
   }, []);
 
   const loginGuest = useCallback(() => {
+    try { sessionStorage.removeItem('cdc_logged_out'); } catch {}
     const guestUser = { email: 'guest@cinema-damage-control.com', name: 'Studio Guest', role: 'guest' };
     setUser(guestUser);
     try {
@@ -45,6 +64,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   const logout = useCallback(async () => {
+    try { sessionStorage.setItem('cdc_logged_out', 'true'); } catch {}
     await logoutRequest();
     setUser(null);
   }, []);

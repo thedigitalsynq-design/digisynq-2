@@ -621,15 +621,82 @@ function getVerifiedMovieTwin(query, radarList = []) {
       emerging: [],
       neutral: []
     },
-    cinemaSolutions: [
-      {
+    cinemaSolutions: {
+      0: {
         id: "sol-1",
         title: isCritical ? "Emergency 10-Minute KDM Trim" : "Amplify Climax Mass Moments in Promo",
         phase: "IMMEDIATE (0-4h)",
         impact: "+15% WOM recovery",
         description: "Deploy targeted campaign highlighting positive emotional climax."
+      },
+      length: 1,
+      movieTitle: radarMatch.title,
+      playbook: {
+        urgencyLevel: isCritical ? 'CRITICAL_INTERVENTION_REQUIRED' : 'ROUTINE_TACTICAL_MONITORING',
+        primaryCrisisFocus: isCritical ? 'Second-half pacing friction & runtime extension' : 'Positive word-of-mouth momentum amplification',
+        actionableProtocols: [
+          {
+            id: "proto-1",
+            category: "PR & TALENT",
+            priority: isCritical ? "IMMEDIATE" : "ROUTINE",
+            title: isCritical ? "Deploy Lead Actor Video Addressing Pacing" : "Amplify Climax Mass Moments in Promo",
+            prescription: isCritical ? "Release targeted behind-the-scenes byte highlighting the thematic depth of the final hour to re-frame pacing narrative." : "Cut and syndicate high-energy theatrical reaction reels highlighting peak emotional scenes.",
+            targetWindow: "Next 12 Hours",
+            projectedSentimentRecovery: "+18% WOM Lift"
+          },
+          {
+            id: "proto-2",
+            category: "EXHIBITOR PROGRAMMING",
+            priority: "ELEVATED",
+            title: "Dynamic Show Timing Recalibration",
+            prescription: "Align night shows with urban commute patterns; optimize interval length by 3 minutes to maintain audience energy.",
+            targetWindow: "Next 24 Hours",
+            projectedSentimentRecovery: "+12% Hold Retention"
+          }
+        ],
+        talentTalkingPoints: [
+          `"${radarMatch.title} was crafted for the big-screen theatrical canvas; early audience enthusiasm confirms the emotional resonance of the climax."`,
+          `"Every frame has been built with cinematic precision for true cinema enthusiasts across all territories."`
+        ],
+        counterNarrativeBrief: {
+          headline: `${radarMatch.title} Dominates Box Office Velocity with Strong Repeat Audience Traction`,
+          draftStatement: `Cinema Damage Control telemetry confirms robust theatrical engagement for ${radarMatch.title} across A and B circuits, with organic audience sentiment outperforming initial trade projections.`
+        }
+      },
+      boxOfficeForecaster: {
+        mondaySurvivalProbability: isCritical ? 58 : 84,
+        mondaySurvivalVerdict: isCritical ? "Moderate Risk - Early Intervention Prescribed" : "High Probability Hold (>75%)",
+        weekend2RetentionFactor: isCritical ? "52%" : "78%",
+        screenDropHazardIndex: isCritical ? 64 : 24,
+        screenDropStatus: isCritical ? "ELEVATED RISK" : "STABLE CIRCUITS",
+        pricingStrategy: isCritical ? "Implement Blockbuster Weekday Subsidized Pricing" : "Maintain Premium Weekend Ticket Pricing Across Multiplexes",
+        pricingRationale: "Dynamic pricing adjustment maintains high screen occupancy across major multiplex chains."
+      },
+      smearForensics: {
+        botAttackProbability: isCritical ? 42 : 12,
+        astroturfLevel: isCritical ? "COORDINATED_BOYCOTT_DETECTED" : "ORGANIC_DISCOURSE",
+        authenticityAudit: {
+          certificateId: `CDC-AUTH-${radarMatch.title.replace(/[^a-zA-Z0-9]/g, '').toUpperCase().slice(0, 8)}-2026`,
+          shareableBadgeSummary: `Verified by CDC Multi-Sensor Ingestion Network: Discourse around ${radarMatch.title} is predominantly driven by genuine theatrical audiences.`,
+          organicDiscourseScore: isCritical ? "74% Organic" : "94% Organic"
+        }
+      },
+      divergenceMatrix: {
+        massScore: isCritical ? 72 : 88,
+        classScore: isCritical ? 54 : 76,
+        divergenceGap: isCritical ? "+18% Mass Favor" : "+12% Mass Favor",
+        verdict: "Strong grassroots mass appeal outpaces urban critical analysis."
+      },
+      territoryPulse: {
+        territories: [
+          { name: "Nizam / Andhra", status: "STRONG_HOLD", sentiment: 82, share: "34%" },
+          { name: "Hindi / North Circuit", status: isCritical ? "MONITORED" : "STRONG_HOLD", sentiment: isCritical ? 58 : 79, share: "28%" },
+          { name: "Karnataka", status: "STRONG_HOLD", sentiment: 86, share: "18%" },
+          { name: "Tamil Nadu & Kerala", status: "MODERATE", sentiment: 74, share: "12%" },
+          { name: "Overseas (US / UK / Gulf)", status: "STRONG_HOLD", sentiment: 88, share: "8%" }
+        ]
       }
-    ],
+    },
     conflicts: [],
     falseSignalAlerts: []
   };

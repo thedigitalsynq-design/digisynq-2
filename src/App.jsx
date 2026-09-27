@@ -39,15 +39,26 @@ const TAB_ALIASES = {
 };
 const VALID_TABS = ['overview', 'film', 'response', 'evidence', 'system'];
 
+function getInitialMovie() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    for (const key of ['movie', 'title', 'query', 'q', 'film']) {
+      const v = (params.get(key) || '').trim();
+      if (v) return v;
+    }
+  } catch { /* default below */ }
+  return '';
+}
+
 function getInitialTab() {
   try {
+    const hash = window.location.hash.replace('#', '').split('?')[0].trim().toLowerCase();
+    if (hash && TAB_ALIASES[hash]) return TAB_ALIASES[hash];
     const params = new URLSearchParams(window.location.search);
     for (const key of ['tab', 'view', 'page']) {
       const v = (params.get(key) || '').toLowerCase();
       if (TAB_ALIASES[v]) return TAB_ALIASES[v];
     }
-    const hash = window.location.hash.replace('#', '').split('?')[0].trim().toLowerCase();
-    if (TAB_ALIASES[hash]) return TAB_ALIASES[hash];
   } catch { /* default below */ }
   return 'overview';
 }
@@ -81,7 +92,7 @@ function EmptyFilmPrompt({ target, discoveredMovies, onPick }) {
 
 function Workspace() {
   const { user } = useAuth();
-  const [currentQuery, setCurrentQuery] = useState('');
+  const [currentQuery, setCurrentQuery] = useState(getInitialMovie);
   const [movieData, setMovieData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -99,6 +110,7 @@ function Workspace() {
   const [istClock, setIstClock] = useState('');
   const [industry, setIndustry] = useState('ALL');
   const [responseView, setResponseView] = useState('playbooks');
+  const isInitialMount = React.useRef(true);
 
   // ── URL sync (new ids; old ids still resolve on load) ──
   useEffect(() => {
@@ -111,6 +123,10 @@ function Workspace() {
   }, []);
 
   useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
     try {
       const params = new URLSearchParams(window.location.search);
       if (currentQuery) params.set('movie', currentQuery); else params.delete('movie');
@@ -126,14 +142,13 @@ function Workspace() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // ── IST clock ──
+  // ── IST clock & initial movie load ──
   useEffect(() => {
     fetchISTTime().then(setIstInfo).catch(() => {});
-    try {
-      const params = new URLSearchParams(window.location.search);
-      const movieParam = params.get('movie');
-      if (movieParam?.trim()) fetchMovie(movieParam.trim());
-    } catch { /* noop */ }
+    const initialMovie = getInitialMovie();
+    if (initialMovie) {
+      fetchMovie(initialMovie);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -218,7 +233,8 @@ function Workspace() {
         const radar = await fetchRadar();
         if (radar._source) setSystemStatus(radar._source);
         setDiscoveredMovies(radar.movies || []);
-        if (radar.movies?.length && !currentQuery) fetchMovie(radar.movies[0].title);
+        const initM = getInitialMovie();
+        if (radar.movies?.length && !currentQuery && !initM) fetchMovie(radar.movies[0].title);
       } catch (e) { console.warn('Radar discovery error:', e); }
       finally { setLoading(false); }
     })();
@@ -286,7 +302,7 @@ function Workspace() {
         </div>
       )}
 
-      {loading && !movieData && (
+      {loading && !movieData && activeTab === 'overview' && (
         <div className="card card-pad" role="status" aria-label="Loading">
           <div style={{ display: 'grid', gap: 10 }}>
             <div className="skeleton" style={{ height: 22, width: '40%' }} />
@@ -372,7 +388,13 @@ function Workspace() {
       {/* ═══ FILM ═══ */}
       {activeTab === 'film' && (
         <>
-          {(!movieData?.hasData && !loading) ? (
+          {loading && !movieData ? (
+            <div className="card card-pad state-block">
+              <Loader2 className="spin" size={24} style={{ color: 'var(--accent)' }} />
+              <h3>Synthesizing Digital Twin for {currentQuery || 'film'}…</h3>
+              <p>Reconciling Wikipedia canonical identities, multi-sensor sentiment vectors and trade velocity.</p>
+            </div>
+          ) : (!movieData?.hasData && !loading) ? (
             <EmptyFilmPrompt target="intelligence" discoveredMovies={discoveredMovies} onPick={(t) => fetchMovie(t)} />
           ) : movieData?.hasData && effectiveState ? (
             <>
@@ -395,7 +417,13 @@ function Workspace() {
       {/* ═══ RESPONSE ═══ */}
       {activeTab === 'response' && (
         <>
-          {(!movieData?.hasData && !loading) ? (
+          {loading && !movieData ? (
+            <div className="card card-pad state-block">
+              <Loader2 className="spin" size={24} style={{ color: 'var(--accent)' }} />
+              <h3>Assembling War Room for {currentQuery || 'film'}…</h3>
+              <p>Synthesizing damage-control playbooks, box office hazard projections, and verified counter-measures.</p>
+            </div>
+          ) : (!movieData?.hasData && !loading) ? (
             <EmptyFilmPrompt target="response plan" discoveredMovies={discoveredMovies} onPick={(t) => fetchMovie(t)} />
           ) : movieData?.hasData && effectiveState ? (
             <>
@@ -428,7 +456,13 @@ function Workspace() {
       {/* ═══ EVIDENCE ═══ */}
       {activeTab === 'evidence' && (
         <>
-          {(!movieData?.hasData && !loading) ? (
+          {loading && !movieData ? (
+            <div className="card card-pad state-block">
+              <Loader2 className="spin" size={24} style={{ color: 'var(--accent)' }} />
+              <h3>Ingesting Forensics & Causal Lineage for {currentQuery || 'film'}…</h3>
+              <p>Replaying narrative timelines, conflict matrices, and sensor evidence.</p>
+            </div>
+          ) : (!movieData?.hasData && !loading) ? (
             <EmptyFilmPrompt target="forensics" discoveredMovies={discoveredMovies} onPick={(t) => fetchMovie(t)} />
           ) : movieData?.hasData && effectiveState ? (
             <>
@@ -472,17 +506,19 @@ function Workspace() {
           <div className="legacy-wrap">
             <SensorTelemetryView freshnessMap={movieData?.freshnessMap || []} onRefreshSensors={() => triggerSync(true)} />
           </div>
-          {!movieData?.freshnessMap?.length && (
-            <div className="card card-pad state-block">
-              <AlertTriangle aria-hidden="true" />
-              <h3>No film telemetry yet</h3>
-              <p>Select a film on the Overview to populate per-sensor freshness, or run a manual sync.</p>
-              <span className="filter-row" style={{ justifyContent: 'center' }}>
-                <button type="button" className="mini-btn is-primary" onClick={() => changeTab('overview')}>Go to Overview</button>
-                <button type="button" className="mini-btn" onClick={() => triggerSync(true)}>Sync now</button>
-              </span>
+          {loading && !movieData ? (
+            <div className="card card-pad state-block" style={{ marginTop: '1rem' }}>
+              <p className="num" style={{ color: 'var(--ink-3)', fontSize: 13 }}>
+                <Loader2 className="spin" size={14} style={{ verticalAlign: -2 }} /> Syncing circuit telemetry for {currentQuery || 'film'}…
+              </p>
             </div>
-          )}
+          ) : !movieData?.freshnessMap?.length ? (
+            <div className="card card-pad state-block" style={{ marginTop: '1rem' }}>
+              <p className="num" style={{ color: 'var(--ink-3)', fontSize: 13 }}>
+                Active sensor stream connected · {currentQuery ? `Telemetry synchronized for ${currentQuery}` : 'Select a film on the Overview for granular per-circuit telemetry.'}
+              </p>
+            </div>
+          ) : null}
         </>
       )}
 
