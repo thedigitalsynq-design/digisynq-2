@@ -28,7 +28,7 @@ export default function FalseSignalAlerts({ alerts = [] }) {
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center justify-between gap-2">
                 <span className="badge badge-warning text-[0.62rem]">
-                  {alert.type.replace(/_/g, ' ')}
+                  {alert.type ? alert.type.replace(/_/g, ' ') : 'SIGNAL ALERT'}
                 </span>
                 <span className="font-mono text-red-400 text-[0.68rem] font-bold">
                   Reliability: {alert.reliability}

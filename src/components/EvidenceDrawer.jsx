@@ -11,11 +11,16 @@ export default function EvidenceDrawer({ signals = [] }) {
   const categories = ['ALL', 'news', 'social', 'critics', 'trade', 'encyclopedic'];
 
   const filteredSignals = signals.filter((s) => {
-    const matchesCategory = filterCategory === 'ALL' || s.sourceCategory === filterCategory;
+    const sCat = s.sourceCategory || s.category || 'news';
+    const matchesCategory = filterCategory === 'ALL' || sCat === filterCategory;
+    const sTitle = (s.title || s.label || '').toLowerCase();
+    const sSource = (s.source || s.publisher || '').toLowerCase();
+    const sSnippet = (s.snippet || s.description || '').toLowerCase();
+    const searchLower = searchTerm.toLowerCase();
     const matchesSearch = searchTerm === '' ||
-      s.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      s.source.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      s.snippet.toLowerCase().includes(searchTerm.toLowerCase());
+      sTitle.includes(searchLower) ||
+      sSource.includes(searchLower) ||
+      sSnippet.includes(searchLower);
     return matchesCategory && matchesSearch;
   });
 
@@ -86,43 +91,50 @@ export default function EvidenceDrawer({ signals = [] }) {
             </tr>
           </thead>
           <tbody className="divide-y divide-white/5 font-sans">
-            {filteredSignals.map((signal) => (
-              <tr key={signal.id} className="hover:bg-white/[0.02] transition-colors">
-                <td className="py-2.5 px-3 font-mono text-slate-300 whitespace-nowrap">
-                  <span className="font-bold block text-white">{signal.source}</span>
-                  <span className="text-[0.65rem] text-slate-500 uppercase">{signal.sourceCategory}</span>
-                </td>
-                <td className="py-2.5 px-3 max-w-md">
-                  <div className="font-medium text-slate-200 line-clamp-1">{signal.title}</div>
-                  <div className="text-[0.72rem] text-slate-400 line-clamp-1 mt-0.5">{signal.snippet}</div>
-                </td>
-                <td className="py-2.5 px-3 whitespace-nowrap font-mono">
-                  <span className={`badge text-[0.62rem] ${
-                    signal.sentimentLabel === 'POSITIVE' ? 'badge-positive' : signal.sentimentLabel === 'NEGATIVE' ? 'badge-negative' : 'badge-neutral'
-                  }`}>
-                    {signal.sentimentLabel}
-                  </span>
-                </td>
-                <td className="py-2.5 px-3 whitespace-nowrap font-mono text-[0.68rem] text-slate-400">
-                  {new Date(signal.publishedAt).toLocaleDateString()}
-                </td>
-                <td className="py-2.5 px-3 text-right whitespace-nowrap">
-                  {signal.url && signal.url !== '#' ? (
-                    <a
-                      href={signal.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 font-mono text-[0.7rem] bg-cyan-950/40 px-2 py-1 rounded border border-cyan-800/40"
-                    >
-                      <span>Direct URL</span>
-                      <ArrowUpRight className="w-3 h-3" />
-                    </a>
-                  ) : (
-                    <span className="text-slate-600 font-mono text-[0.68rem]">Unlinked</span>
-                  )}
-                </td>
-              </tr>
-            ))}
+            {filteredSignals.map((signal) => {
+              const src = signal.source || signal.publisher || 'Sensor Stream';
+              const cat = signal.sourceCategory || signal.category || 'news';
+              const snippet = signal.snippet || signal.description || '';
+              const sent = signal.sentimentLabel || signal.sentiment || 'NEUTRAL';
+              const dt = signal.publishedAt ? new Date(signal.publishedAt).toLocaleDateString() : 'Recent';
+              return (
+                <tr key={signal.id || Math.random()} className="hover:bg-white/[0.02] transition-colors">
+                  <td className="py-2.5 px-3 font-mono text-slate-300 whitespace-nowrap">
+                    <span className="font-bold block text-white">{src}</span>
+                    <span className="text-[0.65rem] text-slate-500 uppercase">{cat}</span>
+                  </td>
+                  <td className="py-2.5 px-3 max-w-md">
+                    <div className="font-medium text-slate-200 line-clamp-1">{signal.title}</div>
+                    {snippet && <div className="text-[0.72rem] text-slate-400 line-clamp-1 mt-0.5">{snippet}</div>}
+                  </td>
+                  <td className="py-2.5 px-3 whitespace-nowrap font-mono">
+                    <span className={`badge text-[0.62rem] ${
+                      sent === 'POSITIVE' ? 'badge-positive' : sent === 'NEGATIVE' ? 'badge-negative' : 'badge-neutral'
+                    }`}>
+                      {sent}
+                    </span>
+                  </td>
+                  <td className="py-2.5 px-3 whitespace-nowrap font-mono text-[0.68rem] text-slate-400">
+                    {dt}
+                  </td>
+                  <td className="py-2.5 px-3 text-right whitespace-nowrap">
+                    {signal.url && signal.url !== '#' ? (
+                      <a
+                        href={signal.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 font-mono text-[0.7rem] bg-cyan-950/40 px-2 py-1 rounded border border-cyan-800/40"
+                      >
+                        <span>Direct URL</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    ) : (
+                      <span className="text-slate-600 font-mono text-[0.68rem]">Unlinked</span>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

@@ -57,13 +57,13 @@ export default function MovieTwinSummary({ movieData, onOpenWhy }) {
           
           <div className="flex items-start gap-4">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-tr from-red-600/30 via-amber-600/20 to-cyan-600/30 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-2xl font-mono shrink-0 shadow-lg shadow-red-950/40">
-              {identity.title.charAt(0).toUpperCase()}
+              {(identity?.title || 'F').charAt(0).toUpperCase()}
             </div>
 
             <div className="flex flex-col gap-1.5">
               <div className="flex flex-wrap items-center gap-2.5">
                 <h2 className="text-2xl font-black text-white tracking-wide">
-                  {identity.title}
+                  {identity?.title || 'Active Film'}
                 </h2>
                 <span className={`px-2.5 py-0.5 rounded-full text-xs font-mono font-bold border ${defconBadge.bg}`}>
                   {defconBadge.level} • {defconBadge.label}
@@ -76,7 +76,7 @@ export default function MovieTwinSummary({ movieData, onOpenWhy }) {
                     Monday Hold: {cdce.projectedMondayHold}
                   </span>
                 )}
-                {identity.verifiedInWikipedia && (
+                {identity?.verifiedInWikipedia && (
                   <span className="badge badge-info text-[0.65rem] flex items-center gap-1">
                     <CheckCircle2 className="w-3 h-3 text-cyan-400" /> Verified Wiki Entity
                   </span>
@@ -84,7 +84,7 @@ export default function MovieTwinSummary({ movieData, onOpenWhy }) {
               </div>
 
               {/* Wikipedia snippet or verified lead if available */}
-              {identity.wikiEntity?.snippet && (
+              {identity?.wikiEntity?.snippet && (
                 <p className="text-xs text-slate-300 max-w-3xl line-clamp-2 leading-relaxed">
                   {identity.wikiEntity.snippet}
                 </p>
