@@ -53,14 +53,14 @@ export default function WhatJustChanged({ events }) {
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between gap-2">
                 <span className="text-xs font-semibold text-slate-200 truncate">
-                  {event.title}
+                  {event.title || event.label}
                 </span>
                 <span className="text-[0.68rem] font-mono text-cyan-400/90 shrink-0 bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-800/40">
-                  {event.timeAgo}
+                  {event.timeAgo || event.timestamp}
                 </span>
               </div>
               <p className="text-xs text-slate-400 mt-1 line-clamp-2">
-                {event.detail}
+                {event.detail || event.delta || (event.severity ? `Status: ${event.severity}` : '')}
               </p>
               {event.url && event.url !== '#' && (
                 <a

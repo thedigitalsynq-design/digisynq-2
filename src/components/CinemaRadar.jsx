@@ -169,94 +169,106 @@ export default function CinemaRadar({ onSelectMovie, currentMovie }) {
           {/* Radar Details & Hover Insight Panel */}
           <div className="lg:col-span-4 flex flex-col gap-3">
             <div className="p-4 rounded-xl bg-[#0e1524] border border-white/10 flex flex-col gap-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase font-mono tracking-wider text-slate-400">
-                  Inspected Blip
-                </span>
-                <span className="badge badge-info text-[0.65rem]">
-                  {hoveredMovie ? hoveredMovie.quadrant : 'Hover Over A Node'}
-                </span>
-              </div>
-
-              {hoveredMovie ? (
-                <div className="flex flex-col gap-2.5 animate-fade-in">
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="text-base font-bold text-white">{hoveredMovie.title}</h3>
-                    <span className="text-xs font-mono text-cyan-400">
-                      {hoveredMovie.signalCount} verified signals
-                    </span>
-                  </div>
-
-                  {/* Release timing & box office tag */}
-                  <div className="flex flex-wrap items-center gap-2 text-[0.7rem] font-mono">
-                    {hoveredMovie.releaseTiming && (
-                      <span className="px-2 py-0.5 rounded bg-cyan-950/40 text-cyan-300 border border-cyan-800/40">
-                        {hoveredMovie.releaseTiming}
+              {(() => {
+                const activeBlip = hoveredMovie || radarData?.movies?.find(m => m.title?.toLowerCase() === currentMovie?.toLowerCase()) || radarData?.movies?.[0];
+                return (
+                  <>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs uppercase font-mono tracking-wider text-slate-400">
+                        {hoveredMovie ? 'Hovered Blip' : 'Active Subject'}
                       </span>
+                      <span className="badge badge-info text-[0.65rem]">
+                        {activeBlip ? activeBlip.quadrant : 'Threat Sensor'}
+                      </span>
+                    </div>
+
+                    {activeBlip ? (
+                      <div className="flex flex-col gap-2.5 animate-fade-in">
+                        <div className="flex items-baseline justify-between">
+                          <h3 className="text-base font-bold text-white">{activeBlip.title}</h3>
+                          <span className="text-xs font-mono text-cyan-400">
+                            {activeBlip.signalCount} verified signals
+                          </span>
+                        </div>
+
+                        {/* Release timing & box office tag */}
+                        <div className="flex flex-wrap items-center gap-2 text-[0.7rem] font-mono">
+                          {activeBlip.releaseTiming && (
+                            <span className="px-2 py-0.5 rounded bg-cyan-950/40 text-cyan-300 border border-cyan-800/40">
+                              {activeBlip.releaseTiming}
+                            </span>
+                          )}
+                          {activeBlip.boxOfficeSummary && (
+                            <span className="px-2 py-0.5 rounded bg-amber-950/40 text-amber-300 border border-amber-800/40 font-bold">
+                              {activeBlip.boxOfficeSummary}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Multi-Source Corroboration Badge */}
+                        {activeBlip.verificationBadge && (
+                          <div className="flex items-center justify-between text-[0.68rem] font-mono py-1 px-2 rounded bg-emerald-950/50 border border-emerald-500/30 text-emerald-300">
+                            <span className="flex items-center gap-1.5 font-semibold">
+                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-ping" />
+                              {activeBlip.verificationBadge}
+                            </span>
+                            <span className="font-bold text-white bg-emerald-500/20 px-1.5 py-0.5 rounded">
+                              {activeBlip.trustScore || 90}% Trust
+                            </span>
+                          </div>
+                        )}
+
+                        {activeBlip.verifiedSources && activeBlip.verifiedSources.length > 0 && (
+                          <div className="text-[0.65rem] font-mono text-slate-400">
+                            Cross-checked across: <span className="text-slate-200 font-semibold">{activeBlip.verifiedSources.join(', ')}</span>
+                          </div>
+                        )}
+
+                        {activeBlip.latestHeadline && (
+                          <p className="text-xs text-slate-300 italic line-clamp-2">
+                            "{activeBlip.latestHeadline}"
+                          </p>
+                        )}
+
+                        <div className="grid grid-cols-2 gap-2 text-xs font-mono pt-2 border-t border-white/5">
+                          <div>
+                            <span className="text-slate-500 block text-[0.65rem]">MOMENTUM (X)</span>
+                            <span className={(activeBlip.xCoordinate ?? activeBlip.netSentiment ?? 0) >= 0 ? 'text-emerald-400 font-semibold' : 'text-red-400 font-semibold'}>
+                              {(activeBlip.xCoordinate ?? activeBlip.netSentiment ?? 0) > 0 ? '+' : ''}{(activeBlip.xCoordinate ?? activeBlip.netSentiment ?? 0)}%
+                            </span>
+                          </div>
+                          <div>
+                            <span className="text-slate-500 block text-[0.65rem]">VELOCITY (Y)</span>
+                            <span className="text-cyan-400 font-semibold">
+                              {activeBlip.yCoordinate ?? 80}/100
+                            </span>
+                          </div>
+                        </div>
+
+                        {activeBlip.latestPublisher && (
+                          <div className="text-[0.7rem] text-slate-400">
+                            Source: <span className="text-slate-200">{activeBlip.latestPublisher}</span>
+                          </div>
+                        )}
+
+                        <button
+                          type="button"
+                          onClick={() => onSelectMovie(activeBlip.title)}
+                          className="w-full mt-2 py-2 px-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-md shadow-cyan-600/20"
+                        >
+                          <span>Launch Digital Twin for {activeBlip.title}</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="py-8 text-center text-slate-500 text-xs flex flex-col items-center gap-2">
+                        <Sparkles className="w-5 h-5 text-cyan-500/50" />
+                        <span>Hover over any movie blip on the radar or pick from the active titles below to inspect its live digital twin state.</span>
+                      </div>
                     )}
-                    {hoveredMovie.boxOfficeSummary && (
-                      <span className="px-2 py-0.5 rounded bg-amber-950/40 text-amber-300 border border-amber-800/40 font-bold">
-                        {hoveredMovie.boxOfficeSummary}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Multi-Source Corroboration Badge */}
-                  {hoveredMovie.verificationBadge && (
-                    <div className="flex items-center justify-between text-[0.68rem] font-mono py-1 px-2 rounded bg-emerald-950/50 border border-emerald-500/30 text-emerald-300">
-                      <span className="flex items-center gap-1.5 font-semibold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-ping" />
-                        {hoveredMovie.verificationBadge}
-                      </span>
-                      <span className="font-bold text-white bg-emerald-500/20 px-1.5 py-0.5 rounded">
-                        {hoveredMovie.trustScore || 90}% Trust
-                      </span>
-                    </div>
-                  )}
-
-                  {hoveredMovie.verifiedSources && hoveredMovie.verifiedSources.length > 0 && (
-                    <div className="text-[0.65rem] font-mono text-slate-400">
-                      Cross-checked across: <span className="text-slate-200 font-semibold">{hoveredMovie.verifiedSources.join(', ')}</span>
-                    </div>
-                  )}
-
-                  <p className="text-xs text-slate-300 italic line-clamp-2">
-                    "{hoveredMovie.latestHeadline}"
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-2 text-xs font-mono pt-2 border-t border-white/5">
-                    <div>
-                      <span className="text-slate-500 block text-[0.65rem]">MOMENTUM (X)</span>
-                      <span className={hoveredMovie.xCoordinate >= 0 ? 'text-emerald-400 font-semibold' : 'text-red-400 font-semibold'}>
-                        {hoveredMovie.xCoordinate > 0 ? '+' : ''}{hoveredMovie.xCoordinate}%
-                      </span>
-                    </div>
-                    <div>
-                      <span className="text-slate-500 block text-[0.65rem]">VELOCITY (Y)</span>
-                      <span className="text-cyan-400 font-semibold">
-                        {hoveredMovie.yCoordinate}/100
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="text-[0.7rem] text-slate-400">
-                    Source: <span className="text-slate-200">{hoveredMovie.latestPublisher}</span>
-                  </div>
-
-                  <button
-                    onClick={() => onSelectMovie(hoveredMovie.title)}
-                    className="w-full mt-2 py-2 px-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-md shadow-cyan-600/20"
-                  >
-                    <span>Launch Digital Twin for {hoveredMovie.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              ) : (
-                <div className="py-8 text-center text-slate-500 text-xs flex flex-col items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-cyan-500/50" />
-                  <span>Hover over any movie blip on the radar or pick from the active titles below to inspect its live digital twin state.</span>
-                </div>
-              )}
+                  </>
+                );
+              })()}
             </div>
 
             {/* Quick Cinema Radar Title List */}

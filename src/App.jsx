@@ -52,13 +52,13 @@ function getInitialMovie() {
 
 function getInitialTab() {
   try {
-    const hash = window.location.hash.replace('#', '').split('?')[0].trim().toLowerCase();
-    if (hash && TAB_ALIASES[hash]) return TAB_ALIASES[hash];
     const params = new URLSearchParams(window.location.search);
     for (const key of ['tab', 'view', 'page']) {
       const v = (params.get(key) || '').toLowerCase();
       if (TAB_ALIASES[v]) return TAB_ALIASES[v];
     }
+    const hash = window.location.hash.replace('#', '').split('?')[0].trim().toLowerCase();
+    if (TAB_ALIASES[hash]) return TAB_ALIASES[hash];
   } catch { /* default below */ }
   return 'overview';
 }
@@ -94,7 +94,7 @@ function Workspace() {
   const { user } = useAuth();
   const [currentQuery, setCurrentQuery] = useState(getInitialMovie);
   const [movieData, setMovieData] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(Boolean(getInitialMovie()));
   const [error, setError] = useState(null);
   const [discoveredMovies, setDiscoveredMovies] = useState([]);
   const [systemStatus, setSystemStatus] = useState('LIVE');
@@ -138,7 +138,12 @@ function Workspace() {
   const changeTab = (id) => {
     const next = TAB_ALIASES[id] || 'overview';
     setActiveTab(next);
-    try { window.location.hash = next; } catch { /* noop */ }
+    try {
+      const params = new URLSearchParams(window.location.search);
+      params.set('tab', next);
+      if (currentQuery) params.set('movie', currentQuery);
+      window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}#${next}`);
+    } catch { /* noop */ }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -228,7 +233,6 @@ function Workspace() {
 
   useEffect(() => {
     (async () => {
-      setLoading(true);
       try {
         const radar = await fetchRadar();
         if (radar._source) setSystemStatus(radar._source);
@@ -236,7 +240,6 @@ function Workspace() {
         const initM = getInitialMovie();
         if (radar.movies?.length && !currentQuery && !initM) fetchMovie(radar.movies[0].title);
       } catch (e) { console.warn('Radar discovery error:', e); }
-      finally { setLoading(false); }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
