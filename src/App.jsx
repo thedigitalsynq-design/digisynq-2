@@ -1,11 +1,13 @@
 // src/App.jsx
-// Cinema Damage-Control & Reputation Intelligence Engine
-// ZERO HARDCODED MOVIE NAMES • 100% REALTIME DATA STREAM • MULTI-PAGE ARCHITECTURE
+// CDC SIGNAL v2 — redesigned product experience.
+// Same live data + sensor contracts as v1; entirely new IA, navigation,
+// visual system and states. Auth is additive (see src/auth.jsx).
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { fetchISTTime, fetchRadar, fetchMovieLive } from './api';
-import Header from './components/Header';
-import Navigation from './components/Navigation';
+import { AuthProvider, useAuth } from './auth';
+import Login from './components/Login';
+import Shell from './components/Shell';
 import CinemaRadar from './components/CinemaRadar';
 import MovieTwinSummary from './components/MovieTwinSummary';
 import WhatJustChanged from './components/WhatJustChanged';
@@ -18,739 +20,501 @@ import ConflictEngineView from './components/ConflictEngineView';
 import EvidenceDrawer from './components/EvidenceDrawer';
 import WhyModal from './components/WhyModal';
 import DataFreshnessMap from './components/DataFreshnessMap';
-import RecentReleasesView from './components/RecentReleasesView';
 import CinemaSolutionsWarRoom from './components/CinemaSolutionsWarRoom';
 import SensorTelemetryView from './components/SensorTelemetryView';
-import MasterRadarBento from './components/MasterRadarBento';
 import MoviePerformanceMetrics from './components/MoviePerformanceMetrics';
 import CinemaDamageControlProducts from './components/CinemaDamageControlProducts';
-import AuthModal from './components/AuthModal';
-import CommandPalette from './components/CommandPalette';
-import { useAuth } from './context/AuthContext';
-import { 
-  ShieldAlert, RefreshCw, Sparkles, Layers, AlertCircle, 
-  Calendar, Swords, GitFork, Radio, ArrowRight, CheckCircle2,
-  Clock, Flame, Command 
+import {
+  AlertTriangle, ArrowRight, Clapperboard, Film, Loader2,
+  RefreshCw, SearchX, ShieldAlert, WifiOff,
 } from 'lucide-react';
 
-export default function App() {
-  const { user, isAuthenticated, authModalOpen, setAuthModalOpen } = useAuth();
-  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
+// ── IA: old deep-links keep working (radar/twin/war-room/forensics/…) ──
+const TAB_ALIASES = {
+  radar: 'overview', overview: 'overview',
+  twin: 'film', film: 'film',
+  'war-room': 'response', response: 'response', products: 'response',
+  forensics: 'evidence', evidence: 'evidence',
+  telemetry: 'system', system: 'system', sensors: 'system',
+};
+const VALID_TABS = ['overview', 'film', 'response', 'evidence', 'system'];
+
+function getInitialTab() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    for (const key of ['tab', 'view', 'page']) {
+      const v = (params.get(key) || '').toLowerCase();
+      if (TAB_ALIASES[v]) return TAB_ALIASES[v];
+    }
+    const hash = window.location.hash.replace('#', '').split('?')[0].trim().toLowerCase();
+    if (TAB_ALIASES[hash]) return TAB_ALIASES[hash];
+  } catch { /* default below */ }
+  return 'overview';
+}
+
+function riskOf(m) {
+  const t = (typeof m === 'object' ? m.threatLevel : '') || '';
+  if (t === 'HIGH') return { label: 'High', cls: 'is-bad' };
+  if (t === 'ELEVATED') return { label: 'Elevated', cls: 'is-warn' };
+  return { label: 'Stable', cls: 'is-good' };
+}
+
+function EmptyFilmPrompt({ target, discoveredMovies, onPick }) {
+  return (
+    <div className="card card-pad state-block">
+      <span className="state-icon" aria-hidden="true"><Clapperboard /></span>
+      <h3>Select a film to load {target}</h3>
+      <p>Choose any release currently tracking in the 15-day window. Every section stays in sync with the active film.</p>
+      {discoveredMovies?.length > 0 ? (
+        <div className="filter-row" style={{ justifyContent: 'center' }}>
+          {discoveredMovies.slice(0, 6).map((m) => {
+            const title = typeof m === 'string' ? m : m.title;
+            return <button key={title} type="button" className="mini-btn" onClick={() => onPick(title)}>{title}</button>;
+          })}
+        </div>
+      ) : (
+        <p className="num" style={{ color: 'var(--ink-3)', fontSize: 13 }}><Loader2 className="spin" size={14} style={{ verticalAlign: -2 }} /> Sweeping trade feeds…</p>
+      )}
+    </div>
+  );
+}
+
+function Workspace() {
+  const { user } = useAuth();
   const [currentQuery, setCurrentQuery] = useState('');
   const [movieData, setMovieData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [discoveredMovies, setDiscoveredMovies] = useState([]);
   const [systemStatus, setSystemStatus] = useState('LIVE');
-
-  // Multi-Page Navigation State (synced with URL search params and hash)
-  const getInitialTab = () => {
-    try {
-      const params = new URLSearchParams(window.location.search);
-      const tabParam = params.get('tab');
-      if (tabParam && ['radar', 'twin', 'war-room', 'forensics', 'telemetry', 'products'].includes(tabParam)) {
-        return tabParam;
-      }
-      const hash = window.location.hash.replace('#', '').trim();
-      if (['radar', 'twin', 'war-room', 'forensics', 'telemetry', 'products'].includes(hash)) {
-        return hash;
-      }
-    } catch (e) {
-      // fallback
-    }
-    return 'radar';
-  };
   const [activeTab, setActiveTab] = useState(getInitialTab);
-
-  // Modals & Drawers
   const [whyData, setWhyData] = useState(null);
-  const [freshnessModalOpen, setFreshnessModalOpen] = useState(false);
-
-  // Active Temporal Snapshot state (if user is scrubbing replay)
-  const [customSnapshotState, setCustomSnapshotState] = useState(null);
-
-  // Real-time synchronization states
+  const [freshnessOpen, setFreshnessOpen] = useState(false);
+  const [customSnapshot, setCustomSnapshot] = useState(null);
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncCountdown, setSyncCountdown] = useState(30);
-  const [autoSyncEnabled, setAutoSyncEnabled] = useState(true);
-  const [syncToast, setSyncToast] = useState(null);
-  const [istWindowInfo, setIstWindowInfo] = useState(null);
+  const [autoSync, setAutoSync] = useState(true);
+  const [toast, setToast] = useState(null);
+  const [istInfo, setIstInfo] = useState(null);
+  const [istClock, setIstClock] = useState('');
+  const [industry, setIndustry] = useState('ALL');
+  const [responseView, setResponseView] = useState('playbooks');
 
-  // Keep activeTab in sync with browser URL hash & history
+  // ── URL sync (new ids; old ids still resolve on load) ──
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '').trim();
-      if (['radar', 'twin', 'war-room', 'forensics', 'telemetry', 'products'].includes(hash)) {
-        setActiveTab(hash);
-      }
+    const onHash = () => {
+      const h = window.location.hash.replace('#', '').split('?')[0].trim().toLowerCase();
+      if (TAB_ALIASES[h]) setActiveTab(TAB_ALIASES[h]);
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  // Global Keyboard Shortcut: ⌘K or Ctrl+K to open Command Palette
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        setCommandPaletteOpen(prev => !prev);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
-  // Update browser URL query params without reloading to support direct deep-linking
   useEffect(() => {
     try {
       const params = new URLSearchParams(window.location.search);
-      if (currentQuery) {
-        params.set('movie', currentQuery);
-      } else {
-        params.delete('movie');
-      }
+      if (currentQuery) params.set('movie', currentQuery); else params.delete('movie');
       params.set('tab', activeTab);
-      const newUrl = `${window.location.pathname}?${params.toString()}#${activeTab}`;
-      window.history.replaceState(null, '', newUrl);
-    } catch (e) {
-      // non-blocking
-    }
+      window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}#${activeTab}`);
+    } catch { /* non-blocking */ }
   }, [currentQuery, activeTab]);
 
-  const changeTab = (tabId) => {
-    setActiveTab(tabId);
-    window.location.hash = tabId;
+  const changeTab = (id) => {
+    const next = TAB_ALIASES[id] || 'overview';
+    setActiveTab(next);
+    try { window.location.hash = next; } catch { /* noop */ }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Fetch IST window information for navigation & headers
-  const fetchISTInfo = async () => {
-    try {
-      const data = await fetchISTTime();
-      setIstWindowInfo(data);
-    } catch (e) {
-      console.warn('IST info fetch failed:', e.message);
-    }
-  };
-
+  // ── IST clock ──
   useEffect(() => {
-    fetchISTInfo();
+    fetchISTTime().then(setIstInfo).catch(() => {});
     try {
       const params = new URLSearchParams(window.location.search);
       const movieParam = params.get('movie');
-      if (movieParam && movieParam.trim()) {
-        fetchMovie(movieParam.trim());
-      }
-    } catch (e) {
-      // non-blocking
-    }
+      if (movieParam?.trim()) fetchMovie(movieParam.trim());
+    } catch { /* noop */ }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchMovie = async (title, force = false) => {
-    if (!title || !title.trim()) return;
-    setLoading(true);
-    setError(null);
-    setCurrentQuery(title);
-    setCustomSnapshotState(null);
+  useEffect(() => {
+    const tick = () => {
+      try {
+        setIstClock(new Intl.DateTimeFormat('en-IN', {
+          timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true,
+        }).format(new Date()));
+      } catch { /* noop */ }
+    };
+    tick();
+    const t = setInterval(tick, 1000);
+    return () => clearInterval(t);
+  }, []);
 
+  // ── Data layer (unchanged contracts) ──
+  const fetchMovie = async (title, force = false) => {
+    if (!title?.trim()) return;
+    setLoading(true); setError(null);
+    setCurrentQuery(title); setCustomSnapshot(null);
     try {
       const data = await fetchMovieLive(title, { force });
-      if (data._source) {
-        setSystemStatus(data._source);
-      }
-      if (data.isOffline && !data.hasData) {
-        setError(data.message || 'Offline intelligence mode');
-      }
+      if (data._source) setSystemStatus(data._source);
+      if (data.isOffline && !data.hasData) setError(data.message || 'Offline intelligence mode');
       setMovieData(data);
     } catch (err) {
       setError(err.message || 'Failed to communicate with Sensor Adapter Network');
-      setMovieData(null);
-      setSystemStatus('OFFLINE');
-    } finally {
-      setLoading(false);
-    }
+      setMovieData(null); setSystemStatus('OFFLINE');
+    } finally { setLoading(false); }
   };
 
-  // Select a movie and smoothly route to target tab
-  const handleSelectMovie = (title, targetTab = 'twin') => {
-    fetchMovie(title);
-    if (activeTab === 'radar') {
-      changeTab(targetTab);
-    }
-  };
+  const showToast = (msg) => { setToast(msg); setTimeout(() => setToast(null), 4000); };
 
-  // Background real-time sync trigger (recalculates live state from internet sensors)
-  const triggerSync = async (isManual = false) => {
+  const triggerSync = async (manual = false) => {
     if (isSyncing || loading) return;
     setIsSyncing(true);
-
     try {
-      // 1. Refresh live radar & feed pulse
-      const radarPromise = fetchRadar({ force: true })
-        .then(data => {
-          if (data?.movies) setDiscoveredMovies(data.movies);
-          if (data?._source) setSystemStatus(data._source);
-          if (data?.windowRange) {
-            setIstWindowInfo(prev => ({
-              ...prev,
-              windowRangeStr: data.windowRange,
-              nowISTFormatted: data.nowIST
-            }));
-          }
-        })
-        .catch(() => {});
-
-      // 2. Refresh active movie digital twin if title is active
-      let moviePromise = Promise.resolve();
+      await fetchRadar({ force: true }).then((data) => {
+        if (data?.movies) setDiscoveredMovies(data.movies);
+        if (data?._source) setSystemStatus(data._source);
+        if (data?.windowRange) setIstInfo((p) => ({ ...p, windowRangeStr: data.windowRange, nowISTFormatted: data.nowIST }));
+      }).catch(() => {});
       if (currentQuery) {
-        moviePromise = fetchMovieLive(currentQuery, { force: true })
-          .then(newData => {
-            if (newData && newData.hasData) {
-              setMovieData(prev => {
-                const prevCount = prev?.stats?.primarySignalsCount || 0;
-                const newCount = newData?.stats?.primarySignalsCount || 0;
-                if (newCount !== prevCount && prevCount > 0) {
-                  const diff = newCount - prevCount;
-                  setSyncToast(`Live Sync: ${Math.abs(diff)} ${diff > 0 ? 'new' : 'updated'} signals ingested.`);
-                  setTimeout(() => setSyncToast(null), 5000);
-                }
-                return newData;
-              });
-            }
-          })
-          .catch(() => {});
+        await fetchMovieLive(currentQuery, { force: true }).then((next) => {
+          if (next?.hasData) {
+            setMovieData((prev) => {
+              const a = prev?.stats?.primarySignalsCount || 0, b = next?.stats?.primarySignalsCount || 0;
+              if (a > 0 && b !== a) showToast(`Live sync: ${Math.abs(b - a)} ${b > a ? 'new' : 'updated'} signals ingested.`);
+              return next;
+            });
+          }
+        }).catch(() => {});
       }
-
-      await Promise.all([radarPromise, moviePromise]);
-      if (isManual) {
-        setSyncToast('Live Sensor Network Synchronized.');
-        setTimeout(() => setSyncToast(null), 3000);
-      }
-    } finally {
-      setIsSyncing(false);
-      setSyncCountdown(30);
-    }
+      if (manual) showToast('Sensor network synchronized.');
+    } finally { setIsSyncing(false); setSyncCountdown(30); }
   };
 
-  // 1-second interval loop for continuous real-time sync
   useEffect(() => {
-    if (!autoSyncEnabled) return;
-
+    if (!autoSync) return;
     const timer = setInterval(() => {
-      setSyncCountdown(prev => {
-        if (prev <= 1) {
-          triggerSync();
-          return 30;
-        }
+      setSyncCountdown((prev) => {
+        if (prev <= 1) { triggerSync(); return 30; }
         return prev - 1;
       });
     }, 1000);
-
     return () => clearInterval(timer);
-  }, [autoSyncEnabled, currentQuery, isSyncing, loading]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoSync, currentQuery, isSyncing, loading]);
 
-  // Pause auto-sync when browser tab is hidden to prevent tab memory/CPU leaks
   useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (!document.hidden && autoSyncEnabled) {
-        triggerSync();
-      }
-    };
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
-  }, [autoSyncEnabled, currentQuery]);
+    const onVis = () => { if (!document.hidden && autoSync) triggerSync(); };
+    document.addEventListener('visibilitychange', onVis);
+    return () => document.removeEventListener('visibilitychange', onVis);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoSync, currentQuery]);
 
-  // Real-time automatic discovery on initial mount (ZERO hardcoding)
   useEffect(() => {
-    async function initDiscovery() {
+    (async () => {
       setLoading(true);
       try {
-        const radarData = await fetchRadar();
-        if (radarData._source) setSystemStatus(radarData._source);
-        const movies = radarData.movies || [];
-        setDiscoveredMovies(movies);
-
-        // Build digital twin for the top movie currently trending in live feeds
-        if (movies.length > 0 && !currentQuery) {
-          const topMovieTitle = movies[0].title;
-          fetchMovie(topMovieTitle);
-        }
-      } catch (err) {
-        console.warn('Initial live radar discovery error:', err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    initDiscovery();
+        const radar = await fetchRadar();
+        if (radar._source) setSystemStatus(radar._source);
+        setDiscoveredMovies(radar.movies || []);
+        if (radar.movies?.length && !currentQuery) fetchMovie(radar.movies[0].title);
+      } catch (e) { console.warn('Radar discovery error:', e); }
+      finally { setLoading(false); }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
-  const handleWhyClick = (whyKeyOrObject) => {
-    if (typeof whyKeyOrObject === 'string') {
-      const breakdown = movieData?.liveState?.whyBreakdowns?.[whyKeyOrObject];
-      if (breakdown) {
-        setWhyData(breakdown);
-      }
-    } else if (typeof whyKeyOrObject === 'object') {
-      setWhyData(whyKeyOrObject);
-    }
+  const handleWhy = (keyOrObj) => {
+    if (typeof keyOrObj === 'string') {
+      const b = movieData?.liveState?.whyBreakdowns?.[keyOrObj];
+      if (b) setWhyData(b);
+    } else if (typeof keyOrObj === 'object') setWhyData(keyOrObj);
   };
 
-  // Determine active state: if scrubbing historical snapshot, use that state, else live state
-  const effectiveState = customSnapshotState?.state || movieData?.liveState;
-  const defconLevel = effectiveState?.threatLevel || 'DEFCON 2';
+  const effectiveState = customSnapshot?.state || movieData?.liveState;
+  const industries = useMemo(() => {
+    const set = new Set(discoveredMovies.map((m) => typeof m === 'object' && m.industry).filter(Boolean));
+    return ['ALL', ...set];
+  }, [discoveredMovies]);
+  const visibleMovies = industry === 'ALL'
+    ? discoveredMovies
+    : discoveredMovies.filter((m) => typeof m === 'object' && m.industry === industry);
 
-  // Empty selection picker component for pages requiring a selected film
-  const FilmSelectorPrompt = ({ targetTabName = 'Digital Twin' }) => (
-    <div className="glass-panel p-8 sm:p-12 text-center flex flex-col items-center gap-6 my-6 border border-cyan-500/20 shadow-2xl">
-      <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-        <Sparkles className="w-7 h-7 animate-pulse" />
-      </div>
+  const stats = useMemo(() => {
+    const list = discoveredMovies.filter((m) => typeof m === 'object');
+    return {
+      tracked: discoveredMovies.length,
+      crises: list.filter((m) => m.threatLevel === 'HIGH').length,
+      favorable: list.filter((m) => (m.netSentiment ?? 0) > 20).length,
+      signals: list.reduce((n, m) => n + (m.signalCount || 0), 0),
+    };
+  }, [discoveredMovies]);
 
-      <div className="max-w-xl">
-        <h3 className="text-lg font-bold text-white uppercase tracking-wider font-mono">
-          Select an Active Theatrical Release
-        </h3>
-        <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-          Choose any film currently tracking in Indian theaters (released in the last 15 days) to load its real-time {targetTabName}.
-        </p>
-      </div>
+  const ranked = useMemo(() => [...visibleMovies].sort((a, b) => {
+    const order = { HIGH: 0, ELEVATED: 1 };
+    const ra = order[a.threatLevel] ?? 2, rb = order[b.threatLevel] ?? 2;
+    if (ra !== rb) return ra - rb;
+    return (b.signalCount || 0) - (a.signalCount || 0);
+  }), [visibleMovies]);
 
-      {discoveredMovies && discoveredMovies.length > 0 ? (
-        <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-          {discoveredMovies.map((m) => {
-            const title = typeof m === 'string' ? m : m.title;
-            const timing = typeof m === 'object' ? m.releaseTiming : 'Active Release';
-            const bo = typeof m === 'object' && m.boxOfficeSummary && m.boxOfficeSummary !== 'Tracking' ? m.boxOfficeSummary : null;
-            const trust = typeof m === 'object' ? m.trustScore : 90;
-
-            return (
-              <button
-                key={title}
-                onClick={() => fetchMovie(title)}
-                className="p-4 rounded-xl bg-[#0b1222] border border-white/10 hover:border-cyan-500/60 hover:bg-[#0e172e] flex flex-col justify-between text-left transition-all group shadow-md"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-1 mb-1.5">
-                    <span className="text-[0.62rem] font-mono bg-white/10 text-cyan-300 px-1.5 py-0.5 rounded">
-                      {timing.includes('(') ? timing.match(/\((.*?)\)/)?.[1] || timing : timing}
-                    </span>
-                    {trust && (
-                      <span className="text-[0.62rem] font-mono text-emerald-300 font-bold">
-                        ✓ {trust}%
-                      </span>
-                    )}
-                  </div>
-                  <h4 className="font-bold text-sm text-white group-hover:text-cyan-300 transition-colors">
-                    {title}
-                  </h4>
-                </div>
-
-                <div className="mt-3 pt-2 border-t border-white/5 flex items-center justify-between text-xs">
-                  {bo ? (
-                    <span className="text-[0.68rem] font-mono text-amber-300 font-semibold">{bo}</span>
-                  ) : (
-                    <span className="text-[0.68rem] font-mono text-slate-500">Day-wise Tracking</span>
-                  )}
-                  <span className="text-[0.7rem] text-cyan-400 flex items-center gap-1 font-mono font-semibold">
-                    Inspect <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      ) : (
-        <div className="text-xs font-mono text-slate-400 flex items-center gap-2">
-          <RefreshCw className="w-4 h-4 animate-spin text-cyan-400" />
-          <span>Sweeping Indian cinema trade feeds for active 15-day releases...</span>
-        </div>
-      )}
-    </div>
-  );
+  const selectFilm = (title, tab = 'film') => { fetchMovie(title); if (activeTab === 'overview') changeTab(tab); };
+  const istLabel = istClock ? `IST ${istClock}` : 'IST ···';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#07090e] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black">
-      
-      {/* 1. Global Apple/Linear-Style Unified Command Bar */}
-      <Header
-        activeTab={activeTab}
-        onSelectTab={changeTab}
-        currentQuery={currentQuery}
-        onSearch={(query) => {
-          fetchMovie(query);
-          changeTab('twin');
-        }}
-        loading={loading}
-        freshnessMap={movieData?.freshnessMap}
-        decisionIntelligence={movieData?.decisionIntelligence}
-        onOpenFreshnessModal={() => setFreshnessModalOpen(true)}
-        discoveredMovies={discoveredMovies}
-        isSyncing={isSyncing}
-        syncCountdown={syncCountdown}
-        autoSyncEnabled={autoSyncEnabled}
-        onToggleAutoSync={() => setAutoSyncEnabled(!autoSyncEnabled)}
-        onManualSync={() => triggerSync(true)}
-        systemStatus={systemStatus}
-        onOpenCommandPalette={() => setCommandPaletteOpen(true)}
-      />
-
-      {/* Honest Offline / Standby Resilience Notice */}
+    <Shell
+      activeTab={activeTab} onSelectTab={changeTab}
+      currentQuery={currentQuery} discoveredMovies={discoveredMovies}
+      onSearch={(t) => { fetchMovie(t); changeTab('film'); }}
+      loading={loading} systemStatus={systemStatus}
+      isSyncing={isSyncing} onManualSync={() => triggerSync(true)}
+      istLabel={istLabel} toast={toast}
+    >
       {systemStatus === 'OFFLINE' && (
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-3 w-full">
-          <div className="bg-amber-950/40 border border-amber-500/30 rounded-xl px-4 py-2.5 flex items-center justify-between gap-4 text-xs text-amber-200">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
-              <span>
-                <strong>Standby / Offline Telemetry Mode:</strong> Live external internet sensor stream is currently unreachable. Operating with cached and fallback intelligence.
+        <div className="banner is-warn" role="alert">
+          <WifiOff aria-hidden="true" />
+          <p><strong>Standby telemetry.</strong> Live sensor stream unreachable — operating on cached intelligence.</p>
+          <button type="button" className="mini-btn banner-act" onClick={() => triggerSync(true)}>Retry sync</button>
+        </div>
+      )}
+
+      {error && !loading && (
+        <div className="banner is-bad" role="alert">
+          <ShieldAlert aria-hidden="true" />
+          <p><strong>Sensor ingestion alert.</strong> {error}</p>
+          <button type="button" className="mini-btn banner-act" onClick={() => fetchMovie(currentQuery)}>Retry</button>
+        </div>
+      )}
+
+      {loading && !movieData && (
+        <div className="card card-pad" role="status" aria-label="Loading">
+          <div style={{ display: 'grid', gap: 10 }}>
+            <div className="skeleton" style={{ height: 22, width: '40%' }} />
+            <div className="skeleton" style={{ height: 14 }} />
+            <div className="skeleton" style={{ height: 14, width: '75%' }} />
+          </div>
+        </div>
+      )}
+
+      {/* ═══ OVERVIEW ═══ */}
+      {activeTab === 'overview' && (
+        <>
+          <section className="section" aria-label="Window summary">
+            <div className="kpi-grid">
+              <div className="kpi"><span className="k">Tracking</span><span className="v num">{stats.tracked}</span><span className="s">{istInfo?.windowRangeStr || istInfo?.displayLabel || '15-day IST window'}</span></div>
+              <div className={`kpi ${stats.crises ? 'is-risk' : ''}`}><span className="k">Active crises</span><span className="v num">{stats.crises}</span><span className="s">High-threat releases</span></div>
+              <div className="kpi is-good"><span className="k">Favorable WOM</span><span className="v num">{stats.favorable}</span><span className="s">Net sentiment above +20</span></div>
+              <div className="kpi is-accent"><span className="k">Signals</span><span className="v num">{stats.signals}</span><span className="s">Verified across sensors</span></div>
+            </div>
+          </section>
+
+          <section className="section" aria-label="Releases ranked by risk">
+            <div className="section-head">
+              <div><h2>Releases, ranked by risk</h2><p>High-threat films surface first. Select one to sync every section.</p></div>
+              <div className="filter-row" role="group" aria-label="Filter by industry">
+                {industries.map((ind) => (
+                  <button key={ind} type="button" onClick={() => setIndustry(ind)}
+                    className={`mini-btn ${industry === ind ? 'is-primary' : ''}`}
+                    aria-pressed={industry === ind}>{ind === 'ALL' ? 'All industries' : ind}</button>
+                ))}
+              </div>
+            </div>
+            <div className="card" style={{ overflow: 'hidden' }}>
+              <div style={{ overflowX: 'auto' }}>
+                <table className="film-table">
+                  <thead><tr><th scope="col">Film</th><th scope="col">Risk</th><th scope="col">WOM</th><th scope="col">Box office</th><th scope="col">Day</th><th scope="col"><span className="num">Action</span></th></tr></thead>
+                  <tbody>
+                    {ranked.map((m) => {
+                      const title = typeof m === 'string' ? m : m.title;
+                      const wom = typeof m === 'object' ? (m.netSentiment ?? 0) : 0;
+                      const risk = riskOf(m);
+                      const selected = currentQuery?.toLowerCase() === title.toLowerCase();
+                      return (
+                        <tr key={title} onClick={() => selectFilm(title)} className={selected ? 'is-selected' : ''} tabIndex={0}
+                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectFilm(title); } }}
+                          aria-label={`${title}, risk ${risk.label}`}>
+                          <td><span className="film-title">{title}</span><br /><span className="film-sub">{m.industryLabel || m.industry || 'Indian cinema'} · {m.releaseTiming || ''}</span></td>
+                          <td><span className={`pill ${risk.cls}`}>{risk.label}</span></td>
+                          <td className={`num ${wom >= 0 ? 'pos' : 'neg'}`}>{wom > 0 ? '+' : ''}{wom}%</td>
+                          <td className="num" style={{ fontSize: 12.5 }}>{m.boxOfficeSummary || 'Tracking'}</td>
+                          <td className="num">{m.daysInTheaters ?? '–'}</td>
+                          <td><span className="row-actions">
+                            <button type="button" className="mini-btn" onClick={(e) => { e.stopPropagation(); selectFilm(title, 'film'); }}>Inspect <ArrowRight size={13} aria-hidden="true" /></button>
+                            <button type="button" className="mini-btn" onClick={(e) => { e.stopPropagation(); fetchMovie(title); changeTab('response'); }}>War room</button>
+                          </span></td>
+                        </tr>
+                      );
+                    })}
+                    {!ranked.length && (
+                      <tr><td colSpan={6}><div className="state-block"><SearchX aria-hidden="true" /><p>No releases in this filter yet.</p></div></td></tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section className="section" aria-label="Spatial radar">
+            <div className="section-head">
+              <div><h2>Spatial radar</h2><p>Sentiment vs. theatrical velocity for the full window.</p></div>
+              <span className="meta">Same live engine · new frame</span>
+            </div>
+            <div className="legacy-wrap">
+              <CinemaRadar
+                currentMovie={currentQuery}
+                onSelectMovie={(t) => fetchMovie(t)}
+              />
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* ═══ FILM ═══ */}
+      {activeTab === 'film' && (
+        <>
+          {(!movieData?.hasData && !loading) ? (
+            <EmptyFilmPrompt target="intelligence" discoveredMovies={discoveredMovies} onPick={(t) => fetchMovie(t)} />
+          ) : movieData?.hasData && effectiveState ? (
+            <>
+              <MovieTwinSummary movieData={{ ...movieData, liveState: effectiveState }} onOpenWhy={handleWhy} />
+              <div className="legacy-wrap">
+                <MoviePerformanceMetrics movieData={movieData} movieTitle={currentQuery}
+                  discoveredMovies={discoveredMovies} onSelectMovie={(t) => fetchMovie(t)} />
+              </div>
+              <div className="split">
+                <WhatJustChanged events={effectiveState?.whatJustChanged || []} />
+                <IssuesAndControversies activeIssues={effectiveState?.activeIssues || []} emergingControversies={effectiveState?.emergingControversies || []} />
+              </div>
+              <CompetingNarratives competingNarratives={effectiveState?.competingNarratives || { positive: [], negative: [], emerging: [], neutral: [] }} onOpenWhy={handleWhy} />
+              <EvidenceDrawer signals={effectiveState?.narratives ? effectiveState.narratives.flatMap((n) => n.signals || []) : []} />
+            </>
+          ) : null}
+        </>
+      )}
+
+      {/* ═══ RESPONSE ═══ */}
+      {activeTab === 'response' && (
+        <>
+          {(!movieData?.hasData && !loading) ? (
+            <EmptyFilmPrompt target="response plan" discoveredMovies={discoveredMovies} onPick={(t) => fetchMovie(t)} />
+          ) : movieData?.hasData && effectiveState ? (
+            <>
+              <section className="section" aria-label="Response views">
+                <div className="filter-row" role="tablist" aria-label="Response views">
+                  {[{ id: 'playbooks', label: 'Damage-control playbooks' }, { id: 'arsenal', label: 'Crisis arsenal' }].map((v) => (
+                    <button key={v.id} type="button" role="tab" aria-selected={responseView === v.id}
+                      className={`mini-btn ${responseView === v.id ? 'is-primary' : ''}`}
+                      onClick={() => setResponseView(v.id)}>{v.label}</button>
+                  ))}
+                  <span className="meta" style={{ marginLeft: 'auto', fontFamily: 'var(--font-mono)', fontSize: 11.5, color: 'var(--ink-4)' }}>
+                    Subject: <strong style={{ color: 'var(--ink)' }}>{currentQuery}</strong>
+                  </span>
+                </div>
+              </section>
+              {responseView === 'playbooks' ? (
+                <div className="legacy-wrap">
+                  <CinemaSolutionsWarRoom solutions={effectiveState?.cinemaSolutions} movieTitle={currentQuery} decisionIntelligence={movieData?.decisionIntelligence} />
+                </div>
+              ) : (
+                <div className="legacy-wrap">
+                  <CinemaDamageControlProducts movieData={movieData} movieTitle={currentQuery} onOpenWhy={handleWhy} />
+                </div>
+              )}
+            </>
+          ) : null}
+        </>
+      )}
+
+      {/* ═══ EVIDENCE ═══ */}
+      {activeTab === 'evidence' && (
+        <>
+          {(!movieData?.hasData && !loading) ? (
+            <EmptyFilmPrompt target="forensics" discoveredMovies={discoveredMovies} onPick={(t) => fetchMovie(t)} />
+          ) : movieData?.hasData && effectiveState ? (
+            <>
+              <section className="section" aria-label="Forensic subject">
+                <div className="card card-pad" style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+                  <Film aria-hidden="true" style={{ color: 'var(--accent)' }} />
+                  <p style={{ fontSize: 13.5, color: 'var(--ink-2)' }}>Root-cause lineage, conflicts and replay for <strong style={{ color: 'var(--ink)' }}>{currentQuery}</strong>.</p>
+                  <span className="pill is-info" style={{ marginLeft: 'auto' }}>Diagnostics</span>
+                </div>
+              </section>
+              <div className="legacy-wrap">
+                <TemporalReplay temporalData={movieData.temporalReplay} onSelectSnapshot={(s) => setCustomSnapshot(s)} />
+                <RootCauseGraph graphData={movieData?.rootCauseGraph || { nodes: [], edges: [] }} />
+              </div>
+              <div className="split">
+                <ConflictEngineView conflicts={effectiveState?.conflicts || []} />
+                <FalseSignalAlerts alerts={effectiveState?.falseSignalAlerts || []} />
+              </div>
+            </>
+          ) : null}
+        </>
+      )}
+
+      {/* ═══ SYSTEM ═══ */}
+      {activeTab === 'system' && (
+        <>
+          <section className="section" aria-label="Sync controls">
+            <div className="card card-pad" style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+              <p style={{ fontSize: 13.5, color: 'var(--ink-2)' }}>
+                Auto-sync <strong style={{ color: 'var(--ink)' }}>{autoSync ? `on — next sweep in ${syncCountdown}s` : 'paused'}</strong> · Signed in as <strong style={{ color: 'var(--ink)' }}>{user?.email}</strong>
+              </p>
+              <span style={{ marginLeft: 'auto', display: 'flex', gap: 8 }}>
+                <button type="button" className="mini-btn" onClick={() => setAutoSync((v) => !v)} aria-pressed={autoSync}>{autoSync ? 'Pause auto-sync' : 'Resume auto-sync'}</button>
+                <button type="button" className="mini-btn is-primary" onClick={() => triggerSync(true)} disabled={isSyncing}>
+                  <RefreshCw size={13} aria-hidden="true" /> Sync now
+                </button>
+                <button type="button" className="mini-btn" onClick={() => setFreshnessOpen(true)}>Freshness map</button>
               </span>
             </div>
-            <button 
-              onClick={() => triggerSync(true)} 
-              className="px-2.5 py-1 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded text-amber-300 font-mono text-[0.7rem] transition-colors shrink-0"
-            >
-              Retry Sync
-            </button>
+          </section>
+          <div className="legacy-wrap">
+            <SensorTelemetryView freshnessMap={movieData?.freshnessMap || []} onRefreshSensors={() => triggerSync(true)} />
           </div>
-        </div>
+          {!movieData?.freshnessMap?.length && (
+            <div className="card card-pad state-block">
+              <AlertTriangle aria-hidden="true" />
+              <h3>No film telemetry yet</h3>
+              <p>Select a film on the Overview to populate per-sensor freshness, or run a manual sync.</p>
+              <span className="filter-row" style={{ justifyContent: 'center' }}>
+                <button type="button" className="mini-btn is-primary" onClick={() => changeTab('overview')}>Go to Overview</button>
+                <button type="button" className="mini-btn" onClick={() => triggerSync(true)}>Sync now</button>
+              </span>
+            </div>
+          )}
+        </>
       )}
 
+      <WhyModal isOpen={Boolean(whyData)} onClose={() => setWhyData(null)} data={whyData} />
+      <DataFreshnessMap isOpen={freshnessOpen} onClose={() => setFreshnessOpen(false)} freshnessMap={movieData?.freshnessMap || []} />
+    </Shell>
+  );
+}
 
-      {/* Real-Time Sync Notification Toast */}
-      {syncToast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#0c1324] border border-cyan-400/80 text-cyan-200 px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-3 text-xs font-mono animate-fade-in ring-1 ring-cyan-400/30">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping inline-block" />
-          <span>{syncToast}</span>
-        </div>
-      )}
-
-      {/* Main Multi-Page Content Area */}
-      <main className="flex-1 max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-6">
-        
-        {/* Global Loading Overlay Banner when actively harvesting a film */}
-        {loading && (
-          <div className="glass-panel p-8 flex flex-col items-center justify-center gap-3 text-center border border-cyan-500/30 shadow-xl animate-pulse">
-            <div className="relative">
-              <RefreshCw className="w-8 h-8 text-cyan-400 animate-spin" />
-              <span className="w-2 h-2 rounded-full bg-emerald-400 absolute top-0 right-0 animate-ping" />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
-                Harvesting Real-Time Public Signals for "{currentQuery}"...
-              </h3>
-              <p className="text-xs text-slate-400 mt-1 max-w-md">
-                Verifying multi-source trade reports, Wikipedia knowledge graphs, cinema forums, and critic reviews.
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Global Error Banner */}
-        {error && !loading && (
-          <div className="p-5 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3 shadow-lg">
-            <ShieldAlert className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-            <div>
-              <h4 className="text-sm font-bold text-red-300 font-mono">Sensor Ingestion Alert</h4>
-              <p className="text-xs text-red-200/80 mt-1">{error}</p>
-              <button
-                onClick={() => fetchMovie(currentQuery)}
-                className="mt-3 px-3 py-1 bg-red-600/30 hover:bg-red-600/50 border border-red-500/40 text-red-200 text-xs rounded-md font-mono"
-              >
-                Retry Ingestion
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* =========================================================================
-            PAGE 1: 🛰️ UNIFIED APPLE/LINEAR-STYLE MASTER BENTO DECK
-        ========================================================================= */}
-        {activeTab === 'radar' && (
-          <MasterRadarBento
-            radarData={{ movies: discoveredMovies }}
-            discoveredMovies={discoveredMovies}
-            currentMovie={currentQuery}
-            currentMovieData={movieData}
-            onSelectMovie={(title) => {
-              // Load movie data (syncs all dashboards) but stay on Radar.
-              // User can then navigate to any tab to see synced data.
-              fetchMovie(title);
-            }}
-            onOpenWarRoom={(title) => {
-              fetchMovie(title);
-              changeTab('war-room');
-            }}
-            loading={loading}
-            onRefresh={() => triggerSync(true)}
-            istWindowStr={istWindowInfo?.windowRangeStr}
-          />
-        )}
-
-        {/* =========================================================================
-            PAGE 2: 🛡️ DIGITAL TWIN & THREAT INTELLIGENCE
-        ========================================================================= */}
-        {activeTab === 'twin' && (
-          <div className="flex flex-col gap-6 animate-fade-in">
-            
-            {/* If no movie is selected or data is empty */}
-            {(!movieData || !movieData.hasData) && !loading && (
-              <FilmSelectorPrompt targetTabName="Digital Twin" />
-            )}
-
-            {/* Active Film Digital Twin View */}
-            {movieData && movieData.hasData && effectiveState && (
-              <div className="flex flex-col gap-6">
-                
-                {/* 1. Executive Summary & Defcon Posture */}
-                <MovieTwinSummary
-                  movieData={{
-                    ...movieData,
-                    liveState: effectiveState
-                  }}
-                  onOpenWhy={handleWhyClick}
-                />
-
-                {/* 1.5 Movie Performance & Audience Metrics (BookMyShow, IMDb, Google, Box Office, Reviews) */}
-                <MoviePerformanceMetrics
-                  movieData={movieData}
-                  movieTitle={currentQuery}
-                  discoveredMovies={discoveredMovies}
-                  onSelectMovie={(title) => {
-                    fetchMovie(title);
-                    changeTab('twin');
-                  }}
-                />
-
-                {/* 2. Real-Time Signal Velocity & Issues */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                  <div className="lg:col-span-5 flex flex-col gap-6">
-                    <WhatJustChanged events={effectiveState?.whatJustChanged || []} />
-                  </div>
-
-                  <div className="lg:col-span-7 flex flex-col gap-6">
-                    <IssuesAndControversies
-                      activeIssues={effectiveState?.activeIssues || []}
-                      emergingControversies={effectiveState?.emergingControversies || []}
-                    />
-                  </div>
-                </div>
-
-                {/* 3. Competing Narratives Matrix */}
-                <CompetingNarratives
-                  competingNarratives={effectiveState?.competingNarratives || { positive: [], negative: [], emerging: [], neutral: [] }}
-                  onOpenWhy={handleWhyClick}
-                />
-
-                {/* 4. Traceable Ground Truth Evidence Lineage */}
-                <EvidenceDrawer signals={effectiveState?.narratives ? effectiveState.narratives.flatMap(n => n.signals || []) : []} />
-
-              </div>
-            )}
-
-          </div>
-        )}
-
-        {/* =========================================================================
-            PAGE 3: ⚔️ STUDIO WAR ROOM & SOLUTIONS SUITE
-        ========================================================================= */}
-        {activeTab === 'war-room' && (
-          <div className="flex flex-col gap-6 animate-fade-in">
-            
-            {/* If no movie is selected */}
-            {(!movieData || !movieData.hasData) && !loading && (
-              <FilmSelectorPrompt targetTabName="War Room & Solutions Playbook" />
-            )}
-
-            {/* Active War Room View */}
-            {movieData && movieData.hasData && effectiveState && (
-              <div className="flex flex-col gap-6">
-                
-                {/* War Room Header Status Banner */}
-                <div className="glass-panel p-6 border border-amber-500/30 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-md">
-                      <Swords className="w-6 h-6 animate-pulse" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h2 className="text-lg font-black tracking-wider uppercase text-white font-mono">
-                          Studio Crisis Command & Mitigation War Room
-                        </h2>
-                        <span className="badge badge-critical text-xs py-0.5 font-mono">
-                          {defconLevel}
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-400 mt-0.5">
-                        Active Film: <strong className="text-white">{currentQuery}</strong> • 5 Theatrical Damage-Control Playbooks
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 font-mono text-xs">
-                    <button
-                      onClick={() => triggerSync(true)}
-                      className="px-3.5 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 flex items-center gap-2 transition-all font-semibold"
-                    >
-                      <RefreshCw className="w-3.5 h-3.5" />
-                      <span>Re-estimate Exposure</span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* The 5 Custom Cinema Solutions + Flagship Systematic Decision Matrix */}
-                <CinemaSolutionsWarRoom
-                  solutions={effectiveState?.cinemaSolutions}
-                  movieTitle={currentQuery}
-                  decisionIntelligence={movieData?.decisionIntelligence}
-                />
-
-              </div>
-            )}
-
-          </div>
-        )}
-
-        {/* =========================================================================
-            PAGE 4: 🔬 FORENSICS, CAUSALITY & TEMPORAL REPLAY
-        ========================================================================= */}
-        {activeTab === 'forensics' && (
-          <div className="flex flex-col gap-6 animate-fade-in">
-            
-            {/* If no movie is selected */}
-            {(!movieData || !movieData.hasData) && !loading && (
-              <FilmSelectorPrompt targetTabName="Forensic Diagnostics" />
-            )}
-
-            {/* Active Forensic View */}
-            {movieData && movieData.hasData && effectiveState && (
-              <div className="flex flex-col gap-6">
-                
-                {/* Forensic Header Banner */}
-                <div className="glass-panel p-6 border border-purple-500/30 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-400 shadow-md">
-                      <GitFork className="w-6 h-6 animate-pulse" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h2 className="text-lg font-black tracking-wider uppercase text-white font-mono">
-                          Theatrical Forensic Lab & Causal Lineage
-                        </h2>
-                        <span className="badge badge-info text-xs py-0.5 font-mono">
-                          Diagnostics
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-400 mt-0.5">
-                        Root-Cause Directed Acyclic Graph • Conflict Detection • Temporal Hour-by-Hour Replay
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="font-mono text-xs text-purple-300 bg-purple-950/40 border border-purple-500/30 px-3 py-1.5 rounded-lg">
-                    Subject: <strong>{currentQuery}</strong>
-                  </div>
-                </div>
-
-                {/* 1. Historical Temporal Replay Slider */}
-                <TemporalReplay
-                  temporalData={movieData.temporalReplay}
-                  onSelectSnapshot={(snapshot) => setCustomSnapshotState(snapshot)}
-                />
-
-                {/* 2. Interactive Root-Cause Causal DAG Graph */}
-                <RootCauseGraph graphData={movieData?.rootCauseGraph || { nodes: [], edges: [] }} />
-
-                {/* 3. Discrepancy & Conflict Engine + False Signal Detection */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                  <ConflictEngineView conflicts={effectiveState?.conflicts || []} />
-                  <FalseSignalAlerts alerts={effectiveState?.falseSignalAlerts || []} />
-                </div>
-
-              </div>
-            )}
-
-          </div>
-        )}
-
-        {/* =========================================================================
-            PAGE 5: 🌐 SENSOR TELEMETRY & TRUST AUDIT
-        ========================================================================= */}
-        {activeTab === 'telemetry' && (
-          <SensorTelemetryView
-            freshnessMap={movieData?.freshnessMap || []}
-            onRefreshSensors={() => triggerSync(true)}
-          />
-        )}
-
-        {/* =========================================================================
-            PAGE 6: 🧰 CINEMA DAMAGE CONTROL PRODUCTS & TACTICAL ARSENAL
-        ========================================================================= */}
-        {activeTab === 'products' && (
-          <div className="flex flex-col gap-6 animate-fade-in">
-            {(!movieData || !movieData.hasData) && !loading && (
-              <FilmSelectorPrompt targetTabName="Crisis Damage Control Products" />
-            )}
-
-            {movieData && movieData.hasData && (
-              <CinemaDamageControlProducts
-                movieData={movieData}
-                movieTitle={currentQuery}
-                onOpenWhy={handleWhyClick}
-              />
-            )}
-          </div>
-        )}
-
+function Booting() {
+  return (
+    <div className="login-root">
+      <main className="login-panel" style={{ gridColumn: '1 / -1' }}>
+        <p className="num" style={{ color: 'var(--ink-3)', fontSize: 13 }} role="status">
+          <Loader2 className="spin" size={15} style={{ verticalAlign: -2 }} /> Restoring session…
+        </p>
       </main>
-
-      {/* Executive Global Footer */}
-      <footer className="border-t border-white/5 bg-[#05070b] py-6 px-4 text-center text-xs text-slate-500 font-mono mt-auto">
-        <div className="max-w-[1600px] w-full px-4 sm:px-6 lg:px-8 mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Cinema Damage-Control Platform • Indian Cinema Intelligence</span>
-          </div>
-          <span>Strict 15-Day Sliding Theatrical Window • Indian Standard Time (UTC+05:30)</span>
-        </div>
-      </footer>
-
-      {/* Why Explainability Modal */}
-      <WhyModal
-        isOpen={Boolean(whyData)}
-        onClose={() => setWhyData(null)}
-        data={whyData}
-      />
-
-      {/* Sensor Freshness Modal */}
-      <DataFreshnessMap
-        isOpen={freshnessModalOpen}
-        onClose={() => setFreshnessModalOpen(false)}
-        freshnessMap={movieData?.freshnessMap || []}
-      />
-
-      {/* Enterprise Studio Authentication & Access Modal */}
-      <AuthModal
-        isOpen={authModalOpen}
-        onClose={() => setAuthModalOpen(false)}
-      />
-
-      {/* Universal Command Palette (⌘K) */}
-      <CommandPalette
-        isOpen={commandPaletteOpen}
-        onClose={() => setCommandPaletteOpen(false)}
-        discoveredMovies={discoveredMovies}
-        onSelectMovie={(title) => {
-          fetchMovie(title);
-          changeTab('twin');
-        }}
-        activeTab={activeTab}
-        onSelectTab={changeTab}
-        onTriggerSync={triggerSync}
-        onOpenAuth={() => setAuthModalOpen(true)}
-        onOpenLayersModal={() => {}}
-      />
-
     </div>
+  );
+}
+
+function GatedApp() {
+  const { isAuthenticated, sessionChecked } = useAuth();
+  if (!sessionChecked) return <Booting />;
+  if (!isAuthenticated) return <Login />;
+  return <Workspace />;
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <GatedApp />
+    </AuthProvider>
   );
 }

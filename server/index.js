@@ -3,6 +3,7 @@
 
 const express = require('express');
 const cors = require('cors');
+const crypto = require('crypto');
 const { SourceAdapterNetwork } = require('./adapters');
 const { SignalNormalizer } = require('./engine/normalizer');
 const { SignalDeduplicator } = require('./engine/deduplicator');
@@ -28,6 +29,95 @@ const recentReleasesEngine = new RecentReleasesEngine();
 
 // In-memory cache for recent movie states to prevent duplicate rapid requests (TTL: 60s)
 const movieStateCache = new Map();
+
+// ---------------------------------------------------------------------------
+// Authentication layer (additive — data endpoints below remain open & unchanged)
+// Stateless HMAC-signed tokens. Users seeded from env, else safe demo defaults.
+// Env overrides:
+//   CDC_AUTH_SECRET  - HMAC secret (default: dev secret, set in production)
+//   CDC_USERS_JSON   - JSON array: [{email, password, name, role}]
+// ---------------------------------------------------------------------------
+const AUTH_SECRET = process.env.CDC_AUTH_SECRET || 'cdc-dev-secret-change-in-production';
+const AUTH_TTL_MS = 12 * 60 * 60 * 1000; // 12h sessions
+
+function sha256(s) { return crypto.createHash('sha256').update(String(s)).digest('hex'); }
+
+function defaultUsers() {
+  return [
+    { email: 'admin@cinema.intel', passwordHash: sha256('ChangeMe123!'), name: 'Studio Admin', role: 'admin' },
+    { email: 'operator@cdc.local', passwordHash: sha256('operator123'), name: 'Operator', role: 'operator' },
+  ];
+}
+
+function loadUsers() {
+  try {
+    if (process.env.CDC_USERS_JSON) {
+      const arr = JSON.parse(process.env.CDC_USERS_JSON);
+      if (Array.isArray(arr) && arr.length) {
+        return arr.map(u => ({
+          email: String(u.email || '').toLowerCase().trim(),
+          passwordHash: u.passwordHash || (u.password ? sha256(u.password) : ''),
+          name: u.name || String(u.email || '').split('@')[0],
+          role: u.role || 'operator',
+        })).filter(u => u.email && u.passwordHash);
+      }
+    }
+  } catch (e) { console.warn('[Auth] CDC_USERS_JSON parse failed, using defaults.'); }
+  return defaultUsers();
+}
+
+function signToken(email) {
+  const exp = Date.now() + AUTH_TTL_MS;
+  const payload = `${email}:${exp}`;
+  const sig = crypto.createHmac('sha256', AUTH_SECRET).update(payload).digest('hex');
+  return Buffer.from(`${payload}:${sig}`).toString('base64url');
+}
+
+function verifyToken(token) {
+  try {
+    const decoded = Buffer.from(String(token), 'base64url').toString('utf8');
+    const [email, expStr, sig] = decoded.split(':');
+    if (!email || !expStr || !sig) return null;
+    if (Number(expStr) < Date.now()) return null;
+    const expected = crypto.createHmac('sha256', AUTH_SECRET).update(`${email}:${expStr}`).digest('hex');
+    if (!crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))) return null;
+    const user = loadUsers().find(u => u.email === email.toLowerCase());
+    if (!user) return null;
+    return { email: user.email, name: user.name, role: user.role, exp: Number(expStr) };
+  } catch { return null; }
+}
+
+function authFromReq(req) {
+  const h = req.headers.authorization || '';
+  const m = h.match(/^Bearer\s+(.+)$/i);
+  return m ? verifyToken(m[1].trim()) : null;
+}
+
+// Public: login — validates credentials, returns signed token + profile
+// (Data endpoints are intentionally NOT gated so existing integrations keep working.)
+app.post('/api/auth/login', (req, res) => {
+  const email = String(req.body?.email || '').toLowerCase().trim();
+  const password = String(req.body?.password || '');
+  if (!email || !password) return res.status(400).json({ error: 'Email and password are required.' });
+  const user = loadUsers().find(u => u.email === email);
+  if (!user || user.passwordHash !== sha256(password)) {
+    return res.status(401).json({ error: 'Invalid email or password.' });
+  }
+  const token = signToken(user.email);
+  res.json({ token, expiresInMs: AUTH_TTL_MS, user: { email: user.email, name: user.name, role: user.role } });
+});
+
+// Public: verify session
+app.get('/api/auth/me', (req, res) => {
+  const user = authFromReq(req);
+  if (!user) return res.status(401).json({ error: 'Session expired. Please sign in again.' });
+  res.json({ user });
+});
+
+// Public: logout (stateless — client discards token; endpoint exists for symmetry/audit)
+app.post('/api/auth/logout', (req, res) => {
+  res.json({ ok: true });
+});
 
 // 1. Health & Sensor Telemetry
 app.get('/api/health', (req, res) => {

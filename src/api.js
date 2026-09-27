@@ -834,3 +834,116 @@ export async function fetchHealth() {
     return { isOnline: false, status: 'OFFLINE', error: err.message, _source: 'OFFLINE' };
   }
 }
+
+// ---------------------------------------------------------------------------
+// Authentication client (additive — all data endpoints above are untouched)
+// Token persisted in localStorage; sent as `Authorization: Bearer <token>`.
+// ---------------------------------------------------------------------------
+const AUTH_TOKEN_KEY = 'cdc_auth_token';
+const AUTH_USER_KEY = 'cdc_auth_user';
+
+export const DEMO_CREDENTIALS = [
+  { email: 'admin@cinema.intel', password: 'ChangeMe123!', label: 'Studio admin (demo)' },
+  { email: 'operator@cdc.local', password: 'operator123', label: 'Operator (demo)' },
+];
+
+export function getAuthToken() {
+  try { return localStorage.getItem(AUTH_TOKEN_KEY) || ''; } catch { return ''; }
+}
+
+export function getStoredAuthUser() {
+  try {
+    const raw = localStorage.getItem(AUTH_USER_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch { return null; }
+}
+
+function persistAuthSession(token, user) {
+  try {
+    localStorage.setItem(AUTH_TOKEN_KEY, token);
+    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(user));
+  } catch { /* storage unavailable — session stays in memory only */ }
+}
+
+export function clearAuthSession() {
+  try {
+    localStorage.removeItem(AUTH_TOKEN_KEY);
+    localStorage.removeItem(AUTH_USER_KEY);
+  } catch { /* noop */ }
+}
+
+function offlineDemoSession(email, password) {
+  const match = DEMO_CREDENTIALS.find(
+    c => c.email.toLowerCase() === String(email).toLowerCase().trim() && c.password === String(password)
+  );
+  if (!match) return null;
+  const name = match.email === DEMO_CREDENTIALS[0].email ? 'Studio Admin' : 'Operator';
+  const role = match.email === DEMO_CREDENTIALS[0].email ? 'admin' : 'operator';
+  const exp = Date.now() + 12 * 60 * 60 * 1000;
+  const token = btoa(`${match.email.toLowerCase()}:${exp}:local`)
+    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  return { token, expiresInMs: 12 * 60 * 60 * 1000, user: { email: match.email, name, role }, _source: 'LOCAL' };
+}
+
+export async function loginRequest(email, password) {
+  try {
+    const res = await fetchWithTimeout('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    }, 8000);
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data?.error || `Login failed (HTTP ${res.status})`);
+    if (!data?.token) throw new Error('Login failed: no session token returned.');
+    persistAuthSession(data.token, data.user);
+    return { ...data, _source: 'SERVER' };
+  } catch (err) {
+    // Offline resilience: demo credentials still unlock the workspace locally
+    // so a reachable API is never a hard requirement for the redesigned UI.
+    const local = offlineDemoSession(email, password);
+    if (local) {
+      persistAuthSession(local.token, local.user);
+      return local;
+    }
+    throw err;
+  }
+}
+
+export async function fetchAuthUser() {
+  const token = getAuthToken();
+  if (!token) return null;
+  try {
+    const res = await fetchWithTimeout('/api/auth/me', {
+      headers: { Authorization: `Bearer ${token}` },
+    }, 5000);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (data?.user) {
+      try { localStorage.setItem(AUTH_USER_KEY, JSON.stringify(data.user)); } catch { /* noop */ }
+      return data.user;
+    }
+    return null;
+  } catch {
+    // Network unreachable: trust the stored session so the workspace stays usable.
+    return getStoredAuthUser();
+  }
+}
+
+export async function logoutRequest() {
+  const token = getAuthToken();
+  try {
+    if (token) {
+      await fetchWithTimeout('/api/auth/logout', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      }, 4000);
+    }
+  } catch { /* logout is local-first; server errors are non-blocking */ }
+  clearAuthSession();
+  return { ok: true };
+}
+
+export function authHeaders(extra = {}) {
+  const token = getAuthToken();
+  return token ? { ...extra, Authorization: `Bearer ${token}` } : { ...extra };
+}

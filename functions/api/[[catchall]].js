@@ -842,6 +842,60 @@ export async function onRequest(context) {
     }
   }
 
+  // --- Authentication (additive; data endpoints below remain open & unchanged) ---
+  // Stateless demo-grade sessions: base64url(email:exp). Verified against
+  // allowlist + expiry. Node server uses HMAC-signed variant; edge accepts
+  // both shapes (checks expiry) so sessions roam between runtimes.
+  const EDGE_AUTH_TTL_MS = 12 * 60 * 60 * 1000;
+  const EDGE_USERS = [
+    { email: 'admin@cinema.intel', password: 'ChangeMe123!', name: 'Studio Admin', role: 'admin' },
+    { email: 'operator@cdc.local', password: 'operator123', name: 'Operator', role: 'operator' },
+  ];
+  const b64urlEncode = (s) => btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const b64urlDecode = (s) => {
+    try {
+      s = String(s).replace(/-/g, '+').replace(/_/g, '/');
+      while (s.length % 4) s += '=';
+      return atob(s);
+    } catch { return ''; }
+  };
+  const edgeIssueToken = (email) => b64urlEncode(`${email.toLowerCase()}:${Date.now() + EDGE_AUTH_TTL_MS}:edge`);
+  const edgeVerifyToken = (token) => {
+    const decoded = b64urlDecode(token);
+    const [email, expStr] = decoded.split(':');
+    if (!email || !expStr || Number(expStr) < Date.now()) return null;
+    const user = EDGE_USERS.find(u => u.email === email.toLowerCase());
+    return user ? { email: user.email, name: user.name, role: user.role, exp: Number(expStr) } : null;
+  };
+
+  if (pathname === '/api/auth/login' && request.method === 'POST') {
+    try {
+      const body = await request.json();
+      const email = String(body?.email || '').toLowerCase().trim();
+      const password = String(body?.password || '');
+      const user = EDGE_USERS.find(u => u.email === email && u.password === password);
+      if (!user) return new Response(JSON.stringify({ error: 'Invalid email or password.' }), { status: 401, headers: corsHeaders });
+      return new Response(JSON.stringify({
+        token: edgeIssueToken(user.email),
+        expiresInMs: EDGE_AUTH_TTL_MS,
+        user: { email: user.email, name: user.name, role: user.role },
+      }), { headers: corsHeaders });
+    } catch {
+      return new Response(JSON.stringify({ error: 'Invalid request body.' }), { status: 400, headers: corsHeaders });
+    }
+  }
+
+  if (pathname === '/api/auth/me') {
+    const m = (request.headers.get('Authorization') || '').match(/^Bearer\s+(.+)$/i);
+    const user = m ? edgeVerifyToken(m[1].trim()) : null;
+    if (!user) return new Response(JSON.stringify({ error: 'Session expired. Please sign in again.' }), { status: 401, headers: corsHeaders });
+    return new Response(JSON.stringify({ user }), { headers: corsHeaders });
+  }
+
+  if (pathname === '/api/auth/logout' && request.method === 'POST') {
+    return new Response(JSON.stringify({ ok: true }), { headers: corsHeaders });
+  }
+
   // 2. Health & Sensor Telemetry
   if (pathname === '/api/health') {
     return new Response(JSON.stringify({
